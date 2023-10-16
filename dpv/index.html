@@ -463,16 +463,16 @@
     </section>
 
     <section id="vocab-base">
-      <h3>Base Vocabulary</h3>
+      <h3>Core Vocabulary</h3>
       <figure>
-        <img title="DPV Base Vocabulary" alt="DPV base vocabulary" src="../diagrams/base.png">
+        <img title="DPV Core Vocabulary" alt="DPV core vocabulary" src="../diagrams/base.png">
         <figcaption>Overview of concepts in DPV</figcaption>
       </figure>
 
       <p>DPV can be viewed as a hierarchical taxonomy of concepts where each <code><code>core concept</code></code> represents the top-most abstract concept in a tree and each of its children provide a lesser abstract or more concrete concept. For example, consider the concept of <a href="https://www.w3id.org/dpv#PersonalData">[=PersonalData=]</a> which is the abstract representation of <em>personal data</em>. It can be further <i>refined</i> or <i>extended</i> as [=SensitivePersonalData=], and further as [=SpecialCategoryPersonalData=] and then as <i>GeneticData</i> and so on.</p>
       <p>From this perspective, the top-most abstract concepts are collectively referred to as the <i>core vocabulary</i> within DPV. The goal of the DPV is to provide a rich collection of concepts for each of top concepts so as to enable their application within real-world use-cases. The identification of what constitutes a core concept is based on the need to represent information about it in a modular and independent form, such as that required for legal compliance.</p>
       
-      <p>The 'Base' or 'Core' concepts in DPV represent the most relevant concepts for representing information regarding the what, how, where, who, why of personal data and its processing. Each of these concepts is further elaborated as a taxonomy of concepts in a hierarchical fashion. The DPV provides the following as 'top-level' concepts and relations to associate them with other concepts:</p>
+      <p>The 'Core' concepts in DPV represent the most relevant concepts for representing information regarding the what, how, where, who, why of personal data and its processing. Each of these concepts is further elaborated as a taxonomy of concepts in a hierarchical fashion. The DPV provides the following as 'top-level' concepts and relations to associate them with other concepts:</p>
       <table>
       <tr>
           <td>Concept</td>
@@ -533,8 +533,8 @@
     <ul>
       <li><a href="#vocab-entities"><strong>Entities</strong></a> - different kinds of entities, the specific <a href="#vocab-entities-legalrole">Legal Roles</a> they can take, and categories of <a href="#vocab-entities-organisation">Organisations</a>, <a href="#vocab-entities-authorities">Authorities</a>, and <a href="#vocab-entities-datasubject">Data Subjects</a>.</li>
       <li><a href="#vocab-purpose"><strong>Purposes</strong></a> that justify the need or goal for which personal data is processd.</li>
-      <li><a href="#vocab-processing"><strong>Processing</strong> operations over personal data.</a></li>
-      <li><a href="#vocab-personaldata"><strong>Personal Data</strong> that is relevant for processing.</a></li>
+      <li><a href="#vocab-processing"><strong>Processing</strong></a> operations over personal data.</li>
+      <li><a href="#vocab-personaldata"><strong>Personal Data</strong></a> that is relevant for processing.</li>
       <li><a href="#vocab-technical_organisational_measures"><strong>Technical &amp; Organisational Measures</strong></a> with dedicated sections for <a href="#vocab-technical-measures">technical</a> and <a href="#vocab-organisational-measures">organisational</a> measures.</li>
       <li><a href="#vocab-legal_basis"><strong>Legal Bases</strong></a> that justify the processing, with a dedicated section for <a href="#vocab-consent">Consent</a>.</li>
       <li><a href="#vocab-processing-context"><strong>Contextual information about Processing</strong></a> such as storage conditions and automation, as well as <a href="#vocab-processing-scale"><strong>Scale of Processing</strong></a>.</li>
@@ -562,33 +562,6 @@
     <figcaption></figcaption>
   </figure>
   <p>DPV relies on existing well-founded interpretations for its concepts, which in this case relate to <i>Entity</i> as a generic universal concept and <i>LegalEntity</i> specifically referring to roles defined legally or within legal norms. Expanding on these, DPV provides a taxonomy of entities based on their application within laws and use-cases in the form of <a href="#vocab-entities-legalrole"><i>Legal roles</i></a>, such as [=DataController=], [=DataSubject=], and [=Authority=]. Later, these concepts are expanded into taxonomies for different kinds of entities categorised under a common concept. For example, <a href="#vocab-entities-datasubject">categories of <i>Data Subjects</i></a> such as [=Adult=], [=User=], or [=Employee=]; or <a href="#vocab-entities-authorities">kinds of <i>Authorities</i></a>, or <a href="#vocab-entities-organisation">categories of <i>Organisations</i></a>.</p>
-
-  <h3>Classes</h3>
-    <p><strong>dpv:DataController</strong></p>
-    <p><strong>dpv:DataSubject</strong></p>
-    <p><strong>dpv:DataSubjectRight</strong></p>
-    <p><strong>dpv:LegalBasis</strong></p>
-    <p><strong>dpv:PersonalData</strong></p>
-    <p><strong>dpv:PersonalDataHandling</strong></p>
-    <p><strong>dpv:Processing</strong></p>
-    <p><strong>dpv:Purpose</strong></p>
-    <p><strong>dpv:Recipient</strong></p>
-    <p><strong>dpv:Right</strong></p>
-    <p><strong>dpv:Risk</strong></p>
-    <p><strong>dpv:TechnicalOrganisationalMeasure</strong></p>
-
-  <h3>Properties</h3>
-    <p><strong>dpv:hasDataController</strong></p>
-    <p><strong>dpv:hasDataSubject</strong></p>
-    <p><strong>dpv:hasLegalBasis</strong></p>
-    <p><strong>dpv:hasPersonalData</strong></p>
-    <p><strong>dpv:hasPersonalDataHandling</strong></p>
-    <p><strong>dpv:hasProcessing</strong></p>
-    <p><strong>dpv:hasPurpose</strong></p>
-    <p><strong>dpv:hasRecipient</strong></p>
-    <p><strong>dpv:hasRight</strong></p>
-    <p><strong>dpv:hasRisk</strong></p>
-    <p><strong>dpv:hasTechnicalOrganisationalMeasure</strong></p>
 
 
   <section id="vocab-entities-legalrole">
@@ -621,452 +594,450 @@
   </figure>
   <p>DPV’s taxonomy of purposes is used to represent the reason or justification for processing of personal data. For this, purposes are organised within DPV based on how they relate to the processing of personal data in terms of several factors, such as: management functions related to information (e.g. records, account, finance), fulfilment of objectives (e.g. delivery of goods), providing goods and services (e.g. service provision), intended benefits (e.g. optimisations for service provider or consumer), and legal compliance.</p>
 
-    <h3>Classes</h3>
-      <ul>        <li>
-          <strong>dpv:AcademicResearch</strong>: Purposes associated with conducting or assisting with research conducted in an academic context e.g. within universities <br/>
-          <small>            <a href="#ResearchAndDevelopment"><code>dpv:ResearchAndDevelopment</code></a>
- are its broader concepts; 
-          <a href="#AcademicResearch">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:AccountManagement</strong>: Account Management refers to purposes associated with account management, such as to create, provide, maintain, and manage accounts <br/>
-          <small>          <a href="#AccountManagement">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:Advertising</strong>: Purposes associated with conducting advertising i.e. process or artefact used to call attention to a product, service, etc. through announcements, notices, or other forms of communication <br/>
-          <small>            <a href="#Marketing"><code>dpv:Marketing</code></a>
- are its broader concepts; 
-          <a href="#Advertising">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:AntiTerrorismOperations</strong>: Purposes associated with activities that detect, prevent, mitigate, or perform other activities for anti-terrorism <br/>
-          <small>            <a href="#EnforceSecurity"><code>dpv:EnforceSecurity</code></a>
- are its broader concepts; 
-          <a href="#AntiTerrorismOperations">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:CommercialResearch</strong>: Purposes associated with conducting research in a commercial setting or with intention to commercialise e.g. in a company or sponsored by a company <br/>
-          <small>            <a href="#ResearchAndDevelopment"><code>dpv:ResearchAndDevelopment</code></a>
- are its broader concepts; 
-          <a href="#CommercialResearch">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:CommunicationForCustomerCare</strong>: Customer Care Communication refers to purposes associated with communicating with customers for assisting them, resolving issues, ensuring satisfaction, etc. in relation to services provided <br/>
-          <small>            <a href="#CommunicationManagement"><code>dpv:CommunicationManagement</code></a>,
-            <a href="#CustomerCare"><code>dpv:CustomerCare</code></a>
- are its broader concepts; 
-          <a href="#CommunicationForCustomerCare">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:CommunicationManagement</strong>: Communication Management refers to purposes associated with providing or managing communication activities e.g. to send an email for notifying some information <br/>
-          <small>          <a href="#CommunicationManagement">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:CounterMoneyLaundering</strong>: Purposes associated with detection, prevention, and mitigation of mitigate money laundering <br/>
-          <small>            <a href="#FraudPreventionAndDetection"><code>dpv:FraudPreventionAndDetection</code></a>
- are its broader concepts; 
-          <a href="#CounterMoneyLaundering">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:CreditChecking</strong>: Purposes associated with monitoring, performing, or assessing credit worthiness or solvency <br/>
-          <small>            <a href="#CustomerSolvencyMonitoring"><code>dpv:CustomerSolvencyMonitoring</code></a>
- are its broader concepts; 
-          <a href="#CreditChecking">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:CustomerCare</strong>: Customer Care refers to purposes associated with purposes for providing assistance, resolving issues, ensuring satisfaction, etc. in relation to services provided <br/>
-          <small>            <a href="#CustomerManagement"><code>dpv:CustomerManagement</code></a>
- are its broader concepts; 
-          <a href="#CustomerCare">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:CustomerClaimsManagement</strong>: Customer Claims Management refers to purposes associated with managing claims, including repayment of monies owed <br/>
-          <small>            <a href="#CustomerManagement"><code>dpv:CustomerManagement</code></a>
- are its broader concepts; 
-          <a href="#CustomerClaimsManagement">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:CustomerManagement</strong>: Customer Management refers to purposes associated with managing activities related with past, current, and future customers <br/>
-          <small>          <a href="#CustomerManagement">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:CustomerOrderManagement</strong>: Customer Order Management refers to purposes associated with managing customer orders i.e. processing of an order related to customer&#39;s purchase of good or services <br/>
-          <small>            <a href="#CustomerManagement"><code>dpv:CustomerManagement</code></a>
- are its broader concepts; 
-          <a href="#CustomerOrderManagement">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:CustomerRelationshipManagement</strong>: Customer Relationship Management refers to purposes associated with managing and analysing interactions with past, current, and potential customers <br/>
-          <small>            <a href="#CustomerManagement"><code>dpv:CustomerManagement</code></a>
- are its broader concepts; 
-          <a href="#CustomerRelationshipManagement">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:CustomerSolvencyMonitoring</strong>: Customer Solvency Monitoring refers to purposes associated with monitor solvency of customers for financial diligence <br/>
-          <small>            <a href="#CustomerManagement"><code>dpv:CustomerManagement</code></a>
- are its broader concepts; 
-          <a href="#CustomerSolvencyMonitoring">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:DeliveryOfGoods</strong>: Purposes associated with delivering goods and services requested or asked by consumer <br/>
-          <small>            <a href="#RequestedServiceProvision"><code>dpv:RequestedServiceProvision</code></a>
- are its broader concepts; 
-          <a href="#DeliveryOfGoods">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:DirectMarketing</strong>: Purposes associated with conducting direct marketing i.e. marketing communicated directly to the individual <br/>
-          <small>            <a href="#Marketing"><code>dpv:Marketing</code></a>
- are its broader concepts; 
-          <a href="#DirectMarketing">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:DisputeManagement</strong>: Purposes associated with activities that manage disputes by natural persons, private bodies, or public authorities relevant to organisation <br/>
-          <small>            <a href="#OrganisationGovernance"><code>dpv:OrganisationGovernance</code></a>
- are its broader concepts; 
-          <a href="#DisputeManagement">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:EnforceAccessControl</strong>: Purposes associated with conducting or enforcing access control as a form of security <br/>
-          <small>            <a href="#EnforceSecurity"><code>dpv:EnforceSecurity</code></a>
- are its broader concepts; 
-          <a href="#EnforceAccessControl">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:EnforceSecurity</strong>: Purposes associated with ensuring and enforcing security for data, personnel, or other related matters <br/>
-          <small>          <a href="#EnforceSecurity">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:EstablishContractualAgreement</strong>: Purposes associated with carrying out data processing to establish an agreement, such as for entering into a contract <br/>
-          <small>          <a href="#EstablishContractualAgreement">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:FraudPreventionAndDetection</strong>: Purposes associated with fraud detection, prevention, and mitigation <br/>
-          <small>            <a href="#EnforceSecurity"><code>dpv:EnforceSecurity</code></a>
- are its broader concepts; 
-          <a href="#FraudPreventionAndDetection">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:FulfilmentOfContractualObligation</strong>: Purposes associated with carrying out data processing to fulfill a contractual obligation <br/>
-          <small>            <a href="#FulfilmentOfObligation"><code>dpv:FulfilmentOfObligation</code></a>
- are its broader concepts; 
-          <a href="#FulfilmentOfContractualObligation">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:FulfilmentOfObligation</strong>: Purposes associated with carrying out data processing to fulfill an obligation <br/>
-          <small>          <a href="#FulfilmentOfObligation">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:HumanResourceManagement</strong>: Purposes associated with managing humans and &#39;human resources&#39; within the organisation for effective and efficient operations. <br/>
-          <small>          <a href="#HumanResourceManagement">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:IdentityVerification</strong>: Purposes associated with verifying or authorising identity as a form of security <br/>
-          <small>            <a href="#EnforceSecurity"><code>dpv:EnforceSecurity</code></a>
- are its broader concepts; 
-          <a href="#IdentityVerification">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:ImproveExistingProductsAndServices</strong>: Purposes associated with improving existing products and services <br/>
-          <small>            <a href="#OptimisationForController"><code>dpv:OptimisationForController</code></a>
- are its broader concepts; 
-          <a href="#ImproveExistingProductsAndServices">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:ImproveInternalCRMProcesses</strong>: Purposes associated with improving customer-relationship management (CRM) processes <br/>
-          <small>            <a href="#CustomerRelationshipManagement"><code>dpv:CustomerRelationshipManagement</code></a>,
-            <a href="#OptimisationForController"><code>dpv:OptimisationForController</code></a>
- are its broader concepts; 
-          <a href="#ImproveInternalCRMProcesses">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:IncreaseServiceRobustness</strong>: Purposes associated with improving robustness and resilience of services <br/>
-          <small>            <a href="#OptimisationForController"><code>dpv:OptimisationForController</code></a>
- are its broader concepts; 
-          <a href="#IncreaseServiceRobustness">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:InternalResourceOptimisation</strong>: Purposes associated with optimisation of internal resource availability and usage for organisation <br/>
-          <small>            <a href="#OptimisationForController"><code>dpv:OptimisationForController</code></a>
- are its broader concepts; 
-          <a href="#InternalResourceOptimisation">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:LegalCompliance</strong>: Purposes associated with carrying out data processing to fulfill a legal or statutory obligation <br/>
-          <small>            <a href="#FulfilmentOfObligation"><code>dpv:FulfilmentOfObligation</code></a>
- are its broader concepts; 
-          <a href="#LegalCompliance">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:MaintainCreditCheckingDatabase</strong>: Purposes associated with maintaining a Credit Checking Database <br/>
-          <small>            <a href="#CreditChecking"><code>dpv:CreditChecking</code></a>
- are its broader concepts; 
-          <a href="#MaintainCreditCheckingDatabase">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:MaintainCreditRatingDatabase</strong>: Purposes associated with maintaining a Credit Rating Database <br/>
-          <small>            <a href="#CreditChecking"><code>dpv:CreditChecking</code></a>
- are its broader concepts; 
-          <a href="#MaintainCreditRatingDatabase">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:MaintainFraudDatabase</strong>: Purposes associated with maintaining a database related to identifying and identified fraud risks and fraud incidents <br/>
-          <small>            <a href="#FraudPreventionAndDetection"><code>dpv:FraudPreventionAndDetection</code></a>
- are its broader concepts; 
-          <a href="#MaintainFraudDatabase">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:Marketing</strong>: Purposes associated with conducting marketing in relation to organisation or products or services e.g. promoting, selling, and distributing <br/>
-          <small>          <a href="#Marketing">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:MemberPartnerManagement</strong>: Purposes associated with maintaining a registry of shareholders, members, or partners for governance, administration, and management functions <br/>
-          <small>            <a href="#OrganisationGovernance"><code>dpv:OrganisationGovernance</code></a>
- are its broader concepts; 
-          <a href="#MemberPartnerManagement">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:NonCommercialResearch</strong>: Purposes associated with conducting research in a non-commercial setting e.g. for a non-profit-organisation (NGO) <br/>
-          <small>            <a href="#ResearchAndDevelopment"><code>dpv:ResearchAndDevelopment</code></a>
- are its broader concepts; 
-          <a href="#NonCommercialResearch">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:OptimisationForConsumer</strong>: Purposes associated with optimisation of activities and services for consumer or user <br/>
-          <small>            <a href="#ServiceOptimisation"><code>dpv:ServiceOptimisation</code></a>
- are its broader concepts; 
-          <a href="#OptimisationForConsumer">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:OptimisationForController</strong>: Purposes associated with optimisation of activities and services for provider or controller <br/>
-          <small>            <a href="#ServiceOptimisation"><code>dpv:ServiceOptimisation</code></a>
- are its broader concepts; 
-          <a href="#OptimisationForController">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:OptimiseUserInterface</strong>: Purposes associated with optimisation of interfaces presented to the user <br/>
-          <small>            <a href="#OptimisationForConsumer"><code>dpv:OptimisationForConsumer</code></a>
- are its broader concepts; 
-          <a href="#OptimiseUserInterface">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:OrganisationComplianceManagement</strong>: Purposes associated with managing compliance for organisation in relation to internal policies <br/>
-          <small>            <a href="#OrganisationGovernance"><code>dpv:OrganisationGovernance</code></a>
- are its broader concepts; 
-          <a href="#OrganisationComplianceManagement">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:OrganisationGovernance</strong>: Purposes associated with conducting activities and functions for governance of an organisation <br/>
-          <small>          <a href="#OrganisationGovernance">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:OrganisationRiskManagement</strong>: Purposes associated with managing risk for organisation&#39;s activities <br/>
-          <small>            <a href="#OrganisationGovernance"><code>dpv:OrganisationGovernance</code></a>
- are its broader concepts; 
-          <a href="#OrganisationRiskManagement">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:PaymentManagement</strong>: Purposes associated with processing and managing payment in relation to service, including invoicing and records <br/>
-          <small>            <a href="#ServiceProvision"><code>dpv:ServiceProvision</code></a>
- are its broader concepts; 
-          <a href="#PaymentManagement">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:Personalisation</strong>: Purposes associated with creating and providing customisation based on attributes and/or needs of person(s) or context(s). <br/>
-          <small>          <a href="#Personalisation">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:PersonalisedAdvertising</strong>: Purposes associated with creating and providing personalised advertising <br/>
-          <small>            <a href="#Advertising"><code>dpv:Advertising</code></a>,
-            <a href="#Personalisation"><code>dpv:Personalisation</code></a>
- are its broader concepts; 
-          <a href="#PersonalisedAdvertising">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:PersonalisedBenefits</strong>: Purposes associated with creating and providing personalised benefits for a service <br/>
-          <small>            <a href="#ServicePersonalisation"><code>dpv:ServicePersonalisation</code></a>
- are its broader concepts; 
-          <a href="#PersonalisedBenefits">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:PersonnelHiring</strong>: Purposes associated with management and execution of hiring processes of personnel <br/>
-          <small>            <a href="#PersonnelManagement"><code>dpv:PersonnelManagement</code></a>
- are its broader concepts; 
-          <a href="#PersonnelHiring">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:PersonnelManagement</strong>: Purposes associated with management of personnel associated with the organisation e.g. evaluation and management of employees and intermediaries <br/>
-          <small>            <a href="#HumanResourceManagement"><code>dpv:HumanResourceManagement</code></a>
- are its broader concepts; 
-          <a href="#PersonnelManagement">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:PersonnelPayment</strong>: Purposes associated with management and execution of payment of personnel <br/>
-          <small>            <a href="#PersonnelManagement"><code>dpv:PersonnelManagement</code></a>
- are its broader concepts; 
-          <a href="#PersonnelPayment">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:ProvideEventRecommendations</strong>: Purposes associated with creating and providing personalised recommendations for events <br/>
-          <small>            <a href="#ProvidePersonalisedRecommendations"><code>dpv:ProvidePersonalisedRecommendations</code></a>
- are its broader concepts; 
-          <a href="#ProvideEventRecommendations">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:ProvidePersonalisedRecommendations</strong>: Purposes associated with creating and providing personalised recommendations <br/>
-          <small>            <a href="#ServicePersonalisation"><code>dpv:ServicePersonalisation</code></a>
- are its broader concepts; 
-          <a href="#ProvidePersonalisedRecommendations">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:ProvideProductRecommendations</strong>: Purposes associated with creating and providing product recommendations e.g. suggest similar products <br/>
-          <small>            <a href="#ProvidePersonalisedRecommendations"><code>dpv:ProvidePersonalisedRecommendations</code></a>
- are its broader concepts; 
-          <a href="#ProvideProductRecommendations">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:PublicRelations</strong>: Purposes associated with managing and conducting public relations processes, including creating goodwill for the organisation <br/>
-          <small>            <a href="#Marketing"><code>dpv:Marketing</code></a>
- are its broader concepts; 
-          <a href="#PublicRelations">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:Purpose</strong>: The purpose of processing personal data <br/>
-          <small>          <a href="#Purpose">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:RecordManagement</strong>: Purposes associated with manage creation, storage, and use of records relevant to operations, events, and processes e.g. to store logs or access requests <br/>
-          <small>          <a href="#RecordManagement">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:RepairImpairments</strong>: Purposes associated with identifying, rectifying, or otherwise undertaking activities intended to fix or repair impairments to existing functionalities <br/>
-          <small>            <a href="#ServiceProvision"><code>dpv:ServiceProvision</code></a>
- are its broader concepts; 
-          <a href="#RepairImpairments">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:RequestedServiceProvision</strong>: Purposes associated with delivering services as requested by user or consumer <br/>
-          <small>            <a href="#ServiceProvision"><code>dpv:ServiceProvision</code></a>
- are its broader concepts; 
-          <a href="#RequestedServiceProvision">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:ResearchAndDevelopment</strong>: Purposes associated with conducting research and development for new methods, products, or services <br/>
-          <small>          <a href="#ResearchAndDevelopment">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:SearchFunctionalities</strong>: Purposes associated with providing searching, querying, or other forms of information retrieval related functionalities <br/>
-          <small>            <a href="#ServiceProvision"><code>dpv:ServiceProvision</code></a>
- are its broader concepts; 
-          <a href="#SearchFunctionalities">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:Sector</strong>: Sector describes the area of application or domain that indicates or restricts scope for interpretation and application of purpose e.g. Agriculture, Banking <br/>
-          <small>          <a href="#Sector">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:SellDataToThirdParties</strong>: Purposes associated with selling or sharing data or information to third parties <br/>
-          <small>            <a href="#SellProducts"><code>dpv:SellProducts</code></a>
- are its broader concepts; 
-          <a href="#SellDataToThirdParties">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:SellInsightsFromData</strong>: Purposes associated with selling or sharing insights obtained from analysis of data <br/>
-          <small>            <a href="#SellProducts"><code>dpv:SellProducts</code></a>
- are its broader concepts; 
-          <a href="#SellInsightsFromData">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:SellProducts</strong>: Purposes associated with selling products or services <br/>
-          <small>            <a href="#ServiceProvision"><code>dpv:ServiceProvision</code></a>
- are its broader concepts; 
-          <a href="#SellProducts">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:SellProductsToDataSubject</strong>: Purposes associated with selling products or services to the user, consumer, or data subjects <br/>
-          <small>            <a href="#SellProducts"><code>dpv:SellProducts</code></a>
- are its broader concepts; 
-          <a href="#SellProductsToDataSubject">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:ServiceOptimisation</strong>: Purposes associated with optimisation of services or activities <br/>
-          <small>            <a href="#ServiceProvision"><code>dpv:ServiceProvision</code></a>
- are its broader concepts; 
-          <a href="#ServiceOptimisation">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:ServicePersonalisation</strong>: Purposes associated with providing personalisation within services or product or activities <br/>
-          <small>            <a href="#Personalisation"><code>dpv:Personalisation</code></a>,
-            <a href="#ServiceProvision"><code>dpv:ServiceProvision</code></a>
- are its broader concepts; 
-          <a href="#ServicePersonalisation">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:ServiceProvision</strong>: Purposes associated with providing service or product or activities <br/>
-          <small>          <a href="#ServiceProvision">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:ServiceRegistration</strong>: Purposes associated with registering users and collecting information required for providing a service <br/>
-          <small>            <a href="#ServiceProvision"><code>dpv:ServiceProvision</code></a>
- are its broader concepts; 
-          <a href="#ServiceRegistration">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:ServiceUsageAnalytics</strong>: Purposes associated with conducting analysis and reporting related to usage of services or products <br/>
-          <small>            <a href="#ServiceProvision"><code>dpv:ServiceProvision</code></a>
- are its broader concepts; 
-          <a href="#ServiceUsageAnalytics">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:SocialMediaMarketing</strong>: Purposes associated with conducting marketing through social media <br/>
-          <small>            <a href="#Marketing"><code>dpv:Marketing</code></a>
- are its broader concepts; 
-          <a href="#SocialMediaMarketing">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:TargetedAdvertising</strong>: Purposes associated with creating and providing pesonalised advertisement where the personalisation is targeted to a specific individual or group of individuals <br/>
-          <small>            <a href="#PersonalisedAdvertising"><code>dpv:PersonalisedAdvertising</code></a>
- are its broader concepts; 
-          <a href="#TargetedAdvertising">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:TechnicalServiceProvision</strong>: Purposes associated with managing and providing technical processes and functions necessary for delivering services <br/>
-          <small>            <a href="#ServiceProvision"><code>dpv:ServiceProvision</code></a>
- are its broader concepts; 
-          <a href="#TechnicalServiceProvision">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:UserInterfacePersonalisation</strong>: Purposes associated with personalisation of interfaces presented to the user <br/>
-          <small>            <a href="#ServicePersonalisation"><code>dpv:ServicePersonalisation</code></a>
- are its broader concepts; 
-          <a href="#UserInterfacePersonalisation">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:VendorManagement</strong>: Purposes associated with manage orders, payment, evaluation, and prospecting related to vendors <br/>
-          <small>          <a href="#VendorManagement">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:VendorPayment</strong>: Purposes associated with managing payment of vendors <br/>
-          <small>            <a href="#VendorManagement"><code>dpv:VendorManagement</code></a>
- are its broader concepts; 
-          <a href="#VendorPayment">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:VendorRecordsManagement</strong>: Purposes associated with managing records and orders related to vendors <br/>
-          <small>            <a href="#VendorManagement"><code>dpv:VendorManagement</code></a>
- are its broader concepts; 
-          <a href="#VendorRecordsManagement">see further term description</a></small>
-          </li>
-        <li>
-          <strong>dpv:VendorSelectionAssessment</strong>: Purposes associated with managing selection, assessment, and evaluation related to vendors <br/>
-          <small>            <a href="#VendorManagement"><code>dpv:VendorManagement</code></a>
- are its broader concepts; 
-          <a href="#VendorSelectionAssessment">see further term description</a></small>
-          </li>
+  <p>DPV provides a taxonomy of Purpose <i>instances</i> for use with [=hasPurpose=] relation. In addition, DPV also defines the concept [=Sector=] (associated using [=hasSector=]) to indicate a contextual interpretation of the purpose within a specified sector.</p>
+
+  <ul>  <li>
+    <strong>dpv:AcademicResearch</strong>: Purposes associated with conducting or assisting with research conducted in an academic context e.g. within universities <br/>
+    <small>      broader concepts:       <a href="#ResearchAndDevelopment"><code>dpv:ResearchAndDevelopment</code></a>
+; 
+    see <a href="#AcademicResearch">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:AccountManagement</strong>: Account Management refers to purposes associated with account management, such as to create, provide, maintain, and manage accounts <br/>
+    <small>    see <a href="#AccountManagement">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:Advertising</strong>: Purposes associated with conducting advertising i.e. process or artefact used to call attention to a product, service, etc. through announcements, notices, or other forms of communication <br/>
+    <small>      broader concepts:       <a href="#Marketing"><code>dpv:Marketing</code></a>
+; 
+    see <a href="#Advertising">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:AntiTerrorismOperations</strong>: Purposes associated with activities that detect, prevent, mitigate, or perform other activities for anti-terrorism <br/>
+    <small>      broader concepts:       <a href="#EnforceSecurity"><code>dpv:EnforceSecurity</code></a>
+; 
+    see <a href="#AntiTerrorismOperations">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:CommercialResearch</strong>: Purposes associated with conducting research in a commercial setting or with intention to commercialise e.g. in a company or sponsored by a company <br/>
+    <small>      broader concepts:       <a href="#ResearchAndDevelopment"><code>dpv:ResearchAndDevelopment</code></a>
+; 
+    see <a href="#CommercialResearch">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:CommunicationForCustomerCare</strong>: Customer Care Communication refers to purposes associated with communicating with customers for assisting them, resolving issues, ensuring satisfaction, etc. in relation to services provided <br/>
+    <small>      broader concepts:       <a href="#CommunicationManagement"><code>dpv:CommunicationManagement</code></a>,
+      <a href="#CustomerCare"><code>dpv:CustomerCare</code></a>
+; 
+    see <a href="#CommunicationForCustomerCare">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:CommunicationManagement</strong>: Communication Management refers to purposes associated with providing or managing communication activities e.g. to send an email for notifying some information <br/>
+    <small>    see <a href="#CommunicationManagement">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:CounterMoneyLaundering</strong>: Purposes associated with detection, prevention, and mitigation of mitigate money laundering <br/>
+    <small>      broader concepts:       <a href="#FraudPreventionAndDetection"><code>dpv:FraudPreventionAndDetection</code></a>
+; 
+    see <a href="#CounterMoneyLaundering">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:CreditChecking</strong>: Purposes associated with monitoring, performing, or assessing credit worthiness or solvency <br/>
+    <small>      broader concepts:       <a href="#CustomerSolvencyMonitoring"><code>dpv:CustomerSolvencyMonitoring</code></a>
+; 
+    see <a href="#CreditChecking">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:CustomerCare</strong>: Customer Care refers to purposes associated with purposes for providing assistance, resolving issues, ensuring satisfaction, etc. in relation to services provided <br/>
+    <small>      broader concepts:       <a href="#CustomerManagement"><code>dpv:CustomerManagement</code></a>
+; 
+    see <a href="#CustomerCare">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:CustomerClaimsManagement</strong>: Customer Claims Management refers to purposes associated with managing claims, including repayment of monies owed <br/>
+    <small>      broader concepts:       <a href="#CustomerManagement"><code>dpv:CustomerManagement</code></a>
+; 
+    see <a href="#CustomerClaimsManagement">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:CustomerManagement</strong>: Customer Management refers to purposes associated with managing activities related with past, current, and future customers <br/>
+    <small>    see <a href="#CustomerManagement">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:CustomerOrderManagement</strong>: Customer Order Management refers to purposes associated with managing customer orders i.e. processing of an order related to customer&#39;s purchase of good or services <br/>
+    <small>      broader concepts:       <a href="#CustomerManagement"><code>dpv:CustomerManagement</code></a>
+; 
+    see <a href="#CustomerOrderManagement">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:CustomerRelationshipManagement</strong>: Customer Relationship Management refers to purposes associated with managing and analysing interactions with past, current, and potential customers <br/>
+    <small>      broader concepts:       <a href="#CustomerManagement"><code>dpv:CustomerManagement</code></a>
+; 
+    see <a href="#CustomerRelationshipManagement">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:CustomerSolvencyMonitoring</strong>: Customer Solvency Monitoring refers to purposes associated with monitor solvency of customers for financial diligence <br/>
+    <small>      broader concepts:       <a href="#CustomerManagement"><code>dpv:CustomerManagement</code></a>
+; 
+    see <a href="#CustomerSolvencyMonitoring">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:DeliveryOfGoods</strong>: Purposes associated with delivering goods and services requested or asked by consumer <br/>
+    <small>      broader concepts:       <a href="#RequestedServiceProvision"><code>dpv:RequestedServiceProvision</code></a>
+; 
+    see <a href="#DeliveryOfGoods">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:DirectMarketing</strong>: Purposes associated with conducting direct marketing i.e. marketing communicated directly to the individual <br/>
+    <small>      broader concepts:       <a href="#Marketing"><code>dpv:Marketing</code></a>
+; 
+    see <a href="#DirectMarketing">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:DisputeManagement</strong>: Purposes associated with activities that manage disputes by natural persons, private bodies, or public authorities relevant to organisation <br/>
+    <small>      broader concepts:       <a href="#OrganisationGovernance"><code>dpv:OrganisationGovernance</code></a>
+; 
+    see <a href="#DisputeManagement">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:EnforceAccessControl</strong>: Purposes associated with conducting or enforcing access control as a form of security <br/>
+    <small>      broader concepts:       <a href="#EnforceSecurity"><code>dpv:EnforceSecurity</code></a>
+; 
+    see <a href="#EnforceAccessControl">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:EnforceSecurity</strong>: Purposes associated with ensuring and enforcing security for data, personnel, or other related matters <br/>
+    <small>    see <a href="#EnforceSecurity">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:EstablishContractualAgreement</strong>: Purposes associated with carrying out data processing to establish an agreement, such as for entering into a contract <br/>
+    <small>    see <a href="#EstablishContractualAgreement">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:FraudPreventionAndDetection</strong>: Purposes associated with fraud detection, prevention, and mitigation <br/>
+    <small>      broader concepts:       <a href="#EnforceSecurity"><code>dpv:EnforceSecurity</code></a>
+; 
+    see <a href="#FraudPreventionAndDetection">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:FulfilmentOfContractualObligation</strong>: Purposes associated with carrying out data processing to fulfill a contractual obligation <br/>
+    <small>      broader concepts:       <a href="#FulfilmentOfObligation"><code>dpv:FulfilmentOfObligation</code></a>
+; 
+    see <a href="#FulfilmentOfContractualObligation">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:FulfilmentOfObligation</strong>: Purposes associated with carrying out data processing to fulfill an obligation <br/>
+    <small>    see <a href="#FulfilmentOfObligation">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:HumanResourceManagement</strong>: Purposes associated with managing humans and &#39;human resources&#39; within the organisation for effective and efficient operations. <br/>
+    <small>    see <a href="#HumanResourceManagement">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:IdentityVerification</strong>: Purposes associated with verifying or authorising identity as a form of security <br/>
+    <small>      broader concepts:       <a href="#EnforceSecurity"><code>dpv:EnforceSecurity</code></a>
+; 
+    see <a href="#IdentityVerification">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:ImproveExistingProductsAndServices</strong>: Purposes associated with improving existing products and services <br/>
+    <small>      broader concepts:       <a href="#OptimisationForController"><code>dpv:OptimisationForController</code></a>
+; 
+    see <a href="#ImproveExistingProductsAndServices">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:ImproveInternalCRMProcesses</strong>: Purposes associated with improving customer-relationship management (CRM) processes <br/>
+    <small>      broader concepts:       <a href="#CustomerRelationshipManagement"><code>dpv:CustomerRelationshipManagement</code></a>,
+      <a href="#OptimisationForController"><code>dpv:OptimisationForController</code></a>
+; 
+    see <a href="#ImproveInternalCRMProcesses">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:IncreaseServiceRobustness</strong>: Purposes associated with improving robustness and resilience of services <br/>
+    <small>      broader concepts:       <a href="#OptimisationForController"><code>dpv:OptimisationForController</code></a>
+; 
+    see <a href="#IncreaseServiceRobustness">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:InternalResourceOptimisation</strong>: Purposes associated with optimisation of internal resource availability and usage for organisation <br/>
+    <small>      broader concepts:       <a href="#OptimisationForController"><code>dpv:OptimisationForController</code></a>
+; 
+    see <a href="#InternalResourceOptimisation">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:LegalCompliance</strong>: Purposes associated with carrying out data processing to fulfill a legal or statutory obligation <br/>
+    <small>      broader concepts:       <a href="#FulfilmentOfObligation"><code>dpv:FulfilmentOfObligation</code></a>
+; 
+    see <a href="#LegalCompliance">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:MaintainCreditCheckingDatabase</strong>: Purposes associated with maintaining a Credit Checking Database <br/>
+    <small>      broader concepts:       <a href="#CreditChecking"><code>dpv:CreditChecking</code></a>
+; 
+    see <a href="#MaintainCreditCheckingDatabase">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:MaintainCreditRatingDatabase</strong>: Purposes associated with maintaining a Credit Rating Database <br/>
+    <small>      broader concepts:       <a href="#CreditChecking"><code>dpv:CreditChecking</code></a>
+; 
+    see <a href="#MaintainCreditRatingDatabase">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:MaintainFraudDatabase</strong>: Purposes associated with maintaining a database related to identifying and identified fraud risks and fraud incidents <br/>
+    <small>      broader concepts:       <a href="#FraudPreventionAndDetection"><code>dpv:FraudPreventionAndDetection</code></a>
+; 
+    see <a href="#MaintainFraudDatabase">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:Marketing</strong>: Purposes associated with conducting marketing in relation to organisation or products or services e.g. promoting, selling, and distributing <br/>
+    <small>    see <a href="#Marketing">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:MemberPartnerManagement</strong>: Purposes associated with maintaining a registry of shareholders, members, or partners for governance, administration, and management functions <br/>
+    <small>      broader concepts:       <a href="#OrganisationGovernance"><code>dpv:OrganisationGovernance</code></a>
+; 
+    see <a href="#MemberPartnerManagement">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:NonCommercialResearch</strong>: Purposes associated with conducting research in a non-commercial setting e.g. for a non-profit-organisation (NGO) <br/>
+    <small>      broader concepts:       <a href="#ResearchAndDevelopment"><code>dpv:ResearchAndDevelopment</code></a>
+; 
+    see <a href="#NonCommercialResearch">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:OptimisationForConsumer</strong>: Purposes associated with optimisation of activities and services for consumer or user <br/>
+    <small>      broader concepts:       <a href="#ServiceOptimisation"><code>dpv:ServiceOptimisation</code></a>
+; 
+    see <a href="#OptimisationForConsumer">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:OptimisationForController</strong>: Purposes associated with optimisation of activities and services for provider or controller <br/>
+    <small>      broader concepts:       <a href="#ServiceOptimisation"><code>dpv:ServiceOptimisation</code></a>
+; 
+    see <a href="#OptimisationForController">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:OptimiseUserInterface</strong>: Purposes associated with optimisation of interfaces presented to the user <br/>
+    <small>      broader concepts:       <a href="#OptimisationForConsumer"><code>dpv:OptimisationForConsumer</code></a>
+; 
+    see <a href="#OptimiseUserInterface">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:OrganisationComplianceManagement</strong>: Purposes associated with managing compliance for organisation in relation to internal policies <br/>
+    <small>      broader concepts:       <a href="#OrganisationGovernance"><code>dpv:OrganisationGovernance</code></a>
+; 
+    see <a href="#OrganisationComplianceManagement">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:OrganisationGovernance</strong>: Purposes associated with conducting activities and functions for governance of an organisation <br/>
+    <small>    see <a href="#OrganisationGovernance">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:OrganisationRiskManagement</strong>: Purposes associated with managing risk for organisation&#39;s activities <br/>
+    <small>      broader concepts:       <a href="#OrganisationGovernance"><code>dpv:OrganisationGovernance</code></a>
+; 
+    see <a href="#OrganisationRiskManagement">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:PaymentManagement</strong>: Purposes associated with processing and managing payment in relation to service, including invoicing and records <br/>
+    <small>      broader concepts:       <a href="#ServiceProvision"><code>dpv:ServiceProvision</code></a>
+; 
+    see <a href="#PaymentManagement">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:Personalisation</strong>: Purposes associated with creating and providing customisation based on attributes and/or needs of person(s) or context(s). <br/>
+    <small>    see <a href="#Personalisation">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:PersonalisedAdvertising</strong>: Purposes associated with creating and providing personalised advertising <br/>
+    <small>      broader concepts:       <a href="#Advertising"><code>dpv:Advertising</code></a>,
+      <a href="#Personalisation"><code>dpv:Personalisation</code></a>
+; 
+    see <a href="#PersonalisedAdvertising">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:PersonalisedBenefits</strong>: Purposes associated with creating and providing personalised benefits for a service <br/>
+    <small>      broader concepts:       <a href="#ServicePersonalisation"><code>dpv:ServicePersonalisation</code></a>
+; 
+    see <a href="#PersonalisedBenefits">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:PersonnelHiring</strong>: Purposes associated with management and execution of hiring processes of personnel <br/>
+    <small>      broader concepts:       <a href="#PersonnelManagement"><code>dpv:PersonnelManagement</code></a>
+; 
+    see <a href="#PersonnelHiring">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:PersonnelManagement</strong>: Purposes associated with management of personnel associated with the organisation e.g. evaluation and management of employees and intermediaries <br/>
+    <small>      broader concepts:       <a href="#HumanResourceManagement"><code>dpv:HumanResourceManagement</code></a>
+; 
+    see <a href="#PersonnelManagement">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:PersonnelPayment</strong>: Purposes associated with management and execution of payment of personnel <br/>
+    <small>      broader concepts:       <a href="#PersonnelManagement"><code>dpv:PersonnelManagement</code></a>
+; 
+    see <a href="#PersonnelPayment">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:ProvideEventRecommendations</strong>: Purposes associated with creating and providing personalised recommendations for events <br/>
+    <small>      broader concepts:       <a href="#ProvidePersonalisedRecommendations"><code>dpv:ProvidePersonalisedRecommendations</code></a>
+; 
+    see <a href="#ProvideEventRecommendations">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:ProvidePersonalisedRecommendations</strong>: Purposes associated with creating and providing personalised recommendations <br/>
+    <small>      broader concepts:       <a href="#ServicePersonalisation"><code>dpv:ServicePersonalisation</code></a>
+; 
+    see <a href="#ProvidePersonalisedRecommendations">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:ProvideProductRecommendations</strong>: Purposes associated with creating and providing product recommendations e.g. suggest similar products <br/>
+    <small>      broader concepts:       <a href="#ProvidePersonalisedRecommendations"><code>dpv:ProvidePersonalisedRecommendations</code></a>
+; 
+    see <a href="#ProvideProductRecommendations">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:PublicRelations</strong>: Purposes associated with managing and conducting public relations processes, including creating goodwill for the organisation <br/>
+    <small>      broader concepts:       <a href="#Marketing"><code>dpv:Marketing</code></a>
+; 
+    see <a href="#PublicRelations">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:Purpose</strong>: The purpose of processing personal data <br/>
+    <small>    see <a href="#Purpose">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:RecordManagement</strong>: Purposes associated with manage creation, storage, and use of records relevant to operations, events, and processes e.g. to store logs or access requests <br/>
+    <small>    see <a href="#RecordManagement">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:RepairImpairments</strong>: Purposes associated with identifying, rectifying, or otherwise undertaking activities intended to fix or repair impairments to existing functionalities <br/>
+    <small>      broader concepts:       <a href="#ServiceProvision"><code>dpv:ServiceProvision</code></a>
+; 
+    see <a href="#RepairImpairments">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:RequestedServiceProvision</strong>: Purposes associated with delivering services as requested by user or consumer <br/>
+    <small>      broader concepts:       <a href="#ServiceProvision"><code>dpv:ServiceProvision</code></a>
+; 
+    see <a href="#RequestedServiceProvision">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:ResearchAndDevelopment</strong>: Purposes associated with conducting research and development for new methods, products, or services <br/>
+    <small>    see <a href="#ResearchAndDevelopment">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:SearchFunctionalities</strong>: Purposes associated with providing searching, querying, or other forms of information retrieval related functionalities <br/>
+    <small>      broader concepts:       <a href="#ServiceProvision"><code>dpv:ServiceProvision</code></a>
+; 
+    see <a href="#SearchFunctionalities">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:Sector</strong>: Sector describes the area of application or domain that indicates or restricts scope for interpretation and application of purpose e.g. Agriculture, Banking <br/>
+    <small>    see <a href="#Sector">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:SellDataToThirdParties</strong>: Purposes associated with selling or sharing data or information to third parties <br/>
+    <small>      broader concepts:       <a href="#SellProducts"><code>dpv:SellProducts</code></a>
+; 
+    see <a href="#SellDataToThirdParties">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:SellInsightsFromData</strong>: Purposes associated with selling or sharing insights obtained from analysis of data <br/>
+    <small>      broader concepts:       <a href="#SellProducts"><code>dpv:SellProducts</code></a>
+; 
+    see <a href="#SellInsightsFromData">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:SellProducts</strong>: Purposes associated with selling products or services <br/>
+    <small>      broader concepts:       <a href="#ServiceProvision"><code>dpv:ServiceProvision</code></a>
+; 
+    see <a href="#SellProducts">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:SellProductsToDataSubject</strong>: Purposes associated with selling products or services to the user, consumer, or data subjects <br/>
+    <small>      broader concepts:       <a href="#SellProducts"><code>dpv:SellProducts</code></a>
+; 
+    see <a href="#SellProductsToDataSubject">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:ServiceOptimisation</strong>: Purposes associated with optimisation of services or activities <br/>
+    <small>      broader concepts:       <a href="#ServiceProvision"><code>dpv:ServiceProvision</code></a>
+; 
+    see <a href="#ServiceOptimisation">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:ServicePersonalisation</strong>: Purposes associated with providing personalisation within services or product or activities <br/>
+    <small>      broader concepts:       <a href="#Personalisation"><code>dpv:Personalisation</code></a>,
+      <a href="#ServiceProvision"><code>dpv:ServiceProvision</code></a>
+; 
+    see <a href="#ServicePersonalisation">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:ServiceProvision</strong>: Purposes associated with providing service or product or activities <br/>
+    <small>    see <a href="#ServiceProvision">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:ServiceRegistration</strong>: Purposes associated with registering users and collecting information required for providing a service <br/>
+    <small>      broader concepts:       <a href="#ServiceProvision"><code>dpv:ServiceProvision</code></a>
+; 
+    see <a href="#ServiceRegistration">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:ServiceUsageAnalytics</strong>: Purposes associated with conducting analysis and reporting related to usage of services or products <br/>
+    <small>      broader concepts:       <a href="#ServiceProvision"><code>dpv:ServiceProvision</code></a>
+; 
+    see <a href="#ServiceUsageAnalytics">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:SocialMediaMarketing</strong>: Purposes associated with conducting marketing through social media <br/>
+    <small>      broader concepts:       <a href="#Marketing"><code>dpv:Marketing</code></a>
+; 
+    see <a href="#SocialMediaMarketing">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:TargetedAdvertising</strong>: Purposes associated with creating and providing pesonalised advertisement where the personalisation is targeted to a specific individual or group of individuals <br/>
+    <small>      broader concepts:       <a href="#PersonalisedAdvertising"><code>dpv:PersonalisedAdvertising</code></a>
+; 
+    see <a href="#TargetedAdvertising">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:TechnicalServiceProvision</strong>: Purposes associated with managing and providing technical processes and functions necessary for delivering services <br/>
+    <small>      broader concepts:       <a href="#ServiceProvision"><code>dpv:ServiceProvision</code></a>
+; 
+    see <a href="#TechnicalServiceProvision">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:UserInterfacePersonalisation</strong>: Purposes associated with personalisation of interfaces presented to the user <br/>
+    <small>      broader concepts:       <a href="#ServicePersonalisation"><code>dpv:ServicePersonalisation</code></a>
+; 
+    see <a href="#UserInterfacePersonalisation">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:VendorManagement</strong>: Purposes associated with manage orders, payment, evaluation, and prospecting related to vendors <br/>
+    <small>    see <a href="#VendorManagement">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:VendorPayment</strong>: Purposes associated with managing payment of vendors <br/>
+    <small>      broader concepts:       <a href="#VendorManagement"><code>dpv:VendorManagement</code></a>
+; 
+    see <a href="#VendorPayment">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:VendorRecordsManagement</strong>: Purposes associated with managing records and orders related to vendors <br/>
+    <small>      broader concepts:       <a href="#VendorManagement"><code>dpv:VendorManagement</code></a>
+; 
+    see <a href="#VendorRecordsManagement">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:VendorSelectionAssessment</strong>: Purposes associated with managing selection, assessment, and evaluation related to vendors <br/>
+    <small>      broader concepts:       <a href="#VendorManagement"><code>dpv:VendorManagement</code></a>
+; 
+    see <a href="#VendorSelectionAssessment">complete term definition</a></small>
+    </li>
 </ul>
 
-  <h3>Properties</h3>
-    <p><strong>dpv:hasPurpose</strong></p>
-    <p><strong>dpv:hasSector</strong></p>
 
 </section>
 
@@ -1091,9 +1062,117 @@
   <p>In addition to <i>Personal Data</i>, there may be a need to represent <i>Non-Personal Data</i> within the same contextual use-cases. For this, DPV provides the concepts [=Data=], [=NonPersonalData=] and [=SyntheticData=].</p>
   <p>To indicate data categorised based on [=DataSource=], e.g. as "collected personal data", DPV provides: [=CollectedPersonalData=], [=DerivedPersonalData=], [=InferredPersonalData=], [=GeneratedPersonalData=], and [=ObservedPersonalData=].</p>
   <p>For indicating personal data which is sensitive, the concept [=SensitivePersonalData=] is provided. For indicating special categories of data, the concept [=SpecialCategoryPersonalData=] is provided. In this, the concept <i>sensitive</i> indicates that the data needs additional considerations (and perhaps caution) when processing, such as by increasing its security, reducing usage, or performing impact assessments. <i>Special categories</i>, by contrast, are a 'special' type of sensitive personal data requiring additional considerations or obligations defined in laws (or through other forms) that regulate how they should be used or prohibit their use until specific obligations are met.</p>
-  <p>To specify data is anonymised, DPV provides two concepts. [=AnonymisedData=] for when data is completely anonymised and cannot be de-anonymised, which is a subtype of [=NonPersonalData=]. And, [=PseudonymisedData=] for when data has only been partially anonymised or de-anonymisation is possible, which is a subtype of [=PersonalData=].</p>      
-</section>
+  <p>To specify data is anonymised, DPV provides two concepts. [=AnonymisedData=] for when data is completely anonymised and cannot be de-anonymised, which is a subtype of [=NonPersonalData=]. And, [=PseudonymisedData=] for when data has only been partially anonymised or de-anonymisation is possible, which is a subtype of [=PersonalData=].</p>     
+  <p>DPV defines the following concepts for expressing information about data:</p>
+  <ul>  <li>
+    <strong>dpv:AnonymisedData</strong>: Personal Data that has been (fully and completely) anonymised so that it is no longer considered Personal Data <br/>
+    <small>      broader concepts:       <a href="#NonPersonalData"><code>dpv:NonPersonalData</code></a>
+; 
+    see <a href="#AnonymisedData">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:CollectedPersonalData</strong>: Personal Data that has been collected from another source such as the Data Subject <br/>
+    <small>      broader concepts:       <a href="#PersonalData"><code>dpv:PersonalData</code></a>
+; 
+    see <a href="#CollectedPersonalData">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:Data</strong>: A broad concept representing  &#39;data&#39; or &#39;information&#39; <br/>
+    <small>    see <a href="#Data">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:DerivedPersonalData</strong>: Personal Data that is obtained or derived from other data <br/>
+    <small>      broader concepts:       <a href="#PersonalData"><code>dpv:PersonalData</code></a>
+; 
+    see <a href="#DerivedPersonalData">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:GeneratedPersonalData</strong>: Personal Data that is generated or brought into existence without relation to existing data i.e. it is not derived or inferred from other data <br/>
+    <small>      broader concepts:       <a href="#PersonalData"><code>dpv:PersonalData</code></a>
+; 
+    see <a href="#GeneratedPersonalData">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:IncorrectData</strong>: Data that is known to be incorrect or inconsistent with some quality requirements <br/>
+    <small>      broader concepts:       <a href="#Data"><code>dpv:Data</code></a>
+; 
+    see <a href="#IncorrectData">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:InferredPersonalData</strong>: Personal Data that is obtained through inference from other data <br/>
+    <small>      broader concepts:       <a href="#DerivedPersonalData"><code>dpv:DerivedPersonalData</code></a>,
+      <a href="#GeneratedPersonalData"><code>dpv:GeneratedPersonalData</code></a>
+; 
+    see <a href="#InferredPersonalData">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:NonPersonalData</strong>: Data that is not Personal Data <br/>
+    <small>      broader concepts:       <a href="#Data"><code>dpv:Data</code></a>
+; 
+    see <a href="#NonPersonalData">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:ObservedPersonalData</strong>: Personal Data that has been collected through observation of the Data Subject(s) <br/>
+    <small>      broader concepts:       <a href="#CollectedPersonalData"><code>dpv:CollectedPersonalData</code></a>
+; 
+    see <a href="#ObservedPersonalData">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:PersonalData</strong>: Data directly or indirectly associated or related to an individual. <br/>
+    <small>      broader concepts:       <a href="#Data"><code>dpv:Data</code></a>
+; 
+    see <a href="#PersonalData">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:PseudonymisedData</strong>: Personal Data that has undergone a pseudonymisation process or a partial (incomplete) anonymisation process such that it is still considered Personal Data <br/>
+    <small>      broader concepts:       <a href="#PersonalData"><code>dpv:PersonalData</code></a>
+; 
+    see <a href="#PseudonymisedData">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:SensitivePersonalData</strong>: Personal data that is considered &#39;sensitive&#39; in terms of privacy and/or impact, and therefore requires additional considerations and/or protection <br/>
+    <small>      broader concepts:       <a href="#PersonalData"><code>dpv:PersonalData</code></a>
+; 
+    see <a href="#SensitivePersonalData">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:SpecialCategoryPersonalData</strong>: Sensitive Personal Data whose use requires specific legal permission or justification <br/>
+    <small>      broader concepts:       <a href="#SensitivePersonalData"><code>dpv:SensitivePersonalData</code></a>
+; 
+    see <a href="#SpecialCategoryPersonalData">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:SyntheticData</strong>: Synthetic data reffers to artificially created data such that it is intended to resemble real data (personal or non-personal), but does not refer to any specific identified or identifiable individual, or to the real measure of an observable parameter in the case of non-personal data <br/>
+    <small>      broader concepts:       <a href="#Data"><code>dpv:Data</code></a>
+; 
+    see <a href="#SyntheticData">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:UnverifiedData</strong>: Data that has not been verified in terms of accuracy, inconsistency, or quality <br/>
+    <small>      broader concepts:       <a href="#Data"><code>dpv:Data</code></a>
+; 
+    see <a href="#UnverifiedData">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:VerifiedData</strong>: Data that has been verified in terms of accuracy, consistency, or quality <br/>
+    <small>      broader concepts:       <a href="#Data"><code>dpv:Data</code></a>
+; 
+    see <a href="#VerifiedData">complete term definition</a></small>
+    </li>
+</ul>
 
+  <p>DPV provides the following relations or properties for associating information about data:</p>
+  <ul>  <li>
+    <strong>dpv:hasData</strong>: Indicates associated with Data (may or may not be personal) <br/>
+    <small>    see <a href="#hasData">complete term definition</a></small>
+    </li>
+  <li>
+    <strong>dpv:hasPersonalData</strong>: Indicates association with Personal Data <br/>
+    <small>    see <a href="#hasPersonalData">complete term definition</a></small>
+    </li>
+</ul>
+
+</section>
 <section id="vocab-technical_organisational_measures">
   <h2>Tech/Org Measures</h2>
   <figure>
@@ -1153,23 +1232,14 @@
     <p>To specify consent provided by delegation, such as in the case of a parent or guardian providing consent for/with a child, the [=isIndicatedBy=] relation can be used to associate the parent or guardian responsible for providing consent (or its affirmation). Since by default the consent is presumed to be provided by the individual, when such individuals are associated with their consent, i.e. through [=hasDataSubject=], the additional information provided by [=isIndicatedBy=] can be considered redundant and is often omitted.</p>
     <div class="note" title="Deprecated concepts">
         <p>The concepts/relations for consent added in DPV v0.1 and later have been <i>deprecated</i> or removed from the DPV in favour of the newer set of concepts based on advances in legislative requirements as well as standardisation efforts such as [[[ISO-27560]]]. The list of deprecated concepts is provided in <a href="#appendix-deprecated">Appendix</a> and a note on converting existing implementations to use newer concepts is provided in [[DPV-GUIDE-Consent]].</p>
-       <!--<p>Properties to be deprecated include: [=hasExpiry=], [=hasExpiryTime=], [=hasExpiryCondition=], [=hasProvisionMethod=], [=hasProvisionTime=], [=hasWithdrawalMethod=], [=hasWithdrawalTime=], [=hasWithdrawalBy=], [=hasProvisionBy=], [=hasProvisionByJustification=], [=hasWithdrawalByJustification=], [=hasConsentNotice=], [=isExplicit=].</p>-->
      </div>
 
     <section id="vocab-consent-types">
       <h4>Consent Types</h4>
-            <p>
-    </p>
-
-
     </section>
 
     <section id="vocab-consent-status">
       <h4>Consent Status</h4>
-            <p>
-    </p>
-
-
     </section>
 
     <section id="vocab-consent-relations">
@@ -1295,7 +1365,7 @@
 
 <section id="vocabulary">
 <h2>Vocabulary Index</h2>
-  <table id="AcademicResearch">
+    <table id="AcademicResearch">
   <tbody>
     <tr><td>Term</td><td><dfn>AcademicResearch</dfn></td></tr>
     <tr><td>IRI</td><td><a href="https://w3id.org/dpv#AcademicResearch">https://w3id.org/dpv#AcademicResearch</a></td></tr>
@@ -2348,6 +2418,7 @@
     <tr><td>Type</td><td><i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i></td></tr>
 <tr><td>Date Created</td><td><i>2022-11-02</i></td></tr><tr><td>Contributors</td><td><i>Harshvardhan J. Pandit</i></td></tr>  </tbody>
   </table>
+
 </section>
 
 

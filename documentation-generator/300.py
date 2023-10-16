@@ -142,6 +142,8 @@ class DATA(object):
 
 
 def get_concept_list(term):
+    if not term:
+        return []
     if not type(term) is list:
         term = [term]
     return sorted(
