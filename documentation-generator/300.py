@@ -20,7 +20,7 @@ logging.basicConfig(
     level=logging.DEBUG, format='%(levelname)s - %(funcName)s :: %(lineno)d - %(message)s')
 DEBUG = logging.debug
 
-from vocab_management import generate_author_affiliation, NAMESPACES
+from vocab_management import generate_author_affiliation, NAMESPACES, NS
 
 
 # What does HTML document require?
@@ -51,6 +51,8 @@ class DATA(object):
     # }
     data = {}
     modules = {}
+    concepts = {}
+    
 
     @staticmethod
     def get_X(param):
@@ -70,10 +72,6 @@ class DATA(object):
             # convert s,p,o into prefixed terms and literals
             term = s.n3(graph.namespace_manager)
             rel = p.n3(graph.namespace_manager)
-            if o.startswith('http'):
-                obj = o.n3(graph.namespace_manager)
-            else:
-                obj = str(o)
             # DEBUG(f"{term} {rel} {obj}")
 
             # if this is the first occurence, add to dict
@@ -87,14 +85,35 @@ class DATA(object):
             
             # add contents for p and o
             if p in term:
-                if term[p] is list:
+                if type(term[p]) is list:
                     term[p].append(o)
+                    term[rel].append(o)
                 else:
                     term[p] = [term[p], o]
+                    term[rel] = [term[rel], o]
             else:
                 term[p] = o
+                term[rel] = o
+            if o.startswith('http'):
+                obj = o.n3(graph.namespace_manager)
+                DATA.concepts[o] = {
+                    'iri': o,
+                    'prefixed': obj,
+                    'term': obj.split(':')[1]
+                }
+            else:
+                obj = str(o)
         DATA.data[vocab] = vocab_data
+        for concept in vocab_data.values():
+            DATA.concepts[concept['iri']] = concept
         return
+
+    @staticmethod
+    def hierarchical_classes(concepts):
+        # TODO: produce hierarchical view of classes
+        # to be used as nested lists in HTML
+        hierarchy = []
+        return hierarchy
 
     @staticmethod
     def load_module(filepath, module, vocab):
@@ -122,6 +141,14 @@ class DATA(object):
         return
 
 
+def get_concept_list(term):
+    if not type(term) is list:
+        term = [term]
+    return sorted(
+        [DATA.concepts[item] for item in term], 
+        key=lambda x: x['iri'])
+
+
 from jinja2 import FileSystemLoader, Environment
 template_loader = FileSystemLoader(searchpath=f'{TEMPLATE_PATH}')
 template_env = Environment(
@@ -136,6 +163,7 @@ JINJA2_FILTERS = {
     'generate_author_affiliation': generate_author_affiliation,
     'get_example_title': lambda x: x,
     'get_namespace_reference': lambda x: x,
+    'get_concept_list': get_concept_list,
 }
 template_env.filters.update(JINJA2_FILTERS)
 

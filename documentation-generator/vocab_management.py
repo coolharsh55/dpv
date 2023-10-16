@@ -47,6 +47,10 @@ for csvfile in NAMESPACE_CSV:
 			NAMESPACES[prefix] = namespace
 			# DEBUG(f'{variable} namespace with IRI {iri}')
 
+from rdflib import Graph
+NS = Graph()
+NS.ns = { k:v for k,v in NAMESPACES.items() }
+
 TOPCONCEPT = {
     'dpv': { },
     'dpv-pd': {

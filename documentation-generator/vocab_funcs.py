@@ -96,10 +96,11 @@ def construct_parent_property(item, data, namespace):
     term = namespace[data['Term']]
     # TODO: remove dpv:Relation as a concept
     parents = item.split(',')
+    triples.append((term, RDF.type, RDF.Property))
     for parent in parents:
         parent = parent.strip()
         if parent == 'dpv:Relation':
-            parent = NAMESPACES['rdf']['Property']
+            continue
         else:
             prefix, parentterm = parent.split(':')
             parent = NAMESPACES[prefix][parentterm]

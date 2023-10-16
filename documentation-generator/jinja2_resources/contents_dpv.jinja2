@@ -120,9 +120,14 @@
 {% endblock RESPEC %}
 <style type="text/css">
   /* Table styles, March 2016 */
-  table {border-collapse:collapse}
+  table {
+    width:  auto;
+    margin-bottom: 10px;
+    border-collapse:collapse
+
+  }
   th, td {
-    border:thin solid black;
+    border:thin solid gray;
     padding: 0.3em;
   }
   figure {
@@ -360,6 +365,25 @@
     <figcaption>Overview of Purpose taxonomy in DPV (click to open in new window)</figcaption>
   </figure>
   <p>DPV’s taxonomy of purposes is used to represent the reason or justification for processing of personal data. For this, purposes are organised within DPV based on how they relate to the processing of personal data in terms of several factors, such as: management functions related to information (e.g. records, account, finance), fulfilment of objectives (e.g. delivery of goods), providing goods and services (e.g. service provision), intended benefits (e.g. optimisations for service provider or consumer), and legal compliance.</p>
+
+    <h3>Classes</h3>
+      <ul>{% for term, data in modules['purposes']['classes'].items() | sort %}
+        <li>
+          <strong>{{term}}</strong>: {{data['skos:definition']}} <br/>
+          <small>{% if data['skos:broader'] %}
+            {% for parent in data['skos:broader']|get_concept_list%}
+            <a href="#{{parent['term']}}"><code>{{ parent['prefixed'] }}</code></a>{{ "," if not loop.last }}
+            {% endfor %} are its broader concepts; 
+          {% endif %}
+          <a href="#{{data['term']}}">see further term description</a></small>
+          </li>
+      {% endfor %}</ul>
+
+  <h3>Properties</h3>
+  {% for term, data in modules['purposes']['properties'].items() | sort %}
+    <p><strong>{{term}}</strong></p>
+  {% endfor %}
+
     {% if purpose_classes %}
   <section id="purpose-classes">
     {{ table_classes(purpose_classes) }}
@@ -728,6 +752,32 @@
   </section>
   {% endif %}
 </section>
+
+<section id="vocabulary">
+<h2>Vocabulary Index</h2>
+{% for concept in vocab.values()|sort(attribute='iri') %}
+  <table id="{{concept['term']}}">
+  <tbody>
+    <tr><td>Term</td><td><dfn>{{ concept['term'] }}</dfn></td></tr>
+    <tr><td>IRI</td><td><a href="{{ concept['iri'] }}">{{ concept['iri'] }}</a></td></tr>
+    <tr><td>Label</td><td><i>{{ concept['skos:prefLabel'] }}</i></td></tr>
+    <tr><td>Description</td><td><i>{{ concept['skos:definition'] }}</i></td></tr>
+    <tr><td>Type</td><td><i>{% for parent in concept['rdf:type']|get_concept_list %}<a href="{{parent['iri']}}">{{parent['prefixed']}}</a>{{", " if not loop.last }}{% endfor %}</i></td></tr>
+    {% if concept['skos:broader'] %}<tr><td>Narrower than</td><td><i>{% for parent in concept['skos:broader']|get_concept_list %}<a href="{{parent['iri']}}">{{parent['prefixed']}}</a>{{", " if not loop.last }}{% endfor %}</i></td></tr>{% endif %}
+    {% if concept['rdfs:subPropertyOf'] %}<tr><td>Narrower than</td><td><i>{% for parent in concept['rdfs:subPropertyOf']|get_concept_list %}<a href="{{parent['iri']}}">{{parent['prefixed']}}</a>{{", " if not loop.last }}{% endfor %}</i></td></tr>{% endif %}
+    {% if concept['dcam:domainIncludes'] %}<tr><td>Domain includes</td><td><i>{% for parent in concept['dcam:domainIncludes']|get_concept_list %}<a href="{{parent['iri']}}">{{parent['prefixed']}}</a>{{", " if not loop.last }}{% endfor %}</i></td></tr>{% endif %}
+    {% if concept['dcam:rangeIncludes'] %}<tr><td>Range includes</td><td><i>{% for parent in concept['dcam:rangeIncludes']|get_concept_list %}<a href="{{parent['iri']}}">{{parent['prefixed']}}</a>{{", " if not loop.last }}{% endfor %}</i></td></tr>{% endif %}
+    {% if concept['skos:note'] %}<tr><td>Usage Note</td><td><i>{{ concept['skos:note'] }}</i></td></tr>{% endif %}
+    {% if concept['dct:source'] %}<tr><td>Source</td><td><i>{{ concept['dct:source'] }}</i></td></tr>{% endif %}
+    {% if concept['dct:created'] %}<tr><td>Date Created</td><td><i>{{ concept['dct:created'] }}</i></td></tr>{% endif %}
+    {% if concept['dct:modified'] %}<tr><td>Date Modified</td><td><i>{{ concept['dct:modified'] }}</i></td></tr>{% endif %}
+    {% if concept['skos:related'] %}<tr><td>Related</td><td><i>{{ concept['skos:related'] }}</i></td></tr>{% endif %}
+    {% if concept['dct:contributor'] %}<tr><td>Contributors</td><td><i>{{ concept['dct:contributor'] }}</i></td></tr>{% endif %}
+  </tbody>
+  </table>
+{% endfor %}
+</section>
+
 {% endblock VOCAB %}
 
 {% block ACKNOWLEDGEMENTS %}
