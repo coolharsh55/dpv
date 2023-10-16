@@ -2,32 +2,56 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
-dpv:DataController a skos:Concept ;
-    rdfs:subClassOf dpv:LegalEntity .
+dpv:DataController a rdfs:Class,
+        skos:Concept ;
+    rdfs:subClassOf dpv:LegalEntity ;
+    skos:prefLabel "Data Controller"@en .
 
-dpv:DataSubject a skos:Concept ;
-    rdfs:subClassOf dpv:LegalEntity .
+dpv:DataSubject a rdfs:Class,
+        skos:Concept ;
+    rdfs:subClassOf dpv:LegalEntity ;
+    skos:prefLabel "Data Subject"@en .
 
-dpv:DataSubjectRight a skos:Concept ;
-    rdfs:subClassOf dpv:Right .
+dpv:DataSubjectRight a rdfs:Class,
+        skos:Concept ;
+    rdfs:subClassOf dpv:Right ;
+    skos:prefLabel "Data Subject Right"@en .
 
-dpv:LegalBasis a skos:Concept .
+dpv:LegalBasis a rdfs:Class,
+        skos:Concept ;
+    skos:prefLabel "Legal Basis"@en .
 
-dpv:PersonalData a skos:Concept ;
-    rdfs:subClassOf dpv:Data .
+dpv:PersonalData a rdfs:Class,
+        skos:Concept ;
+    rdfs:subClassOf dpv:Data ;
+    skos:prefLabel "Personal Data"@en .
 
-dpv:PersonalDataHandling a skos:Concept .
+dpv:PersonalDataHandling a rdfs:Class,
+        skos:Concept ;
+    skos:prefLabel "Personal Data Handling"@en .
 
-dpv:Processing a skos:Concept .
+dpv:Processing a rdfs:Class,
+        skos:Concept ;
+    skos:prefLabel "Processing"@en .
 
-dpv:Purpose a skos:Concept .
+dpv:Purpose a rdfs:Class,
+        skos:Concept ;
+    skos:prefLabel "Purpose"@en .
 
-dpv:Recipient a skos:Concept ;
-    rdfs:subClassOf dpv:LegalEntity .
+dpv:Recipient a rdfs:Class,
+        skos:Concept ;
+    rdfs:subClassOf dpv:LegalEntity ;
+    skos:prefLabel "Recipient"@en .
 
-dpv:Risk a skos:Concept .
+dpv:Right a rdfs:Class,
+        skos:Concept ;
+    skos:prefLabel "Right"@en .
 
-dpv:TechnicalOrganisationalMeasure a skos:Concept .
+dpv:Risk a rdfs:Class,
+        skos:Concept ;
+    skos:prefLabel "Risk"@en .
 
-dpv:Right a skos:Concept .
+dpv:TechnicalOrganisationalMeasure a rdfs:Class,
+        skos:Concept ;
+    skos:prefLabel "Technical and Organisational Measure"@en .
 

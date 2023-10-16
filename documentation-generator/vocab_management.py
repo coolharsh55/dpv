@@ -47,6 +47,13 @@ for csvfile in NAMESPACE_CSV:
 			NAMESPACES[prefix] = namespace
 			DEBUG(f'{variable} namespace with IRI {iri}')
 
+TOPCONCEPT = {
+    'dpv': { },
+    'dpv-pd': {
+        'core': 'dpv:PersonalData',
+        },
+}
+
 ###################### contributors
 
 '''A Jinja2 filter that takes author names and returns their affiliations'''

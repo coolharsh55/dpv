@@ -60,24 +60,27 @@ CSVFILES = {
         'core': {
             'classes': f'{IMPORT_CSV_PATH}/BaseOntology.csv',
             # 'properties': f'{IMPORT_CSV_PATH}/BaseOntology_properties.csv',
-            }
         },
+    },
     'dpv-pd': {
         'core': {
-            'classes': f'{IMPORT_CSV_PATH}/dpv-pd.csv',
-            }
+            'taxonomy': f'{IMPORT_CSV_PATH}/pd-core.csv',
         },
+        'extended': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/pd-extended.csv',
+        },
+    },
 }
 
 EXPORTPATH = {
     'dpv': {
         'main': '../dpv',
         'modules': '../dpv/modules',
-        },
+    },
     'dpv-pd': {
         'main': '../pd',
         'modules': '../pd/modules',
-    }
+    },
 }
 
 PROPOSED = {}
@@ -114,7 +117,7 @@ def serialize_graph(triples, filepath):
     for prefix, namespace in NAMESPACES.items():
         graph.namespace_manager.bind(prefix, namespace)
     for triple in triples:
-        DEBUG(triple)
+        # DEBUG(triple)
         graph.add(triple)
     for ext, format in RDF_SERIALIZATIONS.items():
         graph.serialize(f'{filepath}.{ext}', format=format)
@@ -144,6 +147,9 @@ for vocab, vocab_data in CSVFILES.items():
                 # filter proposed terms
                 if row['Status'] == 'proposed':
                     PROPOSED[vocab][module].append(row['Term'])
+                    continue
+                # skip empty rows, annotations, deprecated concepts
+                if row['Status'] not in VOCAB_TERM_ACCEPT:
                     continue
                 # create a dict to hold the row data
                 for index, item in enumerate(row.values()):

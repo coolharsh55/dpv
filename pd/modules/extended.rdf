@@ -3,12 +3,26 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
 >
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#EducationQualification">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Education Qualification</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Education"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#CreditCardNumber">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
     <skos:prefLabel xml:lang="en">Credit Card Number</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#PaymentCardNumber"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#CreditScore">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Credit Score</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#CreditWorthiness"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#LinkClicked">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -31,6 +45,13 @@
     <skos:prefLabel xml:lang="en">Credit Worthiness</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Credit"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#MACAddress">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">MAC Address</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#DeviceBased"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#FinancialAccount">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
@@ -38,12 +59,40 @@
     <skos:prefLabel xml:lang="en">Financial Account</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Financial"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Intention">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Intention</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Preference"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#MaritalStatus">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Marital Status</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#PublicLife"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Religion">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#SpecialCategoryPersonalData"/>
     <skos:prefLabel xml:lang="en">Religion</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#PublicLife"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#PhysicalHealth">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Physical Health</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Health"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#VoiceCommunicationRecording">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Voice Communication Recording</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Communication"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#PublicLife">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -66,6 +115,41 @@
     <skos:prefLabel xml:lang="en">Individual Health History</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#HealthHistory"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#SocialMedia">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Social Media</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Communication"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Height">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Height</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#PhysicalCharacteristic"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Interest">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Interest</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Preference"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#IPAddress">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">IP Address</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#DeviceBased"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#PINCode">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">PIN Code</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Authenticating"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#UserAgent">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
@@ -81,11 +165,54 @@
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Identifying"/>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Vehicle"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Household">
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Parent">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Household</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Parent</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#FamilyStructure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Username">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Username</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Identifying"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Disability">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Disability</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#MedicalHealth"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Attitude">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Attitude</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Behavioral"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#TravelHistory">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Travel History</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Location"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Sale">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Sale</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Transactional"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#CriminalOffense">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Criminal Offense</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Criminal"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Identifying">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -129,6 +256,13 @@
     <skos:prefLabel xml:lang="en">Voice Mail</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Communication"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Character">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Character</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#PublicLife"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#BrowserFingerprint">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
@@ -143,6 +277,20 @@
     <skos:prefLabel xml:lang="en">Interaction</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#PublicLife"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Opinion">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Opinion</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Preference"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Like">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Like</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Interest"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Ownership">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
@@ -150,12 +298,26 @@
     <skos:prefLabel xml:lang="en">Ownership</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Financial"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Picture">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Picture</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Identifying"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#BankAccount">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
     <skos:prefLabel xml:lang="en">Bank Account</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#FinancialAccount"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Reference">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Reference</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Professional"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#EmailAddressPersonal">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -170,13 +332,6 @@
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
     <skos:prefLabel xml:lang="en">Thought</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#KnowledgeBelief"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Intention">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Intention</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Preference"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#CriminalPardon">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -199,6 +354,20 @@
     <skos:prefLabel xml:lang="en">Criminal Charge</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Criminal"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Demeanor">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Demeanor</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Behavioral"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#ReligiousBelief">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#SpecialCategoryPersonalData"/>
+    <skos:prefLabel xml:lang="en">Religious Belief</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#KnowledgeBelief"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#BrowserHistory">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
@@ -212,6 +381,27 @@
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
     <skos:prefLabel xml:lang="en">Favorite Music</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Favorite"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Fetish">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Fetish</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Sexual"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#PoliticalOpinion">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#SpecialCategoryPersonalData"/>
+    <skos:prefLabel xml:lang="en">Political Opinion</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#PublicLife"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#SkinTone">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Skin Tone</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#PhysicalCharacteristic"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#ProfessionalEvaluation">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -227,6 +417,13 @@
     <skos:prefLabel xml:lang="en">Knowledge and Beliefs</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Internal"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#EducationExperience">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Education Experience</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Education"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Prescription">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
@@ -241,19 +438,19 @@
     <skos:prefLabel xml:lang="en">TV Viewing Behavior</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#ServiceConsumptionBehavior"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#TravelHistory">
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#VehicalLicenseNumber">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Travel History</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Location"/>
+    <skos:prefLabel xml:lang="en">Vehicle License Number</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#VehicleLicense"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Communication">
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#CallLog">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Communication</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Social"/>
+    <skos:prefLabel xml:lang="en">Call Log</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Behavioral"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#BloodType">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -262,12 +459,12 @@
     <skos:prefLabel xml:lang="en">Blood Type</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#MedicalHealth"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#LoanRecord">
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Communication">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Loan Record</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Transactional"/>
+    <skos:prefLabel xml:lang="en">Communication</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Social"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#GPSCoordinate">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -275,6 +472,13 @@
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
     <skos:prefLabel xml:lang="en">GPS Coordinate</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Location"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#LoanRecord">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Loan Record</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Transactional"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Authenticating">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -290,12 +494,33 @@
     <skos:prefLabel xml:lang="en">Proclivitie</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Sexual"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Transactional">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Transactional</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Financial"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#FavoriteFood">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Favorite Food</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Favorite"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#GeneralReputation">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
     <skos:prefLabel xml:lang="en">General Reputation</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#PublicLife"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#DNACode">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">DNA Code</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#MedicalHealth"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#SocialNetwork">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -311,12 +536,12 @@
     <skos:prefLabel xml:lang="en">Trade Union Membership</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#GroupMembership"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#MaritalStatus">
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Identifier">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Marital Status</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#PublicLife"/>
+    <skos:prefLabel xml:lang="en">Identifier</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Tracking"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#BirthDate">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -325,6 +550,13 @@
     <skos:prefLabel xml:lang="en">Birth Date</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Age"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Passport">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Passport</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#OfficialID"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Retina">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
@@ -332,12 +564,26 @@
     <skos:prefLabel xml:lang="en">Retina</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Biometric"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Passport">
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Vehicle">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Passport</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#OfficialID"/>
+    <skos:prefLabel xml:lang="en">Vehicle</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#External"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#HealthRecord">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Health Record</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#MedicalHealth"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#WorkEnvironment">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Work Environment</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Professional"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#AccountIdentifier">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -360,32 +606,12 @@
     <skos:prefLabel xml:lang="en">Facial Print</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Biometric"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Financial">
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Genetic">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Financial</skos:prefLabel>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Interest">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Interest</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Preference"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Height">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Height</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#PhysicalCharacteristic"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Parent">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Parent</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#FamilyStructure"/>
+    <skos:prefLabel xml:lang="en">Genetic</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Health"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Sibling">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -394,6 +620,13 @@
     <skos:prefLabel xml:lang="en">Sibling</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#FamilyStructure"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#CommunicationsMetadata">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Communications Metadata</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#PublicLife"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#CarOwned">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
@@ -401,11 +634,46 @@
     <skos:prefLabel xml:lang="en">Car Owned</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Ownership"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Sale">
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#DrugTestResult">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Sale</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Drug Test Result</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#MedicalHealth"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#PhysicalCharacteristic">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Physical Characteristic</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#External"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Family">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Family</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Social"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#OfficialID">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Official ID</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Identifying"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#FamilyStructure">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Family Structure</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Family"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Purchase">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Purchase</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Transactional"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#PaymentCardExpiry">
@@ -422,12 +690,26 @@
     <skos:prefLabel xml:lang="en">Salary</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Professional"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#PersonalDocuments">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Personal Documents</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#External"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#FavoriteColor">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
     <skos:prefLabel xml:lang="en">Favorite Color</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Favorite"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Health">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Health</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#MedicalHealth"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Biometric">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -436,26 +718,19 @@
     <skos:prefLabel xml:lang="en">Biometric</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Identifying"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#VehicalLicenseNumber">
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Criminal">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Vehicle License Number</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#VehicleLicense"/>
+    <skos:prefLabel xml:lang="en">Criminal</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Social"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Picture">
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#SocialStatus">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Picture</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Identifying"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Job">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Job</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Professional"/>
+    <skos:prefLabel xml:lang="en">Social Status</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#PublicLife"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#BirthPlace">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -464,6 +739,20 @@
     <skos:prefLabel xml:lang="en">Birth Place</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Location"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Job">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Job</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Professional"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#FinancialStatus">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Financial Status</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Financial"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Credit">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
@@ -471,12 +760,47 @@
     <skos:prefLabel xml:lang="en">Credit</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Transactional"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#CriminalConviction">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Criminal Conviction</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Criminal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#DeviceBased">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Device Based</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Tracking"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#ApartmentOwned">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
     <skos:prefLabel xml:lang="en">Apartment Owned</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#HouseOwned"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Preference">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Preference</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Internal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Country">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Country</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Location"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#DisciplinaryAction">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Disciplinary Action</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Professional"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#DeviceApplications">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -492,12 +816,33 @@
     <skos:prefLabel xml:lang="en">Group Membership</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#SocialNetwork"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Gender">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Gender</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#PhysicalCharacteristic"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#PersonalPossession">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
     <skos:prefLabel xml:lang="en">Personal Possession</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Ownership"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Fingerprint">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Fingerprint</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Biometric"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#WorkHistory">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Work History</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Professional"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Tattoo">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -506,13 +851,6 @@
     <skos:prefLabel xml:lang="en">Tattoo</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#PhysicalCharacteristic"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#PersonalDocuments">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Personal Documents</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#External"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Nationality">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
@@ -520,19 +858,26 @@
     <skos:prefLabel xml:lang="en">Nationality</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#External"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#PhysicalHealth">
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#UID">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Physical Health</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Health"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Username">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Username</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">UID</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Identifying"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Connection">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Connection</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#SocialNetwork"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#HairColor">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Hair Color</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#PhysicalCharacteristic"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#SexualHistory">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -541,26 +886,12 @@
     <skos:prefLabel xml:lang="en">Sexual History</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Sexual"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Identifier">
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Relationship">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Identifier</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Tracking"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Vehicle">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Vehicle</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#External"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#DrugTestResult">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Drug Test Result</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#MedicalHealth"/>
+    <skos:prefLabel xml:lang="en">Relationship</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Family"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#DeviceSoftware">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -575,20 +906,6 @@
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
     <skos:prefLabel xml:lang="en">House Owned</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Ownership"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#WorkEnvironment">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Work Environment</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Professional"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Demeanor">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Demeanor</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Behavioral"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#CreditCapacity">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -632,19 +949,41 @@
     <skos:prefLabel xml:lang="en">Income</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Transactional"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#OfficialID">
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#PhysicalTrait">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Official ID</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Identifying"/>
+    <skos:prefLabel xml:lang="en">Physical Trait</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Demographic"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Purchase">
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Transaction">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Purchase</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Transaction</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Transactional"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#RoomNumber">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Room Number</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Location"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#PaymentCardNumber">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Payment Card Number</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#PaymentCard"/>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#AccountIdentifier"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#AuthenticationHistory">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Authentication History</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Behavioral"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#SecretText">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -653,12 +992,12 @@
     <skos:prefLabel xml:lang="en">Secret Text</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Authenticating"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#PoliticalOpinion">
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Education">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#SpecialCategoryPersonalData"/>
-    <skos:prefLabel xml:lang="en">Political Opinion</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#PublicLife"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Education</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Professional"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#EmploymentHistory">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -667,44 +1006,19 @@
     <skos:prefLabel xml:lang="en">Employment History</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Professional"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Gender">
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Contact">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Gender</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#PhysicalCharacteristic"/>
+    <skos:prefLabel xml:lang="en">Contact</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Tracking"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#External">
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Acquantaince">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">External</skos:prefLabel>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Opinion">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Opinion</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Preference"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Criminal">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Criminal</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Social"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Tracking">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Tracking</skos:prefLabel>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Historical">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Historical</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Acquantaince</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#SocialNetwork"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#VehicalLicenseRegistration">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -720,19 +1034,20 @@
     <skos:prefLabel xml:lang="en">Credit Standing</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Credit"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Acquantaince">
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Location">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Acquantaince</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#SocialNetwork"/>
+    <skos:prefLabel xml:lang="en">Location</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Tracking"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Country">
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#VehicleUsage">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Country</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Location"/>
+    <skos:prefLabel xml:lang="en">Vehicle Usage</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Vehicle"/>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Behavioral"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#School">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -755,26 +1070,12 @@
     <skos:prefLabel xml:lang="en">Ethnicity</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#External"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Fingerprint">
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#AgeExact">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Fingerprint</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Biometric"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#SkinTone">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Skin Tone</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#PhysicalCharacteristic"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#WorkHistory">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Work History</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Professional"/>
+    <skos:prefLabel xml:lang="en">Age Exact</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#AgeRange"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Age">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -790,6 +1091,13 @@
     <skos:prefLabel xml:lang="en">Financial Account Number</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#AccountIdentifier"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Marriage">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Marriage</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#FamilyStructure"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Geographic">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
@@ -797,12 +1105,12 @@
     <skos:prefLabel xml:lang="en">Geographic</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Demographic"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#UID">
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#MedicalHealth">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">UID</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Identifying"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#SpecialCategoryPersonalData"/>
+    <skos:prefLabel xml:lang="en">Medical Health</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#External"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#PhysicalAddress">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -811,25 +1119,33 @@
     <skos:prefLabel xml:lang="en">Physical Address</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Contact"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Profile">
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Tax">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Profile</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">Tax</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Transactional"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Family">
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#MentalHealth">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Family</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Social"/>
+    <skos:prefLabel xml:lang="en">Mental Health</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Health"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#VoiceCommunicationRecording">
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#PubliclyAvailableSocialMedia">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Voice Communication Recording</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Communication"/>
+    <skos:prefLabel xml:lang="en">Publicly Available Social Media</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#SocialMedia"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#HealthHistory">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Health History</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#MedicalHealth"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#PurchasesAndSpendingHabit">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -838,19 +1154,12 @@
     <skos:prefLabel xml:lang="en">Purchases and Spending Habit</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Transactional"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#CreditScore">
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#FamilyHealthHistory">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Credit Score</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#CreditWorthiness"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#HairColor">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Hair Color</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#PhysicalCharacteristic"/>
+    <skos:prefLabel xml:lang="en">Family Health History</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#HealthHistory"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#ProfessionalInterview">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -859,19 +1168,12 @@
     <skos:prefLabel xml:lang="en">Professional Interview</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Professional"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#AgeExact">
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#ServiceConsumptionBehavior">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Age Exact</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#AgeRange"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#FamilyHealthHistory">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Family Health History</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#HealthHistory"/>
+    <skos:prefLabel xml:lang="en">Service Consumption Behavior</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Behavioral"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#PoliticalAffiliation">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -893,21 +1195,6 @@
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
     <skos:prefLabel xml:lang="en">Divorce</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#FamilyStructure"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#PaymentCardNumber">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Payment Card Number</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#PaymentCard"/>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#AccountIdentifier"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Disability">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Disability</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#MedicalHealth"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Sexual">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -937,6 +1224,20 @@
     <skos:prefLabel xml:lang="en">Sexual Preference</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Sexual"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#EthnicOrigin">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#SpecialCategoryPersonalData"/>
+    <skos:prefLabel xml:lang="en">Ethnic Origin</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Ethnicity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#EmailAddress">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Email Address</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Contact"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Dialect">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
@@ -944,40 +1245,40 @@
     <skos:prefLabel xml:lang="en">Dialect</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Language"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#FavoriteFood">
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#DigitalFingerprint">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Favorite Food</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Favorite"/>
+    <skos:prefLabel xml:lang="en">Digital Fingerprint</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Tracking"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#HealthRecord">
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#IncomeBracket">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Health Record</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#MedicalHealth"/>
+    <skos:prefLabel xml:lang="en">Income Bracket</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Demographic"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#DNACode">
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Reliability">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">DNA Code</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#MedicalHealth"/>
+    <skos:prefLabel xml:lang="en">Reliability</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Behavioral"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Marriage">
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#LifeHistory">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Marriage</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#FamilyStructure"/>
+    <skos:prefLabel xml:lang="en">Life History</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Historical"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#HealthHistory">
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#PrivacyPreference">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Health History</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#MedicalHealth"/>
+    <skos:prefLabel xml:lang="en">Privacy Preference</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Preference"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Personality">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -986,39 +1287,12 @@
     <skos:prefLabel xml:lang="en">Personality</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Behavioral"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Like">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Like</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Interest"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#IPAddress">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">IP Address</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#DeviceBased"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#PubliclyAvailableSocialMedia">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Publicly Available Social Media</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#SocialMedia"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Name">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
     <skos:prefLabel xml:lang="en">Name</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Identifying"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Internal">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Internal</skos:prefLabel>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#DeviceOperatingSystem">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -1034,33 +1308,12 @@
     <skos:prefLabel xml:lang="en">Friend</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#SocialNetwork"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#MACAddress">
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Favorite">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">MAC Address</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#DeviceBased"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Contact">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Contact</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Tracking"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#CommunicationsMetadata">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Communications Metadata</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#PublicLife"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#SocialStatus">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Social Status</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#PublicLife"/>
+    <skos:prefLabel xml:lang="en">Favorite</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Preference"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Accent">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -1069,12 +1322,12 @@
     <skos:prefLabel xml:lang="en">Accent</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Language"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#ReligiousBelief">
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#EmailAddressWork">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#SpecialCategoryPersonalData"/>
-    <skos:prefLabel xml:lang="en">Religious Belief</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#KnowledgeBelief"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Email Address Work</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#EmailAddress"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Race">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -1083,68 +1336,12 @@
     <skos:prefLabel xml:lang="en">Race</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Ethnicity"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Transaction">
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#AgeRange">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Transaction</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Transactional"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#EmailAddress">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Email Address</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Contact"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#PhysicalTrait">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Physical Trait</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Demographic"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#MedicalHealth">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#SpecialCategoryPersonalData"/>
-    <skos:prefLabel xml:lang="en">Medical Health</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#External"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#CriminalConviction">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Criminal Conviction</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Criminal"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#MentalHealth">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Mental Health</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Health"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Relationship">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Relationship</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Family"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#DigitalFingerprint">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Digital Fingerprint</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Tracking"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#LifeHistory">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Life History</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Historical"/>
+    <skos:prefLabel xml:lang="en">Age Range</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Age"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#PaymentCard">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -1160,55 +1357,12 @@
     <skos:prefLabel xml:lang="en">Association</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#SocialNetwork"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#PrivacyPreference">
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Demographic">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Privacy Preference</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Preference"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Preference">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Preference</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Internal"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#VehicleUsage">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Vehicle Usage</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Vehicle"/>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Behavioral"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#AgeRange">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Age Range</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Age"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Reference">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Reference</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Professional"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Favorite">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Favorite</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Preference"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#EducationExperience">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Education Experience</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Education"/>
+    <skos:prefLabel xml:lang="en">Demographic</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#External"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#CurrentEmployment">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -1217,96 +1371,6 @@
     <skos:prefLabel xml:lang="en">Current Employment</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#EmploymentHistory"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Offspring">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Offspring</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#FamilyStructure"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#EthnicOrigin">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#SpecialCategoryPersonalData"/>
-    <skos:prefLabel xml:lang="en">Ethnic Origin</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Ethnicity"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Reliability">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Reliability</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Behavioral"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#CriminalOffense">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Criminal Offense</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Criminal"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#AuthenticationHistory">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Authentication History</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Behavioral"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#ServiceConsumptionBehavior">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Service Consumption Behavior</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Behavioral"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Transactional">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Transactional</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Financial"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#EmailAddressWork">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Email Address Work</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#EmailAddress"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Demographic">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Demographic</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#External"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Social">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Social</skos:prefLabel>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#CallLog">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Call Log</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Behavioral"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#IncomeBracket">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Income Bracket</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Demographic"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#FinancialStatus">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Financial Status</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Financial"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Language">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
@@ -1314,12 +1378,12 @@
     <skos:prefLabel xml:lang="en">Language</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#External"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#DisciplinaryAction">
+  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Offspring">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Disciplinary Action</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Professional"/>
+    <skos:prefLabel xml:lang="en">Offspring</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#FamilyStructure"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#PerformanceAtWork">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -1328,117 +1392,5 @@
     <skos:prefLabel xml:lang="en">Performance at Work</skos:prefLabel>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Behavioral"/>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Professional"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#DeviceBased">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Device Based</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Tracking"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Tax">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Tax</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Transactional"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Connection">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Connection</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#SocialNetwork"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#EducationQualification">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Education Qualification</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Education"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#FamilyStructure">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Family Structure</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Family"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#SocialMedia">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Social Media</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Communication"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#PINCode">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">PIN Code</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Authenticating"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Character">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Character</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#PublicLife"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Fetish">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Fetish</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Sexual"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Genetic">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Genetic</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Health"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Health">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Health</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#MedicalHealth"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#PhysicalCharacteristic">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Physical Characteristic</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#External"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#RoomNumber">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Room Number</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Location"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Education">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Education</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Professional"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Location">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Location</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Tracking"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/dpv-pd#Attitude">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Attitude</skos:prefLabel>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-pd#Behavioral"/>
   </rdf:Description>
 </rdf:RDF>

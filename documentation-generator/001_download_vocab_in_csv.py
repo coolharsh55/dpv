@@ -27,7 +27,8 @@ DPV_FILES = (
         (
             'PersonalData', 
             'PersonalData_properties', 
-            'dpv-pd',
+            'pd-core',
+            'pd-extended',
             )),
     ('purpose_processing', '1ePg6BU2Zp9fiSDuEnKuVi6dIRrFLEVdatbVxjHRk-8s',
        (
