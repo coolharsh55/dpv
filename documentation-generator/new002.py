@@ -61,6 +61,14 @@ CSVFILES = {
             'classes': f'{IMPORT_CSV_PATH}/BaseOntology.csv',
             'properties': f'{IMPORT_CSV_PATH}/BaseOntology_properties.csv',
         },
+        'personal_data': {
+            'classes': f'{IMPORT_CSV_PATH}/PersonalData.csv',
+            'properties': f'{IMPORT_CSV_PATH}/PersonalData_properties.csv',
+        },
+        'purposes': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/Purpose.csv',
+            'properties': f'{IMPORT_CSV_PATH}/Purpose_properties.csv',
+        },
     },
     'dpv-pd': {
         'core': {

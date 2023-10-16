@@ -4,7 +4,192 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dpv:AcademicResearch a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal"@en ;
+    dct:created "2019-04-05"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:ResearchAndDevelopment ;
+    skos:definition "Purposes associated with conducting or assisting with research conducted in an academic context e.g. within universities"@en ;
+    skos:prefLabel "Academic Research"@en ;
+    skos:related "svpu:Education"@en .
+
+dpv:AccountManagement a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Beatriz Esteves"@en ;
+    dct:created "2021-09-08"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Account Management refers to purposes associated with account management, such as to create, provide, maintain, and manage accounts"@en ;
+    skos:prefLabel "Account Management"@en .
+
+dpv:Advertising a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Beatriz Esteves"@en ;
+    dct:created "2020-11-04"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:Marketing ;
+    skos:definition "Purposes associated with conducting advertising i.e. process or artefact used to call attention to a product, service, etc. through announcements, notices, or other forms of communication"@en ;
+    skos:note "Advertising is a subset of Marketing. Advertising by itself does not indicate 'personalisation' i.e. personalised ads."@en ;
+    skos:prefLabel "Advertising"@en .
+
+dpv:AnonymisedData a rdfs:Class,
+        skos:Concept ;
+    dct:contributor "Piero Bonatti"@en ;
+    dct:created "2022-01-19"^^xsd:date ;
+    rdfs:subClassOf dpv:NonPersonalData ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Personal Data that has been (fully and completely) anonymised so that it is no longer considered Personal Data"@en ;
+    skos:note "It is advised to carefully consider indicating data is fully or completely anonymised by determining whether the data by itself or in combination with other data can identify a person. Failing this condition, the data should be denoted as PseudonymisedData. To indicate data is anonymised only for a specified entity (e.g. within an organisation), the concept ContextuallyAnonymisedData (as subclass of PseudonymisedData) should be used instead of AnonymisedData."@en ;
+    skos:prefLabel "Anonymised Data"@en .
+
+dpv:AntiTerrorismOperations a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-04-20"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:EnforceSecurity ;
+    skos:definition "Purposes associated with activities that detect, prevent, mitigate, or perform other activities for anti-terrorism"@en ;
+    skos:prefLabel "Anti-Terrorism Operations"@en .
+
+dpv:CollectedPersonalData a rdfs:Class,
+        skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-03-30"^^xsd:date ;
+    rdfs:subClassOf dpv:PersonalData ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Personal Data that has been collected from another source such as the Data Subject"@en ;
+    skos:note "To indicate the source of data, use the DataSource concept with the hasDataSource relation"@en ;
+    skos:prefLabel "Collected Personal Data"@en .
+
+dpv:CommercialResearch a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal"@en ;
+    dct:created "2019-04-05"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:ResearchAndDevelopment ;
+    skos:definition "Purposes associated with conducting research in a commercial setting or with intention to commercialise e.g. in a company or sponsored by a company"@en ;
+    skos:prefLabel "Commercial Research"@en ;
+    skos:related "svpu:Develop"@en .
+
+dpv:CommunicationForCustomerCare a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Beatriz Esteves"@en ;
+    dct:created "2020-11-04"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:CommunicationManagement,
+        dpv:CustomerCare ;
+    skos:definition "Customer Care Communication refers to purposes associated with communicating with customers for assisting them, resolving issues, ensuring satisfaction, etc. in relation to services provided"@en ;
+    skos:prefLabel "Communication for Customer Care"@en .
+
+dpv:CommunicationManagement a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Georg P Krog, Paul Ryan, David Hickey, Harshvardhan J. Pandit"@en ;
+    dct:created "2021-09-01"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Communication Management refers to purposes associated with providing or managing communication activities e.g. to send an email for notifying some information"@en ;
+    skos:note "This purpose by itself does not sufficiently and clearly indicate what the communication is about. As such, it is recommended to combine it with another purpose to indicate the application. For example, Communication of Payment."@en ;
+    skos:prefLabel "Communication Management"@en .
+
+dpv:CounterMoneyLaundering a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-04-20"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:FraudPreventionAndDetection ;
+    skos:definition "Purposes associated with detection, prevention, and mitigation of mitigate money laundering"@en ;
+    skos:prefLabel "Counter Money Laundering"@en .
+
+dpv:CreditChecking a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-04-20"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:CustomerSolvencyMonitoring ;
+    skos:definition "Purposes associated with monitoring, performing, or assessing credit worthiness or solvency"@en ;
+    skos:prefLabel "Credit Checking"@en .
+
+dpv:CustomerCare a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal"@en ;
+    dct:created "2019-04-05"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:CustomerManagement ;
+    skos:definition "Customer Care refers to purposes associated with purposes for providing assistance, resolving issues, ensuring satisfaction, etc. in relation to services provided"@en ;
+    skos:prefLabel "Customer Care"@en ;
+    skos:related "svpu:Feedback"@en .
+
+dpv:CustomerClaimsManagement a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Beatriz"@en ;
+    dct:created "2021-09-08"^^xsd:date ;
+    dct:source "(Belgian DPA ROPA Template, https://www.privacycommission.be/nl/model-voor-een-register-van-de-verwerkingsactiviteiten)"@en ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:CustomerManagement ;
+    skos:definition "Customer Claims Management refers to purposes associated with managing claims, including repayment of monies owed"@en ;
+    skos:prefLabel "Customer Claims Management"@en .
+
+dpv:CustomerManagement a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Beatriz"@en ;
+    dct:created "2021-09-08"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Customer Management refers to purposes associated with managing activities related with past, current, and future customers"@en ;
+    skos:prefLabel "Customer Management"@en .
+
+dpv:CustomerOrderManagement a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Beatriz"@en ;
+    dct:created "2021-09-08"^^xsd:date ;
+    dct:source "(Belgian DPA ROPA Template, https://www.privacycommission.be/nl/model-voor-een-register-van-de-verwerkingsactiviteiten)"@en ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:CustomerManagement ;
+    skos:definition "Customer Order Management refers to purposes associated with managing customer orders i.e. processing of an order related to customer's purchase of good or services"@en ;
+    skos:prefLabel "Customer Order Management"@en .
+
+dpv:CustomerRelationshipManagement a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Beatriz"@en ;
+    dct:created "2021-09-08"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:CustomerManagement ;
+    skos:definition "Customer Relationship Management refers to purposes associated with managing and analysing interactions with past, current, and potential customers"@en ;
+    skos:prefLabel "Customer Relationship Management"@en .
+
+dpv:CustomerSolvencyMonitoring a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Beatriz"@en ;
+    dct:created "2021-09-08"^^xsd:date ;
+    dct:source "(Belgian DPA ROPA Template, https://www.privacycommission.be/nl/model-voor-een-register-van-de-verwerkingsactiviteiten)"@en ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:CustomerManagement ;
+    skos:definition "Customer Solvency Monitoring refers to purposes associated with monitor solvency of customers for financial diligence"@en ;
+    skos:prefLabel "Customer Solvency Monitoring"@en .
+
+dpv:Data a rdfs:Class,
+        skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-01-19"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "A broad concept representing  'data' or 'information'"@en ;
+    skos:prefLabel "Data"@en .
 
 dpv:DataController a rdfs:Class,
         skos:Concept ;
@@ -13,6 +198,7 @@ dpv:DataController a rdfs:Class,
     dct:modified "2020-11-04"^^xsd:date ;
     dct:source "(GDPR Art.4-7g,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_7/oj)"@en ;
     rdfs:subClassOf dpv:LegalEntity ;
+    sw:term_status "accepted"@en ;
     skos:definition "The individual or organisation that decides (or controls) the purpose(s) of processing personal data."@en ;
     skos:note "The terms 'Controller' is usually the more common form of indicating a Data Controller. In ISO/IEC the term 'PII Controller' is used."@en ;
     skos:prefLabel "Data Controller"@en .
@@ -24,6 +210,7 @@ dpv:DataSubject a rdfs:Class,
     dct:modified "2020-11-04"^^xsd:date ;
     dct:source "(GDPR Art.4-1g,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_1/oj)"@en ;
     rdfs:subClassOf dpv:LegalEntity ;
+    sw:term_status "accepted"@en ;
     skos:definition "The individual (or category of individuals) whose personal data is being processed"@en ;
     skos:note "The term 'data subject' is specific to the GDPR, but is functionally equivalent to the term 'individual' and the ISO/IEC term 'PII Principle'."@en ;
     skos:prefLabel "Data Subject"@en .
@@ -33,25 +220,392 @@ dpv:DataSubjectRight a rdfs:Class,
     dct:contributor "Beatriz Esteves, Georg P Krog, Harshvardhan Pandit"@en ;
     dct:created "2020-11-18"^^xsd:date ;
     rdfs:subClassOf dpv:Right ;
+    sw:term_status "accepted"@en ;
     skos:definition "The rights applicable or provided to a Data Subject"@en ;
     skos:note "Based on use of definitions, the notion of 'Data Subject Right' can be equivalent to 'Individual Right' or 'Right of a Person'"@en ;
     skos:prefLabel "Data Subject Right"@en .
+
+dpv:DeliveryOfGoods a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal"@en ;
+    dct:created "2019-04-05"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:RequestedServiceProvision ;
+    skos:definition "Purposes associated with delivering goods and services requested or asked by consumer"@en ;
+    skos:prefLabel "Delivery of Goods"@en ;
+    skos:related "svpu:Delivery"@en .
+
+dpv:DerivedPersonalData a rdfs:Class,
+        skos:Concept ;
+    dct:contributor "Elmar Kiesling; Harshvardhan J. Pandit, Fajar Ekaputra"@en ;
+    dct:created "2019-05-07"^^xsd:date ;
+    dct:modified "2022-01-19"^^xsd:date ;
+    dct:source "(DPVCG, https://www.w3.org/community/dpvcg/)"@en ;
+    rdfs:subClassOf dpv:PersonalData ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Personal Data that is obtained or derived from other data"@en ;
+    skos:note "Derived Data is data that is obtained through processing of existing data, e.g. deriving first name from full name. To indicate data that is derived but which was not present or evident within the source data, InferredPersonalData should be used."@en ;
+    skos:prefLabel "Derived Personal Data"@en ;
+    skos:related "svd:Derived"@en .
+
+dpv:DirectMarketing a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Beatriz Esteves"@en ;
+    dct:created "2020-11-04"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:Marketing ;
+    skos:definition "Purposes associated with conducting direct marketing i.e. marketing communicated directly to the individual"@en ;
+    skos:prefLabel "Direct Marketing"@en .
+
+dpv:DisputeManagement a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Beatriz Esteves"@en ;
+    dct:created "2021-09-08"^^xsd:date ;
+    dct:source "(Belgian DPA ROPA Template, https://www.privacycommission.be/nl/model-voor-een-register-van-de-verwerkingsactiviteiten)"@en ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:OrganisationGovernance ;
+    skos:definition "Purposes associated with activities that manage disputes by natural persons, private bodies, or public authorities relevant to organisation"@en ;
+    skos:prefLabel "Dispute Management"@en .
+
+dpv:EnforceAccessControl a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal"@en ;
+    dct:created "2019-04-05"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:EnforceSecurity ;
+    skos:definition "Purposes associated with conducting or enforcing access control as a form of security"@en ;
+    skos:note "Was previously \"Access Control\". Prefixed to distinguish from Technical Measure."@en ;
+    skos:prefLabel "Enforce Access Control"@en ;
+    skos:related "svpu:Login"@en .
+
+dpv:EnforceSecurity a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal"@en ;
+    dct:created "2019-04-05"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Purposes associated with ensuring and enforcing security for data, personnel, or other related matters"@en ;
+    skos:note "Was previous \"Security\". Prefixed to distinguish from TechOrg measures."@en ;
+    skos:prefLabel "Enforce Security"@en .
+
+dpv:EstablishContractualAgreement a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit"@en ;
+    dct:created "2022-11-09"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Purposes associated with carrying out data processing to establish an agreement, such as for entering into a contract"@en ;
+    skos:prefLabel "Establish Contractual Agreement"@en .
+
+dpv:FraudPreventionAndDetection a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal"@en ;
+    dct:created "2019-04-05"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:EnforceSecurity ;
+    skos:definition "Purposes associated with fraud detection, prevention, and mitigation"@en ;
+    skos:prefLabel "Fraud Prevention and Detection"@en ;
+    skos:related "svpu:Government"@en .
+
+dpv:FulfilmentOfContractualObligation a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit"@en ;
+    dct:created "2022-11-09"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:FulfilmentOfObligation ;
+    skos:definition "Purposes associated with carrying out data processing to fulfill a contractual obligation"@en ;
+    skos:prefLabel "Fulfilment of Contractual Obligation"@en .
+
+dpv:FulfilmentOfObligation a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit"@en ;
+    dct:created "2022-11-09"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Purposes associated with carrying out data processing to fulfill an obligation"@en ;
+    skos:prefLabel "Fulfilment of Obligation"@en .
+
+dpv:GeneratedPersonalData a rdfs:Class,
+        skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-03-30"^^xsd:date ;
+    rdfs:subClassOf dpv:PersonalData ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Personal Data that is generated or brought into existence without relation to existing data i.e. it is not derived or inferred from other data"@en ;
+    skos:note "Generated Data is used to indicate data that is produced and is not derived or inferred from other data"@en ;
+    skos:prefLabel "Generated Personal Data"@en .
+
+dpv:HumanResourceManagement a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Paul Ryan, David Hickey, Georg P Krog, Harshvardhan J. Pandit, Beatriz Esteves"@en ;
+    dct:created "2021-09-01"^^xsd:date ;
+    dct:source "(Belgian DPA ROPA Template, https://www.privacycommission.be/nl/model-voor-een-register-van-de-verwerkingsactiviteiten)"@en ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Purposes associated with managing humans and 'human resources' within the organisation for effective and efficient operations."@en ;
+    skos:note "HR is a broad concept. Its management includes, amongst others - recruiting employees and intermediaries e.g. brokers, independent representatives; payroll administration, remunerations, commissions, and wages; and application of social legislation."@en ;
+    skos:prefLabel "Human Resource Management"@en .
+
+dpv:IdentityVerification a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal"@en ;
+    dct:created "2019-04-05"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:EnforceSecurity ;
+    skos:definition "Purposes associated with verifying or authorising identity as a form of security"@en ;
+    skos:prefLabel "Identity Verification"@en .
+
+dpv:ImproveExistingProductsAndServices a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal"@en ;
+    dct:created "2019-04-05"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:OptimisationForController ;
+    skos:definition "Purposes associated with improving existing products and services"@en ;
+    skos:prefLabel "Improve Existing Products and Services"@en .
+
+dpv:ImproveInternalCRMProcesses a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal"@en ;
+    dct:created "2019-04-05"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:CustomerRelationshipManagement,
+        dpv:OptimisationForController ;
+    skos:definition "Purposes associated with improving customer-relationship management (CRM) processes"@en ;
+    skos:prefLabel "Improve Internal CRM Processes"@en .
+
+dpv:IncorrectData a rdfs:Class,
+        skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-11-02"^^xsd:date ;
+    rdfs:subClassOf dpv:Data ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Data that is known to be incorrect or inconsistent with some quality requirements"@en ;
+    skos:prefLabel "Incorrect Data"@en .
+
+dpv:IncreaseServiceRobustness a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal"@en ;
+    dct:created "2019-04-05"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:OptimisationForController ;
+    skos:definition "Purposes associated with improving robustness and resilience of services"@en ;
+    skos:prefLabel "Increase Service Robustness"@en .
+
+dpv:InferredPersonalData a rdfs:Class,
+        skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-01-19"^^xsd:date ;
+    rdfs:subClassOf dpv:DerivedPersonalData,
+        dpv:GeneratedPersonalData ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Personal Data that is obtained through inference from other data"@en ;
+    skos:note "Inferred Data is derived data generated from existing data, but which did not originally exist within it, e.g. inferring demographics from browsing history."@en ;
+    skos:prefLabel "Inferred Personal Data"@en .
+
+dpv:InternalResourceOptimisation a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal"@en ;
+    dct:created "2019-04-05"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:OptimisationForController ;
+    skos:definition "Purposes associated with optimisation of internal resource availability and usage for organisation"@en ;
+    skos:prefLabel "Internal Resource Optimisation"@en .
 
 dpv:LegalBasis a rdfs:Class,
         skos:Concept ;
     dct:created "2019-04-05"^^xsd:date ;
     dct:modified "2020-11-04"^^xsd:date ;
+    sw:term_status "accepted"@en ;
     skos:definition "The Legal basis used to justify processing of personal data"@en ;
     skos:note "Legal basis (plural: legal bases) are defined by legislations and regulations, whose applicability is usually restricted to specific jurisdictions."@en ;
     skos:prefLabel "Legal Basis"@en .
+
+dpv:LegalCompliance a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Beatriz Esteves"@en ;
+    dct:created "2020-11-04"^^xsd:date ;
+    dct:modified "2022-11-09"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:FulfilmentOfObligation ;
+    skos:definition "Purposes associated with carrying out data processing to fulfill a legal or statutory obligation"@en ;
+    skos:note "This purpose only refers to processing that is additionally required in order to fulfill the obligations and requirements associated with a law. For example, the use of consent would have its own separate purposes, with this purpose addressing a legal requirement for maintaining consent record (along with RecordManagement). This purpose will typically be used with Legal Obligation as the legal basis."@en ;
+    skos:prefLabel "Legal Compliance"@en .
+
+dpv:MaintainCreditCheckingDatabase a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog"@en ;
+    dct:created "2022-06-15"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:CreditChecking ;
+    skos:definition "Purposes associated with maintaining a Credit Checking Database"@en ;
+    skos:prefLabel "Maintain Credit Checking Database"@en .
+
+dpv:MaintainCreditRatingDatabase a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog"@en ;
+    dct:created "2022-06-15"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:CreditChecking ;
+    skos:definition "Purposes associated with maintaining a Credit Rating Database"@en ;
+    skos:prefLabel "Maintain Credit Rating Database"@en .
+
+dpv:MaintainFraudDatabase a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog"@en ;
+    dct:created "2022-06-15"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:FraudPreventionAndDetection ;
+    skos:definition "Purposes associated with maintaining a database related to identifying and identified fraud risks and fraud incidents"@en ;
+    skos:prefLabel "MaintainFraudDatabase"@en .
+
+dpv:Marketing a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Beatriz Esteves"@en ;
+    dct:created "2020-11-04"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Purposes associated with conducting marketing in relation to organisation or products or services e.g. promoting, selling, and distributing"@en ;
+    skos:note "Was commercial interest, changed to consider Marketing a separate Purpose category by itself"@en ;
+    skos:prefLabel "Marketing"@en .
+
+dpv:MemberPartnerManagement a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Paul Ryan, Georg P Krog, David Hickey, Harshvardhan J. Pandit"@en ;
+    dct:created "2021-09-01"^^xsd:date ;
+    dct:source "(Belgian DPA ROPA Template, https://www.privacycommission.be/nl/model-voor-een-register-van-de-verwerkingsactiviteiten)"@en ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:OrganisationGovernance ;
+    skos:definition "Purposes associated with maintaining a registry of shareholders, members, or partners for governance, administration, and management functions"@en ;
+    skos:prefLabel "Members and Partners Management"@en .
+
+dpv:NonCommercialResearch a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal"@en ;
+    dct:created "2019-04-05"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:ResearchAndDevelopment ;
+    skos:definition "Purposes associated with conducting research in a non-commercial setting e.g. for a non-profit-organisation (NGO)"@en ;
+    skos:prefLabel "Non-Commercial Research"@en .
+
+dpv:NonPersonalData a rdfs:Class,
+        skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-01-19"^^xsd:date ;
+    rdfs:subClassOf dpv:Data ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Data that is not Personal Data"@en ;
+    skos:note "The term NonPersonalData is provided to distinguish between PersonalData and other data, e.g. for indicating which data is regulated by privacy laws. To specify personal data that has been anonymised, the concept AnonymisedData should be used."@en ;
+    skos:prefLabel "Non-Personal Data"@en .
+
+dpv:ObservedPersonalData a rdfs:Class,
+        skos:Concept ;
+    dct:contributor "Georg P Krog"@en ;
+    dct:created "2022-08-24"^^xsd:date ;
+    rdfs:subClassOf dpv:CollectedPersonalData ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Personal Data that has been collected through observation of the Data Subject(s)"@en ;
+    skos:prefLabel "Observed Personal Data"@en .
+
+dpv:OptimisationForConsumer a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal"@en ;
+    dct:created "2019-04-05"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:ServiceOptimisation ;
+    skos:definition "Purposes associated with optimisation of activities and services for consumer or user"@en ;
+    skos:note "The term optmisation here refers to the efficiency of the service in terms of technical provision (or similar means) with benefits for everybody. Personalisation implies making changes that benefit the current user or persona."@en ;
+    skos:prefLabel "Optimisation for Consumer"@en ;
+    skos:related "svpu:Custom"@en .
+
+dpv:OptimisationForController a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal"@en ;
+    dct:created "2019-04-05"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:ServiceOptimisation ;
+    skos:definition "Purposes associated with optimisation of activities and services for provider or controller"@en ;
+    skos:prefLabel "Optimisation for Controller"@en .
+
+dpv:OptimiseUserInterface a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal"@en ;
+    dct:created "2019-04-05"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:OptimisationForConsumer ;
+    skos:definition "Purposes associated with optimisation of interfaces presented to the user"@en ;
+    skos:prefLabel "Optimise User Interface"@en .
+
+dpv:OrganisationComplianceManagement a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Paul Ryan, Georg P Krog, David Hickey, Harshvardhan J. Pandit"@en ;
+    dct:created "2021-09-01"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:OrganisationGovernance ;
+    skos:definition "Purposes associated with managing compliance for organisation in relation to internal policies"@en ;
+    skos:note "Note that this concept relates to internal organisational compliance. The concept LegalCompliance should be used for external legal or regulatory compliance."@en ;
+    skos:prefLabel "Organisation Compliance Management"@en .
+
+dpv:OrganisationGovernance a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Paul Ryan, Georg P Krog, David Hickey, Harshvardhan J. Pandit"@en ;
+    dct:created "2021-09-01"^^xsd:date ;
+    dct:source "(Belgian DPA ROPA Template, https://www.privacycommission.be/nl/model-voor-een-register-van-de-verwerkingsactiviteiten)"@en ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Purposes associated with conducting activities and functions for governance of an organisation"@en ;
+    skos:prefLabel "Organisation Governance"@en .
+
+dpv:OrganisationRiskManagement a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Paul Ryan, Georg P Krog, David Hickey, Harshvardhan J. Pandit"@en ;
+    dct:created "2021-09-01"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:OrganisationGovernance ;
+    skos:definition "Purposes associated with managing risk for organisation's activities"@en ;
+    skos:prefLabel "Organisation Risk Management"@en .
+
+dpv:PaymentManagement a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Beatriz Esteves"@en ;
+    dct:created "2020-11-04"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:ServiceProvision ;
+    skos:definition "Purposes associated with processing and managing payment in relation to service, including invoicing and records"@en ;
+    skos:prefLabel "Payment Management"@en .
 
 dpv:PersonalData a rdfs:Class,
         skos:Concept ;
     dct:contributor "Harshvardhan Pandit"@en ;
     dct:created "2019-04-05"^^xsd:date ;
     dct:modified "2022-01-19"^^xsd:date ;
-    dct:source "(GDPR Art.4-1,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_1/oj)"@en ;
+    dct:source "(GDPR Art.4-1,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_1/oj)"@en,
+        "(GDPR Art.4-1g,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_1/oj)"@en ;
     rdfs:subClassOf dpv:Data ;
+    sw:term_status "accepted"@en ;
     skos:definition "Data directly or indirectly associated or related to an individual."@en ;
     skos:note "This definition of personal data encompasses the concepts used in GDPR Art.4-1 for 'personal data' and ISO/IEC 2700 for 'personally identifiable information (PII)'."@en ;
     skos:prefLabel "Personal Data"@en ;
@@ -62,8 +616,71 @@ dpv:PersonalDataHandling a rdfs:Class,
     dct:contributor "Axel Polleres, Javier Fernández"@en ;
     dct:created "2019-04-05"^^xsd:date ;
     dct:modified "2020-11-04"^^xsd:date ;
+    sw:term_status "accepted"@en ;
     skos:definition "A high-level Class to describe 'data handling'. This can consist of personal data being processed for a purpose, involving entities, using technical and organisational measures, applicable risks, rights, and legal basis."@en ;
     skos:prefLabel "Personal Data Handling"@en .
+
+dpv:Personalisation a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2021-09-01"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Purposes associated with creating and providing customisation based on attributes and/or needs of person(s) or context(s)."@en ;
+    skos:note "This term is a blanket purpose category for indicating personalisation of some other purpose, e.g. by creating a subclass of the other concept and Personalisation"@en ;
+    skos:prefLabel "Personalisation"@en .
+
+dpv:PersonalisedAdvertising a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Beatriz Esteves"@en ;
+    dct:created "2020-11-04"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:Advertising,
+        dpv:Personalisation ;
+    skos:definition "Purposes associated with creating and providing personalised advertising"@en ;
+    skos:prefLabel "Personalised Advertising"@en .
+
+dpv:PersonalisedBenefits a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal"@en ;
+    dct:created "2019-04-05"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:ServicePersonalisation ;
+    skos:definition "Purposes associated with creating and providing personalised benefits for a service"@en ;
+    skos:prefLabel "Personalised Benefits"@en .
+
+dpv:PersonnelHiring a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-04-20"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:PersonnelManagement ;
+    skos:definition "Purposes associated with management and execution of hiring processes of personnel"@en ;
+    skos:prefLabel "Personnel Hiring"@en .
+
+dpv:PersonnelManagement a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Paul Ryan, Harshvardhan J. Pandit"@en ;
+    dct:created "2022-03-30"^^xsd:date ;
+    dct:source "(Belgian DPA ROPA Template, https://www.privacycommission.be/nl/model-voor-een-register-van-de-verwerkingsactiviteiten)"@en ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:HumanResourceManagement ;
+    skos:definition "Purposes associated with management of personnel associated with the organisation e.g. evaluation and management of employees and intermediaries"@en ;
+    skos:prefLabel "Personnel Management"@en .
+
+dpv:PersonnelPayment a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-04-20"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:PersonnelManagement ;
+    skos:definition "Purposes associated with management and execution of payment of personnel"@en ;
+    skos:prefLabel "Personnel Payment"@en .
 
 dpv:Processing a rdfs:Class,
         skos:Concept ;
@@ -71,9 +688,66 @@ dpv:Processing a rdfs:Class,
     dct:created "2019-04-05"^^xsd:date ;
     dct:modified "2020-11-04"^^xsd:date ;
     dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/)"@en ;
+    sw:term_status "accepted"@en ;
     skos:definition "The processing performed on personal data"@en ;
     skos:prefLabel "Processing"@en ;
     skos:related "spl:AnyProcessing"@en .
+
+dpv:ProvideEventRecommendations a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Harshvardhan J. Pandit, Rudy Jacob"@en ;
+    dct:created "2019-11-26"^^xsd:date ;
+    dct:modified "2022-10-14"^^xsd:date ;
+    dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/)"@en ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:ProvidePersonalisedRecommendations ;
+    skos:definition "Purposes associated with creating and providing personalised recommendations for events"@en ;
+    skos:prefLabel "Provide Event Recommendations"@en .
+
+dpv:ProvidePersonalisedRecommendations a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Harshvardhan J. Pandit, Rudy Jacob"@en ;
+    dct:created "2019-11-26"^^xsd:date ;
+    dct:modified "2022-10-14"^^xsd:date ;
+    dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/)"@en ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:ServicePersonalisation ;
+    skos:definition "Purposes associated with creating and providing personalised recommendations"@en ;
+    skos:prefLabel "Provide Personalised Recommendations"@en .
+
+dpv:ProvideProductRecommendations a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal"@en ;
+    dct:created "2019-04-05"^^xsd:date ;
+    dct:modified "2022-10-14"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:ProvidePersonalisedRecommendations ;
+    skos:definition "Purposes associated with creating and providing product recommendations e.g. suggest similar products"@en ;
+    skos:prefLabel "Provide Product Recommendations"@en ;
+    skos:related "svpu:Marketing"@en .
+
+dpv:PseudonymisedData a rdfs:Class,
+        skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-01-19"^^xsd:date ;
+    rdfs:subClassOf dpv:PersonalData ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Personal Data that has undergone a pseudonymisation process or a partial (incomplete) anonymisation process such that it is still considered Personal Data"@en ;
+    skos:prefLabel "Pseudonymised Data"@en .
+
+dpv:PublicRelations a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Paul Ryan, Georg P Krog, David Hickey, Harshvardhan J. Pandit"@en ;
+    dct:created "2021-09-01"^^xsd:date ;
+    dct:source "(Belgian DPA ROPA Template, https://www.privacycommission.be/nl/model-voor-een-register-van-de-verwerkingsactiviteiten)"@en ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:Marketing ;
+    skos:definition "Purposes associated with managing and conducting public relations processes, including creating goodwill for the organisation"@en ;
+    skos:prefLabel "Public Relations"@en .
 
 dpv:Purpose a rdfs:Class,
         skos:Concept ;
@@ -81,6 +755,7 @@ dpv:Purpose a rdfs:Class,
     dct:created "2019-04-05"^^xsd:date ;
     dct:modified "2020-11-04"^^xsd:date ;
     dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/)"@en ;
+    sw:term_status "accepted"@en ;
     skos:definition "The purpose of processing personal data"@en ;
     skos:prefLabel "Purpose"@en ;
     skos:related "spl:AnyPurpose"@en .
@@ -92,15 +767,58 @@ dpv:Recipient a rdfs:Class,
     dct:modified "2020-11-04"^^xsd:date ;
     dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/),(GDPR Art.4-9g,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_9/oj)"@en ;
     rdfs:subClassOf dpv:LegalEntity ;
+    sw:term_status "accepted"@en ;
     skos:definition "Entities that receive personal data"@en ;
     skos:note "A recipient of personal data can be used to indicate any entity that receives personal data. This can be a Third Party, Processor (GDPR), or even a Controller."@en ;
     skos:prefLabel "Recipient"@en ;
     skos:related "spl:AnyRecipient"@en .
 
+dpv:RecordManagement a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Paul Ryan, Georg P Krog, David Hickey, Harshvardhan J. Pandit"@en ;
+    dct:created "2021-09-01"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Purposes associated with manage creation, storage, and use of records relevant to operations, events, and processes e.g. to store logs or access requests"@en ;
+    skos:note "This purpose relates specifiaclly for record creation and management. This can be combined or used along with other purposes to express intentions such as records for legal compliance or vendor payments."@en ;
+    skos:prefLabel "Record Management"@en .
+
+dpv:RepairImpairments a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-08-24"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:ServiceProvision ;
+    skos:definition "Purposes associated with identifying, rectifying, or otherwise undertaking activities intended to fix or repair impairments to existing functionalities"@en ;
+    skos:note "An example of identifying and rectifying impairments is the process of finding and fixing errors in products, commonly referred to as debugging"@en ;
+    skos:prefLabel "Repair Impairments"@en .
+
+dpv:RequestedServiceProvision a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Beatriz Esteves"@en ;
+    dct:created "2021-09-08"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:ServiceProvision ;
+    skos:definition "Purposes associated with delivering services as requested by user or consumer"@en ;
+    skos:note "The use of 'request' here includes where an user explicitly asks for the service and also when an established contract requires the provision of the service"@en ;
+    skos:prefLabel "Requested Service Provision"@en .
+
+dpv:ResearchAndDevelopment a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal"@en ;
+    dct:created "2019-04-05"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Purposes associated with conducting research and development for new methods, products, or services"@en ;
+    skos:prefLabel "Research and Development"@en .
+
 dpv:Right a rdfs:Class,
         skos:Concept ;
     dct:contributor "Harshvardhan J Pandit, Beatriz Esteves, Georg P Krog"@en ;
     dct:created "2020-11-18"^^xsd:date ;
+    sw:term_status "accepted"@en ;
     skos:definition "The right(s) applicable, provided, or expected."@en ;
     skos:note "A 'right' is a legal, social, or ethical principle of freedom or entitlement which dictate the norms regarding what is allowed or owed.. Rights as a concept encompass a broad area of norms and entities, and are not specific to Individuals or Data Protection / Privacy. For individual specific rights, see dpv:DataSubjectRight"@en ;
     skos:prefLabel "Right"@en .
@@ -109,17 +827,270 @@ dpv:Risk a rdfs:Class,
         skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2020-11-18"^^xsd:date ;
+    sw:term_status "accepted"@en ;
     skos:definition "A risk or possibility or uncertainty of negative effects, impacts, or consequences."@en ;
     skos:note "Risks can be associated with one or more different concepts such as purpose, processing, personal data, technical or organisational measure."@en ;
     skos:prefLabel "Risk"@en .
+
+dpv:SearchFunctionalities a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Georg P Krog"@en ;
+    dct:created "2022-11-09"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:ServiceProvision ;
+    skos:definition "Purposes associated with providing searching, querying, or other forms of information retrieval related functionalities"@en ;
+    skos:prefLabel "Search Functionalities"@en .
+
+dpv:Sector a rdfs:Class,
+        skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal"@en ;
+    dct:created "2019-04-05"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Sector describes the area of application or domain that indicates or restricts scope for interpretation and application of purpose e.g. Agriculture, Banking"@en ;
+    skos:note "There are various sector codes used commonly to indicate the domain of an organisation or business. Examples include NACE (EU), ISIC (UN), SIC and NAICS (USA)."@en ;
+    skos:prefLabel "Sector"@en .
+
+dpv:SellDataToThirdParties a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal"@en ;
+    dct:created "2019-04-05"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:SellProducts ;
+    skos:definition "Purposes associated with selling or sharing data or information to third parties"@en ;
+    skos:note "Sell here means exchange, submit, or provide in return for direct or indirect compensation. Was subclass of commercial interest, changed to reflect selling something"@en ;
+    skos:prefLabel "Sell Data to Third Parties"@en .
+
+dpv:SellInsightsFromData a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal"@en ;
+    dct:created "2019-04-05"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:SellProducts ;
+    skos:definition "Purposes associated with selling or sharing insights obtained from analysis of data"@en ;
+    skos:note "Sell here means exchange, submit, or provide in return for direct or indirect compensation. Was subclass of commercial interest, changed to reflect selling something"@en ;
+    skos:prefLabel "Sell Insights from Data"@en .
+
+dpv:SellProducts a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Beatriz Esteves"@en ;
+    dct:created "2021-09-08"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:ServiceProvision ;
+    skos:definition "Purposes associated with selling products or services"@en ;
+    skos:note "Sell here means exchange, submit, or provide in return for direct or indirect compensation."@en ;
+    skos:prefLabel "Sell Products"@en .
+
+dpv:SellProductsToDataSubject a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal"@en ;
+    dct:created "2019-04-05"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:SellProducts ;
+    skos:definition "Purposes associated with selling products or services to the user, consumer, or data subjects"@en ;
+    skos:note "Sell Products here refers to processing necessary to provide and complete a sale to customers. It should not be confused with providing services with a cost based on an established agreement."@en ;
+    skos:prefLabel "Sell Products to Data Subject"@en .
+
+dpv:SensitivePersonalData a rdfs:Class,
+        skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-01-19"^^xsd:date ;
+    rdfs:subClassOf dpv:PersonalData ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Personal data that is considered 'sensitive' in terms of privacy and/or impact, and therefore requires additional considerations and/or protection"@en ;
+    skos:note "Sensitivity' is a matter of context, and may be defined within legal frameworks. For GDPR, Special categories of personal data are considered a subset of sensitive data. To illustrate the difference between the two, consider the situation where Location data is collected, and which is considered 'sensitive' but not 'special'. As a probable rule, sensitive data require additional considerations whereas special category data requires additional legal basis / justifications."@en ;
+    skos:prefLabel "Sensitive Personal Data"@en .
+
+dpv:ServiceOptimisation a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal"@en ;
+    dct:created "2019-04-05"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:ServiceProvision ;
+    skos:definition "Purposes associated with optimisation of services or activities"@en ;
+    skos:note "Subclass of ServiceProvision since optimisation is usually considered part of providing services"@en ;
+    skos:prefLabel "Service Optimisation"@en .
+
+dpv:ServicePersonalisation a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal"@en ;
+    dct:created "2019-04-05"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:Personalisation,
+        dpv:ServiceProvision ;
+    skos:definition "Purposes associated with providing personalisation within services or product or activities"@en ;
+    skos:prefLabel "Service Personalisation"@en .
+
+dpv:ServiceProvision a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal"@en ;
+    dct:created "2019-04-05"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Purposes associated with providing service or product or activities"@en ;
+    skos:prefLabel "Service Provision"@en .
+
+dpv:ServiceRegistration a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Beatriz Esteves"@en ;
+    dct:created "2020-11-04"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:ServiceProvision ;
+    skos:definition "Purposes associated with registering users and collecting information required for providing a service"@en ;
+    skos:note "An example of service registration is to provide a form that collects information such as preferred language or media format for downloading a movie"@en ;
+    skos:prefLabel "Service Registration"@en .
+
+dpv:ServiceUsageAnalytics a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Beatriz Esteves"@en ;
+    dct:created "2020-11-04"^^xsd:date ;
+    dct:modified "2022-10-05"^^xsd:date ;
+    sw:term_status "modified"@en ;
+    skos:broader dpv:ServiceProvision ;
+    skos:definition "Purposes associated with conducting analysis and reporting related to usage of services or products"@en ;
+    skos:note "Was \"UsageAnalytics\", prefixed with Service to better reflect scope"@en ;
+    skos:prefLabel "Service Usage Analytics"@en .
+
+dpv:SocialMediaMarketing a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Beatriz Esteves"@en ;
+    dct:created "2020-11-04"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:Marketing ;
+    skos:definition "Purposes associated with conducting marketing through social media"@en ;
+    skos:prefLabel "Social Media Marketing"@en .
+
+dpv:SpecialCategoryPersonalData a rdfs:Class,
+        skos:Concept ;
+    dct:contributor "Elmar Kiesling; Harshvardhan J. Pandit, Fajar Ekaputra"@en ;
+    dct:created "2019-05-07"^^xsd:date ;
+    dct:modified "2022-01-19"^^xsd:date ;
+    dct:source "(GDPR Art.9-1, https://eur-lex.europa.eu/eli/reg/2016/679/art_9/par_1/oj)"@en ;
+    rdfs:subClassOf dpv:SensitivePersonalData ;
+    sw:term_status "modified"@en ;
+    skos:definition "Sensitive Personal Data whose use requires specific legal permission or justification"@en ;
+    skos:note "The term 'special category' is based on GDPR Art.9, but should not be considered as exlusive to it. DPV considers all Special Categories to also be Sensitive, but whose use is either prohibited or regulated and therefore requires additional legal basis for justification."@en ;
+    skos:prefLabel "Special Category Personal Data"@en .
+
+dpv:SyntheticData a rdfs:Class,
+        skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-08-18"^^xsd:date ;
+    dct:source "(ENISA Data Protection Engineering,https://www.enisa.europa.eu/publications/data-protection-engineering)"@en ;
+    rdfs:subClassOf dpv:Data ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Synthetic data reffers to artificially created data such that it is intended to resemble real data (personal or non-personal), but does not refer to any specific identified or identifiable individual, or to the real measure of an observable parameter in the case of non-personal data"@en ;
+    skos:prefLabel "Synthetic Data"@en .
+
+dpv:TargetedAdvertising a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-03-30"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:PersonalisedAdvertising ;
+    skos:definition "Purposes associated with creating and providing pesonalised advertisement where the personalisation is targeted to a specific individual or group of individuals"@en ;
+    skos:prefLabel "Targeted Advertising"@en .
 
 dpv:TechnicalOrganisationalMeasure a rdfs:Class,
         skos:Concept ;
     dct:contributor "Bud Bruegger"@en ;
     dct:created "2019-04-05"^^xsd:date ;
     dct:modified "2020-11-04"^^xsd:date ;
+    sw:term_status "accepted"@en ;
     skos:definition "The Technical and Organisational measures used."@en ;
     skos:prefLabel "Technical and Organisational Measure"@en .
+
+dpv:TechnicalServiceProvision a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2021-09-08"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:ServiceProvision ;
+    skos:definition "Purposes associated with managing and providing technical processes and functions necessary for delivering services"@en ;
+    skos:prefLabel "Technical Service Provision"@en .
+
+dpv:UnverifiedData a rdfs:Class,
+        skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-11-02"^^xsd:date ;
+    rdfs:subClassOf dpv:Data ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Data that has not been verified in terms of accuracy, inconsistency, or quality"@en ;
+    skos:prefLabel "Unverified Data"@en .
+
+dpv:UserInterfacePersonalisation a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal"@en ;
+    dct:created "2019-04-05"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:ServicePersonalisation ;
+    skos:definition "Purposes associated with personalisation of interfaces presented to the user"@en ;
+    skos:note "Examples of user-interface personalisation include changing the language to match the locale"@en ;
+    skos:prefLabel "User Interface Personalisation"@en .
+
+dpv:VendorManagement a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Paul Ryan, Georg P Krog, David Hickey, Harshvardhan J. Pandit"@en ;
+    dct:created "2021-09-01"^^xsd:date ;
+    dct:source "(Belgian DPA ROPA Template, https://www.privacycommission.be/nl/model-voor-een-register-van-de-verwerkingsactiviteiten)"@en ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Purposes associated with manage orders, payment, evaluation, and prospecting related to vendors"@en ;
+    skos:prefLabel "Vendor Management"@en .
+
+dpv:VendorPayment a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Paul Ryan, Georg P Krog, David Hickey, Harshvardhan J. Pandit"@en ;
+    dct:created "2021-09-01"^^xsd:date ;
+    dct:source "(Belgian DPA ROPA Template, https://www.privacycommission.be/nl/model-voor-een-register-van-de-verwerkingsactiviteiten)"@en ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:VendorManagement ;
+    skos:definition "Purposes associated with managing payment of vendors"@en ;
+    skos:prefLabel "Vendor Payment"@en .
+
+dpv:VendorRecordsManagement a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Paul Ryan, Georg P Krog, David Hickey, Harshvardhan J. Pandit"@en ;
+    dct:created "2021-09-01"^^xsd:date ;
+    dct:source "(Belgian DPA ROPA Template, https://www.privacycommission.be/nl/model-voor-een-register-van-de-verwerkingsactiviteiten)"@en ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:VendorManagement ;
+    skos:definition "Purposes associated with managing records and orders related to vendors"@en ;
+    skos:prefLabel "Vendor Records Management"@en .
+
+dpv:VendorSelectionAssessment a rdfs:Class,
+        skos:Concept,
+        dpv:Purpose ;
+    dct:contributor "Paul Ryan, Georg P Krog, David Hickey, Harshvardhan J. Pandit"@en ;
+    dct:created "2021-09-01"^^xsd:date ;
+    dct:source "(Belgian DPA ROPA Template, https://www.privacycommission.be/nl/model-voor-een-register-van-de-verwerkingsactiviteiten)"@en ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:VendorManagement ;
+    skos:definition "Purposes associated with managing selection, assessment, and evaluation related to vendors"@en ;
+    skos:prefLabel "Vendor Selection Assessment"@en .
+
+dpv:VerifiedData a rdfs:Class,
+        skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-11-02"^^xsd:date ;
+    rdfs:subClassOf dpv:Data ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Data that has been verified in terms of accuracy, consistency, or quality"@en ;
+    skos:prefLabel "Verified Data"@en .
 
 dpv:hasDataController a rdf:Property ;
     dcam:rangeIncludes dpv:LegalEntity ;
@@ -127,6 +1098,7 @@ dpv:hasDataController a rdf:Property ;
     dct:created "2019-04-04"^^xsd:date ;
     dct:modified "2020-11-04"^^xsd:date ;
     rdfs:subPropertyOf rdf:Property ;
+    sw:term_status "accepted"@en ;
     skos:definition "Indicates association with Data Controller"@en ;
     skos:prefLabel "has data controller"@en .
 
@@ -136,6 +1108,7 @@ dpv:hasDataSubject a rdf:Property ;
     dct:created "2019-04-04"^^xsd:date ;
     dct:modified "2020-11-04"^^xsd:date ;
     rdfs:subPropertyOf rdf:Property ;
+    sw:term_status "accepted"@en ;
     skos:definition "Indicates association with Data Subject"@en ;
     skos:prefLabel "has data subject"@en .
 
@@ -145,6 +1118,7 @@ dpv:hasLegalBasis a rdf:Property ;
     dct:created "2019-04-04"^^xsd:date ;
     dct:modified "2020-11-04"^^xsd:date ;
     rdfs:subPropertyOf rdf:Property ;
+    sw:term_status "accepted"@en ;
     skos:definition "Indicates use or applicability of a Legal Basis"@en ;
     skos:prefLabel "has legal basis"@en .
 
@@ -152,7 +1126,9 @@ dpv:hasPersonalData a rdf:Property ;
     dcam:rangeIncludes dpv:PersonalData ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-01-19"^^xsd:date ;
-    rdfs:subPropertyOf rdf:Property ;
+    rdfs:subPropertyOf rdf:Property,
+        dpv:hasData ;
+    sw:term_status "accepted"@en ;
     skos:definition "Indicates association with Personal Data"@en ;
     skos:prefLabel "has personal data"@en .
 
@@ -161,6 +1137,7 @@ dpv:hasPersonalDataHandling a rdf:Property ;
     dct:contributor "Harshvardhan J. Pandit, Georg P Krog"@en ;
     dct:created "2022-01-19"^^xsd:date ;
     rdfs:subPropertyOf rdf:Property ;
+    sw:term_status "accepted"@en ;
     skos:definition "Indicates association with Personal Data Handling"@en ;
     skos:prefLabel "has personal data handling"@en .
 
@@ -171,6 +1148,7 @@ dpv:hasProcessing a rdf:Property ;
     dct:modified "2020-11-04"^^xsd:date ;
     dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/)"@en ;
     rdfs:subPropertyOf rdf:Property ;
+    sw:term_status "accepted"@en ;
     skos:definition "Indicates association with Processing"@en ;
     skos:prefLabel "has processing"@en .
 
@@ -181,6 +1159,7 @@ dpv:hasPurpose a rdf:Property ;
     dct:modified "2020-11-04"^^xsd:date ;
     dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/)"@en ;
     rdfs:subPropertyOf rdf:Property ;
+    sw:term_status "accepted"@en ;
     skos:definition "Indicates association with Purpose"@en ;
     skos:prefLabel "has purpose"@en .
 
@@ -191,6 +1170,7 @@ dpv:hasRecipient a rdf:Property ;
     dct:modified "2020-11-04"^^xsd:date ;
     dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/)"@en ;
     rdfs:subPropertyOf rdf:Property ;
+    sw:term_status "accepted"@en ;
     skos:definition "Indicates Recipient of Personal Data"@en ;
     skos:prefLabel "has recipient"@en .
 
@@ -199,6 +1179,7 @@ dpv:hasRight a rdf:Property ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2020-11-18"^^xsd:date ;
     rdfs:subPropertyOf rdf:Property ;
+    sw:term_status "accepted"@en ;
     skos:definition "Indicates use or applicability of Right"@en ;
     skos:prefLabel "has right"@en .
 
@@ -207,8 +1188,17 @@ dpv:hasRisk a rdf:Property ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2020-11-18"^^xsd:date ;
     rdfs:subPropertyOf rdf:Property ;
+    sw:term_status "accepted"@en ;
     skos:definition "Indicates applicability of Risk"@en ;
     skos:prefLabel "has risk"@en .
+
+dpv:hasSector a rdf:Property ;
+    dcam:rangeIncludes dpv:Sector ;
+    dct:created "2019-04-05"^^xsd:date ;
+    rdfs:subPropertyOf rdf:Property ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Indicates the purpose is associated with activities in the indicated (Economic) Sector(s)"@en ;
+    skos:prefLabel "has sector"@en .
 
 dpv:hasTechnicalOrganisationalMeasure a rdf:Property ;
     dcam:rangeIncludes dpv:TechnicalOrganisationalMeasure ;
@@ -216,6 +1206,16 @@ dpv:hasTechnicalOrganisationalMeasure a rdf:Property ;
     dct:created "2019-04-04"^^xsd:date ;
     dct:modified "2020-11-04"^^xsd:date ;
     rdfs:subPropertyOf rdf:Property ;
+    sw:term_status "accepted"@en ;
     skos:definition "Indicates use or applicability of Technical or Organisational measure"@en ;
     skos:prefLabel "has technical and organisational measure"@en .
+
+dpv:hasData a rdf:Property ;
+    dcam:rangeIncludes dpv:Data ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-08-18"^^xsd:date ;
+    rdfs:subPropertyOf rdf:Property ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Indicates associated with Data (may or may not be personal)"@en ;
+    skos:prefLabel "has data"@en .
 

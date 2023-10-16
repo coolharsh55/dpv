@@ -1,13 +1,13 @@
-###################### schemas
+###################### schema
 
 import vocab_funcs
 
-'''adds schemas for each CSV'''
-SCHEMAS = {}
+'''adds schema for each CSV'''
+SCHEMA = {}
 def get_schema(name):
-    return SCHEMAS[name]
+    return SCHEMA[name]
 
-SCHEMAS['classes'] = {
+SCHEMA['classes'] = {
     'Term': vocab_funcs.construct_class,
     'Label': vocab_funcs.construct_label,
     'Description': vocab_funcs.contruct_description,
@@ -20,12 +20,12 @@ SCHEMAS['classes'] = {
     'Source': vocab_funcs.construct_source,
     'Created': vocab_funcs.construct_date_created,
     'Modified': vocab_funcs.construct_date_modified,
-    'Status': None,
+    'Status': vocab_funcs.construct_status,
     'Contributors': vocab_funcs.construct_contributors,
     'Resolution': vocab_funcs.construct_resolution, 
 }
 
-SCHEMAS['taxonomy'] = {
+SCHEMA['taxonomy'] = {
     'Term': vocab_funcs.construct_class,
     'Label': vocab_funcs.construct_label,
     'Description': vocab_funcs.contruct_description,
@@ -38,12 +38,12 @@ SCHEMAS['taxonomy'] = {
     'Source': vocab_funcs.construct_source,
     'Created': vocab_funcs.construct_date_created,
     'Modified': vocab_funcs.construct_date_modified,
-    'Status': None,
+    'Status': vocab_funcs.construct_status,
     'Contributors': vocab_funcs.construct_contributors,
     'Resolution': vocab_funcs.construct_resolution, 
 }
 
-SCHEMAS['properties'] = {
+SCHEMA['properties'] = {
     'Term': vocab_funcs.construct_property,
     'Label': vocab_funcs.construct_label,
     'Description': vocab_funcs.contruct_description,
@@ -56,7 +56,7 @@ SCHEMAS['properties'] = {
     'Source': vocab_funcs.construct_source,
     'Created': vocab_funcs.construct_date_created,
     'Modified': vocab_funcs.construct_date_modified,
-    'Status': None,
+    'Status': vocab_funcs.construct_status,
     'Contributors': vocab_funcs.construct_contributors,
     'Resolution': vocab_funcs.construct_resolution, 
 }

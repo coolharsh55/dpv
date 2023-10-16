@@ -43,6 +43,9 @@ def construct_parent(item, data, namespace):
     # DEBUG(f"constructing parent: {item} for {data['Term']}")
     # TODO: remove dpv:Concept as a concept
     # TODO: handle taxonomy i.e. as instances of a topconcept 
+    # TODO: create helper function for common parent code
+    # this to avoid introducing regressions when one function
+    # changes and I forget to make changes in the other
     parents = item.split(',')
     for parent in parents:
         parent = parent.strip()
@@ -194,3 +197,8 @@ def construct_contributors(item, data, namespace):
 
 def construct_resolution(item, data, namespace):
     return []
+
+
+def construct_status(item, data, namespace):
+    return [(namespace[data['Term']], SW.term_status, Literal(item, lang='en'))]
+
