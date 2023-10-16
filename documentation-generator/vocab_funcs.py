@@ -4,13 +4,22 @@ from rdflib.term import Literal, URIRef, BNode
 from vocab_management import *
 
 
-def construct_iri(item, data, namespace):
+def construct_class(item, data, namespace):
     triples = []
     # TODO: check for external terms
     # external terms are of type 'prefix:term'
     # They should not be declared as skos:Concept
     triples.append((namespace[item], RDF.type, SKOS.Concept))
     triples.append((namespace[item], RDF.type, RDFS.Class))
+    return triples
+
+
+def construct_property(item, data, namespace):
+    triples = []
+    # TODO: check for external terms
+    # external terms are of type 'prefix:term'
+    # They should not be declared as skos:Concept
+    triples.append((namespace[item], RDF.type, RDF.Property))
     return triples
 
 
@@ -21,7 +30,10 @@ def construct_label(item, data, namespace):
     return triples
 
 def contruct_description(item, data, namespace):
-    return []
+    triples = []
+    term = namespace[data['Term']]
+    triples.append((term, SKOS.definition, Literal(item, lang='en')))
+    return triples
 
 
 def construct_parent(item, data, namespace):
@@ -66,7 +78,7 @@ def construct_parent_taxonomy(item, data, namespace):
         if data['ParentType'] in ('a', 'sc'):
             triples.append((term, RDF.type, parent))
         else:
-            DEBUG(data['ParentType'])
+            # DEBUG(data['ParentType'])
             prefix_top, topconcept = data['ParentType'].split(':')
             topconcept = NAMESPACES[prefix_top][topconcept]
             triples.append((term, RDF.type, topconcept))
@@ -75,32 +87,109 @@ def construct_parent_taxonomy(item, data, namespace):
     return triples
 
 
+def construct_parent_property(item, data, namespace):
+    # parent will be of the form prefix:term
+    triples = []
+    term = namespace[data['Term']]
+    # TODO: remove dpv:Relation as a concept
+    parents = item.split(',')
+    for parent in parents:
+        parent = parent.strip()
+        if parent == 'dpv:Relation':
+            parent = NAMESPACES['rdf']['Property']
+        else:
+            prefix, parentterm = parent.split(':')
+            parent = NAMESPACES[prefix][parentterm]
+        # DEBUG(f'parent identified: {parent}')
+        triples.append((term, RDFS.subPropertyOf, parent))
+    return triples
+
+
+def construct_domain(item, data, namespace):
+    # domain and range are of type prefix:term
+    triples = []
+    term = namespace[data['Term']]
+    domains = item.split(',')
+    for domain in domains:
+        domain = domain.strip()
+        if domain == "dpv:Concept":
+            continue
+        prefix, domainterm = domain.split(':')
+        domain = NAMESPACES[prefix][domainterm]
+        # DEBUG(f'domain identified: {domain}')
+        triples.append((term, DCAM.domainIncludes, domain))
+    return triples
+
+
+def construct_range(item, data, namespace):
+    # range and range are of type prefix:term
+    triples = []
+    term = namespace[data['Term']]
+    ranges = item.split(',')
+    for range in ranges:
+        range = range.strip()
+        if range == "dpv:Concept":
+            continue
+        prefix, rangeterm = range.split(':')
+        range = NAMESPACES[prefix][rangeterm]
+        # DEBUG(f'range identified: {range}')
+        triples.append((term, DCAM.rangeIncludes, range))
+    return triples
+
+
 def construct_value(item, data, namespace):
-    return []
+    triples = []
+    if not item:
+        return triples
+    triples.append((namespace[data['Term']], RDF.value, Literal(item)))
+    return triples
 
 
 def construct_related_terms(item, data, namespace):
-    return []
+    triples = []
+    term = namespace[data['Term']]
+    # TODO: make related be a URI
+    triples.append((term, SKOS.related, Literal(item, lang='en')))
+    return triples
 
 
 def construct_comment(item, data, namespace):
-    return []
+    triples = []
+    term = namespace[data['Term']]
+    triples.append((term, SKOS.note, Literal(item, lang='en')))
+    return triples
 
 
 def construct_source(item, data, namespace):
-    return []
+    triples = []
+    term = namespace[data['Term']]
+    # TODO: make source be a URI or a Literal (if startswith http)
+    triples.append((term, DCT.source, Literal(item, lang='en')))
+    return triples
 
 
 def construct_date_created(item, data, namespace):
-    return []
+    triples = []
+    term = namespace[data['Term']]
+    triples.append((term, DCT.created, Literal(item, datatype=XSD.date)))
+    return triples
 
 
 def construct_date_modified(item, data, namespace):
-    return []
+    triples = []
+    if not item:
+        return
+    term = namespace[data['Term']]
+    triples.append((term, DCT.modified, Literal(item, datatype=XSD.date)))
+    return triples
 
 
 def construct_contributors(item, data, namespace):
-    return []
+    triples = []
+    term = namespace[data['Term']]
+    # TODO: make contributor be URI or a literal (if website available)
+    triples.append((term, DCT.contributor, Literal(item, lang='en')))
+    return triples
 
 
 def construct_resolution(item, data, namespace):

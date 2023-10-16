@@ -59,7 +59,7 @@ CSVFILES = {
     'dpv': {
         'core': {
             'classes': f'{IMPORT_CSV_PATH}/BaseOntology.csv',
-            # 'properties': f'{IMPORT_CSV_PATH}/BaseOntology_properties.csv',
+            'properties': f'{IMPORT_CSV_PATH}/BaseOntology_properties.csv',
         },
     },
     'dpv-pd': {
@@ -133,7 +133,7 @@ for vocab, vocab_data in CSVFILES.items():
     vocab_triples = []
     PROPOSED[vocab] = {}
     for module, module_data in vocab_data.items():
-        DEBUG('MODULE: {module}')
+        DEBUG(f'MODULE: {module}')
         # get schemas and data for each csv in module
         module_triples = []
         PROPOSED[vocab][module] = []

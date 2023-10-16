@@ -45,7 +45,7 @@ for csvfile in NAMESPACE_CSV:
 			namespace = Namespace(iri)
 			globals()[variable] = namespace
 			NAMESPACES[prefix] = namespace
-			DEBUG(f'{variable} namespace with IRI {iri}')
+			# DEBUG(f'{variable} namespace with IRI {iri}')
 
 TOPCONCEPT = {
     'dpv': { },
