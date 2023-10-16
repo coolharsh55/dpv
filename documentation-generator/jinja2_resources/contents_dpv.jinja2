@@ -269,6 +269,17 @@
     <figcaption></figcaption>
   </figure>
   <p>DPV relies on existing well-founded interpretations for its concepts, which in this case relate to <i>Entity</i> as a generic universal concept and <i>LegalEntity</i> specifically referring to roles defined legally or within legal norms. Expanding on these, DPV provides a taxonomy of entities based on their application within laws and use-cases in the form of <a href="#vocab-entities-legalrole"><i>Legal roles</i></a>, such as [=DataController=], [=DataSubject=], and [=Authority=]. Later, these concepts are expanded into taxonomies for different kinds of entities categorised under a common concept. For example, <a href="#vocab-entities-datasubject">categories of <i>Data Subjects</i></a> such as [=Adult=], [=User=], or [=Employee=]; or <a href="#vocab-entities-authorities">kinds of <i>Authorities</i></a>, or <a href="#vocab-entities-organisation">categories of <i>Organisations</i></a>.</p>
+
+  <h3>Classes</h3>
+  {% for term, data in modules['core']['classes'].items() | sort %}
+    <p><strong>{{term}}</strong></p>
+  {% endfor %}
+
+  <h3>Properties</h3>
+  {% for term, data in modules['core']['properties'].items() | sort %}
+    <p><strong>{{term}}</strong></p>
+  {% endfor %}
+
     {% if entities_classes %}
   <section id="entities-classes">
     {{ table_classes(entities_classes) }}

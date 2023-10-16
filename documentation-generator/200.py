@@ -22,20 +22,7 @@
 ########################################
 
 IMPORT_CSV_PATH = './vocab_csv'
-EXPORT_DPV_PATH = '../dpv'
-EXPORT_DPV_MODULE_PATH = '../dpv/modules'
-EXPORT_DPV_GDPR_PATH = '../dpv-gdpr'
-EXPORT_DPV_GDPR_MODULE_PATH = '../dpv-gdpr/modules'
-EXPORT_DPV_DGA_PATH = '../dpv-dga'
-EXPORT_DPV_DGA_MODULE_PATH = '../dpv-dga/modules'
-EXPORT_DPV_PD_PATH = '../dpv-pd'
-EXPORT_DPV_LEGAL_PATH = '../dpv-legal'
-EXPORT_DPV_LEGAL_MODULE_PATH = '../dpv-legal/modules'
-EXPORT_DPV_TECH_PATH = '../dpv-tech'
-EXPORT_DPV_TECH_MODULE_PATH = '../dpv-tech/modules'
-EXPORT_RISK_PATH = '../risk'
-EXPORT_RISK_MODULE_PATH = '../risk/modules'
-EXPORT_RIGHTS_EU_PATH = '../rights/eu'
+EXPORT_PATH = '..'
 
 import csv
 from collections import namedtuple
@@ -82,12 +69,12 @@ CSVFILES = {
 
 EXPORTPATH = {
     'dpv': {
-        'main': '../dpv',
-        'modules': '../dpv/modules',
+        'main': f'{EXPORT_PATH}/dpv',
+        'modules': f'{EXPORT_PATH}/dpv/modules',
     },
     'dpv-pd': {
-        'main': '../pd',
-        'modules': '../pd/modules',
+        'main': f'{EXPORT_PATH}/pd',
+        'modules': f'{EXPORT_PATH}/pd/modules',
     },
 }
 
