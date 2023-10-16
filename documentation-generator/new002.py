@@ -60,9 +60,27 @@ CSVFILES = {
         'core': {
             'classes': f'{IMPORT_CSV_PATH}/BaseOntology.csv',
             # 'properties': f'{IMPORT_CSV_PATH}/BaseOntology_properties.csv',
-        }
+            }
+        },
+    'dpv-pd': {
+        'core': {
+            'classes': f'{IMPORT_CSV_PATH}/dpv-pd.csv',
+            }
+        },
+}
+
+EXPORTPATH = {
+    'dpv': {
+        'main': '../dpv',
+        'modules': '../dpv/modules',
+        },
+    'dpv-pd': {
+        'main': '../pd',
+        'modules': '../pd/modules',
     }
 }
+
+PROPOSED = {}
 
 def load_CSV(filepath):
     with open(filepath) as fd:
@@ -82,9 +100,25 @@ def load_CSV(filepath):
                 continue
             # extract required amount of terms, ignore any field after that
             row = [term.strip() for term in row[:count]]
-            # DEBUG(row)
-            terms.append(row)
+            rowdata = {}
+            for index, item in enumerate(row):
+                rowdata[header[index]] = row[index]
+            # DEBUG(rowdata)
+            terms.append(rowdata)
     return header, terms
+
+
+def serialize_graph(triples, filepath):
+    '''serializes triples at filepath with defined formats'''
+    graph = Graph()
+    for prefix, namespace in NAMESPACES.items():
+        graph.namespace_manager.bind(prefix, namespace)
+    for triple in triples:
+        DEBUG(triple)
+        graph.add(triple)
+    for ext, format in RDF_SERIALIZATIONS.items():
+        graph.serialize(f'{filepath}.{ext}', format=format)
+        INFO(f'wrote {filepath}.{ext}')
 
 
 global_triples = []
@@ -94,24 +128,27 @@ for vocab, vocab_data in CSVFILES.items():
     namespace = NAMESPACES[vocab]
     DEBUG(f'VOCAB: {vocab} with NAMESPACE: {namespace}')
     vocab_triples = []
+    PROPOSED[vocab] = {}
     for module, module_data in vocab_data.items():
         DEBUG('MODULE: {module}')
         # get schemas and data for each csv in module
         module_triples = []
+        PROPOSED[vocab][module] = []
         for schema_name, filepath in module_data.items():
             DEBUG(f'HANDLING: {vocab}-{module} -- {schema_name}')
             schema = vocab_schemas.get_schema(schema_name)
-            # RESUMEHERE: take the schema and create a copy of it for row
-            # data such the the row is a dict and can be used with
-            # form data['header-label'] e.g. data['ParentType']
-            # Then in vocab_funcs get the data required i.e. IRI and
-            # ParentType using the dict rather than relying on row index.
             DEBUG(f'Using schema: {schema_name}')
             header, csvdata = load_CSV(filepath)
+            # csvdata is a list of dicts containing column:value
             for row in csvdata:
-                for index, item in enumerate(row):
+                # filter proposed terms
+                if row['Status'] == 'proposed':
+                    PROPOSED[vocab][module].append(row['Term'])
+                    continue
+                # create a dict to hold the row data
+                for index, item in enumerate(row.values()):
+                    # get function to handle column value
                     func = schema[header[index]]
-                    # TODO: filter proposed terms to another dict
                     # empty func or item means no triples to be generated
                     if func is None:
                         continue
@@ -119,7 +156,13 @@ for vocab, vocab_data in CSVFILES.items():
                         continue
                     # DEBUG(f'{func} :: {item}')
                     module_triples += func(item, row, namespace)
-        for triple in module_triples:
-            DEBUG(triple)
+        # export module triples
+        exportpath = EXPORTPATH[vocab]['modules']
+        filepath = f'{exportpath}/{module}'
+        serialize_graph(module_triples, filepath)
         vocab_triples += module_triples
+    # export vocab triples
+    exportpath = EXPORTPATH[vocab]['main']
+    filepath = f'{exportpath}/{vocab}'
+    serialize_graph(vocab_triples, filepath)
     global_triples += vocab_triples

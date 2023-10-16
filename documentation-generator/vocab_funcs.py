@@ -24,15 +24,23 @@ def contruct_description(item, data, namespace):
 def construct_parent(item, data, namespace):
     # parent will be of the form prefix:term
     triples = []
-    # TODO: check for multiple parents, which may be external
+    term = namespace[data['Term']]
+    # DEBUG(f"constructing parent: {item} for {data['Term']}")
     # TODO: remove dpv:Concept as a concept
-    if item == 'dpv:Concept':
-        item = NAMESPACES['skos']['Concept']
-    else:
-        prefix, term = item.split(':')
-        item = NAMESPACES[prefix][term]
-    triples.append((namespace[data[0]], RDF.type, RDFS.Class))
-    triples.append((namespace[data[0]], RDF.type, item))
+    # TODO: handle taxonomy i.e. as instances of a topconcept 
+    parents = item.split(',')
+    for parent in parents:
+        parent = parent.strip()
+        if parent == 'dpv:Concept':
+            parent = NAMESPACES['skos']['Concept']
+        else:
+            prefix, parentterm = parent.split(':')
+            parent = NAMESPACES[prefix][parentterm]
+        # DEBUG(f'parent identified: {parent}')
+        if data['ParentType'] == 'a':
+            triples.append((term, RDF.type, parent))
+        elif data['ParentType'] == 'sc':
+            triples.append((term, RDFS.subClassOf, parent))
     return triples
 
 
