@@ -1,66 +1,5 @@
 [
   {
-    "@id": "https://w3id.org/dpv#hasProhibition",
-    "@type": [
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
-    ],
-    "http://purl.org/dc/dcam/domainIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Context"
-      }
-    ],
-    "http://purl.org/dc/dcam/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Prohibition"
-      }
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit, Georg P Krog, Beatriz Esteves, Paul Ryan"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-10-19"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/dpv#hasRule"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Specifying applicability or inclusion of a prohibition rule within specified context"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "has prohibition"
-      }
-    ],
-    "https://schema.org/domainIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Context"
-      }
-    ],
-    "https://schema.org/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Prohibition"
-      }
-    ]
-  },
-  {
     "@id": "https://w3id.org/dpv#Obligation",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
@@ -99,11 +38,10 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#Prohibition",
+    "@id": "https://w3id.org/dpv#Rule",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Rule"
+      "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://purl.org/dc/terms/contributor": [
       {
@@ -126,13 +64,13 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "A rule describing a prohibition to perform an activity"
+        "@value": "A rule describing a process or control that directs or determines if and how an activity should be conducted"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Prohibition"
+        "@value": "Rule"
       }
     ]
   },
@@ -198,11 +136,19 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#Permission",
+    "@id": "https://w3id.org/dpv#hasProhibition",
     "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Rule"
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://purl.org/dc/dcam/domainIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Context"
+      }
+    ],
+    "http://purl.org/dc/dcam/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Prohibition"
+      }
     ],
     "http://purl.org/dc/terms/contributor": [
       {
@@ -216,41 +162,9 @@
         "@value": "2022-10-19"
       }
     ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A rule describing a permission to perform an activity"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Permission"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#Rule",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit, Georg P Krog, Beatriz Esteves, Paul Ryan"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-10-19"
+        "@id": "https://w3id.org/dpv#hasRule"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -262,13 +176,23 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "A rule describing a process or control that directs or determines if and how an activity should be conducted"
+        "@value": "Specifying applicability or inclusion of a prohibition rule within specified context"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Rule"
+        "@value": "has prohibition"
+      }
+    ],
+    "https://schema.org/domainIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Context"
+      }
+    ],
+    "https://schema.org/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Prohibition"
       }
     ]
   },
@@ -325,6 +249,44 @@
     "https://schema.org/rangeIncludes": [
       {
         "@id": "https://w3id.org/dpv#Rule"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#Prohibition",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Rule"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@language": "en",
+        "@value": "Harshvardhan J. Pandit, Georg P Krog, Beatriz Esteves, Paul Ryan"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-10-19"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A rule describing a prohibition to perform an activity"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Prohibition"
       }
     ]
   },
@@ -386,6 +348,44 @@
     "https://schema.org/rangeIncludes": [
       {
         "@id": "https://w3id.org/dpv#Obligation"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#Permission",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Rule"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@language": "en",
+        "@value": "Harshvardhan J. Pandit, Georg P Krog, Beatriz Esteves, Paul Ryan"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-10-19"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A rule describing a permission to perform an activity"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Permission"
       }
     ]
   }

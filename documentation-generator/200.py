@@ -187,7 +187,77 @@ CSVFILES = {
             'taxonomy': f'{IMPORT_CSV_PATH}/DGA_entities.csv',
             'properties': f'{IMPORT_CSV_PATH}/DGA_properties.csv',
         },
-    }
+    },
+    'tech': {
+        'core': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/tech-core.csv',
+            'properties': f'{IMPORT_CSV_PATH}/tech-core-properties.csv',
+        },
+        'data': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/tech-data.csv',
+        },
+        'ops': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/tech-ops.csv',
+        },
+        'security': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/tech-security.csv',
+        },
+        'surveillance': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/tech-surveillance.csv',
+        },
+        'provision': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/tech-provision.csv',
+            'properties': f'{IMPORT_CSV_PATH}/tech-provision-properties.csv',
+        },
+        'actors': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/tech-actors.csv',
+            'properties': f'{IMPORT_CSV_PATH}/tech-actors-properties.csv',
+        },
+        'comms': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/tech-comms.csv',
+        },
+        'provision': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/tech-provision.csv',
+            'properties': f'{IMPORT_CSV_PATH}/tech-provision-properties.csv',
+        },
+        'tools': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/tech-tools.csv',
+        }, 
+    },
+    'risk': {
+        'risk_consequences': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/RiskConsequences.csv',
+        },
+        'risk_levels': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/RiskLevels.csv',
+        },
+        'risk_matrix': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/RiskMatrix.csv',
+        },
+        'risk_controls': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/RiskControls.csv',
+        },
+        'risk_assessment': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/RiskAssessmentTechniques.csv',
+        },
+        'risk_methodology': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/RiskMethodology.csv',
+        },
+    },
+    'eu-rights': {
+        'fundamental': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/EUFundamentalRights.csv',
+        },
+    },
+
+    # 'todo': {
+    #     f'{IMPORT_CSV_PATH}/legal_Authorities.csv',
+    #     f'{IMPORT_CSV_PATH}/legal_EU_Adequacy.csv',
+    #     f'{IMPORT_CSV_PATH}/legal_EU_EEA.csv',
+    #     f'{IMPORT_CSV_PATH}/legal_Laws.csv',
+    #     f'{IMPORT_CSV_PATH}/legal_Locations.csv',
+    #     f'{IMPORT_CSV_PATH}/legal_properties.csv',
+    # }
 }
 
 EXPORTPATH = {
@@ -199,6 +269,14 @@ EXPORTPATH = {
         'main': f'{EXPORT_PATH}/pd',
         'modules': f'{EXPORT_PATH}/pd/modules',
     },
+    'tech': {
+        'main': f'{EXPORT_PATH}/tech',
+        'modules': f'{EXPORT_PATH}/tech/modules',
+    },
+    'risk': {
+        'main': f'{EXPORT_PATH}/risk',
+        'modules': f'{EXPORT_PATH}/risk/modules',
+    },
     'eu-gdpr': {
         'main': f'{EXPORT_PATH}/legal/eu/gdpr',
         'modules': f'{EXPORT_PATH}/legal/eu/gdpr/modules',
@@ -206,6 +284,10 @@ EXPORTPATH = {
     'eu-dga': {
         'main': f'{EXPORT_PATH}/legal/eu/dga',
         'modules': f'{EXPORT_PATH}/legal/eu/dga/modules',
+    },
+    'eu-rights': {
+        'main': f'{EXPORT_PATH}/legal/eu/rights',
+        'modules': f'{EXPORT_PATH}/legal/eu/rights/modules',
     },
 }
 

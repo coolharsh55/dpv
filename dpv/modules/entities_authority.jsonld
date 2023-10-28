@@ -1,5 +1,43 @@
 [
   {
+    "@id": "https://w3id.org/dpv#DataProtectionAuthority",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Authority"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@language": "en",
+        "@value": "Georg Krog, Paul Ryan, Harshvardhan Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2020-11-04"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "An authority tasked with overseeing legal compliance regarding privacy and data protection laws."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Data Protection Authority"
+      }
+    ]
+  },
+  {
     "@id": "https://w3id.org/dpv#hasAuthority",
     "@type": [
       "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
@@ -46,23 +84,25 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#Authority",
+    "@id": "https://w3id.org/dpv#isAuthorityFor",
     "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#LegalEntity",
-      "https://w3id.org/dpv#GovernmentalOrganisation"
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://purl.org/dc/dcam/domainIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Authority"
+      }
     ],
     "http://purl.org/dc/terms/contributor": [
       {
         "@language": "en",
-        "@value": "Georg Krog, Paul Ryan, Harshvardhan Pandit"
+        "@value": "Harshvardhan J. Pandit, Georg P Krog"
       }
     ],
     "http://purl.org/dc/terms/created": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2020-11-04"
+        "@value": "2022-01-19"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -74,51 +114,18 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "An authority with the power to create or enforce laws, or determine their compliance."
+        "@value": "Indicates area, scope, or applicability of an Authority"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Authority"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#DataProtectionAuthority",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Authority"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Georg Krog, Paul Ryan, Harshvardhan Pandit"
+        "@value": "is authority for"
       }
     ],
-    "http://purl.org/dc/terms/created": [
+    "https://schema.org/domainIncludes": [
       {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2020-11-04"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "An authority tasked with overseeing legal compliance regarding privacy and data protection laws."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Data Protection Authority"
+        "@id": "https://w3id.org/dpv#Authority"
       }
     ]
   },
@@ -255,25 +262,23 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#isAuthorityFor",
+    "@id": "https://w3id.org/dpv#Authority",
     "@type": [
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
-    ],
-    "http://purl.org/dc/dcam/domainIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Authority"
-      }
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#LegalEntity",
+      "https://w3id.org/dpv#GovernmentalOrganisation"
     ],
     "http://purl.org/dc/terms/contributor": [
       {
         "@language": "en",
-        "@value": "Harshvardhan J. Pandit, Georg P Krog"
+        "@value": "Georg Krog, Paul Ryan, Harshvardhan Pandit"
       }
     ],
     "http://purl.org/dc/terms/created": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-01-19"
+        "@value": "2020-11-04"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -285,18 +290,13 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Indicates area, scope, or applicability of an Authority"
+        "@value": "An authority with the power to create or enforce laws, or determine their compliance."
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "is authority for"
-      }
-    ],
-    "https://schema.org/domainIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Authority"
+        "@value": "Authority"
       }
     ]
   }

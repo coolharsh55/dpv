@@ -7,576 +7,360 @@
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-risk:Risk_LevelsConcepts a skos:Collection ;
-    skos:member risk:3LikelihoodLevels,
-        risk:3RiskLevels,
-        risk:3SeverityLevels,
-        risk:5LikelihoodLevels,
-        risk:5RiskLevels,
-        risk:5SeverityLevels,
-        risk:7LikelihoodLevels,
-        risk:7RiskLevels,
-        risk:7SeverityLevels,
-        risk:ExtremelyHighLikelihood,
-        risk:ExtremelyHighRisk,
-        risk:ExtremelyHighSeverity,
-        risk:ExtremelyLowLikelihood,
-        risk:ExtremelyLowRisk,
-        risk:ExtremelyLowSeverity,
-        risk:HighLikelihood,
-        risk:HighRisk,
-        risk:HighSeverity,
-        risk:LowLikelihood,
-        risk:LowRisk,
-        risk:LowSeverity,
-        risk:ModerateLikelihood,
-        risk:ModerateRisk,
-        risk:ModerateSeverity,
-        risk:VeryHighLikelihood,
-        risk:VeryHighRisk,
-        risk:VeryHighSeverity,
-        risk:VeryLowLikelihood,
-        risk:VeryLowRisk,
-        risk:VeryLowSeverity ;
-    skos:prefLabel "Risk_Levels Concepts"^^xsd:string .
-
-risk:ExtremelyHighLikelihood a skos:Concept,
-        dpv:Concept ;
+risk:3LikelihoodLevels a rdfs:Class,
+        skos:Concept,
+        dpv:Likelihood ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-08-18"^^xsd:date ;
-    dct:creator "Harshvardhan J. Pandit"^^xsd:string ;
-    rdf:value 0.99 ;
-    rdfs:isDefinedBy risk: ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Likelihood,
+    skos:definition "Scale with 3 Likelihood Levels from High to Low"@en ;
+    skos:prefLabel "3 Likelihood Levels"@en .
+
+risk:3RiskLevels a rdfs:Class,
+        skos:Concept,
+        dpv:RiskLevel ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-08-18"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Scale with 3 Risk Levels from High to Low"@en ;
+    skos:prefLabel "3 Risk Levels"@en .
+
+risk:3SeverityLevels a rdfs:Class,
+        skos:Concept,
+        dpv:Severity ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-08-18"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Scale with 3 Severity Levels from High to Low"@en ;
+    skos:prefLabel "3 Severity Levels"@en .
+
+risk:5LikelihoodLevels a rdfs:Class,
+        skos:Concept,
+        dpv:Likelihood ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-08-18"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Scale with 5 Likelihood Levels from Very High to Very Low"@en ;
+    skos:prefLabel "5 Likelihood Levels"@en .
+
+risk:5RiskLevels a rdfs:Class,
+        skos:Concept,
+        dpv:RiskLevel ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-08-18"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Scale with 5 Risk Levels from Very High to Very Low"@en ;
+    skos:prefLabel "5 Risk Levels"@en .
+
+risk:5SeverityLevels a rdfs:Class,
+        skos:Concept,
+        dpv:Severity ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-08-18"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Scale with 5 Severity Levels from Very High to Very Low"@en ;
+    skos:prefLabel "5 Severity Levels"@en .
+
+risk:7LikelihoodLevels a rdfs:Class,
+        skos:Concept,
+        dpv:Likelihood ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-08-18"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Scale with 7 Likelihood Levels from Extremely High to Extremely Low"@en ;
+    skos:prefLabel "7 Likelihood Levels"@en .
+
+risk:7RiskLevels a rdfs:Class,
+        skos:Concept,
+        dpv:RiskLevel ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-08-18"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Scale with 7 Risk Levels from Extremely High to Extremely Low"@en ;
+    skos:prefLabel "7 Risk Levels"@en .
+
+risk:7SeverityLevels a rdfs:Class,
+        skos:Concept,
+        dpv:Severity ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-08-18"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Scale with 7 Severity Levels from Extremely High to Extremely Low"@en ;
+    skos:prefLabel "7 Severity Levels"@en .
+
+risk:ExtremelyHighLikelihood a rdfs:Class,
+        skos:Concept,
+        dpv:Likelihood,
         risk:7LikelihoodLevels ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-08-18"^^xsd:date ;
+    rdf:value "0.99,xsd:decimal" ;
+    sw:term_status "accepted"@en ;
     skos:definition "Level where Likelihood is Extremely High"@en ;
     skos:note "The suggested quantitative value for this concept is 0.99 on a scale of 0 to 1"@en ;
-    skos:prefLabel "Extremely High Likelihood"@en ;
-    dpv:isInstanceOf dpv:Likelihood,
-        risk:7LikelihoodLevels .
+    skos:prefLabel "Extremely High Likelihood"@en .
 
-risk:ExtremelyHighRisk a skos:Concept,
-        dpv:Concept ;
-    dct:created "2022-08-18"^^xsd:date ;
-    dct:creator "Harshvardhan J. Pandit"^^xsd:string ;
-    rdf:value 0.99 ;
-    rdfs:isDefinedBy risk: ;
-    sw:term_status "accepted"@en ;
-    skos:broader dpv:RiskLevel,
+risk:ExtremelyHighRisk a rdfs:Class,
+        skos:Concept,
+        dpv:RiskLevel,
         risk:7RiskLevels ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-08-18"^^xsd:date ;
+    rdf:value "0.99,xsd:decimal" ;
+    sw:term_status "accepted"@en ;
     skos:definition "Level where Risk is Extremely High"@en ;
     skos:note "The suggested quantitative value for this concept is 0.99 on a scale of 0 to 1"@en ;
-    skos:prefLabel "Extremely High Risk"@en ;
-    dpv:isInstanceOf dpv:RiskLevel,
-        risk:7RiskLevels .
+    skos:prefLabel "Extremely High Risk"@en .
 
-risk:ExtremelyHighSeverity a skos:Concept,
-        dpv:Concept ;
-    dct:created "2022-08-18"^^xsd:date ;
-    dct:creator "Harshvardhan J. Pandit"^^xsd:string ;
-    rdf:value 0.99 ;
-    rdfs:isDefinedBy risk: ;
-    sw:term_status "accepted"@en ;
-    skos:broader dpv:Severity,
+risk:ExtremelyHighSeverity a rdfs:Class,
+        skos:Concept,
+        dpv:Severity,
         risk:7SeverityLevels ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-08-18"^^xsd:date ;
+    rdf:value "0.99,xsd:decimal" ;
+    sw:term_status "accepted"@en ;
     skos:definition "Level where Severity is Extremely High"@en ;
     skos:note "The suggested quantitative value for this concept is 0.99 on a scale of 0 to 1"@en ;
-    skos:prefLabel "Extremely High Severity"@en ;
-    dpv:isInstanceOf dpv:Severity,
-        risk:7SeverityLevels .
+    skos:prefLabel "Extremely High Severity"@en .
 
-risk:ExtremelyLowLikelihood a skos:Concept,
-        dpv:Concept ;
-    dct:created "2022-08-18"^^xsd:date ;
-    dct:creator "Harshvardhan J. Pandit"^^xsd:string ;
-    rdf:value 0.01 ;
-    rdfs:isDefinedBy risk: ;
-    sw:term_status "accepted"@en ;
-    skos:broader dpv:Likelihood,
+risk:ExtremelyLowLikelihood a rdfs:Class,
+        skos:Concept,
+        dpv:Likelihood,
         risk:7LikelihoodLevels ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-08-18"^^xsd:date ;
+    rdf:value "0.01,xsd:decimal" ;
+    sw:term_status "accepted"@en ;
     skos:definition "Level where Likelihood is Extremely Low"@en ;
     skos:note "The suggested quantitative value for this concept is 0.01 on a scale of 0 to 1"@en ;
-    skos:prefLabel "Extremely Low Likelihood"@en ;
-    dpv:isInstanceOf dpv:Likelihood,
-        risk:7LikelihoodLevels .
+    skos:prefLabel "Extremely Low Likelihood"@en .
 
-risk:ExtremelyLowRisk a skos:Concept,
-        dpv:Concept ;
-    dct:created "2022-08-18"^^xsd:date ;
-    dct:creator "Harshvardhan J. Pandit"^^xsd:string ;
-    rdf:value 0.01 ;
-    rdfs:isDefinedBy risk: ;
-    sw:term_status "accepted"@en ;
-    skos:broader dpv:RiskLevel,
+risk:ExtremelyLowRisk a rdfs:Class,
+        skos:Concept,
+        dpv:RiskLevel,
         risk:7RiskLevels ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-08-18"^^xsd:date ;
+    rdf:value "0.01,xsd:decimal" ;
+    sw:term_status "accepted"@en ;
     skos:definition "Level where Risk is Extremely Low"@en ;
     skos:note "The suggested quantitative value for this concept is 0.01 on a scale of 0 to 1"@en ;
-    skos:prefLabel "Extremely Low Risk"@en ;
-    dpv:isInstanceOf dpv:RiskLevel,
-        risk:7RiskLevels .
+    skos:prefLabel "Extremely Low Risk"@en .
 
-risk:ExtremelyLowSeverity a skos:Concept,
-        dpv:Concept ;
-    dct:created "2022-08-18"^^xsd:date ;
-    dct:creator "Harshvardhan J. Pandit"^^xsd:string ;
-    rdf:value 0.01 ;
-    rdfs:isDefinedBy risk: ;
-    sw:term_status "accepted"@en ;
-    skos:broader dpv:Severity,
+risk:ExtremelyLowSeverity a rdfs:Class,
+        skos:Concept,
+        dpv:Severity,
         risk:7SeverityLevels ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-08-18"^^xsd:date ;
+    rdf:value "0.01,xsd:decimal" ;
+    sw:term_status "accepted"@en ;
     skos:definition "Level where Severity is Extremely Low"@en ;
     skos:note "The suggested quantitative value for this concept is 0.01 on a scale of 0 to 1"@en ;
-    skos:prefLabel "Extremely Low Severity"@en ;
-    dpv:isInstanceOf dpv:Severity,
-        risk:7SeverityLevels .
+    skos:prefLabel "Extremely Low Severity"@en .
 
-risk:VeryHighLikelihood a skos:Concept,
-        dpv:Concept ;
-    dct:created "2022-08-18"^^xsd:date ;
-    dct:creator "Harshvardhan J. Pandit"^^xsd:string ;
-    rdf:value 0.9 ;
-    rdfs:isDefinedBy risk: ;
-    sw:term_status "accepted"@en ;
-    skos:broader dpv:Likelihood,
-        risk:5LikelihoodLevels,
-        risk:7LikelihoodLevels ;
-    skos:definition "Level where Likelihood is Very High"@en ;
-    skos:note "The suggested quantitative value for this concept is 0.9 on a scale of 0 to 1"@en ;
-    skos:prefLabel "Very High Likelihood"@en ;
-    dpv:isInstanceOf dpv:Likelihood,
-        risk:5LikelihoodLevels,
-        risk:7LikelihoodLevels .
-
-risk:VeryHighRisk a skos:Concept,
-        dpv:Concept ;
-    dct:created "2022-08-18"^^xsd:date ;
-    dct:creator "Harshvardhan J. Pandit"^^xsd:string ;
-    rdf:value 0.9 ;
-    rdfs:isDefinedBy risk: ;
-    sw:term_status "accepted"@en ;
-    skos:broader dpv:RiskLevel,
-        risk:5RiskLevels,
-        risk:7RiskLevels ;
-    skos:definition "Level where Risk is Very High"@en ;
-    skos:note "The suggested quantitative value for this concept is 0.9 on a scale of 0 to 1"@en ;
-    skos:prefLabel "Very High Risk"@en ;
-    dpv:isInstanceOf dpv:RiskLevel,
-        risk:5RiskLevels,
-        risk:7RiskLevels .
-
-risk:VeryHighSeverity a skos:Concept,
-        dpv:Concept ;
-    dct:created "2022-08-18"^^xsd:date ;
-    dct:creator "Harshvardhan J. Pandit"^^xsd:string ;
-    rdf:value 0.9 ;
-    rdfs:isDefinedBy risk: ;
-    sw:term_status "accepted"@en ;
-    skos:broader dpv:Severity,
-        risk:5SeverityLevels,
-        risk:7SeverityLevels ;
-    skos:definition "Level where Severity is Very High"@en ;
-    skos:note "The suggested quantitative value for this concept is 0.9 on a scale of 0 to 1"@en ;
-    skos:prefLabel "Very High Severity"@en ;
-    dpv:isInstanceOf dpv:Severity,
-        risk:5SeverityLevels,
-        risk:7SeverityLevels .
-
-risk:VeryLowLikelihood a skos:Concept,
-        dpv:Concept ;
-    dct:created "2022-08-18"^^xsd:date ;
-    dct:creator "Harshvardhan J. Pandit"^^xsd:string ;
-    rdf:value 0.1 ;
-    rdfs:isDefinedBy risk: ;
-    sw:term_status "accepted"@en ;
-    skos:broader dpv:Likelihood,
-        risk:5LikelihoodLevels,
-        risk:7LikelihoodLevels ;
-    skos:definition "Level where Likelihood is Very Low"@en ;
-    skos:note "The suggested quantitative value for this concept is 0.1 on a scale of 0 to 1"@en ;
-    skos:prefLabel "Very Low Likelihood"@en ;
-    dpv:isInstanceOf dpv:Likelihood,
-        risk:5LikelihoodLevels,
-        risk:7LikelihoodLevels .
-
-risk:VeryLowRisk a skos:Concept,
-        dpv:Concept ;
-    dct:created "2022-08-18"^^xsd:date ;
-    dct:creator "Harshvardhan J. Pandit"^^xsd:string ;
-    rdf:value 0.1 ;
-    rdfs:isDefinedBy risk: ;
-    sw:term_status "accepted"@en ;
-    skos:broader dpv:RiskLevel,
-        risk:5RiskLevels,
-        risk:7RiskLevels ;
-    skos:definition "Level where Risk is Very Low"@en ;
-    skos:note "The suggested quantitative value for this concept is 0.1 on a scale of 0 to 1"@en ;
-    skos:prefLabel "Very Low Risk"@en ;
-    dpv:isInstanceOf dpv:RiskLevel,
-        risk:5RiskLevels,
-        risk:7RiskLevels .
-
-risk:VeryLowSeverity a skos:Concept,
-        dpv:Concept ;
-    dct:created "2022-08-18"^^xsd:date ;
-    dct:creator "Harshvardhan J. Pandit"^^xsd:string ;
-    rdf:value 0.1 ;
-    rdfs:isDefinedBy risk: ;
-    sw:term_status "accepted"@en ;
-    skos:broader dpv:Severity,
-        risk:5SeverityLevels,
-        risk:7SeverityLevels ;
-    skos:definition "Level where Severity is Very Low"@en ;
-    skos:note "The suggested quantitative value for this concept is 0.1 on a scale of 0 to 1"@en ;
-    skos:prefLabel "Very Low Severity"@en ;
-    dpv:isInstanceOf dpv:Severity,
-        risk:5SeverityLevels,
-        risk:7SeverityLevels .
-
-risk:HighLikelihood a skos:Concept,
-        dpv:Concept ;
-    dct:created "2022-08-18"^^xsd:date ;
-    dct:creator "Harshvardhan J. Pandit"^^xsd:string ;
-    rdf:value 0.75 ;
-    rdfs:isDefinedBy risk: ;
-    sw:term_status "accepted"@en ;
-    skos:broader dpv:Likelihood,
+risk:HighLikelihood a rdfs:Class,
+        skos:Concept,
+        dpv:Likelihood,
         risk:3LikelihoodLevels,
         risk:5LikelihoodLevels,
         risk:7LikelihoodLevels ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-08-18"^^xsd:date ;
+    rdf:value "0.75,xsd:decimal" ;
+    sw:term_status "accepted"@en ;
     skos:definition "Level where Likelihood is High"@en ;
     skos:note "The suggested quantitative value for this concept is 0.75 on a scale of 0 to 1"@en ;
-    skos:prefLabel "High Likelihood"@en ;
-    dpv:isInstanceOf dpv:Likelihood,
-        risk:3LikelihoodLevels,
-        risk:5LikelihoodLevels,
-        risk:7LikelihoodLevels .
+    skos:prefLabel "High Likelihood"@en .
 
-risk:HighRisk a skos:Concept,
-        dpv:Concept ;
-    dct:created "2022-08-18"^^xsd:date ;
-    dct:creator "Harshvardhan J. Pandit"^^xsd:string ;
-    rdf:value 0.75 ;
-    rdfs:isDefinedBy risk: ;
-    sw:term_status "accepted"@en ;
-    skos:broader dpv:RiskLevel,
+risk:HighRisk a rdfs:Class,
+        skos:Concept,
+        dpv:RiskLevel,
         risk:3RiskLevels,
         risk:5RiskLevels,
         risk:7RiskLevels ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-08-18"^^xsd:date ;
+    rdf:value "0.75,xsd:decimal" ;
+    sw:term_status "accepted"@en ;
     skos:definition "Level where Risk is High"@en ;
     skos:note "The suggested quantitative value for this concept is 0.75 on a scale of 0 to 1"@en ;
-    skos:prefLabel "High Risk"@en ;
-    dpv:isInstanceOf dpv:RiskLevel,
-        risk:3RiskLevels,
-        risk:5RiskLevels,
-        risk:7RiskLevels .
+    skos:prefLabel "High Risk"@en .
 
-risk:HighSeverity a skos:Concept,
-        dpv:Concept ;
-    dct:created "2022-08-18"^^xsd:date ;
-    dct:creator "Harshvardhan J. Pandit"^^xsd:string ;
-    rdf:value 0.75 ;
-    rdfs:isDefinedBy risk: ;
-    sw:term_status "accepted"@en ;
-    skos:broader dpv:Severity,
+risk:HighSeverity a rdfs:Class,
+        skos:Concept,
+        dpv:Severity,
         risk:3SeverityLevels,
         risk:5SeverityLevels,
         risk:7SeverityLevels ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-08-18"^^xsd:date ;
+    rdf:value "0.75,xsd:decimal" ;
+    sw:term_status "accepted"@en ;
     skos:definition "Level where Severity is High"@en ;
     skos:note "The suggested quantitative value for this concept is 0.75 on a scale of 0 to 1"@en ;
-    skos:prefLabel "High Severity"@en ;
-    dpv:isInstanceOf dpv:Severity,
-        risk:3SeverityLevels,
-        risk:5SeverityLevels,
-        risk:7SeverityLevels .
+    skos:prefLabel "High Severity"@en .
 
-risk:LowLikelihood a skos:Concept,
-        dpv:Concept ;
-    dct:created "2022-08-18"^^xsd:date ;
-    dct:creator "Harshvardhan J. Pandit"^^xsd:string ;
-    rdf:value 0.25 ;
-    rdfs:isDefinedBy risk: ;
-    sw:term_status "accepted"@en ;
-    skos:broader dpv:Likelihood,
+risk:LowLikelihood a rdfs:Class,
+        skos:Concept,
+        dpv:Likelihood,
         risk:3LikelihoodLevels,
         risk:5LikelihoodLevels,
         risk:7LikelihoodLevels ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-08-18"^^xsd:date ;
+    rdf:value "0.25,xsd:decimal" ;
+    sw:term_status "accepted"@en ;
     skos:definition "Level where Likelihood is Low"@en ;
     skos:note "The suggested quantitative value for this concept is 0.25 on a scale of 0 to 1"@en ;
-    skos:prefLabel "Low Likelihood"@en ;
-    dpv:isInstanceOf dpv:Likelihood,
-        risk:3LikelihoodLevels,
-        risk:5LikelihoodLevels,
-        risk:7LikelihoodLevels .
+    skos:prefLabel "Low Likelihood"@en .
 
-risk:LowRisk a skos:Concept,
-        dpv:Concept ;
-    dct:created "2022-08-18"^^xsd:date ;
-    dct:creator "Harshvardhan J. Pandit"^^xsd:string ;
-    rdf:value 0.25 ;
-    rdfs:isDefinedBy risk: ;
-    sw:term_status "accepted"@en ;
-    skos:broader dpv:RiskLevel,
+risk:LowRisk a rdfs:Class,
+        skos:Concept,
+        dpv:RiskLevel,
         risk:3RiskLevels,
         risk:5RiskLevels,
         risk:7RiskLevels ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-08-18"^^xsd:date ;
+    rdf:value "0.25,xsd:decimal" ;
+    sw:term_status "accepted"@en ;
     skos:definition "Level where Risk is Low"@en ;
     skos:note "The suggested quantitative value for this concept is 0.25 on a scale of 0 to 1"@en ;
-    skos:prefLabel "Low Risk"@en ;
-    dpv:isInstanceOf dpv:RiskLevel,
-        risk:3RiskLevels,
-        risk:5RiskLevels,
-        risk:7RiskLevels .
+    skos:prefLabel "Low Risk"@en .
 
-risk:LowSeverity a skos:Concept,
-        dpv:Concept ;
-    dct:created "2022-08-18"^^xsd:date ;
-    dct:creator "Harshvardhan J. Pandit"^^xsd:string ;
-    rdf:value 0.25 ;
-    rdfs:isDefinedBy risk: ;
-    sw:term_status "accepted"@en ;
-    skos:broader dpv:Severity,
+risk:LowSeverity a rdfs:Class,
+        skos:Concept,
+        dpv:Severity,
         risk:3SeverityLevels,
         risk:5SeverityLevels,
         risk:7SeverityLevels ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-08-18"^^xsd:date ;
+    rdf:value "0.25,xsd:decimal" ;
+    sw:term_status "accepted"@en ;
     skos:definition "Level where Severity is Low"@en ;
     skos:note "The suggested quantitative value for this concept is 0.25 on a scale of 0 to 1"@en ;
-    skos:prefLabel "Low Severity"@en ;
-    dpv:isInstanceOf dpv:Severity,
-        risk:3SeverityLevels,
-        risk:5SeverityLevels,
-        risk:7SeverityLevels .
+    skos:prefLabel "Low Severity"@en .
 
-risk:ModerateLikelihood a skos:Concept,
-        dpv:Concept ;
-    dct:created "2022-08-18"^^xsd:date ;
-    dct:creator "Harshvardhan J. Pandit"^^xsd:string ;
-    rdf:value 0.5 ;
-    rdfs:isDefinedBy risk: ;
-    sw:term_status "accepted"@en ;
-    skos:broader dpv:Likelihood,
+risk:ModerateLikelihood a rdfs:Class,
+        skos:Concept,
+        dpv:Likelihood,
         risk:3LikelihoodLevels,
         risk:5LikelihoodLevels,
         risk:7LikelihoodLevels ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-08-18"^^xsd:date ;
+    rdf:value "0.5,xsd:decimal" ;
+    sw:term_status "accepted"@en ;
     skos:definition "Level where Likelihood is Moderate"@en ;
     skos:note "The suggested quantitative value for this concept is 0.5 on a scale of 0 to 1"@en ;
-    skos:prefLabel "Moderate Likelihood"@en ;
-    dpv:isInstanceOf dpv:Likelihood,
-        risk:3LikelihoodLevels,
-        risk:5LikelihoodLevels,
-        risk:7LikelihoodLevels .
+    skos:prefLabel "Moderate Likelihood"@en .
 
-risk:ModerateRisk a skos:Concept,
-        dpv:Concept ;
-    dct:created "2022-08-18"^^xsd:date ;
-    dct:creator "Harshvardhan J. Pandit"^^xsd:string ;
-    rdf:value 0.5 ;
-    rdfs:isDefinedBy risk: ;
-    sw:term_status "accepted"@en ;
-    skos:broader dpv:RiskLevel,
+risk:ModerateRisk a rdfs:Class,
+        skos:Concept,
+        dpv:RiskLevel,
         risk:3RiskLevels,
         risk:5RiskLevels,
         risk:7RiskLevels ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-08-18"^^xsd:date ;
+    rdf:value "0.5,xsd:decimal" ;
+    sw:term_status "accepted"@en ;
     skos:definition "Level where Risk is Moderate"@en ;
     skos:note "The suggested quantitative value for this concept is 0.5 on a scale of 0 to 1"@en ;
-    skos:prefLabel "Moderate Risk"@en ;
-    dpv:isInstanceOf dpv:RiskLevel,
-        risk:3RiskLevels,
-        risk:5RiskLevels,
-        risk:7RiskLevels .
+    skos:prefLabel "Moderate Risk"@en .
 
-risk:ModerateSeverity a skos:Concept,
-        dpv:Concept ;
-    dct:created "2022-08-18"^^xsd:date ;
-    dct:creator "Harshvardhan J. Pandit"^^xsd:string ;
-    rdf:value 0.5 ;
-    rdfs:isDefinedBy risk: ;
-    sw:term_status "accepted"@en ;
-    skos:broader dpv:Severity,
+risk:ModerateSeverity a rdfs:Class,
+        skos:Concept,
+        dpv:Severity,
         risk:3SeverityLevels,
         risk:5SeverityLevels,
         risk:7SeverityLevels ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-08-18"^^xsd:date ;
+    rdf:value "0.5,xsd:decimal" ;
+    sw:term_status "accepted"@en ;
     skos:definition "Level where Severity is Moderate"@en ;
     skos:note "The suggested quantitative value for this concept is 0.5 on a scale of 0 to 1"@en ;
-    skos:prefLabel "Moderate Severity"@en ;
-    dpv:isInstanceOf dpv:Severity,
-        risk:3SeverityLevels,
-        risk:5SeverityLevels,
-        risk:7SeverityLevels .
+    skos:prefLabel "Moderate Severity"@en .
 
-risk:3LikelihoodLevels a skos:Concept,
-        dpv:Concept ;
-    dct:created "2022-08-18"^^xsd:date ;
-    dct:creator "Harshvardhan J. Pandit"^^xsd:string ;
-    rdfs:isDefinedBy risk: ;
-    sw:term_status "accepted"@en ;
-    skos:broader dpv:Likelihood ;
-    skos:definition "Scale with 3 Likelihood Levels from High to Low"@en ;
-    skos:narrower risk:HighLikelihood,
-        risk:LowLikelihood,
-        risk:ModerateLikelihood ;
-    skos:prefLabel "3 Likelihood Levels"@en ;
-    dpv:isSubTypeOf dpv:Likelihood .
-
-risk:3RiskLevels a skos:Concept,
-        dpv:Concept ;
-    dct:created "2022-08-18"^^xsd:date ;
-    dct:creator "Harshvardhan J. Pandit"^^xsd:string ;
-    rdfs:isDefinedBy risk: ;
-    sw:term_status "accepted"@en ;
-    skos:broader dpv:RiskLevel ;
-    skos:definition "Scale with 3 Risk Levels from High to Low"@en ;
-    skos:narrower risk:HighRisk,
-        risk:LowRisk,
-        risk:ModerateRisk ;
-    skos:prefLabel "3 Risk Levels"@en ;
-    dpv:isSubTypeOf dpv:RiskLevel .
-
-risk:3SeverityLevels a skos:Concept,
-        dpv:Concept ;
-    dct:created "2022-08-18"^^xsd:date ;
-    dct:creator "Harshvardhan J. Pandit"^^xsd:string ;
-    rdfs:isDefinedBy risk: ;
-    sw:term_status "accepted"@en ;
-    skos:broader dpv:Severity ;
-    skos:definition "Scale with 3 Severity Levels from High to Low"@en ;
-    skos:narrower risk:HighSeverity,
-        risk:LowSeverity,
-        risk:ModerateSeverity ;
-    skos:prefLabel "3 Severity Levels"@en ;
-    dpv:isSubTypeOf dpv:Severity .
-
-risk:5LikelihoodLevels a skos:Concept,
-        dpv:Concept ;
-    dct:created "2022-08-18"^^xsd:date ;
-    dct:creator "Harshvardhan J. Pandit"^^xsd:string ;
-    rdfs:isDefinedBy risk: ;
-    sw:term_status "accepted"@en ;
-    skos:broader dpv:Likelihood ;
-    skos:definition "Scale with 5 Likelihood Levels from Very High to Very Low"@en ;
-    skos:narrower risk:HighLikelihood,
-        risk:LowLikelihood,
-        risk:ModerateLikelihood,
-        risk:VeryHighLikelihood,
-        risk:VeryLowLikelihood ;
-    skos:prefLabel "5 Likelihood Levels"@en ;
-    dpv:isSubTypeOf dpv:Likelihood .
-
-risk:5RiskLevels a skos:Concept,
-        dpv:Concept ;
-    dct:created "2022-08-18"^^xsd:date ;
-    dct:creator "Harshvardhan J. Pandit"^^xsd:string ;
-    rdfs:isDefinedBy risk: ;
-    sw:term_status "accepted"@en ;
-    skos:broader dpv:RiskLevel ;
-    skos:definition "Scale with 5 Risk Levels from Very High to Very Low"@en ;
-    skos:narrower risk:HighRisk,
-        risk:LowRisk,
-        risk:ModerateRisk,
-        risk:VeryHighRisk,
-        risk:VeryLowRisk ;
-    skos:prefLabel "5 Risk Levels"@en ;
-    dpv:isSubTypeOf dpv:RiskLevel .
-
-risk:5SeverityLevels a skos:Concept,
-        dpv:Concept ;
-    dct:created "2022-08-18"^^xsd:date ;
-    dct:creator "Harshvardhan J. Pandit"^^xsd:string ;
-    rdfs:isDefinedBy risk: ;
-    sw:term_status "accepted"@en ;
-    skos:broader dpv:Severity ;
-    skos:definition "Scale with 5 Severity Levels from Very High to Very Low"@en ;
-    skos:narrower risk:HighSeverity,
-        risk:LowSeverity,
-        risk:ModerateSeverity,
-        risk:VeryHighSeverity,
-        risk:VeryLowSeverity ;
-    skos:prefLabel "5 Severity Levels"@en ;
-    dpv:isSubTypeOf dpv:Severity .
-
-risk:7LikelihoodLevels a skos:Concept,
-        dpv:Concept ;
-    dct:created "2022-08-18"^^xsd:date ;
-    dct:creator "Harshvardhan J. Pandit"^^xsd:string ;
-    rdfs:isDefinedBy risk: ;
-    sw:term_status "accepted"@en ;
-    skos:broader dpv:Likelihood ;
-    skos:definition "Scale with 7 Likelihood Levels from Extremely High to Extremely Low"@en ;
-    skos:narrower risk:ExtremelyHighLikelihood,
-        risk:ExtremelyLowLikelihood,
-        risk:HighLikelihood,
-        risk:LowLikelihood,
-        risk:ModerateLikelihood,
-        risk:VeryHighLikelihood,
-        risk:VeryLowLikelihood ;
-    skos:prefLabel "7 Likelihood Levels"@en ;
-    dpv:isSubTypeOf dpv:Likelihood .
-
-risk:7RiskLevels a skos:Concept,
-        dpv:Concept ;
-    dct:created "2022-08-18"^^xsd:date ;
-    dct:creator "Harshvardhan J. Pandit"^^xsd:string ;
-    rdfs:isDefinedBy risk: ;
-    sw:term_status "accepted"@en ;
-    skos:broader dpv:RiskLevel ;
-    skos:definition "Scale with 7 Risk Levels from Extremely High to Extremely Low"@en ;
-    skos:narrower risk:ExtremelyHighRisk,
-        risk:ExtremelyLowRisk,
-        risk:HighRisk,
-        risk:LowRisk,
-        risk:ModerateRisk,
-        risk:VeryHighRisk,
-        risk:VeryLowRisk ;
-    skos:prefLabel "7 Risk Levels"@en ;
-    dpv:isSubTypeOf dpv:RiskLevel .
-
-risk:7SeverityLevels a skos:Concept,
-        dpv:Concept ;
-    dct:created "2022-08-18"^^xsd:date ;
-    dct:creator "Harshvardhan J. Pandit"^^xsd:string ;
-    rdfs:isDefinedBy risk: ;
-    sw:term_status "accepted"@en ;
-    skos:broader dpv:Severity ;
-    skos:definition "Scale with 7 Severity Levels from Extremely High to Extremely Low"@en ;
-    skos:narrower risk:ExtremelyHighSeverity,
-        risk:ExtremelyLowSeverity,
-        risk:HighSeverity,
-        risk:LowSeverity,
-        risk:ModerateSeverity,
-        risk:VeryHighSeverity,
-        risk:VeryLowSeverity ;
-    skos:prefLabel "7 Severity Levels"@en ;
-    dpv:isSubTypeOf dpv:Severity .
-
-dpv:Likelihood skos:narrower risk:3LikelihoodLevels,
+risk:VeryHighLikelihood a rdfs:Class,
+        skos:Concept,
+        dpv:Likelihood,
         risk:5LikelihoodLevels,
-        risk:7LikelihoodLevels,
-        risk:ExtremelyHighLikelihood,
-        risk:ExtremelyLowLikelihood,
-        risk:HighLikelihood,
-        risk:LowLikelihood,
-        risk:ModerateLikelihood,
-        risk:VeryHighLikelihood,
-        risk:VeryLowLikelihood .
+        risk:7LikelihoodLevels ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-08-18"^^xsd:date ;
+    rdf:value "0.9,xsd:decimal" ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Level where Likelihood is Very High"@en ;
+    skos:note "The suggested quantitative value for this concept is 0.9 on a scale of 0 to 1"@en ;
+    skos:prefLabel "Very High Likelihood"@en .
 
-dpv:RiskLevel skos:narrower risk:3RiskLevels,
+risk:VeryHighRisk a rdfs:Class,
+        skos:Concept,
+        dpv:RiskLevel,
         risk:5RiskLevels,
-        risk:7RiskLevels,
-        risk:ExtremelyHighRisk,
-        risk:ExtremelyLowRisk,
-        risk:HighRisk,
-        risk:LowRisk,
-        risk:ModerateRisk,
-        risk:VeryHighRisk,
-        risk:VeryLowRisk .
+        risk:7RiskLevels ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-08-18"^^xsd:date ;
+    rdf:value "0.9,xsd:decimal" ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Level where Risk is Very High"@en ;
+    skos:note "The suggested quantitative value for this concept is 0.9 on a scale of 0 to 1"@en ;
+    skos:prefLabel "Very High Risk"@en .
 
-dpv:Severity skos:narrower risk:3SeverityLevels,
+risk:VeryHighSeverity a rdfs:Class,
+        skos:Concept,
+        dpv:Severity,
         risk:5SeverityLevels,
-        risk:7SeverityLevels,
-        risk:ExtremelyHighSeverity,
-        risk:ExtremelyLowSeverity,
-        risk:HighSeverity,
-        risk:LowSeverity,
-        risk:ModerateSeverity,
-        risk:VeryHighSeverity,
-        risk:VeryLowSeverity .
+        risk:7SeverityLevels ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-08-18"^^xsd:date ;
+    rdf:value "0.9,xsd:decimal" ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Level where Severity is Very High"@en ;
+    skos:note "The suggested quantitative value for this concept is 0.9 on a scale of 0 to 1"@en ;
+    skos:prefLabel "Very High Severity"@en .
+
+risk:VeryLowLikelihood a rdfs:Class,
+        skos:Concept,
+        dpv:Likelihood,
+        risk:5LikelihoodLevels,
+        risk:7LikelihoodLevels ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-08-18"^^xsd:date ;
+    rdf:value "0.1,xsd:decimal" ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Level where Likelihood is Very Low"@en ;
+    skos:note "The suggested quantitative value for this concept is 0.1 on a scale of 0 to 1"@en ;
+    skos:prefLabel "Very Low Likelihood"@en .
+
+risk:VeryLowRisk a rdfs:Class,
+        skos:Concept,
+        dpv:RiskLevel,
+        risk:5RiskLevels,
+        risk:7RiskLevels ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-08-18"^^xsd:date ;
+    rdf:value "0.1,xsd:decimal" ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Level where Risk is Very Low"@en ;
+    skos:note "The suggested quantitative value for this concept is 0.1 on a scale of 0 to 1"@en ;
+    skos:prefLabel "Very Low Risk"@en .
+
+risk:VeryLowSeverity a rdfs:Class,
+        skos:Concept,
+        dpv:Severity,
+        risk:5SeverityLevels,
+        risk:7SeverityLevels ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-08-18"^^xsd:date ;
+    rdf:value "0.1,xsd:decimal" ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Level where Severity is Very Low"@en ;
+    skos:note "The suggested quantitative value for this concept is 0.1 on a scale of 0 to 1"@en ;
+    skos:prefLabel "Very Low Severity"@en .
 

@@ -1,18 +1,403 @@
 [
   {
-    "@id": "https://w3id.org/dpv#dpv:hasStatus",
+    "@id": "https://w3id.org/dpv#dcat:Resource",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-11-02"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A dataset, data service, or any other resource associated with Right Exercise - such as for providing a copy of personal data"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "dcat:Resource"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#RightExerciseNotice",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@language": "en",
+        "@value": "Harshvardhan J Pandit, Beatriz Esteves, Georg P Krog, Paul Ryan"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-10-22"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Information associated with exercising of an active right"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "This concept is intended for providing information regarding a right exercise. For specific instances of such exercises, see RightExerciseActivity and RightExerciseRecord."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Right Exercise Notice"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#RightExerciseActivity",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@language": "en",
+        "@value": "Harshvardhan J Pandit, Beatriz Esteves, Georg P Krog, Paul Ryan"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-11-02"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "An activity representing an exercising of an active right"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "There may be multiple activities associated with exercising and fulfilling rights. See the RightExerciseRecord concept for record-keeping of such activities in a cohesive manner."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Right Exercise Activity"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#RightNonFulfilmentNotice",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Notice"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@language": "en",
+        "@value": "Harshvardhan J. Pandit, Beatriz Esteves"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-11-02"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Notice provided regarding non-fulfilment of a right"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "This notice is associated with situations where information is provided with the intention of communicating non-fulfilment of a right. For example, to provide justifications on why a right could not be fulfilled or providing information about another entity  who should be approached for exercising this right."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Right Non-Fulfilment Notice"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#RightExerciseRecord",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Record"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@language": "en",
+        "@value": "Harshvardhan J Pandit, Beatriz Esteves, Georg P Krog, Paul Ryan"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-11-02"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Record of a Right being exercised"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "This concept represents a record of one or more right exercise activities, such as those associated with a single data subject or service or entity"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Right Exercise Record"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#DataSubjectRight",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Right"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@language": "en",
+        "@value": "Beatriz Esteves, Georg P Krog, Harshvardhan Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2020-11-18"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "The rights applicable or provided to a Data Subject"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Based on use of definitions, the notion of 'Data Subject Right' can be equivalent to 'Individual Right' or 'Right of a Person'"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Data Subject Right"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#PassiveRight",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Right"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@language": "en",
+        "@value": "Harshvardhan J Pandit, Beatriz Esteves, Georg P Krog, Paul Ryan"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-10-22"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "The right(s) applicable, provided, or expected that are always (passively) applicable"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Passive rights do not require the entity to request or exercise them. They are considered to be always applicable. For example, the Right to Privacy (in EU) does not require an exercise for it to be fulfilled."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Passive Right"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#isExercisedAt",
     "@type": [
       "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
     ],
     "http://purl.org/dc/dcam/domainIncludes": [
       {
-        "@id": "https://w3id.org/dpv#RightExerciseActivity"
+        "@id": "https://w3id.org/dpv#ActiveRight"
       }
     ],
     "http://purl.org/dc/dcam/rangeIncludes": [
       {
-        "@id": "https://w3id.org/dpv#Status"
+        "@id": "https://w3id.org/dpv#RightExerciseNotice"
       }
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@language": "en",
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-10-22"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Indicates context or information about exercising a right"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "is exercised at"
+      }
+    ],
+    "https://schema.org/domainIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#ActiveRight"
+      }
+    ],
+    "https://schema.org/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#RightExerciseNotice"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#hasRight",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://purl.org/dc/dcam/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Right"
+      }
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@language": "en",
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2020-11-18"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Indicates use or applicability of Right"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "has right"
+      }
+    ],
+    "https://schema.org/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Right"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#dct:format",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
     ],
     "http://purl.org/dc/terms/contributor": [
       {
@@ -35,23 +420,13 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Indicates the status of a Right Exercise Activity"
+        "@value": "Specifying the format of provided information, for example a CSV dataset"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "dpv:hasStatus"
-      }
-    ],
-    "https://schema.org/domainIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#RightExerciseActivity"
-      }
-    ],
-    "https://schema.org/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Status"
+        "@value": "dct:format"
       }
     ]
   },
@@ -156,53 +531,19 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#RightExerciseRecord",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Record"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J Pandit, Beatriz Esteves, Georg P Krog, Paul Ryan"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-11-02"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Record of a Right being exercised"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "This concept represents a record of one or more right exercise activities, such as those associated with a single data subject or service or entity"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Right Exercise Record"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#dct:valid",
+    "@id": "https://w3id.org/dpv#dct:isPartOf",
     "@type": [
       "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://purl.org/dc/dcam/domainIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#RightExerciseActivity"
+      }
+    ],
+    "http://purl.org/dc/dcam/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#RightExerciseRecord"
+      }
     ],
     "http://purl.org/dc/terms/contributor": [
       {
@@ -225,13 +566,122 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Specfiying the temporal validity of an activity associated with Right Exercise. For example, limits on duration for providing or accessing provided information"
+        "@value": "Specifying a RightExerciseActivity is part of a RightExerciseRecord"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "dct:valid"
+        "@value": "dct:isPartOf"
+      }
+    ],
+    "https://schema.org/domainIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#RightExerciseActivity"
+      }
+    ],
+    "https://schema.org/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#RightExerciseRecord"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#Right",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@language": "en",
+        "@value": "Harshvardhan J Pandit, Beatriz Esteves, Georg P Krog"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2020-11-18"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "The right(s) applicable, provided, or expected"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "A 'right' is a legal, social, or ethical principle of freedom or entitlement which dictate the norms regarding what is allowed or owed.. Rights as a concept encompass a broad area of norms and entities, and are not specific to Individuals or Data Protection / Privacy. For individual specific rights, see dpv:DataSubjectRight"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Right"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#dpv:hasJustification",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://purl.org/dc/dcam/domainIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#RightExerciseActivity"
+      }
+    ],
+    "http://purl.org/dc/dcam/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Justification"
+      }
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@language": "en",
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-11-02"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Specifying a justification for non-fulfilment of Right Exercise"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "dpv:hasJustification"
+      }
+    ],
+    "https://schema.org/domainIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#RightExerciseActivity"
+      }
+    ],
+    "https://schema.org/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Justification"
       }
     ]
   },
@@ -280,19 +730,9 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#dpv:isAfter",
+    "@id": "https://w3id.org/dpv#dct:valid",
     "@type": [
       "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
-    ],
-    "http://purl.org/dc/dcam/domainIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#RightExerciseActivity"
-      }
-    ],
-    "http://purl.org/dc/dcam/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#RightExerciseActivity"
-      }
     ],
     "http://purl.org/dc/terms/contributor": [
       {
@@ -315,209 +755,13 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Specifying a RightExerciseActivity occurs before another RightExerciseActivity"
+        "@value": "Specfiying the temporal validity of an activity associated with Right Exercise. For example, limits on duration for providing or accessing provided information"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "dpv:isAfter"
-      }
-    ],
-    "https://schema.org/domainIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#RightExerciseActivity"
-      }
-    ],
-    "https://schema.org/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#RightExerciseActivity"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#dcat:Resource",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-11-02"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A dataset, data service, or any other resource associated with Right Exercise - such as for providing a copy of personal data"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "dcat:Resource"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#isExercisedAt",
-    "@type": [
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
-    ],
-    "http://purl.org/dc/dcam/domainIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#ActiveRight"
-      }
-    ],
-    "http://purl.org/dc/dcam/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#RightExerciseNotice"
-      }
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-10-22"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Indicates context or information about exercising a right"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "is exercised at"
-      }
-    ],
-    "https://schema.org/domainIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#ActiveRight"
-      }
-    ],
-    "https://schema.org/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#RightExerciseNotice"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#RightExerciseNotice",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J Pandit, Beatriz Esteves, Georg P Krog, Paul Ryan"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-10-22"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Information associated with exercising of an active right"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "This concept is intended for providing information regarding a right exercise. For specific instances of such exercises, see RightExerciseActivity and RightExerciseRecord."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Right Exercise Notice"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#dct:hasPart",
-    "@type": [
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
-    ],
-    "http://purl.org/dc/dcam/domainIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#RightExerciseRecord"
-      }
-    ],
-    "http://purl.org/dc/dcam/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#RightExerciseActivity"
-      }
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-11-02"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Specifying a RightExerciseRecord has RightExerciseActivity as part of its records"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "dct:hasPart"
-      }
-    ],
-    "https://schema.org/domainIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#RightExerciseRecord"
-      }
-    ],
-    "https://schema.org/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#RightExerciseActivity"
+        "@value": "dct:valid"
       }
     ]
   },
@@ -578,6 +822,98 @@
     ]
   },
   {
+    "@id": "https://w3id.org/dpv#dpv:hasStatus",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://purl.org/dc/dcam/domainIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#RightExerciseActivity"
+      }
+    ],
+    "http://purl.org/dc/dcam/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Status"
+      }
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@language": "en",
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-11-02"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Indicates the status of a Right Exercise Activity"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "dpv:hasStatus"
+      }
+    ],
+    "https://schema.org/domainIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#RightExerciseActivity"
+      }
+    ],
+    "https://schema.org/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Status"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#dct:accessRights",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@language": "en",
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-11-02"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Specfiying constraints on access associated with Rights Exercising (e.g. User must log in) or access to provided data (e.g. access via link)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "dct:accessRights"
+      }
+    ]
+  },
+  {
     "@id": "https://w3id.org/dpv#dpv:isBefore",
     "@type": [
       "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
@@ -634,9 +970,19 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#dct:accessRights",
+    "@id": "https://w3id.org/dpv#dpv:isAfter",
     "@type": [
       "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://purl.org/dc/dcam/domainIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#RightExerciseActivity"
+      }
+    ],
+    "http://purl.org/dc/dcam/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#RightExerciseActivity"
+      }
     ],
     "http://purl.org/dc/terms/contributor": [
       {
@@ -659,92 +1005,23 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Specfiying constraints on access associated with Rights Exercising (e.g. User must log in) or access to provided data (e.g. access via link)"
+        "@value": "Specifying a RightExerciseActivity occurs before another RightExerciseActivity"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "dct:accessRights"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#dct:format",
-    "@type": [
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
+        "@value": "dpv:isAfter"
       }
     ],
-    "http://purl.org/dc/terms/created": [
+    "https://schema.org/domainIncludes": [
       {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-11-02"
+        "@id": "https://w3id.org/dpv#RightExerciseActivity"
       }
     ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+    "https://schema.org/rangeIncludes": [
       {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Specifying the format of provided information, for example a CSV dataset"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "dct:format"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#Right",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J Pandit, Beatriz Esteves, Georg P Krog"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2020-11-18"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The right(s) applicable, provided, or expected"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "A 'right' is a legal, social, or ethical principle of freedom or entitlement which dictate the norms regarding what is allowed or owed.. Rights as a concept encompass a broad area of norms and entities, and are not specific to Individuals or Data Protection / Privacy. For individual specific rights, see dpv:DataSubjectRight"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Right"
+        "@id": "https://w3id.org/dpv#RightExerciseActivity"
       }
     ]
   },
@@ -795,108 +1072,18 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#PassiveRight",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Right"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J Pandit, Beatriz Esteves, Georg P Krog, Paul Ryan"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-10-22"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The right(s) applicable, provided, or expected that are always (passively) applicable"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Passive rights do not require the entity to request or exercise them. They are considered to be always applicable. For example, the Right to Privacy (in EU) does not require an exercise for it to be fulfilled."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Passive Right"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#hasRight",
-    "@type": [
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
-    ],
-    "http://purl.org/dc/dcam/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Right"
-      }
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2020-11-18"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Indicates use or applicability of Right"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "has right"
-      }
-    ],
-    "https://schema.org/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Right"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#dct:isPartOf",
+    "@id": "https://w3id.org/dpv#dct:hasPart",
     "@type": [
       "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
     ],
     "http://purl.org/dc/dcam/domainIncludes": [
       {
-        "@id": "https://w3id.org/dpv#RightExerciseActivity"
+        "@id": "https://w3id.org/dpv#RightExerciseRecord"
       }
     ],
     "http://purl.org/dc/dcam/rangeIncludes": [
       {
-        "@id": "https://w3id.org/dpv#RightExerciseRecord"
+        "@id": "https://w3id.org/dpv#RightExerciseActivity"
       }
     ],
     "http://purl.org/dc/terms/contributor": [
@@ -920,210 +1107,23 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Specifying a RightExerciseActivity is part of a RightExerciseRecord"
+        "@value": "Specifying a RightExerciseRecord has RightExerciseActivity as part of its records"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "dct:isPartOf"
+        "@value": "dct:hasPart"
       }
     ],
     "https://schema.org/domainIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#RightExerciseActivity"
-      }
-    ],
-    "https://schema.org/rangeIncludes": [
       {
         "@id": "https://w3id.org/dpv#RightExerciseRecord"
       }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#RightNonFulfilmentNotice",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Notice"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit, Beatriz Esteves"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-11-02"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Notice provided regarding non-fulfilment of a right"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "This notice is associated with situations where information is provided with the intention of communicating non-fulfilment of a right. For example, to provide justifications on why a right could not be fulfilled or providing information about another entity  who should be approached for exercising this right."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Right Non-Fulfilment Notice"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#RightExerciseActivity",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J Pandit, Beatriz Esteves, Georg P Krog, Paul Ryan"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-11-02"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "An activity representing an exercising of an active right"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "There may be multiple activities associated with exercising and fulfilling rights. See the RightExerciseRecord concept for record-keeping of such activities in a cohesive manner."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Right Exercise Activity"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#DataSubjectRight",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Right"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Beatriz Esteves, Georg P Krog, Harshvardhan Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2020-11-18"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The rights applicable or provided to a Data Subject"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Based on use of definitions, the notion of 'Data Subject Right' can be equivalent to 'Individual Right' or 'Right of a Person'"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Data Subject Right"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#dpv:hasJustification",
-    "@type": [
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
-    ],
-    "http://purl.org/dc/dcam/domainIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#RightExerciseActivity"
-      }
-    ],
-    "http://purl.org/dc/dcam/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Justification"
-      }
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-11-02"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Specifying a justification for non-fulfilment of Right Exercise"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "dpv:hasJustification"
-      }
-    ],
-    "https://schema.org/domainIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#RightExerciseActivity"
-      }
     ],
     "https://schema.org/rangeIncludes": [
       {
-        "@id": "https://w3id.org/dpv#Justification"
+        "@id": "https://w3id.org/dpv#RightExerciseActivity"
       }
     ]
   }
