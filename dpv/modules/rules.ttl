@@ -3,6 +3,7 @@
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -50,7 +51,9 @@ dpv:hasObligation a rdf:Property ;
     rdfs:subPropertyOf dpv:hasRule ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifying applicability or inclusion of an obligation rule within specified context"@en ;
-    skos:prefLabel "has obligation"@en .
+    skos:prefLabel "has obligation"@en ;
+    schema:domainIncludes dpv:Context ;
+    schema:rangeIncludes dpv:Obligation .
 
 dpv:hasPermission a rdf:Property ;
     dcam:domainIncludes dpv:Context ;
@@ -60,7 +63,9 @@ dpv:hasPermission a rdf:Property ;
     rdfs:subPropertyOf dpv:hasRule ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifying applicability or inclusion of a permission rule within specified context"@en ;
-    skos:prefLabel "has permission"@en .
+    skos:prefLabel "has permission"@en ;
+    schema:domainIncludes dpv:Context ;
+    schema:rangeIncludes dpv:Permission .
 
 dpv:hasProhibition a rdf:Property ;
     dcam:domainIncludes dpv:Context ;
@@ -70,7 +75,9 @@ dpv:hasProhibition a rdf:Property ;
     rdfs:subPropertyOf dpv:hasRule ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifying applicability or inclusion of a prohibition rule within specified context"@en ;
-    skos:prefLabel "has prohibition"@en .
+    skos:prefLabel "has prohibition"@en ;
+    schema:domainIncludes dpv:Context ;
+    schema:rangeIncludes dpv:Prohibition .
 
 dpv:hasRule a rdf:Property ;
     dcam:domainIncludes dpv:Context ;
@@ -79,5 +86,7 @@ dpv:hasRule a rdf:Property ;
     dct:created "2022-10-19"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifying applicability or inclusion of a rule within specified context"@en ;
-    skos:prefLabel "has rule"@en .
+    skos:prefLabel "has rule"@en ;
+    schema:domainIncludes dpv:Context ;
+    schema:rangeIncludes dpv:Rule .
 

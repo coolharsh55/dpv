@@ -3,6 +3,7 @@
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -112,7 +113,8 @@ dpv:hasDataExporter a rdf:Property ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:definition "Indiciates inclusion or applicability of a LegalEntity in the role of Data Exporter"@en ;
-    skos:prefLabel "has data exporter"@en .
+    skos:prefLabel "has data exporter"@en ;
+    schema:rangeIncludes dpv:DataExporter .
 
 dpv:hasDataImporter a rdf:Property ;
     dcam:rangeIncludes dpv:DataImporter ;
@@ -121,7 +123,8 @@ dpv:hasDataImporter a rdf:Property ;
     rdfs:subPropertyOf dpv:hasRecipient ;
     sw:term_status "accepted"@en ;
     skos:definition "Indiciates inclusion or applicability of a LegalEntity in the role of Data Importer"@en ;
-    skos:prefLabel "has data importer"@en .
+    skos:prefLabel "has data importer"@en ;
+    schema:rangeIncludes dpv:DataImporter .
 
 dpv:hasDataProcessor a rdf:Property ;
     dcam:rangeIncludes dpv:DataProcessor ;
@@ -130,7 +133,8 @@ dpv:hasDataProcessor a rdf:Property ;
     rdfs:subPropertyOf dpv:hasRecipient ;
     sw:term_status "accepted"@en ;
     skos:definition "Indiciates inclusion or applicability of a Data Processor"@en ;
-    skos:prefLabel "has data processor"@en .
+    skos:prefLabel "has data processor"@en ;
+    schema:rangeIncludes dpv:DataProcessor .
 
 dpv:hasDataProtectionOfficer a rdf:Property ;
     dcam:rangeIncludes dpv:DataProtectionOfficer ;
@@ -139,7 +143,8 @@ dpv:hasDataProtectionOfficer a rdf:Property ;
     rdfs:subPropertyOf dpv:hasRepresentative ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifices an associated data protection officer"@en ;
-    skos:prefLabel "has data protection officer"@en .
+    skos:prefLabel "has data protection officer"@en ;
+    schema:rangeIncludes dpv:DataProtectionOfficer .
 
 dpv:hasJointDataControllers a rdf:Property ;
     dcam:rangeIncludes dpv:JointDataControllers ;
@@ -148,7 +153,8 @@ dpv:hasJointDataControllers a rdf:Property ;
     rdfs:subPropertyOf dpv:hasDataController ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates inclusion or applicability of a Joint Data Controller"@en ;
-    skos:prefLabel "has joint data controllers"@en .
+    skos:prefLabel "has joint data controllers"@en ;
+    schema:rangeIncludes dpv:JointDataControllers .
 
 dpv:hasRecipientDataController a rdf:Property ;
     dcam:rangeIncludes dpv:DataController ;
@@ -157,7 +163,8 @@ dpv:hasRecipientDataController a rdf:Property ;
     rdfs:subPropertyOf dpv:hasRecipient ;
     sw:term_status "accepted"@en ;
     skos:definition "Indiciates inclusion or applicability of a Data Controller as a Recipient of persona data"@en ;
-    skos:prefLabel "has recipient data controller"@en .
+    skos:prefLabel "has recipient data controller"@en ;
+    schema:rangeIncludes dpv:DataController .
 
 dpv:hasRecipientThirdParty a rdf:Property ;
     dcam:rangeIncludes dpv:ThirdParty ;
@@ -166,7 +173,8 @@ dpv:hasRecipientThirdParty a rdf:Property ;
     rdfs:subPropertyOf dpv:hasRecipient ;
     sw:term_status "accepted"@en ;
     skos:definition "Indiciates inclusion or applicability of a Third Party as a Recipient of persona data"@en ;
-    skos:prefLabel "has recipient third party"@en .
+    skos:prefLabel "has recipient third party"@en ;
+    schema:rangeIncludes dpv:ThirdParty .
 
 dpv:hasDataController a rdf:Property ;
     dcam:rangeIncludes dpv:DataController ;
@@ -176,7 +184,8 @@ dpv:hasDataController a rdf:Property ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with Data Controller"@en ;
-    skos:prefLabel "has data controller"@en .
+    skos:prefLabel "has data controller"@en ;
+    schema:rangeIncludes dpv:DataController .
 
 dpv:hasRecipient a rdf:Property ;
     dcam:rangeIncludes dpv:Recipient ;
@@ -187,5 +196,6 @@ dpv:hasRecipient a rdf:Property ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates Recipient of Personal Data"@en ;
-    skos:prefLabel "has recipient"@en .
+    skos:prefLabel "has recipient"@en ;
+    schema:rangeIncludes dpv:Recipient .
 

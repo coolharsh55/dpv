@@ -3,6 +3,7 @@
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -834,12 +835,14 @@ dpv:hasPurpose a rdf:Property ;
     dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/)"@en ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with Purpose"@en ;
-    skos:prefLabel "has purpose"@en .
+    skos:prefLabel "has purpose"@en ;
+    schema:rangeIncludes dpv:Purpose .
 
 dpv:hasSector a rdf:Property ;
     dcam:rangeIncludes dpv:Sector ;
     dct:created "2019-04-05"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the purpose is associated with activities in the indicated (Economic) Sector(s)"@en ;
-    skos:prefLabel "has sector"@en .
+    skos:prefLabel "has sector"@en ;
+    schema:rangeIncludes dpv:Sector .
 

@@ -3,6 +3,7 @@
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -49,7 +50,8 @@ dpv:hasAddress a rdf:Property ;
     dct:created "2020-11-04"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifies address of a legal entity such as street address or pin code"@en ;
-    skos:prefLabel "has address"@en .
+    skos:prefLabel "has address"@en ;
+    schema:domainIncludes dpv:Entity .
 
 dpv:hasContact a rdf:Property ;
     dcam:domainIncludes dpv:Entity ;
@@ -57,7 +59,8 @@ dpv:hasContact a rdf:Property ;
     dct:created "2020-11-04"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifies contact details of a legal entity such as phone  or email"@en ;
-    skos:prefLabel "has contact"@en .
+    skos:prefLabel "has contact"@en ;
+    schema:domainIncludes dpv:Entity .
 
 dpv:hasName a rdf:Property ;
     dcam:domainIncludes dpv:Entity ;
@@ -65,7 +68,8 @@ dpv:hasName a rdf:Property ;
     dct:created "2020-11-04"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifies name of a legal entity"@en ;
-    skos:prefLabel "has name"@en .
+    skos:prefLabel "has name"@en ;
+    schema:domainIncludes dpv:Entity .
 
 dpv:hasRepresentative a rdf:Property ;
     dcam:domainIncludes dpv:Entity ;
@@ -75,7 +79,9 @@ dpv:hasRepresentative a rdf:Property ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifies representative of the legal entity"@en ;
-    skos:prefLabel "has representative"@en .
+    skos:prefLabel "has representative"@en ;
+    schema:domainIncludes dpv:Entity ;
+    schema:rangeIncludes dpv:Representative .
 
 dpv:hasResponsibleEntity a rdf:Property ;
     dcam:rangeIncludes dpv:Entity ;
@@ -84,7 +90,8 @@ dpv:hasResponsibleEntity a rdf:Property ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifies the indicated entity is responsible within some context"@en ;
-    skos:prefLabel "has responsible entity"@en .
+    skos:prefLabel "has responsible entity"@en ;
+    schema:rangeIncludes dpv:Entity .
 
 dpv:isRepresentativeFor a rdf:Property ;
     dcam:domainIncludes dpv:Representative ;
@@ -94,7 +101,9 @@ dpv:isRepresentativeFor a rdf:Property ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the entity is a representative for specified entity"@en ;
-    skos:prefLabel "is representative for"@en .
+    skos:prefLabel "is representative for"@en ;
+    schema:domainIncludes dpv:Representative ;
+    schema:rangeIncludes dpv:Entity .
 
 dpv:hasEntity a rdf:Property ;
     dcam:rangeIncludes dpv:Entity ;
@@ -103,5 +112,6 @@ dpv:hasEntity a rdf:Property ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates inclusion or applicability of an entity to some concept"@en ;
     skos:note "parent property for controller, processor, data subject, authority, etc.?"@en ;
-    skos:prefLabel "has entity"@en .
+    skos:prefLabel "has entity"@en ;
+    schema:rangeIncludes dpv:Entity .
 

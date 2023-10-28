@@ -1,54 +1,10 @@
 [
   {
-    "@id": "https://w3id.org/dpv#RegionalAuthority",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Authority"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-02-02"
-      }
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@language": "en",
-        "@value": "(ADMS controlled vocabulary,http://purl.org/adms)"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "An authority tasked with overseeing legal compliance for a region"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Regional Authority"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#isAuthorityFor",
+    "@id": "https://w3id.org/dpv#hasAuthority",
     "@type": [
       "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
     ],
-    "http://purl.org/dc/dcam/domainIncludes": [
+    "http://purl.org/dc/dcam/rangeIncludes": [
       {
         "@id": "https://w3id.org/dpv#Authority"
       }
@@ -74,13 +30,18 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Indicates area, scope, or applicability of an Authority"
+        "@value": "Indicates applicability of authority for a jurisdiction"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "is authority for"
+        "@value": "has authority"
+      }
+    ],
+    "https://schema.org/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Authority"
       }
     ]
   },
@@ -124,7 +85,7 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#SupraNationalAuthority",
+    "@id": "https://w3id.org/dpv#DataProtectionAuthority",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
@@ -133,19 +94,13 @@
     "http://purl.org/dc/terms/contributor": [
       {
         "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
+        "@value": "Georg Krog, Paul Ryan, Harshvardhan Pandit"
       }
     ],
     "http://purl.org/dc/terms/created": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-02-02"
-      }
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@language": "en",
-        "@value": "(ADMS controlled vocabulary,http://purl.org/adms)"
+        "@value": "2020-11-04"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -157,13 +112,13 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "An authority tasked with overseeing legal compliance for a supra-national union e.g. EU"
+        "@value": "An authority tasked with overseeing legal compliance regarding privacy and data protection laws."
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Supra-National Authority"
+        "@value": "Data Protection Authority"
       }
     ]
   },
@@ -212,7 +167,7 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#DataProtectionAuthority",
+    "@id": "https://w3id.org/dpv#RegionalAuthority",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
@@ -221,13 +176,19 @@
     "http://purl.org/dc/terms/contributor": [
       {
         "@language": "en",
-        "@value": "Georg Krog, Paul Ryan, Harshvardhan Pandit"
+        "@value": "Harshvardhan J. Pandit"
       }
     ],
     "http://purl.org/dc/terms/created": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2020-11-04"
+        "@value": "2022-02-02"
+      }
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@language": "en",
+        "@value": "(ADMS controlled vocabulary,http://purl.org/adms)"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -239,22 +200,66 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "An authority tasked with overseeing legal compliance regarding privacy and data protection laws."
+        "@value": "An authority tasked with overseeing legal compliance for a region"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Data Protection Authority"
+        "@value": "Regional Authority"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#hasAuthority",
+    "@id": "https://w3id.org/dpv#SupraNationalAuthority",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Authority"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@language": "en",
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-02-02"
+      }
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@language": "en",
+        "@value": "(ADMS controlled vocabulary,http://purl.org/adms)"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "An authority tasked with overseeing legal compliance for a supra-national union e.g. EU"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Supra-National Authority"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#isAuthorityFor",
     "@type": [
       "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
     ],
-    "http://purl.org/dc/dcam/rangeIncludes": [
+    "http://purl.org/dc/dcam/domainIncludes": [
       {
         "@id": "https://w3id.org/dpv#Authority"
       }
@@ -280,13 +285,18 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Indicates applicability of authority for a jurisdiction"
+        "@value": "Indicates area, scope, or applicability of an Authority"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "has authority"
+        "@value": "is authority for"
+      }
+    ],
+    "https://schema.org/domainIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Authority"
       }
     ]
   }

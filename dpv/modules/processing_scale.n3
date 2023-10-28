@@ -3,6 +3,7 @@
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -264,7 +265,8 @@ dpv:hasDataSubjectScale a rdf:Property ;
     rdfs:subPropertyOf dpv:hasScale ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the scale of data subjects"@en ;
-    skos:prefLabel "has data subject scale"@en .
+    skos:prefLabel "has data subject scale"@en ;
+    schema:rangeIncludes dpv:DataSubjectScale .
 
 dpv:hasDataVolume a rdf:Property ;
     dcam:rangeIncludes dpv:DataVolume ;
@@ -273,7 +275,8 @@ dpv:hasDataVolume a rdf:Property ;
     rdfs:subPropertyOf dpv:hasScale ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the volume of data"@en ;
-    skos:prefLabel "has data volume"@en .
+    skos:prefLabel "has data volume"@en ;
+    schema:rangeIncludes dpv:DataVolume .
 
 dpv:hasGeographicCoverage a rdf:Property ;
     dcam:rangeIncludes dpv:GeographicCoverage ;
@@ -282,7 +285,8 @@ dpv:hasGeographicCoverage a rdf:Property ;
     rdfs:subPropertyOf dpv:hasScale ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicate the geographic coverage (of specified context)"@en ;
-    skos:prefLabel "has geographic coverage"@en .
+    skos:prefLabel "has geographic coverage"@en ;
+    schema:rangeIncludes dpv:GeographicCoverage .
 
 dpv:hasScale a rdf:Property ;
     dcam:rangeIncludes dpv:Scale ;
@@ -290,5 +294,6 @@ dpv:hasScale a rdf:Property ;
     dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the scale of specified concept"@en ;
-    skos:prefLabel "has scale"@en .
+    skos:prefLabel "has scale"@en ;
+    schema:rangeIncludes dpv:Scale .
 

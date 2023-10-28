@@ -3,6 +3,7 @@
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -141,7 +142,8 @@ dpv:hasDataController a rdf:Property ;
     dct:modified "2020-11-04"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with Data Controller"@en ;
-    skos:prefLabel "has data controller"@en .
+    skos:prefLabel "has data controller"@en ;
+    schema:rangeIncludes dpv:LegalEntity .
 
 dpv:hasDataSubject a rdf:Property ;
     dcam:rangeIncludes dpv:DataSubject ;
@@ -150,7 +152,8 @@ dpv:hasDataSubject a rdf:Property ;
     dct:modified "2020-11-04"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with Data Subject"@en ;
-    skos:prefLabel "has data subject"@en .
+    skos:prefLabel "has data subject"@en ;
+    schema:rangeIncludes dpv:DataSubject .
 
 dpv:hasLegalBasis a rdf:Property ;
     dcam:rangeIncludes dpv:LegalBasis ;
@@ -159,7 +162,8 @@ dpv:hasLegalBasis a rdf:Property ;
     dct:modified "2020-11-04"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates use or applicability of a Legal Basis"@en ;
-    skos:prefLabel "has legal basis"@en .
+    skos:prefLabel "has legal basis"@en ;
+    schema:rangeIncludes dpv:LegalBasis .
 
 dpv:hasPersonalData a rdf:Property ;
     dcam:rangeIncludes dpv:PersonalData ;
@@ -167,7 +171,8 @@ dpv:hasPersonalData a rdf:Property ;
     dct:created "2022-01-19"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with Personal Data"@en ;
-    skos:prefLabel "has personal data"@en .
+    skos:prefLabel "has personal data"@en ;
+    schema:rangeIncludes dpv:PersonalData .
 
 dpv:hasPersonalDataHandling a rdf:Property ;
     dcam:rangeIncludes dpv:PersonalDataHandling ;
@@ -175,7 +180,8 @@ dpv:hasPersonalDataHandling a rdf:Property ;
     dct:created "2022-01-19"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with Personal Data Handling"@en ;
-    skos:prefLabel "has personal data handling"@en .
+    skos:prefLabel "has personal data handling"@en ;
+    schema:rangeIncludes dpv:PersonalDataHandling .
 
 dpv:hasProcessing a rdf:Property ;
     dcam:rangeIncludes dpv:Processing ;
@@ -185,7 +191,8 @@ dpv:hasProcessing a rdf:Property ;
     dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/)"@en ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with Processing"@en ;
-    skos:prefLabel "has processing"@en .
+    skos:prefLabel "has processing"@en ;
+    schema:rangeIncludes dpv:Processing .
 
 dpv:hasPurpose a rdf:Property ;
     dcam:rangeIncludes dpv:Purpose ;
@@ -195,7 +202,8 @@ dpv:hasPurpose a rdf:Property ;
     dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/)"@en ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with Purpose"@en ;
-    skos:prefLabel "has purpose"@en .
+    skos:prefLabel "has purpose"@en ;
+    schema:rangeIncludes dpv:Purpose .
 
 dpv:hasRecipient a rdf:Property ;
     dcam:rangeIncludes dpv:Recipient ;
@@ -205,7 +213,8 @@ dpv:hasRecipient a rdf:Property ;
     dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/)"@en ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates Recipient of Personal Data"@en ;
-    skos:prefLabel "has recipient"@en .
+    skos:prefLabel "has recipient"@en ;
+    schema:rangeIncludes dpv:Recipient .
 
 dpv:hasRight a rdf:Property ;
     dcam:rangeIncludes dpv:Right ;
@@ -213,7 +222,8 @@ dpv:hasRight a rdf:Property ;
     dct:created "2020-11-18"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates use or applicability of Right"@en ;
-    skos:prefLabel "has right"@en .
+    skos:prefLabel "has right"@en ;
+    schema:rangeIncludes dpv:Right .
 
 dpv:hasRisk a rdf:Property ;
     dcam:rangeIncludes dpv:Risk ;
@@ -221,7 +231,8 @@ dpv:hasRisk a rdf:Property ;
     dct:created "2020-11-18"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates applicability of Risk"@en ;
-    skos:prefLabel "has risk"@en .
+    skos:prefLabel "has risk"@en ;
+    schema:rangeIncludes dpv:Risk .
 
 dpv:hasTechnicalOrganisationalMeasure a rdf:Property ;
     dcam:rangeIncludes dpv:TechnicalOrganisationalMeasure ;
@@ -230,5 +241,6 @@ dpv:hasTechnicalOrganisationalMeasure a rdf:Property ;
     dct:modified "2020-11-04"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates use or applicability of Technical or Organisational measure"@en ;
-    skos:prefLabel "has technical and organisational measure"@en .
+    skos:prefLabel "has technical and organisational measure"@en ;
+    schema:rangeIncludes dpv:TechnicalOrganisationalMeasure .
 

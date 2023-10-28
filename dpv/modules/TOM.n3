@@ -3,6 +3,7 @@
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -41,7 +42,8 @@ dpv:hasNotice a rdf:Property ;
     rdfs:subPropertyOf dpv:hasOrganisationalMeasure ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the use or applicability of a Notice for the specified context"@en ;
-    skos:prefLabel "has notice"@en .
+    skos:prefLabel "has notice"@en ;
+    schema:rangeIncludes dpv:Notice .
 
 dpv:hasPolicy a rdf:Property ;
     dcam:rangeIncludes dpv:Policy ;
@@ -50,7 +52,8 @@ dpv:hasPolicy a rdf:Property ;
     rdfs:subPropertyOf dpv:hasTechnicalOrganisationalMeasure ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates policy applicable or used"@en ;
-    skos:prefLabel "has policy"@en .
+    skos:prefLabel "has policy"@en ;
+    schema:rangeIncludes dpv:Policy .
 
 dpv:hasTechnicalMeasure a rdf:Property ;
     dcam:rangeIncludes dpv:TechnicalMeasure ;
@@ -59,7 +62,8 @@ dpv:hasTechnicalMeasure a rdf:Property ;
     rdfs:subPropertyOf dpv:hasTechnicalOrganisationalMeasure ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates use or applicability of Technical measure"@en ;
-    skos:prefLabel "has technical measure"@en .
+    skos:prefLabel "has technical measure"@en ;
+    schema:rangeIncludes dpv:TechnicalMeasure .
 
 dpv:isPolicyFor a rdf:Property ;
     dcam:domainIncludes dpv:Policy ;
@@ -67,7 +71,8 @@ dpv:isPolicyFor a rdf:Property ;
     dct:created "2022-01-26"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the context or application of policy"@en ;
-    skos:prefLabel "is policy for"@en .
+    skos:prefLabel "is policy for"@en ;
+    schema:domainIncludes dpv:Policy .
 
 dpv:hasOrganisationalMeasure a rdf:Property ;
     dcam:rangeIncludes dpv:OrganisationalMeasure ;
@@ -76,7 +81,8 @@ dpv:hasOrganisationalMeasure a rdf:Property ;
     rdfs:subPropertyOf dpv:hasTechnicalOrganisationalMeasure ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates use or applicability of Organisational measure"@en ;
-    skos:prefLabel "has organisational measure"@en .
+    skos:prefLabel "has organisational measure"@en ;
+    schema:rangeIncludes dpv:OrganisationalMeasure .
 
 dpv:hasTechnicalOrganisationalMeasure a rdf:Property ;
     dcam:rangeIncludes dpv:TechnicalOrganisationalMeasure ;
@@ -85,5 +91,6 @@ dpv:hasTechnicalOrganisationalMeasure a rdf:Property ;
     dct:modified "2020-11-04"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates use or applicability of Technical or Organisational measure"@en ;
-    skos:prefLabel "has technical and organisational measure"@en .
+    skos:prefLabel "has technical and organisational measure"@en ;
+    schema:rangeIncludes dpv:TechnicalOrganisationalMeasure .
 

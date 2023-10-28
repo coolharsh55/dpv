@@ -1,0 +1,44 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dpv: <https://w3id.org/dpv#> .
+@prefix dpv-gdpr: <https://w3id.org/dpv/legal/eu/gdpr#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dpv-gdpr:GDPRComplianceUnknown a rdfs:Class,
+        skos:Concept,
+        dpv-gdpr:GDPRLawfulness ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-10-22"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "State where lawfulness or compliance with GDPR is unknown"@en ;
+    skos:prefLabel "GDPR Compliance Unknown"@en .
+
+dpv-gdpr:GDPRCompliant a rdfs:Class,
+        skos:Concept,
+        dpv-gdpr:GDPRLawfulness ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-10-22"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "State of being lawful or legally compliant for GDPR"@en ;
+    skos:prefLabel "GDPR Compliant"@en .
+
+dpv-gdpr:GDPRLawfulness a rdfs:Class,
+        skos:Concept,
+        dpv:Lawfulness ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-10-22"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Status or state associated with being lawful or legally compliant regarding GDPR"@en ;
+    skos:prefLabel "GDPR Lawfulness"@en .
+
+dpv-gdpr:GDPRNonCompliant a rdfs:Class,
+        skos:Concept,
+        dpv-gdpr:GDPRLawfulness ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-10-22"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "State of being unlawful or legally non-compliant for GDPR"@en ;
+    skos:prefLabel "GDPR Non-compliant"@en .
+

@@ -3,6 +3,7 @@
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -231,7 +232,8 @@ dpv:hasContext a rdf:Property ;
     dct:created "2019-04-05"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates a purpose is restricted to the specified context(s)"@en ;
-    skos:prefLabel "has context"@en .
+    skos:prefLabel "has context"@en ;
+    schema:rangeIncludes dpv:Context .
 
 dpv:hasDuration a rdf:Property ;
     dcam:rangeIncludes dpv:Duration ;
@@ -240,7 +242,8 @@ dpv:hasDuration a rdf:Property ;
     dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/)"@en ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates information about duration"@en ;
-    skos:prefLabel "has duration"@en .
+    skos:prefLabel "has duration"@en ;
+    schema:rangeIncludes dpv:Duration .
 
 dpv:hasFrequency a rdf:Property ;
     dcam:rangeIncludes dpv:Frequency ;
@@ -248,7 +251,8 @@ dpv:hasFrequency a rdf:Property ;
     dct:created "2022-02-16"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the frequency with which something takes place"@en ;
-    skos:prefLabel "has frequency"@en .
+    skos:prefLabel "has frequency"@en ;
+    schema:rangeIncludes dpv:Frequency .
 
 dpv:hasIdentifier a rdf:Property ;
     dct:contributor "Harshvardhan J.Pandit, Georg P Krog, Paul Ryan, Beatriz Esteves"@en ;
@@ -263,7 +267,8 @@ dpv:hasJustification a rdf:Property ;
     dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates a justification for specified concept or context"@en ;
-    skos:prefLabel "has justification"@en .
+    skos:prefLabel "has justification"@en ;
+    schema:rangeIncludes dpv:Justification .
 
 dpv:hasOutcome a rdf:Property ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -278,7 +283,8 @@ dpv:hasScope a rdf:Property ;
     dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the scope of specified concept or context"@en ;
-    skos:prefLabel "has scope"@en .
+    skos:prefLabel "has scope"@en ;
+    schema:rangeIncludes dpv:Scope .
 
 dpv:isAfter a rdf:Property ;
     dct:contributor "Georg P. Krog, Harshvardhan J. Pandit, Julian Flake"@en ;
@@ -302,7 +308,8 @@ dpv:isImplementedByEntity a rdf:Property ;
     sw:term_status "changed"@en ;
     skos:definition "Indicates implementation details such as entities or agents"@en ;
     skos:note "The use of 'entity' is inclusive of entities (e.g. Data Processor) as well as 'agent' (e.g. DPO). For indicating technological implementation, the property isImplementedByTechnology should be used."@en ;
-    skos:prefLabel "is implemented by entity"@en .
+    skos:prefLabel "is implemented by entity"@en ;
+    schema:rangeIncludes dpv:Entity .
 
 dpv:isImplementedUsingTechnology a rdf:Property ;
     dcam:rangeIncludes dpv:Technology ;
@@ -312,5 +319,6 @@ dpv:isImplementedUsingTechnology a rdf:Property ;
     sw:term_status "changed"@en ;
     skos:definition "Indicates implementation details such as technologies or processes"@en ;
     skos:note "The term 'technology' is inclusive of technologies, processes, and methods."@en ;
-    skos:prefLabel "is implemented using technology"@en .
+    skos:prefLabel "is implemented using technology"@en ;
+    schema:rangeIncludes dpv:Technology .
 

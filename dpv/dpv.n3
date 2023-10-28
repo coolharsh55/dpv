@@ -3,6 +3,7 @@
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -5296,7 +5297,9 @@ dpv:ZeroKnowledgeAuthentication a rdfs:Class,
     dct:created "2022-11-02"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifying a RightExerciseRecord has RightExerciseActivity as part of its records"@en ;
-    skos:prefLabel "dct:hasPart"@en .
+    skos:prefLabel "dct:hasPart"@en ;
+    schema:domainIncludes dpv:RightExerciseRecord ;
+    schema:rangeIncludes dpv:RightExerciseActivity .
 
 <https://w3id.org/dpv#dct:isPartOf> a rdf:Property ;
     dcam:domainIncludes dpv:RightExerciseActivity ;
@@ -5305,7 +5308,9 @@ dpv:ZeroKnowledgeAuthentication a rdfs:Class,
     dct:created "2022-11-02"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifying a RightExerciseActivity is part of a RightExerciseRecord"@en ;
-    skos:prefLabel "dct:isPartOf"@en .
+    skos:prefLabel "dct:isPartOf"@en ;
+    schema:domainIncludes dpv:RightExerciseActivity ;
+    schema:rangeIncludes dpv:RightExerciseRecord .
 
 <https://w3id.org/dpv#dct:valid> a rdf:Property ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -5321,7 +5326,9 @@ dpv:ZeroKnowledgeAuthentication a rdfs:Class,
     dct:created "2022-11-02"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifying a justification for non-fulfilment of Right Exercise"@en ;
-    skos:prefLabel "dpv:hasJustification"@en .
+    skos:prefLabel "dpv:hasJustification"@en ;
+    schema:domainIncludes dpv:RightExerciseActivity ;
+    schema:rangeIncludes dpv:Justification .
 
 <https://w3id.org/dpv#dpv:hasRecipient> a rdf:Property ;
     dcam:domainIncludes dpv:RightExerciseActivity ;
@@ -5330,7 +5337,9 @@ dpv:ZeroKnowledgeAuthentication a rdfs:Class,
     dct:created "2022-11-02"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the Recipient of a Right Exercise Activity"@en ;
-    skos:prefLabel "dpv:hasRecipient"@en .
+    skos:prefLabel "dpv:hasRecipient"@en ;
+    schema:domainIncludes dpv:RightExerciseActivity ;
+    schema:rangeIncludes dpv:Recipient .
 
 <https://w3id.org/dpv#dpv:hasStatus> a rdf:Property ;
     dcam:domainIncludes dpv:RightExerciseActivity ;
@@ -5339,7 +5348,9 @@ dpv:ZeroKnowledgeAuthentication a rdfs:Class,
     dct:created "2022-11-02"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the status of a Right Exercise Activity"@en ;
-    skos:prefLabel "dpv:hasStatus"@en .
+    skos:prefLabel "dpv:hasStatus"@en ;
+    schema:domainIncludes dpv:RightExerciseActivity ;
+    schema:rangeIncludes dpv:Status .
 
 <https://w3id.org/dpv#dpv:isAfter> a rdf:Property ;
     dcam:domainIncludes dpv:RightExerciseActivity ;
@@ -5348,7 +5359,9 @@ dpv:ZeroKnowledgeAuthentication a rdfs:Class,
     dct:created "2022-11-02"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifying a RightExerciseActivity occurs before another RightExerciseActivity"@en ;
-    skos:prefLabel "dpv:isAfter"@en .
+    skos:prefLabel "dpv:isAfter"@en ;
+    schema:domainIncludes dpv:RightExerciseActivity ;
+    schema:rangeIncludes dpv:RightExerciseActivity .
 
 <https://w3id.org/dpv#dpv:isBefore> a rdf:Property ;
     dcam:domainIncludes dpv:RightExerciseActivity ;
@@ -5357,7 +5370,9 @@ dpv:ZeroKnowledgeAuthentication a rdfs:Class,
     dct:created "2022-11-02"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifying a RightExerciseActivity occurs before another RightExerciseActivity"@en ;
-    skos:prefLabel "dpv:isBefore"@en .
+    skos:prefLabel "dpv:isBefore"@en ;
+    schema:domainIncludes dpv:RightExerciseActivity ;
+    schema:rangeIncludes dpv:RightExerciseActivity .
 
 <https://w3id.org/dpv#dpv:isImplementedByEntity> a rdf:Property ;
     dcam:domainIncludes dpv:RightExerciseActivity ;
@@ -5366,7 +5381,9 @@ dpv:ZeroKnowledgeAuthentication a rdfs:Class,
     dct:created "2022-11-02"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the Entity that implements or performs a Right Exercise Activity"@en ;
-    skos:prefLabel "dpv:isImplementedByEntity"@en .
+    skos:prefLabel "dpv:isImplementedByEntity"@en ;
+    schema:domainIncludes dpv:RightExerciseActivity ;
+    schema:rangeIncludes dpv:Entity .
 
 <https://w3id.org/dpv#foaf:page> a rdf:Property ;
     dcam:domainIncludes dpv:RightExerciseActivity ;
@@ -5374,7 +5391,8 @@ dpv:ZeroKnowledgeAuthentication a rdfs:Class,
     dct:created "2022-11-02"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates a web page or document providing information or functionality associated with a Right Exercise"@en ;
-    skos:prefLabel "foaf:page"@en .
+    skos:prefLabel "foaf:page"@en ;
+    schema:domainIncludes dpv:RightExerciseActivity .
 
 dpv:hasActivityStatus a rdf:Property ;
     dcam:rangeIncludes dpv:ActivityStatus ;
@@ -5383,7 +5401,8 @@ dpv:hasActivityStatus a rdf:Property ;
     rdfs:subPropertyOf dpv:hasStatus ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the status of activity of specified concept"@en ;
-    skos:prefLabel "has activity status"@en .
+    skos:prefLabel "has activity status"@en ;
+    schema:rangeIncludes dpv:ActivityStatus .
 
 dpv:hasAddress a rdf:Property ;
     dcam:domainIncludes dpv:Entity ;
@@ -5391,7 +5410,8 @@ dpv:hasAddress a rdf:Property ;
     dct:created "2020-11-04"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifies address of a legal entity such as street address or pin code"@en ;
-    skos:prefLabel "has address"@en .
+    skos:prefLabel "has address"@en ;
+    schema:domainIncludes dpv:Entity .
 
 dpv:hasAlgorithmicLogic a rdf:Property ;
     dcam:rangeIncludes dpv:AlgorithmicLogic ;
@@ -5400,7 +5420,8 @@ dpv:hasAlgorithmicLogic a rdf:Property ;
     dct:modified "2022-06-15"^^xsd:date ;
     sw:term_status "changed"@en ;
     skos:definition "Indicates the logic used in processing such as for automated decision making"@en ;
-    skos:prefLabel "has algorithmic logic"@en .
+    skos:prefLabel "has algorithmic logic"@en ;
+    schema:rangeIncludes dpv:AlgorithmicLogic .
 
 dpv:hasApplicableLaw a rdf:Property ;
     dcam:rangeIncludes dpv:Law ;
@@ -5408,7 +5429,8 @@ dpv:hasApplicableLaw a rdf:Property ;
     dct:created "2022-01-19"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates applicability of a Law"@en ;
-    skos:prefLabel "has applicable law"@en .
+    skos:prefLabel "has applicable law"@en ;
+    schema:rangeIncludes dpv:Law .
 
 dpv:hasAuditStatus a rdf:Property ;
     dcam:rangeIncludes dpv:AuditStatus ;
@@ -5417,7 +5439,8 @@ dpv:hasAuditStatus a rdf:Property ;
     rdfs:subPropertyOf dpv:hasStatus ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the status of audit associated with specified concept"@en ;
-    skos:prefLabel "has audit status"@en .
+    skos:prefLabel "has audit status"@en ;
+    schema:rangeIncludes dpv:AuditStatus .
 
 dpv:hasAuthority a rdf:Property ;
     dcam:rangeIncludes dpv:Authority ;
@@ -5425,7 +5448,8 @@ dpv:hasAuthority a rdf:Property ;
     dct:created "2022-01-19"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates applicability of authority for a jurisdiction"@en ;
-    skos:prefLabel "has authority"@en .
+    skos:prefLabel "has authority"@en ;
+    schema:rangeIncludes dpv:Authority .
 
 dpv:hasConsentStatus a rdf:Property ;
     dcam:rangeIncludes dpv:ConsentStatus ;
@@ -5433,7 +5457,8 @@ dpv:hasConsentStatus a rdf:Property ;
     dct:created "2022-06-21"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifies the state or status of consent"@en ;
-    skos:prefLabel "has consent status"@en .
+    skos:prefLabel "has consent status"@en ;
+    schema:rangeIncludes dpv:ConsentStatus .
 
 dpv:hasContact a rdf:Property ;
     dcam:domainIncludes dpv:Entity ;
@@ -5441,14 +5466,16 @@ dpv:hasContact a rdf:Property ;
     dct:created "2020-11-04"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifies contact details of a legal entity such as phone  or email"@en ;
-    skos:prefLabel "has contact"@en .
+    skos:prefLabel "has contact"@en ;
+    schema:domainIncludes dpv:Entity .
 
 dpv:hasContext a rdf:Property ;
     dcam:rangeIncludes dpv:Context ;
     dct:created "2019-04-05"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates a purpose is restricted to the specified context(s)"@en ;
-    skos:prefLabel "has context"@en .
+    skos:prefLabel "has context"@en ;
+    schema:rangeIncludes dpv:Context .
 
 dpv:hasDataExporter a rdf:Property ;
     dcam:rangeIncludes dpv:DataExporter ;
@@ -5457,7 +5484,8 @@ dpv:hasDataExporter a rdf:Property ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:definition "Indiciates inclusion or applicability of a LegalEntity in the role of Data Exporter"@en ;
-    skos:prefLabel "has data exporter"@en .
+    skos:prefLabel "has data exporter"@en ;
+    schema:rangeIncludes dpv:DataExporter .
 
 dpv:hasDataImporter a rdf:Property ;
     dcam:rangeIncludes dpv:DataImporter ;
@@ -5466,7 +5494,8 @@ dpv:hasDataImporter a rdf:Property ;
     rdfs:subPropertyOf dpv:hasRecipient ;
     sw:term_status "accepted"@en ;
     skos:definition "Indiciates inclusion or applicability of a LegalEntity in the role of Data Importer"@en ;
-    skos:prefLabel "has data importer"@en .
+    skos:prefLabel "has data importer"@en ;
+    schema:rangeIncludes dpv:DataImporter .
 
 dpv:hasDataProcessor a rdf:Property ;
     dcam:rangeIncludes dpv:DataProcessor ;
@@ -5475,7 +5504,8 @@ dpv:hasDataProcessor a rdf:Property ;
     rdfs:subPropertyOf dpv:hasRecipient ;
     sw:term_status "accepted"@en ;
     skos:definition "Indiciates inclusion or applicability of a Data Processor"@en ;
-    skos:prefLabel "has data processor"@en .
+    skos:prefLabel "has data processor"@en ;
+    schema:rangeIncludes dpv:DataProcessor .
 
 dpv:hasDataProtectionOfficer a rdf:Property ;
     dcam:rangeIncludes dpv:DataProtectionOfficer ;
@@ -5484,7 +5514,8 @@ dpv:hasDataProtectionOfficer a rdf:Property ;
     rdfs:subPropertyOf dpv:hasRepresentative ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifices an associated data protection officer"@en ;
-    skos:prefLabel "has data protection officer"@en .
+    skos:prefLabel "has data protection officer"@en ;
+    schema:rangeIncludes dpv:DataProtectionOfficer .
 
 dpv:hasDataSource a rdf:Property ;
     dcam:rangeIncludes dpv:DataSource ;
@@ -5492,7 +5523,8 @@ dpv:hasDataSource a rdf:Property ;
     dct:created "2020-11-04"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the source or origin of data being processed"@en ;
-    skos:prefLabel "has data source"@en .
+    skos:prefLabel "has data source"@en ;
+    schema:rangeIncludes dpv:DataSource .
 
 dpv:hasDataSubject a rdf:Property ;
     dcam:rangeIncludes dpv:DataSubject ;
@@ -5502,7 +5534,8 @@ dpv:hasDataSubject a rdf:Property ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with Data Subject"@en ;
-    skos:prefLabel "has data subject"@en .
+    skos:prefLabel "has data subject"@en ;
+    schema:rangeIncludes dpv:DataSubject .
 
 dpv:hasDataSubjectScale a rdf:Property ;
     dcam:rangeIncludes dpv:DataSubjectScale ;
@@ -5511,7 +5544,8 @@ dpv:hasDataSubjectScale a rdf:Property ;
     rdfs:subPropertyOf dpv:hasScale ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the scale of data subjects"@en ;
-    skos:prefLabel "has data subject scale"@en .
+    skos:prefLabel "has data subject scale"@en ;
+    schema:rangeIncludes dpv:DataSubjectScale .
 
 dpv:hasDataVolume a rdf:Property ;
     dcam:rangeIncludes dpv:DataVolume ;
@@ -5520,7 +5554,8 @@ dpv:hasDataVolume a rdf:Property ;
     rdfs:subPropertyOf dpv:hasScale ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the volume of data"@en ;
-    skos:prefLabel "has data volume"@en .
+    skos:prefLabel "has data volume"@en ;
+    schema:rangeIncludes dpv:DataVolume .
 
 dpv:hasDuration a rdf:Property ;
     dcam:rangeIncludes dpv:Duration ;
@@ -5529,7 +5564,8 @@ dpv:hasDuration a rdf:Property ;
     dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/)"@en ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates information about duration"@en ;
-    skos:prefLabel "has duration"@en .
+    skos:prefLabel "has duration"@en ;
+    schema:rangeIncludes dpv:Duration .
 
 dpv:hasFrequency a rdf:Property ;
     dcam:rangeIncludes dpv:Frequency ;
@@ -5537,7 +5573,8 @@ dpv:hasFrequency a rdf:Property ;
     dct:created "2022-02-16"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the frequency with which something takes place"@en ;
-    skos:prefLabel "has frequency"@en .
+    skos:prefLabel "has frequency"@en ;
+    schema:rangeIncludes dpv:Frequency .
 
 dpv:hasGeographicCoverage a rdf:Property ;
     dcam:rangeIncludes dpv:GeographicCoverage ;
@@ -5546,7 +5583,8 @@ dpv:hasGeographicCoverage a rdf:Property ;
     rdfs:subPropertyOf dpv:hasScale ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicate the geographic coverage (of specified context)"@en ;
-    skos:prefLabel "has geographic coverage"@en .
+    skos:prefLabel "has geographic coverage"@en ;
+    schema:rangeIncludes dpv:GeographicCoverage .
 
 dpv:hasHumanInvolvement a rdf:Property ;
     dcam:rangeIncludes dpv:HumanInvolvement ;
@@ -5555,7 +5593,8 @@ dpv:hasHumanInvolvement a rdf:Property ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates Involvement of humans in processing such as within automated decision making process"@en ;
     skos:note "Human involvement is also relevant to 'human in the loop'"@en ;
-    skos:prefLabel "has human involvement"@en .
+    skos:prefLabel "has human involvement"@en ;
+    schema:rangeIncludes dpv:HumanInvolvement .
 
 dpv:hasIdentifier a rdf:Property ;
     dct:contributor "Harshvardhan J.Pandit, Georg P Krog, Paul Ryan, Beatriz Esteves"@en ;
@@ -5571,7 +5610,8 @@ dpv:hasImpact a rdf:Property ;
     rdfs:subPropertyOf dpv:hasConsequence ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates impact(s) possible or arising as consequences from specified concept"@en ;
-    skos:prefLabel "has impact"@en .
+    skos:prefLabel "has impact"@en ;
+    schema:rangeIncludes dpv:Impact .
 
 dpv:hasImpactOn a rdf:Property ;
     dcam:domainIncludes dpv:Impact ;
@@ -5580,7 +5620,8 @@ dpv:hasImpactOn a rdf:Property ;
     rdfs:subPropertyOf dpv:hasConsequenceOn ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the thing (e.g. plan, process, or entity) affected by an impact"@en ;
-    skos:prefLabel "has impact on"@en .
+    skos:prefLabel "has impact on"@en ;
+    schema:domainIncludes dpv:Impact .
 
 dpv:hasIndicationMethod a rdf:Property ;
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake"@en ;
@@ -5596,7 +5637,8 @@ dpv:hasJointDataControllers a rdf:Property ;
     rdfs:subPropertyOf dpv:hasDataController ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates inclusion or applicability of a Joint Data Controller"@en ;
-    skos:prefLabel "has joint data controllers"@en .
+    skos:prefLabel "has joint data controllers"@en ;
+    schema:rangeIncludes dpv:JointDataControllers .
 
 dpv:hasJurisdiction a rdf:Property ;
     dcam:rangeIncludes dpv:Location ;
@@ -5604,7 +5646,8 @@ dpv:hasJurisdiction a rdf:Property ;
     dct:created "2022-01-19"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates applicability of specified jurisdiction"@en ;
-    skos:prefLabel "has jurisdiction"@en .
+    skos:prefLabel "has jurisdiction"@en ;
+    schema:rangeIncludes dpv:Location .
 
 dpv:hasJustification a rdf:Property ;
     dcam:rangeIncludes dpv:Justification ;
@@ -5612,7 +5655,8 @@ dpv:hasJustification a rdf:Property ;
     dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates a justification for specified concept or context"@en ;
-    skos:prefLabel "has justification"@en .
+    skos:prefLabel "has justification"@en ;
+    schema:rangeIncludes dpv:Justification .
 
 dpv:hasLawfulness a rdf:Property ;
     dcam:rangeIncludes dpv:Lawfulness ;
@@ -5621,7 +5665,8 @@ dpv:hasLawfulness a rdf:Property ;
     rdfs:subPropertyOf dpv:hasComplianceStatus ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the status of being lawful or legally compliant"@en ;
-    skos:prefLabel "has lawfulness"@en .
+    skos:prefLabel "has lawfulness"@en ;
+    schema:rangeIncludes dpv:Lawfulness .
 
 dpv:hasLegalBasis a rdf:Property ;
     dcam:rangeIncludes dpv:LegalBasis ;
@@ -5630,7 +5675,8 @@ dpv:hasLegalBasis a rdf:Property ;
     dct:modified "2020-11-04"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates use or applicability of a Legal Basis"@en ;
-    skos:prefLabel "has legal basis"@en .
+    skos:prefLabel "has legal basis"@en ;
+    schema:rangeIncludes dpv:LegalBasis .
 
 dpv:hasLikelihood a rdf:Property ;
     dcam:rangeIncludes dpv:Likelihood ;
@@ -5638,7 +5684,8 @@ dpv:hasLikelihood a rdf:Property ;
     dct:created "2022-07-20"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the likelihood associated with a concept"@en ;
-    skos:prefLabel "has likelihood"@en .
+    skos:prefLabel "has likelihood"@en ;
+    schema:rangeIncludes dpv:Likelihood .
 
 dpv:hasName a rdf:Property ;
     dcam:domainIncludes dpv:Entity ;
@@ -5646,7 +5693,8 @@ dpv:hasName a rdf:Property ;
     dct:created "2020-11-04"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifies name of a legal entity"@en ;
-    skos:prefLabel "has name"@en .
+    skos:prefLabel "has name"@en ;
+    schema:domainIncludes dpv:Entity .
 
 dpv:hasNotice a rdf:Property ;
     dcam:rangeIncludes dpv:Notice ;
@@ -5655,7 +5703,8 @@ dpv:hasNotice a rdf:Property ;
     rdfs:subPropertyOf dpv:hasOrganisationalMeasure ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the use or applicability of a Notice for the specified context"@en ;
-    skos:prefLabel "has notice"@en .
+    skos:prefLabel "has notice"@en ;
+    schema:rangeIncludes dpv:Notice .
 
 dpv:hasObligation a rdf:Property ;
     dcam:domainIncludes dpv:Context ;
@@ -5665,7 +5714,9 @@ dpv:hasObligation a rdf:Property ;
     rdfs:subPropertyOf dpv:hasRule ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifying applicability or inclusion of an obligation rule within specified context"@en ;
-    skos:prefLabel "has obligation"@en .
+    skos:prefLabel "has obligation"@en ;
+    schema:domainIncludes dpv:Context ;
+    schema:rangeIncludes dpv:Obligation .
 
 dpv:hasOutcome a rdf:Property ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -5682,7 +5733,9 @@ dpv:hasPermission a rdf:Property ;
     rdfs:subPropertyOf dpv:hasRule ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifying applicability or inclusion of a permission rule within specified context"@en ;
-    skos:prefLabel "has permission"@en .
+    skos:prefLabel "has permission"@en ;
+    schema:domainIncludes dpv:Context ;
+    schema:rangeIncludes dpv:Permission .
 
 dpv:hasPersonalData a rdf:Property ;
     dcam:rangeIncludes dpv:PersonalData ;
@@ -5691,7 +5744,8 @@ dpv:hasPersonalData a rdf:Property ;
     rdfs:subPropertyOf dpv:hasData ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with Personal Data"@en ;
-    skos:prefLabel "has personal data"@en .
+    skos:prefLabel "has personal data"@en ;
+    schema:rangeIncludes dpv:PersonalData .
 
 dpv:hasPersonalDataHandling a rdf:Property ;
     dcam:rangeIncludes dpv:PersonalDataHandling ;
@@ -5699,7 +5753,8 @@ dpv:hasPersonalDataHandling a rdf:Property ;
     dct:created "2022-01-19"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with Personal Data Handling"@en ;
-    skos:prefLabel "has personal data handling"@en .
+    skos:prefLabel "has personal data handling"@en ;
+    schema:rangeIncludes dpv:PersonalDataHandling .
 
 dpv:hasPolicy a rdf:Property ;
     dcam:rangeIncludes dpv:Policy ;
@@ -5708,7 +5763,8 @@ dpv:hasPolicy a rdf:Property ;
     rdfs:subPropertyOf dpv:hasTechnicalOrganisationalMeasure ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates policy applicable or used"@en ;
-    skos:prefLabel "has policy"@en .
+    skos:prefLabel "has policy"@en ;
+    schema:rangeIncludes dpv:Policy .
 
 dpv:hasProcessing a rdf:Property ;
     dcam:rangeIncludes dpv:Processing ;
@@ -5718,7 +5774,8 @@ dpv:hasProcessing a rdf:Property ;
     dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/)"@en ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with Processing"@en ;
-    skos:prefLabel "has processing"@en .
+    skos:prefLabel "has processing"@en ;
+    schema:rangeIncludes dpv:Processing .
 
 dpv:hasProcessingAutomation a rdf:Property ;
     dcam:rangeIncludes dpv:AutomationOfProcessing ;
@@ -5726,7 +5783,8 @@ dpv:hasProcessingAutomation a rdf:Property ;
     dct:created "2022-08-13"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the use or extent of automation associated with processing"@en ;
-    skos:prefLabel "has processing automation"@en .
+    skos:prefLabel "has processing automation"@en ;
+    schema:rangeIncludes dpv:AutomationOfProcessing .
 
 dpv:hasProhibition a rdf:Property ;
     dcam:domainIncludes dpv:Context ;
@@ -5736,7 +5794,9 @@ dpv:hasProhibition a rdf:Property ;
     rdfs:subPropertyOf dpv:hasRule ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifying applicability or inclusion of a prohibition rule within specified context"@en ;
-    skos:prefLabel "has prohibition"@en .
+    skos:prefLabel "has prohibition"@en ;
+    schema:domainIncludes dpv:Context ;
+    schema:rangeIncludes dpv:Prohibition .
 
 dpv:hasPurpose a rdf:Property ;
     dcam:rangeIncludes dpv:Purpose ;
@@ -5746,7 +5806,8 @@ dpv:hasPurpose a rdf:Property ;
     dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/)"@en ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with Purpose"@en ;
-    skos:prefLabel "has purpose"@en .
+    skos:prefLabel "has purpose"@en ;
+    schema:rangeIncludes dpv:Purpose .
 
 dpv:hasRecipientDataController a rdf:Property ;
     dcam:rangeIncludes dpv:DataController ;
@@ -5755,7 +5816,8 @@ dpv:hasRecipientDataController a rdf:Property ;
     rdfs:subPropertyOf dpv:hasRecipient ;
     sw:term_status "accepted"@en ;
     skos:definition "Indiciates inclusion or applicability of a Data Controller as a Recipient of persona data"@en ;
-    skos:prefLabel "has recipient data controller"@en .
+    skos:prefLabel "has recipient data controller"@en ;
+    schema:rangeIncludes dpv:DataController .
 
 dpv:hasRecipientThirdParty a rdf:Property ;
     dcam:rangeIncludes dpv:ThirdParty ;
@@ -5764,7 +5826,8 @@ dpv:hasRecipientThirdParty a rdf:Property ;
     rdfs:subPropertyOf dpv:hasRecipient ;
     sw:term_status "accepted"@en ;
     skos:definition "Indiciates inclusion or applicability of a Third Party as a Recipient of persona data"@en ;
-    skos:prefLabel "has recipient third party"@en .
+    skos:prefLabel "has recipient third party"@en ;
+    schema:rangeIncludes dpv:ThirdParty .
 
 dpv:hasRelationWithDataSubject a rdf:Property ;
     dcam:domainIncludes dpv:Entity ;
@@ -5773,7 +5836,8 @@ dpv:hasRelationWithDataSubject a rdf:Property ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the relation between specified Entity and Data Subject"@en ;
-    skos:prefLabel "has relation with data subject"@en .
+    skos:prefLabel "has relation with data subject"@en ;
+    schema:domainIncludes dpv:Entity .
 
 dpv:hasResidualRisk a rdf:Property ;
     dcam:domainIncludes dpv:Risk ;
@@ -5782,7 +5846,9 @@ dpv:hasResidualRisk a rdf:Property ;
     dct:created "2022-07-20"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the associated risk is the remaining or residual risk from applying mitigation measures or treatments to this risk"@en ;
-    skos:prefLabel "has residual risk"@en .
+    skos:prefLabel "has residual risk"@en ;
+    schema:domainIncludes dpv:Risk ;
+    schema:rangeIncludes dpv:Risk .
 
 dpv:hasResponsibleEntity a rdf:Property ;
     dcam:rangeIncludes dpv:Entity ;
@@ -5791,7 +5857,8 @@ dpv:hasResponsibleEntity a rdf:Property ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifies the indicated entity is responsible within some context"@en ;
-    skos:prefLabel "has responsible entity"@en .
+    skos:prefLabel "has responsible entity"@en ;
+    schema:rangeIncludes dpv:Entity .
 
 dpv:hasRight a rdf:Property ;
     dcam:rangeIncludes dpv:Right ;
@@ -5799,7 +5866,8 @@ dpv:hasRight a rdf:Property ;
     dct:created "2020-11-18"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates use or applicability of Right"@en ;
-    skos:prefLabel "has right"@en .
+    skos:prefLabel "has right"@en ;
+    schema:rangeIncludes dpv:Right .
 
 dpv:hasRisk a rdf:Property ;
     dcam:rangeIncludes dpv:Risk ;
@@ -5808,7 +5876,8 @@ dpv:hasRisk a rdf:Property ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates applicability of Risk"@en,
         "Indicates applicability of Risk for this concept"@en ;
-    skos:prefLabel "has risk"@en .
+    skos:prefLabel "has risk"@en ;
+    schema:rangeIncludes dpv:Risk .
 
 dpv:hasRiskLevel a rdf:Property ;
     dcam:domainIncludes dpv:Risk ;
@@ -5817,7 +5886,9 @@ dpv:hasRiskLevel a rdf:Property ;
     dct:created "2022-07-20"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the associated risk level associated with a risk"@en ;
-    skos:prefLabel "has risk level"@en .
+    skos:prefLabel "has risk level"@en ;
+    schema:domainIncludes dpv:Risk ;
+    schema:rangeIncludes dpv:RiskLevel .
 
 dpv:hasScope a rdf:Property ;
     dcam:rangeIncludes dpv:Scope ;
@@ -5825,14 +5896,16 @@ dpv:hasScope a rdf:Property ;
     dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the scope of specified concept or context"@en ;
-    skos:prefLabel "has scope"@en .
+    skos:prefLabel "has scope"@en ;
+    schema:rangeIncludes dpv:Scope .
 
 dpv:hasSector a rdf:Property ;
     dcam:rangeIncludes dpv:Sector ;
     dct:created "2019-04-05"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the purpose is associated with activities in the indicated (Economic) Sector(s)"@en ;
-    skos:prefLabel "has sector"@en .
+    skos:prefLabel "has sector"@en ;
+    schema:rangeIncludes dpv:Sector .
 
 dpv:hasSeverity a rdf:Property ;
     dcam:rangeIncludes dpv:Severity ;
@@ -5840,7 +5913,8 @@ dpv:hasSeverity a rdf:Property ;
     dct:created "2022-07-20"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the severity associated with a concept"@en ;
-    skos:prefLabel "has severity"@en .
+    skos:prefLabel "has severity"@en ;
+    schema:rangeIncludes dpv:Severity .
 
 dpv:hasStorageCondition a rdf:Property ;
     dcam:rangeIncludes dpv:StorageCondition ;
@@ -5849,7 +5923,8 @@ dpv:hasStorageCondition a rdf:Property ;
     dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/)"@en ;
     sw:term_status "changed"@en ;
     skos:definition "Indicates information about storage condition"@en ;
-    skos:prefLabel "has storage condition"@en .
+    skos:prefLabel "has storage condition"@en ;
+    schema:rangeIncludes dpv:StorageCondition .
 
 dpv:hasTechnicalMeasure a rdf:Property ;
     dcam:rangeIncludes dpv:TechnicalMeasure ;
@@ -5858,7 +5933,8 @@ dpv:hasTechnicalMeasure a rdf:Property ;
     rdfs:subPropertyOf dpv:hasTechnicalOrganisationalMeasure ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates use or applicability of Technical measure"@en ;
-    skos:prefLabel "has technical measure"@en .
+    skos:prefLabel "has technical measure"@en ;
+    schema:rangeIncludes dpv:TechnicalMeasure .
 
 dpv:hasThirdCountry a rdf:Property ;
     dcam:rangeIncludes dpv:ThirdCountry ;
@@ -5867,7 +5943,8 @@ dpv:hasThirdCountry a rdf:Property ;
     rdfs:subPropertyOf dpv:hasCountry ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates applicability or relevance of a 'third country'"@en ;
-    skos:prefLabel "has third country"@en .
+    skos:prefLabel "has third country"@en ;
+    schema:rangeIncludes dpv:ThirdCountry .
 
 dpv:isAfter a rdf:Property ;
     dct:contributor "Georg P. Krog, Harshvardhan J. Pandit, Julian Flake"@en ;
@@ -5882,7 +5959,8 @@ dpv:isAuthorityFor a rdf:Property ;
     dct:created "2022-01-19"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates area, scope, or applicability of an Authority"@en ;
-    skos:prefLabel "is authority for"@en .
+    skos:prefLabel "is authority for"@en ;
+    schema:domainIncludes dpv:Authority .
 
 dpv:isBefore a rdf:Property ;
     dct:contributor "Georg P. Krog, Harshvardhan J. Pandit, Julian Flake"@en ;
@@ -5898,7 +5976,9 @@ dpv:isExercisedAt a rdf:Property ;
     dct:created "2022-10-22"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates context or information about exercising a right"@en ;
-    skos:prefLabel "is exercised at"@en .
+    skos:prefLabel "is exercised at"@en ;
+    schema:domainIncludes dpv:ActiveRight ;
+    schema:rangeIncludes dpv:RightExerciseNotice .
 
 dpv:isImplementedByEntity a rdf:Property ;
     dcam:rangeIncludes dpv:Entity ;
@@ -5908,7 +5988,8 @@ dpv:isImplementedByEntity a rdf:Property ;
     sw:term_status "changed"@en ;
     skos:definition "Indicates implementation details such as entities or agents"@en ;
     skos:note "The use of 'entity' is inclusive of entities (e.g. Data Processor) as well as 'agent' (e.g. DPO). For indicating technological implementation, the property isImplementedByTechnology should be used."@en ;
-    skos:prefLabel "is implemented by entity"@en .
+    skos:prefLabel "is implemented by entity"@en ;
+    schema:rangeIncludes dpv:Entity .
 
 dpv:isImplementedUsingTechnology a rdf:Property ;
     dcam:rangeIncludes dpv:Technology ;
@@ -5918,7 +5999,8 @@ dpv:isImplementedUsingTechnology a rdf:Property ;
     sw:term_status "changed"@en ;
     skos:definition "Indicates implementation details such as technologies or processes"@en ;
     skos:note "The term 'technology' is inclusive of technologies, processes, and methods."@en ;
-    skos:prefLabel "is implemented using technology"@en .
+    skos:prefLabel "is implemented using technology"@en ;
+    schema:rangeIncludes dpv:Technology .
 
 dpv:isIndicatedAtTime a rdf:Property ;
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake"@en ;
@@ -5933,7 +6015,8 @@ dpv:isIndicatedBy a rdf:Property ;
     dct:created "2022-06-21"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifies entity who indicates the specific context"@en ;
-    skos:prefLabel "is indicated by"@en .
+    skos:prefLabel "is indicated by"@en ;
+    schema:rangeIncludes dpv:Entity .
 
 dpv:isMitigatedByMeasure a rdf:Property ;
     dcam:domainIncludes dpv:Risk ;
@@ -5943,7 +6026,9 @@ dpv:isMitigatedByMeasure a rdf:Property ;
     rdfs:subPropertyOf dpv:hasTechnicalOrganisationalMeasure ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicate a risk is mitigated by specified measure"@en ;
-    skos:prefLabel "is mitigated by measure"@en .
+    skos:prefLabel "is mitigated by measure"@en ;
+    schema:domainIncludes dpv:Risk ;
+    schema:rangeIncludes dpv:RiskMitigationMeasure .
 
 dpv:isPolicyFor a rdf:Property ;
     dcam:domainIncludes dpv:Policy ;
@@ -5951,7 +6036,8 @@ dpv:isPolicyFor a rdf:Property ;
     dct:created "2022-01-26"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the context or application of policy"@en ;
-    skos:prefLabel "is policy for"@en .
+    skos:prefLabel "is policy for"@en ;
+    schema:domainIncludes dpv:Policy .
 
 dpv:isRepresentativeFor a rdf:Property ;
     dcam:domainIncludes dpv:Representative ;
@@ -5961,7 +6047,9 @@ dpv:isRepresentativeFor a rdf:Property ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the entity is a representative for specified entity"@en ;
-    skos:prefLabel "is representative for"@en .
+    skos:prefLabel "is representative for"@en ;
+    schema:domainIncludes dpv:Representative ;
+    schema:rangeIncludes dpv:Entity .
 
 dpv:isResidualRiskOf a rdf:Property ;
     dcam:domainIncludes dpv:Risk ;
@@ -5970,7 +6058,9 @@ dpv:isResidualRiskOf a rdf:Property ;
     dct:created "2022-07-20"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates this risk is the remaining or residual risk from applying mitigation measures or treatments to specified risk"@en ;
-    skos:prefLabel "is residual risk of"@en .
+    skos:prefLabel "is residual risk of"@en ;
+    schema:domainIncludes dpv:Risk ;
+    schema:rangeIncludes dpv:Risk .
 
 dpv:mitigatesRisk a rdf:Property ;
     dcam:domainIncludes dpv:RiskMitigationMeasure ;
@@ -5979,7 +6069,9 @@ dpv:mitigatesRisk a rdf:Property ;
     dct:created "2020-11-04"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates risks mitigated by this concept"@en ;
-    skos:prefLabel "mitigates risk"@en .
+    skos:prefLabel "mitigates risk"@en ;
+    schema:domainIncludes dpv:RiskMitigationMeasure ;
+    schema:rangeIncludes dpv:Risk .
 
 dpv:hasComplianceStatus a rdf:Property ;
     dcam:rangeIncludes dpv:ComplianceStatus ;
@@ -5988,7 +6080,8 @@ dpv:hasComplianceStatus a rdf:Property ;
     rdfs:subPropertyOf dpv:hasStatus ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the status of compliance of specified concept"@en ;
-    skos:prefLabel "has compliance status"@en .
+    skos:prefLabel "has compliance status"@en ;
+    schema:rangeIncludes dpv:ComplianceStatus .
 
 dpv:hasConsequence a rdf:Property ;
     dcam:rangeIncludes dpv:Consequence ;
@@ -5998,7 +6091,8 @@ dpv:hasConsequence a rdf:Property ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates consenquence(s) possible or arising from specified concept"@en ;
     skos:note "Removed plural suffix for consistency"@en ;
-    skos:prefLabel "has consequence"@en .
+    skos:prefLabel "has consequence"@en ;
+    schema:rangeIncludes dpv:Consequence .
 
 dpv:hasConsequenceOn a rdf:Property ;
     dcam:domainIncludes dpv:Consequence ;
@@ -6006,7 +6100,8 @@ dpv:hasConsequenceOn a rdf:Property ;
     dct:created "2022-11-24"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the thing (e.g. plan, process, or entity) affected by a consequence"@en ;
-    skos:prefLabel "has consequence on"@en .
+    skos:prefLabel "has consequence on"@en ;
+    schema:domainIncludes dpv:Consequence .
 
 dpv:hasCountry a rdf:Property ;
     dcam:rangeIncludes dpv:Country ;
@@ -6015,7 +6110,8 @@ dpv:hasCountry a rdf:Property ;
     rdfs:subPropertyOf dpv:hasLocation ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates applicability of specified country"@en ;
-    skos:prefLabel "has country"@en .
+    skos:prefLabel "has country"@en ;
+    schema:rangeIncludes dpv:Country .
 
 dpv:hasData a rdf:Property ;
     dcam:rangeIncludes dpv:Data ;
@@ -6023,7 +6119,8 @@ dpv:hasData a rdf:Property ;
     dct:created "2022-08-18"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates associated with Data (may or may not be personal)"@en ;
-    skos:prefLabel "has data"@en .
+    skos:prefLabel "has data"@en ;
+    schema:rangeIncludes dpv:Data .
 
 dpv:hasDataController a rdf:Property ;
     dcam:rangeIncludes dpv:DataController,
@@ -6034,7 +6131,9 @@ dpv:hasDataController a rdf:Property ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with Data Controller"@en ;
-    skos:prefLabel "has data controller"@en .
+    skos:prefLabel "has data controller"@en ;
+    schema:rangeIncludes dpv:DataController,
+        dpv:LegalEntity .
 
 dpv:hasLocation a rdf:Property ;
     dcam:rangeIncludes dpv:Location ;
@@ -6043,7 +6142,8 @@ dpv:hasLocation a rdf:Property ;
     dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/)"@en ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates information about location"@en ;
-    skos:prefLabel "has location"@en .
+    skos:prefLabel "has location"@en ;
+    schema:rangeIncludes dpv:Location .
 
 dpv:hasOrganisationalMeasure a rdf:Property ;
     dcam:rangeIncludes dpv:OrganisationalMeasure ;
@@ -6052,7 +6152,8 @@ dpv:hasOrganisationalMeasure a rdf:Property ;
     rdfs:subPropertyOf dpv:hasTechnicalOrganisationalMeasure ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates use or applicability of Organisational measure"@en ;
-    skos:prefLabel "has organisational measure"@en .
+    skos:prefLabel "has organisational measure"@en ;
+    schema:rangeIncludes dpv:OrganisationalMeasure .
 
 dpv:hasRepresentative a rdf:Property ;
     dcam:domainIncludes dpv:Entity ;
@@ -6062,7 +6163,9 @@ dpv:hasRepresentative a rdf:Property ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifies representative of the legal entity"@en ;
-    skos:prefLabel "has representative"@en .
+    skos:prefLabel "has representative"@en ;
+    schema:domainIncludes dpv:Entity ;
+    schema:rangeIncludes dpv:Representative .
 
 dpv:hasRule a rdf:Property ;
     dcam:domainIncludes dpv:Context ;
@@ -6071,7 +6174,9 @@ dpv:hasRule a rdf:Property ;
     dct:created "2022-10-19"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifying applicability or inclusion of a rule within specified context"@en ;
-    skos:prefLabel "has rule"@en .
+    skos:prefLabel "has rule"@en ;
+    schema:domainIncludes dpv:Context ;
+    schema:rangeIncludes dpv:Rule .
 
 dpv:hasScale a rdf:Property ;
     dcam:rangeIncludes dpv:Scale ;
@@ -6079,7 +6184,8 @@ dpv:hasScale a rdf:Property ;
     dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the scale of specified concept"@en ;
-    skos:prefLabel "has scale"@en .
+    skos:prefLabel "has scale"@en ;
+    schema:rangeIncludes dpv:Scale .
 
 dpv:hasStatus a rdf:Property ;
     dcam:rangeIncludes dpv:Status ;
@@ -6087,7 +6193,8 @@ dpv:hasStatus a rdf:Property ;
     dct:created "2022-05-18"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the status of specified concept"@en ;
-    skos:prefLabel "has status"@en .
+    skos:prefLabel "has status"@en ;
+    schema:rangeIncludes dpv:Status .
 
 dpv:hasRecipient a rdf:Property ;
     dcam:rangeIncludes dpv:Recipient ;
@@ -6098,7 +6205,8 @@ dpv:hasRecipient a rdf:Property ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates Recipient of Personal Data"@en ;
-    skos:prefLabel "has recipient"@en .
+    skos:prefLabel "has recipient"@en ;
+    schema:rangeIncludes dpv:Recipient .
 
 dpv:hasTechnicalOrganisationalMeasure a rdf:Property ;
     dcam:rangeIncludes dpv:TechnicalOrganisationalMeasure ;
@@ -6107,7 +6215,8 @@ dpv:hasTechnicalOrganisationalMeasure a rdf:Property ;
     dct:modified "2020-11-04"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates use or applicability of Technical or Organisational measure"@en ;
-    skos:prefLabel "has technical and organisational measure"@en .
+    skos:prefLabel "has technical and organisational measure"@en ;
+    schema:rangeIncludes dpv:TechnicalOrganisationalMeasure .
 
 dpv:hasEntity a rdf:Property ;
     dcam:rangeIncludes dpv:Entity ;
@@ -6116,5 +6225,6 @@ dpv:hasEntity a rdf:Property ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates inclusion or applicability of an entity to some concept"@en ;
     skos:note "parent property for controller, processor, data subject, authority, etc.?"@en ;
-    skos:prefLabel "has entity"@en .
+    skos:prefLabel "has entity"@en ;
+    schema:rangeIncludes dpv:Entity .
 

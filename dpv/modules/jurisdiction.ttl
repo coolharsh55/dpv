@@ -3,6 +3,7 @@
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -249,7 +250,8 @@ dpv:hasApplicableLaw a rdf:Property ;
     dct:created "2022-01-19"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates applicability of a Law"@en ;
-    skos:prefLabel "has applicable law"@en .
+    skos:prefLabel "has applicable law"@en ;
+    schema:rangeIncludes dpv:Law .
 
 dpv:hasJurisdiction a rdf:Property ;
     dcam:rangeIncludes dpv:Location ;
@@ -257,7 +259,8 @@ dpv:hasJurisdiction a rdf:Property ;
     dct:created "2022-01-19"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates applicability of specified jurisdiction"@en ;
-    skos:prefLabel "has jurisdiction"@en .
+    skos:prefLabel "has jurisdiction"@en ;
+    schema:rangeIncludes dpv:Location .
 
 dpv:hasThirdCountry a rdf:Property ;
     dcam:rangeIncludes dpv:ThirdCountry ;
@@ -266,7 +269,8 @@ dpv:hasThirdCountry a rdf:Property ;
     rdfs:subPropertyOf dpv:hasCountry ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates applicability or relevance of a 'third country'"@en ;
-    skos:prefLabel "has third country"@en .
+    skos:prefLabel "has third country"@en ;
+    schema:rangeIncludes dpv:ThirdCountry .
 
 dpv:hasCountry a rdf:Property ;
     dcam:rangeIncludes dpv:Country ;
@@ -275,7 +279,8 @@ dpv:hasCountry a rdf:Property ;
     rdfs:subPropertyOf dpv:hasLocation ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates applicability of specified country"@en ;
-    skos:prefLabel "has country"@en .
+    skos:prefLabel "has country"@en ;
+    schema:rangeIncludes dpv:Country .
 
 dpv:hasLocation a rdf:Property ;
     dcam:rangeIncludes dpv:Location ;
@@ -284,5 +289,6 @@ dpv:hasLocation a rdf:Property ;
     dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/)"@en ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates information about location"@en ;
-    skos:prefLabel "has location"@en .
+    skos:prefLabel "has location"@en ;
+    schema:rangeIncludes dpv:Location .
 

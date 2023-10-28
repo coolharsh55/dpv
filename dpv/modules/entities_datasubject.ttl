@@ -3,6 +3,7 @@
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -258,7 +259,8 @@ dpv:hasDataSubject a rdf:Property ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with Data Subject"@en ;
-    skos:prefLabel "has data subject"@en .
+    skos:prefLabel "has data subject"@en ;
+    schema:rangeIncludes dpv:DataSubject .
 
 dpv:hasRelationWithDataSubject a rdf:Property ;
     dcam:domainIncludes dpv:Entity ;
@@ -267,5 +269,6 @@ dpv:hasRelationWithDataSubject a rdf:Property ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the relation between specified Entity and Data Subject"@en ;
-    skos:prefLabel "has relation with data subject"@en .
+    skos:prefLabel "has relation with data subject"@en ;
+    schema:domainIncludes dpv:Entity .
 

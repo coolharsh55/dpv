@@ -3,6 +3,7 @@
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -325,7 +326,8 @@ dpv:hasAlgorithmicLogic a rdf:Property ;
     dct:modified "2022-06-15"^^xsd:date ;
     sw:term_status "changed"@en ;
     skos:definition "Indicates the logic used in processing such as for automated decision making"@en ;
-    skos:prefLabel "has algorithmic logic"@en .
+    skos:prefLabel "has algorithmic logic"@en ;
+    schema:rangeIncludes dpv:AlgorithmicLogic .
 
 dpv:hasDataSource a rdf:Property ;
     dcam:rangeIncludes dpv:DataSource ;
@@ -333,7 +335,8 @@ dpv:hasDataSource a rdf:Property ;
     dct:created "2020-11-04"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the source or origin of data being processed"@en ;
-    skos:prefLabel "has data source"@en .
+    skos:prefLabel "has data source"@en ;
+    schema:rangeIncludes dpv:DataSource .
 
 dpv:hasHumanInvolvement a rdf:Property ;
     dcam:rangeIncludes dpv:HumanInvolvement ;
@@ -342,7 +345,8 @@ dpv:hasHumanInvolvement a rdf:Property ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates Involvement of humans in processing such as within automated decision making process"@en ;
     skos:note "Human involvement is also relevant to 'human in the loop'"@en ;
-    skos:prefLabel "has human involvement"@en .
+    skos:prefLabel "has human involvement"@en ;
+    schema:rangeIncludes dpv:HumanInvolvement .
 
 dpv:hasProcessingAutomation a rdf:Property ;
     dcam:rangeIncludes dpv:AutomationOfProcessing ;
@@ -350,7 +354,8 @@ dpv:hasProcessingAutomation a rdf:Property ;
     dct:created "2022-08-13"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the use or extent of automation associated with processing"@en ;
-    skos:prefLabel "has processing automation"@en .
+    skos:prefLabel "has processing automation"@en ;
+    schema:rangeIncludes dpv:AutomationOfProcessing .
 
 dpv:hasStorageCondition a rdf:Property ;
     dcam:rangeIncludes dpv:StorageCondition ;
@@ -359,5 +364,6 @@ dpv:hasStorageCondition a rdf:Property ;
     dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/)"@en ;
     sw:term_status "changed"@en ;
     skos:definition "Indicates information about storage condition"@en ;
-    skos:prefLabel "has storage condition"@en .
+    skos:prefLabel "has storage condition"@en ;
+    schema:rangeIncludes dpv:StorageCondition .
 

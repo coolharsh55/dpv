@@ -8,6 +8,7 @@ def get_schema(name):
     return SCHEMA[name]
 
 SCHEMA['classes'] = {
+    '_description': 'lorem ipsum',
     'Term': vocab_funcs.construct_class,
     'Label': vocab_funcs.construct_label,
     'Description': vocab_funcs.contruct_description,
@@ -26,6 +27,7 @@ SCHEMA['classes'] = {
 }
 
 SCHEMA['taxonomy'] = {
+    '_description': 'lorem ipsum',
     'Term': vocab_funcs.construct_class,
     'Label': vocab_funcs.construct_label,
     'Description': vocab_funcs.contruct_description,
@@ -44,6 +46,7 @@ SCHEMA['taxonomy'] = {
 }
 
 SCHEMA['properties'] = {
+    '_description': 'lorem ipsum',
     'Term': vocab_funcs.construct_property,
     'Label': vocab_funcs.construct_label,
     'Description': vocab_funcs.contruct_description,

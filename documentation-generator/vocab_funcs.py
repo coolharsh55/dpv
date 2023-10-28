@@ -122,6 +122,7 @@ def construct_domain(item, data, namespace):
         domain = NAMESPACES[prefix][domainterm]
         # DEBUG(f'domain identified: {domain}')
         triples.append((term, DCAM.domainIncludes, domain))
+        triples.append((term, SCHEMA.domainIncludes, domain))
     return triples
 
 
@@ -138,6 +139,7 @@ def construct_range(item, data, namespace):
         range = NAMESPACES[prefix][rangeterm]
         # DEBUG(f'range identified: {range}')
         triples.append((term, DCAM.rangeIncludes, range))
+        triples.append((term, SCHEMA.rangeIncludes, range))
     return triples
 
 

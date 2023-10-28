@@ -1,0 +1,269 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dpv: <https://w3id.org/dpv#> .
+@prefix dpv-gdpr: <https://w3id.org/dpv/legal/eu/gdpr#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dpv-gdpr:DPIAConformant a rdfs:Class,
+        skos:Concept,
+        dpv-gdpr:DPIAConformity ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog"@en ;
+    dct:created "2022-10-22"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Expressing the specified process is conformant with a DPIA"@en ;
+    skos:prefLabel "DPIA Conformant"@en .
+
+dpv-gdpr:DPIAConformity a rdfs:Class,
+        skos:Concept,
+        dpv:ConformanceStatus ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog"@en ;
+    dct:created "2022-10-22"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Conformity of a process with a DPIA"@en ;
+    skos:prefLabel "DPIA Conformity"@en .
+
+dpv-gdpr:DPIAIndicatesHighRisk a rdfs:Class,
+        skos:Concept,
+        dpv-gdpr:DPIARiskStatus ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-06-22"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "DPIA identifying high risk levels"@en ;
+    skos:prefLabel "DPIA Indicates High Risk"@en .
+
+dpv-gdpr:DPIAIndicatesLowRisk a rdfs:Class,
+        skos:Concept,
+        dpv-gdpr:DPIARiskStatus ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-06-22"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "DPIA identifying low risk levels"@en ;
+    skos:prefLabel "DPIA Indicates Low Risk"@en .
+
+dpv-gdpr:DPIAIndicatesNoRisk a rdfs:Class,
+        skos:Concept,
+        dpv-gdpr:DPIARiskStatus ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-06-22"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "DPIA identifying no risk is present"@en ;
+    skos:prefLabel "DPIA Indicates No Risk"@en .
+
+dpv-gdpr:DPIANecessityAssessment a rdfs:Class,
+        skos:Concept,
+        dpv:DPIA ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-06-22"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Process that determines whether a DPIA is necessary"@en ;
+    skos:prefLabel "DPIA Necessity Assessment"@en .
+
+dpv-gdpr:DPIANecessityStatus a rdfs:Class,
+        skos:Concept,
+        dpv:AuditStatus ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-06-22"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Status reflecting whether a DPIA is necessary"@en ;
+    skos:prefLabel "DPIA Necessity Status"@en .
+
+dpv-gdpr:DPIANonConformant a rdfs:Class,
+        skos:Concept,
+        dpv-gdpr:DPIAConformity ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog"@en ;
+    dct:created "2022-10-22"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Expressing the specified process is not conformant with a DPIA"@en ;
+    skos:prefLabel "DPIA Non-Conformant"@en .
+
+dpv-gdpr:DPIANotRequired a rdfs:Class,
+        skos:Concept,
+        dpv-gdpr:DPIANecessityStatus ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-06-22"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Condition where a DPIA is not required"@en ;
+    skos:prefLabel "DPIA Not Required"@en .
+
+dpv-gdpr:DPIAOutcome a rdfs:Class,
+        skos:Concept,
+        dpv:DPIA ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-06-22"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Process representing determining outcome of a DPIA"@en ;
+    skos:prefLabel "DPIA Outcome"@en .
+
+dpv-gdpr:DPIAOutcomeDPAConsultation a rdfs:Class,
+        skos:Concept,
+        dpv-gdpr:DPIAOutcomeStatus ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-06-22"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "DPIA outcome status indicating a DPA consultation is required"@en ;
+    skos:prefLabel "DPIA Outcome DPA Consultation"@en .
+
+dpv-gdpr:DPIAOutcomeHighResidualRisk a rdfs:Class,
+        skos:Concept,
+        dpv-gdpr:DPIAOutcomeStatus ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-06-22"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "DPIA outcome status indicating high residual risk which are not acceptable for continuation"@en ;
+    skos:prefLabel "DPIA Outcome High Residual Risk"@en .
+
+dpv-gdpr:DPIAOutcomeRisksMitigated a rdfs:Class,
+        skos:Concept,
+        dpv-gdpr:DPIAOutcomeStatus ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-06-22"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "DPIA outcome status indicating (all) risks have been mitigated"@en ;
+    skos:prefLabel "DPIA Outcome Risks Mitigated"@en .
+
+dpv-gdpr:DPIAOutcomeStatus a rdfs:Class,
+        skos:Concept,
+        dpv:AuditStatus ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-06-22"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Status reflecting the outcomes of a DPIA"@en ;
+    skos:prefLabel "DPIA Outcome Status"@en .
+
+dpv-gdpr:DPIAProcedure a rdfs:Class,
+        skos:Concept,
+        dpv:DPIA ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-06-22"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Process representing carrying out a DPIA"@en ;
+    skos:prefLabel "DPIA Procedure"@en .
+
+dpv-gdpr:DPIAProcessingRecommendation a rdfs:Class,
+        skos:Concept,
+        dpv:AuditStatus ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog"@en ;
+    dct:created "2022-10-22"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Recommendation from the DPIA regarding processing"@en ;
+    skos:prefLabel "DPIA Processing Recommendation"@en .
+
+dpv-gdpr:DPIARecommendsProcessingContinue a rdfs:Class,
+        skos:Concept,
+        dpv-gdpr:DPIAProcessingRecommendation ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog"@en ;
+    dct:created "2022-10-22"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Recommendation from a DPIA that the processing may continue"@en ;
+    skos:prefLabel "DPIA Recommends Processing Continue"@en .
+
+dpv-gdpr:DPIARecommendsProcessingNotContinue a rdfs:Class,
+        skos:Concept,
+        dpv-gdpr:DPIAProcessingRecommendation ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog"@en ;
+    dct:created "2022-10-22"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Recommendation from a DPIA that the processing should not continue"@en ;
+    skos:prefLabel "DPIA Recommends Processing Not Continue"@en .
+
+dpv-gdpr:DPIARequired a rdfs:Class,
+        skos:Concept,
+        dpv-gdpr:DPIANecessityStatus ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-06-22"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Condition where a DPIA is required"@en ;
+    skos:prefLabel "DPIA Required"@en .
+
+dpv-gdpr:DPIARiskStatus a rdfs:Class,
+        skos:Concept,
+        dpv:AuditStatus ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-06-22"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Status reflecting the status of risk associated with a DPIA"@en ;
+    skos:prefLabel "DPIA Risk Status"@en .
+
+<https://w3id.org/dpv/legal/eu/gdpr#dct:conformsTo> a rdf:Property ;
+    sw:term_status "accepted"@en ;
+    skos:definition "For expressing an existing standard, guideline, or requirements to which the DPIA document or process will be conforming to. This could be external guidelines published by an Authority, or internal guidelines established by the organisation"@en ;
+    skos:prefLabel "dct:conformsTo"@en .
+
+<https://w3id.org/dpv/legal/eu/gdpr#dct:coverage> a rdf:Property ;
+    sw:term_status "accepted"@en ;
+    skos:definition "For expressing coverage (e.g. jurisdictions, products, services) of the DPIA document or process. For temporal coverage, please see dct:temporal. The coverage can be expressed using dpv:PersonalDataHandling, or using another concept, or even be a link or reference to a document, or a textual description"@en ;
+    skos:prefLabel "dct:coverage"@en .
+
+<https://w3id.org/dpv/legal/eu/gdpr#dct:created> a rdf:Property ;
+    sw:term_status "accepted"@en ;
+    skos:definition "For expressing when the documentation (e.g. DPIA Necessity Assessment, or DPIA Procedure, or DPIA outcome) was created"@en ;
+    skos:prefLabel "dct:created"@en .
+
+<https://w3id.org/dpv/legal/eu/gdpr#dct:dateAccepted> a rdf:Property ;
+    sw:term_status "accepted"@en ;
+    skos:definition "For expressing when the documentation (e.g. DPIA Necessity Assessment, or DPIA Procedure, or DPIA outcome) was accepted through audit or approval"@en ;
+    skos:prefLabel "dct:dateAccepted"@en .
+
+<https://w3id.org/dpv/legal/eu/gdpr#dct:dateSubmitted> a rdf:Property ;
+    sw:term_status "accepted"@en ;
+    skos:definition "For expressing when the documentation (e.g. DPIA Necessity Assessment, or DPIA Procedure, or DPIA outcome) was submitted for audit or approval"@en ;
+    skos:prefLabel "dct:dateSubmitted"@en .
+
+<https://w3id.org/dpv/legal/eu/gdpr#dct:description> a rdf:Property ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Indicates a description of the DPIA for human comprehension"@en ;
+    skos:prefLabel "dct:description"@en .
+
+<https://w3id.org/dpv/legal/eu/gdpr#dct:hasPart> a rdf:Property ;
+    sw:term_status "accepted"@en ;
+    skos:definition "For expressing something contains a DPIA document or process contains as a part. For example, as some dpv:DPIA dct:hasPart DPIANecessityAssessment"@en ;
+    skos:prefLabel "dct:hasPart"@en .
+
+<https://w3id.org/dpv/legal/eu/gdpr#dct:identifier> a rdf:Property ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Indicates an identifier associated with the DPIA documentation or process. Identifiers may be reused from existing systems, or created for the purposes of record management"@en ;
+    skos:prefLabel "dct:identifier"@en .
+
+<https://w3id.org/dpv/legal/eu/gdpr#dct:isPartOf> a rdf:Property ;
+    sw:term_status "accepted"@en ;
+    skos:definition "For expressing a DPIA document or process is part of another. For example, as some DPIANecessityAssessment dct:isPartOf some dpv:DPIA"@en ;
+    skos:prefLabel "dct:isPartOf"@en .
+
+<https://w3id.org/dpv/legal/eu/gdpr#dct:isVersionOf> a rdf:Property ;
+    sw:term_status "accepted"@en ;
+    skos:definition "For expressing prior versions or iterations of the DPIA document or process"@en ;
+    skos:prefLabel "dct:isVersionOf"@en .
+
+<https://w3id.org/dpv/legal/eu/gdpr#dct:modified> a rdf:Property ;
+    sw:term_status "accepted"@en ;
+    skos:definition "For expressing when the documentation (e.g. DPIA Necessity Assessment, or DPIA Procedure, or DPIA outcome) was last modified"@en ;
+    skos:prefLabel "dct:modified"@en .
+
+<https://w3id.org/dpv/legal/eu/gdpr#dct:subject> a rdf:Property ;
+    sw:term_status "accepted"@en ;
+    skos:definition "For expressing the subject of the DPIA document or process, where subject refers to the point of focus. For expressing what is affected or included within the DPIA, please see dct:coverage"@en ;
+    skos:prefLabel "dct:subject"@en .
+
+<https://w3id.org/dpv/legal/eu/gdpr#dct:temporal> a rdf:Property ;
+    sw:term_status "accepted"@en ;
+    skos:definition "For expressing the temporal coverage of the DPIA document or process"@en ;
+    skos:prefLabel "dct:temporal"@en .
+
+<https://w3id.org/dpv/legal/eu/gdpr#dct:title> a rdf:Property ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Indicates a title of the DPIA for human comprehension"@en ;
+    skos:prefLabel "dct:title"@en .
+
+<https://w3id.org/dpv/legal/eu/gdpr#dct:valid> a rdf:Property ;
+    sw:term_status "accepted"@en ;
+    skos:definition "For expressing the temporal date or range of validity of the DPIA document or process. This refers to the time period for which the DPIA is considered valid, and does not refer to the temporal period associated with processing (see dct:temporal instead). The assumption is that after this period, the DPIA should be re-evaluated or some process should be triggered"@en ;
+    skos:prefLabel "dct:valid"@en .
+
+<https://w3id.org/dpv/legal/eu/gdpr#dpv:hasStatus> a rdf:Property ;
+    sw:term_status "accepted"@en ;
+    skos:definition "For expressing the status of the DPIA document or process. Here different statuses are used to convey different contextual meanings. For example, dpv:ActivityStatus expresses the state of the activity in terms of whether it is ongoing or completed, and dpv:AuditStatus expresses the state of the audit process in terms of being required, approved, or rejected. These are applied over each step of the DPIA i.e. DPIANecessityAssessment, DPIAProcedure, and DPIAOutcome. Similarly, a process also uses hasStatus with DPIAConformity to indicate adherence to the results of the DPIA process."@en ;
+    skos:prefLabel "dpv:hasStatus"@en .
+

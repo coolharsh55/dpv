@@ -3,6 +3,7 @@
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -158,7 +159,8 @@ dpv:hasImpact a rdf:Property ;
     rdfs:subPropertyOf dpv:hasConsequence ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates impact(s) possible or arising as consequences from specified concept"@en ;
-    skos:prefLabel "has impact"@en .
+    skos:prefLabel "has impact"@en ;
+    schema:rangeIncludes dpv:Impact .
 
 dpv:hasImpactOn a rdf:Property ;
     dcam:domainIncludes dpv:Impact ;
@@ -167,7 +169,8 @@ dpv:hasImpactOn a rdf:Property ;
     rdfs:subPropertyOf dpv:hasConsequenceOn ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the thing (e.g. plan, process, or entity) affected by an impact"@en ;
-    skos:prefLabel "has impact on"@en .
+    skos:prefLabel "has impact on"@en ;
+    schema:domainIncludes dpv:Impact .
 
 dpv:hasLikelihood a rdf:Property ;
     dcam:rangeIncludes dpv:Likelihood ;
@@ -175,7 +178,8 @@ dpv:hasLikelihood a rdf:Property ;
     dct:created "2022-07-20"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the likelihood associated with a concept"@en ;
-    skos:prefLabel "has likelihood"@en .
+    skos:prefLabel "has likelihood"@en ;
+    schema:rangeIncludes dpv:Likelihood .
 
 dpv:hasResidualRisk a rdf:Property ;
     dcam:domainIncludes dpv:Risk ;
@@ -184,7 +188,9 @@ dpv:hasResidualRisk a rdf:Property ;
     dct:created "2022-07-20"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the associated risk is the remaining or residual risk from applying mitigation measures or treatments to this risk"@en ;
-    skos:prefLabel "has residual risk"@en .
+    skos:prefLabel "has residual risk"@en ;
+    schema:domainIncludes dpv:Risk ;
+    schema:rangeIncludes dpv:Risk .
 
 dpv:hasRisk a rdf:Property ;
     dcam:rangeIncludes dpv:Risk ;
@@ -192,7 +198,8 @@ dpv:hasRisk a rdf:Property ;
     dct:created "2020-11-18"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates applicability of Risk for this concept"@en ;
-    skos:prefLabel "has risk"@en .
+    skos:prefLabel "has risk"@en ;
+    schema:rangeIncludes dpv:Risk .
 
 dpv:hasRiskLevel a rdf:Property ;
     dcam:domainIncludes dpv:Risk ;
@@ -201,7 +208,9 @@ dpv:hasRiskLevel a rdf:Property ;
     dct:created "2022-07-20"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the associated risk level associated with a risk"@en ;
-    skos:prefLabel "has risk level"@en .
+    skos:prefLabel "has risk level"@en ;
+    schema:domainIncludes dpv:Risk ;
+    schema:rangeIncludes dpv:RiskLevel .
 
 dpv:hasSeverity a rdf:Property ;
     dcam:rangeIncludes dpv:Severity ;
@@ -209,7 +218,8 @@ dpv:hasSeverity a rdf:Property ;
     dct:created "2022-07-20"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the severity associated with a concept"@en ;
-    skos:prefLabel "has severity"@en .
+    skos:prefLabel "has severity"@en ;
+    schema:rangeIncludes dpv:Severity .
 
 dpv:isMitigatedByMeasure a rdf:Property ;
     dcam:domainIncludes dpv:Risk ;
@@ -219,7 +229,9 @@ dpv:isMitigatedByMeasure a rdf:Property ;
     rdfs:subPropertyOf dpv:hasTechnicalOrganisationalMeasure ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicate a risk is mitigated by specified measure"@en ;
-    skos:prefLabel "is mitigated by measure"@en .
+    skos:prefLabel "is mitigated by measure"@en ;
+    schema:domainIncludes dpv:Risk ;
+    schema:rangeIncludes dpv:RiskMitigationMeasure .
 
 dpv:isResidualRiskOf a rdf:Property ;
     dcam:domainIncludes dpv:Risk ;
@@ -228,7 +240,9 @@ dpv:isResidualRiskOf a rdf:Property ;
     dct:created "2022-07-20"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates this risk is the remaining or residual risk from applying mitigation measures or treatments to specified risk"@en ;
-    skos:prefLabel "is residual risk of"@en .
+    skos:prefLabel "is residual risk of"@en ;
+    schema:domainIncludes dpv:Risk ;
+    schema:rangeIncludes dpv:Risk .
 
 dpv:mitigatesRisk a rdf:Property ;
     dcam:domainIncludes dpv:RiskMitigationMeasure ;
@@ -237,7 +251,9 @@ dpv:mitigatesRisk a rdf:Property ;
     dct:created "2020-11-04"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates risks mitigated by this concept"@en ;
-    skos:prefLabel "mitigates risk"@en .
+    skos:prefLabel "mitigates risk"@en ;
+    schema:domainIncludes dpv:RiskMitigationMeasure ;
+    schema:rangeIncludes dpv:Risk .
 
 dpv:hasConsequence a rdf:Property ;
     dcam:rangeIncludes dpv:Consequence ;
@@ -247,7 +263,8 @@ dpv:hasConsequence a rdf:Property ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates consenquence(s) possible or arising from specified concept"@en ;
     skos:note "Removed plural suffix for consistency"@en ;
-    skos:prefLabel "has consequence"@en .
+    skos:prefLabel "has consequence"@en ;
+    schema:rangeIncludes dpv:Consequence .
 
 dpv:hasConsequenceOn a rdf:Property ;
     dcam:domainIncludes dpv:Consequence ;
@@ -255,5 +272,6 @@ dpv:hasConsequenceOn a rdf:Property ;
     dct:created "2022-11-24"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the thing (e.g. plan, process, or entity) affected by a consequence"@en ;
-    skos:prefLabel "has consequence on"@en .
+    skos:prefLabel "has consequence on"@en ;
+    schema:domainIncludes dpv:Consequence .
 

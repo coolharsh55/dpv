@@ -135,7 +135,7 @@ CSVFILES = {
             'properties': f'{IMPORT_CSV_PATH}/Rules_properties.csv',
         },
     },
-    'dpv-pd': {
+    'pd': {
         'core': {
             'taxonomy': f'{IMPORT_CSV_PATH}/pd-core.csv',
         },
@@ -143,6 +143,51 @@ CSVFILES = {
             'taxonomy': f'{IMPORT_CSV_PATH}/pd-extended.csv',
         },
     },
+    'eu-gdpr': {
+        'legal_basis': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/GDPR_LegalBasis.csv',
+        },
+        'legal_basis_special': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/GDPR_LegalBasis_SpecialCategory.csv',
+        },
+        'legal_basis_data_transfer': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/GDPR_LegalBasis_DataTransfer.csv',
+        },
+        'rights': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/GDPR_LegalRights.csv',
+        },
+        'data_transfers': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/GDPR_DataTransfers.csv',
+        },
+        'dpia': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/GDPR_DPIA.csv',
+            'properties': f'{IMPORT_CSV_PATH}/GDPR_DPIA_properties.csv',
+        },
+        'compliance': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/GDPR_compliance.csv',
+        },
+    },
+    'eu-dga': {
+        'legal_basis': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/DGA_LegalBasis.csv',
+        },
+        'legal_rights': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/DGA_LegalRights.csv',
+        },
+        'services': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/DGA_Services.csv',
+        },
+        'registers': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/DGA_Registers.csv',
+        },
+        'toms': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/DGA_TOMs.csv',
+        },
+        'entities': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/DGA_entities.csv',
+            'properties': f'{IMPORT_CSV_PATH}/DGA_properties.csv',
+        },
+    }
 }
 
 EXPORTPATH = {
@@ -150,9 +195,17 @@ EXPORTPATH = {
         'main': f'{EXPORT_PATH}/dpv',
         'modules': f'{EXPORT_PATH}/dpv/modules',
     },
-    'dpv-pd': {
+    'pd': {
         'main': f'{EXPORT_PATH}/pd',
         'modules': f'{EXPORT_PATH}/pd/modules',
+    },
+    'eu-gdpr': {
+        'main': f'{EXPORT_PATH}/legal/eu/gdpr',
+        'modules': f'{EXPORT_PATH}/legal/eu/gdpr/modules',
+    },
+    'eu-dga': {
+        'main': f'{EXPORT_PATH}/legal/eu/dga',
+        'modules': f'{EXPORT_PATH}/legal/eu/dga/modules',
     },
 }
 

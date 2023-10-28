@@ -3,6 +3,7 @@
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -122,7 +123,9 @@ dpv:RightNonFulfilmentNotice a rdfs:Class,
     dct:created "2022-11-02"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifying a RightExerciseRecord has RightExerciseActivity as part of its records"@en ;
-    skos:prefLabel "dct:hasPart"@en .
+    skos:prefLabel "dct:hasPart"@en ;
+    schema:domainIncludes dpv:RightExerciseRecord ;
+    schema:rangeIncludes dpv:RightExerciseActivity .
 
 <https://w3id.org/dpv#dct:isPartOf> a rdf:Property ;
     dcam:domainIncludes dpv:RightExerciseActivity ;
@@ -131,7 +134,9 @@ dpv:RightNonFulfilmentNotice a rdfs:Class,
     dct:created "2022-11-02"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifying a RightExerciseActivity is part of a RightExerciseRecord"@en ;
-    skos:prefLabel "dct:isPartOf"@en .
+    skos:prefLabel "dct:isPartOf"@en ;
+    schema:domainIncludes dpv:RightExerciseActivity ;
+    schema:rangeIncludes dpv:RightExerciseRecord .
 
 <https://w3id.org/dpv#dct:valid> a rdf:Property ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -147,7 +152,9 @@ dpv:RightNonFulfilmentNotice a rdfs:Class,
     dct:created "2022-11-02"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifying a justification for non-fulfilment of Right Exercise"@en ;
-    skos:prefLabel "dpv:hasJustification"@en .
+    skos:prefLabel "dpv:hasJustification"@en ;
+    schema:domainIncludes dpv:RightExerciseActivity ;
+    schema:rangeIncludes dpv:Justification .
 
 <https://w3id.org/dpv#dpv:hasRecipient> a rdf:Property ;
     dcam:domainIncludes dpv:RightExerciseActivity ;
@@ -156,7 +163,9 @@ dpv:RightNonFulfilmentNotice a rdfs:Class,
     dct:created "2022-11-02"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the Recipient of a Right Exercise Activity"@en ;
-    skos:prefLabel "dpv:hasRecipient"@en .
+    skos:prefLabel "dpv:hasRecipient"@en ;
+    schema:domainIncludes dpv:RightExerciseActivity ;
+    schema:rangeIncludes dpv:Recipient .
 
 <https://w3id.org/dpv#dpv:hasStatus> a rdf:Property ;
     dcam:domainIncludes dpv:RightExerciseActivity ;
@@ -165,7 +174,9 @@ dpv:RightNonFulfilmentNotice a rdfs:Class,
     dct:created "2022-11-02"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the status of a Right Exercise Activity"@en ;
-    skos:prefLabel "dpv:hasStatus"@en .
+    skos:prefLabel "dpv:hasStatus"@en ;
+    schema:domainIncludes dpv:RightExerciseActivity ;
+    schema:rangeIncludes dpv:Status .
 
 <https://w3id.org/dpv#dpv:isAfter> a rdf:Property ;
     dcam:domainIncludes dpv:RightExerciseActivity ;
@@ -174,7 +185,9 @@ dpv:RightNonFulfilmentNotice a rdfs:Class,
     dct:created "2022-11-02"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifying a RightExerciseActivity occurs before another RightExerciseActivity"@en ;
-    skos:prefLabel "dpv:isAfter"@en .
+    skos:prefLabel "dpv:isAfter"@en ;
+    schema:domainIncludes dpv:RightExerciseActivity ;
+    schema:rangeIncludes dpv:RightExerciseActivity .
 
 <https://w3id.org/dpv#dpv:isBefore> a rdf:Property ;
     dcam:domainIncludes dpv:RightExerciseActivity ;
@@ -183,7 +196,9 @@ dpv:RightNonFulfilmentNotice a rdfs:Class,
     dct:created "2022-11-02"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifying a RightExerciseActivity occurs before another RightExerciseActivity"@en ;
-    skos:prefLabel "dpv:isBefore"@en .
+    skos:prefLabel "dpv:isBefore"@en ;
+    schema:domainIncludes dpv:RightExerciseActivity ;
+    schema:rangeIncludes dpv:RightExerciseActivity .
 
 <https://w3id.org/dpv#dpv:isImplementedByEntity> a rdf:Property ;
     dcam:domainIncludes dpv:RightExerciseActivity ;
@@ -192,7 +207,9 @@ dpv:RightNonFulfilmentNotice a rdfs:Class,
     dct:created "2022-11-02"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the Entity that implements or performs a Right Exercise Activity"@en ;
-    skos:prefLabel "dpv:isImplementedByEntity"@en .
+    skos:prefLabel "dpv:isImplementedByEntity"@en ;
+    schema:domainIncludes dpv:RightExerciseActivity ;
+    schema:rangeIncludes dpv:Entity .
 
 <https://w3id.org/dpv#foaf:page> a rdf:Property ;
     dcam:domainIncludes dpv:RightExerciseActivity ;
@@ -200,7 +217,8 @@ dpv:RightNonFulfilmentNotice a rdfs:Class,
     dct:created "2022-11-02"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates a web page or document providing information or functionality associated with a Right Exercise"@en ;
-    skos:prefLabel "foaf:page"@en .
+    skos:prefLabel "foaf:page"@en ;
+    schema:domainIncludes dpv:RightExerciseActivity .
 
 dpv:hasRight a rdf:Property ;
     dcam:rangeIncludes dpv:Right ;
@@ -208,7 +226,8 @@ dpv:hasRight a rdf:Property ;
     dct:created "2020-11-18"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates use or applicability of Right"@en ;
-    skos:prefLabel "has right"@en .
+    skos:prefLabel "has right"@en ;
+    schema:rangeIncludes dpv:Right .
 
 dpv:isExercisedAt a rdf:Property ;
     dcam:domainIncludes dpv:ActiveRight ;
@@ -217,5 +236,7 @@ dpv:isExercisedAt a rdf:Property ;
     dct:created "2022-10-22"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates context or information about exercising a right"@en ;
-    skos:prefLabel "is exercised at"@en .
+    skos:prefLabel "is exercised at"@en ;
+    schema:domainIncludes dpv:ActiveRight ;
+    schema:rangeIncludes dpv:RightExerciseNotice .
 
