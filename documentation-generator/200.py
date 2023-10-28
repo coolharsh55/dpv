@@ -56,6 +56,84 @@ CSVFILES = {
             'taxonomy': f'{IMPORT_CSV_PATH}/Purpose.csv',
             'properties': f'{IMPORT_CSV_PATH}/Purpose_properties.csv',
         },
+        'processing': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/Processing.csv',
+            'properties': f'{IMPORT_CSV_PATH}/Processing_properties.csv',
+        },
+        'TOM': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/TechnicalOrganisationalMeasure.csv',
+            'properties': f'{IMPORT_CSV_PATH}/TechnicalOrganisationalMeasure_properties.csv',
+        },
+        'technical_measures': {
+            'classes': f'{IMPORT_CSV_PATH}/TechnicalMeasure.csv',
+        },
+        'organisational_measures': {
+            'classes': f'{IMPORT_CSV_PATH}/OrganisationalMeasure.csv',
+        },
+        'entities': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/Entities.csv',
+            'properties': f'{IMPORT_CSV_PATH}/Entities_properties.csv',
+        },
+        'entities_authority': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/Entities_Authority.csv',
+            'properties': f'{IMPORT_CSV_PATH}/Entities_Authority_properties.csv',
+        },
+        'entities_legalrole': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/Entities_LegalRole.csv',
+            'properties': f'{IMPORT_CSV_PATH}/Entities_LegalRole_properties.csv',
+        },
+        'entities_organisation': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/Entities_Organisation.csv',
+        },
+        'entities_datasubject': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/Entities_DataSubject.csv',
+            'properties': f'{IMPORT_CSV_PATH}/Entities_DataSubject_properties.csv',
+        },
+        'legal_basis': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/LegalBasis.csv',
+            'properties': f'{IMPORT_CSV_PATH}/LegalBasis_properties.csv',
+        },
+        'consent': {
+            'properties': f'{IMPORT_CSV_PATH}/Consent_properties.csv',
+        },
+        'consent_types': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/ConsentTypes.csv',
+        },
+        'consent_status': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/ConsentStatus.csv',
+        },
+        'context': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/Context.csv',
+            'properties': f'{IMPORT_CSV_PATH}/Context_properties.csv',
+        },
+        'processing_context': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/ProcessingContext.csv',
+            'properties': f'{IMPORT_CSV_PATH}/ProcessingContext_properties.csv',
+        },
+        'processing_scale': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/ProcessingScale.csv',
+            'properties': f'{IMPORT_CSV_PATH}/ProcessingScale_properties.csv',
+        },
+        'status': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/Status.csv',
+            'properties': f'{IMPORT_CSV_PATH}/Status_properties.csv',
+        },
+        'risk': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/Risk.csv',
+            'properties': f'{IMPORT_CSV_PATH}/Risk_properties.csv',
+        },
+        'jurisdiction': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/Jurisdiction.csv',
+            'properties': f'{IMPORT_CSV_PATH}/Jurisdiction_properties.csv',
+        },
+        'rights': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/Rights.csv',
+            'properties': f'{IMPORT_CSV_PATH}/Rights_properties.csv',
+        },
+        'rules': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/Rules.csv',
+            'properties': f'{IMPORT_CSV_PATH}/Rules_properties.csv',
+        },
     },
     'dpv-pd': {
         'core': {
@@ -116,7 +194,7 @@ def serialize_graph(triples, filepath):
         graph.add(triple)
     for ext, format in RDF_SERIALIZATIONS.items():
         graph.serialize(f'{filepath}.{ext}', format=format)
-        INFO(f'wrote {filepath}.{ext}')
+    INFO(f'wrote {filepath}.[{",".join(RDF_SERIALIZATIONS)}]')
 
 
 global_triples = []
@@ -133,12 +211,16 @@ for vocab, vocab_data in CSVFILES.items():
         module_triples = []
         PROPOSED[vocab][module] = []
         for schema_name, filepath in module_data.items():
-            DEBUG(f'HANDLING: {vocab}-{module} -- {schema_name}')
             schema = vocab_schemas.get_schema(schema_name)
-            DEBUG(f'Using schema: {schema_name}')
+            DEBUG(f'schema: {schema_name}')
             header, csvdata = load_CSV(filepath)
+            # clean data (dangling spaces)
+            header = [x.strip() for x in header]
             # csvdata is a list of dicts containing column:value
             for row in csvdata:
+                # clean data (dangling spaces)
+                row = {x.strip():y.strip() for x,y in row.items()}
+                # DEBUG(row)
                 # filter proposed terms
                 if row['Status'] == 'proposed':
                     PROPOSED[vocab][module].append(row['Term'])
@@ -157,6 +239,8 @@ for vocab, vocab_data in CSVFILES.items():
                         continue
                     # DEBUG(f'{func} :: {item}')
                     module_triples += func(item, row, namespace)
+        DEBUG(f'Triples: {len(module_triples)} accepted')
+        DEBUG(f'Proposed concepts: {len(PROPOSED[vocab][module])}')
         # export module triples
         exportpath = EXPORTPATH[vocab]['modules']
         filepath = f'{exportpath}/{module}'

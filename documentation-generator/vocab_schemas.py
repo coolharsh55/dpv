@@ -55,6 +55,7 @@ SCHEMA['properties'] = {
     'Comment': vocab_funcs.construct_comment,
     'Source': vocab_funcs.construct_source,
     'Created': vocab_funcs.construct_date_created,
+    'CreationDate': vocab_funcs.construct_date_created, #DUPLICATE of Created 
     'Modified': vocab_funcs.construct_date_modified,
     'Status': vocab_funcs.construct_status,
     'Contributors': vocab_funcs.construct_contributors,
