@@ -16,6 +16,7 @@ dpv:DataController a rdfs:Class,
     dct:source "(GDPR Art.4-7g,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_7/oj)"@en ;
     rdfs:subClassOf dpv:LegalEntity ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:LegalEntity ;
     skos:definition "The individual or organisation that decides (or controls) the purpose(s) of processing personal data."@en ;
     skos:note "The terms 'Controller' is usually the more common form of indicating a Data Controller. In ISO/IEC the term 'PII Controller' is used."@en ;
     skos:prefLabel "Data Controller"@en .
@@ -28,6 +29,7 @@ dpv:DataSubject a rdfs:Class,
     dct:source "(GDPR Art.4-1g,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_1/oj)"@en ;
     rdfs:subClassOf dpv:LegalEntity ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:LegalEntity ;
     skos:definition "The individual (or category of individuals) whose personal data is being processed"@en ;
     skos:note "The term 'data subject' is specific to the GDPR, but is functionally equivalent to the term 'individual' and the ISO/IEC term 'PII Principle'."@en ;
     skos:prefLabel "Data Subject"@en .
@@ -38,6 +40,7 @@ dpv:DataSubjectRight a rdfs:Class,
     dct:created "2020-11-18"^^xsd:date ;
     rdfs:subClassOf dpv:Right ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Right ;
     skos:definition "The rights applicable or provided to a Data Subject"@en ;
     skos:note "Based on use of definitions, the notion of 'Data Subject Right' can be equivalent to 'Individual Right' or 'Right of a Person'"@en ;
     skos:prefLabel "Data Subject Right"@en .
@@ -59,6 +62,7 @@ dpv:PersonalData a rdfs:Class,
     dct:source "(GDPR Art.4-1,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_1/oj)"@en ;
     rdfs:subClassOf dpv:Data ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Data ;
     skos:definition "Data directly or indirectly associated or related to an individual."@en ;
     skos:note "This definition of personal data encompasses the concepts used in GDPR Art.4-1 for 'personal data' and ISO/IEC 2700 for 'personally identifiable information (PII)'."@en ;
     skos:prefLabel "Personal Data"@en ;
@@ -103,6 +107,7 @@ dpv:Recipient a rdfs:Class,
     dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/),(GDPR Art.4-9g,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_9/oj)"@en ;
     rdfs:subClassOf dpv:LegalEntity ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:LegalEntity ;
     skos:definition "Entities that receive personal data"@en ;
     skos:note "A recipient of personal data can be used to indicate any entity that receives personal data. This can be a Third Party, Processor (GDPR), or even a Controller."@en ;
     skos:prefLabel "Recipient"@en ;
@@ -114,6 +119,7 @@ dpv:Right a rdfs:Class,
     dct:created "2020-11-18"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "The right(s) applicable, provided, or expected."@en ;
+    skos:narrower dpv:DataSubjectRight ;
     skos:note "A 'right' is a legal, social, or ethical principle of freedom or entitlement which dictate the norms regarding what is allowed or owed.. Rights as a concept encompass a broad area of norms and entities, and are not specific to Individuals or Data Protection / Privacy. For individual specific rights, see dpv:DataSubjectRight"@en ;
     skos:prefLabel "Right"@en .
 
@@ -135,7 +141,8 @@ dpv:TechnicalOrganisationalMeasure a rdfs:Class,
     skos:definition "The Technical and Organisational measures used."@en ;
     skos:prefLabel "Technical and Organisational Measure"@en .
 
-dpv:hasDataController a rdf:Property ;
+dpv:hasDataController a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:LegalEntity ;
     dct:contributor "Axel Polleres, Javier Fernández, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger"@en ;
     dct:created "2019-04-04"^^xsd:date ;
@@ -145,7 +152,8 @@ dpv:hasDataController a rdf:Property ;
     skos:prefLabel "has data controller"@en ;
     schema:rangeIncludes dpv:LegalEntity .
 
-dpv:hasDataSubject a rdf:Property ;
+dpv:hasDataSubject a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:DataSubject ;
     dct:contributor "Axel Polleres, Javier Fernández, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger"@en ;
     dct:created "2019-04-04"^^xsd:date ;
@@ -155,7 +163,8 @@ dpv:hasDataSubject a rdf:Property ;
     skos:prefLabel "has data subject"@en ;
     schema:rangeIncludes dpv:DataSubject .
 
-dpv:hasLegalBasis a rdf:Property ;
+dpv:hasLegalBasis a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:LegalBasis ;
     dct:contributor "Axel Polleres, Javier Fernández"@en ;
     dct:created "2019-04-04"^^xsd:date ;
@@ -165,7 +174,8 @@ dpv:hasLegalBasis a rdf:Property ;
     skos:prefLabel "has legal basis"@en ;
     schema:rangeIncludes dpv:LegalBasis .
 
-dpv:hasPersonalData a rdf:Property ;
+dpv:hasPersonalData a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:PersonalData ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-01-19"^^xsd:date ;
@@ -174,7 +184,8 @@ dpv:hasPersonalData a rdf:Property ;
     skos:prefLabel "has personal data"@en ;
     schema:rangeIncludes dpv:PersonalData .
 
-dpv:hasPersonalDataHandling a rdf:Property ;
+dpv:hasPersonalDataHandling a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:PersonalDataHandling ;
     dct:contributor "Harshvardhan J. Pandit, Georg P Krog"@en ;
     dct:created "2022-01-19"^^xsd:date ;
@@ -183,7 +194,8 @@ dpv:hasPersonalDataHandling a rdf:Property ;
     skos:prefLabel "has personal data handling"@en ;
     schema:rangeIncludes dpv:PersonalDataHandling .
 
-dpv:hasProcessing a rdf:Property ;
+dpv:hasProcessing a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Processing ;
     dct:contributor "Axel Polleres, Javier Fernández, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger"@en ;
     dct:created "2019-04-04"^^xsd:date ;
@@ -194,7 +206,8 @@ dpv:hasProcessing a rdf:Property ;
     skos:prefLabel "has processing"@en ;
     schema:rangeIncludes dpv:Processing .
 
-dpv:hasPurpose a rdf:Property ;
+dpv:hasPurpose a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Purpose ;
     dct:contributor "Axel Polleres, Javier Fernández, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger"@en ;
     dct:created "2019-04-04"^^xsd:date ;
@@ -205,7 +218,8 @@ dpv:hasPurpose a rdf:Property ;
     skos:prefLabel "has purpose"@en ;
     schema:rangeIncludes dpv:Purpose .
 
-dpv:hasRecipient a rdf:Property ;
+dpv:hasRecipient a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Recipient ;
     dct:contributor "Axel Polleres, Javier Fernández, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger"@en ;
     dct:created "2019-04-04"^^xsd:date ;
@@ -216,7 +230,8 @@ dpv:hasRecipient a rdf:Property ;
     skos:prefLabel "has recipient"@en ;
     schema:rangeIncludes dpv:Recipient .
 
-dpv:hasRight a rdf:Property ;
+dpv:hasRight a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Right ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2020-11-18"^^xsd:date ;
@@ -225,7 +240,8 @@ dpv:hasRight a rdf:Property ;
     skos:prefLabel "has right"@en ;
     schema:rangeIncludes dpv:Right .
 
-dpv:hasRisk a rdf:Property ;
+dpv:hasRisk a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Risk ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2020-11-18"^^xsd:date ;
@@ -234,7 +250,8 @@ dpv:hasRisk a rdf:Property ;
     skos:prefLabel "has risk"@en ;
     schema:rangeIncludes dpv:Risk .
 
-dpv:hasTechnicalOrganisationalMeasure a rdf:Property ;
+dpv:hasTechnicalOrganisationalMeasure a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:TechnicalOrganisationalMeasure ;
     dct:contributor "Axel Polleres, Javier Fernández, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger"@en ;
     dct:created "2019-04-04"^^xsd:date ;
@@ -243,4 +260,10 @@ dpv:hasTechnicalOrganisationalMeasure a rdf:Property ;
     skos:definition "Indicates use or applicability of Technical or Organisational measure"@en ;
     skos:prefLabel "has technical and organisational measure"@en ;
     schema:rangeIncludes dpv:TechnicalOrganisationalMeasure .
+
+dpv:Data skos:narrower dpv:PersonalData .
+
+dpv:LegalEntity skos:narrower dpv:DataController,
+        dpv:DataSubject,
+        dpv:Recipient .
 

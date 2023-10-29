@@ -1,3 +1,4 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix dpv-gdpr: <https://w3id.org/dpv/legal/eu/gdpr#> .
@@ -6,6 +7,11 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dcat:Resource a rdfs:Class,
+        skos:Concept ;
+    skos:definition "A dataset or catalogue or any other resource provided in fulfilment of a Right Exercise, such as for GDPR's Art.15 regarding Right of Access or Art.20 regarding Right to Data Portability. The associated properties from DCAT and DCMI DCT vocabularies provide convenient means to express metadata such as URL for accessing the data, its temporal validity and acecss restrictions, and specific datasets present along with their schemas."@en ;
+    skos:prefLabel "dcat:Resource"@en .
 
 dpv-gdpr:A13 a rdfs:Class,
         skos:Concept,
@@ -983,91 +989,119 @@ dpv-gdpr:SupplementaryMeasure a rdfs:Class,
     skos:definition "Supplementary measures are intended to additionally provide safeguards or guarentees to bring the resulting protection in line with EU requirements"@en ;
     skos:prefLabel "Supplementary Measure"@en .
 
-<https://w3id.org/dpv/legal/eu/gdpr#dcat:Resource> a rdfs:Class,
+dct:conformsTo a rdf:Property,
         skos:Concept ;
-    dct:contributor "Beatriz Esteves, Georg Krog, Harshvardhan J. Pandit"@en ;
-    dct:created "2022-11-09"^^xsd:date ;
-    sw:term_status "accepted"@en ;
-    skos:definition "A dataset or catalogue or any other resource provided in fulfilment of a Right Exercise, such as for GDPR's Art.15 regarding Right of Access or Art.20 regarding Right to Data Portability. The associated properties from DCAT and DCMI DCT vocabularies provide convenient means to express metadata such as URL for accessing the data, its temporal validity and acecss restrictions, and specific datasets present along with their schemas."@en ;
-    skos:prefLabel "dcat:Resource"@en .
-
-<https://w3id.org/dpv/legal/eu/gdpr#dct:conformsTo> a rdf:Property ;
-    sw:term_status "accepted"@en ;
     skos:definition "For expressing an existing standard, guideline, or requirements to which the DPIA document or process will be conforming to. This could be external guidelines published by an Authority, or internal guidelines established by the organisation"@en ;
     skos:prefLabel "dct:conformsTo"@en .
 
-<https://w3id.org/dpv/legal/eu/gdpr#dct:coverage> a rdf:Property ;
-    sw:term_status "accepted"@en ;
+dct:coverage a rdf:Property,
+        skos:Concept ;
     skos:definition "For expressing coverage (e.g. jurisdictions, products, services) of the DPIA document or process. For temporal coverage, please see dct:temporal. The coverage can be expressed using dpv:PersonalDataHandling, or using another concept, or even be a link or reference to a document, or a textual description"@en ;
     skos:prefLabel "dct:coverage"@en .
 
-<https://w3id.org/dpv/legal/eu/gdpr#dct:created> a rdf:Property ;
-    sw:term_status "accepted"@en ;
+dct:created a rdf:Property,
+        skos:Concept ;
     skos:definition "For expressing when the documentation (e.g. DPIA Necessity Assessment, or DPIA Procedure, or DPIA outcome) was created"@en ;
     skos:prefLabel "dct:created"@en .
 
-<https://w3id.org/dpv/legal/eu/gdpr#dct:dateAccepted> a rdf:Property ;
-    sw:term_status "accepted"@en ;
+dct:dateAccepted a rdf:Property,
+        skos:Concept ;
     skos:definition "For expressing when the documentation (e.g. DPIA Necessity Assessment, or DPIA Procedure, or DPIA outcome) was accepted through audit or approval"@en ;
     skos:prefLabel "dct:dateAccepted"@en .
 
-<https://w3id.org/dpv/legal/eu/gdpr#dct:dateSubmitted> a rdf:Property ;
-    sw:term_status "accepted"@en ;
+dct:dateSubmitted a rdf:Property,
+        skos:Concept ;
     skos:definition "For expressing when the documentation (e.g. DPIA Necessity Assessment, or DPIA Procedure, or DPIA outcome) was submitted for audit or approval"@en ;
     skos:prefLabel "dct:dateSubmitted"@en .
 
-<https://w3id.org/dpv/legal/eu/gdpr#dct:description> a rdf:Property ;
-    sw:term_status "accepted"@en ;
+dct:description a rdf:Property,
+        skos:Concept ;
     skos:definition "Indicates a description of the DPIA for human comprehension"@en ;
     skos:prefLabel "dct:description"@en .
 
-<https://w3id.org/dpv/legal/eu/gdpr#dct:hasPart> a rdf:Property ;
-    sw:term_status "accepted"@en ;
+dct:hasPart a rdf:Property,
+        skos:Concept ;
     skos:definition "For expressing something contains a DPIA document or process contains as a part. For example, as some dpv:DPIA dct:hasPart DPIANecessityAssessment"@en ;
     skos:prefLabel "dct:hasPart"@en .
 
-<https://w3id.org/dpv/legal/eu/gdpr#dct:identifier> a rdf:Property ;
-    sw:term_status "accepted"@en ;
+dct:identifier a rdf:Property,
+        skos:Concept ;
     skos:definition "Indicates an identifier associated with the DPIA documentation or process. Identifiers may be reused from existing systems, or created for the purposes of record management"@en ;
     skos:prefLabel "dct:identifier"@en .
 
-<https://w3id.org/dpv/legal/eu/gdpr#dct:isPartOf> a rdf:Property ;
-    sw:term_status "accepted"@en ;
+dct:isPartOf a rdf:Property,
+        skos:Concept ;
     skos:definition "For expressing a DPIA document or process is part of another. For example, as some DPIANecessityAssessment dct:isPartOf some dpv:DPIA"@en ;
     skos:prefLabel "dct:isPartOf"@en .
 
-<https://w3id.org/dpv/legal/eu/gdpr#dct:isVersionOf> a rdf:Property ;
-    sw:term_status "accepted"@en ;
+dct:isVersionOf a rdf:Property,
+        skos:Concept ;
     skos:definition "For expressing prior versions or iterations of the DPIA document or process"@en ;
     skos:prefLabel "dct:isVersionOf"@en .
 
-<https://w3id.org/dpv/legal/eu/gdpr#dct:modified> a rdf:Property ;
-    sw:term_status "accepted"@en ;
+dct:modified a rdf:Property,
+        skos:Concept ;
     skos:definition "For expressing when the documentation (e.g. DPIA Necessity Assessment, or DPIA Procedure, or DPIA outcome) was last modified"@en ;
     skos:prefLabel "dct:modified"@en .
 
-<https://w3id.org/dpv/legal/eu/gdpr#dct:subject> a rdf:Property ;
-    sw:term_status "accepted"@en ;
+dct:subject a rdf:Property,
+        skos:Concept ;
     skos:definition "For expressing the subject of the DPIA document or process, where subject refers to the point of focus. For expressing what is affected or included within the DPIA, please see dct:coverage"@en ;
     skos:prefLabel "dct:subject"@en .
 
-<https://w3id.org/dpv/legal/eu/gdpr#dct:temporal> a rdf:Property ;
-    sw:term_status "accepted"@en ;
+dct:temporal a rdf:Property,
+        skos:Concept ;
     skos:definition "For expressing the temporal coverage of the DPIA document or process"@en ;
     skos:prefLabel "dct:temporal"@en .
 
-<https://w3id.org/dpv/legal/eu/gdpr#dct:title> a rdf:Property ;
-    sw:term_status "accepted"@en ;
+dct:title a rdf:Property,
+        skos:Concept ;
     skos:definition "Indicates a title of the DPIA for human comprehension"@en ;
     skos:prefLabel "dct:title"@en .
 
-<https://w3id.org/dpv/legal/eu/gdpr#dct:valid> a rdf:Property ;
-    sw:term_status "accepted"@en ;
+dct:valid a rdf:Property,
+        skos:Concept ;
     skos:definition "For expressing the temporal date or range of validity of the DPIA document or process. This refers to the time period for which the DPIA is considered valid, and does not refer to the temporal period associated with processing (see dct:temporal instead). The assumption is that after this period, the DPIA should be re-evaluated or some process should be triggered"@en ;
     skos:prefLabel "dct:valid"@en .
 
-<https://w3id.org/dpv/legal/eu/gdpr#dpv:hasStatus> a rdf:Property ;
-    sw:term_status "accepted"@en ;
+dpv:hasStatus a rdf:Property,
+        skos:Concept ;
     skos:definition "For expressing the status of the DPIA document or process. Here different statuses are used to convey different contextual meanings. For example, dpv:ActivityStatus expresses the state of the activity in terms of whether it is ongoing or completed, and dpv:AuditStatus expresses the state of the audit process in terms of being required, approved, or rejected. These are applied over each step of the DPIA i.e. DPIANecessityAssessment, DPIAProcedure, and DPIAOutcome. Similarly, a process also uses hasStatus with DPIAConformity to indicate adherence to the results of the DPIA process."@en ;
     skos:prefLabel "dpv:hasStatus"@en .
+
+<https://w3id.org/dpv/legal/eu/gdpr#dcat:Resource> dct:contributor "Beatriz Esteves, Georg Krog, Harshvardhan J. Pandit"@en ;
+    dct:created "2022-11-09"^^xsd:date ;
+    sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv/legal/eu/gdpr#dct:conformsTo> sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv/legal/eu/gdpr#dct:coverage> sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv/legal/eu/gdpr#dct:created> sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv/legal/eu/gdpr#dct:dateAccepted> sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv/legal/eu/gdpr#dct:dateSubmitted> sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv/legal/eu/gdpr#dct:description> sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv/legal/eu/gdpr#dct:hasPart> sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv/legal/eu/gdpr#dct:identifier> sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv/legal/eu/gdpr#dct:isPartOf> sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv/legal/eu/gdpr#dct:isVersionOf> sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv/legal/eu/gdpr#dct:modified> sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv/legal/eu/gdpr#dct:subject> sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv/legal/eu/gdpr#dct:temporal> sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv/legal/eu/gdpr#dct:title> sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv/legal/eu/gdpr#dct:valid> sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv/legal/eu/gdpr#dpv:hasStatus> sw:term_status "accepted"@en .
 

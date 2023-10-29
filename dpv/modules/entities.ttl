@@ -44,7 +44,8 @@ dpv:Representative a rdfs:Class,
     skos:definition "A representative of a legal entity"@en ;
     skos:prefLabel "Representative"@en .
 
-dpv:hasAddress a rdf:Property ;
+dpv:hasAddress a rdf:Property,
+        skos:Concept ;
     dcam:domainIncludes dpv:Entity ;
     dct:contributor "Harshvardhan J.Pandit, Georg P Krog, Paul Ryan, Beatriz Esteves"@en ;
     dct:created "2020-11-04"^^xsd:date ;
@@ -53,7 +54,8 @@ dpv:hasAddress a rdf:Property ;
     skos:prefLabel "has address"@en ;
     schema:domainIncludes dpv:Entity .
 
-dpv:hasContact a rdf:Property ;
+dpv:hasContact a rdf:Property,
+        skos:Concept ;
     dcam:domainIncludes dpv:Entity ;
     dct:contributor "Harshvardhan J.Pandit, Georg P Krog, Paul Ryan, Beatriz Esteves"@en ;
     dct:created "2020-11-04"^^xsd:date ;
@@ -62,7 +64,8 @@ dpv:hasContact a rdf:Property ;
     skos:prefLabel "has contact"@en ;
     schema:domainIncludes dpv:Entity .
 
-dpv:hasName a rdf:Property ;
+dpv:hasName a rdf:Property,
+        skos:Concept ;
     dcam:domainIncludes dpv:Entity ;
     dct:contributor "Harshvardhan J.Pandit, Georg P Krog, Paul Ryan, Beatriz Esteves"@en ;
     dct:created "2020-11-04"^^xsd:date ;
@@ -71,46 +74,56 @@ dpv:hasName a rdf:Property ;
     skos:prefLabel "has name"@en ;
     schema:domainIncludes dpv:Entity .
 
-dpv:hasRepresentative a rdf:Property ;
+dpv:hasRepresentative a rdf:Property,
+        skos:Concept ;
     dcam:domainIncludes dpv:Entity ;
     dcam:rangeIncludes dpv:Representative ;
     dct:contributor "Harshvardhan J.Pandit, Georg P Krog, Paul Ryan, Beatriz Esteves"@en ;
     dct:created "2020-11-04"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:hasEntity ;
     skos:definition "Specifies representative of the legal entity"@en ;
     skos:prefLabel "has representative"@en ;
     schema:domainIncludes dpv:Entity ;
     schema:rangeIncludes dpv:Representative .
 
-dpv:hasResponsibleEntity a rdf:Property ;
+dpv:hasResponsibleEntity a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Entity ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-03-02"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:hasEntity ;
     skos:definition "Specifies the indicated entity is responsible within some context"@en ;
     skos:prefLabel "has responsible entity"@en ;
     schema:rangeIncludes dpv:Entity .
 
-dpv:isRepresentativeFor a rdf:Property ;
+dpv:isRepresentativeFor a rdf:Property,
+        skos:Concept ;
     dcam:domainIncludes dpv:Representative ;
     dcam:rangeIncludes dpv:Entity ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-11-09"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:hasEntity ;
     skos:definition "Indicates the entity is a representative for specified entity"@en ;
     skos:prefLabel "is representative for"@en ;
     schema:domainIncludes dpv:Representative ;
     schema:rangeIncludes dpv:Entity .
 
-dpv:hasEntity a rdf:Property ;
+dpv:hasEntity a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Entity ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-02-09"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates inclusion or applicability of an entity to some concept"@en ;
+    skos:narrower dpv:hasRepresentative,
+        dpv:hasResponsibleEntity,
+        dpv:isRepresentativeFor ;
     skos:note "parent property for controller, processor, data subject, authority, etc.?"@en ;
     skos:prefLabel "has entity"@en ;
     schema:rangeIncludes dpv:Entity .

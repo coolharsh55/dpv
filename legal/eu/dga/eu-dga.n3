@@ -395,49 +395,65 @@ dpv-dga:ThirdCountryDataRequestNotice a rdfs:Class,
     skos:note "DGA 31.5"@en ;
     skos:prefLabel "Third Country Data Request Notice"@en .
 
-dpv-dga:hasDAO a rdf:Property ;
+dpv-dga:hasDAO a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv-dga:DataAltruismOrganisation ;
     dct:contributor "Beatriz Esteves, Harshvardhan J. Pandit"@en ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:hasEntity ;
     skos:definition "Indicates association with data altruism organisation"@en ;
     skos:prefLabel "has data altruism organisation"@en ;
     schema:rangeIncludes dpv-dga:DataAltruismOrganisation .
 
-dpv-dga:hasDISP a rdf:Property ;
+dpv-dga:hasDISP a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv-dga:DISP ;
     dct:contributor "Beatriz Esteves, Harshvardhan J. Pandit"@en ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:hasEntity ;
     skos:definition "Indicates association with data intermediation service provider"@en ;
     skos:prefLabel "has data intermediation service provider"@en ;
     schema:rangeIncludes dpv-dga:DISP .
 
-dpv-dga:hasDataHolder a rdf:Property ;
+dpv-dga:hasDataHolder a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv-dga:DataHolder ;
     dct:contributor "Beatriz Esteves, Harshvardhan J. Pandit"@en ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:hasEntity ;
     skos:definition "Indicates association with data holder"@en ;
     skos:prefLabel "has data holder"@en ;
     schema:rangeIncludes dpv-dga:DataHolder .
 
-dpv-dga:hasDataReuseAssistant a rdf:Property ;
+dpv-dga:hasDataReuseAssistant a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv-dga:DataReuseAssistant ;
     dct:contributor "Beatriz Esteves, Harshvardhan J. Pandit"@en ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:hasEntity ;
     skos:definition "Indicates association with competent body designated by the Member State to assist Public Bodies in activities related to data reuse"@en ;
     skos:note "DGA 7"@en ;
     skos:prefLabel "has data reuse assistant"@en ;
     schema:rangeIncludes dpv-dga:DataReuseAssistant .
 
-dpv-dga:hasDataUser a rdf:Property ;
+dpv-dga:hasDataUser a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv-dga:DataUser ;
     dct:contributor "Beatriz Esteves, Harshvardhan J. Pandit"@en ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:hasEntity ;
     skos:definition "Indicates association with data user"@en ;
     skos:prefLabel "has data user"@en ;
     schema:rangeIncludes dpv-dga:DataUser .
+
+dpv:hasEntity skos:narrower dpv-dga:hasDAO,
+        dpv-dga:hasDISP,
+        dpv-dga:hasDataHolder,
+        dpv-dga:hasDataReuseAssistant,
+        dpv-dga:hasDataUser .
 

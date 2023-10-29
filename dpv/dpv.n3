@@ -1,12 +1,19 @@
 @prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix dpv: <https://w3id.org/dpv#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dcat:Resource a rdfs:Class,
+        skos:Concept ;
+    skos:definition "A dataset, data service, or any other resource associated with Right Exercise - such as for providing a copy of personal data"@en ;
+    skos:prefLabel "dcat:Resource"@en .
 
 dpv:AcademicResearch a rdfs:Class,
         skos:Concept,
@@ -45,7 +52,10 @@ dpv:AccessControlMethod a rdfs:Class,
     dct:created "2019-04-05"^^xsd:date ;
     rdfs:subClassOf dpv:TechnicalMeasure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:TechnicalMeasure ;
     skos:definition "Methods which restrict access to a place or resource"@en ;
+    skos:narrower dpv:PhysicalAccessControlMethod,
+        dpv:UsageControl ;
     skos:prefLabel "Access Control Method"@en .
 
 dpv:AccountManagement a rdfs:Class,
@@ -101,6 +111,7 @@ dpv:ActivityMonitoring a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:TechnicalMeasure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:TechnicalMeasure ;
     skos:definition "Monitoring of activities including assessing whether they have been successfully initiated and completed"@en ;
     skos:prefLabel "Activity Monitoring"@en .
 
@@ -167,6 +178,7 @@ dpv:Advertising a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:Marketing ;
     skos:definition "Purposes associated with conducting advertising i.e. process or artefact used to call attention to a product, service, etc. through announcements, notices, or other forms of communication"@en ;
+    skos:narrower dpv:PersonalisedAdvertising ;
     skos:note "Advertising is a subset of Marketing. Advertising by itself does not indicate 'personalisation' i.e. personalised ads."@en ;
     skos:prefLabel "Advertising"@en .
 
@@ -217,6 +229,7 @@ dpv:Anonymisation a rdfs:Class,
     dct:source "(ISO 29100:2011,https://www.iso.org/standard/45123.html)"@en ;
     rdfs:subClassOf dpv:Deidentification ;
     sw:term_status "modified"@en ;
+    skos:broader dpv:Deidentification ;
     skos:definition "Anonymisation is the process by which data is irreversibly altered in such a way that a data subject can no longer be identified directly or indirectly, either by the entity holding the data alone or in collaboration with other entities and information sources"@en ;
     skos:prefLabel "Anonymisation"@en .
 
@@ -236,6 +249,7 @@ dpv:AnonymisedData a rdfs:Class,
     dct:created "2022-01-19"^^xsd:date ;
     rdfs:subClassOf dpv:NonPersonalData ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:NonPersonalData ;
     skos:definition "Personal Data that has been (fully and completely) anonymised so that it is no longer considered Personal Data"@en ;
     skos:note "It is advised to carefully consider indicating data is fully or completely anonymised by determining whether the data by itself or in combination with other data can identify a person. Failing this condition, the data should be denoted as PseudonymisedData. To indicate data is anonymised only for a specified entity (e.g. within an organisation), the concept ContextuallyAnonymisedData (as subclass of PseudonymisedData) should be used instead of AnonymisedData."@en ;
     skos:prefLabel "Anonymised Data"@en .
@@ -274,7 +288,13 @@ dpv:Assessment a rdfs:Class,
     dct:created "2021-09-08"^^xsd:date ;
     rdfs:subClassOf dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:OrganisationalMeasure ;
     skos:definition "The document, plan, or process for assessment or determination towards a purpose e.g. assessment of legality or impact assessments"@en ;
+    skos:narrower dpv:CybersecurityAssessment,
+        dpv:EffectivenessDeterminationProcedures,
+        dpv:ImpactAssessment,
+        dpv:LegitimateInterestAssessment,
+        dpv:SecurityAssessment ;
     skos:prefLabel "Assessment"@en .
 
 dpv:AssetManagementProcedures a rdfs:Class,
@@ -284,6 +304,7 @@ dpv:AssetManagementProcedures a rdfs:Class,
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     rdfs:subClassOf dpv:GovernanceProcedures ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:GovernanceProcedures ;
     skos:definition "Procedures related to management of assets"@en ;
     skos:prefLabel "Asset Management Procedures"@en .
 
@@ -303,6 +324,7 @@ dpv:AsymmetricCryptography a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:CryptographicMethods ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:CryptographicMethods ;
     skos:definition "Use of public-key cryptography or asymmetric cryptography involving a public and private pair of keys"@en ;
     skos:prefLabel "Asymmetric Cryptography"@en .
 
@@ -313,6 +335,7 @@ dpv:AsymmetricEncryption a rdfs:Class,
     dct:source "(ENISA Data Pseudonymisation: Advanced Techniques and Use Cases,https://www.enisa.europa.eu/publications/data-pseudonymisation-advanced-techniques-and-use-cases)"@en ;
     rdfs:subClassOf dpv:Encryption ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Encryption ;
     skos:definition "Use of asymmetric cryptography to encrypt data"@en ;
     skos:prefLabel "Asymmetric Encryption"@en .
 
@@ -387,6 +410,7 @@ dpv:Authentication-ABC a rdfs:Class,
     dct:source "(ENISA Data Protection Engineering,https://www.enisa.europa.eu/publications/data-protection-engineering)"@en ;
     rdfs:subClassOf dpv:CryptographicAuthentication ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:CryptographicAuthentication ;
     skos:definition "Use of Attribute Based Credentials (ABC) to perform and manage authentication"@en ;
     skos:prefLabel "Authentication using ABC"@en .
 
@@ -397,6 +421,7 @@ dpv:Authentication-PABC a rdfs:Class,
     dct:source "(ENISA Data Protection Engineering,https://www.enisa.europa.eu/publications/data-protection-engineering)"@en ;
     rdfs:subClassOf dpv:CryptographicAuthentication ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:CryptographicAuthentication ;
     skos:definition "Use of Privacy-enhacing Attribute Based Credentials (ABC) to perform and manage authentication"@en ;
     skos:prefLabel "Authentication using PABC"@en .
 
@@ -406,7 +431,14 @@ dpv:AuthenticationProtocols a rdfs:Class,
     dct:created "2019-04-05"^^xsd:date ;
     rdfs:subClassOf dpv:TechnicalMeasure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:TechnicalMeasure ;
     skos:definition "Protocols involving validation of identity i.e. authentication of a person or information"@en ;
+    skos:narrower dpv:BiometricAuthentication,
+        dpv:CryptographicAuthentication,
+        dpv:MultiFactorAuthentication,
+        dpv:PasswordAuthentication,
+        dpv:SingleSignOn,
+        dpv:ZeroKnowledgeAuthentication ;
     skos:prefLabel "Authentication Protocols"@en .
 
 dpv:AuthorisationProcedure a rdfs:Class,
@@ -415,7 +447,10 @@ dpv:AuthorisationProcedure a rdfs:Class,
     dct:created "2019-04-05"^^xsd:date ;
     rdfs:subClassOf dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:OrganisationalMeasure ;
     skos:definition "Procedures for determining authorisation through permission or authority"@en ;
+    skos:narrower dpv:CredentialManagement,
+        dpv:IdentityManagementMethod ;
     skos:note "non-technical authorisation procedures: How is it described on an organisational level, who gets access to the data"@en ;
     skos:prefLabel "Authorisation Procedure"@en .
 
@@ -426,6 +461,7 @@ dpv:AuthorisationProtocols a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:TechnicalMeasure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:TechnicalMeasure ;
     skos:definition "Protocols involving authorisation of roles or profiles to determine permission, rights, or privileges"@en ;
     skos:prefLabel "Authorisation Protocols"@en .
 
@@ -505,6 +541,7 @@ dpv:BackgroundChecks a rdfs:Class,
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     rdfs:subClassOf dpv:SecurityProcedure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:SecurityProcedure ;
     skos:definition "Procedure where the background of an entity is assessed to identity vulnerabilities and threats due to their current or intended role"@en ;
     skos:prefLabel "Background Checks"@en .
 
@@ -524,6 +561,7 @@ dpv:BiometricAuthentication a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:AuthenticationProtocols ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:AuthenticationProtocols ;
     skos:definition "Use of biometric data for authentication"@en ;
     skos:prefLabel "Biometric Authentication"@en .
 
@@ -533,6 +571,7 @@ dpv:Certification a rdfs:Class,
     dct:created "2019-04-05"^^xsd:date ;
     rdfs:subClassOf dpv:CertificationSeal ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:CertificationSeal ;
     skos:definition "Certification mechanisms, seals, and marks for the purpose of demonstrating compliance"@en ;
     skos:prefLabel "Certification"@en .
 
@@ -542,7 +581,10 @@ dpv:CertificationSeal a rdfs:Class,
     dct:created "2019-04-05"^^xsd:date ;
     rdfs:subClassOf dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:OrganisationalMeasure ;
     skos:definition "Certifications, seals, and marks indicating compliance to regulations or practices"@en ;
+    skos:narrower dpv:Certification,
+        dpv:Seal ;
     skos:prefLabel "Certification and Seal"@en .
 
 dpv:Child a rdfs:Class,
@@ -599,6 +641,7 @@ dpv:CodeOfConduct a rdfs:Class,
     dct:created "2019-04-05"^^xsd:date ;
     rdfs:subClassOf dpv:GuidelinesPrinciple ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:GuidelinesPrinciple ;
     skos:definition "A set of rules or procedures outlining the norms and practices for conducting activities"@en ;
     skos:prefLabel "Code of Conduct"@en .
 
@@ -618,7 +661,9 @@ dpv:CollectedPersonalData a rdfs:Class,
     dct:created "2022-03-30"^^xsd:date ;
     rdfs:subClassOf dpv:PersonalData ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:PersonalData ;
     skos:definition "Personal Data that has been collected from another source such as the Data Subject"@en ;
+    skos:narrower dpv:ObservedPersonalData ;
     skos:note "To indicate the source of data, use the DataSource concept with the hasDataSource relation"@en ;
     skos:prefLabel "Collected Personal Data"@en .
 
@@ -661,6 +706,7 @@ dpv:CommunicationManagement a rdfs:Class,
     dct:created "2021-09-01"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Communication Management refers to purposes associated with providing or managing communication activities e.g. to send an email for notifying some information"@en ;
+    skos:narrower dpv:CommunicationForCustomerCare ;
     skos:note "This purpose by itself does not sufficiently and clearly indicate what the communication is about. As such, it is recommended to combine it with another purpose to indicate the application. For example, Communication of Payment."@en ;
     skos:prefLabel "Communication Management"@en .
 
@@ -690,6 +736,7 @@ dpv:ComplianceMonitoring a rdfs:Class,
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     rdfs:subClassOf dpv:GovernanceProcedures ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:GovernanceProcedures ;
     skos:definition "Monitoring of compliance (e.g. internal policy, regulations)"@en ;
     skos:prefLabel "Compliance Monitoring"@en .
 
@@ -797,6 +844,7 @@ dpv:ConsentNotice a rdfs:Class,
     dct:created "2022-06-21"^^xsd:date ;
     rdfs:subClassOf dpv:PrivacyNotice ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:PrivacyNotice ;
     skos:definition "A Notice for information provision associated with Consent"@en ;
     skos:prefLabel "Consent Notice"@en .
 
@@ -806,6 +854,7 @@ dpv:ConsentRecord a rdfs:Class,
     dct:created "2022-06-22"^^xsd:date ;
     rdfs:subClassOf dpv:DataProcessingRecord ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:DataProcessingRecord ;
     skos:definition "A Record of Consent or Consent related activities"@en ;
     skos:prefLabel "Consent Record"@en .
 
@@ -959,7 +1008,11 @@ dpv:Consultation a rdfs:Class,
     dct:created "2020-11-04"^^xsd:date ;
     rdfs:subClassOf dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:OrganisationalMeasure ;
     skos:definition "Consultation is a process of receiving feedback, advice, or opinion from an external agency"@en ;
+    skos:narrower dpv:ConsultationWithAuthority,
+        dpv:ConsultationWithDPO,
+        dpv:ConsultationWithDataSubject ;
     skos:prefLabel "Consultation"@en .
 
 dpv:ConsultationWithAuthority a rdfs:Class,
@@ -968,6 +1021,7 @@ dpv:ConsultationWithAuthority a rdfs:Class,
     dct:created "2020-11-04"^^xsd:date ;
     rdfs:subClassOf dpv:Consultation ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Consultation ;
     skos:definition "Consultation with an authority or authoritative entity"@en ;
     skos:prefLabel "Consultation with Authority"@en .
 
@@ -977,6 +1031,7 @@ dpv:ConsultationWithDPO a rdfs:Class,
     dct:created "2022-06-15"^^xsd:date ;
     rdfs:subClassOf dpv:Consultation ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Consultation ;
     skos:definition "Consultation with Data Protection Officer(s)"@en ;
     skos:prefLabel "Consultation with DPO"@en .
 
@@ -986,7 +1041,9 @@ dpv:ConsultationWithDataSubject a rdfs:Class,
     dct:created "2022-06-15"^^xsd:date ;
     rdfs:subClassOf dpv:Consultation ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Consultation ;
     skos:definition "Consultation with data subject(s) or their representative(s)"@en ;
+    skos:narrower dpv:ConsultationWithDataSubjectRepresentative ;
     skos:prefLabel "Consultation with Data Subject"@en .
 
 dpv:ConsultationWithDataSubjectRepresentative a rdfs:Class,
@@ -995,6 +1052,7 @@ dpv:ConsultationWithDataSubjectRepresentative a rdfs:Class,
     dct:created "2022-10-22"^^xsd:date ;
     rdfs:subClassOf dpv:ConsultationWithDataSubject ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:ConsultationWithDataSubject ;
     skos:definition "Consultation with representative of data subject(s)"@en ;
     skos:prefLabel "Consultation with Data Subject Representative"@en .
 
@@ -1051,6 +1109,7 @@ dpv:ContractualTerms a rdfs:Class,
     dct:created "2019-04-05"^^xsd:date ;
     rdfs:subClassOf dpv:LegalAgreement ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:LegalAgreement ;
     skos:definition "Contractual terms governing data handling within or with an entity"@en ;
     skos:prefLabel "Contractual Terms"@en .
 
@@ -1060,6 +1119,7 @@ dpv:ControllerProcessorAgreement a rdfs:Class,
     dct:created "2022-01-26"^^xsd:date ;
     rdfs:subClassOf dpv:DataProcessingAgreement ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:DataProcessingAgreement ;
     skos:definition "An agreement outlining conditions, criteria, obligations, responsibilities, and specifics for carrying out processing of personal data between a Data Controller and a Data Processor"@en ;
     skos:prefLabel "Controller-Processor Agreement"@en .
 
@@ -1099,6 +1159,7 @@ dpv:CredentialManagement a rdfs:Class,
     dct:created "2022-06-15"^^xsd:date ;
     rdfs:subClassOf dpv:AuthorisationProcedure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:AuthorisationProcedure ;
     skos:definition "Management of credentials and their use in authorisations"@en ;
     skos:prefLabel "Credential Management"@en .
 
@@ -1110,6 +1171,8 @@ dpv:CreditChecking a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:CustomerSolvencyMonitoring ;
     skos:definition "Purposes associated with monitoring, performing, or assessing credit worthiness or solvency"@en ;
+    skos:narrower dpv:MaintainCreditCheckingDatabase,
+        dpv:MaintainCreditRatingDatabase ;
     skos:prefLabel "Credit Checking"@en .
 
 dpv:CryptographicAuthentication a rdfs:Class,
@@ -1120,7 +1183,13 @@ dpv:CryptographicAuthentication a rdfs:Class,
     rdfs:subClassOf dpv:AuthenticationProtocols,
         dpv:CryptographicMethods ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:AuthenticationProtocols,
+        dpv:CryptographicMethods ;
     skos:definition "Use of cryptography for authentication"@en ;
+    skos:narrower dpv:Authentication-ABC,
+        dpv:Authentication-PABC,
+        dpv:HashMessageAuthenticationCode,
+        dpv:MessageAuthenticationCodes ;
     skos:prefLabel "Cryptographic Authentication"@en .
 
 dpv:CryptographicKeyManagement a rdfs:Class,
@@ -1130,6 +1199,7 @@ dpv:CryptographicKeyManagement a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:CryptographicMethods ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:CryptographicMethods ;
     skos:definition "Management of cryptographic keys, including their generation, storage, assessment, and safekeeping"@en ;
     skos:prefLabel "Cryptographic Key Management"@en .
 
@@ -1140,7 +1210,25 @@ dpv:CryptographicMethods a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:TechnicalMeasure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:TechnicalMeasure ;
     skos:definition "Use of cryptographic methods to perform tasks"@en ;
+    skos:narrower dpv:AsymmetricCryptography,
+        dpv:CryptographicAuthentication,
+        dpv:CryptographicKeyManagement,
+        dpv:DifferentialPrivacy,
+        dpv:DigitalSignatures,
+        dpv:HashFunctions,
+        dpv:HomomorphicEncryption,
+        dpv:PostQuantumCryptography,
+        dpv:PrivacyPreservingProtocol,
+        dpv:PrivateInformationRetrieval,
+        dpv:QuantumCryptography,
+        dpv:SecretSharingSchemes,
+        dpv:SecureMultiPartyComputation,
+        dpv:SymmetricCryptography,
+        dpv:TrustedComputing,
+        dpv:TrustedExecutionEnvironments,
+        dpv:ZeroKnowledgeAuthentication ;
     skos:prefLabel "Cryptographic Methods"@en .
 
 dpv:Customer a rdfs:Class,
@@ -1161,6 +1249,7 @@ dpv:CustomerCare a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:CustomerManagement ;
     skos:definition "Customer Care refers to purposes associated with purposes for providing assistance, resolving issues, ensuring satisfaction, etc. in relation to services provided"@en ;
+    skos:narrower dpv:CommunicationForCustomerCare ;
     skos:prefLabel "Customer Care"@en ;
     skos:related "svpu:Feedback"@en .
 
@@ -1182,6 +1271,11 @@ dpv:CustomerManagement a rdfs:Class,
     dct:created "2021-09-08"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Customer Management refers to purposes associated with managing activities related with past, current, and future customers"@en ;
+    skos:narrower dpv:CustomerCare,
+        dpv:CustomerClaimsManagement,
+        dpv:CustomerOrderManagement,
+        dpv:CustomerRelationshipManagement,
+        dpv:CustomerSolvencyMonitoring ;
     skos:prefLabel "Customer Management"@en .
 
 dpv:CustomerOrderManagement a rdfs:Class,
@@ -1203,6 +1297,7 @@ dpv:CustomerRelationshipManagement a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:CustomerManagement ;
     skos:definition "Customer Relationship Management refers to purposes associated with managing and analysing interactions with past, current, and potential customers"@en ;
+    skos:narrower dpv:ImproveInternalCRMProcesses ;
     skos:prefLabel "Customer Relationship Management"@en .
 
 dpv:CustomerSolvencyMonitoring a rdfs:Class,
@@ -1214,6 +1309,7 @@ dpv:CustomerSolvencyMonitoring a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:CustomerManagement ;
     skos:definition "Customer Solvency Monitoring refers to purposes associated with monitor solvency of customers for financial diligence"@en ;
+    skos:narrower dpv:CreditChecking ;
     skos:prefLabel "Customer Solvency Monitoring"@en .
 
 dpv:CybersecurityAssessment a rdfs:Class,
@@ -1224,6 +1320,8 @@ dpv:CybersecurityAssessment a rdfs:Class,
     rdfs:subClassOf dpv:Assessment,
         dpv:SecurityAssessment ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Assessment,
+        dpv:SecurityAssessment ;
     skos:definition "Assessment of cybersecurity capabilities in terms of vulnerabilities and effectiveness of controls"@en ;
     skos:prefLabel "Cybersecurity Assessment"@en .
 
@@ -1234,6 +1332,7 @@ dpv:CybersecurityTraining a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:StaffTraining ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:StaffTraining ;
     skos:definition "Training methods related to cybersecurity"@en ;
     skos:prefLabel "Cybersecurity Training"@en .
 
@@ -1243,6 +1342,7 @@ dpv:DPIA a rdfs:Class,
     dct:created "2020-11-04"^^xsd:date ;
     rdfs:subClassOf dpv:ImpactAssessment ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:ImpactAssessment ;
     skos:definition "A DPIA involves determining the potential and actual impact of processing activities on individuals or groups of individuals"@en ;
     skos:note "Top class: Impact Assessment, and DPIA is sub-class"@en ;
     skos:prefLabel "Data Protection Impact Assessment (DPIA)"@en .
@@ -1262,6 +1362,12 @@ dpv:Data a rdfs:Class,
     dct:created "2022-01-19"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "A broad concept representing  'data' or 'information'"@en ;
+    skos:narrower dpv:IncorrectData,
+        dpv:NonPersonalData,
+        dpv:PersonalData,
+        dpv:SyntheticData,
+        dpv:UnverifiedData,
+        dpv:VerifiedData ;
     skos:prefLabel "Data"@en .
 
 dpv:DataBackupProtocols a rdfs:Class,
@@ -1270,6 +1376,7 @@ dpv:DataBackupProtocols a rdfs:Class,
     dct:created "2022-06-15"^^xsd:date ;
     rdfs:subClassOf dpv:TechnicalMeasure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:TechnicalMeasure ;
     skos:definition "Protocols or plans for backing up of data"@en ;
     skos:prefLabel "Data Backup Protocols"@en .
 
@@ -1282,9 +1389,12 @@ dpv:DataController a rdfs:Class,
     dct:source "(GDPR Art.4-7g,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_7/oj)"@en ;
     rdfs:subClassOf dpv:LegalEntity ;
     sw:term_status "accepted"@en ;
-    skos:definition "The individual or organisation that decides (or controls) the purpose(s) of processing personal data."@en ;
+    skos:broader dpv:LegalEntity ;
+    skos:definition "An Data Controller can be a Data Source, e.g. a Controller inferring data or generating data"@en,
+        "The individual or organisation that decides (or controls) the purpose(s) of processing personal data."@en ;
     skos:note "The terms 'Controller' is usually the more common form of indicating a Data Controller. In ISO/IEC the term 'PII Controller' is used."@en ;
-    skos:prefLabel "Data Controller"@en .
+    skos:prefLabel "Data Controller"@en,
+        "dpv:DataController"@en .
 
 dpv:DataExporter a rdfs:Class,
         skos:Concept,
@@ -1314,7 +1424,12 @@ dpv:DataProcessingAgreement a rdfs:Class,
     dct:created "2022-01-26"^^xsd:date ;
     rdfs:subClassOf dpv:LegalAgreement ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:LegalAgreement ;
     skos:definition "An agreement outlining conditions, criteria, obligations, responsibilities, and specifics for carrying out processing of personal data"@en ;
+    skos:narrower dpv:ControllerProcessorAgreement,
+        dpv:JointDataControllersAgreement,
+        dpv:SubProcessorAgreement,
+        dpv:ThirdPartyAgreement ;
     skos:note "For specific role-based data processing agreements, see concepts for Processors and JointDataController agreements."@en ;
     skos:prefLabel "Data Processing Agreement"@en .
 
@@ -1324,7 +1439,9 @@ dpv:DataProcessingRecord a rdfs:Class,
     dct:created "2021-09-08"^^xsd:date ;
     rdfs:subClassOf dpv:RecordsOfActivities ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:RecordsOfActivities ;
     skos:definition "Record of personal data processing, whether ex-ante or ex-post"@en ;
+    skos:narrower dpv:ConsentRecord ;
     skos:prefLabel "Data Processing Record"@en .
 
 dpv:DataProcessor a rdfs:Class,
@@ -1364,6 +1481,7 @@ dpv:DataProtectionTraining a rdfs:Class,
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     rdfs:subClassOf dpv:StaffTraining ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:StaffTraining ;
     skos:definition "Training intended to increase knowledge regarding data protection"@en ;
     skos:prefLabel "Data Protection Training"@en .
 
@@ -1383,6 +1501,7 @@ dpv:DataRedaction a rdfs:Class,
     dct:created "2020-10-01"^^xsd:date ;
     rdfs:subClassOf dpv:DataSanitisationTechnique ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:DataSanitisationTechnique ;
     skos:definition "Removal of sensitive information from a data or document"@en ;
     skos:prefLabel "Data Redaction"@en .
 
@@ -1393,7 +1512,10 @@ dpv:DataSanitisationTechnique a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:TechnicalMeasure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:TechnicalMeasure ;
     skos:definition "Cleaning or any removal or re-organisation of elements in data based on selective criteria"@en ;
+    skos:narrower dpv:DataRedaction,
+        dpv:Deidentification ;
     skos:prefLabel "Data Sanitisation Technique"@en .
 
 dpv:DataSource a rdfs:Class,
@@ -1426,9 +1548,12 @@ dpv:DataSubject a rdfs:Class,
     dct:source "(GDPR Art.4-1g,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_1/oj)"@en ;
     rdfs:subClassOf dpv:LegalEntity ;
     sw:term_status "accepted"@en ;
-    skos:definition "The individual (or category of individuals) whose personal data is being processed"@en ;
+    skos:broader dpv:LegalEntity ;
+    skos:definition "A Data Subject as a Data Source, e.g. when data is collected via a form or observed from their activities"@en,
+        "The individual (or category of individuals) whose personal data is being processed"@en ;
     skos:note "The term 'data subject' is specific to the GDPR, but is functionally equivalent to the term 'individual' and the ISO/IEC term 'PII Principle'."@en ;
-    skos:prefLabel "Data Subject"@en .
+    skos:prefLabel "Data Subject"@en,
+        "dpv:DataSubject"@en .
 
 dpv:DataSubjectRight a rdfs:Class,
         skos:Concept,
@@ -1437,6 +1562,7 @@ dpv:DataSubjectRight a rdfs:Class,
     dct:created "2020-11-18"^^xsd:date ;
     rdfs:subClassOf dpv:Right ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Right ;
     skos:definition "The rights applicable or provided to a Data Subject"@en ;
     skos:note "Based on use of definitions, the notion of 'Data Subject Right' can be equivalent to 'Individual Right' or 'Right of a Person'"@en ;
     skos:prefLabel "Data Subject Right"@en .
@@ -1456,6 +1582,7 @@ dpv:DataTransferImpactAssessment a rdfs:Class,
     dct:created "2021-09-08"^^xsd:date ;
     rdfs:subClassOf dpv:ImpactAssessment ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:ImpactAssessment ;
     skos:definition "Impact Assessment for conducting data transfers"@en ;
     skos:prefLabel "Data Transfer Impact Assessment"@en .
 
@@ -1504,7 +1631,10 @@ dpv:Deidentification a rdfs:Class,
     dct:source "(NISTIR 8053,https://nvlpubs.nist.gov/nistpubs/ir/2015/NIST.IR.8053.pdf)"@en ;
     rdfs:subClassOf dpv:DataSanitisationTechnique ;
     sw:term_status "modified"@en ;
+    skos:broader dpv:DataSanitisationTechnique ;
     skos:definition "Removal of identity or information to reduce identifiability"@en ;
+    skos:narrower dpv:Anonymisation,
+        dpv:Pseudonymisation ;
     skos:prefLabel "De-Identification"@en .
 
 dpv:DeliveryOfGoods a rdfs:Class,
@@ -1537,7 +1667,9 @@ dpv:DerivedPersonalData a rdfs:Class,
     dct:source "(DPVCG, https://www.w3.org/community/dpvcg/)"@en ;
     rdfs:subClassOf dpv:PersonalData ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:PersonalData ;
     skos:definition "Personal Data that is obtained or derived from other data"@en ;
+    skos:narrower dpv:InferredPersonalData ;
     skos:note "Derived Data is data that is obtained through processing of existing data, e.g. deriving first name from full name. To indicate data that is derived but which was not present or evident within the source data, InferredPersonalData should be used."@en ;
     skos:prefLabel "Derived Personal Data"@en ;
     skos:related "svd:Derived"@en .
@@ -1548,6 +1680,7 @@ dpv:DesignStandard a rdfs:Class,
     dct:created "2019-04-05"^^xsd:date ;
     rdfs:subClassOf dpv:GuidelinesPrinciple ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:GuidelinesPrinciple ;
     skos:definition "A set of rules or guidelines outlining criterias for design"@en ;
     skos:prefLabel "Design Standard"@en .
 
@@ -1567,6 +1700,7 @@ dpv:DeterministicPseudonymisation a rdfs:Class,
     dct:source "(ENISA Data Pseudonymisation: Advanced Techniques and Use Cases,https://www.enisa.europa.eu/publications/data-pseudonymisation-advanced-techniques-and-use-cases)"@en ;
     rdfs:subClassOf dpv:Pseudonymisation ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Pseudonymisation ;
     skos:definition "Pseudonymisation achieved through a deterministic function"@en ;
     skos:prefLabel "Deterministic Pseudonymisation"@en .
 
@@ -1586,6 +1720,7 @@ dpv:DifferentialPrivacy a rdfs:Class,
     dct:source "(ENISA Data Protection Engineering,https://www.enisa.europa.eu/publications/data-protection-engineering)"@en ;
     rdfs:subClassOf dpv:CryptographicMethods ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:CryptographicMethods ;
     skos:definition "Utilisation of differential privacy where information is shared as patterns or groups to withold individual elements"@en ;
     skos:prefLabel "Differential Privacy"@en .
 
@@ -1596,6 +1731,7 @@ dpv:DigitalRightsManagement a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:TechnicalMeasure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:TechnicalMeasure ;
     skos:definition "Management of access, use, and other operations associated with digital content"@en ;
     skos:prefLabel "Digital Rights Management"@en .
 
@@ -1606,6 +1742,7 @@ dpv:DigitalSignatures a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:CryptographicMethods ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:CryptographicMethods ;
     skos:definition "Expression and authentication of identity through digital information containing cryptographic signatures"@en ;
     skos:prefLabel "Digital Signatures"@en .
 
@@ -1626,6 +1763,7 @@ dpv:DisasterRecoveryProcedures a rdfs:Class,
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     rdfs:subClassOf dpv:GovernanceProcedures ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:GovernanceProcedures ;
     skos:definition "Procedures related to management of disasters and recovery"@en ;
     skos:prefLabel "Disaster Recovery Procedures"@en .
 
@@ -1674,6 +1812,7 @@ dpv:DistributedSystemSecurity a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:SecurityMethod ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:SecurityMethod ;
     skos:definition "Security implementations provided using or over a distributed system"@en ;
     skos:prefLabel "Distributed System Security"@en .
 
@@ -1684,6 +1823,7 @@ dpv:DocumentRandomisedPseudonymisation a rdfs:Class,
     dct:source "(ENISA Data Pseudonymisation: Advanced Techniques and Use Cases,https://www.enisa.europa.eu/publications/data-pseudonymisation-advanced-techniques-and-use-cases)"@en ;
     rdfs:subClassOf dpv:Pseudonymisation ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Pseudonymisation ;
     skos:definition "Use of randomised pseudonymisation where the same elements are assigned different values in the same document or database"@en ;
     skos:prefLabel "Document Randomised Pseudonymisation"@en .
 
@@ -1694,6 +1834,7 @@ dpv:DocumentSecurity a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:SecurityMethod ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:SecurityMethod ;
     skos:definition "Security measures enacted over documents to protect against tampering or restrict access"@en ;
     skos:prefLabel "Document Security"@en .
 
@@ -1722,6 +1863,7 @@ dpv:EducationalTraining a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:StaffTraining ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:StaffTraining ;
     skos:definition "Training methods that are intended to provide education on topic(s)"@en ;
     skos:prefLabel "Educational Training"@en .
 
@@ -1732,6 +1874,7 @@ dpv:EffectivenessDeterminationProcedures a rdfs:Class,
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     rdfs:subClassOf dpv:Assessment ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Assessment ;
     skos:definition "Procedures intended to determine effectiveness of other measures"@en ;
     skos:prefLabel "Effectiveness Determination Procedures"@en .
 
@@ -1759,7 +1902,14 @@ dpv:Encryption a rdfs:Class,
     dct:created "2019-04-05"^^xsd:date ;
     rdfs:subClassOf dpv:TechnicalMeasure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:TechnicalMeasure ;
     skos:definition "Technical measures consisting of encryption"@en ;
+    skos:narrower dpv:AsymmetricEncryption,
+        dpv:EncryptionAtRest,
+        dpv:EncryptionInTransfer,
+        dpv:EncryptionInUse,
+        dpv:EndToEndEncryption,
+        dpv:SymmetricEncryption ;
     skos:prefLabel "Encryption"@en .
 
 dpv:EncryptionAtRest a rdfs:Class,
@@ -1768,6 +1918,7 @@ dpv:EncryptionAtRest a rdfs:Class,
     dct:created "2019-04-05"^^xsd:date ;
     rdfs:subClassOf dpv:Encryption ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Encryption ;
     skos:definition "Encryption of data when being stored (persistent encryption)"@en ;
     skos:prefLabel "Encryption at Rest"@en .
 
@@ -1777,6 +1928,7 @@ dpv:EncryptionInTransfer a rdfs:Class,
     dct:created "2019-04-05"^^xsd:date ;
     rdfs:subClassOf dpv:Encryption ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Encryption ;
     skos:definition "Encryption of data in transit e.g. when being transferred from one location to another, including sharing"@en ;
     skos:prefLabel "Encryption in Transfer"@en .
 
@@ -1786,6 +1938,7 @@ dpv:EncryptionInUse a rdfs:Class,
     dct:created "2022-10-22"^^xsd:date ;
     rdfs:subClassOf dpv:Encryption ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Encryption ;
     skos:definition "Encryption of data when it is being used"@en ;
     skos:prefLabel "Encryption in Use"@en .
 
@@ -1796,6 +1949,7 @@ dpv:EndToEndEncryption a rdfs:Class,
     dct:source "(ENISA Data Protection Engineering,https://www.enisa.europa.eu/publications/data-protection-engineering)"@en ;
     rdfs:subClassOf dpv:Encryption ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Encryption ;
     skos:definition "Encrypted communications where data is encrypted by the sender and decrypted by the intended receiver to prevent access to any third party"@en ;
     skos:prefLabel "End-to-End Encryption (E2EE)"@en .
 
@@ -1828,6 +1982,10 @@ dpv:EnforceSecurity a rdfs:Class,
     dct:created "2019-04-05"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Purposes associated with ensuring and enforcing security for data, personnel, or other related matters"@en ;
+    skos:narrower dpv:AntiTerrorismOperations,
+        dpv:EnforceAccessControl,
+        dpv:FraudPreventionAndDetection,
+        dpv:IdentityVerification ;
     skos:note "Was previous \"Security\". Prefixed to distinguish from TechOrg measures."@en ;
     skos:prefLabel "Enforce Security"@en .
 
@@ -1924,6 +2082,7 @@ dpv:FileSystemSecurity a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:SecurityMethod ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:SecurityMethod ;
     skos:definition "Security implemented over a file system"@en ;
     skos:prefLabel "File System Security"@en .
 
@@ -1994,6 +2153,8 @@ dpv:FraudPreventionAndDetection a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:EnforceSecurity ;
     skos:definition "Purposes associated with fraud detection, prevention, and mitigation"@en ;
+    skos:narrower dpv:CounterMoneyLaundering,
+        dpv:MaintainFraudDatabase ;
     skos:prefLabel "Fraud Prevention and Detection"@en ;
     skos:related "svpu:Government"@en .
 
@@ -2023,6 +2184,8 @@ dpv:FulfilmentOfObligation a rdfs:Class,
     dct:created "2022-11-09"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Purposes associated with carrying out data processing to fulfill an obligation"@en ;
+    skos:narrower dpv:FulfilmentOfContractualObligation,
+        dpv:LegalCompliance ;
     skos:prefLabel "Fulfilment of Obligation"@en .
 
 dpv:FullyAutomatedProcessing a rdfs:Class,
@@ -2041,6 +2204,7 @@ dpv:FullyRandomisedPseudonymisation a rdfs:Class,
     dct:source "(ENISA Data Pseudonymisation: Advanced Techniques and Use Cases,https://www.enisa.europa.eu/publications/data-pseudonymisation-advanced-techniques-and-use-cases)"@en ;
     rdfs:subClassOf dpv:Pseudonymisation ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Pseudonymisation ;
     skos:definition "Use of randomised pseudonymisation where the same elements are assigned different values each time they occur"@en ;
     skos:prefLabel "Fully Randomised Pseudonymisation"@en .
 
@@ -2059,7 +2223,9 @@ dpv:GeneratedPersonalData a rdfs:Class,
     dct:created "2022-03-30"^^xsd:date ;
     rdfs:subClassOf dpv:PersonalData ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:PersonalData ;
     skos:definition "Personal Data that is generated or brought into existence without relation to existing data i.e. it is not derived or inferred from other data"@en ;
+    skos:narrower dpv:InferredPersonalData ;
     skos:note "Generated Data is used to indicate data that is produced and is not derived or inferred from other data"@en ;
     skos:prefLabel "Generated Personal Data"@en .
 
@@ -2088,7 +2254,15 @@ dpv:GovernanceProcedures a rdfs:Class,
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     rdfs:subClassOf dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:OrganisationalMeasure ;
     skos:definition "Procedures related to governance (e.g. organisation, unit, team, process, system)"@en ;
+    skos:narrower dpv:AssetManagementProcedures,
+        dpv:ComplianceMonitoring,
+        dpv:DisasterRecoveryProcedures,
+        dpv:IncidentManagementProcedures,
+        dpv:IncidentReportingCommunication,
+        dpv:LoggingPolicies,
+        dpv:MonitoringPolicies ;
     skos:prefLabel "Governance Procedures"@en .
 
 dpv:GovernmentalOrganisation a rdfs:Class,
@@ -2116,7 +2290,11 @@ dpv:GuidelinesPrinciple a rdfs:Class,
     dct:created "2019-04-05"^^xsd:date ;
     rdfs:subClassOf dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:OrganisationalMeasure ;
     skos:definition "Guidelines or Principles regarding processing and operational measures"@en ;
+    skos:narrower dpv:CodeOfConduct,
+        dpv:DesignStandard,
+        dpv:PrivacyByDefault ;
     skos:prefLabel "GuidelinesPrinciple"@en .
 
 dpv:HardwareSecurityProtocols a rdfs:Class,
@@ -2126,6 +2304,7 @@ dpv:HardwareSecurityProtocols a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:SecurityMethod ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:SecurityMethod ;
     skos:definition "Security protocols implemented at or within hardware"@en ;
     skos:prefLabel "Hardware Security Protocols"@en .
 
@@ -2145,6 +2324,7 @@ dpv:HashFunctions a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:CryptographicMethods ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:CryptographicMethods ;
     skos:definition "Use of hash functions to map information or to retrieve a prior categorisation"@en ;
     skos:prefLabel "Hash Functions"@en .
 
@@ -2155,6 +2335,7 @@ dpv:HashMessageAuthenticationCode a rdfs:Class,
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     rdfs:subClassOf dpv:CryptographicAuthentication ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:CryptographicAuthentication ;
     skos:definition "Use of HMAC where message authentication code (MAC) utilise a cryptographic hash function and a secret cryptographic key"@en ;
     skos:prefLabel "Hash-based Message Authentication Code (HMAC)"@en .
 
@@ -2165,6 +2346,7 @@ dpv:HomomorphicEncryption a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:CryptographicMethods ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:CryptographicMethods ;
     skos:definition "Use of Homomorphic encryption that permits computations on encrypted data without decrypting it"@en ;
     skos:prefLabel "Homomorphic Encryption"@en .
 
@@ -2232,6 +2414,7 @@ dpv:HumanResourceManagement a rdfs:Class,
     dct:source "(Belgian DPA ROPA Template, https://www.privacycommission.be/nl/model-voor-een-register-van-de-verwerkingsactiviteiten)"@en ;
     sw:term_status "accepted"@en ;
     skos:definition "Purposes associated with managing humans and 'human resources' within the organisation for effective and efficient operations."@en ;
+    skos:narrower dpv:PersonnelManagement ;
     skos:note "HR is a broad concept. Its management includes, amongst others - recruiting employees and intermediaries e.g. brokers, independent representatives; payroll administration, remunerations, commissions, and wages; and application of social legislation."@en ;
     skos:prefLabel "Human Resource Management"@en .
 
@@ -2242,6 +2425,7 @@ dpv:IdentityManagementMethod a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:AuthorisationProcedure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:AuthorisationProcedure ;
     skos:definition "Management of identity and identity-based processes"@en ;
     skos:prefLabel "Identity Management Method"@en .
 
@@ -2280,7 +2464,12 @@ dpv:ImpactAssessment a rdfs:Class,
     dct:created "2020-11-04"^^xsd:date ;
     rdfs:subClassOf dpv:Assessment ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Assessment ;
     skos:definition "Calculating or determining the likelihood of impact of an existing or proposed process, which can involve risks or detriments."@en ;
+    skos:narrower dpv:DPIA,
+        dpv:DataTransferImpactAssessment,
+        dpv:PIA,
+        dpv:ReviewImpactAssessment ;
     skos:prefLabel "Impact Assessment"@en .
 
 dpv:ImpliedConsent a rdfs:Class,
@@ -2331,6 +2520,7 @@ dpv:IncidentManagementProcedures a rdfs:Class,
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     rdfs:subClassOf dpv:GovernanceProcedures ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:GovernanceProcedures ;
     skos:definition "Procedures related to management of incidents"@en ;
     skos:prefLabel "Incident Management Procedures"@en .
 
@@ -2341,6 +2531,7 @@ dpv:IncidentReportingCommunication a rdfs:Class,
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     rdfs:subClassOf dpv:GovernanceProcedures ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:GovernanceProcedures ;
     skos:definition "Procedures related to management of incident reporting"@en ;
     skos:prefLabel "Incident Reporting Communication"@en .
 
@@ -2350,6 +2541,7 @@ dpv:IncorrectData a rdfs:Class,
     dct:created "2022-11-02"^^xsd:date ;
     rdfs:subClassOf dpv:Data ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Data ;
     skos:definition "Data that is known to be incorrect or inconsistent with some quality requirements"@en ;
     skos:prefLabel "Incorrect Data"@en .
 
@@ -2402,6 +2594,8 @@ dpv:InferredPersonalData a rdfs:Class,
     rdfs:subClassOf dpv:DerivedPersonalData,
         dpv:GeneratedPersonalData ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:DerivedPersonalData,
+        dpv:GeneratedPersonalData ;
     skos:definition "Personal Data that is obtained through inference from other data"@en ;
     skos:note "Inferred Data is derived data generated from existing data, but which did not originally exist within it, e.g. inferring demographics from browsing history."@en ;
     skos:prefLabel "Inferred Personal Data"@en .
@@ -2413,6 +2607,7 @@ dpv:InformationFlowControl a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:TechnicalMeasure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:TechnicalMeasure ;
     skos:definition "Use of measures to control information flows"@en ;
     skos:prefLabel "Information Flow Control"@en .
 
@@ -2423,6 +2618,7 @@ dpv:InformationSecurityPolicy a rdfs:Class,
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     rdfs:subClassOf dpv:Policy ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Policy ;
     skos:definition "Policy regarding security of information"@en ;
     skos:prefLabel "Information Security Policy"@en .
 
@@ -2474,6 +2670,7 @@ dpv:IntrusionDetectionSystem a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:SecurityMethod ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:SecurityMethod ;
     skos:definition "Use of measures to detect intrusions and other unauthorised attempts to gain access to a system"@en ;
     skos:prefLabel "Intrusion Detection System"@en .
 
@@ -2502,6 +2699,7 @@ dpv:JointDataControllersAgreement a rdfs:Class,
     dct:created "2022-01-26"^^xsd:date ;
     rdfs:subClassOf dpv:DataProcessingAgreement ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:DataProcessingAgreement ;
     skos:definition "An agreement outlining conditions, criteria, obligations, responsibilities, and specifics for carrying out processing of personal data between Controllers within a Joint Controllers relationship"@en ;
     skos:prefLabel "Joint Data Controllers Agreement"@en .
 
@@ -2585,7 +2783,11 @@ dpv:LegalAgreement a rdfs:Class,
     dct:created "2019-04-05"^^xsd:date ;
     rdfs:subClassOf dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:OrganisationalMeasure ;
     skos:definition "A legally binding agreement"@en ;
+    skos:narrower dpv:ContractualTerms,
+        dpv:DataProcessingAgreement,
+        dpv:NDA ;
     skos:prefLabel "Legal Agreement"@en .
 
 dpv:LegalBasis a rdfs:Class,
@@ -2617,6 +2819,9 @@ dpv:LegalEntity a rdfs:Class,
     dct:created "2019-04-05"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "A human or non-human 'thing' that constitutes as an entity and which is recognised and defined in law"@en ;
+    skos:narrower dpv:DataController,
+        dpv:DataSubject,
+        dpv:Recipient ;
     skos:prefLabel "Legal Entity"@en .
 
 dpv:LegalObligation a rdfs:Class,
@@ -2643,6 +2848,7 @@ dpv:LegitimateInterestAssessment a rdfs:Class,
     dct:created "2021-09-08"^^xsd:date ;
     rdfs:subClassOf dpv:Assessment ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Assessment ;
     skos:definition "Indicates an assessment regarding the use of legitimate interest as a lawful basis by the data controller"@en ;
     skos:prefLabel "Legitimate Interest Assessment"@en .
 
@@ -2746,6 +2952,7 @@ dpv:LoggingPolicies a rdfs:Class,
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     rdfs:subClassOf dpv:GovernanceProcedures ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:GovernanceProcedures ;
     skos:definition "Policy for logging of information"@en ;
     skos:prefLabel "Logging Policies"@en .
 
@@ -2795,6 +3002,10 @@ dpv:Marketing a rdfs:Class,
     dct:created "2020-11-04"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Purposes associated with conducting marketing in relation to organisation or products or services e.g. promoting, selling, and distributing"@en ;
+    skos:narrower dpv:Advertising,
+        dpv:DirectMarketing,
+        dpv:PublicRelations,
+        dpv:SocialMediaMarketing ;
     skos:note "Was commercial interest, changed to consider Marketing a separate Purpose category by itself"@en ;
     skos:prefLabel "Marketing"@en .
 
@@ -2880,6 +3091,7 @@ dpv:MessageAuthenticationCodes a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:CryptographicAuthentication ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:CryptographicAuthentication ;
     skos:definition "Use of cryptographic methods to authenticate messages"@en ;
     skos:prefLabel "Message Authentication Codes (MAC)"@en .
 
@@ -2890,6 +3102,7 @@ dpv:MobilePlatformSecurity a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:SecurityMethod ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:SecurityMethod ;
     skos:definition "Security implemented over a mobile platform"@en ;
     skos:prefLabel "Mobile Platform Security"@en .
 
@@ -2918,6 +3131,7 @@ dpv:MonitoringPolicies a rdfs:Class,
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     rdfs:subClassOf dpv:GovernanceProcedures ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:GovernanceProcedures ;
     skos:definition "Policy for monitoring (e.g. progress, performance)"@en ;
     skos:prefLabel "Monitoring Policies"@en .
 
@@ -2929,6 +3143,7 @@ dpv:MonotonicCounterPseudonymisation a rdfs:Class,
     dct:source "(ENISA Data Pseudonymisation: Advanced Techniques and Use Cases,https://www.enisa.europa.eu/publications/data-pseudonymisation-advanced-techniques-and-use-cases)"@en ;
     rdfs:subClassOf dpv:Pseudonymisation ;
     sw:term_status "modified"@en ;
+    skos:broader dpv:Pseudonymisation ;
     skos:definition "A simple pseudonymisation method where identifiers are substituted by a number chosen by a monotonic counter"@en ;
     skos:prefLabel "Monotonic Counter Pseudonymisation"@en .
 
@@ -2949,6 +3164,7 @@ dpv:MultiFactorAuthentication a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:AuthenticationProtocols ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:AuthenticationProtocols ;
     skos:definition "An authentication system that uses two or more methods to authenticate"@en ;
     skos:prefLabel "Multi-Factor Authentication (MFA)"@en .
 
@@ -2967,6 +3183,7 @@ dpv:NDA a rdfs:Class,
     dct:created "2019-04-05"^^xsd:date ;
     rdfs:subClassOf dpv:LegalAgreement ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:LegalAgreement ;
     skos:definition "Non-disclosure Agreements e.g. preserving confidentiality of information"@en ;
     skos:prefLabel "Non-Disclosure Agreement (NDA)"@en .
 
@@ -3024,6 +3241,7 @@ dpv:NetworkProxyRouting a rdfs:Class,
     dct:source "(ENISA Data Protection Engineering,https://www.enisa.europa.eu/publications/data-protection-engineering)"@en ;
     rdfs:subClassOf dpv:SecurityMethod ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:SecurityMethod ;
     skos:definition "Use of network routing using proxy"@en ;
     skos:prefLabel "Network Proxy Routing"@en .
 
@@ -3034,6 +3252,7 @@ dpv:NetworkSecurityProtocols a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:SecurityMethod ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:SecurityMethod ;
     skos:definition "Security implemented at or over networks protocols"@en ;
     skos:prefLabel "Network Security Protocols"@en .
 
@@ -3102,7 +3321,9 @@ dpv:NonPersonalData a rdfs:Class,
     dct:created "2022-01-19"^^xsd:date ;
     rdfs:subClassOf dpv:Data ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Data ;
     skos:definition "Data that is not Personal Data"@en ;
+    skos:narrower dpv:AnonymisedData ;
     skos:note "The term NonPersonalData is provided to distinguish between PersonalData and other data, e.g. for indicating which data is regulated by privacy laws. To specify personal data that has been anonymised, the concept AnonymisedData should be used."@en ;
     skos:prefLabel "Non-Personal Data"@en .
 
@@ -3141,7 +3362,9 @@ dpv:Notice a rdfs:Class,
     dct:created "2021-09-08"^^xsd:date ;
     rdfs:subClassOf dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:OrganisationalMeasure ;
     skos:definition "A notice is an artefact for providing information, choices, or controls"@en ;
+    skos:narrower dpv:PrivacyNotice ;
     skos:prefLabel "Notice"@en .
 
 dpv:Obligation a rdfs:Class,
@@ -3168,6 +3391,7 @@ dpv:ObservedPersonalData a rdfs:Class,
     dct:created "2022-08-24"^^xsd:date ;
     rdfs:subClassOf dpv:CollectedPersonalData ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:CollectedPersonalData ;
     skos:definition "Personal Data that has been collected through observation of the Data Subject(s)"@en ;
     skos:prefLabel "Observed Personal Data"@en .
 
@@ -3206,6 +3430,7 @@ dpv:OperatingSystemSecurity a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:SecurityMethod ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:SecurityMethod ;
     skos:definition "Security implemented at or through operating systems"@en ;
     skos:prefLabel "Operating System Security"@en .
 
@@ -3217,6 +3442,7 @@ dpv:OptimisationForConsumer a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:ServiceOptimisation ;
     skos:definition "Purposes associated with optimisation of activities and services for consumer or user"@en ;
+    skos:narrower dpv:OptimiseUserInterface ;
     skos:note "The term optmisation here refers to the efficiency of the service in terms of technical provision (or similar means) with benefits for everybody. Personalisation implies making changes that benefit the current user or persona."@en ;
     skos:prefLabel "Optimisation for Consumer"@en ;
     skos:related "svpu:Custom"@en .
@@ -3229,6 +3455,10 @@ dpv:OptimisationForController a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:ServiceOptimisation ;
     skos:definition "Purposes associated with optimisation of activities and services for provider or controller"@en ;
+    skos:narrower dpv:ImproveExistingProductsAndServices,
+        dpv:ImproveInternalCRMProcesses,
+        dpv:IncreaseServiceRobustness,
+        dpv:InternalResourceOptimisation ;
     skos:prefLabel "Optimisation for Controller"@en .
 
 dpv:OptimiseUserInterface a rdfs:Class,
@@ -3278,6 +3508,10 @@ dpv:OrganisationGovernance a rdfs:Class,
     dct:source "(Belgian DPA ROPA Template, https://www.privacycommission.be/nl/model-voor-een-register-van-de-verwerkingsactiviteiten)"@en ;
     sw:term_status "accepted"@en ;
     skos:definition "Purposes associated with conducting activities and functions for governance of an organisation"@en ;
+    skos:narrower dpv:DisputeManagement,
+        dpv:MemberPartnerManagement,
+        dpv:OrganisationComplianceManagement,
+        dpv:OrganisationRiskManagement ;
     skos:prefLabel "Organisation Governance"@en .
 
 dpv:OrganisationRiskManagement a rdfs:Class,
@@ -3297,6 +3531,22 @@ dpv:OrganisationalMeasure a rdfs:Class,
     dct:created "2019-04-05"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Organisational measures required/followed when processing data of the declared category"@en ;
+    skos:narrower dpv:Assessment,
+        dpv:AuthorisationProcedure,
+        dpv:CertificationSeal,
+        dpv:Consultation,
+        dpv:GovernanceProcedures,
+        dpv:GuidelinesPrinciple,
+        dpv:LegalAgreement,
+        dpv:Notice,
+        dpv:Policy,
+        dpv:PrivacyByDesign,
+        dpv:RecordsOfActivities,
+        dpv:RegularityOfRecertification,
+        dpv:ReviewProcedure,
+        dpv:Safeguard,
+        dpv:SecurityProcedure,
+        dpv:StaffTraining ;
     skos:prefLabel "Organisational Measure"@en .
 
 dpv:OrganisationalUnit a rdfs:Class,
@@ -3323,6 +3573,7 @@ dpv:PIA a rdfs:Class,
     dct:created "2020-11-04"^^xsd:date ;
     rdfs:subClassOf dpv:ImpactAssessment ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:ImpactAssessment ;
     skos:definition "Carrying out an impact assessment regarding privacy risks"@en ;
     skos:prefLabel "Privacy Impact Assessment"@en .
 
@@ -3380,6 +3631,7 @@ dpv:PasswordAuthentication a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:AuthenticationProtocols ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:AuthenticationProtocols ;
     skos:definition "Use of passwords to perform authentication"@en ;
     skos:prefLabel "Password Authentication"@en .
 
@@ -3409,6 +3661,7 @@ dpv:PenetrationTestingMethods a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:SecurityMethod ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:SecurityMethod ;
     skos:definition "Use of penetration testing to identity weaknessess and vulnerabilities through simulations"@en ;
     skos:prefLabel "Penetration Testing Methods"@en .
 
@@ -3430,7 +3683,13 @@ dpv:PersonalData a rdfs:Class,
         "(GDPR Art.4-1g,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_1/oj)"@en ;
     rdfs:subClassOf dpv:Data ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Data ;
     skos:definition "Data directly or indirectly associated or related to an individual."@en ;
+    skos:narrower dpv:CollectedPersonalData,
+        dpv:DerivedPersonalData,
+        dpv:GeneratedPersonalData,
+        dpv:PseudonymisedData,
+        dpv:SensitivePersonalData ;
     skos:note "This definition of personal data encompasses the concepts used in GDPR Art.4-1 for 'personal data' and ISO/IEC 2700 for 'personally identifiable information (PII)'."@en ;
     skos:prefLabel "Personal Data"@en ;
     skos:related "spl:AnyData"@en .
@@ -3451,6 +3710,8 @@ dpv:Personalisation a rdfs:Class,
     dct:created "2021-09-01"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Purposes associated with creating and providing customisation based on attributes and/or needs of person(s) or context(s)."@en ;
+    skos:narrower dpv:PersonalisedAdvertising,
+        dpv:ServicePersonalisation ;
     skos:note "This term is a blanket purpose category for indicating personalisation of some other purpose, e.g. by creating a subclass of the other concept and Personalisation"@en ;
     skos:prefLabel "Personalisation"@en .
 
@@ -3463,6 +3724,7 @@ dpv:PersonalisedAdvertising a rdfs:Class,
     skos:broader dpv:Advertising,
         dpv:Personalisation ;
     skos:definition "Purposes associated with creating and providing personalised advertising"@en ;
+    skos:narrower dpv:TargetedAdvertising ;
     skos:prefLabel "Personalised Advertising"@en .
 
 dpv:PersonalisedBenefits a rdfs:Class,
@@ -3494,6 +3756,8 @@ dpv:PersonnelManagement a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:HumanResourceManagement ;
     skos:definition "Purposes associated with management of personnel associated with the organisation e.g. evaluation and management of employees and intermediaries"@en ;
+    skos:narrower dpv:PersonnelHiring,
+        dpv:PersonnelPayment ;
     skos:prefLabel "Personnel Management"@en .
 
 dpv:PersonnelPayment a rdfs:Class,
@@ -3512,6 +3776,7 @@ dpv:PhysicalAccessControlMethod a rdfs:Class,
     dct:created "2022-06-15"^^xsd:date ;
     rdfs:subClassOf dpv:AccessControlMethod ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:AccessControlMethod ;
     skos:definition "Access control applied for physical access e.g. premises or equipement"@en ;
     skos:prefLabel "Physical Access Control Method"@en .
 
@@ -3521,7 +3786,10 @@ dpv:Policy a rdfs:Class,
     dct:created "2021-09-08"^^xsd:date ;
     rdfs:subClassOf dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:OrganisationalMeasure ;
     skos:definition "A guidance document outlining any of: procedures, plans, principles, decisions, intent, or protocols."@en ;
+    skos:narrower dpv:InformationSecurityPolicy,
+        dpv:RiskManagementPolicy ;
     skos:prefLabel "Policy"@en .
 
 dpv:PostQuantumCryptography a rdfs:Class,
@@ -3531,6 +3799,7 @@ dpv:PostQuantumCryptography a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:CryptographicMethods ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:CryptographicMethods ;
     skos:definition "Use of algorithms that are intended to be secure against cryptanalytic attack by a quantum computer"@en ;
     skos:prefLabel "Post-Quantum Cryptography"@en .
 
@@ -3549,6 +3818,7 @@ dpv:PrivacyByDefault a rdfs:Class,
     dct:created "2019-04-05"^^xsd:date ;
     rdfs:subClassOf dpv:GuidelinesPrinciple ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:GuidelinesPrinciple ;
     skos:definition "Practices regarding selecting appropriate data protection and privacy measures as the 'default' in an activity or service"@en ;
     skos:prefLabel "Privacy by Default"@en .
 
@@ -3558,6 +3828,7 @@ dpv:PrivacyByDesign a rdfs:Class,
     dct:created "2019-04-05"^^xsd:date ;
     rdfs:subClassOf dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:OrganisationalMeasure ;
     skos:definition "Practices regarding incorporating data protection and privacy in the design of information and services"@en ;
     skos:prefLabel "Privacy by Design"@en .
 
@@ -3567,7 +3838,9 @@ dpv:PrivacyNotice a rdfs:Class,
     dct:created "2021-09-08"^^xsd:date ;
     rdfs:subClassOf dpv:Notice ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Notice ;
     skos:definition "Represents a notice or document outlining information regarding privacy"@en ;
+    skos:narrower dpv:ConsentNotice ;
     skos:prefLabel "Privacy Notice"@en .
 
 dpv:PrivacyPreservingProtocol a rdfs:Class,
@@ -3577,6 +3850,7 @@ dpv:PrivacyPreservingProtocol a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:CryptographicMethods ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:CryptographicMethods ;
     skos:definition "Use of protocols designed with the intention of provided additional guarentees regarding privacy"@en ;
     skos:prefLabel "Privacy Preserving Protocol"@en .
 
@@ -3587,6 +3861,7 @@ dpv:PrivateInformationRetrieval a rdfs:Class,
     dct:source "(ENISA Data Protection Engineering,https://www.enisa.europa.eu/publications/data-protection-engineering)"@en ;
     rdfs:subClassOf dpv:CryptographicMethods ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:CryptographicMethods ;
     skos:definition "Use of cryptographic methods to retrieve a record from a system without revealing which record is retrieved"@en ;
     skos:prefLabel "Private Information Retrieval"@en .
 
@@ -3636,6 +3911,7 @@ dpv:ProfessionalTraining a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:StaffTraining ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:StaffTraining ;
     skos:definition "Training methods that are intended to provide professional knowledge and expertise"@en ;
     skos:prefLabel "Professional Training"@en .
 
@@ -3679,6 +3955,8 @@ dpv:ProvidePersonalisedRecommendations a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:ServicePersonalisation ;
     skos:definition "Purposes associated with creating and providing personalised recommendations"@en ;
+    skos:narrower dpv:ProvideEventRecommendations,
+        dpv:ProvideProductRecommendations ;
     skos:prefLabel "Provide Personalised Recommendations"@en .
 
 dpv:ProvideProductRecommendations a rdfs:Class,
@@ -3701,7 +3979,13 @@ dpv:Pseudonymisation a rdfs:Class,
     dct:source "(GDPR Art.4-5,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_5/oj)"@en ;
     rdfs:subClassOf dpv:Deidentification ;
     sw:term_status "modified"@en ;
+    skos:broader dpv:Deidentification ;
     skos:definition "Pseudonymisation means the processing of personal data in such a manner that the personal data can no longer be attributed to a specific data subject without the use of additional information, provided that such additional information is kept separately and is subject to technical and organisational measures to ensure that the personal data are not attributed to an identified or identifiable natural person;"@en ;
+    skos:narrower dpv:DeterministicPseudonymisation,
+        dpv:DocumentRandomisedPseudonymisation,
+        dpv:FullyRandomisedPseudonymisation,
+        dpv:MonotonicCounterPseudonymisation,
+        dpv:RNGPseudonymisation ;
     skos:prefLabel "Pseudonymisation"@en .
 
 dpv:Pseudonymise a rdfs:Class,
@@ -3720,6 +4004,7 @@ dpv:PseudonymisedData a rdfs:Class,
     dct:created "2022-01-19"^^xsd:date ;
     rdfs:subClassOf dpv:PersonalData ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:PersonalData ;
     skos:definition "Personal Data that has undergone a pseudonymisation process or a partial (incomplete) anonymisation process such that it is still considered Personal Data"@en ;
     skos:prefLabel "Pseudonymised Data"@en .
 
@@ -3780,6 +4065,7 @@ dpv:QuantumCryptography a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:CryptographicMethods ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:CryptographicMethods ;
     skos:definition "Cryptographic methods that utilise quantum mechanical properties to perform cryptographic tasks"@en ;
     skos:prefLabel "Quantum Cryptography"@en .
 
@@ -3800,6 +4086,7 @@ dpv:RNGPseudonymisation a rdfs:Class,
     dct:source "(ENISA Data Pseudonymisation: Advanced Techniques and Use Cases,https://www.enisa.europa.eu/publications/data-pseudonymisation-advanced-techniques-and-use-cases)"@en ;
     rdfs:subClassOf dpv:Pseudonymisation ;
     sw:term_status "modified"@en ;
+    skos:broader dpv:Pseudonymisation ;
     skos:definition "A pseudonymisation method where identifiers are substituted by a number chosen by a Random Number Generator (RNG)"@en ;
     skos:prefLabel "RNG Pseudonymisation"@en .
 
@@ -3822,6 +4109,7 @@ dpv:Recipient a rdfs:Class,
     dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/),(GDPR Art.4-9g,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_9/oj)"@en ;
     rdfs:subClassOf dpv:LegalEntity ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:LegalEntity ;
     skos:definition "Entities that receive personal data"@en ;
     skos:note "A recipient of personal data can be used to indicate any entity that receives personal data. This can be a Third Party, Processor (GDPR), or even a Controller."@en ;
     skos:prefLabel "Recipient"@en ;
@@ -3852,7 +4140,9 @@ dpv:RecordsOfActivities a rdfs:Class,
     dct:created "2021-09-08"^^xsd:date ;
     rdfs:subClassOf dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:OrganisationalMeasure ;
     skos:definition "Records of activities within some context such as maintainence tasks or governance functions"@en ;
+    skos:narrower dpv:DataProcessingRecord ;
     skos:prefLabel "Records of Activities"@en .
 
 dpv:Region a rdfs:Class,
@@ -3889,6 +4179,7 @@ dpv:RegularityOfRecertification a rdfs:Class,
     dct:created "2019-04-05"^^xsd:date ;
     rdfs:subClassOf dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:OrganisationalMeasure ;
     skos:definition "Policy regarding repetition or renewal of existing certification(s)"@en ;
     skos:prefLabel "Regularity of Re-certification"@en .
 
@@ -4050,6 +4341,7 @@ dpv:RequestedServiceProvision a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:ServiceProvision ;
     skos:definition "Purposes associated with delivering services as requested by user or consumer"@en ;
+    skos:narrower dpv:DeliveryOfGoods ;
     skos:note "The use of 'request' here includes where an user explicitly asks for the service and also when an established contract requires the provision of the service"@en ;
     skos:prefLabel "Requested Service Provision"@en .
 
@@ -4069,6 +4361,9 @@ dpv:ResearchAndDevelopment a rdfs:Class,
     dct:created "2019-04-05"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Purposes associated with conducting research and development for new methods, products, or services"@en ;
+    skos:narrower dpv:AcademicResearch,
+        dpv:CommercialResearch,
+        dpv:NonCommercialResearch ;
     skos:prefLabel "Research and Development"@en .
 
 dpv:Restrict a rdfs:Class,
@@ -4096,6 +4391,8 @@ dpv:ReviewImpactAssessment a rdfs:Class,
     rdfs:subClassOf dpv:ImpactAssessment,
         dpv:ReviewProcedure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:ImpactAssessment,
+        dpv:ReviewProcedure ;
     skos:definition "Procedures to review impact assessments in terms of continued validity, adequacy for intended purposes, and conformance of processes with findings"@en ;
     skos:prefLabel "Review Impact Assessment"@en .
 
@@ -4105,7 +4402,9 @@ dpv:ReviewProcedure a rdfs:Class,
     dct:created "2022-10-22"^^xsd:date ;
     rdfs:subClassOf dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:OrganisationalMeasure ;
     skos:definition "A procedure or process that reviews the correctness and validity of other measures and processes"@en ;
+    skos:narrower dpv:ReviewImpactAssessment ;
     skos:prefLabel "Review Procedure"@en .
 
 dpv:Right a rdfs:Class,
@@ -4115,6 +4414,7 @@ dpv:Right a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:definition "The right(s) applicable, provided, or expected"@en,
         "The right(s) applicable, provided, or expected."@en ;
+    skos:narrower dpv:DataSubjectRight ;
     skos:note "A 'right' is a legal, social, or ethical principle of freedom or entitlement which dictate the norms regarding what is allowed or owed.. Rights as a concept encompass a broad area of norms and entities, and are not specific to Individuals or Data Protection / Privacy. For individual specific rights, see dpv:DataSubjectRight"@en ;
     skos:prefLabel "Right"@en .
 
@@ -4191,6 +4491,7 @@ dpv:RiskManagementPlan a rdfs:Class,
     dct:source "(ISO 31073:2022,https://www.iso.org/standard/79637.html)"@en ;
     rdfs:subClassOf dpv:SecurityProcedure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:SecurityProcedure ;
     skos:definition "A scheme within the risk management framework specifying the approach, the management components, and resources to be applied to the management of risk"@en ;
     skos:prefLabel "Risk Management Plan"@en .
 
@@ -4202,6 +4503,8 @@ dpv:RiskManagementPolicy a rdfs:Class,
     rdfs:subClassOf dpv:Policy,
         dpv:SecurityProcedure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Policy,
+        dpv:SecurityProcedure ;
     skos:definition "A policy or statement of the overall intentions and direction of an organisation related to risk management"@en ;
     skos:prefLabel "Risk Management Policy"@en .
 
@@ -4228,7 +4531,9 @@ dpv:Safeguard a rdfs:Class,
     dct:created "2021-09-22"^^xsd:date ;
     rdfs:subClassOf dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:OrganisationalMeasure ;
     skos:definition "A safeguard is a precautionary measure for the protection against or mitigation of negative effects"@en ;
+    skos:narrower dpv:SafeguardForDataTransfer ;
     skos:note "This concept is relevant given the requirement to assert safeguards in cross-border data transfers"@en ;
     skos:prefLabel "Safeguard"@en .
 
@@ -4238,6 +4543,7 @@ dpv:SafeguardForDataTransfer a rdfs:Class,
     dct:created "2021-09-22"^^xsd:date ;
     rdfs:subClassOf dpv:Safeguard ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Safeguard ;
     skos:definition "Represents a safeguard used for data transfer. Can include technical or organisational measures."@en ;
     skos:prefLabel "Safeguard for Data Transfer"@en .
 
@@ -4286,6 +4592,7 @@ dpv:Seal a rdfs:Class,
     dct:created "2019-04-05"^^xsd:date ;
     rdfs:subClassOf dpv:CertificationSeal ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:CertificationSeal ;
     skos:definition "A seal or a mark indicating proof of certification to some certification or standard"@en ;
     skos:prefLabel "Seal"@en .
 
@@ -4315,6 +4622,7 @@ dpv:SecretSharingSchemes a rdfs:Class,
     dct:source "(ENISA Data Pseudonymisation: Advanced Techniques and Use Cases,https://www.enisa.europa.eu/publications/data-pseudonymisation-advanced-techniques-and-use-cases)"@en ;
     rdfs:subClassOf dpv:CryptographicMethods ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:CryptographicMethods ;
     skos:definition "Use of secret sharing schemes where the secret can only be reconstructed through combination of sufficient number of individuals"@en ;
     skos:prefLabel "Secret Sharing Schemes"@en .
 
@@ -4334,6 +4642,7 @@ dpv:SecureMultiPartyComputation a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:CryptographicMethods ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:CryptographicMethods ;
     skos:definition "Use of cryptographic methods for entities to jointly compute functions without revealing inputs"@en ;
     skos:prefLabel "Secure Multi-Party Computation"@en .
 
@@ -4345,7 +4654,10 @@ dpv:SecurityAssessment a rdfs:Class,
     rdfs:subClassOf dpv:Assessment,
         dpv:SecurityProcedure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Assessment,
+        dpv:SecurityProcedure ;
     skos:definition "Assessment of security intended to identity gaps, vulnerabilities, risks, and effectiveness of controls"@en ;
+    skos:narrower dpv:CybersecurityAssessment ;
     skos:prefLabel "Security Assessment"@en .
 
 dpv:SecurityKnowledgeTraining a rdfs:Class,
@@ -4355,6 +4667,7 @@ dpv:SecurityKnowledgeTraining a rdfs:Class,
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     rdfs:subClassOf dpv:StaffTraining ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:StaffTraining ;
     skos:definition "Training intended to increase knowledge regarding security"@en ;
     skos:prefLabel "Security Knowledge Training"@en .
 
@@ -4364,7 +4677,24 @@ dpv:SecurityMethod a rdfs:Class,
     dct:created "2022-08-24"^^xsd:date ;
     rdfs:subClassOf dpv:TechnicalMeasure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:TechnicalMeasure ;
     skos:definition "Methods that relate to creating and providing security"@en ;
+    skos:narrower dpv:DistributedSystemSecurity,
+        dpv:DocumentSecurity,
+        dpv:FileSystemSecurity,
+        dpv:HardwareSecurityProtocols,
+        dpv:IntrusionDetectionSystem,
+        dpv:MobilePlatformSecurity,
+        dpv:NetworkProxyRouting,
+        dpv:NetworkSecurityProtocols,
+        dpv:OperatingSystemSecurity,
+        dpv:PenetrationTestingMethods,
+        dpv:UseSyntheticData,
+        dpv:VirtualisationSecurity,
+        dpv:VulnerabilityTestingMethods,
+        dpv:WebBrowserSecurity,
+        dpv:WebSecurityProtocols,
+        dpv:WirelessSecurityProtocols ;
     skos:prefLabel "Security Method"@en .
 
 dpv:SecurityProcedure a rdfs:Class,
@@ -4373,7 +4703,15 @@ dpv:SecurityProcedure a rdfs:Class,
     dct:created "2022-08-24"^^xsd:date ;
     rdfs:subClassOf dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:OrganisationalMeasure ;
     skos:definition "Procedures associated with assessing, implementing, and evaluating security"@en ;
+    skos:narrower dpv:BackgroundChecks,
+        dpv:RiskManagementPlan,
+        dpv:RiskManagementPolicy,
+        dpv:SecurityAssessment,
+        dpv:SecurityRoleProcedures,
+        dpv:ThirdPartySecurityProcedures,
+        dpv:TrustedThirdPartyUtilisation ;
     skos:prefLabel "Security Procedure"@en .
 
 dpv:SecurityRoleProcedures a rdfs:Class,
@@ -4383,6 +4721,7 @@ dpv:SecurityRoleProcedures a rdfs:Class,
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     rdfs:subClassOf dpv:SecurityProcedure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:SecurityProcedure ;
     skos:definition "Procedures related to security roles"@en ;
     skos:prefLabel "Security Role Procedures"@en .
 
@@ -4416,6 +4755,9 @@ dpv:SellProducts a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:ServiceProvision ;
     skos:definition "Purposes associated with selling products or services"@en ;
+    skos:narrower dpv:SellDataToThirdParties,
+        dpv:SellInsightsFromData,
+        dpv:SellProductsToDataSubject ;
     skos:note "Sell here means exchange, submit, or provide in return for direct or indirect compensation."@en ;
     skos:prefLabel "Sell Products"@en .
 
@@ -4436,7 +4778,9 @@ dpv:SensitivePersonalData a rdfs:Class,
     dct:created "2022-01-19"^^xsd:date ;
     rdfs:subClassOf dpv:PersonalData ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:PersonalData ;
     skos:definition "Personal data that is considered 'sensitive' in terms of privacy and/or impact, and therefore requires additional considerations and/or protection"@en ;
+    skos:narrower dpv:SpecialCategoryPersonalData ;
     skos:note "Sensitivity' is a matter of context, and may be defined within legal frameworks. For GDPR, Special categories of personal data are considered a subset of sensitive data. To illustrate the difference between the two, consider the situation where Location data is collected, and which is considered 'sensitive' but not 'special'. As a probable rule, sensitive data require additional considerations whereas special category data requires additional legal basis / justifications."@en ;
     skos:prefLabel "Sensitive Personal Data"@en .
 
@@ -4448,6 +4792,8 @@ dpv:ServiceOptimisation a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:ServiceProvision ;
     skos:definition "Purposes associated with optimisation of services or activities"@en ;
+    skos:narrower dpv:OptimisationForConsumer,
+        dpv:OptimisationForController ;
     skos:note "Subclass of ServiceProvision since optimisation is usually considered part of providing services"@en ;
     skos:prefLabel "Service Optimisation"@en .
 
@@ -4460,6 +4806,9 @@ dpv:ServicePersonalisation a rdfs:Class,
     skos:broader dpv:Personalisation,
         dpv:ServiceProvision ;
     skos:definition "Purposes associated with providing personalisation within services or product or activities"@en ;
+    skos:narrower dpv:PersonalisedBenefits,
+        dpv:ProvidePersonalisedRecommendations,
+        dpv:UserInterfacePersonalisation ;
     skos:prefLabel "Service Personalisation"@en .
 
 dpv:ServiceProvision a rdfs:Class,
@@ -4469,6 +4818,16 @@ dpv:ServiceProvision a rdfs:Class,
     dct:created "2019-04-05"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Purposes associated with providing service or product or activities"@en ;
+    skos:narrower dpv:PaymentManagement,
+        dpv:RepairImpairments,
+        dpv:RequestedServiceProvision,
+        dpv:SearchFunctionalities,
+        dpv:SellProducts,
+        dpv:ServiceOptimisation,
+        dpv:ServicePersonalisation,
+        dpv:ServiceRegistration,
+        dpv:ServiceUsageAnalytics,
+        dpv:TechnicalServiceProvision ;
     skos:prefLabel "Service Provision"@en .
 
 dpv:ServiceRegistration a rdfs:Class,
@@ -4518,6 +4877,7 @@ dpv:SingleSignOn a rdfs:Class,
     dct:created "2020-11-04"^^xsd:date ;
     rdfs:subClassOf dpv:AuthenticationProtocols ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:AuthenticationProtocols ;
     skos:definition "Use of credentials or processes that enable using one set of credentials to authenticate multiple contexts."@en ;
     skos:prefLabel "Single Sign On"@en .
 
@@ -4594,6 +4954,7 @@ dpv:SpecialCategoryPersonalData a rdfs:Class,
     dct:source "(GDPR Art.9-1, https://eur-lex.europa.eu/eli/reg/2016/679/art_9/par_1/oj)"@en ;
     rdfs:subClassOf dpv:SensitivePersonalData ;
     sw:term_status "modified"@en ;
+    skos:broader dpv:SensitivePersonalData ;
     skos:definition "Sensitive Personal Data whose use requires specific legal permission or justification"@en ;
     skos:note "The term 'special category' is based on GDPR Art.9, but should not be considered as exlusive to it. DPV considers all Special Categories to also be Sensitive, but whose use is either prohibited or regulated and therefore requires additional legal basis for justification."@en ;
     skos:prefLabel "Special Category Personal Data"@en .
@@ -4632,7 +4993,13 @@ dpv:StaffTraining a rdfs:Class,
     dct:created "2019-04-05"^^xsd:date ;
     rdfs:subClassOf dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:OrganisationalMeasure ;
     skos:definition "Practices and policies regarding training of staff members"@en ;
+    skos:narrower dpv:CybersecurityTraining,
+        dpv:DataProtectionTraining,
+        dpv:EducationalTraining,
+        dpv:ProfessionalTraining,
+        dpv:SecurityKnowledgeTraining ;
     skos:prefLabel "Staff Training"@en .
 
 dpv:Status a rdfs:Class,
@@ -4724,6 +5091,7 @@ dpv:SubProcessorAgreement a rdfs:Class,
     dct:created "2022-01-26"^^xsd:date ;
     rdfs:subClassOf dpv:DataProcessingAgreement ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:DataProcessingAgreement ;
     skos:definition "An agreement outlining conditions, criteria, obligations, responsibilities, and specifics for carrying out processing of personal data between a Data Processor and a Data (Sub-)Processor"@en ;
     skos:prefLabel "Sub-Processor Agreement"@en .
 
@@ -4763,6 +5131,7 @@ dpv:SymmetricCryptography a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:CryptographicMethods ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:CryptographicMethods ;
     skos:definition "Use of cryptography where the same keys are utilised for encryption and descryption of information"@en ;
     skos:prefLabel "Symmetric Cryptography"@en .
 
@@ -4773,6 +5142,7 @@ dpv:SymmetricEncryption a rdfs:Class,
     dct:source "(ENISA Data Pseudonymisation: Advanced Techniques and Use Cases,https://www.enisa.europa.eu/publications/data-pseudonymisation-advanced-techniques-and-use-cases)"@en ;
     rdfs:subClassOf dpv:Encryption ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Encryption ;
     skos:definition "Use of symmetric cryptography to encrypt data"@en ;
     skos:prefLabel "Symmetric Encryption"@en .
 
@@ -4783,6 +5153,7 @@ dpv:SyntheticData a rdfs:Class,
     dct:source "(ENISA Data Protection Engineering,https://www.enisa.europa.eu/publications/data-protection-engineering)"@en ;
     rdfs:subClassOf dpv:Data ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Data ;
     skos:definition "Synthetic data reffers to artificially created data such that it is intended to resemble real data (personal or non-personal), but does not refer to any specific identified or identifiable individual, or to the real measure of an observable parameter in the case of non-personal data"@en ;
     skos:prefLabel "Synthetic Data"@en .
 
@@ -4813,6 +5184,17 @@ dpv:TechnicalMeasure a rdfs:Class,
     dct:created "2019-04-05"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Technical measures required/followed when processing data of the declared category"@en ;
+    skos:narrower dpv:AccessControlMethod,
+        dpv:ActivityMonitoring,
+        dpv:AuthenticationProtocols,
+        dpv:AuthorisationProtocols,
+        dpv:CryptographicMethods,
+        dpv:DataBackupProtocols,
+        dpv:DataSanitisationTechnique,
+        dpv:DigitalRightsManagement,
+        dpv:Encryption,
+        dpv:InformationFlowControl,
+        dpv:SecurityMethod ;
     skos:prefLabel "Technical Measure"@en .
 
 dpv:TechnicalOrganisationalMeasure a rdfs:Class,
@@ -4869,8 +5251,10 @@ dpv:ThirdParty a rdfs:Class,
     dct:created "2019-06-04"^^xsd:date ;
     dct:source "(GDPR Art.4-10,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_10/oj)"@en ;
     sw:term_status "accepted"@en ;
-    skos:definition "A ‘third party’ means a natural or legal person, public authority, agency or body other than the data subject, controller, processor and people who, under the direct authority of the controller or processor, are authorised to process personal data."@en ;
-    skos:prefLabel "Third Party"@en .
+    skos:definition "A Third Party can be a Data Source, e.g. when data is collected from an entity that is neither the Controller nor the Data Subject"@en,
+        "A ‘third party’ means a natural or legal person, public authority, agency or body other than the data subject, controller, processor and people who, under the direct authority of the controller or processor, are authorised to process personal data."@en ;
+    skos:prefLabel "Third Party"@en,
+        "dpv:ThirdParty"@en .
 
 dpv:ThirdPartyAgreement a rdfs:Class,
         skos:Concept ;
@@ -4878,6 +5262,7 @@ dpv:ThirdPartyAgreement a rdfs:Class,
     dct:created "2022-02-09"^^xsd:date ;
     rdfs:subClassOf dpv:DataProcessingAgreement ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:DataProcessingAgreement ;
     skos:definition "An agreement outlining conditions, criteria, obligations, responsibilities, and specifics for carrying out processing of personal data between a Data Controller or Processor and a Third Party"@en ;
     skos:prefLabel "Third-Party Agreement"@en .
 
@@ -4888,6 +5273,7 @@ dpv:ThirdPartySecurityProcedures a rdfs:Class,
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     rdfs:subClassOf dpv:SecurityProcedure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:SecurityProcedure ;
     skos:definition "Procedures related to security associated with Third Parties"@en ;
     skos:prefLabel "Third Party Security Procedures"@en .
 
@@ -4935,6 +5321,7 @@ dpv:TrustedComputing a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:CryptographicMethods ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:CryptographicMethods ;
     skos:definition "Use of cryptographic methods to restrict access and execution to trusted parties and code"@en ;
     skos:prefLabel "Trusted Computing"@en .
 
@@ -4945,6 +5332,7 @@ dpv:TrustedExecutionEnvironments a rdfs:Class,
     dct:source "(ENISA Data Protection Engineering,https://www.enisa.europa.eu/publications/data-protection-engineering)"@en ;
     rdfs:subClassOf dpv:CryptographicMethods ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:CryptographicMethods ;
     skos:definition "Use of cryptographic methods to restrict access and execution to trusted parties and code within a dedicated execution environment"@en ;
     skos:prefLabel "Trusted Execution Environments"@en .
 
@@ -4955,6 +5343,7 @@ dpv:TrustedThirdPartyUtilisation a rdfs:Class,
     dct:source "(ENISA Data Pseudonymisation: Advanced Techniques and Use Cases,https://www.enisa.europa.eu/publications/data-pseudonymisation-advanced-techniques-and-use-cases)"@en ;
     rdfs:subClassOf dpv:SecurityProcedure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:SecurityProcedure ;
     skos:definition "Utilisation of a trusted third party to provide or carry out a measure"@en ;
     skos:prefLabel "Trusted Third Party Utilisation"@en .
 
@@ -5002,6 +5391,7 @@ dpv:UnverifiedData a rdfs:Class,
     dct:created "2022-11-02"^^xsd:date ;
     rdfs:subClassOf dpv:Data ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Data ;
     skos:definition "Data that has not been verified in terms of accuracy, inconsistency, or quality"@en ;
     skos:prefLabel "Unverified Data"@en .
 
@@ -5012,6 +5402,7 @@ dpv:UsageControl a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:AccessControlMethod ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:AccessControlMethod ;
     skos:definition "Management of usage, which is intended to be broader than access control and may cover trust, digital rights, or other relevant controls"@en ;
     skos:prefLabel "Usage Control"@en .
 
@@ -5031,6 +5422,7 @@ dpv:UseSyntheticData a rdfs:Class,
     dct:source "(ENISA Data Protection Engineering,https://www.enisa.europa.eu/publications/data-protection-engineering)"@en ;
     rdfs:subClassOf dpv:SecurityMethod ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:SecurityMethod ;
     skos:definition "Use of synthetic data to preserve privacy, security, or other effects and side-effects"@en ;
     skos:prefLabel "Use of Synthetic Data"@en .
 
@@ -5072,6 +5464,9 @@ dpv:VendorManagement a rdfs:Class,
     dct:source "(Belgian DPA ROPA Template, https://www.privacycommission.be/nl/model-voor-een-register-van-de-verwerkingsactiviteiten)"@en ;
     sw:term_status "accepted"@en ;
     skos:definition "Purposes associated with manage orders, payment, evaluation, and prospecting related to vendors"@en ;
+    skos:narrower dpv:VendorPayment,
+        dpv:VendorRecordsManagement,
+        dpv:VendorSelectionAssessment ;
     skos:prefLabel "Vendor Management"@en .
 
 dpv:VendorPayment a rdfs:Class,
@@ -5113,6 +5508,7 @@ dpv:VerifiedData a rdfs:Class,
     dct:created "2022-11-02"^^xsd:date ;
     rdfs:subClassOf dpv:Data ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Data ;
     skos:definition "Data that has been verified in terms of accuracy, consistency, or quality"@en ;
     skos:prefLabel "Verified Data"@en .
 
@@ -5123,6 +5519,7 @@ dpv:VirtualisationSecurity a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:SecurityMethod ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:SecurityMethod ;
     skos:definition "Security implemented at or through virtualised environments"@en ;
     skos:prefLabel "Virtualisation Security"@en .
 
@@ -5169,6 +5566,7 @@ dpv:VulnerabilityTestingMethods a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:SecurityMethod ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:SecurityMethod ;
     skos:definition "Methods that assess or discover vulnerabilities in a system"@en ;
     skos:prefLabel "Vulnerability Testing Methods"@en .
 
@@ -5189,6 +5587,7 @@ dpv:WebBrowserSecurity a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:SecurityMethod ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:SecurityMethod ;
     skos:definition "Security implemented at or over web browsers"@en ;
     skos:prefLabel "WebBrowser Security"@en .
 
@@ -5199,6 +5598,7 @@ dpv:WebSecurityProtocols a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:SecurityMethod ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:SecurityMethod ;
     skos:definition "Security implemented at or over web-based protocols"@en ;
     skos:prefLabel "Web Security Protocols"@en .
 
@@ -5209,6 +5609,7 @@ dpv:WirelessSecurityProtocols a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:SecurityMethod ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:SecurityMethod ;
     skos:definition "Security implemented at or over wireless communication protocols"@en ;
     skos:prefLabel "Wireless Security Protocols"@en .
 
@@ -5248,163 +5649,110 @@ dpv:ZeroKnowledgeAuthentication a rdfs:Class,
     rdfs:subClassOf dpv:AuthenticationProtocols,
         dpv:CryptographicMethods ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:AuthenticationProtocols,
+        dpv:CryptographicMethods ;
     skos:definition "Authentication using Zero-Knowledge proofs"@en ;
     skos:prefLabel "Zero Knowledge Authentication"@en .
 
-<https://w3id.org/dpv#dcat:Resource> a rdfs:Class,
+dct:accessRights a rdf:Property,
         skos:Concept ;
-    dct:created "2022-11-02"^^xsd:date ;
-    sw:term_status "accepted"@en ;
-    skos:definition "A dataset, data service, or any other resource associated with Right Exercise - such as for providing a copy of personal data"@en ;
-    skos:prefLabel "dcat:Resource"@en .
-
-<https://w3id.org/dpv#dpv:DataController> a rdfs:Class,
-        skos:Concept ;
-    sw:term_status "accepted"@en ;
-    skos:definition "An Data Controller can be a Data Source, e.g. a Controller inferring data or generating data"@en ;
-    skos:prefLabel "dpv:DataController"@en .
-
-<https://w3id.org/dpv#dpv:DataSubject> a rdfs:Class,
-        skos:Concept ;
-    sw:term_status "accepted"@en ;
-    skos:definition "A Data Subject as a Data Source, e.g. when data is collected via a form or observed from their activities"@en ;
-    skos:prefLabel "dpv:DataSubject"@en .
-
-<https://w3id.org/dpv#dpv:ThirdParty> a rdfs:Class,
-        skos:Concept ;
-    sw:term_status "accepted"@en ;
-    skos:definition "A Third Party can be a Data Source, e.g. when data is collected from an entity that is neither the Controller nor the Data Subject"@en ;
-    skos:prefLabel "dpv:ThirdParty"@en .
-
-<https://w3id.org/dpv#dct:accessRights> a rdf:Property ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-11-02"^^xsd:date ;
-    sw:term_status "accepted"@en ;
     skos:definition "Specfiying constraints on access associated with Rights Exercising (e.g. User must log in) or access to provided data (e.g. access via link)"@en ;
     skos:prefLabel "dct:accessRights"@en .
 
-<https://w3id.org/dpv#dct:format> a rdf:Property ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-11-02"^^xsd:date ;
-    sw:term_status "accepted"@en ;
+dct:format a rdf:Property,
+        skos:Concept ;
     skos:definition "Specifying the format of provided information, for example a CSV dataset"@en ;
     skos:prefLabel "dct:format"@en .
 
-<https://w3id.org/dpv#dct:hasPart> a rdf:Property ;
+dct:hasPart a rdf:Property,
+        skos:Concept ;
     dcam:domainIncludes dpv:RightExerciseRecord ;
     dcam:rangeIncludes dpv:RightExerciseActivity ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-11-02"^^xsd:date ;
-    sw:term_status "accepted"@en ;
     skos:definition "Specifying a RightExerciseRecord has RightExerciseActivity as part of its records"@en ;
     skos:prefLabel "dct:hasPart"@en ;
     schema:domainIncludes dpv:RightExerciseRecord ;
     schema:rangeIncludes dpv:RightExerciseActivity .
 
-<https://w3id.org/dpv#dct:isPartOf> a rdf:Property ;
+dct:isPartOf a rdf:Property,
+        skos:Concept ;
     dcam:domainIncludes dpv:RightExerciseActivity ;
     dcam:rangeIncludes dpv:RightExerciseRecord ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-11-02"^^xsd:date ;
-    sw:term_status "accepted"@en ;
     skos:definition "Specifying a RightExerciseActivity is part of a RightExerciseRecord"@en ;
     skos:prefLabel "dct:isPartOf"@en ;
     schema:domainIncludes dpv:RightExerciseActivity ;
     schema:rangeIncludes dpv:RightExerciseRecord .
 
-<https://w3id.org/dpv#dct:valid> a rdf:Property ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-11-02"^^xsd:date ;
-    sw:term_status "accepted"@en ;
+dct:valid a rdf:Property,
+        skos:Concept ;
     skos:definition "Specfiying the temporal validity of an activity associated with Right Exercise. For example, limits on duration for providing or accessing provided information"@en ;
     skos:prefLabel "dct:valid"@en .
 
-<https://w3id.org/dpv#dpv:hasJustification> a rdf:Property ;
+foaf:page a rdf:Property,
+        skos:Concept ;
     dcam:domainIncludes dpv:RightExerciseActivity ;
-    dcam:rangeIncludes dpv:Justification ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-11-02"^^xsd:date ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Specifying a justification for non-fulfilment of Right Exercise"@en ;
-    skos:prefLabel "dpv:hasJustification"@en ;
-    schema:domainIncludes dpv:RightExerciseActivity ;
-    schema:rangeIncludes dpv:Justification .
-
-<https://w3id.org/dpv#dpv:hasRecipient> a rdf:Property ;
-    dcam:domainIncludes dpv:RightExerciseActivity ;
-    dcam:rangeIncludes dpv:Recipient ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-11-02"^^xsd:date ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Indicates the Recipient of a Right Exercise Activity"@en ;
-    skos:prefLabel "dpv:hasRecipient"@en ;
-    schema:domainIncludes dpv:RightExerciseActivity ;
-    schema:rangeIncludes dpv:Recipient .
-
-<https://w3id.org/dpv#dpv:hasStatus> a rdf:Property ;
-    dcam:domainIncludes dpv:RightExerciseActivity ;
-    dcam:rangeIncludes dpv:Status ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-11-02"^^xsd:date ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Indicates the status of a Right Exercise Activity"@en ;
-    skos:prefLabel "dpv:hasStatus"@en ;
-    schema:domainIncludes dpv:RightExerciseActivity ;
-    schema:rangeIncludes dpv:Status .
-
-<https://w3id.org/dpv#dpv:isAfter> a rdf:Property ;
-    dcam:domainIncludes dpv:RightExerciseActivity ;
-    dcam:rangeIncludes dpv:RightExerciseActivity ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-11-02"^^xsd:date ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Specifying a RightExerciseActivity occurs before another RightExerciseActivity"@en ;
-    skos:prefLabel "dpv:isAfter"@en ;
-    schema:domainIncludes dpv:RightExerciseActivity ;
-    schema:rangeIncludes dpv:RightExerciseActivity .
-
-<https://w3id.org/dpv#dpv:isBefore> a rdf:Property ;
-    dcam:domainIncludes dpv:RightExerciseActivity ;
-    dcam:rangeIncludes dpv:RightExerciseActivity ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-11-02"^^xsd:date ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Specifying a RightExerciseActivity occurs before another RightExerciseActivity"@en ;
-    skos:prefLabel "dpv:isBefore"@en ;
-    schema:domainIncludes dpv:RightExerciseActivity ;
-    schema:rangeIncludes dpv:RightExerciseActivity .
-
-<https://w3id.org/dpv#dpv:isImplementedByEntity> a rdf:Property ;
-    dcam:domainIncludes dpv:RightExerciseActivity ;
-    dcam:rangeIncludes dpv:Entity ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-11-02"^^xsd:date ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Indicates the Entity that implements or performs a Right Exercise Activity"@en ;
-    skos:prefLabel "dpv:isImplementedByEntity"@en ;
-    schema:domainIncludes dpv:RightExerciseActivity ;
-    schema:rangeIncludes dpv:Entity .
-
-<https://w3id.org/dpv#foaf:page> a rdf:Property ;
-    dcam:domainIncludes dpv:RightExerciseActivity ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-11-02"^^xsd:date ;
-    sw:term_status "accepted"@en ;
     skos:definition "Indicates a web page or document providing information or functionality associated with a Right Exercise"@en ;
     skos:prefLabel "foaf:page"@en ;
     schema:domainIncludes dpv:RightExerciseActivity .
 
-dpv:hasActivityStatus a rdf:Property ;
-    dcam:rangeIncludes dpv:ActivityStatus ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-05-18"^^xsd:date ;
-    rdfs:subPropertyOf dpv:hasStatus ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Indicates the status of activity of specified concept"@en ;
-    skos:prefLabel "has activity status"@en ;
-    schema:rangeIncludes dpv:ActivityStatus .
+<https://w3id.org/dpv#dcat:Resource> dct:created "2022-11-02"^^xsd:date ;
+    sw:term_status "accepted"@en .
 
-dpv:hasAddress a rdf:Property ;
+<https://w3id.org/dpv#dct:accessRights> dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-11-02"^^xsd:date ;
+    sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv#dct:format> dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-11-02"^^xsd:date ;
+    sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv#dct:hasPart> dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-11-02"^^xsd:date ;
+    sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv#dct:isPartOf> dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-11-02"^^xsd:date ;
+    sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv#dct:valid> dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-11-02"^^xsd:date ;
+    sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv#dpv:DataController> sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv#dpv:DataSubject> sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv#dpv:ThirdParty> sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv#dpv:hasJustification> dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-11-02"^^xsd:date ;
+    sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv#dpv:hasRecipient> dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-11-02"^^xsd:date ;
+    sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv#dpv:hasStatus> dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-11-02"^^xsd:date ;
+    sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv#dpv:isAfter> dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-11-02"^^xsd:date ;
+    sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv#dpv:isBefore> dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-11-02"^^xsd:date ;
+    sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv#dpv:isImplementedByEntity> dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-11-02"^^xsd:date ;
+    sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv#foaf:page> dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-11-02"^^xsd:date ;
+    sw:term_status "accepted"@en .
+
+dpv:hasAddress a rdf:Property,
+        skos:Concept ;
     dcam:domainIncludes dpv:Entity ;
     dct:contributor "Harshvardhan J.Pandit, Georg P Krog, Paul Ryan, Beatriz Esteves"@en ;
     dct:created "2020-11-04"^^xsd:date ;
@@ -5413,7 +5761,8 @@ dpv:hasAddress a rdf:Property ;
     skos:prefLabel "has address"@en ;
     schema:domainIncludes dpv:Entity .
 
-dpv:hasAlgorithmicLogic a rdf:Property ;
+dpv:hasAlgorithmicLogic a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:AlgorithmicLogic ;
     dct:contributor "Georg P. Krog, Paul Ryan, Harshvardhan J. Pandit"@en ;
     dct:created "2020-11-04"^^xsd:date ;
@@ -5423,7 +5772,8 @@ dpv:hasAlgorithmicLogic a rdf:Property ;
     skos:prefLabel "has algorithmic logic"@en ;
     schema:rangeIncludes dpv:AlgorithmicLogic .
 
-dpv:hasApplicableLaw a rdf:Property ;
+dpv:hasApplicableLaw a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Law ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-01-19"^^xsd:date ;
@@ -5432,17 +5782,8 @@ dpv:hasApplicableLaw a rdf:Property ;
     skos:prefLabel "has applicable law"@en ;
     schema:rangeIncludes dpv:Law .
 
-dpv:hasAuditStatus a rdf:Property ;
-    dcam:rangeIncludes dpv:AuditStatus ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-06-22"^^xsd:date ;
-    rdfs:subPropertyOf dpv:hasStatus ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Indicates the status of audit associated with specified concept"@en ;
-    skos:prefLabel "has audit status"@en ;
-    schema:rangeIncludes dpv:AuditStatus .
-
-dpv:hasAuthority a rdf:Property ;
+dpv:hasAuthority a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Authority ;
     dct:contributor "Harshvardhan J. Pandit, Georg P Krog"@en ;
     dct:created "2022-01-19"^^xsd:date ;
@@ -5451,7 +5792,8 @@ dpv:hasAuthority a rdf:Property ;
     skos:prefLabel "has authority"@en ;
     schema:rangeIncludes dpv:Authority .
 
-dpv:hasConsentStatus a rdf:Property ;
+dpv:hasConsentStatus a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:ConsentStatus ;
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake"@en ;
     dct:created "2022-06-21"^^xsd:date ;
@@ -5460,7 +5802,8 @@ dpv:hasConsentStatus a rdf:Property ;
     skos:prefLabel "has consent status"@en ;
     schema:rangeIncludes dpv:ConsentStatus .
 
-dpv:hasContact a rdf:Property ;
+dpv:hasContact a rdf:Property,
+        skos:Concept ;
     dcam:domainIncludes dpv:Entity ;
     dct:contributor "Harshvardhan J.Pandit, Georg P Krog, Paul Ryan, Beatriz Esteves"@en ;
     dct:created "2020-11-04"^^xsd:date ;
@@ -5469,7 +5812,8 @@ dpv:hasContact a rdf:Property ;
     skos:prefLabel "has contact"@en ;
     schema:domainIncludes dpv:Entity .
 
-dpv:hasContext a rdf:Property ;
+dpv:hasContext a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Context ;
     dct:created "2019-04-05"^^xsd:date ;
     sw:term_status "accepted"@en ;
@@ -5477,47 +5821,8 @@ dpv:hasContext a rdf:Property ;
     skos:prefLabel "has context"@en ;
     schema:rangeIncludes dpv:Context .
 
-dpv:hasDataExporter a rdf:Property ;
-    dcam:rangeIncludes dpv:DataExporter ;
-    dct:contributor "Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit"@en ;
-    dct:created "2022-02-09"^^xsd:date ;
-    rdfs:subPropertyOf dpv:hasEntity ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Indiciates inclusion or applicability of a LegalEntity in the role of Data Exporter"@en ;
-    skos:prefLabel "has data exporter"@en ;
-    schema:rangeIncludes dpv:DataExporter .
-
-dpv:hasDataImporter a rdf:Property ;
-    dcam:rangeIncludes dpv:DataImporter ;
-    dct:contributor "Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit"@en ;
-    dct:created "2022-02-09"^^xsd:date ;
-    rdfs:subPropertyOf dpv:hasRecipient ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Indiciates inclusion or applicability of a LegalEntity in the role of Data Importer"@en ;
-    skos:prefLabel "has data importer"@en ;
-    schema:rangeIncludes dpv:DataImporter .
-
-dpv:hasDataProcessor a rdf:Property ;
-    dcam:rangeIncludes dpv:DataProcessor ;
-    dct:contributor "Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit"@en ;
-    dct:created "2022-02-09"^^xsd:date ;
-    rdfs:subPropertyOf dpv:hasRecipient ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Indiciates inclusion or applicability of a Data Processor"@en ;
-    skos:prefLabel "has data processor"@en ;
-    schema:rangeIncludes dpv:DataProcessor .
-
-dpv:hasDataProtectionOfficer a rdf:Property ;
-    dcam:rangeIncludes dpv:DataProtectionOfficer ;
-    dct:contributor "Paul Ryan, Rob Brennan"@en ;
-    dct:created "2022-03-02"^^xsd:date ;
-    rdfs:subPropertyOf dpv:hasRepresentative ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Specifices an associated data protection officer"@en ;
-    skos:prefLabel "has data protection officer"@en ;
-    schema:rangeIncludes dpv:DataProtectionOfficer .
-
-dpv:hasDataSource a rdf:Property ;
+dpv:hasDataSource a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:DataSource ;
     dct:contributor "Georg P. Krog, Paul Ryan, Harshvardhan J. Pandit"@en ;
     dct:created "2020-11-04"^^xsd:date ;
@@ -5526,38 +5831,8 @@ dpv:hasDataSource a rdf:Property ;
     skos:prefLabel "has data source"@en ;
     schema:rangeIncludes dpv:DataSource .
 
-dpv:hasDataSubject a rdf:Property ;
-    dcam:rangeIncludes dpv:DataSubject ;
-    dct:contributor "Axel Polleres, Javier Fernández, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger"@en ;
-    dct:created "2019-04-04"^^xsd:date ;
-    dct:modified "2020-11-04"^^xsd:date ;
-    rdfs:subPropertyOf dpv:hasEntity ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Indicates association with Data Subject"@en ;
-    skos:prefLabel "has data subject"@en ;
-    schema:rangeIncludes dpv:DataSubject .
-
-dpv:hasDataSubjectScale a rdf:Property ;
-    dcam:rangeIncludes dpv:DataSubjectScale ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-06-22"^^xsd:date ;
-    rdfs:subPropertyOf dpv:hasScale ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Indicates the scale of data subjects"@en ;
-    skos:prefLabel "has data subject scale"@en ;
-    schema:rangeIncludes dpv:DataSubjectScale .
-
-dpv:hasDataVolume a rdf:Property ;
-    dcam:rangeIncludes dpv:DataVolume ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-06-22"^^xsd:date ;
-    rdfs:subPropertyOf dpv:hasScale ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Indicates the volume of data"@en ;
-    skos:prefLabel "has data volume"@en ;
-    schema:rangeIncludes dpv:DataVolume .
-
-dpv:hasDuration a rdf:Property ;
+dpv:hasDuration a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Duration ;
     dct:contributor "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar"@en ;
     dct:created "2019-04-05"^^xsd:date ;
@@ -5567,7 +5842,8 @@ dpv:hasDuration a rdf:Property ;
     skos:prefLabel "has duration"@en ;
     schema:rangeIncludes dpv:Duration .
 
-dpv:hasFrequency a rdf:Property ;
+dpv:hasFrequency a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Frequency ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-02-16"^^xsd:date ;
@@ -5576,17 +5852,8 @@ dpv:hasFrequency a rdf:Property ;
     skos:prefLabel "has frequency"@en ;
     schema:rangeIncludes dpv:Frequency .
 
-dpv:hasGeographicCoverage a rdf:Property ;
-    dcam:rangeIncludes dpv:GeographicCoverage ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-06-22"^^xsd:date ;
-    rdfs:subPropertyOf dpv:hasScale ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Indicate the geographic coverage (of specified context)"@en ;
-    skos:prefLabel "has geographic coverage"@en ;
-    schema:rangeIncludes dpv:GeographicCoverage .
-
-dpv:hasHumanInvolvement a rdf:Property ;
+dpv:hasHumanInvolvement a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:HumanInvolvement ;
     dct:contributor "Georg P. Krog, Paul Ryan, Harshvardhan J. Pandit"@en ;
     dct:created "2020-11-04"^^xsd:date ;
@@ -5596,51 +5863,24 @@ dpv:hasHumanInvolvement a rdf:Property ;
     skos:prefLabel "has human involvement"@en ;
     schema:rangeIncludes dpv:HumanInvolvement .
 
-dpv:hasIdentifier a rdf:Property ;
+dpv:hasIdentifier a rdf:Property,
+        skos:Concept ;
     dct:contributor "Harshvardhan J.Pandit, Georg P Krog, Paul Ryan, Beatriz Esteves"@en ;
     dct:created "2020-11-25"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates an identifier associated for identification or reference"@en ;
     skos:prefLabel "has identifier"@en .
 
-dpv:hasImpact a rdf:Property ;
-    dcam:rangeIncludes dpv:Impact ;
-    dct:contributor "Harshvardhan J. Pandit, Julian Flake, Georg P Krog, Fajar Ekaputra, Beatriz Esteves"@en ;
-    dct:created "2022-05-18"^^xsd:date ;
-    rdfs:subPropertyOf dpv:hasConsequence ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Indicates impact(s) possible or arising as consequences from specified concept"@en ;
-    skos:prefLabel "has impact"@en ;
-    schema:rangeIncludes dpv:Impact .
-
-dpv:hasImpactOn a rdf:Property ;
-    dcam:domainIncludes dpv:Impact ;
-    dct:contributor "Harshvardhan J. Pandit, Julian Flake, Georg P Krog, Fajar Ekaputra, Beatriz Esteves"@en ;
-    dct:created "2022-05-18"^^xsd:date ;
-    rdfs:subPropertyOf dpv:hasConsequenceOn ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Indicates the thing (e.g. plan, process, or entity) affected by an impact"@en ;
-    skos:prefLabel "has impact on"@en ;
-    schema:domainIncludes dpv:Impact .
-
-dpv:hasIndicationMethod a rdf:Property ;
+dpv:hasIndicationMethod a rdf:Property,
+        skos:Concept ;
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake"@en ;
     dct:created "2022-06-21"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifies the method by which an entity has indicated the specific context"@en ;
     skos:prefLabel "has indication method"@en .
 
-dpv:hasJointDataControllers a rdf:Property ;
-    dcam:rangeIncludes dpv:JointDataControllers ;
-    dct:contributor "Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit"@en ;
-    dct:created "2022-02-09"^^xsd:date ;
-    rdfs:subPropertyOf dpv:hasDataController ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Indicates inclusion or applicability of a Joint Data Controller"@en ;
-    skos:prefLabel "has joint data controllers"@en ;
-    schema:rangeIncludes dpv:JointDataControllers .
-
-dpv:hasJurisdiction a rdf:Property ;
+dpv:hasJurisdiction a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Location ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-01-19"^^xsd:date ;
@@ -5649,26 +5889,22 @@ dpv:hasJurisdiction a rdf:Property ;
     skos:prefLabel "has jurisdiction"@en ;
     schema:rangeIncludes dpv:Location .
 
-dpv:hasJustification a rdf:Property ;
+dpv:hasJustification a rdf:Property,
+        skos:Concept ;
+    dcam:domainIncludes dpv:RightExerciseActivity ;
     dcam:rangeIncludes dpv:Justification ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
-    skos:definition "Indicates a justification for specified concept or context"@en ;
-    skos:prefLabel "has justification"@en ;
+    skos:definition "Indicates a justification for specified concept or context"@en,
+        "Specifying a justification for non-fulfilment of Right Exercise"@en ;
+    skos:prefLabel "dpv:hasJustification"@en,
+        "has justification"@en ;
+    schema:domainIncludes dpv:RightExerciseActivity ;
     schema:rangeIncludes dpv:Justification .
 
-dpv:hasLawfulness a rdf:Property ;
-    dcam:rangeIncludes dpv:Lawfulness ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-10-22"^^xsd:date ;
-    rdfs:subPropertyOf dpv:hasComplianceStatus ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Indicates the status of being lawful or legally compliant"@en ;
-    skos:prefLabel "has lawfulness"@en ;
-    schema:rangeIncludes dpv:Lawfulness .
-
-dpv:hasLegalBasis a rdf:Property ;
+dpv:hasLegalBasis a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:LegalBasis ;
     dct:contributor "Axel Polleres, Javier Fernández"@en ;
     dct:created "2019-04-04"^^xsd:date ;
@@ -5678,7 +5914,8 @@ dpv:hasLegalBasis a rdf:Property ;
     skos:prefLabel "has legal basis"@en ;
     schema:rangeIncludes dpv:LegalBasis .
 
-dpv:hasLikelihood a rdf:Property ;
+dpv:hasLikelihood a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Likelihood ;
     dct:contributor "Harshvardhan J. Pandit, Georg P Krog, Paul Ryan, Julian Flake"@en ;
     dct:created "2022-07-20"^^xsd:date ;
@@ -5687,7 +5924,8 @@ dpv:hasLikelihood a rdf:Property ;
     skos:prefLabel "has likelihood"@en ;
     schema:rangeIncludes dpv:Likelihood .
 
-dpv:hasName a rdf:Property ;
+dpv:hasName a rdf:Property,
+        skos:Concept ;
     dcam:domainIncludes dpv:Entity ;
     dct:contributor "Harshvardhan J.Pandit, Georg P Krog, Paul Ryan, Beatriz Esteves"@en ;
     dct:created "2020-11-04"^^xsd:date ;
@@ -5696,58 +5934,16 @@ dpv:hasName a rdf:Property ;
     skos:prefLabel "has name"@en ;
     schema:domainIncludes dpv:Entity .
 
-dpv:hasNotice a rdf:Property ;
-    dcam:rangeIncludes dpv:Notice ;
-    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake"@en ;
-    dct:created "2022-06-22"^^xsd:date ;
-    rdfs:subPropertyOf dpv:hasOrganisationalMeasure ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Indicates the use or applicability of a Notice for the specified context"@en ;
-    skos:prefLabel "has notice"@en ;
-    schema:rangeIncludes dpv:Notice .
-
-dpv:hasObligation a rdf:Property ;
-    dcam:domainIncludes dpv:Context ;
-    dcam:rangeIncludes dpv:Obligation ;
-    dct:contributor "Harshvardhan J. Pandit, Georg P Krog, Beatriz Esteves, Paul Ryan"@en ;
-    dct:created "2022-10-19"^^xsd:date ;
-    rdfs:subPropertyOf dpv:hasRule ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Specifying applicability or inclusion of an obligation rule within specified context"@en ;
-    skos:prefLabel "has obligation"@en ;
-    schema:domainIncludes dpv:Context ;
-    schema:rangeIncludes dpv:Obligation .
-
-dpv:hasOutcome a rdf:Property ;
+dpv:hasOutcome a rdf:Property,
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-05-18"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates an outcome of specified concept or context"@en ;
     skos:prefLabel "has outcome"@en .
 
-dpv:hasPermission a rdf:Property ;
-    dcam:domainIncludes dpv:Context ;
-    dcam:rangeIncludes dpv:Permission ;
-    dct:contributor "Harshvardhan J. Pandit, Georg P Krog, Beatriz Esteves, Paul Ryan"@en ;
-    dct:created "2022-10-19"^^xsd:date ;
-    rdfs:subPropertyOf dpv:hasRule ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Specifying applicability or inclusion of a permission rule within specified context"@en ;
-    skos:prefLabel "has permission"@en ;
-    schema:domainIncludes dpv:Context ;
-    schema:rangeIncludes dpv:Permission .
-
-dpv:hasPersonalData a rdf:Property ;
-    dcam:rangeIncludes dpv:PersonalData ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-01-19"^^xsd:date ;
-    rdfs:subPropertyOf dpv:hasData ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Indicates association with Personal Data"@en ;
-    skos:prefLabel "has personal data"@en ;
-    schema:rangeIncludes dpv:PersonalData .
-
-dpv:hasPersonalDataHandling a rdf:Property ;
+dpv:hasPersonalDataHandling a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:PersonalDataHandling ;
     dct:contributor "Harshvardhan J. Pandit, Georg P Krog"@en ;
     dct:created "2022-01-19"^^xsd:date ;
@@ -5756,17 +5952,8 @@ dpv:hasPersonalDataHandling a rdf:Property ;
     skos:prefLabel "has personal data handling"@en ;
     schema:rangeIncludes dpv:PersonalDataHandling .
 
-dpv:hasPolicy a rdf:Property ;
-    dcam:rangeIncludes dpv:Policy ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-01-26"^^xsd:date ;
-    rdfs:subPropertyOf dpv:hasTechnicalOrganisationalMeasure ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Indicates policy applicable or used"@en ;
-    skos:prefLabel "has policy"@en ;
-    schema:rangeIncludes dpv:Policy .
-
-dpv:hasProcessing a rdf:Property ;
+dpv:hasProcessing a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Processing ;
     dct:contributor "Axel Polleres, Javier Fernández, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger"@en ;
     dct:created "2019-04-04"^^xsd:date ;
@@ -5777,7 +5964,8 @@ dpv:hasProcessing a rdf:Property ;
     skos:prefLabel "has processing"@en ;
     schema:rangeIncludes dpv:Processing .
 
-dpv:hasProcessingAutomation a rdf:Property ;
+dpv:hasProcessingAutomation a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:AutomationOfProcessing ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-08-13"^^xsd:date ;
@@ -5786,19 +5974,8 @@ dpv:hasProcessingAutomation a rdf:Property ;
     skos:prefLabel "has processing automation"@en ;
     schema:rangeIncludes dpv:AutomationOfProcessing .
 
-dpv:hasProhibition a rdf:Property ;
-    dcam:domainIncludes dpv:Context ;
-    dcam:rangeIncludes dpv:Prohibition ;
-    dct:contributor "Harshvardhan J. Pandit, Georg P Krog, Beatriz Esteves, Paul Ryan"@en ;
-    dct:created "2022-10-19"^^xsd:date ;
-    rdfs:subPropertyOf dpv:hasRule ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Specifying applicability or inclusion of a prohibition rule within specified context"@en ;
-    skos:prefLabel "has prohibition"@en ;
-    schema:domainIncludes dpv:Context ;
-    schema:rangeIncludes dpv:Prohibition .
-
-dpv:hasPurpose a rdf:Property ;
+dpv:hasPurpose a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Purpose ;
     dct:contributor "Axel Polleres, Javier Fernández, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger"@en ;
     dct:created "2019-04-04"^^xsd:date ;
@@ -5809,37 +5986,8 @@ dpv:hasPurpose a rdf:Property ;
     skos:prefLabel "has purpose"@en ;
     schema:rangeIncludes dpv:Purpose .
 
-dpv:hasRecipientDataController a rdf:Property ;
-    dcam:rangeIncludes dpv:DataController ;
-    dct:contributor "Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit"@en ;
-    dct:created "2022-02-09"^^xsd:date ;
-    rdfs:subPropertyOf dpv:hasRecipient ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Indiciates inclusion or applicability of a Data Controller as a Recipient of persona data"@en ;
-    skos:prefLabel "has recipient data controller"@en ;
-    schema:rangeIncludes dpv:DataController .
-
-dpv:hasRecipientThirdParty a rdf:Property ;
-    dcam:rangeIncludes dpv:ThirdParty ;
-    dct:contributor "Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit"@en ;
-    dct:created "2022-02-09"^^xsd:date ;
-    rdfs:subPropertyOf dpv:hasRecipient ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Indiciates inclusion or applicability of a Third Party as a Recipient of persona data"@en ;
-    skos:prefLabel "has recipient third party"@en ;
-    schema:rangeIncludes dpv:ThirdParty .
-
-dpv:hasRelationWithDataSubject a rdf:Property ;
-    dcam:domainIncludes dpv:Entity ;
-    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake"@en ;
-    dct:created "2022-06-21"^^xsd:date ;
-    rdfs:subPropertyOf dpv:hasEntity ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Indicates the relation between specified Entity and Data Subject"@en ;
-    skos:prefLabel "has relation with data subject"@en ;
-    schema:domainIncludes dpv:Entity .
-
-dpv:hasResidualRisk a rdf:Property ;
+dpv:hasResidualRisk a rdf:Property,
+        skos:Concept ;
     dcam:domainIncludes dpv:Risk ;
     dcam:rangeIncludes dpv:Risk ;
     dct:contributor "Harshvardhan J. Pandit, Georg P Krog, Paul Ryan, Julian Flake"@en ;
@@ -5850,17 +5998,8 @@ dpv:hasResidualRisk a rdf:Property ;
     schema:domainIncludes dpv:Risk ;
     schema:rangeIncludes dpv:Risk .
 
-dpv:hasResponsibleEntity a rdf:Property ;
-    dcam:rangeIncludes dpv:Entity ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-03-02"^^xsd:date ;
-    rdfs:subPropertyOf dpv:hasEntity ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Specifies the indicated entity is responsible within some context"@en ;
-    skos:prefLabel "has responsible entity"@en ;
-    schema:rangeIncludes dpv:Entity .
-
-dpv:hasRight a rdf:Property ;
+dpv:hasRight a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Right ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2020-11-18"^^xsd:date ;
@@ -5869,7 +6008,8 @@ dpv:hasRight a rdf:Property ;
     skos:prefLabel "has right"@en ;
     schema:rangeIncludes dpv:Right .
 
-dpv:hasRisk a rdf:Property ;
+dpv:hasRisk a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Risk ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2020-11-18"^^xsd:date ;
@@ -5879,7 +6019,8 @@ dpv:hasRisk a rdf:Property ;
     skos:prefLabel "has risk"@en ;
     schema:rangeIncludes dpv:Risk .
 
-dpv:hasRiskLevel a rdf:Property ;
+dpv:hasRiskLevel a rdf:Property,
+        skos:Concept ;
     dcam:domainIncludes dpv:Risk ;
     dcam:rangeIncludes dpv:RiskLevel ;
     dct:contributor "Harshvardhan J. Pandit, Georg P Krog, Paul Ryan, Julian Flake"@en ;
@@ -5890,7 +6031,8 @@ dpv:hasRiskLevel a rdf:Property ;
     schema:domainIncludes dpv:Risk ;
     schema:rangeIncludes dpv:RiskLevel .
 
-dpv:hasScope a rdf:Property ;
+dpv:hasScope a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Scope ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-06-15"^^xsd:date ;
@@ -5899,7 +6041,8 @@ dpv:hasScope a rdf:Property ;
     skos:prefLabel "has scope"@en ;
     schema:rangeIncludes dpv:Scope .
 
-dpv:hasSector a rdf:Property ;
+dpv:hasSector a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Sector ;
     dct:created "2019-04-05"^^xsd:date ;
     sw:term_status "accepted"@en ;
@@ -5907,7 +6050,8 @@ dpv:hasSector a rdf:Property ;
     skos:prefLabel "has sector"@en ;
     schema:rangeIncludes dpv:Sector .
 
-dpv:hasSeverity a rdf:Property ;
+dpv:hasSeverity a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Severity ;
     dct:contributor "Harshvardhan J. Pandit, Georg P Krog, Paul Ryan, Julian Flake"@en ;
     dct:created "2022-07-20"^^xsd:date ;
@@ -5916,7 +6060,8 @@ dpv:hasSeverity a rdf:Property ;
     skos:prefLabel "has severity"@en ;
     schema:rangeIncludes dpv:Severity .
 
-dpv:hasStorageCondition a rdf:Property ;
+dpv:hasStorageCondition a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:StorageCondition ;
     dct:contributor "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar"@en ;
     dct:created "2022-08-13"^^xsd:date ;
@@ -5926,34 +6071,22 @@ dpv:hasStorageCondition a rdf:Property ;
     skos:prefLabel "has storage condition"@en ;
     schema:rangeIncludes dpv:StorageCondition .
 
-dpv:hasTechnicalMeasure a rdf:Property ;
-    dcam:rangeIncludes dpv:TechnicalMeasure ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-02-09"^^xsd:date ;
-    rdfs:subPropertyOf dpv:hasTechnicalOrganisationalMeasure ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Indicates use or applicability of Technical measure"@en ;
-    skos:prefLabel "has technical measure"@en ;
-    schema:rangeIncludes dpv:TechnicalMeasure .
-
-dpv:hasThirdCountry a rdf:Property ;
-    dcam:rangeIncludes dpv:ThirdCountry ;
-    dct:contributor "Harshvardhan J. Pandit, Georg P Krog"@en ;
-    dct:created "2022-02-09"^^xsd:date ;
-    rdfs:subPropertyOf dpv:hasCountry ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Indicates applicability or relevance of a 'third country'"@en ;
-    skos:prefLabel "has third country"@en ;
-    schema:rangeIncludes dpv:ThirdCountry .
-
-dpv:isAfter a rdf:Property ;
+dpv:isAfter a rdf:Property,
+        skos:Concept ;
+    dcam:domainIncludes dpv:RightExerciseActivity ;
+    dcam:rangeIncludes dpv:RightExerciseActivity ;
     dct:contributor "Georg P. Krog, Harshvardhan J. Pandit, Julian Flake"@en ;
     dct:created "2022-03-02"^^xsd:date ;
     sw:term_status "accepted"@en ;
-    skos:definition "Indicates the specified concepts is 'after' this concept in some context"@en ;
-    skos:prefLabel "is after"@en .
+    skos:definition "Indicates the specified concepts is 'after' this concept in some context"@en,
+        "Specifying a RightExerciseActivity occurs before another RightExerciseActivity"@en ;
+    skos:prefLabel "dpv:isAfter"@en,
+        "is after"@en ;
+    schema:domainIncludes dpv:RightExerciseActivity ;
+    schema:rangeIncludes dpv:RightExerciseActivity .
 
-dpv:isAuthorityFor a rdf:Property ;
+dpv:isAuthorityFor a rdf:Property,
+        skos:Concept ;
     dcam:domainIncludes dpv:Authority ;
     dct:contributor "Harshvardhan J. Pandit, Georg P Krog"@en ;
     dct:created "2022-01-19"^^xsd:date ;
@@ -5962,14 +6095,22 @@ dpv:isAuthorityFor a rdf:Property ;
     skos:prefLabel "is authority for"@en ;
     schema:domainIncludes dpv:Authority .
 
-dpv:isBefore a rdf:Property ;
+dpv:isBefore a rdf:Property,
+        skos:Concept ;
+    dcam:domainIncludes dpv:RightExerciseActivity ;
+    dcam:rangeIncludes dpv:RightExerciseActivity ;
     dct:contributor "Georg P. Krog, Harshvardhan J. Pandit, Julian Flake"@en ;
     dct:created "2022-03-02"^^xsd:date ;
     sw:term_status "accepted"@en ;
-    skos:definition "Indicates the specified concepts is 'before' this concept in some context"@en ;
-    skos:prefLabel "is before"@en .
+    skos:definition "Indicates the specified concepts is 'before' this concept in some context"@en,
+        "Specifying a RightExerciseActivity occurs before another RightExerciseActivity"@en ;
+    skos:prefLabel "dpv:isBefore"@en,
+        "is before"@en ;
+    schema:domainIncludes dpv:RightExerciseActivity ;
+    schema:rangeIncludes dpv:RightExerciseActivity .
 
-dpv:isExercisedAt a rdf:Property ;
+dpv:isExercisedAt a rdf:Property,
+        skos:Concept ;
     dcam:domainIncludes dpv:ActiveRight ;
     dcam:rangeIncludes dpv:RightExerciseNotice ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -5980,18 +6121,24 @@ dpv:isExercisedAt a rdf:Property ;
     schema:domainIncludes dpv:ActiveRight ;
     schema:rangeIncludes dpv:RightExerciseNotice .
 
-dpv:isImplementedByEntity a rdf:Property ;
+dpv:isImplementedByEntity a rdf:Property,
+        skos:Concept ;
+    dcam:domainIncludes dpv:RightExerciseActivity ;
     dcam:rangeIncludes dpv:Entity ;
     dct:contributor "Axel Polleres, Harshvardhan J. Pandit, Beatriz Esteves, Paul Ryan, Julian Flake"@en ;
     dct:created "2019-05-07"^^xsd:date ;
     dct:modified "2022-01-26"^^xsd:date ;
     sw:term_status "changed"@en ;
-    skos:definition "Indicates implementation details such as entities or agents"@en ;
+    skos:definition "Indicates implementation details such as entities or agents"@en,
+        "Indicates the Entity that implements or performs a Right Exercise Activity"@en ;
     skos:note "The use of 'entity' is inclusive of entities (e.g. Data Processor) as well as 'agent' (e.g. DPO). For indicating technological implementation, the property isImplementedByTechnology should be used."@en ;
-    skos:prefLabel "is implemented by entity"@en ;
+    skos:prefLabel "dpv:isImplementedByEntity"@en,
+        "is implemented by entity"@en ;
+    schema:domainIncludes dpv:RightExerciseActivity ;
     schema:rangeIncludes dpv:Entity .
 
-dpv:isImplementedUsingTechnology a rdf:Property ;
+dpv:isImplementedUsingTechnology a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Technology ;
     dct:contributor "Beatriz Esteves, Harshvardhan J. Pandit, Paul Ryan, Julian Flake"@en ;
     dct:created "2022-01-26"^^xsd:date ;
@@ -6002,14 +6149,16 @@ dpv:isImplementedUsingTechnology a rdf:Property ;
     skos:prefLabel "is implemented using technology"@en ;
     schema:rangeIncludes dpv:Technology .
 
-dpv:isIndicatedAtTime a rdf:Property ;
+dpv:isIndicatedAtTime a rdf:Property,
+        skos:Concept ;
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake"@en ;
     dct:created "2022-06-21"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifies the temporal information for when the entity has indicated the specific context"@en ;
     skos:prefLabel "is indicated at time"@en .
 
-dpv:isIndicatedBy a rdf:Property ;
+dpv:isIndicatedBy a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Entity ;
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake"@en ;
     dct:created "2022-06-21"^^xsd:date ;
@@ -6018,19 +6167,8 @@ dpv:isIndicatedBy a rdf:Property ;
     skos:prefLabel "is indicated by"@en ;
     schema:rangeIncludes dpv:Entity .
 
-dpv:isMitigatedByMeasure a rdf:Property ;
-    dcam:domainIncludes dpv:Risk ;
-    dcam:rangeIncludes dpv:RiskMitigationMeasure ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-02-09"^^xsd:date ;
-    rdfs:subPropertyOf dpv:hasTechnicalOrganisationalMeasure ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Indicate a risk is mitigated by specified measure"@en ;
-    skos:prefLabel "is mitigated by measure"@en ;
-    schema:domainIncludes dpv:Risk ;
-    schema:rangeIncludes dpv:RiskMitigationMeasure .
-
-dpv:isPolicyFor a rdf:Property ;
+dpv:isPolicyFor a rdf:Property,
+        skos:Concept ;
     dcam:domainIncludes dpv:Policy ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-01-26"^^xsd:date ;
@@ -6039,19 +6177,8 @@ dpv:isPolicyFor a rdf:Property ;
     skos:prefLabel "is policy for"@en ;
     schema:domainIncludes dpv:Policy .
 
-dpv:isRepresentativeFor a rdf:Property ;
-    dcam:domainIncludes dpv:Representative ;
-    dcam:rangeIncludes dpv:Entity ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-11-09"^^xsd:date ;
-    rdfs:subPropertyOf dpv:hasEntity ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Indicates the entity is a representative for specified entity"@en ;
-    skos:prefLabel "is representative for"@en ;
-    schema:domainIncludes dpv:Representative ;
-    schema:rangeIncludes dpv:Entity .
-
-dpv:isResidualRiskOf a rdf:Property ;
+dpv:isResidualRiskOf a rdf:Property,
+        skos:Concept ;
     dcam:domainIncludes dpv:Risk ;
     dcam:rangeIncludes dpv:Risk ;
     dct:contributor "Harshvardhan J. Pandit, Georg P Krog, Paul Ryan, Julian Flake"@en ;
@@ -6062,7 +6189,8 @@ dpv:isResidualRiskOf a rdf:Property ;
     schema:domainIncludes dpv:Risk ;
     schema:rangeIncludes dpv:Risk .
 
-dpv:mitigatesRisk a rdf:Property ;
+dpv:mitigatesRisk a rdf:Property,
+        skos:Concept ;
     dcam:domainIncludes dpv:RiskMitigationMeasure ;
     dcam:rangeIncludes dpv:Risk ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -6073,56 +6201,428 @@ dpv:mitigatesRisk a rdf:Property ;
     schema:domainIncludes dpv:RiskMitigationMeasure ;
     schema:rangeIncludes dpv:Risk .
 
-dpv:hasComplianceStatus a rdf:Property ;
-    dcam:rangeIncludes dpv:ComplianceStatus ;
+dpv:hasActivityStatus a rdf:Property,
+        skos:Concept ;
+    dcam:rangeIncludes dpv:ActivityStatus ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-05-18"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasStatus ;
     sw:term_status "accepted"@en ;
-    skos:definition "Indicates the status of compliance of specified concept"@en ;
-    skos:prefLabel "has compliance status"@en ;
-    schema:rangeIncludes dpv:ComplianceStatus .
+    skos:broader dpv:hasStatus ;
+    skos:definition "Indicates the status of activity of specified concept"@en ;
+    skos:prefLabel "has activity status"@en ;
+    schema:rangeIncludes dpv:ActivityStatus .
 
-dpv:hasConsequence a rdf:Property ;
+dpv:hasAuditStatus a rdf:Property,
+        skos:Concept ;
+    dcam:rangeIncludes dpv:AuditStatus ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-06-22"^^xsd:date ;
+    rdfs:subPropertyOf dpv:hasStatus ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:hasStatus ;
+    skos:definition "Indicates the status of audit associated with specified concept"@en ;
+    skos:prefLabel "has audit status"@en ;
+    schema:rangeIncludes dpv:AuditStatus .
+
+dpv:hasDataExporter a rdf:Property,
+        skos:Concept ;
+    dcam:rangeIncludes dpv:DataExporter ;
+    dct:contributor "Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit"@en ;
+    dct:created "2022-02-09"^^xsd:date ;
+    rdfs:subPropertyOf dpv:hasEntity ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:hasEntity ;
+    skos:definition "Indiciates inclusion or applicability of a LegalEntity in the role of Data Exporter"@en ;
+    skos:prefLabel "has data exporter"@en ;
+    schema:rangeIncludes dpv:DataExporter .
+
+dpv:hasDataImporter a rdf:Property,
+        skos:Concept ;
+    dcam:rangeIncludes dpv:DataImporter ;
+    dct:contributor "Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit"@en ;
+    dct:created "2022-02-09"^^xsd:date ;
+    rdfs:subPropertyOf dpv:hasRecipient ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:hasRecipient ;
+    skos:definition "Indiciates inclusion or applicability of a LegalEntity in the role of Data Importer"@en ;
+    skos:prefLabel "has data importer"@en ;
+    schema:rangeIncludes dpv:DataImporter .
+
+dpv:hasDataProcessor a rdf:Property,
+        skos:Concept ;
+    dcam:rangeIncludes dpv:DataProcessor ;
+    dct:contributor "Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit"@en ;
+    dct:created "2022-02-09"^^xsd:date ;
+    rdfs:subPropertyOf dpv:hasRecipient ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:hasRecipient ;
+    skos:definition "Indiciates inclusion or applicability of a Data Processor"@en ;
+    skos:prefLabel "has data processor"@en ;
+    schema:rangeIncludes dpv:DataProcessor .
+
+dpv:hasDataProtectionOfficer a rdf:Property,
+        skos:Concept ;
+    dcam:rangeIncludes dpv:DataProtectionOfficer ;
+    dct:contributor "Paul Ryan, Rob Brennan"@en ;
+    dct:created "2022-03-02"^^xsd:date ;
+    rdfs:subPropertyOf dpv:hasRepresentative ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:hasRepresentative ;
+    skos:definition "Specifices an associated data protection officer"@en ;
+    skos:prefLabel "has data protection officer"@en ;
+    schema:rangeIncludes dpv:DataProtectionOfficer .
+
+dpv:hasDataSubject a rdf:Property,
+        skos:Concept ;
+    dcam:rangeIncludes dpv:DataSubject ;
+    dct:contributor "Axel Polleres, Javier Fernández, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger"@en ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:modified "2020-11-04"^^xsd:date ;
+    rdfs:subPropertyOf dpv:hasEntity ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:hasEntity ;
+    skos:definition "Indicates association with Data Subject"@en ;
+    skos:prefLabel "has data subject"@en ;
+    schema:rangeIncludes dpv:DataSubject .
+
+dpv:hasDataSubjectScale a rdf:Property,
+        skos:Concept ;
+    dcam:rangeIncludes dpv:DataSubjectScale ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-06-22"^^xsd:date ;
+    rdfs:subPropertyOf dpv:hasScale ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:hasScale ;
+    skos:definition "Indicates the scale of data subjects"@en ;
+    skos:prefLabel "has data subject scale"@en ;
+    schema:rangeIncludes dpv:DataSubjectScale .
+
+dpv:hasDataVolume a rdf:Property,
+        skos:Concept ;
+    dcam:rangeIncludes dpv:DataVolume ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-06-22"^^xsd:date ;
+    rdfs:subPropertyOf dpv:hasScale ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:hasScale ;
+    skos:definition "Indicates the volume of data"@en ;
+    skos:prefLabel "has data volume"@en ;
+    schema:rangeIncludes dpv:DataVolume .
+
+dpv:hasGeographicCoverage a rdf:Property,
+        skos:Concept ;
+    dcam:rangeIncludes dpv:GeographicCoverage ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-06-22"^^xsd:date ;
+    rdfs:subPropertyOf dpv:hasScale ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:hasScale ;
+    skos:definition "Indicate the geographic coverage (of specified context)"@en ;
+    skos:prefLabel "has geographic coverage"@en ;
+    schema:rangeIncludes dpv:GeographicCoverage .
+
+dpv:hasImpact a rdf:Property,
+        skos:Concept ;
+    dcam:rangeIncludes dpv:Impact ;
+    dct:contributor "Harshvardhan J. Pandit, Julian Flake, Georg P Krog, Fajar Ekaputra, Beatriz Esteves"@en ;
+    dct:created "2022-05-18"^^xsd:date ;
+    rdfs:subPropertyOf dpv:hasConsequence ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:hasConsequence ;
+    skos:definition "Indicates impact(s) possible or arising as consequences from specified concept"@en ;
+    skos:prefLabel "has impact"@en ;
+    schema:rangeIncludes dpv:Impact .
+
+dpv:hasImpactOn a rdf:Property,
+        skos:Concept ;
+    dcam:domainIncludes dpv:Impact ;
+    dct:contributor "Harshvardhan J. Pandit, Julian Flake, Georg P Krog, Fajar Ekaputra, Beatriz Esteves"@en ;
+    dct:created "2022-05-18"^^xsd:date ;
+    rdfs:subPropertyOf dpv:hasConsequenceOn ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:hasConsequenceOn ;
+    skos:definition "Indicates the thing (e.g. plan, process, or entity) affected by an impact"@en ;
+    skos:prefLabel "has impact on"@en ;
+    schema:domainIncludes dpv:Impact .
+
+dpv:hasJointDataControllers a rdf:Property,
+        skos:Concept ;
+    dcam:rangeIncludes dpv:JointDataControllers ;
+    dct:contributor "Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit"@en ;
+    dct:created "2022-02-09"^^xsd:date ;
+    rdfs:subPropertyOf dpv:hasDataController ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:hasDataController ;
+    skos:definition "Indicates inclusion or applicability of a Joint Data Controller"@en ;
+    skos:prefLabel "has joint data controllers"@en ;
+    schema:rangeIncludes dpv:JointDataControllers .
+
+dpv:hasLawfulness a rdf:Property,
+        skos:Concept ;
+    dcam:rangeIncludes dpv:Lawfulness ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-10-22"^^xsd:date ;
+    rdfs:subPropertyOf dpv:hasComplianceStatus ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:hasComplianceStatus ;
+    skos:definition "Indicates the status of being lawful or legally compliant"@en ;
+    skos:prefLabel "has lawfulness"@en ;
+    schema:rangeIncludes dpv:Lawfulness .
+
+dpv:hasNotice a rdf:Property,
+        skos:Concept ;
+    dcam:rangeIncludes dpv:Notice ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake"@en ;
+    dct:created "2022-06-22"^^xsd:date ;
+    rdfs:subPropertyOf dpv:hasOrganisationalMeasure ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:hasOrganisationalMeasure ;
+    skos:definition "Indicates the use or applicability of a Notice for the specified context"@en ;
+    skos:prefLabel "has notice"@en ;
+    schema:rangeIncludes dpv:Notice .
+
+dpv:hasObligation a rdf:Property,
+        skos:Concept ;
+    dcam:domainIncludes dpv:Context ;
+    dcam:rangeIncludes dpv:Obligation ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog, Beatriz Esteves, Paul Ryan"@en ;
+    dct:created "2022-10-19"^^xsd:date ;
+    rdfs:subPropertyOf dpv:hasRule ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:hasRule ;
+    skos:definition "Specifying applicability or inclusion of an obligation rule within specified context"@en ;
+    skos:prefLabel "has obligation"@en ;
+    schema:domainIncludes dpv:Context ;
+    schema:rangeIncludes dpv:Obligation .
+
+dpv:hasPermission a rdf:Property,
+        skos:Concept ;
+    dcam:domainIncludes dpv:Context ;
+    dcam:rangeIncludes dpv:Permission ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog, Beatriz Esteves, Paul Ryan"@en ;
+    dct:created "2022-10-19"^^xsd:date ;
+    rdfs:subPropertyOf dpv:hasRule ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:hasRule ;
+    skos:definition "Specifying applicability or inclusion of a permission rule within specified context"@en ;
+    skos:prefLabel "has permission"@en ;
+    schema:domainIncludes dpv:Context ;
+    schema:rangeIncludes dpv:Permission .
+
+dpv:hasPersonalData a rdf:Property,
+        skos:Concept ;
+    dcam:rangeIncludes dpv:PersonalData ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-01-19"^^xsd:date ;
+    rdfs:subPropertyOf dpv:hasData ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:hasData ;
+    skos:definition "Indicates association with Personal Data"@en ;
+    skos:prefLabel "has personal data"@en ;
+    schema:rangeIncludes dpv:PersonalData .
+
+dpv:hasPolicy a rdf:Property,
+        skos:Concept ;
+    dcam:rangeIncludes dpv:Policy ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-01-26"^^xsd:date ;
+    rdfs:subPropertyOf dpv:hasTechnicalOrganisationalMeasure ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:hasTechnicalOrganisationalMeasure ;
+    skos:definition "Indicates policy applicable or used"@en ;
+    skos:prefLabel "has policy"@en ;
+    schema:rangeIncludes dpv:Policy .
+
+dpv:hasProhibition a rdf:Property,
+        skos:Concept ;
+    dcam:domainIncludes dpv:Context ;
+    dcam:rangeIncludes dpv:Prohibition ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog, Beatriz Esteves, Paul Ryan"@en ;
+    dct:created "2022-10-19"^^xsd:date ;
+    rdfs:subPropertyOf dpv:hasRule ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:hasRule ;
+    skos:definition "Specifying applicability or inclusion of a prohibition rule within specified context"@en ;
+    skos:prefLabel "has prohibition"@en ;
+    schema:domainIncludes dpv:Context ;
+    schema:rangeIncludes dpv:Prohibition .
+
+dpv:hasRecipientDataController a rdf:Property,
+        skos:Concept ;
+    dcam:rangeIncludes dpv:DataController ;
+    dct:contributor "Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit"@en ;
+    dct:created "2022-02-09"^^xsd:date ;
+    rdfs:subPropertyOf dpv:hasRecipient ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:hasRecipient ;
+    skos:definition "Indiciates inclusion or applicability of a Data Controller as a Recipient of persona data"@en ;
+    skos:prefLabel "has recipient data controller"@en ;
+    schema:rangeIncludes dpv:DataController .
+
+dpv:hasRecipientThirdParty a rdf:Property,
+        skos:Concept ;
+    dcam:rangeIncludes dpv:ThirdParty ;
+    dct:contributor "Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit"@en ;
+    dct:created "2022-02-09"^^xsd:date ;
+    rdfs:subPropertyOf dpv:hasRecipient ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:hasRecipient ;
+    skos:definition "Indiciates inclusion or applicability of a Third Party as a Recipient of persona data"@en ;
+    skos:prefLabel "has recipient third party"@en ;
+    schema:rangeIncludes dpv:ThirdParty .
+
+dpv:hasRelationWithDataSubject a rdf:Property,
+        skos:Concept ;
+    dcam:domainIncludes dpv:Entity ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake"@en ;
+    dct:created "2022-06-21"^^xsd:date ;
+    rdfs:subPropertyOf dpv:hasEntity ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:hasEntity ;
+    skos:definition "Indicates the relation between specified Entity and Data Subject"@en ;
+    skos:prefLabel "has relation with data subject"@en ;
+    schema:domainIncludes dpv:Entity .
+
+dpv:hasResponsibleEntity a rdf:Property,
+        skos:Concept ;
+    dcam:rangeIncludes dpv:Entity ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-03-02"^^xsd:date ;
+    rdfs:subPropertyOf dpv:hasEntity ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:hasEntity ;
+    skos:definition "Specifies the indicated entity is responsible within some context"@en ;
+    skos:prefLabel "has responsible entity"@en ;
+    schema:rangeIncludes dpv:Entity .
+
+dpv:hasTechnicalMeasure a rdf:Property,
+        skos:Concept ;
+    dcam:rangeIncludes dpv:TechnicalMeasure ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-02-09"^^xsd:date ;
+    rdfs:subPropertyOf dpv:hasTechnicalOrganisationalMeasure ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:hasTechnicalOrganisationalMeasure ;
+    skos:definition "Indicates use or applicability of Technical measure"@en ;
+    skos:prefLabel "has technical measure"@en ;
+    schema:rangeIncludes dpv:TechnicalMeasure .
+
+dpv:hasThirdCountry a rdf:Property,
+        skos:Concept ;
+    dcam:rangeIncludes dpv:ThirdCountry ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog"@en ;
+    dct:created "2022-02-09"^^xsd:date ;
+    rdfs:subPropertyOf dpv:hasCountry ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:hasCountry ;
+    skos:definition "Indicates applicability or relevance of a 'third country'"@en ;
+    skos:prefLabel "has third country"@en ;
+    schema:rangeIncludes dpv:ThirdCountry .
+
+dpv:isMitigatedByMeasure a rdf:Property,
+        skos:Concept ;
+    dcam:domainIncludes dpv:Risk ;
+    dcam:rangeIncludes dpv:RiskMitigationMeasure ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-02-09"^^xsd:date ;
+    rdfs:subPropertyOf dpv:hasTechnicalOrganisationalMeasure ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:hasTechnicalOrganisationalMeasure ;
+    skos:definition "Indicate a risk is mitigated by specified measure"@en ;
+    skos:prefLabel "is mitigated by measure"@en ;
+    schema:domainIncludes dpv:Risk ;
+    schema:rangeIncludes dpv:RiskMitigationMeasure .
+
+dpv:isRepresentativeFor a rdf:Property,
+        skos:Concept ;
+    dcam:domainIncludes dpv:Representative ;
+    dcam:rangeIncludes dpv:Entity ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-11-09"^^xsd:date ;
+    rdfs:subPropertyOf dpv:hasEntity ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:hasEntity ;
+    skos:definition "Indicates the entity is a representative for specified entity"@en ;
+    skos:prefLabel "is representative for"@en ;
+    schema:domainIncludes dpv:Representative ;
+    schema:rangeIncludes dpv:Entity .
+
+dpv:hasConsequence a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Consequence ;
     dct:contributor "Harshvardhan J. Pandit, Julian Flake, Georg P Krog, Fajar Ekaputra, Beatriz Esteves"@en ;
     dct:created "2020-11-04"^^xsd:date ;
     dct:modified "2021-09-21"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates consenquence(s) possible or arising from specified concept"@en ;
+    skos:narrower dpv:hasImpact ;
     skos:note "Removed plural suffix for consistency"@en ;
     skos:prefLabel "has consequence"@en ;
     schema:rangeIncludes dpv:Consequence .
 
-dpv:hasConsequenceOn a rdf:Property ;
+dpv:hasConsequenceOn a rdf:Property,
+        skos:Concept ;
     dcam:domainIncludes dpv:Consequence ;
     dct:contributor "Harshvardhan J. Pandit, Georg P Krog"@en ;
     dct:created "2022-11-24"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the thing (e.g. plan, process, or entity) affected by a consequence"@en ;
+    skos:narrower dpv:hasImpactOn ;
     skos:prefLabel "has consequence on"@en ;
     schema:domainIncludes dpv:Consequence .
 
-dpv:hasCountry a rdf:Property ;
-    dcam:rangeIncludes dpv:Country ;
-    dct:contributor "Harshvardhan J. Pandit, Georg P Krog"@en ;
-    dct:created "2022-01-19"^^xsd:date ;
-    rdfs:subPropertyOf dpv:hasLocation ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Indicates applicability of specified country"@en ;
-    skos:prefLabel "has country"@en ;
-    schema:rangeIncludes dpv:Country .
-
-dpv:hasData a rdf:Property ;
+dpv:hasData a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Data ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-08-18"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates associated with Data (may or may not be personal)"@en ;
+    skos:narrower dpv:hasPersonalData ;
     skos:prefLabel "has data"@en ;
     schema:rangeIncludes dpv:Data .
 
-dpv:hasDataController a rdf:Property ;
+dpv:hasLocation a rdf:Property,
+        skos:Concept ;
+    dcam:rangeIncludes dpv:Location ;
+    dct:contributor "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar"@en ;
+    dct:created "2019-04-05"^^xsd:date ;
+    dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/)"@en ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Indicates information about location"@en ;
+    skos:narrower dpv:hasCountry ;
+    skos:prefLabel "has location"@en ;
+    schema:rangeIncludes dpv:Location .
+
+dpv:hasComplianceStatus a rdf:Property,
+        skos:Concept ;
+    dcam:rangeIncludes dpv:ComplianceStatus ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-05-18"^^xsd:date ;
+    rdfs:subPropertyOf dpv:hasStatus ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:hasStatus ;
+    skos:definition "Indicates the status of compliance of specified concept"@en ;
+    skos:narrower dpv:hasLawfulness ;
+    skos:prefLabel "has compliance status"@en ;
+    schema:rangeIncludes dpv:ComplianceStatus .
+
+dpv:hasCountry a rdf:Property,
+        skos:Concept ;
+    dcam:rangeIncludes dpv:Country ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog"@en ;
+    dct:created "2022-01-19"^^xsd:date ;
+    rdfs:subPropertyOf dpv:hasLocation ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:hasLocation ;
+    skos:definition "Indicates applicability of specified country"@en ;
+    skos:narrower dpv:hasThirdCountry ;
+    skos:prefLabel "has country"@en ;
+    schema:rangeIncludes dpv:Country .
+
+dpv:hasDataController a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:DataController,
         dpv:LegalEntity ;
     dct:contributor "Axel Polleres, Javier Fernández, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger"@en ;
@@ -6130,73 +6630,104 @@ dpv:hasDataController a rdf:Property ;
     dct:modified "2020-11-04"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:hasEntity ;
     skos:definition "Indicates association with Data Controller"@en ;
+    skos:narrower dpv:hasJointDataControllers ;
     skos:prefLabel "has data controller"@en ;
     schema:rangeIncludes dpv:DataController,
         dpv:LegalEntity .
 
-dpv:hasLocation a rdf:Property ;
-    dcam:rangeIncludes dpv:Location ;
-    dct:contributor "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar"@en ;
-    dct:created "2019-04-05"^^xsd:date ;
-    dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/)"@en ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Indicates information about location"@en ;
-    skos:prefLabel "has location"@en ;
-    schema:rangeIncludes dpv:Location .
-
-dpv:hasOrganisationalMeasure a rdf:Property ;
+dpv:hasOrganisationalMeasure a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:OrganisationalMeasure ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-02-09"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasTechnicalOrganisationalMeasure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:hasTechnicalOrganisationalMeasure ;
     skos:definition "Indicates use or applicability of Organisational measure"@en ;
+    skos:narrower dpv:hasNotice ;
     skos:prefLabel "has organisational measure"@en ;
     schema:rangeIncludes dpv:OrganisationalMeasure .
 
-dpv:hasRepresentative a rdf:Property ;
+dpv:hasRepresentative a rdf:Property,
+        skos:Concept ;
     dcam:domainIncludes dpv:Entity ;
     dcam:rangeIncludes dpv:Representative ;
     dct:contributor "Harshvardhan J.Pandit, Georg P Krog, Paul Ryan, Beatriz Esteves"@en ;
     dct:created "2020-11-04"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:hasEntity ;
     skos:definition "Specifies representative of the legal entity"@en ;
+    skos:narrower dpv:hasDataProtectionOfficer ;
     skos:prefLabel "has representative"@en ;
     schema:domainIncludes dpv:Entity ;
     schema:rangeIncludes dpv:Representative .
 
-dpv:hasRule a rdf:Property ;
+dpv:hasRule a rdf:Property,
+        skos:Concept ;
     dcam:domainIncludes dpv:Context ;
     dcam:rangeIncludes dpv:Rule ;
     dct:contributor "Harshvardhan J. Pandit, Georg P Krog, Beatriz Esteves, Paul Ryan"@en ;
     dct:created "2022-10-19"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifying applicability or inclusion of a rule within specified context"@en ;
+    skos:narrower dpv:hasObligation,
+        dpv:hasPermission,
+        dpv:hasProhibition ;
     skos:prefLabel "has rule"@en ;
     schema:domainIncludes dpv:Context ;
     schema:rangeIncludes dpv:Rule .
 
-dpv:hasScale a rdf:Property ;
+dpv:hasScale a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Scale ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the scale of specified concept"@en ;
+    skos:narrower dpv:hasDataSubjectScale,
+        dpv:hasDataVolume,
+        dpv:hasGeographicCoverage ;
     skos:prefLabel "has scale"@en ;
     schema:rangeIncludes dpv:Scale .
 
-dpv:hasStatus a rdf:Property ;
+dpv:hasStatus a rdf:Property,
+        skos:Concept ;
+    dcam:domainIncludes dpv:RightExerciseActivity ;
     dcam:rangeIncludes dpv:Status ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-05-18"^^xsd:date ;
     sw:term_status "accepted"@en ;
-    skos:definition "Indicates the status of specified concept"@en ;
-    skos:prefLabel "has status"@en ;
+    skos:definition "Indicates the status of a Right Exercise Activity"@en,
+        "Indicates the status of specified concept"@en ;
+    skos:narrower dpv:hasActivityStatus,
+        dpv:hasAuditStatus,
+        dpv:hasComplianceStatus ;
+    skos:prefLabel "dpv:hasStatus"@en,
+        "has status"@en ;
+    schema:domainIncludes dpv:RightExerciseActivity ;
     schema:rangeIncludes dpv:Status .
 
-dpv:hasRecipient a rdf:Property ;
+dpv:hasTechnicalOrganisationalMeasure a rdf:Property,
+        skos:Concept ;
+    dcam:rangeIncludes dpv:TechnicalOrganisationalMeasure ;
+    dct:contributor "Axel Polleres, Javier Fernández, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger"@en ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:modified "2020-11-04"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Indicates use or applicability of Technical or Organisational measure"@en ;
+    skos:narrower dpv:hasOrganisationalMeasure,
+        dpv:hasPolicy,
+        dpv:hasTechnicalMeasure,
+        dpv:isMitigatedByMeasure ;
+    skos:prefLabel "has technical and organisational measure"@en ;
+    schema:rangeIncludes dpv:TechnicalOrganisationalMeasure .
+
+dpv:hasRecipient a rdf:Property,
+        skos:Concept ;
+    dcam:domainIncludes dpv:RightExerciseActivity ;
     dcam:rangeIncludes dpv:Recipient ;
     dct:contributor "Axel Polleres, Javier Fernández, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger"@en ;
     dct:created "2019-04-04"^^xsd:date ;
@@ -6204,26 +6735,33 @@ dpv:hasRecipient a rdf:Property ;
     dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/)"@en ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
-    skos:definition "Indicates Recipient of Personal Data"@en ;
-    skos:prefLabel "has recipient"@en ;
+    skos:broader dpv:hasEntity ;
+    skos:definition "Indicates Recipient of Personal Data"@en,
+        "Indicates the Recipient of a Right Exercise Activity"@en ;
+    skos:narrower dpv:hasDataImporter,
+        dpv:hasDataProcessor,
+        dpv:hasRecipientDataController,
+        dpv:hasRecipientThirdParty ;
+    skos:prefLabel "dpv:hasRecipient"@en,
+        "has recipient"@en ;
+    schema:domainIncludes dpv:RightExerciseActivity ;
     schema:rangeIncludes dpv:Recipient .
 
-dpv:hasTechnicalOrganisationalMeasure a rdf:Property ;
-    dcam:rangeIncludes dpv:TechnicalOrganisationalMeasure ;
-    dct:contributor "Axel Polleres, Javier Fernández, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger"@en ;
-    dct:created "2019-04-04"^^xsd:date ;
-    dct:modified "2020-11-04"^^xsd:date ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Indicates use or applicability of Technical or Organisational measure"@en ;
-    skos:prefLabel "has technical and organisational measure"@en ;
-    schema:rangeIncludes dpv:TechnicalOrganisationalMeasure .
-
-dpv:hasEntity a rdf:Property ;
+dpv:hasEntity a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Entity ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-02-09"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates inclusion or applicability of an entity to some concept"@en ;
+    skos:narrower dpv:hasDataController,
+        dpv:hasDataExporter,
+        dpv:hasDataSubject,
+        dpv:hasRecipient,
+        dpv:hasRelationWithDataSubject,
+        dpv:hasRepresentative,
+        dpv:hasResponsibleEntity,
+        dpv:isRepresentativeFor ;
     skos:note "parent property for controller, processor, data subject, authority, etc.?"@en ;
     skos:prefLabel "has entity"@en ;
     schema:rangeIncludes dpv:Entity .

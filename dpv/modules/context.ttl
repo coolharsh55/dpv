@@ -227,7 +227,8 @@ dpv:UntilTimeDuration a rdfs:Class,
     skos:definition "Duration that has a fixed end date e.g. 2022-12-31"@en ;
     skos:prefLabel "Until Time Duration"@en .
 
-dpv:hasContext a rdf:Property ;
+dpv:hasContext a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Context ;
     dct:created "2019-04-05"^^xsd:date ;
     sw:term_status "accepted"@en ;
@@ -235,7 +236,8 @@ dpv:hasContext a rdf:Property ;
     skos:prefLabel "has context"@en ;
     schema:rangeIncludes dpv:Context .
 
-dpv:hasDuration a rdf:Property ;
+dpv:hasDuration a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Duration ;
     dct:contributor "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar"@en ;
     dct:created "2019-04-05"^^xsd:date ;
@@ -245,7 +247,8 @@ dpv:hasDuration a rdf:Property ;
     skos:prefLabel "has duration"@en ;
     schema:rangeIncludes dpv:Duration .
 
-dpv:hasFrequency a rdf:Property ;
+dpv:hasFrequency a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Frequency ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-02-16"^^xsd:date ;
@@ -254,14 +257,16 @@ dpv:hasFrequency a rdf:Property ;
     skos:prefLabel "has frequency"@en ;
     schema:rangeIncludes dpv:Frequency .
 
-dpv:hasIdentifier a rdf:Property ;
+dpv:hasIdentifier a rdf:Property,
+        skos:Concept ;
     dct:contributor "Harshvardhan J.Pandit, Georg P Krog, Paul Ryan, Beatriz Esteves"@en ;
     dct:created "2020-11-25"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates an identifier associated for identification or reference"@en ;
     skos:prefLabel "has identifier"@en .
 
-dpv:hasJustification a rdf:Property ;
+dpv:hasJustification a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Justification ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-06-15"^^xsd:date ;
@@ -270,14 +275,16 @@ dpv:hasJustification a rdf:Property ;
     skos:prefLabel "has justification"@en ;
     schema:rangeIncludes dpv:Justification .
 
-dpv:hasOutcome a rdf:Property ;
+dpv:hasOutcome a rdf:Property,
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-05-18"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates an outcome of specified concept or context"@en ;
     skos:prefLabel "has outcome"@en .
 
-dpv:hasScope a rdf:Property ;
+dpv:hasScope a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Scope ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-06-15"^^xsd:date ;
@@ -286,21 +293,24 @@ dpv:hasScope a rdf:Property ;
     skos:prefLabel "has scope"@en ;
     schema:rangeIncludes dpv:Scope .
 
-dpv:isAfter a rdf:Property ;
+dpv:isAfter a rdf:Property,
+        skos:Concept ;
     dct:contributor "Georg P. Krog, Harshvardhan J. Pandit, Julian Flake"@en ;
     dct:created "2022-03-02"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the specified concepts is 'after' this concept in some context"@en ;
     skos:prefLabel "is after"@en .
 
-dpv:isBefore a rdf:Property ;
+dpv:isBefore a rdf:Property,
+        skos:Concept ;
     dct:contributor "Georg P. Krog, Harshvardhan J. Pandit, Julian Flake"@en ;
     dct:created "2022-03-02"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the specified concepts is 'before' this concept in some context"@en ;
     skos:prefLabel "is before"@en .
 
-dpv:isImplementedByEntity a rdf:Property ;
+dpv:isImplementedByEntity a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Entity ;
     dct:contributor "Axel Polleres, Harshvardhan J. Pandit, Beatriz Esteves, Paul Ryan, Julian Flake"@en ;
     dct:created "2019-05-07"^^xsd:date ;
@@ -311,7 +321,8 @@ dpv:isImplementedByEntity a rdf:Property ;
     skos:prefLabel "is implemented by entity"@en ;
     schema:rangeIncludes dpv:Entity .
 
-dpv:isImplementedUsingTechnology a rdf:Property ;
+dpv:isImplementedUsingTechnology a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Technology ;
     dct:contributor "Beatriz Esteves, Harshvardhan J. Pandit, Paul Ryan, Julian Flake"@en ;
     dct:created "2022-01-26"^^xsd:date ;

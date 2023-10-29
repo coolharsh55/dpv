@@ -106,88 +106,112 @@ dpv:ThirdParty a rdfs:Class,
     skos:definition "A ‘third party’ means a natural or legal person, public authority, agency or body other than the data subject, controller, processor and people who, under the direct authority of the controller or processor, are authorised to process personal data."@en ;
     skos:prefLabel "Third Party"@en .
 
-dpv:hasDataExporter a rdf:Property ;
+dpv:hasDataExporter a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:DataExporter ;
     dct:contributor "Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit"@en ;
     dct:created "2022-02-09"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:hasEntity ;
     skos:definition "Indiciates inclusion or applicability of a LegalEntity in the role of Data Exporter"@en ;
     skos:prefLabel "has data exporter"@en ;
     schema:rangeIncludes dpv:DataExporter .
 
-dpv:hasDataImporter a rdf:Property ;
+dpv:hasDataImporter a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:DataImporter ;
     dct:contributor "Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit"@en ;
     dct:created "2022-02-09"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasRecipient ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:hasRecipient ;
     skos:definition "Indiciates inclusion or applicability of a LegalEntity in the role of Data Importer"@en ;
     skos:prefLabel "has data importer"@en ;
     schema:rangeIncludes dpv:DataImporter .
 
-dpv:hasDataProcessor a rdf:Property ;
+dpv:hasDataProcessor a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:DataProcessor ;
     dct:contributor "Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit"@en ;
     dct:created "2022-02-09"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasRecipient ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:hasRecipient ;
     skos:definition "Indiciates inclusion or applicability of a Data Processor"@en ;
     skos:prefLabel "has data processor"@en ;
     schema:rangeIncludes dpv:DataProcessor .
 
-dpv:hasDataProtectionOfficer a rdf:Property ;
+dpv:hasDataProtectionOfficer a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:DataProtectionOfficer ;
     dct:contributor "Paul Ryan, Rob Brennan"@en ;
     dct:created "2022-03-02"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasRepresentative ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:hasRepresentative ;
     skos:definition "Specifices an associated data protection officer"@en ;
     skos:prefLabel "has data protection officer"@en ;
     schema:rangeIncludes dpv:DataProtectionOfficer .
 
-dpv:hasJointDataControllers a rdf:Property ;
+dpv:hasJointDataControllers a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:JointDataControllers ;
     dct:contributor "Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit"@en ;
     dct:created "2022-02-09"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasDataController ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:hasDataController ;
     skos:definition "Indicates inclusion or applicability of a Joint Data Controller"@en ;
     skos:prefLabel "has joint data controllers"@en ;
     schema:rangeIncludes dpv:JointDataControllers .
 
-dpv:hasRecipientDataController a rdf:Property ;
+dpv:hasRecipientDataController a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:DataController ;
     dct:contributor "Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit"@en ;
     dct:created "2022-02-09"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasRecipient ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:hasRecipient ;
     skos:definition "Indiciates inclusion or applicability of a Data Controller as a Recipient of persona data"@en ;
     skos:prefLabel "has recipient data controller"@en ;
     schema:rangeIncludes dpv:DataController .
 
-dpv:hasRecipientThirdParty a rdf:Property ;
+dpv:hasRecipientThirdParty a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:ThirdParty ;
     dct:contributor "Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit"@en ;
     dct:created "2022-02-09"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasRecipient ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:hasRecipient ;
     skos:definition "Indiciates inclusion or applicability of a Third Party as a Recipient of persona data"@en ;
     skos:prefLabel "has recipient third party"@en ;
     schema:rangeIncludes dpv:ThirdParty .
 
-dpv:hasDataController a rdf:Property ;
+dpv:hasRepresentative skos:narrower dpv:hasDataProtectionOfficer .
+
+dpv:hasDataController a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:DataController ;
     dct:contributor "Axel Polleres, Javier Fernández, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger"@en ;
     dct:created "2019-04-04"^^xsd:date ;
     dct:modified "2020-11-04"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:hasEntity ;
     skos:definition "Indicates association with Data Controller"@en ;
+    skos:narrower dpv:hasJointDataControllers ;
     skos:prefLabel "has data controller"@en ;
     schema:rangeIncludes dpv:DataController .
 
-dpv:hasRecipient a rdf:Property ;
+dpv:hasEntity skos:narrower dpv:hasDataController,
+        dpv:hasDataExporter,
+        dpv:hasRecipient .
+
+dpv:hasRecipient a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Recipient ;
     dct:contributor "Axel Polleres, Javier Fernández, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger"@en ;
     dct:created "2019-04-04"^^xsd:date ;
@@ -195,7 +219,12 @@ dpv:hasRecipient a rdf:Property ;
     dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/)"@en ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:hasEntity ;
     skos:definition "Indicates Recipient of Personal Data"@en ;
+    skos:narrower dpv:hasDataImporter,
+        dpv:hasDataProcessor,
+        dpv:hasRecipientDataController,
+        dpv:hasRecipientThirdParty ;
     skos:prefLabel "has recipient"@en ;
     schema:rangeIncludes dpv:Recipient .
 

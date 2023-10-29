@@ -57,7 +57,8 @@ dpv:SupraNationalAuthority a rdfs:Class,
     skos:definition "An authority tasked with overseeing legal compliance for a supra-national union e.g. EU"@en ;
     skos:prefLabel "Supra-National Authority"@en .
 
-dpv:hasAuthority a rdf:Property ;
+dpv:hasAuthority a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Authority ;
     dct:contributor "Harshvardhan J. Pandit, Georg P Krog"@en ;
     dct:created "2022-01-19"^^xsd:date ;
@@ -66,7 +67,8 @@ dpv:hasAuthority a rdf:Property ;
     skos:prefLabel "has authority"@en ;
     schema:rangeIncludes dpv:Authority .
 
-dpv:isAuthorityFor a rdf:Property ;
+dpv:isAuthorityFor a rdf:Property,
+        skos:Concept ;
     dcam:domainIncludes dpv:Authority ;
     dct:contributor "Harshvardhan J. Pandit, Georg P Krog"@en ;
     dct:created "2022-01-19"^^xsd:date ;

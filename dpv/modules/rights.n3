@@ -1,12 +1,19 @@
 @prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix dpv: <https://w3id.org/dpv#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dcat:Resource a rdfs:Class,
+        skos:Concept ;
+    skos:definition "A dataset, data service, or any other resource associated with Right Exercise - such as for providing a copy of personal data"@en ;
+    skos:prefLabel "dcat:Resource"@en .
 
 dpv:ActiveRight a rdfs:Class,
         skos:Concept,
@@ -95,132 +102,117 @@ dpv:RightNonFulfilmentNotice a rdfs:Class,
     skos:note "This notice is associated with situations where information is provided with the intention of communicating non-fulfilment of a right. For example, to provide justifications on why a right could not be fulfilled or providing information about another entity  who should be approached for exercising this right."@en ;
     skos:prefLabel "Right Non-Fulfilment Notice"@en .
 
-<https://w3id.org/dpv#dcat:Resource> a rdfs:Class,
+dct:accessRights a rdf:Property,
         skos:Concept ;
-    dct:created "2022-11-02"^^xsd:date ;
-    sw:term_status "accepted"@en ;
-    skos:definition "A dataset, data service, or any other resource associated with Right Exercise - such as for providing a copy of personal data"@en ;
-    skos:prefLabel "dcat:Resource"@en .
-
-<https://w3id.org/dpv#dct:accessRights> a rdf:Property ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-11-02"^^xsd:date ;
-    sw:term_status "accepted"@en ;
     skos:definition "Specfiying constraints on access associated with Rights Exercising (e.g. User must log in) or access to provided data (e.g. access via link)"@en ;
     skos:prefLabel "dct:accessRights"@en .
 
-<https://w3id.org/dpv#dct:format> a rdf:Property ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-11-02"^^xsd:date ;
-    sw:term_status "accepted"@en ;
+dct:format a rdf:Property,
+        skos:Concept ;
     skos:definition "Specifying the format of provided information, for example a CSV dataset"@en ;
     skos:prefLabel "dct:format"@en .
 
-<https://w3id.org/dpv#dct:hasPart> a rdf:Property ;
+dct:hasPart a rdf:Property,
+        skos:Concept ;
     dcam:domainIncludes dpv:RightExerciseRecord ;
     dcam:rangeIncludes dpv:RightExerciseActivity ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-11-02"^^xsd:date ;
-    sw:term_status "accepted"@en ;
     skos:definition "Specifying a RightExerciseRecord has RightExerciseActivity as part of its records"@en ;
     skos:prefLabel "dct:hasPart"@en ;
     schema:domainIncludes dpv:RightExerciseRecord ;
     schema:rangeIncludes dpv:RightExerciseActivity .
 
-<https://w3id.org/dpv#dct:isPartOf> a rdf:Property ;
+dct:isPartOf a rdf:Property,
+        skos:Concept ;
     dcam:domainIncludes dpv:RightExerciseActivity ;
     dcam:rangeIncludes dpv:RightExerciseRecord ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-11-02"^^xsd:date ;
-    sw:term_status "accepted"@en ;
     skos:definition "Specifying a RightExerciseActivity is part of a RightExerciseRecord"@en ;
     skos:prefLabel "dct:isPartOf"@en ;
     schema:domainIncludes dpv:RightExerciseActivity ;
     schema:rangeIncludes dpv:RightExerciseRecord .
 
-<https://w3id.org/dpv#dct:valid> a rdf:Property ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-11-02"^^xsd:date ;
-    sw:term_status "accepted"@en ;
+dct:valid a rdf:Property,
+        skos:Concept ;
     skos:definition "Specfiying the temporal validity of an activity associated with Right Exercise. For example, limits on duration for providing or accessing provided information"@en ;
     skos:prefLabel "dct:valid"@en .
 
-<https://w3id.org/dpv#dpv:hasJustification> a rdf:Property ;
+foaf:page a rdf:Property,
+        skos:Concept ;
+    dcam:domainIncludes dpv:RightExerciseActivity ;
+    skos:definition "Indicates a web page or document providing information or functionality associated with a Right Exercise"@en ;
+    skos:prefLabel "foaf:page"@en ;
+    schema:domainIncludes dpv:RightExerciseActivity .
+
+<https://w3id.org/dpv#dcat:Resource> dct:created "2022-11-02"^^xsd:date ;
+    sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv#dct:accessRights> dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-11-02"^^xsd:date ;
+    sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv#dct:format> dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-11-02"^^xsd:date ;
+    sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv#dct:hasPart> dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-11-02"^^xsd:date ;
+    sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv#dct:isPartOf> dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-11-02"^^xsd:date ;
+    sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv#dct:valid> dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-11-02"^^xsd:date ;
+    sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv#dpv:hasJustification> dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-11-02"^^xsd:date ;
+    sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv#dpv:hasRecipient> dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-11-02"^^xsd:date ;
+    sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv#dpv:hasStatus> dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-11-02"^^xsd:date ;
+    sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv#dpv:isAfter> dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-11-02"^^xsd:date ;
+    sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv#dpv:isBefore> dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-11-02"^^xsd:date ;
+    sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv#dpv:isImplementedByEntity> dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-11-02"^^xsd:date ;
+    sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv#foaf:page> dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-11-02"^^xsd:date ;
+    sw:term_status "accepted"@en .
+
+dpv:hasJustification a rdf:Property,
+        skos:Concept ;
     dcam:domainIncludes dpv:RightExerciseActivity ;
     dcam:rangeIncludes dpv:Justification ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-11-02"^^xsd:date ;
-    sw:term_status "accepted"@en ;
     skos:definition "Specifying a justification for non-fulfilment of Right Exercise"@en ;
     skos:prefLabel "dpv:hasJustification"@en ;
     schema:domainIncludes dpv:RightExerciseActivity ;
     schema:rangeIncludes dpv:Justification .
 
-<https://w3id.org/dpv#dpv:hasRecipient> a rdf:Property ;
+dpv:hasRecipient a rdf:Property,
+        skos:Concept ;
     dcam:domainIncludes dpv:RightExerciseActivity ;
     dcam:rangeIncludes dpv:Recipient ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-11-02"^^xsd:date ;
-    sw:term_status "accepted"@en ;
     skos:definition "Indicates the Recipient of a Right Exercise Activity"@en ;
     skos:prefLabel "dpv:hasRecipient"@en ;
     schema:domainIncludes dpv:RightExerciseActivity ;
     schema:rangeIncludes dpv:Recipient .
 
-<https://w3id.org/dpv#dpv:hasStatus> a rdf:Property ;
-    dcam:domainIncludes dpv:RightExerciseActivity ;
-    dcam:rangeIncludes dpv:Status ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-11-02"^^xsd:date ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Indicates the status of a Right Exercise Activity"@en ;
-    skos:prefLabel "dpv:hasStatus"@en ;
-    schema:domainIncludes dpv:RightExerciseActivity ;
-    schema:rangeIncludes dpv:Status .
-
-<https://w3id.org/dpv#dpv:isAfter> a rdf:Property ;
-    dcam:domainIncludes dpv:RightExerciseActivity ;
-    dcam:rangeIncludes dpv:RightExerciseActivity ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-11-02"^^xsd:date ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Specifying a RightExerciseActivity occurs before another RightExerciseActivity"@en ;
-    skos:prefLabel "dpv:isAfter"@en ;
-    schema:domainIncludes dpv:RightExerciseActivity ;
-    schema:rangeIncludes dpv:RightExerciseActivity .
-
-<https://w3id.org/dpv#dpv:isBefore> a rdf:Property ;
-    dcam:domainIncludes dpv:RightExerciseActivity ;
-    dcam:rangeIncludes dpv:RightExerciseActivity ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-11-02"^^xsd:date ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Specifying a RightExerciseActivity occurs before another RightExerciseActivity"@en ;
-    skos:prefLabel "dpv:isBefore"@en ;
-    schema:domainIncludes dpv:RightExerciseActivity ;
-    schema:rangeIncludes dpv:RightExerciseActivity .
-
-<https://w3id.org/dpv#dpv:isImplementedByEntity> a rdf:Property ;
-    dcam:domainIncludes dpv:RightExerciseActivity ;
-    dcam:rangeIncludes dpv:Entity ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-11-02"^^xsd:date ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Indicates the Entity that implements or performs a Right Exercise Activity"@en ;
-    skos:prefLabel "dpv:isImplementedByEntity"@en ;
-    schema:domainIncludes dpv:RightExerciseActivity ;
-    schema:rangeIncludes dpv:Entity .
-
-<https://w3id.org/dpv#foaf:page> a rdf:Property ;
-    dcam:domainIncludes dpv:RightExerciseActivity ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-11-02"^^xsd:date ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Indicates a web page or document providing information or functionality associated with a Right Exercise"@en ;
-    skos:prefLabel "foaf:page"@en ;
-    schema:domainIncludes dpv:RightExerciseActivity .
-
-dpv:hasRight a rdf:Property ;
+dpv:hasRight a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Right ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2020-11-18"^^xsd:date ;
@@ -229,7 +221,35 @@ dpv:hasRight a rdf:Property ;
     skos:prefLabel "has right"@en ;
     schema:rangeIncludes dpv:Right .
 
-dpv:isExercisedAt a rdf:Property ;
+dpv:hasStatus a rdf:Property,
+        skos:Concept ;
+    dcam:domainIncludes dpv:RightExerciseActivity ;
+    dcam:rangeIncludes dpv:Status ;
+    skos:definition "Indicates the status of a Right Exercise Activity"@en ;
+    skos:prefLabel "dpv:hasStatus"@en ;
+    schema:domainIncludes dpv:RightExerciseActivity ;
+    schema:rangeIncludes dpv:Status .
+
+dpv:isAfter a rdf:Property,
+        skos:Concept ;
+    dcam:domainIncludes dpv:RightExerciseActivity ;
+    dcam:rangeIncludes dpv:RightExerciseActivity ;
+    skos:definition "Specifying a RightExerciseActivity occurs before another RightExerciseActivity"@en ;
+    skos:prefLabel "dpv:isAfter"@en ;
+    schema:domainIncludes dpv:RightExerciseActivity ;
+    schema:rangeIncludes dpv:RightExerciseActivity .
+
+dpv:isBefore a rdf:Property,
+        skos:Concept ;
+    dcam:domainIncludes dpv:RightExerciseActivity ;
+    dcam:rangeIncludes dpv:RightExerciseActivity ;
+    skos:definition "Specifying a RightExerciseActivity occurs before another RightExerciseActivity"@en ;
+    skos:prefLabel "dpv:isBefore"@en ;
+    schema:domainIncludes dpv:RightExerciseActivity ;
+    schema:rangeIncludes dpv:RightExerciseActivity .
+
+dpv:isExercisedAt a rdf:Property,
+        skos:Concept ;
     dcam:domainIncludes dpv:ActiveRight ;
     dcam:rangeIncludes dpv:RightExerciseNotice ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -239,4 +259,13 @@ dpv:isExercisedAt a rdf:Property ;
     skos:prefLabel "is exercised at"@en ;
     schema:domainIncludes dpv:ActiveRight ;
     schema:rangeIncludes dpv:RightExerciseNotice .
+
+dpv:isImplementedByEntity a rdf:Property,
+        skos:Concept ;
+    dcam:domainIncludes dpv:RightExerciseActivity ;
+    dcam:rangeIncludes dpv:Entity ;
+    skos:definition "Indicates the Entity that implements or performs a Right Exercise Activity"@en ;
+    skos:prefLabel "dpv:isImplementedByEntity"@en ;
+    schema:domainIncludes dpv:RightExerciseActivity ;
+    schema:rangeIncludes dpv:Entity .
 

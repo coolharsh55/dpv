@@ -244,7 +244,8 @@ dpv:WithinVirtualEnvironment a rdfs:Class,
     skos:definition "Location is local and entirely within a virtual environment, such as a shared network directory"@en ;
     skos:prefLabel "Within Virtual Environment"@en .
 
-dpv:hasApplicableLaw a rdf:Property ;
+dpv:hasApplicableLaw a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Law ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-01-19"^^xsd:date ;
@@ -253,7 +254,8 @@ dpv:hasApplicableLaw a rdf:Property ;
     skos:prefLabel "has applicable law"@en ;
     schema:rangeIncludes dpv:Law .
 
-dpv:hasJurisdiction a rdf:Property ;
+dpv:hasJurisdiction a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Location ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-01-19"^^xsd:date ;
@@ -262,33 +264,40 @@ dpv:hasJurisdiction a rdf:Property ;
     skos:prefLabel "has jurisdiction"@en ;
     schema:rangeIncludes dpv:Location .
 
-dpv:hasThirdCountry a rdf:Property ;
+dpv:hasThirdCountry a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:ThirdCountry ;
     dct:contributor "Harshvardhan J. Pandit, Georg P Krog"@en ;
     dct:created "2022-02-09"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasCountry ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:hasCountry ;
     skos:definition "Indicates applicability or relevance of a 'third country'"@en ;
     skos:prefLabel "has third country"@en ;
     schema:rangeIncludes dpv:ThirdCountry .
 
-dpv:hasCountry a rdf:Property ;
-    dcam:rangeIncludes dpv:Country ;
-    dct:contributor "Harshvardhan J. Pandit, Georg P Krog"@en ;
-    dct:created "2022-01-19"^^xsd:date ;
-    rdfs:subPropertyOf dpv:hasLocation ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Indicates applicability of specified country"@en ;
-    skos:prefLabel "has country"@en ;
-    schema:rangeIncludes dpv:Country .
-
-dpv:hasLocation a rdf:Property ;
+dpv:hasLocation a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Location ;
     dct:contributor "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar"@en ;
     dct:created "2019-04-05"^^xsd:date ;
     dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/)"@en ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates information about location"@en ;
+    skos:narrower dpv:hasCountry ;
     skos:prefLabel "has location"@en ;
     schema:rangeIncludes dpv:Location .
+
+dpv:hasCountry a rdf:Property,
+        skos:Concept ;
+    dcam:rangeIncludes dpv:Country ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog"@en ;
+    dct:created "2022-01-19"^^xsd:date ;
+    rdfs:subPropertyOf dpv:hasLocation ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:hasLocation ;
+    skos:definition "Indicates applicability of specified country"@en ;
+    skos:narrower dpv:hasThirdCountry ;
+    skos:prefLabel "has country"@en ;
+    schema:rangeIncludes dpv:Country .
 

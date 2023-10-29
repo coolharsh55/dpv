@@ -365,52 +365,65 @@ dpv:Unlawful a rdfs:Class,
     skos:definition "State of being unlawful or legally non-compliant"@en ;
     skos:prefLabel "Unlawful"@en .
 
-dpv:hasActivityStatus a rdf:Property ;
+dpv:hasActivityStatus a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:ActivityStatus ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-05-18"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasStatus ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:hasStatus ;
     skos:definition "Indicates the status of activity of specified concept"@en ;
     skos:prefLabel "has activity status"@en ;
     schema:rangeIncludes dpv:ActivityStatus .
 
-dpv:hasAuditStatus a rdf:Property ;
+dpv:hasAuditStatus a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:AuditStatus ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-06-22"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasStatus ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:hasStatus ;
     skos:definition "Indicates the status of audit associated with specified concept"@en ;
     skos:prefLabel "has audit status"@en ;
     schema:rangeIncludes dpv:AuditStatus .
 
-dpv:hasLawfulness a rdf:Property ;
+dpv:hasLawfulness a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Lawfulness ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-10-22"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasComplianceStatus ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:hasComplianceStatus ;
     skos:definition "Indicates the status of being lawful or legally compliant"@en ;
     skos:prefLabel "has lawfulness"@en ;
     schema:rangeIncludes dpv:Lawfulness .
 
-dpv:hasComplianceStatus a rdf:Property ;
+dpv:hasComplianceStatus a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:ComplianceStatus ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-05-18"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasStatus ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:hasStatus ;
     skos:definition "Indicates the status of compliance of specified concept"@en ;
+    skos:narrower dpv:hasLawfulness ;
     skos:prefLabel "has compliance status"@en ;
     schema:rangeIncludes dpv:ComplianceStatus .
 
-dpv:hasStatus a rdf:Property ;
+dpv:hasStatus a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Status ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-05-18"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the status of specified concept"@en ;
+    skos:narrower dpv:hasActivityStatus,
+        dpv:hasAuditStatus,
+        dpv:hasComplianceStatus ;
     skos:prefLabel "has status"@en ;
     schema:rangeIncludes dpv:Status .
 

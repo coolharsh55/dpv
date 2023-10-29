@@ -251,24 +251,31 @@ dpv:VulnerableDataSubject a rdfs:Class,
     skos:note "This concept denotes a Data Subject or a group are vulnerable, but not what vulnerability they possess or its context. This information can be provided additionally as comments, or as separate concepts and relations. Proposals for this are welcome."@en ;
     skos:prefLabel "Vulnerable Data Subject"@en .
 
-dpv:hasDataSubject a rdf:Property ;
+dpv:hasDataSubject a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:DataSubject ;
     dct:contributor "Axel Polleres, Javier Fernández, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger"@en ;
     dct:created "2019-04-04"^^xsd:date ;
     dct:modified "2020-11-04"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:hasEntity ;
     skos:definition "Indicates association with Data Subject"@en ;
     skos:prefLabel "has data subject"@en ;
     schema:rangeIncludes dpv:DataSubject .
 
-dpv:hasRelationWithDataSubject a rdf:Property ;
+dpv:hasRelationWithDataSubject a rdf:Property,
+        skos:Concept ;
     dcam:domainIncludes dpv:Entity ;
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake"@en ;
     dct:created "2022-06-21"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:hasEntity ;
     skos:definition "Indicates the relation between specified Entity and Data Subject"@en ;
     skos:prefLabel "has relation with data subject"@en ;
     schema:domainIncludes dpv:Entity .
+
+dpv:hasEntity skos:narrower dpv:hasDataSubject,
+        dpv:hasRelationWithDataSubject .
 

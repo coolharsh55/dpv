@@ -88,6 +88,11 @@ dpv:CompletelyManualProcessing a rdfs:Class,
     skos:note "For example, a human performing some processing operation"@en ;
     skos:prefLabel "Completely Manual Processing"@en .
 
+dpv:DataController a rdfs:Class,
+        skos:Concept ;
+    skos:definition "An Data Controller can be a Data Source, e.g. a Controller inferring data or generating data"@en ;
+    skos:prefLabel "dpv:DataController"@en .
+
 dpv:DataPublishedByDataSubject a rdfs:Class,
         skos:Concept,
         dpv:DataSource ;
@@ -107,6 +112,11 @@ dpv:DataSource a rdfs:Class,
     skos:definition "The source or origin of data"@en ;
     skos:note "Source' is the direct point of data collection; 'origin' would indicate the original/others points of where the data originates from."@en ;
     skos:prefLabel "Data Source"@en .
+
+dpv:DataSubject a rdfs:Class,
+        skos:Concept ;
+    skos:definition "A Data Subject as a Data Source, e.g. when data is collected via a form or observed from their activities"@en ;
+    skos:prefLabel "dpv:DataSubject"@en .
 
 dpv:DecisionMaking a rdfs:Class,
         skos:Concept,
@@ -301,25 +311,19 @@ dpv:SystematicMonitoring a rdfs:Class,
     skos:definition "Processing that involves systematic monitoring of individuals"@en ;
     skos:prefLabel "Systematic Monitoring"@en .
 
-<https://w3id.org/dpv#dpv:DataController> a rdfs:Class,
+dpv:ThirdParty a rdfs:Class,
         skos:Concept ;
-    sw:term_status "accepted"@en ;
-    skos:definition "An Data Controller can be a Data Source, e.g. a Controller inferring data or generating data"@en ;
-    skos:prefLabel "dpv:DataController"@en .
-
-<https://w3id.org/dpv#dpv:DataSubject> a rdfs:Class,
-        skos:Concept ;
-    sw:term_status "accepted"@en ;
-    skos:definition "A Data Subject as a Data Source, e.g. when data is collected via a form or observed from their activities"@en ;
-    skos:prefLabel "dpv:DataSubject"@en .
-
-<https://w3id.org/dpv#dpv:ThirdParty> a rdfs:Class,
-        skos:Concept ;
-    sw:term_status "accepted"@en ;
     skos:definition "A Third Party can be a Data Source, e.g. when data is collected from an entity that is neither the Controller nor the Data Subject"@en ;
     skos:prefLabel "dpv:ThirdParty"@en .
 
-dpv:hasAlgorithmicLogic a rdf:Property ;
+<https://w3id.org/dpv#dpv:DataController> sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv#dpv:DataSubject> sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv#dpv:ThirdParty> sw:term_status "accepted"@en .
+
+dpv:hasAlgorithmicLogic a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:AlgorithmicLogic ;
     dct:contributor "Georg P. Krog, Paul Ryan, Harshvardhan J. Pandit"@en ;
     dct:created "2020-11-04"^^xsd:date ;
@@ -329,7 +333,8 @@ dpv:hasAlgorithmicLogic a rdf:Property ;
     skos:prefLabel "has algorithmic logic"@en ;
     schema:rangeIncludes dpv:AlgorithmicLogic .
 
-dpv:hasDataSource a rdf:Property ;
+dpv:hasDataSource a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:DataSource ;
     dct:contributor "Georg P. Krog, Paul Ryan, Harshvardhan J. Pandit"@en ;
     dct:created "2020-11-04"^^xsd:date ;
@@ -338,7 +343,8 @@ dpv:hasDataSource a rdf:Property ;
     skos:prefLabel "has data source"@en ;
     schema:rangeIncludes dpv:DataSource .
 
-dpv:hasHumanInvolvement a rdf:Property ;
+dpv:hasHumanInvolvement a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:HumanInvolvement ;
     dct:contributor "Georg P. Krog, Paul Ryan, Harshvardhan J. Pandit"@en ;
     dct:created "2020-11-04"^^xsd:date ;
@@ -348,7 +354,8 @@ dpv:hasHumanInvolvement a rdf:Property ;
     skos:prefLabel "has human involvement"@en ;
     schema:rangeIncludes dpv:HumanInvolvement .
 
-dpv:hasProcessingAutomation a rdf:Property ;
+dpv:hasProcessingAutomation a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:AutomationOfProcessing ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-08-13"^^xsd:date ;
@@ -357,7 +364,8 @@ dpv:hasProcessingAutomation a rdf:Property ;
     skos:prefLabel "has processing automation"@en ;
     schema:rangeIncludes dpv:AutomationOfProcessing .
 
-dpv:hasStorageCondition a rdf:Property ;
+dpv:hasStorageCondition a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:StorageCondition ;
     dct:contributor "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar"@en ;
     dct:created "2022-08-13"^^xsd:date ;

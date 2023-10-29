@@ -11,7 +11,10 @@ dpv:AccessControlMethod a rdfs:Class,
     dct:created "2019-04-05"^^xsd:date ;
     rdfs:subClassOf dpv:TechnicalMeasure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:TechnicalMeasure ;
     skos:definition "Methods which restrict access to a place or resource"@en ;
+    skos:narrower dpv:PhysicalAccessControlMethod,
+        dpv:UsageControl ;
     skos:prefLabel "Access Control Method"@en .
 
 dpv:ActivityMonitoring a rdfs:Class,
@@ -21,6 +24,7 @@ dpv:ActivityMonitoring a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:TechnicalMeasure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:TechnicalMeasure ;
     skos:definition "Monitoring of activities including assessing whether they have been successfully initiated and completed"@en ;
     skos:prefLabel "Activity Monitoring"@en .
 
@@ -32,6 +36,7 @@ dpv:Anonymisation a rdfs:Class,
     dct:source "(ISO 29100:2011,https://www.iso.org/standard/45123.html)"@en ;
     rdfs:subClassOf dpv:Deidentification ;
     sw:term_status "modified"@en ;
+    skos:broader dpv:Deidentification ;
     skos:definition "Anonymisation is the process by which data is irreversibly altered in such a way that a data subject can no longer be identified directly or indirectly, either by the entity holding the data alone or in collaboration with other entities and information sources"@en ;
     skos:prefLabel "Anonymisation"@en .
 
@@ -42,6 +47,7 @@ dpv:AsymmetricCryptography a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:CryptographicMethods ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:CryptographicMethods ;
     skos:definition "Use of public-key cryptography or asymmetric cryptography involving a public and private pair of keys"@en ;
     skos:prefLabel "Asymmetric Cryptography"@en .
 
@@ -52,6 +58,7 @@ dpv:AsymmetricEncryption a rdfs:Class,
     dct:source "(ENISA Data Pseudonymisation: Advanced Techniques and Use Cases,https://www.enisa.europa.eu/publications/data-pseudonymisation-advanced-techniques-and-use-cases)"@en ;
     rdfs:subClassOf dpv:Encryption ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Encryption ;
     skos:definition "Use of asymmetric cryptography to encrypt data"@en ;
     skos:prefLabel "Asymmetric Encryption"@en .
 
@@ -62,6 +69,7 @@ dpv:Authentication-ABC a rdfs:Class,
     dct:source "(ENISA Data Protection Engineering,https://www.enisa.europa.eu/publications/data-protection-engineering)"@en ;
     rdfs:subClassOf dpv:CryptographicAuthentication ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:CryptographicAuthentication ;
     skos:definition "Use of Attribute Based Credentials (ABC) to perform and manage authentication"@en ;
     skos:prefLabel "Authentication using ABC"@en .
 
@@ -72,6 +80,7 @@ dpv:Authentication-PABC a rdfs:Class,
     dct:source "(ENISA Data Protection Engineering,https://www.enisa.europa.eu/publications/data-protection-engineering)"@en ;
     rdfs:subClassOf dpv:CryptographicAuthentication ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:CryptographicAuthentication ;
     skos:definition "Use of Privacy-enhacing Attribute Based Credentials (ABC) to perform and manage authentication"@en ;
     skos:prefLabel "Authentication using PABC"@en .
 
@@ -81,7 +90,14 @@ dpv:AuthenticationProtocols a rdfs:Class,
     dct:created "2019-04-05"^^xsd:date ;
     rdfs:subClassOf dpv:TechnicalMeasure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:TechnicalMeasure ;
     skos:definition "Protocols involving validation of identity i.e. authentication of a person or information"@en ;
+    skos:narrower dpv:BiometricAuthentication,
+        dpv:CryptographicAuthentication,
+        dpv:MultiFactorAuthentication,
+        dpv:PasswordAuthentication,
+        dpv:SingleSignOn,
+        dpv:ZeroKnowledgeAuthentication ;
     skos:prefLabel "Authentication Protocols"@en .
 
 dpv:AuthorisationProtocols a rdfs:Class,
@@ -91,6 +107,7 @@ dpv:AuthorisationProtocols a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:TechnicalMeasure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:TechnicalMeasure ;
     skos:definition "Protocols involving authorisation of roles or profiles to determine permission, rights, or privileges"@en ;
     skos:prefLabel "Authorisation Protocols"@en .
 
@@ -101,6 +118,7 @@ dpv:BiometricAuthentication a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:AuthenticationProtocols ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:AuthenticationProtocols ;
     skos:definition "Use of biometric data for authentication"@en ;
     skos:prefLabel "Biometric Authentication"@en .
 
@@ -112,7 +130,13 @@ dpv:CryptographicAuthentication a rdfs:Class,
     rdfs:subClassOf dpv:AuthenticationProtocols,
         dpv:CryptographicMethods ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:AuthenticationProtocols,
+        dpv:CryptographicMethods ;
     skos:definition "Use of cryptography for authentication"@en ;
+    skos:narrower dpv:Authentication-ABC,
+        dpv:Authentication-PABC,
+        dpv:HashMessageAuthenticationCode,
+        dpv:MessageAuthenticationCodes ;
     skos:prefLabel "Cryptographic Authentication"@en .
 
 dpv:CryptographicKeyManagement a rdfs:Class,
@@ -122,6 +146,7 @@ dpv:CryptographicKeyManagement a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:CryptographicMethods ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:CryptographicMethods ;
     skos:definition "Management of cryptographic keys, including their generation, storage, assessment, and safekeeping"@en ;
     skos:prefLabel "Cryptographic Key Management"@en .
 
@@ -132,7 +157,25 @@ dpv:CryptographicMethods a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:TechnicalMeasure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:TechnicalMeasure ;
     skos:definition "Use of cryptographic methods to perform tasks"@en ;
+    skos:narrower dpv:AsymmetricCryptography,
+        dpv:CryptographicAuthentication,
+        dpv:CryptographicKeyManagement,
+        dpv:DifferentialPrivacy,
+        dpv:DigitalSignatures,
+        dpv:HashFunctions,
+        dpv:HomomorphicEncryption,
+        dpv:PostQuantumCryptography,
+        dpv:PrivacyPreservingProtocol,
+        dpv:PrivateInformationRetrieval,
+        dpv:QuantumCryptography,
+        dpv:SecretSharingSchemes,
+        dpv:SecureMultiPartyComputation,
+        dpv:SymmetricCryptography,
+        dpv:TrustedComputing,
+        dpv:TrustedExecutionEnvironments,
+        dpv:ZeroKnowledgeAuthentication ;
     skos:prefLabel "Cryptographic Methods"@en .
 
 dpv:DataBackupProtocols a rdfs:Class,
@@ -141,6 +184,7 @@ dpv:DataBackupProtocols a rdfs:Class,
     dct:created "2022-06-15"^^xsd:date ;
     rdfs:subClassOf dpv:TechnicalMeasure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:TechnicalMeasure ;
     skos:definition "Protocols or plans for backing up of data"@en ;
     skos:prefLabel "Data Backup Protocols"@en .
 
@@ -150,6 +194,7 @@ dpv:DataRedaction a rdfs:Class,
     dct:created "2020-10-01"^^xsd:date ;
     rdfs:subClassOf dpv:DataSanitisationTechnique ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:DataSanitisationTechnique ;
     skos:definition "Removal of sensitive information from a data or document"@en ;
     skos:prefLabel "Data Redaction"@en .
 
@@ -160,7 +205,10 @@ dpv:DataSanitisationTechnique a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:TechnicalMeasure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:TechnicalMeasure ;
     skos:definition "Cleaning or any removal or re-organisation of elements in data based on selective criteria"@en ;
+    skos:narrower dpv:DataRedaction,
+        dpv:Deidentification ;
     skos:prefLabel "Data Sanitisation Technique"@en .
 
 dpv:Deidentification a rdfs:Class,
@@ -171,7 +219,10 @@ dpv:Deidentification a rdfs:Class,
     dct:source "(NISTIR 8053,https://nvlpubs.nist.gov/nistpubs/ir/2015/NIST.IR.8053.pdf)"@en ;
     rdfs:subClassOf dpv:DataSanitisationTechnique ;
     sw:term_status "modified"@en ;
+    skos:broader dpv:DataSanitisationTechnique ;
     skos:definition "Removal of identity or information to reduce identifiability"@en ;
+    skos:narrower dpv:Anonymisation,
+        dpv:Pseudonymisation ;
     skos:prefLabel "De-Identification"@en .
 
 dpv:DeterministicPseudonymisation a rdfs:Class,
@@ -181,6 +232,7 @@ dpv:DeterministicPseudonymisation a rdfs:Class,
     dct:source "(ENISA Data Pseudonymisation: Advanced Techniques and Use Cases,https://www.enisa.europa.eu/publications/data-pseudonymisation-advanced-techniques-and-use-cases)"@en ;
     rdfs:subClassOf dpv:Pseudonymisation ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Pseudonymisation ;
     skos:definition "Pseudonymisation achieved through a deterministic function"@en ;
     skos:prefLabel "Deterministic Pseudonymisation"@en .
 
@@ -191,6 +243,7 @@ dpv:DifferentialPrivacy a rdfs:Class,
     dct:source "(ENISA Data Protection Engineering,https://www.enisa.europa.eu/publications/data-protection-engineering)"@en ;
     rdfs:subClassOf dpv:CryptographicMethods ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:CryptographicMethods ;
     skos:definition "Utilisation of differential privacy where information is shared as patterns or groups to withold individual elements"@en ;
     skos:prefLabel "Differential Privacy"@en .
 
@@ -201,6 +254,7 @@ dpv:DigitalRightsManagement a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:TechnicalMeasure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:TechnicalMeasure ;
     skos:definition "Management of access, use, and other operations associated with digital content"@en ;
     skos:prefLabel "Digital Rights Management"@en .
 
@@ -211,6 +265,7 @@ dpv:DigitalSignatures a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:CryptographicMethods ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:CryptographicMethods ;
     skos:definition "Expression and authentication of identity through digital information containing cryptographic signatures"@en ;
     skos:prefLabel "Digital Signatures"@en .
 
@@ -221,6 +276,7 @@ dpv:DistributedSystemSecurity a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:SecurityMethod ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:SecurityMethod ;
     skos:definition "Security implementations provided using or over a distributed system"@en ;
     skos:prefLabel "Distributed System Security"@en .
 
@@ -231,6 +287,7 @@ dpv:DocumentRandomisedPseudonymisation a rdfs:Class,
     dct:source "(ENISA Data Pseudonymisation: Advanced Techniques and Use Cases,https://www.enisa.europa.eu/publications/data-pseudonymisation-advanced-techniques-and-use-cases)"@en ;
     rdfs:subClassOf dpv:Pseudonymisation ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Pseudonymisation ;
     skos:definition "Use of randomised pseudonymisation where the same elements are assigned different values in the same document or database"@en ;
     skos:prefLabel "Document Randomised Pseudonymisation"@en .
 
@@ -241,6 +298,7 @@ dpv:DocumentSecurity a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:SecurityMethod ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:SecurityMethod ;
     skos:definition "Security measures enacted over documents to protect against tampering or restrict access"@en ;
     skos:prefLabel "Document Security"@en .
 
@@ -250,7 +308,14 @@ dpv:Encryption a rdfs:Class,
     dct:created "2019-04-05"^^xsd:date ;
     rdfs:subClassOf dpv:TechnicalMeasure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:TechnicalMeasure ;
     skos:definition "Technical measures consisting of encryption"@en ;
+    skos:narrower dpv:AsymmetricEncryption,
+        dpv:EncryptionAtRest,
+        dpv:EncryptionInTransfer,
+        dpv:EncryptionInUse,
+        dpv:EndToEndEncryption,
+        dpv:SymmetricEncryption ;
     skos:prefLabel "Encryption"@en .
 
 dpv:EncryptionAtRest a rdfs:Class,
@@ -259,6 +324,7 @@ dpv:EncryptionAtRest a rdfs:Class,
     dct:created "2019-04-05"^^xsd:date ;
     rdfs:subClassOf dpv:Encryption ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Encryption ;
     skos:definition "Encryption of data when being stored (persistent encryption)"@en ;
     skos:prefLabel "Encryption at Rest"@en .
 
@@ -268,6 +334,7 @@ dpv:EncryptionInTransfer a rdfs:Class,
     dct:created "2019-04-05"^^xsd:date ;
     rdfs:subClassOf dpv:Encryption ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Encryption ;
     skos:definition "Encryption of data in transit e.g. when being transferred from one location to another, including sharing"@en ;
     skos:prefLabel "Encryption in Transfer"@en .
 
@@ -277,6 +344,7 @@ dpv:EncryptionInUse a rdfs:Class,
     dct:created "2022-10-22"^^xsd:date ;
     rdfs:subClassOf dpv:Encryption ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Encryption ;
     skos:definition "Encryption of data when it is being used"@en ;
     skos:prefLabel "Encryption in Use"@en .
 
@@ -287,6 +355,7 @@ dpv:EndToEndEncryption a rdfs:Class,
     dct:source "(ENISA Data Protection Engineering,https://www.enisa.europa.eu/publications/data-protection-engineering)"@en ;
     rdfs:subClassOf dpv:Encryption ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Encryption ;
     skos:definition "Encrypted communications where data is encrypted by the sender and decrypted by the intended receiver to prevent access to any third party"@en ;
     skos:prefLabel "End-to-End Encryption (E2EE)"@en .
 
@@ -297,6 +366,7 @@ dpv:FileSystemSecurity a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:SecurityMethod ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:SecurityMethod ;
     skos:definition "Security implemented over a file system"@en ;
     skos:prefLabel "File System Security"@en .
 
@@ -307,6 +377,7 @@ dpv:FullyRandomisedPseudonymisation a rdfs:Class,
     dct:source "(ENISA Data Pseudonymisation: Advanced Techniques and Use Cases,https://www.enisa.europa.eu/publications/data-pseudonymisation-advanced-techniques-and-use-cases)"@en ;
     rdfs:subClassOf dpv:Pseudonymisation ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Pseudonymisation ;
     skos:definition "Use of randomised pseudonymisation where the same elements are assigned different values each time they occur"@en ;
     skos:prefLabel "Fully Randomised Pseudonymisation"@en .
 
@@ -317,6 +388,7 @@ dpv:HardwareSecurityProtocols a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:SecurityMethod ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:SecurityMethod ;
     skos:definition "Security protocols implemented at or within hardware"@en ;
     skos:prefLabel "Hardware Security Protocols"@en .
 
@@ -327,6 +399,7 @@ dpv:HashFunctions a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:CryptographicMethods ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:CryptographicMethods ;
     skos:definition "Use of hash functions to map information or to retrieve a prior categorisation"@en ;
     skos:prefLabel "Hash Functions"@en .
 
@@ -337,6 +410,7 @@ dpv:HashMessageAuthenticationCode a rdfs:Class,
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     rdfs:subClassOf dpv:CryptographicAuthentication ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:CryptographicAuthentication ;
     skos:definition "Use of HMAC where message authentication code (MAC) utilise a cryptographic hash function and a secret cryptographic key"@en ;
     skos:prefLabel "Hash-based Message Authentication Code (HMAC)"@en .
 
@@ -347,6 +421,7 @@ dpv:HomomorphicEncryption a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:CryptographicMethods ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:CryptographicMethods ;
     skos:definition "Use of Homomorphic encryption that permits computations on encrypted data without decrypting it"@en ;
     skos:prefLabel "Homomorphic Encryption"@en .
 
@@ -357,6 +432,7 @@ dpv:InformationFlowControl a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:TechnicalMeasure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:TechnicalMeasure ;
     skos:definition "Use of measures to control information flows"@en ;
     skos:prefLabel "Information Flow Control"@en .
 
@@ -367,6 +443,7 @@ dpv:IntrusionDetectionSystem a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:SecurityMethod ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:SecurityMethod ;
     skos:definition "Use of measures to detect intrusions and other unauthorised attempts to gain access to a system"@en ;
     skos:prefLabel "Intrusion Detection System"@en .
 
@@ -377,6 +454,7 @@ dpv:MessageAuthenticationCodes a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:CryptographicAuthentication ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:CryptographicAuthentication ;
     skos:definition "Use of cryptographic methods to authenticate messages"@en ;
     skos:prefLabel "Message Authentication Codes (MAC)"@en .
 
@@ -387,6 +465,7 @@ dpv:MobilePlatformSecurity a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:SecurityMethod ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:SecurityMethod ;
     skos:definition "Security implemented over a mobile platform"@en ;
     skos:prefLabel "Mobile Platform Security"@en .
 
@@ -398,6 +477,7 @@ dpv:MonotonicCounterPseudonymisation a rdfs:Class,
     dct:source "(ENISA Data Pseudonymisation: Advanced Techniques and Use Cases,https://www.enisa.europa.eu/publications/data-pseudonymisation-advanced-techniques-and-use-cases)"@en ;
     rdfs:subClassOf dpv:Pseudonymisation ;
     sw:term_status "modified"@en ;
+    skos:broader dpv:Pseudonymisation ;
     skos:definition "A simple pseudonymisation method where identifiers are substituted by a number chosen by a monotonic counter"@en ;
     skos:prefLabel "Monotonic Counter Pseudonymisation"@en .
 
@@ -408,6 +488,7 @@ dpv:MultiFactorAuthentication a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:AuthenticationProtocols ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:AuthenticationProtocols ;
     skos:definition "An authentication system that uses two or more methods to authenticate"@en ;
     skos:prefLabel "Multi-Factor Authentication (MFA)"@en .
 
@@ -418,6 +499,7 @@ dpv:NetworkProxyRouting a rdfs:Class,
     dct:source "(ENISA Data Protection Engineering,https://www.enisa.europa.eu/publications/data-protection-engineering)"@en ;
     rdfs:subClassOf dpv:SecurityMethod ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:SecurityMethod ;
     skos:definition "Use of network routing using proxy"@en ;
     skos:prefLabel "Network Proxy Routing"@en .
 
@@ -428,6 +510,7 @@ dpv:NetworkSecurityProtocols a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:SecurityMethod ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:SecurityMethod ;
     skos:definition "Security implemented at or over networks protocols"@en ;
     skos:prefLabel "Network Security Protocols"@en .
 
@@ -438,6 +521,7 @@ dpv:OperatingSystemSecurity a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:SecurityMethod ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:SecurityMethod ;
     skos:definition "Security implemented at or through operating systems"@en ;
     skos:prefLabel "Operating System Security"@en .
 
@@ -448,6 +532,7 @@ dpv:PasswordAuthentication a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:AuthenticationProtocols ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:AuthenticationProtocols ;
     skos:definition "Use of passwords to perform authentication"@en ;
     skos:prefLabel "Password Authentication"@en .
 
@@ -458,6 +543,7 @@ dpv:PenetrationTestingMethods a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:SecurityMethod ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:SecurityMethod ;
     skos:definition "Use of penetration testing to identity weaknessess and vulnerabilities through simulations"@en ;
     skos:prefLabel "Penetration Testing Methods"@en .
 
@@ -467,6 +553,7 @@ dpv:PhysicalAccessControlMethod a rdfs:Class,
     dct:created "2022-06-15"^^xsd:date ;
     rdfs:subClassOf dpv:AccessControlMethod ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:AccessControlMethod ;
     skos:definition "Access control applied for physical access e.g. premises or equipement"@en ;
     skos:prefLabel "Physical Access Control Method"@en .
 
@@ -477,6 +564,7 @@ dpv:PostQuantumCryptography a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:CryptographicMethods ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:CryptographicMethods ;
     skos:definition "Use of algorithms that are intended to be secure against cryptanalytic attack by a quantum computer"@en ;
     skos:prefLabel "Post-Quantum Cryptography"@en .
 
@@ -487,6 +575,7 @@ dpv:PrivacyPreservingProtocol a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:CryptographicMethods ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:CryptographicMethods ;
     skos:definition "Use of protocols designed with the intention of provided additional guarentees regarding privacy"@en ;
     skos:prefLabel "Privacy Preserving Protocol"@en .
 
@@ -497,6 +586,7 @@ dpv:PrivateInformationRetrieval a rdfs:Class,
     dct:source "(ENISA Data Protection Engineering,https://www.enisa.europa.eu/publications/data-protection-engineering)"@en ;
     rdfs:subClassOf dpv:CryptographicMethods ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:CryptographicMethods ;
     skos:definition "Use of cryptographic methods to retrieve a record from a system without revealing which record is retrieved"@en ;
     skos:prefLabel "Private Information Retrieval"@en .
 
@@ -508,7 +598,13 @@ dpv:Pseudonymisation a rdfs:Class,
     dct:source "(GDPR Art.4-5,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_5/oj)"@en ;
     rdfs:subClassOf dpv:Deidentification ;
     sw:term_status "modified"@en ;
+    skos:broader dpv:Deidentification ;
     skos:definition "Pseudonymisation means the processing of personal data in such a manner that the personal data can no longer be attributed to a specific data subject without the use of additional information, provided that such additional information is kept separately and is subject to technical and organisational measures to ensure that the personal data are not attributed to an identified or identifiable natural person;"@en ;
+    skos:narrower dpv:DeterministicPseudonymisation,
+        dpv:DocumentRandomisedPseudonymisation,
+        dpv:FullyRandomisedPseudonymisation,
+        dpv:MonotonicCounterPseudonymisation,
+        dpv:RNGPseudonymisation ;
     skos:prefLabel "Pseudonymisation"@en .
 
 dpv:QuantumCryptography a rdfs:Class,
@@ -518,6 +614,7 @@ dpv:QuantumCryptography a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:CryptographicMethods ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:CryptographicMethods ;
     skos:definition "Cryptographic methods that utilise quantum mechanical properties to perform cryptographic tasks"@en ;
     skos:prefLabel "Quantum Cryptography"@en .
 
@@ -529,6 +626,7 @@ dpv:RNGPseudonymisation a rdfs:Class,
     dct:source "(ENISA Data Pseudonymisation: Advanced Techniques and Use Cases,https://www.enisa.europa.eu/publications/data-pseudonymisation-advanced-techniques-and-use-cases)"@en ;
     rdfs:subClassOf dpv:Pseudonymisation ;
     sw:term_status "modified"@en ;
+    skos:broader dpv:Pseudonymisation ;
     skos:definition "A pseudonymisation method where identifiers are substituted by a number chosen by a Random Number Generator (RNG)"@en ;
     skos:prefLabel "RNG Pseudonymisation"@en .
 
@@ -539,6 +637,7 @@ dpv:SecretSharingSchemes a rdfs:Class,
     dct:source "(ENISA Data Pseudonymisation: Advanced Techniques and Use Cases,https://www.enisa.europa.eu/publications/data-pseudonymisation-advanced-techniques-and-use-cases)"@en ;
     rdfs:subClassOf dpv:CryptographicMethods ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:CryptographicMethods ;
     skos:definition "Use of secret sharing schemes where the secret can only be reconstructed through combination of sufficient number of individuals"@en ;
     skos:prefLabel "Secret Sharing Schemes"@en .
 
@@ -549,6 +648,7 @@ dpv:SecureMultiPartyComputation a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:CryptographicMethods ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:CryptographicMethods ;
     skos:definition "Use of cryptographic methods for entities to jointly compute functions without revealing inputs"@en ;
     skos:prefLabel "Secure Multi-Party Computation"@en .
 
@@ -558,7 +658,24 @@ dpv:SecurityMethod a rdfs:Class,
     dct:created "2022-08-24"^^xsd:date ;
     rdfs:subClassOf dpv:TechnicalMeasure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:TechnicalMeasure ;
     skos:definition "Methods that relate to creating and providing security"@en ;
+    skos:narrower dpv:DistributedSystemSecurity,
+        dpv:DocumentSecurity,
+        dpv:FileSystemSecurity,
+        dpv:HardwareSecurityProtocols,
+        dpv:IntrusionDetectionSystem,
+        dpv:MobilePlatformSecurity,
+        dpv:NetworkProxyRouting,
+        dpv:NetworkSecurityProtocols,
+        dpv:OperatingSystemSecurity,
+        dpv:PenetrationTestingMethods,
+        dpv:UseSyntheticData,
+        dpv:VirtualisationSecurity,
+        dpv:VulnerabilityTestingMethods,
+        dpv:WebBrowserSecurity,
+        dpv:WebSecurityProtocols,
+        dpv:WirelessSecurityProtocols ;
     skos:prefLabel "Security Method"@en .
 
 dpv:SingleSignOn a rdfs:Class,
@@ -567,6 +684,7 @@ dpv:SingleSignOn a rdfs:Class,
     dct:created "2020-11-04"^^xsd:date ;
     rdfs:subClassOf dpv:AuthenticationProtocols ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:AuthenticationProtocols ;
     skos:definition "Use of credentials or processes that enable using one set of credentials to authenticate multiple contexts."@en ;
     skos:prefLabel "Single Sign On"@en .
 
@@ -577,6 +695,7 @@ dpv:SymmetricCryptography a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:CryptographicMethods ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:CryptographicMethods ;
     skos:definition "Use of cryptography where the same keys are utilised for encryption and descryption of information"@en ;
     skos:prefLabel "Symmetric Cryptography"@en .
 
@@ -587,6 +706,7 @@ dpv:SymmetricEncryption a rdfs:Class,
     dct:source "(ENISA Data Pseudonymisation: Advanced Techniques and Use Cases,https://www.enisa.europa.eu/publications/data-pseudonymisation-advanced-techniques-and-use-cases)"@en ;
     rdfs:subClassOf dpv:Encryption ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Encryption ;
     skos:definition "Use of symmetric cryptography to encrypt data"@en ;
     skos:prefLabel "Symmetric Encryption"@en .
 
@@ -597,6 +717,7 @@ dpv:TrustedComputing a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:CryptographicMethods ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:CryptographicMethods ;
     skos:definition "Use of cryptographic methods to restrict access and execution to trusted parties and code"@en ;
     skos:prefLabel "Trusted Computing"@en .
 
@@ -607,6 +728,7 @@ dpv:TrustedExecutionEnvironments a rdfs:Class,
     dct:source "(ENISA Data Protection Engineering,https://www.enisa.europa.eu/publications/data-protection-engineering)"@en ;
     rdfs:subClassOf dpv:CryptographicMethods ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:CryptographicMethods ;
     skos:definition "Use of cryptographic methods to restrict access and execution to trusted parties and code within a dedicated execution environment"@en ;
     skos:prefLabel "Trusted Execution Environments"@en .
 
@@ -617,6 +739,7 @@ dpv:UsageControl a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:AccessControlMethod ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:AccessControlMethod ;
     skos:definition "Management of usage, which is intended to be broader than access control and may cover trust, digital rights, or other relevant controls"@en ;
     skos:prefLabel "Usage Control"@en .
 
@@ -627,6 +750,7 @@ dpv:UseSyntheticData a rdfs:Class,
     dct:source "(ENISA Data Protection Engineering,https://www.enisa.europa.eu/publications/data-protection-engineering)"@en ;
     rdfs:subClassOf dpv:SecurityMethod ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:SecurityMethod ;
     skos:definition "Use of synthetic data to preserve privacy, security, or other effects and side-effects"@en ;
     skos:prefLabel "Use of Synthetic Data"@en .
 
@@ -637,6 +761,7 @@ dpv:VirtualisationSecurity a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:SecurityMethod ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:SecurityMethod ;
     skos:definition "Security implemented at or through virtualised environments"@en ;
     skos:prefLabel "Virtualisation Security"@en .
 
@@ -647,6 +772,7 @@ dpv:VulnerabilityTestingMethods a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:SecurityMethod ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:SecurityMethod ;
     skos:definition "Methods that assess or discover vulnerabilities in a system"@en ;
     skos:prefLabel "Vulnerability Testing Methods"@en .
 
@@ -657,6 +783,7 @@ dpv:WebBrowserSecurity a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:SecurityMethod ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:SecurityMethod ;
     skos:definition "Security implemented at or over web browsers"@en ;
     skos:prefLabel "WebBrowser Security"@en .
 
@@ -667,6 +794,7 @@ dpv:WebSecurityProtocols a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:SecurityMethod ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:SecurityMethod ;
     skos:definition "Security implemented at or over web-based protocols"@en ;
     skos:prefLabel "Web Security Protocols"@en .
 
@@ -677,6 +805,7 @@ dpv:WirelessSecurityProtocols a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     rdfs:subClassOf dpv:SecurityMethod ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:SecurityMethod ;
     skos:definition "Security implemented at or over wireless communication protocols"@en ;
     skos:prefLabel "Wireless Security Protocols"@en .
 
@@ -688,6 +817,20 @@ dpv:ZeroKnowledgeAuthentication a rdfs:Class,
     rdfs:subClassOf dpv:AuthenticationProtocols,
         dpv:CryptographicMethods ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:AuthenticationProtocols,
+        dpv:CryptographicMethods ;
     skos:definition "Authentication using Zero-Knowledge proofs"@en ;
     skos:prefLabel "Zero Knowledge Authentication"@en .
+
+dpv:TechnicalMeasure skos:narrower dpv:AccessControlMethod,
+        dpv:ActivityMonitoring,
+        dpv:AuthenticationProtocols,
+        dpv:AuthorisationProtocols,
+        dpv:CryptographicMethods,
+        dpv:DataBackupProtocols,
+        dpv:DataSanitisationTechnique,
+        dpv:DigitalRightsManagement,
+        dpv:Encryption,
+        dpv:InformationFlowControl,
+        dpv:SecurityMethod .
 

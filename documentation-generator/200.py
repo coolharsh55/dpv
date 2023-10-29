@@ -303,7 +303,6 @@ def load_CSV(filepath):
         # there are no empty headers in the CSV.
         header = [x for x in next(csvreader) if x]
         count = len(header)
-        # DEBUG(f'CSV has header: {header}')
         terms = []
         for row in csvreader:
             # skip empty rows
@@ -314,7 +313,6 @@ def load_CSV(filepath):
             rowdata = {}
             for index, item in enumerate(row):
                 rowdata[header[index]] = row[index]
-            # DEBUG(rowdata)
             terms.append(rowdata)
     return header, terms
 
@@ -325,7 +323,6 @@ def serialize_graph(triples, filepath):
     for prefix, namespace in NAMESPACES.items():
         graph.namespace_manager.bind(prefix, namespace)
     for triple in triples:
-        # DEBUG(triple)
         graph.add(triple)
     for ext, format in RDF_SERIALIZATIONS.items():
         graph.serialize(f'{filepath}.{ext}', format=format)
@@ -337,17 +334,18 @@ global_triples = []
 for vocab, vocab_data in CSVFILES.items():
     # work with modules within each structure e.g core
     namespace = NAMESPACES[vocab]
-    DEBUG(f'VOCAB: {vocab} with NAMESPACE: {namespace}')
+    INFO('-'*40)
+    INFO(f'VOCAB: {vocab} ({namespace})')
+    INFO('-'*40)
     vocab_triples = []
     PROPOSED[vocab] = {}
     for module, module_data in vocab_data.items():
-        DEBUG(f'MODULE: {module}')
         # get schemas and data for each csv in module
         module_triples = []
         PROPOSED[vocab][module] = []
         for schema_name, filepath in module_data.items():
             schema = vocab_schemas.get_schema(schema_name)
-            DEBUG(f'schema: {schema_name}')
+            INFO(f'MODULE: {module} with schema: {schema_name}')
             header, csvdata = load_CSV(filepath)
             # clean data (dangling spaces)
             header = [x.strip() for x in header]
@@ -355,7 +353,6 @@ for vocab, vocab_data in CSVFILES.items():
             for row in csvdata:
                 # clean data (dangling spaces)
                 row = {x.strip():y.strip() for x,y in row.items()}
-                # DEBUG(row)
                 # filter proposed terms
                 if row['Status'] == 'proposed':
                     PROPOSED[vocab][module].append(row['Term'])
@@ -372,10 +369,8 @@ for vocab, vocab_data in CSVFILES.items():
                         continue
                     if not item:
                         continue
-                    # DEBUG(f'{func} :: {item}')
                     module_triples += func(item, row, namespace)
-        DEBUG(f'Triples: {len(module_triples)} accepted')
-        DEBUG(f'Proposed concepts: {len(PROPOSED[vocab][module])}')
+        INFO(f'Triples: {len(module_triples)} accepted, {len(PROPOSED[vocab][module])} proposed')
         # export module triples
         exportpath = EXPORTPATH[vocab]['modules']
         filepath = f'{exportpath}/{module}'
@@ -385,4 +380,8 @@ for vocab, vocab_data in CSVFILES.items():
     exportpath = EXPORTPATH[vocab]['main']
     filepath = f'{exportpath}/{vocab}'
     serialize_graph(vocab_triples, filepath)
+    INFO(f'VOCAB triples: {len(vocab_triples)} accepted, {sum((len(m) for m in PROPOSED[vocab].values()))} proposed')
     global_triples += vocab_triples
+INFO('-'*40)
+INFO(f'TOTAL triples: {len(global_triples)} accepted')
+INFO('-'*40)

@@ -43,49 +43,59 @@ dpv:Rule a rdfs:Class,
     skos:definition "A rule describing a process or control that directs or determines if and how an activity should be conducted"@en ;
     skos:prefLabel "Rule"@en .
 
-dpv:hasObligation a rdf:Property ;
+dpv:hasObligation a rdf:Property,
+        skos:Concept ;
     dcam:domainIncludes dpv:Context ;
     dcam:rangeIncludes dpv:Obligation ;
     dct:contributor "Harshvardhan J. Pandit, Georg P Krog, Beatriz Esteves, Paul Ryan"@en ;
     dct:created "2022-10-19"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasRule ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:hasRule ;
     skos:definition "Specifying applicability or inclusion of an obligation rule within specified context"@en ;
     skos:prefLabel "has obligation"@en ;
     schema:domainIncludes dpv:Context ;
     schema:rangeIncludes dpv:Obligation .
 
-dpv:hasPermission a rdf:Property ;
+dpv:hasPermission a rdf:Property,
+        skos:Concept ;
     dcam:domainIncludes dpv:Context ;
     dcam:rangeIncludes dpv:Permission ;
     dct:contributor "Harshvardhan J. Pandit, Georg P Krog, Beatriz Esteves, Paul Ryan"@en ;
     dct:created "2022-10-19"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasRule ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:hasRule ;
     skos:definition "Specifying applicability or inclusion of a permission rule within specified context"@en ;
     skos:prefLabel "has permission"@en ;
     schema:domainIncludes dpv:Context ;
     schema:rangeIncludes dpv:Permission .
 
-dpv:hasProhibition a rdf:Property ;
+dpv:hasProhibition a rdf:Property,
+        skos:Concept ;
     dcam:domainIncludes dpv:Context ;
     dcam:rangeIncludes dpv:Prohibition ;
     dct:contributor "Harshvardhan J. Pandit, Georg P Krog, Beatriz Esteves, Paul Ryan"@en ;
     dct:created "2022-10-19"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasRule ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:hasRule ;
     skos:definition "Specifying applicability or inclusion of a prohibition rule within specified context"@en ;
     skos:prefLabel "has prohibition"@en ;
     schema:domainIncludes dpv:Context ;
     schema:rangeIncludes dpv:Prohibition .
 
-dpv:hasRule a rdf:Property ;
+dpv:hasRule a rdf:Property,
+        skos:Concept ;
     dcam:domainIncludes dpv:Context ;
     dcam:rangeIncludes dpv:Rule ;
     dct:contributor "Harshvardhan J. Pandit, Georg P Krog, Beatriz Esteves, Paul Ryan"@en ;
     dct:created "2022-10-19"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifying applicability or inclusion of a rule within specified context"@en ;
+    skos:narrower dpv:hasObligation,
+        dpv:hasPermission,
+        dpv:hasProhibition ;
     skos:prefLabel "has rule"@en ;
     schema:domainIncludes dpv:Context ;
     schema:rangeIncludes dpv:Rule .

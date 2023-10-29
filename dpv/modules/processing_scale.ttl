@@ -258,42 +258,52 @@ dpv:SporadicScaleOfDataSubjects a rdfs:Class,
     skos:definition "Scale of data subjects considered sporadic or sparse within the context"@en ;
     skos:prefLabel "Sporadic Scale Of Data Subjects"@en .
 
-dpv:hasDataSubjectScale a rdf:Property ;
+dpv:hasDataSubjectScale a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:DataSubjectScale ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-06-22"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasScale ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:hasScale ;
     skos:definition "Indicates the scale of data subjects"@en ;
     skos:prefLabel "has data subject scale"@en ;
     schema:rangeIncludes dpv:DataSubjectScale .
 
-dpv:hasDataVolume a rdf:Property ;
+dpv:hasDataVolume a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:DataVolume ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-06-22"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasScale ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:hasScale ;
     skos:definition "Indicates the volume of data"@en ;
     skos:prefLabel "has data volume"@en ;
     schema:rangeIncludes dpv:DataVolume .
 
-dpv:hasGeographicCoverage a rdf:Property ;
+dpv:hasGeographicCoverage a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:GeographicCoverage ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-06-22"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasScale ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:hasScale ;
     skos:definition "Indicate the geographic coverage (of specified context)"@en ;
     skos:prefLabel "has geographic coverage"@en ;
     schema:rangeIncludes dpv:GeographicCoverage .
 
-dpv:hasScale a rdf:Property ;
+dpv:hasScale a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Scale ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the scale of specified concept"@en ;
+    skos:narrower dpv:hasDataSubjectScale,
+        dpv:hasDataVolume,
+        dpv:hasGeographicCoverage ;
     skos:prefLabel "has scale"@en ;
     schema:rangeIncludes dpv:Scale .
 

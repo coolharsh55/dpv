@@ -7,7 +7,8 @@
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-dpv:hasConsentStatus a rdf:Property ;
+dpv:hasConsentStatus a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:ConsentStatus ;
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake"@en ;
     dct:created "2022-06-21"^^xsd:date ;
@@ -16,21 +17,24 @@ dpv:hasConsentStatus a rdf:Property ;
     skos:prefLabel "has consent status"@en ;
     schema:rangeIncludes dpv:ConsentStatus .
 
-dpv:hasIndicationMethod a rdf:Property ;
+dpv:hasIndicationMethod a rdf:Property,
+        skos:Concept ;
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake"@en ;
     dct:created "2022-06-21"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifies the method by which an entity has indicated the specific context"@en ;
     skos:prefLabel "has indication method"@en .
 
-dpv:isIndicatedAtTime a rdf:Property ;
+dpv:isIndicatedAtTime a rdf:Property,
+        skos:Concept ;
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake"@en ;
     dct:created "2022-06-21"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifies the temporal information for when the entity has indicated the specific context"@en ;
     skos:prefLabel "is indicated at time"@en .
 
-dpv:isIndicatedBy a rdf:Property ;
+dpv:isIndicatedBy a rdf:Property,
+        skos:Concept ;
     dcam:rangeIncludes dpv:Entity ;
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake"@en ;
     dct:created "2022-06-21"^^xsd:date ;
