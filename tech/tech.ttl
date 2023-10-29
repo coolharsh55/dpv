@@ -1,15 +1,16 @@
 @prefix dcam: <http://purl.org/dc/dcam/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix dpv: <https://w3id.org/dpv#> .
-@prefix dpv-tech: <https://w3id.org/dpv/tech#> .
+@prefix dpv-tech: <https://w3id.org/dpv/dpv-tech#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix tech: <https://w3id.org/dpv/tech#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-dpv-tech:Algorithmic a rdfs:Class,
+tech:Algorithmic a rdfs:Class,
         skos:Concept,
         dpv-tech:TechnologyProvisionMethod ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -18,7 +19,7 @@ dpv-tech:Algorithmic a rdfs:Class,
     skos:definition "Technology provided as an algorithm or method"@en ;
     skos:prefLabel "Algorithmic"@en .
 
-dpv-tech:Application a rdfs:Class,
+tech:Application a rdfs:Class,
         skos:Concept,
         dpv-tech:OperationalTechnology ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -27,7 +28,7 @@ dpv-tech:Application a rdfs:Class,
     skos:definition "A computing or digital program"@en ;
     skos:prefLabel "Application"@en .
 
-dpv-tech:Bluetooth a rdfs:Class,
+tech:Bluetooth a rdfs:Class,
         skos:Concept,
         dpv-tech:Networking ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -36,7 +37,7 @@ dpv-tech:Bluetooth a rdfs:Class,
     skos:definition "Technology utilising bluetooth communication"@en ;
     skos:prefLabel "Bluetooth"@en .
 
-dpv-tech:CellularNetwork a rdfs:Class,
+tech:CellularNetwork a rdfs:Class,
         skos:Concept,
         dpv-tech:Networking ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -45,7 +46,15 @@ dpv-tech:CellularNetwork a rdfs:Class,
     skos:definition "Technology utilising cellular networking communication"@en ;
     skos:prefLabel "Cellular Network"@en .
 
-dpv-tech:Component a rdfs:Class,
+tech:CommunicationMechanism a rdfs:Class,
+        skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-06-15"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Communication mechanism used or provided by Technologoy"@en ;
+    skos:prefLabel "Communication Mechanism"@en .
+
+tech:Component a rdfs:Class,
         skos:Concept,
         dpv-tech:TechnologyProvisionMethod ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -54,7 +63,7 @@ dpv-tech:Component a rdfs:Class,
     skos:definition "Technology provided as a component"@en ;
     skos:prefLabel "Component"@en .
 
-dpv-tech:Cookie a rdfs:Class,
+tech:Cookie a rdfs:Class,
         skos:Concept,
         dpv-tech:LocalStorage ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -63,7 +72,7 @@ dpv-tech:Cookie a rdfs:Class,
     skos:definition "A HTTP or web or internet cookie"@en ;
     skos:prefLabel "Cookie"@en .
 
-dpv-tech:CovertSurveillanceTechnology a rdfs:Class,
+tech:CovertSurveillanceTechnology a rdfs:Class,
         skos:Concept,
         dpv-tech:SurveillanceTechnology ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -73,7 +82,7 @@ dpv-tech:CovertSurveillanceTechnology a rdfs:Class,
     skos:note "For example, a web resource that performs tracking in the background"@en ;
     skos:prefLabel "Covert SurveillanceTechnology"@en .
 
-dpv-tech:DataCopyingTechnology a rdfs:Class,
+tech:DataCopyingTechnology a rdfs:Class,
         skos:Concept,
         dpv-tech:DataTechnology ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -82,7 +91,7 @@ dpv-tech:DataCopyingTechnology a rdfs:Class,
     skos:definition "Technology related to copying data"@en ;
     skos:prefLabel "Data Copying Technology"@en .
 
-dpv-tech:DataDisclosureTechnology a rdfs:Class,
+tech:DataDisclosureTechnology a rdfs:Class,
         skos:Concept,
         dpv-tech:DataTechnology ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -91,7 +100,7 @@ dpv-tech:DataDisclosureTechnology a rdfs:Class,
     skos:definition "Technology related to disclosing data"@en ;
     skos:prefLabel "Data Disclosure Technology"@en .
 
-dpv-tech:DataManagementTechnology a rdfs:Class,
+tech:DataManagementTechnology a rdfs:Class,
         skos:Concept,
         dpv-tech:DataTechnology,
         dpv-tech:ManagementTechnology ;
@@ -101,7 +110,7 @@ dpv-tech:DataManagementTechnology a rdfs:Class,
     skos:definition "Technology related to management of data"@en ;
     skos:prefLabel "Data Management Technology"@en .
 
-dpv-tech:DataObtainingTechnology a rdfs:Class,
+tech:DataObtainingTechnology a rdfs:Class,
         skos:Concept,
         dpv-tech:DataTechnology ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -110,7 +119,7 @@ dpv-tech:DataObtainingTechnology a rdfs:Class,
     skos:definition "Technology related to obtain data"@en ;
     skos:prefLabel "Data Obtaining Technology"@en .
 
-dpv-tech:DataOrganisingTechnology a rdfs:Class,
+tech:DataOrganisingTechnology a rdfs:Class,
         skos:Concept,
         dpv-tech:DataTechnology ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -119,7 +128,7 @@ dpv-tech:DataOrganisingTechnology a rdfs:Class,
     skos:definition "Technology realted to organising data"@en ;
     skos:prefLabel "Data Organising Technology"@en .
 
-dpv-tech:DataRemovalTechnology a rdfs:Class,
+tech:DataRemovalTechnology a rdfs:Class,
         skos:Concept,
         dpv-tech:DataTechnology ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -128,7 +137,7 @@ dpv-tech:DataRemovalTechnology a rdfs:Class,
     skos:definition "Technology related to removing data"@en ;
     skos:prefLabel "Data Removal Technology"@en .
 
-dpv-tech:DataSecurityTechnology a rdfs:Class,
+tech:DataSecurityTechnology a rdfs:Class,
         skos:Concept,
         dpv-tech:DataTechnology,
         dpv-tech:SecurityTechnology ;
@@ -138,7 +147,7 @@ dpv-tech:DataSecurityTechnology a rdfs:Class,
     skos:definition "Technology related to security of data"@en ;
     skos:prefLabel "Data Security Technology"@en .
 
-dpv-tech:DataStorageTechnology a rdfs:Class,
+tech:DataStorageTechnology a rdfs:Class,
         skos:Concept,
         dpv-tech:DataTechnology ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -147,7 +156,7 @@ dpv-tech:DataStorageTechnology a rdfs:Class,
     skos:definition "Technology related to storing data"@en ;
     skos:prefLabel "Data Storage Technology"@en .
 
-dpv-tech:DataTechnology a rdfs:Class,
+tech:DataTechnology a rdfs:Class,
         skos:Concept,
         dpv:Technology ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -156,7 +165,7 @@ dpv-tech:DataTechnology a rdfs:Class,
     skos:definition "Technology that uses or interacts with data"@en ;
     skos:prefLabel "Data Technology"@en .
 
-dpv-tech:DataTransferTechnology a rdfs:Class,
+tech:DataTransferTechnology a rdfs:Class,
         skos:Concept,
         dpv-tech:DataTechnology ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -165,7 +174,7 @@ dpv-tech:DataTransferTechnology a rdfs:Class,
     skos:definition "Technology related to transfering data"@en ;
     skos:prefLabel "Data Transfer Technology"@en .
 
-dpv-tech:DataTransformationTechnology a rdfs:Class,
+tech:DataTransformationTechnology a rdfs:Class,
         skos:Concept,
         dpv-tech:DataTechnology ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -174,7 +183,7 @@ dpv-tech:DataTransformationTechnology a rdfs:Class,
     skos:definition "Technology related to transforming data"@en ;
     skos:prefLabel "Data Transformation Technology"@en .
 
-dpv-tech:DataUsageTechnology a rdfs:Class,
+tech:DataUsageTechnology a rdfs:Class,
         skos:Concept,
         dpv-tech:DataTechnology ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -183,7 +192,7 @@ dpv-tech:DataUsageTechnology a rdfs:Class,
     skos:definition "Technology related to using data"@en ;
     skos:prefLabel "Data Usage Technology"@en .
 
-dpv-tech:Database a rdfs:Class,
+tech:Database a rdfs:Class,
         skos:Concept,
         dpv-tech:DataStorageTechnology ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -192,7 +201,7 @@ dpv-tech:Database a rdfs:Class,
     skos:definition "A database, database management system (DBMS), or application database"@en ;
     skos:prefLabel "Database"@en .
 
-dpv-tech:DetectionSecurityTechnology a rdfs:Class,
+tech:DetectionSecurityTechnology a rdfs:Class,
         skos:Concept,
         dpv-tech:SecurityTechnology ;
     dct:contributor "Harshvardhan J. Pandit, Julian Flake, Georg P Krog, Paul Ryan"@en ;
@@ -201,7 +210,7 @@ dpv-tech:DetectionSecurityTechnology a rdfs:Class,
     skos:definition "Technology related to detection of vulnerabilities, threats, and exploitations"@en ;
     skos:prefLabel "Detection Security Technology"@en .
 
-dpv-tech:FileSystem a rdfs:Class,
+tech:FileSystem a rdfs:Class,
         skos:Concept,
         dpv-tech:DataStorageTechnology ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -210,7 +219,7 @@ dpv-tech:FileSystem a rdfs:Class,
     skos:definition "A data storage and retrieval interface provided by an operating system"@en ;
     skos:prefLabel "File System"@en .
 
-dpv-tech:FixedUse a rdfs:Class,
+tech:FixedUse a rdfs:Class,
         skos:Concept,
         dpv-tech:TechnologyProvisionMethod ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -219,7 +228,7 @@ dpv-tech:FixedUse a rdfs:Class,
     skos:definition "Technology that can be used a fixed numner of times"@en ;
     skos:prefLabel "Fixed Use"@en .
 
-dpv-tech:GPS a rdfs:Class,
+tech:GPS a rdfs:Class,
         skos:Concept,
         dpv-tech:CommunicationMechanism ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -228,7 +237,7 @@ dpv-tech:GPS a rdfs:Class,
     skos:definition "Technology utilising GPS communication"@en ;
     skos:prefLabel "GPS"@en .
 
-dpv-tech:Goods a rdfs:Class,
+tech:Goods a rdfs:Class,
         skos:Concept,
         dpv-tech:TechnologyProvisionMethod ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -237,7 +246,7 @@ dpv-tech:Goods a rdfs:Class,
     skos:definition "Technology provided or used as goods"@en ;
     skos:prefLabel "Goods"@en .
 
-dpv-tech:IdentityManagementTechnology a rdfs:Class,
+tech:IdentityManagementTechnology a rdfs:Class,
         skos:Concept,
         dpv-tech:IdentityTechnology,
         dpv-tech:ManagementTechnology ;
@@ -247,7 +256,7 @@ dpv-tech:IdentityManagementTechnology a rdfs:Class,
     skos:definition "Technologies providing identity provision, verification, management, and governance"@en ;
     skos:prefLabel "Identity Management Technology"@en .
 
-dpv-tech:IdentityTechnology a rdfs:Class,
+tech:IdentityTechnology a rdfs:Class,
         skos:Concept,
         dpv:Technology ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -256,7 +265,7 @@ dpv-tech:IdentityTechnology a rdfs:Class,
     skos:definition "Technology related to identity or identifiers"@en ;
     skos:prefLabel "Identity Technology"@en .
 
-dpv-tech:IdentityWallet a rdfs:Class,
+tech:IdentityWallet a rdfs:Class,
         skos:Concept,
         dpv-tech:DataStorageTechnology,
         dpv-tech:IdentityManagementTechnology ;
@@ -266,7 +275,7 @@ dpv-tech:IdentityWallet a rdfs:Class,
     skos:definition "product and service that allows the user to store identity data, credentials and attributes linked to her/his identity, to provide them to relying parties on request and to use them for authentication, online and offline, and to create qualified electronic signatures and seals"@en ;
     skos:prefLabel "Identity Wallet"@en .
 
-dpv-tech:Internet a rdfs:Class,
+tech:Internet a rdfs:Class,
         skos:Concept,
         dpv-tech:Networking ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -275,7 +284,7 @@ dpv-tech:Internet a rdfs:Class,
     skos:definition "Technology utilising internet communication"@en ;
     skos:prefLabel "Internet"@en .
 
-dpv-tech:LocalNetwork a rdfs:Class,
+tech:LocalNetwork a rdfs:Class,
         skos:Concept,
         dpv-tech:Networking ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -284,7 +293,7 @@ dpv-tech:LocalNetwork a rdfs:Class,
     skos:definition "Technology utilising local networking communication"@en ;
     skos:prefLabel "Local Network"@en .
 
-dpv-tech:ManagementTechnology a rdfs:Class,
+tech:ManagementTechnology a rdfs:Class,
         skos:Concept,
         dpv:Technology ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -293,7 +302,7 @@ dpv-tech:ManagementTechnology a rdfs:Class,
     skos:definition "Technology that enables or provides management"@en ;
     skos:prefLabel "Management Technology"@en .
 
-dpv-tech:MitigationSecurityTechnology a rdfs:Class,
+tech:MitigationSecurityTechnology a rdfs:Class,
         skos:Concept,
         dpv-tech:SecurityTechnology ;
     dct:contributor "Harshvardhan J. Pandit, Julian Flake, Georg P Krog, Paul Ryan"@en ;
@@ -302,7 +311,7 @@ dpv-tech:MitigationSecurityTechnology a rdfs:Class,
     skos:definition "Technology related to mitigation of vulnerabilities, threats, exploitations"@en ;
     skos:prefLabel "Mitigation Security Technology"@en .
 
-dpv-tech:MonitoringSecurityTechnology a rdfs:Class,
+tech:MonitoringSecurityTechnology a rdfs:Class,
         skos:Concept,
         dpv-tech:SecurityTechnology ;
     dct:contributor "Harshvardhan J. Pandit, Julian Flake, Georg P Krog, Paul Ryan"@en ;
@@ -311,7 +320,7 @@ dpv-tech:MonitoringSecurityTechnology a rdfs:Class,
     skos:definition "Technology related to monitoring of vulnerabilities, threats, exploitations"@en ;
     skos:prefLabel "Monitoring Security Technology"@en .
 
-dpv-tech:Networking a rdfs:Class,
+tech:Networking a rdfs:Class,
         skos:Concept,
         dpv-tech:CommunicationMechanism ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -320,7 +329,7 @@ dpv-tech:Networking a rdfs:Class,
     skos:definition "Technology utilising networking communication"@en ;
     skos:prefLabel "Networking"@en .
 
-dpv-tech:OperationDevice a rdfs:Class,
+tech:OperationDevice a rdfs:Class,
         skos:Concept,
         dpv-tech:OperationalTechnology ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -329,7 +338,7 @@ dpv-tech:OperationDevice a rdfs:Class,
     skos:definition "Technology that acts as an equipment or mechanism for operations"@en ;
     skos:prefLabel "Operation Device"@en .
 
-dpv-tech:OperationEnvironment a rdfs:Class,
+tech:OperationEnvironment a rdfs:Class,
         skos:Concept,
         dpv-tech:OperationalTechnology ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -338,7 +347,7 @@ dpv-tech:OperationEnvironment a rdfs:Class,
     skos:definition "Technology that provides an environment for operations to be executed"@en ;
     skos:prefLabel "Operation Environment"@en .
 
-dpv-tech:OperationManagement a rdfs:Class,
+tech:OperationManagement a rdfs:Class,
         skos:Concept,
         dpv-tech:OperationalTechnology ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -347,7 +356,7 @@ dpv-tech:OperationManagement a rdfs:Class,
     skos:definition "Technology that manages operations"@en ;
     skos:prefLabel "Operation Management"@en .
 
-dpv-tech:OperationalTechnology a rdfs:Class,
+tech:OperationalTechnology a rdfs:Class,
         skos:Concept,
         dpv:Technology ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -356,7 +365,7 @@ dpv-tech:OperationalTechnology a rdfs:Class,
     skos:definition "Technology that enables or performs or executes operations and processes"@en ;
     skos:prefLabel "Operational Technology"@en .
 
-dpv-tech:OvertSurveillanceTechnology a rdfs:Class,
+tech:OvertSurveillanceTechnology a rdfs:Class,
         skos:Concept,
         dpv-tech:SurveillanceTechnology ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -366,7 +375,7 @@ dpv-tech:OvertSurveillanceTechnology a rdfs:Class,
     skos:note "For example, a CCTV with a notice"@en ;
     skos:prefLabel "Overt Surveillance Technology"@en .
 
-dpv-tech:PET a rdfs:Class,
+tech:PET a rdfs:Class,
         skos:Concept,
         dpv-tech:SecurityTechnology ;
     dct:contributor "Harshvardhan J. Pandit, Julian Flake, Georg P Krog, Paul Ryan"@en ;
@@ -375,7 +384,7 @@ dpv-tech:PET a rdfs:Class,
     skos:definition "Privacy Enhancing Technologies (PETs) that provide minimisation or security related to data and privacy"@en ;
     skos:prefLabel "PET (Privacy Enhancing Technology)"@en .
 
-dpv-tech:PersonalInformationManagementSystem a rdfs:Class,
+tech:PersonalInformationManagementSystem a rdfs:Class,
         skos:Concept,
         dpv-tech:DataManagementTechnology ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -384,7 +393,7 @@ dpv-tech:PersonalInformationManagementSystem a rdfs:Class,
     skos:definition "A PIMS is a system that helps to give individuals more control over their personal data by managing their personal data in secure, on-premises or online storage systems and sharing it when and with whomever they choose"@en ;
     skos:prefLabel "Personal Information Management System"@en .
 
-dpv-tech:PreventionSecurityTechnology a rdfs:Class,
+tech:PreventionSecurityTechnology a rdfs:Class,
         skos:Concept,
         dpv-tech:SecurityTechnology ;
     dct:contributor "Harshvardhan J. Pandit, Julian Flake, Georg P Krog, Paul Ryan"@en ;
@@ -393,7 +402,7 @@ dpv-tech:PreventionSecurityTechnology a rdfs:Class,
     skos:definition "Technology related to prevention of vulnerabilities, threats, exploitations"@en ;
     skos:prefLabel "Prevention Security Technology"@en .
 
-dpv-tech:Product a rdfs:Class,
+tech:Product a rdfs:Class,
         skos:Concept,
         dpv-tech:TechnologyProvisionMethod ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -402,7 +411,7 @@ dpv-tech:Product a rdfs:Class,
     skos:definition "Technology that is provided as a product"@en ;
     skos:prefLabel "Product"@en .
 
-dpv-tech:SecurityManagementTechnology a rdfs:Class,
+tech:SecurityManagementTechnology a rdfs:Class,
         skos:Concept,
         dpv-tech:ManagementTechnology,
         dpv-tech:SecurityTechnology ;
@@ -412,7 +421,7 @@ dpv-tech:SecurityManagementTechnology a rdfs:Class,
     skos:definition "Technology related to management of security"@en ;
     skos:prefLabel "Security Management Technology"@en .
 
-dpv-tech:SecurityTechnology a rdfs:Class,
+tech:SecurityTechnology a rdfs:Class,
         skos:Concept,
         dpv:Technology ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -421,7 +430,7 @@ dpv-tech:SecurityTechnology a rdfs:Class,
     skos:definition "Technology that enables or provides security"@en ;
     skos:prefLabel "Security Technology"@en .
 
-dpv-tech:Service a rdfs:Class,
+tech:Service a rdfs:Class,
         skos:Concept,
         dpv-tech:TechnologyProvisionMethod ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -431,7 +440,7 @@ dpv-tech:Service a rdfs:Class,
     skos:note "Removed plural suffix for consistency in terms"@en ;
     skos:prefLabel "Service"@en .
 
-dpv-tech:SmartphoneApplication a rdfs:Class,
+tech:SmartphoneApplication a rdfs:Class,
         skos:Concept,
         dpv-tech:Application ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -440,7 +449,7 @@ dpv-tech:SmartphoneApplication a rdfs:Class,
     skos:definition "A computing or digital program on a smartphone device"@en ;
     skos:prefLabel "Smartphone Application"@en .
 
-dpv-tech:Subscription a rdfs:Class,
+tech:Subscription a rdfs:Class,
         skos:Concept,
         dpv-tech:TechnologyProvisionMethod ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -449,7 +458,7 @@ dpv-tech:Subscription a rdfs:Class,
     skos:definition "Technology that is provided or used as a periodic subscription"@en ;
     skos:prefLabel "Subscription"@en .
 
-dpv-tech:SurveillanceTechnology a rdfs:Class,
+tech:SurveillanceTechnology a rdfs:Class,
         skos:Concept,
         dpv:Technology ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -458,7 +467,7 @@ dpv-tech:SurveillanceTechnology a rdfs:Class,
     skos:definition "Technology related to surveillance of individuals or people"@en ;
     skos:prefLabel "Surveillance Technology"@en .
 
-dpv-tech:System a rdfs:Class,
+tech:System a rdfs:Class,
         skos:Concept,
         dpv-tech:TechnologyProvisionMethod ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -467,7 +476,16 @@ dpv-tech:System a rdfs:Class,
     skos:definition "Technology provided as a system"@en ;
     skos:prefLabel "System"@en .
 
-dpv-tech:TechnologyDeveloper a rdfs:Class,
+tech:TechnologyActor a rdfs:Class,
+        skos:Concept,
+        dpv:Entity ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-06-15"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Actors and Entities involved in provision, use, and management of Technology"@en ;
+    skos:prefLabel "Technology Actor"@en .
+
+tech:TechnologyDeveloper a rdfs:Class,
         skos:Concept,
         dpv-tech:TechnologyActor ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -476,7 +494,7 @@ dpv-tech:TechnologyDeveloper a rdfs:Class,
     skos:definition "Actor that develops Technology"@en ;
     skos:prefLabel "Technology Developer"@en .
 
-dpv-tech:TechnologyProvider a rdfs:Class,
+tech:TechnologyProvider a rdfs:Class,
         skos:Concept,
         dpv-tech:TechnologyActor ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -485,7 +503,24 @@ dpv-tech:TechnologyProvider a rdfs:Class,
     skos:definition "Actor that provides Technology"@en ;
     skos:prefLabel "Technology Provider"@en .
 
-dpv-tech:TechnologySubject a rdfs:Class,
+tech:TechnologyProvisionMethod a rdfs:Class,
+        skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-06-15"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Method associated with provision or use of technology"@en ;
+    skos:prefLabel "Technology Provision Method"@en .
+
+tech:TechnologyReadinessLevel a rdfs:Class,
+        skos:Concept,
+        dpv:Technology ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-06-15"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Indication of maturity of Technology (ISO 16290:2013)"@en ;
+    skos:prefLabel "Technology Readiness Level"@en .
+
+tech:TechnologySubject a rdfs:Class,
         skos:Concept,
         dpv-tech:TechnologyActor ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -494,7 +529,16 @@ dpv-tech:TechnologySubject a rdfs:Class,
     skos:definition "Actor that is subject of use of Technology"@en ;
     skos:prefLabel "Technology Subject"@en .
 
-dpv-tech:TechnologyUser a rdfs:Class,
+tech:TechnologyUsageLocation a rdfs:Class,
+        skos:Concept,
+        dpv:Location ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-06-15"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Location for where technology is provided or used"@en ;
+    skos:prefLabel "Technology Usage Location"@en .
+
+tech:TechnologyUser a rdfs:Class,
         skos:Concept,
         dpv-tech:TechnologyActor ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -503,7 +547,7 @@ dpv-tech:TechnologyUser a rdfs:Class,
     skos:definition "Actor that uses Technologoy"@en ;
     skos:prefLabel "Technology User"@en .
 
-dpv-tech:WiFi a rdfs:Class,
+tech:WiFi a rdfs:Class,
         skos:Concept,
         dpv-tech:Networking ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -512,7 +556,7 @@ dpv-tech:WiFi a rdfs:Class,
     skos:definition "Technology utilising wifi wireless networking communication"@en ;
     skos:prefLabel "WiFi"@en .
 
-dpv-tech:hasCommunicationMechanism a rdf:Property,
+tech:hasCommunicationMechanism a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:Technology ;
     dcam:rangeIncludes dpv-tech:CommunicationMechanism ;
@@ -524,7 +568,7 @@ dpv-tech:hasCommunicationMechanism a rdf:Property,
     schema:domainIncludes dpv:Technology ;
     schema:rangeIncludes dpv-tech:CommunicationMechanism .
 
-dpv-tech:hasProvisionMethod a rdf:Property,
+tech:hasProvisionMethod a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:Technology ;
     dcam:rangeIncludes dpv-tech:TechnologyProvisionMethod ;
@@ -536,7 +580,7 @@ dpv-tech:hasProvisionMethod a rdf:Property,
     schema:domainIncludes dpv:Technology ;
     schema:rangeIncludes dpv-tech:TechnologyProvisionMethod .
 
-dpv-tech:hasTRL a rdf:Property,
+tech:hasTRL a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:Technology ;
     dcam:rangeIncludes dpv-tech:TechnologyReadinessLevel ;
@@ -548,7 +592,19 @@ dpv-tech:hasTRL a rdf:Property,
     schema:domainIncludes dpv:Technology ;
     schema:rangeIncludes dpv-tech:TechnologyReadinessLevel .
 
-dpv-tech:hasDeveloper a rdf:Property,
+tech:hasTechnologyActor a rdf:Property,
+        skos:Concept ;
+    dcam:domainIncludes dpv:Technology ;
+    dcam:rangeIncludes dpv-tech:TechnologyActor ;
+    dct:contributor "Harshvardhan J. Pandit"@en ;
+    dct:created "2022-10-21"^^xsd:date ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Indicates an actor associated with technology"@en ;
+    skos:prefLabel "has technology actor"@en ;
+    schema:domainIncludes dpv:Technology ;
+    schema:rangeIncludes dpv-tech:TechnologyActor .
+
+tech:hasDeveloper a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:Technology ;
     dcam:rangeIncludes dpv-tech:TechnologyDeveloper ;
@@ -563,7 +619,7 @@ dpv-tech:hasDeveloper a rdf:Property,
     schema:domainIncludes dpv:Technology ;
     schema:rangeIncludes dpv-tech:TechnologyDeveloper .
 
-dpv-tech:hasProvider a rdf:Property,
+tech:hasProvider a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:Technology ;
     dcam:rangeIncludes dpv-tech:TechnologyProvider ;
@@ -578,7 +634,7 @@ dpv-tech:hasProvider a rdf:Property,
     schema:domainIncludes dpv:Technology ;
     schema:rangeIncludes dpv-tech:TechnologyProvider .
 
-dpv-tech:hasSubject a rdf:Property,
+tech:hasSubject a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:Technology ;
     dcam:rangeIncludes dpv-tech:TechnologySubject ;
@@ -593,7 +649,7 @@ dpv-tech:hasSubject a rdf:Property,
     schema:domainIncludes dpv:Technology ;
     schema:rangeIncludes dpv-tech:TechnologySubject .
 
-dpv-tech:hasUser a rdf:Property,
+tech:hasUser a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:Technology ;
     dcam:rangeIncludes dpv-tech:TechnologyUser ;
@@ -608,19 +664,8 @@ dpv-tech:hasUser a rdf:Property,
     schema:domainIncludes dpv:Technology ;
     schema:rangeIncludes dpv-tech:TechnologyUser .
 
-dpv-tech:hasTechnologyActor a rdf:Property,
-        skos:Concept ;
-    dcam:domainIncludes dpv:Technology ;
-    dcam:rangeIncludes dpv-tech:TechnologyActor ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-10-21"^^xsd:date ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Indicates an actor associated with technology"@en ;
-    skos:narrower dpv-tech:hasDeveloper,
-        dpv-tech:hasProvider,
-        dpv-tech:hasSubject,
-        dpv-tech:hasUser ;
-    skos:prefLabel "has technology actor"@en ;
-    schema:domainIncludes dpv:Technology ;
-    schema:rangeIncludes dpv-tech:TechnologyActor .
+dpv-tech:hasTechnologyActor skos:narrower tech:hasDeveloper,
+        tech:hasProvider,
+        tech:hasSubject,
+        tech:hasUser .
 

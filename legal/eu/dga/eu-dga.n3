@@ -1,14 +1,15 @@
 @prefix dcam: <http://purl.org/dc/dcam/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix dpv: <https://w3id.org/dpv#> .
-@prefix dpv-dga: <https://w3id.org/dpv/legal/eu/dga#> .
+@prefix dpv-dga: <https://w3id.org/dpv/dpv-gda#> .
+@prefix eu-dga: <https://w3id.org/dpv/legal/eu/dga#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 
-dpv-dga:A12-e-Exchange-Approval a rdfs:Class,
+eu-dga:A12-e-Exchange-Approval a rdfs:Class,
         skos:Concept,
         dpv:LegalBasis ;
     dct:source "(DGA 12.e,https://eur-lex.europa.eu/eli/reg/2022/868/art_12/par_e/oj)"@en ;
@@ -16,7 +17,7 @@ dpv-dga:A12-e-Exchange-Approval a rdfs:Class,
     skos:definition "Explicit request or approval of the data subject or data holder to utilise additional specific tools for the purposes of facilitating exchange of data"@en ;
     skos:prefLabel "Art 12(e) Data Exchange Approval"@en .
 
-dpv-dga:A2-6-Permission a rdfs:Class,
+eu-dga:A2-6-Permission a rdfs:Class,
         skos:Concept,
         dpv:NonPersonalDataLegalBasis ;
     dct:source "(DGA 2.6,https://eur-lex.europa.eu/eli/reg/2022/868/art_2/par_6/oj)"@en ;
@@ -25,7 +26,7 @@ dpv-dga:A2-6-Permission a rdfs:Class,
     skos:note "dpv:LegalBasis needs to be divided into dpv:PersonalDataLegalBasis and dpv:NonPersonalDataLegalBasis"@en ;
     skos:prefLabel "Art 2(6) Permission"@en .
 
-dpv-dga:A31-2-Transfer-Agreement a rdfs:Class,
+eu-dga:A31-2-Transfer-Agreement a rdfs:Class,
         skos:Concept,
         dpv:DataTransferLegalBasis ;
     dct:source "(DGA 31.2,https://eur-lex.europa.eu/eli/reg/2022/868/art_31/par_2/oj)"@en ;
@@ -33,7 +34,7 @@ dpv-dga:A31-2-Transfer-Agreement a rdfs:Class,
     skos:definition "Data Transfer International Agreement"@en ;
     skos:prefLabel "Art 31(2) Data Transfer International Agreement"@en .
 
-dpv-dga:A31-3-Third-Country-Judgement a rdfs:Class,
+eu-dga:A31-3-Third-Country-Judgement a rdfs:Class,
         skos:Concept,
         dpv:DataTransferLegalBasis ;
     dct:source "(DGA 31.3,https://eur-lex.europa.eu/eli/reg/2022/868/art_31/par_3/oj)"@en ;
@@ -41,7 +42,7 @@ dpv-dga:A31-3-Third-Country-Judgement a rdfs:Class,
     skos:definition "Data Transfer Third Country Judgement"@en ;
     skos:prefLabel "Art 31(3) Data Transfer Third Country Judgement"@en .
 
-dpv-dga:A5-11-MCC a rdfs:Class,
+eu-dga:A5-11-MCC a rdfs:Class,
         skos:Concept,
         dpv:DataTransferLegalBasis ;
     dct:source "(DGA 5.11,https://eur-lex.europa.eu/eli/reg/2022/868/art_5/par_11/oj)"@en ;
@@ -49,7 +50,7 @@ dpv-dga:A5-11-MCC a rdfs:Class,
     skos:definition "Model Contractual Clauses"@en ;
     skos:prefLabel "Art 5(11) Model Contractual Clauses"@en .
 
-dpv-dga:A5-12-Adequacy-Decision a rdfs:Class,
+eu-dga:A5-12-Adequacy-Decision a rdfs:Class,
         skos:Concept,
         dpv:DataTransferLegalBasis ;
     dct:source "(DGA 5.12,https://eur-lex.europa.eu/eli/reg/2022/868/art_5/par_12/oj)"@en ;
@@ -57,7 +58,7 @@ dpv-dga:A5-12-Adequacy-Decision a rdfs:Class,
     skos:definition "Adequacy Decision permitting the transfer of data"@en ;
     skos:prefLabel "Art 5(12) Adequacy Decision"@en .
 
-dpv-dga:A5-9-Transfer-Permission a rdfs:Class,
+eu-dga:A5-9-Transfer-Permission a rdfs:Class,
         skos:Concept,
         dpv:DataTransferLegalBasis ;
     dct:source "(DGA 5.9,https://eur-lex.europa.eu/eli/reg/2022/868/art_5/par_9/oj)"@en ;
@@ -65,7 +66,7 @@ dpv-dga:A5-9-Transfer-Permission a rdfs:Class,
     skos:definition "The legal basis justfiying processing of non-personal data based on the permission of an entity to transfer data"@en ;
     skos:prefLabel "Art 5(9) Permission for Transfer"@en .
 
-dpv-dga:DAORegister a rdfs:Class,
+eu-dga:DAORegister a rdfs:Class,
         skos:Concept,
         dpv:PublicRegisterOfEntities ;
     sw:term_status "accepted"@en ;
@@ -73,7 +74,7 @@ dpv-dga:DAORegister a rdfs:Class,
     skos:note "DGA 19.5"@en ;
     skos:prefLabel "Public Register of Data Altruism Organisations"@en .
 
-dpv-dga:DAORegisterEU a rdfs:Class,
+eu-dga:DAORegisterEU a rdfs:Class,
         skos:Concept,
         dpv:PublicRegisterOfEntities ;
     sw:term_status "accepted"@en ;
@@ -81,7 +82,7 @@ dpv-dga:DAORegisterEU a rdfs:Class,
     skos:note "DGA 19.5"@en ;
     skos:prefLabel "EU's Public Register of Data Altruism Organisations"@en .
 
-dpv-dga:DAORegisterNational a rdfs:Class,
+eu-dga:DAORegisterNational a rdfs:Class,
         skos:Concept,
         dpv:PublicRegisterOfEntities ;
     sw:term_status "accepted"@en ;
@@ -89,7 +90,7 @@ dpv-dga:DAORegisterNational a rdfs:Class,
     skos:note "DGA 19.6"@en ;
     skos:prefLabel "National Public Register of Data Altruism Organisations"@en .
 
-dpv-dga:DISP a rdfs:Class,
+eu-dga:DISP a rdfs:Class,
         skos:Concept,
         dpv:LegalEntity ;
     sw:term_status "accepted"@en ;
@@ -97,7 +98,7 @@ dpv-dga:DISP a rdfs:Class,
     skos:note "DGA 2.11"@en ;
     skos:prefLabel "Data Intermediation Service Provider"@en .
 
-dpv-dga:DISPEUApproval a rdfs:Class,
+eu-dga:DISPEUApproval a rdfs:Class,
         skos:Concept,
         dpv:CertificationSeal ;
     sw:term_status "accepted"@en ;
@@ -105,7 +106,7 @@ dpv-dga:DISPEUApproval a rdfs:Class,
     skos:note "DGA 11.9"@en ;
     skos:prefLabel "EU Approval for Data Intermediation Service Provider"@en .
 
-dpv-dga:DISPForDataHolder a rdfs:Class,
+eu-dga:DISPForDataHolder a rdfs:Class,
         skos:Concept,
         dpv-dga:DISP ;
     sw:term_status "accepted"@en ;
@@ -113,7 +114,7 @@ dpv-dga:DISPForDataHolder a rdfs:Class,
     skos:note "DGA 10.a"@en ;
     skos:prefLabel "Data Intermediation Service Provider for Data Holder"@en .
 
-dpv-dga:DISPForDataSubject a rdfs:Class,
+eu-dga:DISPForDataSubject a rdfs:Class,
         skos:Concept,
         dpv-dga:DISP ;
     sw:term_status "accepted"@en ;
@@ -121,7 +122,7 @@ dpv-dga:DISPForDataSubject a rdfs:Class,
     skos:note "DGA 10.b"@en ;
     skos:prefLabel "Data Intermediation Service Provider for Data Subject"@en .
 
-dpv-dga:DISPNotice a rdfs:Class,
+eu-dga:DISPNotice a rdfs:Class,
         skos:Concept,
         dpv:Notice ;
     sw:term_status "accepted"@en ;
@@ -129,7 +130,7 @@ dpv-dga:DISPNotice a rdfs:Class,
     skos:note "DGA 11.1, DGA 11.9, DGA 11.12, DGA 11.13"@en ;
     skos:prefLabel "Data Intermediation Service Notification"@en .
 
-dpv-dga:DISPRegister a rdfs:Class,
+eu-dga:DISPRegister a rdfs:Class,
         skos:Concept,
         dpv:PublicRegisterOfEntities ;
     sw:term_status "accepted"@en ;
@@ -137,7 +138,7 @@ dpv-dga:DISPRegister a rdfs:Class,
     skos:note "DGA 11.10"@en ;
     skos:prefLabel "Public Register of Data Intermediation Service Providers"@en .
 
-dpv-dga:DataAltruismAnnualReport a rdfs:Class,
+eu-dga:DataAltruismAnnualReport a rdfs:Class,
         skos:Concept,
         dpv:RecordsOfActivities ;
     sw:term_status "accepted"@en ;
@@ -145,7 +146,7 @@ dpv-dga:DataAltruismAnnualReport a rdfs:Class,
     skos:note "DGA 20.2"@en ;
     skos:prefLabel "Data Altruism Annual Activity Report"@en .
 
-dpv-dga:DataAltruismAuthority a rdfs:Class,
+eu-dga:DataAltruismAuthority a rdfs:Class,
         skos:Concept,
         dpv:Authority ;
     sw:term_status "accepted"@en ;
@@ -153,7 +154,7 @@ dpv-dga:DataAltruismAuthority a rdfs:Class,
     skos:note "DGA 23"@en ;
     skos:prefLabel "Data Altruism Authority"@en .
 
-dpv-dga:DataAltruismNotice a rdfs:Class,
+eu-dga:DataAltruismNotice a rdfs:Class,
         skos:Concept,
         dpv:Notice ;
     sw:term_status "accepted"@en ;
@@ -161,7 +162,7 @@ dpv-dga:DataAltruismNotice a rdfs:Class,
     skos:note "DGA 21.1"@en ;
     skos:prefLabel "Data Altruism Notice"@en .
 
-dpv-dga:DataAltruismOrganisation a rdfs:Class,
+eu-dga:DataAltruismOrganisation a rdfs:Class,
         skos:Concept,
         dpv:NonProfitOrganisation ;
     sw:term_status "accepted"@en ;
@@ -169,7 +170,7 @@ dpv-dga:DataAltruismOrganisation a rdfs:Class,
     skos:note "DGA 2.16, 18"@en ;
     skos:prefLabel "Data Altruism Organisation"@en .
 
-dpv-dga:DataAltruismRecord a rdfs:Class,
+eu-dga:DataAltruismRecord a rdfs:Class,
         skos:Concept,
         dpv:RecordsOfActivities ;
     sw:term_status "accepted"@en ;
@@ -177,7 +178,7 @@ dpv-dga:DataAltruismRecord a rdfs:Class,
     skos:note "DGA 20"@en ;
     skos:prefLabel "Record of Data Altruism Activity"@en .
 
-dpv-dga:DataAssetList a rdfs:Class,
+eu-dga:DataAssetList a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
@@ -185,7 +186,7 @@ dpv-dga:DataAssetList a rdfs:Class,
     skos:note "DGA 8.2"@en ;
     skos:prefLabel "Data Asset List"@en .
 
-dpv-dga:DataCooperative a rdfs:Class,
+eu-dga:DataCooperative a rdfs:Class,
         skos:Concept,
         dpv-dga:DISP ;
     sw:term_status "accepted"@en ;
@@ -193,14 +194,14 @@ dpv-dga:DataCooperative a rdfs:Class,
     skos:note "DGA 2.15, 10.c"@en ;
     skos:prefLabel "Data Cooperative"@en .
 
-dpv-dga:DataCooperativeService a rdfs:Class,
+eu-dga:DataCooperativeService a rdfs:Class,
         skos:Concept,
         dpv-dga:DataIntermediationService ;
     sw:term_status "accepted"@en ;
     skos:definition "Service provided by a data cooperative"@en ;
     skos:prefLabel "Data Cooperative Service"@en .
 
-dpv-dga:DataHolder a rdfs:Class,
+eu-dga:DataHolder a rdfs:Class,
         skos:Concept,
         dpv:LegalEntity ;
     sw:term_status "accepted"@en ;
@@ -208,7 +209,7 @@ dpv-dga:DataHolder a rdfs:Class,
     skos:note "DGA 2.8"@en ;
     skos:prefLabel "Data Holder"@en .
 
-dpv-dga:DataIntermediationAuthority a rdfs:Class,
+eu-dga:DataIntermediationAuthority a rdfs:Class,
         skos:Concept,
         dpv:Authority ;
     sw:term_status "accepted"@en ;
@@ -216,7 +217,7 @@ dpv-dga:DataIntermediationAuthority a rdfs:Class,
     skos:note "DGA 13"@en ;
     skos:prefLabel "Data Intermediation Authority"@en .
 
-dpv-dga:DataIntermediationRecord a rdfs:Class,
+eu-dga:DataIntermediationRecord a rdfs:Class,
         skos:Concept,
         dpv:RecordsOfActivities ;
     sw:term_status "accepted"@en ;
@@ -224,7 +225,7 @@ dpv-dga:DataIntermediationRecord a rdfs:Class,
     skos:note "DGA 12.o"@en ;
     skos:prefLabel "Record of Data Intermediation Activity"@en .
 
-dpv-dga:DataIntermediationService a rdfs:Class,
+eu-dga:DataIntermediationService a rdfs:Class,
         skos:Concept,
         dpv:Service ;
     sw:term_status "accepted"@en ;
@@ -232,7 +233,7 @@ dpv-dga:DataIntermediationService a rdfs:Class,
     skos:note "DGA 2.11"@en ;
     skos:prefLabel "Data Intermediation Service"@en .
 
-dpv-dga:DataIntermediationServiceBetweenHoldersUsers a rdfs:Class,
+eu-dga:DataIntermediationServiceBetweenHoldersUsers a rdfs:Class,
         skos:Concept,
         dpv-dga:DataIntermediationService ;
     sw:term_status "accepted"@en ;
@@ -240,7 +241,7 @@ dpv-dga:DataIntermediationServiceBetweenHoldersUsers a rdfs:Class,
     skos:note "DGA 10.a"@en ;
     skos:prefLabel "Data Intermediation Service between Data Holders and Data Users"@en .
 
-dpv-dga:DataIntermediationServiceBetweenSubjectsUsers a rdfs:Class,
+eu-dga:DataIntermediationServiceBetweenSubjectsUsers a rdfs:Class,
         skos:Concept,
         dpv-dga:DataIntermediationService ;
     sw:term_status "accepted"@en ;
@@ -248,7 +249,7 @@ dpv-dga:DataIntermediationServiceBetweenSubjectsUsers a rdfs:Class,
     skos:note "DGA 10.b"@en ;
     skos:prefLabel "Data Intermediation Service between Data Subjects and Data Users"@en .
 
-dpv-dga:DataReuseAssistant a rdfs:Class,
+eu-dga:DataReuseAssistant a rdfs:Class,
         skos:Concept,
         dpv:Entity ;
     sw:term_status "accepted"@en ;
@@ -256,7 +257,7 @@ dpv-dga:DataReuseAssistant a rdfs:Class,
     skos:note "DGA 7"@en ;
     skos:prefLabel "Data Reuse Assistant"@en .
 
-dpv-dga:DataReuseRequest a rdfs:Class,
+eu-dga:DataReuseRequest a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
@@ -264,7 +265,7 @@ dpv-dga:DataReuseRequest a rdfs:Class,
     skos:note "DGA 5.1"@en ;
     skos:prefLabel "Data Reuse Request"@en .
 
-dpv-dga:DataUser a rdfs:Class,
+eu-dga:DataUser a rdfs:Class,
         skos:Concept,
         dpv:LegalEntity ;
     sw:term_status "accepted"@en ;
@@ -272,7 +273,7 @@ dpv-dga:DataUser a rdfs:Class,
     skos:note "DGA 2.9"@en ;
     skos:prefLabel "Data User"@en .
 
-dpv-dga:EUDataAltruismConsentForm a rdfs:Class,
+eu-dga:EUDataAltruismConsentForm a rdfs:Class,
         skos:Concept,
         dpv:ConsentManagement ;
     sw:term_status "accepted"@en ;
@@ -280,7 +281,7 @@ dpv-dga:EUDataAltruismConsentForm a rdfs:Class,
     skos:note "DGA 25.1"@en ;
     skos:prefLabel "European Data Altruism Consent Form"@en .
 
-dpv-dga:EUSIPProvider a rdfs:Class,
+eu-dga:EUSIPProvider a rdfs:Class,
         skos:Concept,
         dpv-dga:SIP ;
     sw:term_status "accepted"@en ;
@@ -288,7 +289,7 @@ dpv-dga:EUSIPProvider a rdfs:Class,
     skos:note "DGA 8.4"@en ;
     skos:prefLabel "EU Single Information Point Provider"@en .
 
-dpv-dga:EuropeanDataInnovationBoard a rdfs:Class,
+eu-dga:EuropeanDataInnovationBoard a rdfs:Class,
         skos:Concept,
         dpv:SupraNationalAuthority ;
     sw:term_status "accepted"@en ;
@@ -296,14 +297,14 @@ dpv-dga:EuropeanDataInnovationBoard a rdfs:Class,
     skos:note "DGA 29"@en ;
     skos:prefLabel "European Data Innovation Board"@en .
 
-dpv-dga:LocalSIPProvider a rdfs:Class,
+eu-dga:LocalSIPProvider a rdfs:Class,
         skos:Concept,
         dpv-dga:SIP ;
     sw:term_status "accepted"@en ;
     skos:definition "A local entity who is responsible for receiving and transmiting requests for the reuse of public data"@en ;
     skos:prefLabel "Local Single Information Point Provider"@en .
 
-dpv-dga:NationalDataAltruismPolicy a rdfs:Class,
+eu-dga:NationalDataAltruismPolicy a rdfs:Class,
         skos:Concept,
         dpv:Policy ;
     sw:term_status "accepted"@en ;
@@ -311,14 +312,14 @@ dpv-dga:NationalDataAltruismPolicy a rdfs:Class,
     skos:note "DGA 16"@en ;
     skos:prefLabel "National Data Altruism Policy"@en .
 
-dpv-dga:NationalSIPProvider a rdfs:Class,
+eu-dga:NationalSIPProvider a rdfs:Class,
         skos:Concept,
         dpv-dga:SIP ;
     sw:term_status "accepted"@en ;
     skos:definition "A national entity who is responsible for receiving and transmiting requests for the reuse of public data"@en ;
     skos:prefLabel "National Single Information Point Provider"@en .
 
-dpv-dga:PersonalDataReuseNotice a rdfs:Class,
+eu-dga:PersonalDataReuseNotice a rdfs:Class,
         skos:Concept,
         dpv:ConsentNotice ;
     sw:term_status "accepted"@en ;
@@ -326,14 +327,14 @@ dpv-dga:PersonalDataReuseNotice a rdfs:Class,
     skos:note "DGA 12.m"@en ;
     skos:prefLabel "Personal Data Reuse Notice"@en .
 
-dpv-dga:RegionalSIPProvider a rdfs:Class,
+eu-dga:RegionalSIPProvider a rdfs:Class,
         skos:Concept,
         dpv-dga:SIP ;
     sw:term_status "accepted"@en ;
     skos:definition "A regional entity who is responsible for receiving and transmiting requests for the reuse of public data"@en ;
     skos:prefLabel "Regional Single Information Point Provider"@en .
 
-dpv-dga:RightToDataConversionOptOut a rdfs:Class,
+eu-dga:RightToDataConversionOptOut a rdfs:Class,
         skos:Concept,
         dpv:Right ;
     sw:term_status "accepted"@en ;
@@ -341,7 +342,7 @@ dpv-dga:RightToDataConversionOptOut a rdfs:Class,
     skos:note "DGA 12.d"@en ;
     skos:prefLabel "Right to Data Conversion Opt-out"@en .
 
-dpv-dga:RightToImpartialReview a rdfs:Class,
+eu-dga:RightToImpartialReview a rdfs:Class,
         skos:Concept,
         dpv:Right ;
     sw:term_status "accepted"@en ;
@@ -349,7 +350,7 @@ dpv-dga:RightToImpartialReview a rdfs:Class,
     skos:note "DGA 28.3"@en ;
     skos:prefLabel "Right to Impartial Review"@en .
 
-dpv-dga:RightToLodgeComplaint a rdfs:Class,
+eu-dga:RightToLodgeComplaint a rdfs:Class,
         skos:Concept,
         dpv:Right ;
     sw:term_status "accepted"@en ;
@@ -357,7 +358,7 @@ dpv-dga:RightToLodgeComplaint a rdfs:Class,
     skos:note "DGA 27"@en ;
     skos:prefLabel "Right to Lodge Complaint"@en .
 
-dpv-dga:SIPProvider a rdfs:Class,
+eu-dga:SIPProvider a rdfs:Class,
         skos:Concept,
         dpv:LegalEntity ;
     sw:term_status "accepted"@en ;
@@ -365,14 +366,14 @@ dpv-dga:SIPProvider a rdfs:Class,
     skos:note "DGA 8"@en ;
     skos:prefLabel "Single Information Point Provider"@en .
 
-dpv-dga:SectorialSIPProvider a rdfs:Class,
+eu-dga:SectorialSIPProvider a rdfs:Class,
         skos:Concept,
         dpv-dga:SIP ;
     sw:term_status "accepted"@en ;
     skos:definition "An entity who is responsible for receiving and transmiting requests for the reuse of public data for a particular sector"@en ;
     skos:prefLabel "Sectorial Single Information Point Provider"@en .
 
-dpv-dga:SecureProcessingEnvironment a rdfs:Class,
+eu-dga:SecureProcessingEnvironment a rdfs:Class,
         skos:Concept,
         dpv:SecureProcessingEnvironment ;
     sw:term_status "accepted"@en ;
@@ -380,14 +381,14 @@ dpv-dga:SecureProcessingEnvironment a rdfs:Class,
     skos:note "DGA 2.20"@en ;
     skos:prefLabel "Secure Processing Environment"@en .
 
-dpv-dga:SingleInformationPoint a rdfs:Class,
+eu-dga:SingleInformationPoint a rdfs:Class,
         skos:Concept,
         dpv:Service ;
     sw:term_status "accepted"@en ;
     skos:definition "Service responsible for receiving and transmiting requests for the re-use of public data"@en ;
     skos:prefLabel "Single Information Point"@en .
 
-dpv-dga:ThirdCountryDataRequestNotice a rdfs:Class,
+eu-dga:ThirdCountryDataRequestNotice a rdfs:Class,
         skos:Concept,
         dpv:ThirdCountryTransferNotice ;
     sw:term_status "accepted"@en ;
@@ -395,7 +396,7 @@ dpv-dga:ThirdCountryDataRequestNotice a rdfs:Class,
     skos:note "DGA 31.5"@en ;
     skos:prefLabel "Third Country Data Request Notice"@en .
 
-dpv-dga:hasDAO a rdf:Property,
+eu-dga:hasDAO a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv-dga:DataAltruismOrganisation ;
     dct:contributor "Beatriz Esteves, Harshvardhan J. Pandit"@en ;
@@ -406,7 +407,7 @@ dpv-dga:hasDAO a rdf:Property,
     skos:prefLabel "has data altruism organisation"@en ;
     schema:rangeIncludes dpv-dga:DataAltruismOrganisation .
 
-dpv-dga:hasDISP a rdf:Property,
+eu-dga:hasDISP a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv-dga:DISP ;
     dct:contributor "Beatriz Esteves, Harshvardhan J. Pandit"@en ;
@@ -417,7 +418,7 @@ dpv-dga:hasDISP a rdf:Property,
     skos:prefLabel "has data intermediation service provider"@en ;
     schema:rangeIncludes dpv-dga:DISP .
 
-dpv-dga:hasDataHolder a rdf:Property,
+eu-dga:hasDataHolder a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv-dga:DataHolder ;
     dct:contributor "Beatriz Esteves, Harshvardhan J. Pandit"@en ;
@@ -428,7 +429,7 @@ dpv-dga:hasDataHolder a rdf:Property,
     skos:prefLabel "has data holder"@en ;
     schema:rangeIncludes dpv-dga:DataHolder .
 
-dpv-dga:hasDataReuseAssistant a rdf:Property,
+eu-dga:hasDataReuseAssistant a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv-dga:DataReuseAssistant ;
     dct:contributor "Beatriz Esteves, Harshvardhan J. Pandit"@en ;
@@ -440,7 +441,7 @@ dpv-dga:hasDataReuseAssistant a rdf:Property,
     skos:prefLabel "has data reuse assistant"@en ;
     schema:rangeIncludes dpv-dga:DataReuseAssistant .
 
-dpv-dga:hasDataUser a rdf:Property,
+eu-dga:hasDataUser a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv-dga:DataUser ;
     dct:contributor "Beatriz Esteves, Harshvardhan J. Pandit"@en ;
@@ -451,9 +452,9 @@ dpv-dga:hasDataUser a rdf:Property,
     skos:prefLabel "has data user"@en ;
     schema:rangeIncludes dpv-dga:DataUser .
 
-dpv:hasEntity skos:narrower dpv-dga:hasDAO,
-        dpv-dga:hasDISP,
-        dpv-dga:hasDataHolder,
-        dpv-dga:hasDataReuseAssistant,
-        dpv-dga:hasDataUser .
+dpv:hasEntity skos:narrower eu-dga:hasDAO,
+        eu-dga:hasDISP,
+        eu-dga:hasDataHolder,
+        eu-dga:hasDataReuseAssistant,
+        eu-dga:hasDataUser .
 

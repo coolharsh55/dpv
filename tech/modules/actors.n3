@@ -1,15 +1,16 @@
 @prefix dcam: <http://purl.org/dc/dcam/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix dpv: <https://w3id.org/dpv#> .
-@prefix dpv-tech: <https://w3id.org/dpv/tech#> .
+@prefix dpv-tech: <https://w3id.org/dpv/dpv-tech#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix tech: <https://w3id.org/dpv/tech#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-dpv-tech:TechnologyDeveloper a rdfs:Class,
+tech:TechnologyDeveloper a rdfs:Class,
         skos:Concept,
         dpv-tech:TechnologyActor ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -18,7 +19,7 @@ dpv-tech:TechnologyDeveloper a rdfs:Class,
     skos:definition "Actor that develops Technology"@en ;
     skos:prefLabel "Technology Developer"@en .
 
-dpv-tech:TechnologyProvider a rdfs:Class,
+tech:TechnologyProvider a rdfs:Class,
         skos:Concept,
         dpv-tech:TechnologyActor ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -27,7 +28,7 @@ dpv-tech:TechnologyProvider a rdfs:Class,
     skos:definition "Actor that provides Technology"@en ;
     skos:prefLabel "Technology Provider"@en .
 
-dpv-tech:TechnologySubject a rdfs:Class,
+tech:TechnologySubject a rdfs:Class,
         skos:Concept,
         dpv-tech:TechnologyActor ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -36,7 +37,7 @@ dpv-tech:TechnologySubject a rdfs:Class,
     skos:definition "Actor that is subject of use of Technology"@en ;
     skos:prefLabel "Technology Subject"@en .
 
-dpv-tech:TechnologyUser a rdfs:Class,
+tech:TechnologyUser a rdfs:Class,
         skos:Concept,
         dpv-tech:TechnologyActor ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -45,7 +46,7 @@ dpv-tech:TechnologyUser a rdfs:Class,
     skos:definition "Actor that uses Technologoy"@en ;
     skos:prefLabel "Technology User"@en .
 
-dpv-tech:hasDeveloper a rdf:Property,
+tech:hasDeveloper a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:Technology ;
     dcam:rangeIncludes dpv-tech:TechnologyDeveloper ;
@@ -60,7 +61,7 @@ dpv-tech:hasDeveloper a rdf:Property,
     schema:domainIncludes dpv:Technology ;
     schema:rangeIncludes dpv-tech:TechnologyDeveloper .
 
-dpv-tech:hasProvider a rdf:Property,
+tech:hasProvider a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:Technology ;
     dcam:rangeIncludes dpv-tech:TechnologyProvider ;
@@ -75,7 +76,7 @@ dpv-tech:hasProvider a rdf:Property,
     schema:domainIncludes dpv:Technology ;
     schema:rangeIncludes dpv-tech:TechnologyProvider .
 
-dpv-tech:hasSubject a rdf:Property,
+tech:hasSubject a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:Technology ;
     dcam:rangeIncludes dpv-tech:TechnologySubject ;
@@ -90,7 +91,7 @@ dpv-tech:hasSubject a rdf:Property,
     schema:domainIncludes dpv:Technology ;
     schema:rangeIncludes dpv-tech:TechnologySubject .
 
-dpv-tech:hasUser a rdf:Property,
+tech:hasUser a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:Technology ;
     dcam:rangeIncludes dpv-tech:TechnologyUser ;
@@ -105,8 +106,8 @@ dpv-tech:hasUser a rdf:Property,
     schema:domainIncludes dpv:Technology ;
     schema:rangeIncludes dpv-tech:TechnologyUser .
 
-dpv-tech:hasTechnologyActor skos:narrower dpv-tech:hasDeveloper,
-        dpv-tech:hasProvider,
-        dpv-tech:hasSubject,
-        dpv-tech:hasUser .
+dpv-tech:hasTechnologyActor skos:narrower tech:hasDeveloper,
+        tech:hasProvider,
+        tech:hasSubject,
+        tech:hasUser .
 

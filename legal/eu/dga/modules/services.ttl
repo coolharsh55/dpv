@@ -1,17 +1,18 @@
 @prefix dpv: <https://w3id.org/dpv#> .
-@prefix dpv-dga: <https://w3id.org/dpv/legal/eu/dga#> .
+@prefix dpv-dga: <https://w3id.org/dpv/dpv-gda#> .
+@prefix eu-dga: <https://w3id.org/dpv/legal/eu/dga#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 
-dpv-dga:DataCooperativeService a rdfs:Class,
+eu-dga:DataCooperativeService a rdfs:Class,
         skos:Concept,
         dpv-dga:DataIntermediationService ;
     sw:term_status "accepted"@en ;
     skos:definition "Service provided by a data cooperative"@en ;
     skos:prefLabel "Data Cooperative Service"@en .
 
-dpv-dga:DataIntermediationService a rdfs:Class,
+eu-dga:DataIntermediationService a rdfs:Class,
         skos:Concept,
         dpv:Service ;
     sw:term_status "accepted"@en ;
@@ -19,7 +20,7 @@ dpv-dga:DataIntermediationService a rdfs:Class,
     skos:note "DGA 2.11"@en ;
     skos:prefLabel "Data Intermediation Service"@en .
 
-dpv-dga:DataIntermediationServiceBetweenHoldersUsers a rdfs:Class,
+eu-dga:DataIntermediationServiceBetweenHoldersUsers a rdfs:Class,
         skos:Concept,
         dpv-dga:DataIntermediationService ;
     sw:term_status "accepted"@en ;
@@ -27,7 +28,7 @@ dpv-dga:DataIntermediationServiceBetweenHoldersUsers a rdfs:Class,
     skos:note "DGA 10.a"@en ;
     skos:prefLabel "Data Intermediation Service between Data Holders and Data Users"@en .
 
-dpv-dga:DataIntermediationServiceBetweenSubjectsUsers a rdfs:Class,
+eu-dga:DataIntermediationServiceBetweenSubjectsUsers a rdfs:Class,
         skos:Concept,
         dpv-dga:DataIntermediationService ;
     sw:term_status "accepted"@en ;
@@ -35,7 +36,7 @@ dpv-dga:DataIntermediationServiceBetweenSubjectsUsers a rdfs:Class,
     skos:note "DGA 10.b"@en ;
     skos:prefLabel "Data Intermediation Service between Data Subjects and Data Users"@en .
 
-dpv-dga:SingleInformationPoint a rdfs:Class,
+eu-dga:SingleInformationPoint a rdfs:Class,
         skos:Concept,
         dpv:Service ;
     sw:term_status "accepted"@en ;

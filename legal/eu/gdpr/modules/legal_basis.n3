@@ -1,12 +1,13 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix dpv: <https://w3id.org/dpv#> .
-@prefix dpv-gdpr: <https://w3id.org/dpv/legal/eu/gdpr#> .
+@prefix dpv-gdpr: <https://w3id.org/dpv/dpv-gdpr#> .
+@prefix eu-gdpr: <https://w3id.org/dpv/legal/eu/gdpr#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-dpv-gdpr:A6-1-a a rdfs:Class,
+eu-gdpr:A6-1-a a rdfs:Class,
         skos:Concept,
         dpv:ExpressedConsent ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -18,7 +19,7 @@ dpv-gdpr:A6-1-a a rdfs:Class,
     skos:note "Consent can be explicit or non-explicit. To express these specifically, see the explicit and non-explicit variations provided for Art.6-1a."@en ;
     skos:prefLabel "Art.6(1-a) consent"@en .
 
-dpv-gdpr:A6-1-a-explicit-consent a rdfs:Class,
+eu-gdpr:A6-1-a-explicit-consent a rdfs:Class,
         skos:Concept,
         dpv:ExplicitlyExpressedConsent,
         dpv-gdpr:A6-1-a ;
@@ -31,7 +32,7 @@ dpv-gdpr:A6-1-a-explicit-consent a rdfs:Class,
     skos:note "Valid consent in this case would have requirements for being 'explicit' in addition to requirements defined by A4-11. This is also mentioned in the Article 29 Working Party document \"Guidelines on Consent under Regulation 2016/679 (wp259rev.01)\""@en ;
     skos:prefLabel "Art 6(1-a) explicit consent"@en .
 
-dpv-gdpr:A6-1-a-non-explicit-consent a rdfs:Class,
+eu-gdpr:A6-1-a-non-explicit-consent a rdfs:Class,
         skos:Concept,
         dpv:ExpressedConsent,
         dpv-gdpr:A6-1a ;
@@ -44,7 +45,7 @@ dpv-gdpr:A6-1-a-non-explicit-consent a rdfs:Class,
     skos:note "Definition of consent: A data subject's unambigious/clear affirmative action that signifies an agreement to process their personal data (Rigo Wenning) . What is referred to as 'non-explicit consent' here is also termed as 'regular' consent in the Article 29 Working Party document \"Guidelines on Consent under Regulation 2016/679 (wp259rev.01)\". This is the legal basis that requires consent but not at the level of being 'explicit'."@en ;
     skos:prefLabel "Art.6(1-a) regular consent"@en .
 
-dpv-gdpr:A6-1-b a rdfs:Class,
+eu-gdpr:A6-1-b a rdfs:Class,
         skos:Concept,
         dpv:Contract ;
     dct:contributor "Eva Schlehahn, Bud Bruegger, Harshvardhan J. Pandit"@en ;
@@ -55,7 +56,7 @@ dpv-gdpr:A6-1-b a rdfs:Class,
     skos:definition "Legal basis based on performance of a contract to which the data subject is party or in order to take steps at the request of the data subject prior to entering into a contract"@en ;
     skos:prefLabel "Art 6(1-b) contract"@en .
 
-dpv-gdpr:A6-1-b-contract-performance a rdfs:Class,
+eu-gdpr:A6-1-b-contract-performance a rdfs:Class,
         skos:Concept,
         dpv:ContractPerformance,
         dpv-gdpr:A6-1-b ;
@@ -67,7 +68,7 @@ dpv-gdpr:A6-1-b-contract-performance a rdfs:Class,
     skos:definition "Legal basis based on performance of a contract to which the data subject is party"@en ;
     skos:prefLabel "Art 6(1-b) contract performance"@en .
 
-dpv-gdpr:A6-1-b-enter-into-contract a rdfs:Class,
+eu-gdpr:A6-1-b-enter-into-contract a rdfs:Class,
         skos:Concept,
         dpv:EnterIntoContract,
         dpv-gdpr:A6-1-b ;
@@ -79,7 +80,7 @@ dpv-gdpr:A6-1-b-enter-into-contract a rdfs:Class,
     skos:definition "Legal basis based on taking steps at the request of the data subject prior to entering into a contract"@en ;
     skos:prefLabel "Art 6(1-b) enter into contract"@en .
 
-dpv-gdpr:A6-1-c a rdfs:Class,
+eu-gdpr:A6-1-c a rdfs:Class,
         skos:Concept,
         dpv:LegalObligation ;
     dct:contributor "Eva Schlehahn, Bud Bruegger, Harshvardhan J. Pandit"@en ;
@@ -90,7 +91,7 @@ dpv-gdpr:A6-1-c a rdfs:Class,
     skos:definition "Legal basis based on compliance with a legal obligation to which the controller is subject"@en ;
     skos:prefLabel "Art 6(1-c) legal obligation"@en .
 
-dpv-gdpr:A6-1-d a rdfs:Class,
+eu-gdpr:A6-1-d a rdfs:Class,
         skos:Concept,
         dpv:VitalInterest ;
     dct:contributor "Eva Schlehahn, Bud Bruegger, Harshvardhan J. Pandit"@en ;
@@ -101,7 +102,7 @@ dpv-gdpr:A6-1-d a rdfs:Class,
     skos:definition "Legal basis based on protecting the vital interests of the data subject or of another natural person"@en ;
     skos:prefLabel "Art 6(1-d) protect vital interests"@en .
 
-dpv-gdpr:A6-1-d-data-subject a rdfs:Class,
+eu-gdpr:A6-1-d-data-subject a rdfs:Class,
         skos:Concept,
         dpv:VitalInterestOfDataSubject,
         dpv-gdpr:A6-1-d ;
@@ -113,7 +114,7 @@ dpv-gdpr:A6-1-d-data-subject a rdfs:Class,
     skos:definition "Legal basis based on protecting the vital interests of the data subject"@en ;
     skos:prefLabel "Art 6(1-d) protect vital interests of data subject"@en .
 
-dpv-gdpr:A6-1-d-natual-person a rdfs:Class,
+eu-gdpr:A6-1-d-natual-person a rdfs:Class,
         skos:Concept,
         dpv:VitalInterestOfNaturalPerson,
         dpv-gdpr:A6-1-d ;
@@ -125,7 +126,7 @@ dpv-gdpr:A6-1-d-natual-person a rdfs:Class,
     skos:definition "Legal basis based on protecting the vital interests of another natural person that is not the data subject"@en ;
     skos:prefLabel "Art 6(1-d) protect vital interests of natural person"@en .
 
-dpv-gdpr:A6-1-e a rdfs:Class,
+eu-gdpr:A6-1-e a rdfs:Class,
         skos:Concept,
         dpv:OfficialAuthorityOfController,
         dpv:PublicInterest ;
@@ -137,7 +138,7 @@ dpv-gdpr:A6-1-e a rdfs:Class,
     skos:definition "Legal basis based on performance of a task carried out in the public interest or in the exercise of official authority vested in the controller"@en ;
     skos:prefLabel "Art 6(1-e) public interest or official authority"@en .
 
-dpv-gdpr:A6-1-e-official-authority a rdfs:Class,
+eu-gdpr:A6-1-e-official-authority a rdfs:Class,
         skos:Concept,
         dpv:OfficialAuthorityOfController,
         dpv-gdpr:A6-1-e ;
@@ -149,7 +150,7 @@ dpv-gdpr:A6-1-e-official-authority a rdfs:Class,
     skos:definition "Legal basis based on the exercise of official authority vested in the controller"@en ;
     skos:prefLabel "Art 6(1-e) official authority"@en .
 
-dpv-gdpr:A6-1-e-public-interest a rdfs:Class,
+eu-gdpr:A6-1-e-public-interest a rdfs:Class,
         skos:Concept,
         dpv:PublicInterest,
         dpv-gdpr:A6-1-e ;
@@ -161,7 +162,7 @@ dpv-gdpr:A6-1-e-public-interest a rdfs:Class,
     skos:definition "Legal basis based on performance of a task carried out in the public interest"@en ;
     skos:prefLabel "Art 6(1-e) public interest"@en .
 
-dpv-gdpr:A6-1-f a rdfs:Class,
+eu-gdpr:A6-1-f a rdfs:Class,
         skos:Concept,
         dpv:LegitimateInterest ;
     dct:contributor "Eva Schlehahn, Bud Bruegger, Harshvardhan J. Pandit"@en ;
@@ -172,7 +173,7 @@ dpv-gdpr:A6-1-f a rdfs:Class,
     skos:definition "Legal basis based on the purposes of the legitimate interests pursued by the controller or by a third party, except where such interests are overridden by the interests or fundamental rights and freedoms of the data subject which require protection of personal data, in particular where the data subject is a child"@en ;
     skos:prefLabel "Art 6(1-f) legitimate interest"@en .
 
-dpv-gdpr:A6-1-f-controller a rdfs:Class,
+eu-gdpr:A6-1-f-controller a rdfs:Class,
         skos:Concept,
         dpv:LegitimateInterestOfController,
         dpv-gdpr:A6-1-f ;
@@ -184,7 +185,7 @@ dpv-gdpr:A6-1-f-controller a rdfs:Class,
     skos:definition "Legal basis based on the purposes of the legitimate interests pursued by the controller, except where such interests are overridden by the interests or fundamental rights and freedoms of the data subject which require protection of personal data, in particular where the data subject is a child"@en ;
     skos:prefLabel "Art 6(1-f) legitimate interest of controller"@en .
 
-dpv-gdpr:A6-1-f-third-party a rdfs:Class,
+eu-gdpr:A6-1-f-third-party a rdfs:Class,
         skos:Concept,
         dpv:LegitimateInterestOfThirdParty,
         dpv-gdpr:A6-1-f ;

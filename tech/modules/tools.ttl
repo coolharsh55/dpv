@@ -1,11 +1,12 @@
 @prefix dct: <http://purl.org/dc/terms/> .
-@prefix dpv-tech: <https://w3id.org/dpv/tech#> .
+@prefix dpv-tech: <https://w3id.org/dpv/dpv-tech#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix tech: <https://w3id.org/dpv/tech#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-dpv-tech:Cookie a rdfs:Class,
+tech:Cookie a rdfs:Class,
         skos:Concept,
         dpv-tech:LocalStorage ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -14,7 +15,7 @@ dpv-tech:Cookie a rdfs:Class,
     skos:definition "A HTTP or web or internet cookie"@en ;
     skos:prefLabel "Cookie"@en .
 
-dpv-tech:Database a rdfs:Class,
+tech:Database a rdfs:Class,
         skos:Concept,
         dpv-tech:DataStorageTechnology ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -23,7 +24,7 @@ dpv-tech:Database a rdfs:Class,
     skos:definition "A database, database management system (DBMS), or application database"@en ;
     skos:prefLabel "Database"@en .
 
-dpv-tech:FileSystem a rdfs:Class,
+tech:FileSystem a rdfs:Class,
         skos:Concept,
         dpv-tech:DataStorageTechnology ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -32,7 +33,7 @@ dpv-tech:FileSystem a rdfs:Class,
     skos:definition "A data storage and retrieval interface provided by an operating system"@en ;
     skos:prefLabel "File System"@en .
 
-dpv-tech:IdentityManagementTechnology a rdfs:Class,
+tech:IdentityManagementTechnology a rdfs:Class,
         skos:Concept,
         dpv-tech:IdentityTechnology,
         dpv-tech:ManagementTechnology ;
@@ -42,7 +43,7 @@ dpv-tech:IdentityManagementTechnology a rdfs:Class,
     skos:definition "Technologies providing identity provision, verification, management, and governance"@en ;
     skos:prefLabel "Identity Management Technology"@en .
 
-dpv-tech:IdentityWallet a rdfs:Class,
+tech:IdentityWallet a rdfs:Class,
         skos:Concept,
         dpv-tech:DataStorageTechnology,
         dpv-tech:IdentityManagementTechnology ;
@@ -52,7 +53,7 @@ dpv-tech:IdentityWallet a rdfs:Class,
     skos:definition "product and service that allows the user to store identity data, credentials and attributes linked to her/his identity, to provide them to relying parties on request and to use them for authentication, online and offline, and to create qualified electronic signatures and seals"@en ;
     skos:prefLabel "Identity Wallet"@en .
 
-dpv-tech:PersonalInformationManagementSystem a rdfs:Class,
+tech:PersonalInformationManagementSystem a rdfs:Class,
         skos:Concept,
         dpv-tech:DataManagementTechnology ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
@@ -61,7 +62,7 @@ dpv-tech:PersonalInformationManagementSystem a rdfs:Class,
     skos:definition "A PIMS is a system that helps to give individuals more control over their personal data by managing their personal data in secure, on-premises or online storage systems and sharing it when and with whomever they choose"@en ;
     skos:prefLabel "Personal Information Management System"@en .
 
-dpv-tech:SmartphoneApplication a rdfs:Class,
+tech:SmartphoneApplication a rdfs:Class,
         skos:Concept,
         dpv-tech:Application ;
     dct:contributor "Harshvardhan J. Pandit"@en ;

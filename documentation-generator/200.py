@@ -61,8 +61,8 @@ CSVFILES = {
             'properties': f'{IMPORT_CSV_PATH}/Processing_properties.csv',
         },
         'TOM': {
-            'taxonomy': f'{IMPORT_CSV_PATH}/TechnicalOrganisationalMeasure.csv',
-            'properties': f'{IMPORT_CSV_PATH}/TechnicalOrganisationalMeasure_properties.csv',
+            'taxonomy': f'{IMPORT_CSV_PATH}/TOM.csv',
+            'properties': f'{IMPORT_CSV_PATH}/TOM_properties.csv',
         },
         'technical_measures': {
             'classes': f'{IMPORT_CSV_PATH}/TechnicalMeasure.csv',
@@ -306,7 +306,7 @@ def load_CSV(filepath):
         terms = []
         for row in csvreader:
             # skip empty rows
-            if not row[0].strip():
+            if len(row) == 0 or not row[0].strip():
                 continue
             # extract required amount of terms, ignore any field after that
             row = [term.strip() for term in row[:count]]
@@ -351,10 +351,15 @@ for vocab, vocab_data in CSVFILES.items():
             header = [x.strip() for x in header]
             # csvdata is a list of dicts containing column:value
             for row in csvdata:
+                if not row['Term']: # skip empty rows
+                    continue
                 # clean data (dangling spaces)
                 row = {x.strip():y.strip() for x,y in row.items()}
                 # filter proposed terms
+                if 'Status' not in row:
+                    continue
                 if row['Status'] == 'proposed':
+                    # TODO: skip rows if they don't have a status
                     PROPOSED[vocab][module].append(row['Term'])
                     continue
                 # skip empty rows, annotations, deprecated concepts
