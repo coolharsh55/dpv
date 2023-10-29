@@ -135,6 +135,11 @@
     padding: 2px;
     border: 1px solid black;
   }
+  .term-def > p {
+    border: 1px solid gray;
+    margin: 2px;
+    padding-left: 2px;
+  }
 </style>
 </head>
 <body>
@@ -561,16 +566,13 @@
 <section id="vocabulary">
 <h2>Vocabulary Index</h2>
   <section id="dpv-classes">
-    <h3>DPV defined Classes</h3>
-    {{ index_concepts(vocab, filter="classes", skip_heading=True) }}
+    {{ index_concepts(vocab, filter="classes") }}
   </section>
   <section id="dpv-properties">
-  <h3>DPV defined Properties</h3>
-    {{ index_concepts(vocab, filter="properties", skip_heading=True) }}
+    {{ index_concepts(vocab, filter="properties") }}
   </section>
   <section id="external-concepts">
-    <h3>External concepts reused</h3>
-    {{ index_concepts(vocab, filter="external", skip_heading=True) }}
+    {{ index_concepts(vocab, filter="external") }}
   </section>
 </section>
 
