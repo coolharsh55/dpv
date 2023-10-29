@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-10-29 Sun 12:32 -->
+<!-- 2023-10-29 Sun 17:50 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>dpv-docgen-overhall</title>
@@ -201,22 +201,26 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org176b5ed">1. <span class="todo TODO">TODO</span> Update CSV schemas</a></li>
-<li><a href="#orgd26d560">2. <span class="todo TODO">TODO</span> 200 RDF Generation</a></li>
-<li><a href="#org0870765">3. HALT Write down how the CSVs will be mapped to RDF</a></li>
-<li><a href="#org0484270">4. <span class="done DONE">DONE</span> Generate a list of concepts for SAME extension and across ALL extensions</a></li>
-<li><a href="#org2ab3714">5. HALT Documentation of concepts</a></li>
-<li><a href="#orgf3230fb">6. <span class="done DONE">DONE</span> RDFORM phasing out</a></li>
-<li><a href="#org8cdaccf">7. HALT Main DPV HTML spec</a></li>
-<li><a href="#org54af345">8. <span class="todo TODO">TODO</span> exports</a></li>
-<li><a href="#org020a5c1">9. <span class="todo TODO">TODO</span> clean GitHub issues</a></li>
-<li><a href="#orgc4dc1a7">10. <span class="todo TODO">TODO</span> document new document generator</a></li>
+<li><a href="#org3f6e20c">1. <span class="todo TODO">TODO</span> Update CSV schemas</a>
+<ul>
+<li><a href="#org9402614">1.1. CSV Schema Guidelines</a></li>
+</ul>
+</li>
+<li><a href="#org879447d">2. <span class="todo TODO">TODO</span> 200 RDF Generation</a></li>
+<li><a href="#org98d18a0">3. HALT Write down how the CSVs will be mapped to RDF</a></li>
+<li><a href="#org799c1ba">4. <span class="done DONE">DONE</span> Generate a list of concepts for SAME extension and across ALL extensions</a></li>
+<li><a href="#orgb405033">5. HALT Documentation of concepts</a></li>
+<li><a href="#orgeb47bac">6. <span class="done DONE">DONE</span> RDFORM phasing out</a></li>
+<li><a href="#org1864e29">7. HALT Main DPV HTML spec</a></li>
+<li><a href="#org8e0b71c">8. <span class="todo TODO">TODO</span> exports</a></li>
+<li><a href="#orgcc05ca0">9. <span class="todo TODO">TODO</span> clean GitHub issues</a></li>
+<li><a href="#orge55360c">10. <span class="todo TODO">TODO</span> document new document generator</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org176b5ed" class="outline-2">
-<h2 id="org176b5ed"><span class="section-number-2">1.</span> <span class="todo TODO">TODO</span> Update CSV schemas</h2>
+<div id="outline-container-org3f6e20c" class="outline-2">
+<h2 id="org3f6e20c"><span class="section-number-2">1.</span> <span class="todo TODO">TODO</span> Update CSV schemas</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li class="off"><code>[&#xa0;]</code> Consent states should not be instances of <code>ConsentStatusInvalid...</code> but
@@ -262,18 +266,98 @@ authority should go within it e.g. GDPR and its DPAs.
 <li class="off"><code>[&#xa0;]</code> <code>skos:usageNote</code> to be added for guidance in using</li>
 </ul>
 </div>
+
+<div id="outline-container-org9402614" class="outline-3">
+<h3 id="org9402614"><span class="section-number-3">1.1.</span> CSV Schema Guidelines</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>Term
+<ul class="org-ul">
+<li>the identifier for the concept that will be suffixed to the namespace to
+create its unique identify e.g. <code>PersonalData</code> with namespace <code>dpv</code> results in
+the concept <code>dpv:PersonalData</code></li>
+<li>the identifier should following naming conventions as PascalCase for classes
+and camelCase for properties</li>
+<li>there should be no spaces, dashes, underscores</li>
+<li>acronyms should be retained in ALLCAPS</li>
+<li>plurals should not be used unless intentional and required</li>
+<li>property terms should have a prefix e.g. of the form <i>has,is,for</i> to associate
+a concept and indicate its applicability</li>
+<li>specialising a concept should follow the naming conventions of the term
+being specialised</li>
+<li>spellings should use UK english unless intentional and required to use an
+alternate form</li>
+<li>terms should be both machine and human readable</li>
+<li>Referencing External Terms
+<ul class="org-ul">
+<li>where external terms are to be used, e.g. to describe an existing concept
+or a property being reused to provide contextual association, the Term
+should be of the form <code>prefix:Term</code> with the appropriate namespace defined
+in DPV Namespace spreadsheet</li>
+<li>the external term should have a label, a description, and a status. No
+other information should be provided within the table</li>
+</ul></li>
+</ul></li>
+<li>Label
+<ul class="org-ul">
+<li>descriptive labels for human consumption</li>
+<li>may differ from Term</li>
+<li>must follow the same naming convention as the term, with additional
+punctuations where necessary, e.g. Pascal Case for classes and camel case
+(all lower) for properties</li>
+</ul></li>
+<li>Description
+<ul class="org-ul">
+<li>a definition of the term describing its use and role within DPV</li>
+<li>should be phrased in context of the concept being applied, e.g. for classes
+it should describe the information represented by the concept and for
+properties it should describe the association, relation, or annotation</li>
+</ul></li>
+<li>ParentTerm and ParentType
+<ul class="org-ul">
+<li>together these describe how the Term will be defined</li>
+<li><code>a</code> represents <code>rdf:type</code> instance of the ParentTerm</li>
+<li><code>sc</code> represents <code>rdfs:subClassOf</code> of the ParentTerm</li>
+<li>use of <code>prefix:Topconcept</code> in ParentType means <code>Term a Topconcept</code></li>
+<li>if topconcept is present, then stating ParentType means the Term is an
+instance of the topconcept and has <code>skos:broader ParentTerm</code></li>
+</ul></li>
+<li>examples
+<ul class="org-ul">
+<li>Term is <code>Purpose</code>, ParentType is <code>a</code>, and ParentTerm is <code>rdfs:Class</code> 
+<ul class="org-ul">
+<li><code>Purpose a rdfs:Class</code></li>
+</ul></li>
+<li>Term is <code>SpecialPurpose</code>, ParentType is <code>sc</code>, and ParentTerm is <code>dpv:Purpose</code> 
+<ul class="org-ul">
+<li><code>SpecialPurpose rdfs:subClassOf dpv:Purpose</code></li>
+</ul></li>
+<li>Term is <code>Marketing</code>, ParentType is <code>dpv:Purpose</code>, and ParentTerm is Empty 
+<ul class="org-ul">
+<li><code>Marketing a dpv:Purpose</code></li>
+<li><code>Marketing skos:broader dpv:Purpose</code></li>
+</ul></li>
+<li>Term is <code>DirectMarketing</code>, ParentType <code>dpv:Purpose</code>, ParentTerm is <code>dpv:Marketing</code>
+<ul class="org-ul">
+<li><code>DirectMarketing a dpv:Purpose</code></li>
+<li><code>DirectMarketing skos:broader dpv:Marketing</code></li>
+</ul></li>
+</ul></li>
+</ul>
 </div>
-<div id="outline-container-orgd26d560" class="outline-2">
-<h2 id="orgd26d560"><span class="section-number-2">2.</span> <span class="todo TODO">TODO</span> 200 RDF Generation</h2>
+</div>
+</div>
+<div id="outline-container-org879447d" class="outline-2">
+<h2 id="org879447d"><span class="section-number-2">2.</span> <span class="todo TODO">TODO</span> 200 RDF Generation</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
-<li class="off"><code>[&#xa0;]</code> modify <code>001</code> script to download only the XLSX files and then use <code>xlsx2csv</code>
+<li class="on"><code>[X]</code> modify <code>001</code> script to download only the XLSX files and then use <code>xlsx2csv</code>
 util to extract CSVs from it - this avoids the Google Sheet export error</li>
 <li class="off"><code>[&#xa0;]</code> <code>skos:ConceptScheme</code> to list related concepts together, can be used to
 generate the documentation</li>
 <li class="off"><code>[&#xa0;]</code> <code>dct:source</code> links should be rendered from (label,URL)</li>
-<li class="off"><code>[&#xa0;]</code> <code>rdf:Property</code> should also be a <code>skos:Concept</code></li>
-<li class="off"><code>[&#xa0;]</code> use <code>rdfs:subPropertyOf</code> where needed</li>
+<li class="on"><code>[X]</code> <code>rdf:Property</code> should also be a <code>skos:Concept</code></li>
+<li class="on"><code>[X]</code> use <code>rdfs:subPropertyOf</code> where needed</li>
 <li class="on"><code>[X]</code> add <code>schema:domainIncludes</code> and <code>schema:rangeIncludes</code></li>
 <li class="on"><code>[X]</code> double check <code>skos:broader</code> or <code>skos:narrower</code> is being used correctly</li>
 <li class="on"><code>[X]</code> double check whether <code>skos:broader</code> or <code>skos:broaderTransitive</code> is required</li>
@@ -285,8 +369,8 @@ i.e. as <code>dpv:dpv:isAfter</code> - see in rights</li>
 </div>
 </div>
 
-<div id="outline-container-org0870765" class="outline-2">
-<h2 id="org0870765"><span class="section-number-2">3.</span> HALT Write down how the CSVs will be mapped to RDF</h2>
+<div id="outline-container-org98d18a0" class="outline-2">
+<h2 id="org98d18a0"><span class="section-number-2">3.</span> HALT Write down how the CSVs will be mapped to RDF</h2>
 <div class="outline-text-2" id="text-3">
 <ul class="org-ul">
 <li class="on"><code>[X]</code> map the spreadsheet to RDF concepts</li>
@@ -319,8 +403,8 @@ and rights mappings and for locations</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org0484270" class="outline-2">
-<h2 id="org0484270"><span class="section-number-2">4.</span> <span class="done DONE">DONE</span> Generate a list of concepts for SAME extension and across ALL extensions</h2>
+<div id="outline-container-org799c1ba" class="outline-2">
+<h2 id="org799c1ba"><span class="section-number-2">4.</span> <span class="done DONE">DONE</span> Generate a list of concepts for SAME extension and across ALL extensions</h2>
 <div class="outline-text-2" id="text-4">
 <ul class="org-ul">
 <li class="on"><code>[X]</code> when generating the RDF, it is essential to get a list of all concepts in
@@ -331,8 +415,8 @@ such sets to create GLOBAL lists.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org2ab3714" class="outline-2">
-<h2 id="org2ab3714"><span class="section-number-2">5.</span> HALT Documentation of concepts</h2>
+<div id="outline-container-orgb405033" class="outline-2">
+<h2 id="orgb405033"><span class="section-number-2">5.</span> HALT Documentation of concepts</h2>
 <div class="outline-text-2" id="text-5">
 <ul class="org-ul">
 <li class="on"><code>[X]</code> determine what is needed for each extension, module, and concept to be
@@ -360,8 +444,8 @@ for concept then it goes in the concept detailed view</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgf3230fb" class="outline-2">
-<h2 id="orgf3230fb"><span class="section-number-2">6.</span> <span class="done DONE">DONE</span> RDFORM phasing out</h2>
+<div id="outline-container-orgeb47bac" class="outline-2">
+<h2 id="orgeb47bac"><span class="section-number-2">6.</span> <span class="done DONE">DONE</span> RDFORM phasing out</h2>
 <div class="outline-text-2" id="text-6">
 <ul class="org-ul">
 <li class="on"><code>[X]</code> determine whether RDFORM should be phased out (yes - it seems). The
@@ -376,8 +460,8 @@ are prefixed forms e.g. "dpv-pd:Email" from the IRI</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org8cdaccf" class="outline-2">
-<h2 id="org8cdaccf"><span class="section-number-2">7.</span> HALT Main DPV HTML spec</h2>
+<div id="outline-container-org1864e29" class="outline-2">
+<h2 id="org1864e29"><span class="section-number-2">7.</span> HALT Main DPV HTML spec</h2>
 <div class="outline-text-2" id="text-7">
 <ul class="org-ul">
 <li class="on"><code>[X]</code> determine what should go in the main DPV spec, suggestion is to have less
@@ -395,8 +479,8 @@ for now it could be linked tree representation for concepts in the hierarchy</li
 </ul>
 </div>
 </div>
-<div id="outline-container-org54af345" class="outline-2">
-<h2 id="org54af345"><span class="section-number-2">8.</span> <span class="todo TODO">TODO</span> exports</h2>
+<div id="outline-container-org8e0b71c" class="outline-2">
+<h2 id="org8e0b71c"><span class="section-number-2">8.</span> <span class="todo TODO">TODO</span> exports</h2>
 <div class="outline-text-2" id="text-8">
 <ul class="org-ul">
 <li class="off"><code>[&#xa0;]</code> (later) provide README or other guidance with the exported concent,
@@ -407,8 +491,8 @@ formatting e.g. <code>{ term: { contents } }</code> rather than having an "RDF g
 </ul>
 </div>
 </div>
-<div id="outline-container-org020a5c1" class="outline-2">
-<h2 id="org020a5c1"><span class="section-number-2">9.</span> <span class="todo TODO">TODO</span> clean GitHub issues</h2>
+<div id="outline-container-orgcc05ca0" class="outline-2">
+<h2 id="orgcc05ca0"><span class="section-number-2">9.</span> <span class="todo TODO">TODO</span> clean GitHub issues</h2>
 <div class="outline-text-2" id="text-9">
 <ul class="org-ul">
 <li class="off"><code>[&#xa0;]</code> identify issues that are stale, and what should be done about them</li>
@@ -418,8 +502,8 @@ why is X like this, or how to apply DPV for specific scenarios</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgc4dc1a7" class="outline-2">
-<h2 id="orgc4dc1a7"><span class="section-number-2">10.</span> <span class="todo TODO">TODO</span> document new document generator</h2>
+<div id="outline-container-orge55360c" class="outline-2">
+<h2 id="orge55360c"><span class="section-number-2">10.</span> <span class="todo TODO">TODO</span> document new document generator</h2>
 <div class="outline-text-2" id="text-10">
 <ul class="org-ul">
 <li class="off"><code>[&#xa0;]</code> comment code, make it easy to pick it up later</li>
@@ -431,7 +515,7 @@ is added, or a schema for a CSV changes</li>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Harshvardhan J. Pandit</p>
-<p class="date">Created: 2023-10-29 Sun 12:32</p>
+<p class="date">Created: 2023-10-29 Sun 17:50</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

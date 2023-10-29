@@ -25,6 +25,7 @@ dpv:AccountManagement a rdfs:Class,
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Beatriz Esteves"@en ;
     dct:created "2021-09-08"^^xsd:date ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Purpose ;
     skos:definition "Account Management refers to purposes associated with account management, such as to create, provide, maintain, and manage accounts"@en ;
     skos:prefLabel "Account Management"@en .
 
@@ -78,6 +79,7 @@ dpv:CommunicationManagement a rdfs:Class,
     dct:contributor "Georg P Krog, Paul Ryan, David Hickey, Harshvardhan J. Pandit"@en ;
     dct:created "2021-09-01"^^xsd:date ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Purpose ;
     skos:definition "Communication Management refers to purposes associated with providing or managing communication activities e.g. to send an email for notifying some information"@en ;
     skos:narrower dpv:CommunicationForCustomerCare ;
     skos:note "This purpose by itself does not sufficiently and clearly indicate what the communication is about. As such, it is recommended to combine it with another purpose to indicate the application. For example, Communication of Payment."@en ;
@@ -134,6 +136,7 @@ dpv:CustomerManagement a rdfs:Class,
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Beatriz"@en ;
     dct:created "2021-09-08"^^xsd:date ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Purpose ;
     skos:definition "Customer Management refers to purposes associated with managing activities related with past, current, and future customers"@en ;
     skos:narrower dpv:CustomerCare,
         dpv:CustomerClaimsManagement,
@@ -226,6 +229,7 @@ dpv:EnforceSecurity a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal"@en ;
     dct:created "2019-04-05"^^xsd:date ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Purpose ;
     skos:definition "Purposes associated with ensuring and enforcing security for data, personnel, or other related matters"@en ;
     skos:narrower dpv:AntiTerrorismOperations,
         dpv:EnforceAccessControl,
@@ -240,6 +244,7 @@ dpv:EstablishContractualAgreement a rdfs:Class,
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit"@en ;
     dct:created "2022-11-09"^^xsd:date ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Purpose ;
     skos:definition "Purposes associated with carrying out data processing to establish an agreement, such as for entering into a contract"@en ;
     skos:prefLabel "Establish Contractual Agreement"@en .
 
@@ -272,6 +277,7 @@ dpv:FulfilmentOfObligation a rdfs:Class,
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit"@en ;
     dct:created "2022-11-09"^^xsd:date ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Purpose ;
     skos:definition "Purposes associated with carrying out data processing to fulfill an obligation"@en ;
     skos:narrower dpv:FulfilmentOfContractualObligation,
         dpv:LegalCompliance ;
@@ -284,6 +290,7 @@ dpv:HumanResourceManagement a rdfs:Class,
     dct:created "2021-09-01"^^xsd:date ;
     dct:source "(Belgian DPA ROPA Template, https://www.privacycommission.be/nl/model-voor-een-register-van-de-verwerkingsactiviteiten)"@en ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Purpose ;
     skos:definition "Purposes associated with managing humans and 'human resources' within the organisation for effective and efficient operations."@en ;
     skos:narrower dpv:PersonnelManagement ;
     skos:note "HR is a broad concept. Its management includes, amongst others - recruiting employees and intermediaries e.g. brokers, independent representatives; payroll administration, remunerations, commissions, and wages; and application of social legislation."@en ;
@@ -388,6 +395,7 @@ dpv:Marketing a rdfs:Class,
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Beatriz Esteves"@en ;
     dct:created "2020-11-04"^^xsd:date ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Purpose ;
     skos:definition "Purposes associated with conducting marketing in relation to organisation or products or services e.g. promoting, selling, and distributing"@en ;
     skos:narrower dpv:Advertising,
         dpv:DirectMarketing,
@@ -472,6 +480,7 @@ dpv:OrganisationGovernance a rdfs:Class,
     dct:created "2021-09-01"^^xsd:date ;
     dct:source "(Belgian DPA ROPA Template, https://www.privacycommission.be/nl/model-voor-een-register-van-de-verwerkingsactiviteiten)"@en ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Purpose ;
     skos:definition "Purposes associated with conducting activities and functions for governance of an organisation"@en ;
     skos:narrower dpv:DisputeManagement,
         dpv:MemberPartnerManagement,
@@ -505,6 +514,7 @@ dpv:Personalisation a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2021-09-01"^^xsd:date ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Purpose ;
     skos:definition "Purposes associated with creating and providing customisation based on attributes and/or needs of person(s) or context(s)."@en ;
     skos:narrower dpv:PersonalisedAdvertising,
         dpv:ServicePersonalisation ;
@@ -623,6 +633,20 @@ dpv:Purpose a rdfs:Class,
     dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/)"@en ;
     sw:term_status "accepted"@en ;
     skos:definition "The purpose of processing personal data"@en ;
+    skos:narrower dpv:AccountManagement,
+        dpv:CommunicationManagement,
+        dpv:CustomerManagement,
+        dpv:EnforceSecurity,
+        dpv:EstablishContractualAgreement,
+        dpv:FulfilmentOfObligation,
+        dpv:HumanResourceManagement,
+        dpv:Marketing,
+        dpv:OrganisationGovernance,
+        dpv:Personalisation,
+        dpv:RecordManagement,
+        dpv:ResearchAndDevelopment,
+        dpv:ServiceProvision,
+        dpv:VendorManagement ;
     skos:prefLabel "Purpose"@en ;
     skos:related "spl:AnyPurpose"@en .
 
@@ -632,6 +656,7 @@ dpv:RecordManagement a rdfs:Class,
     dct:contributor "Paul Ryan, Georg P Krog, David Hickey, Harshvardhan J. Pandit"@en ;
     dct:created "2021-09-01"^^xsd:date ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Purpose ;
     skos:definition "Purposes associated with manage creation, storage, and use of records relevant to operations, events, and processes e.g. to store logs or access requests"@en ;
     skos:note "This purpose relates specifiaclly for record creation and management. This can be combined or used along with other purposes to express intentions such as records for legal compliance or vendor payments."@en ;
     skos:prefLabel "Record Management"@en .
@@ -665,6 +690,7 @@ dpv:ResearchAndDevelopment a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal"@en ;
     dct:created "2019-04-05"^^xsd:date ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Purpose ;
     skos:definition "Purposes associated with conducting research and development for new methods, products, or services"@en ;
     skos:narrower dpv:AcademicResearch,
         dpv:CommercialResearch,
@@ -770,6 +796,7 @@ dpv:ServiceProvision a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal"@en ;
     dct:created "2019-04-05"^^xsd:date ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Purpose ;
     skos:definition "Purposes associated with providing service or product or activities"@en ;
     skos:narrower dpv:PaymentManagement,
         dpv:RepairImpairments,
@@ -854,6 +881,7 @@ dpv:VendorManagement a rdfs:Class,
     dct:created "2021-09-01"^^xsd:date ;
     dct:source "(Belgian DPA ROPA Template, https://www.privacycommission.be/nl/model-voor-een-register-van-de-verwerkingsactiviteiten)"@en ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Purpose ;
     skos:definition "Purposes associated with manage orders, payment, evaluation, and prospecting related to vendors"@en ;
     skos:narrower dpv:VendorPayment,
         dpv:VendorRecordsManagement,

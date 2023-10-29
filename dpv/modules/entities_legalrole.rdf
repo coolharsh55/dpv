@@ -8,38 +8,25 @@
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
    xmlns:sw="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
-  <rdf:Description rdf:about="https://w3id.org/dpv#hasDataImporter">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  <rdf:Description rdf:about="https://w3id.org/dpv#DataController">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">has data importer</skos:prefLabel>
-    <skos:definition xml:lang="en">Indiciates inclusion or applicability of a LegalEntity in the role of Data Importer</skos:definition>
-    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#DataImporter"/>
-    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#DataImporter"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/dpv#hasRecipient"/>
-    <skos:broader rdf:resource="https://w3id.org/dpv#hasRecipient"/>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-09</dct:created>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:prefLabel xml:lang="en">Data Controller</skos:prefLabel>
+    <skos:definition xml:lang="en">The individual or organisation that decides (or controls) the purpose(s) of processing personal data.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#LegalEntity"/>
+    <skos:note xml:lang="en">The terms 'Controller' is usually the more common form of indicating a Data Controller. In ISO/IEC the term 'PII Controller' is used.</skos:note>
+    <dct:source xml:lang="en">(GDPR Art.4-7g,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_7/oj)</dct:source>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-04-05</dct:created>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-11-04</dct:modified>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor xml:lang="en">Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit</dct:contributor>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#hasDataProcessor">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">has data processor</skos:prefLabel>
-    <skos:definition xml:lang="en">Indiciates inclusion or applicability of a Data Processor</skos:definition>
-    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#DataProcessor"/>
-    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#DataProcessor"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/dpv#hasRecipient"/>
-    <skos:broader rdf:resource="https://w3id.org/dpv#hasRecipient"/>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-09</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor xml:lang="en">Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit</dct:contributor>
+    <dct:contributor xml:lang="en">Axel Polleres, Javier Fernández</dct:contributor>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#DataSubProcessor">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#DataProcessor"/>
     <skos:prefLabel xml:lang="en">Data Sub-Processor</skos:prefLabel>
     <skos:definition xml:lang="en">A 'sub-processor' is a processor engaged by another processor</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#DataProcessor"/>
     <skos:note xml:lang="en">sub-processor' is a commonly used term similar to 'sub-contractor' and does not have a specific legal definition</skos:note>
     <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-11-25</dct:created>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
@@ -58,6 +45,29 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor xml:lang="en">Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit</dct:contributor>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#ThirdParty">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:prefLabel xml:lang="en">Third Party</skos:prefLabel>
+    <skos:definition xml:lang="en">A ‘third party’ means a natural or legal person, public authority, agency or body other than the data subject, controller, processor and people who, under the direct authority of the controller or processor, are authorised to process personal data.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Recipient"/>
+    <dct:source xml:lang="en">(GDPR Art.4-10,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_10/oj)</dct:source>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-06-04</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor xml:lang="en">Harshvardhan J. Pandit</dct:contributor>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#DataImporter">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:prefLabel xml:lang="en">Data Importer</skos:prefLabel>
+    <skos:definition xml:lang="en">An entity that 'imports' data where importing is considered a form of data transfer</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Recipient"/>
+    <skos:note xml:lang="en">The EU, in particular the EDPB, uses data importing the context of cross-border data transfers/flows. These concepts are not bound by jurisdictional or geopolitical scopes within DPV and can thus be used for any notion of importing</skos:note>
+    <dct:source xml:lang="en">(EDPB Recommendations 01/2020 on Data Transfers, https://edpb.europa.eu/our-work-tools/our-documents/recommendations/recommendations-012020-measures-supplement-transfer_en)</dct:source>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-09-08</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor xml:lang="en">David Hickey, Georg Krog, Paul Ryan, Harshvardhan Pandit</dct:contributor>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#hasDataController">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -72,6 +82,29 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor xml:lang="en">Axel Polleres, Javier Fernández, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger</dct:contributor>
     <skos:narrower rdf:resource="https://w3id.org/dpv#hasJointDataControllers"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#DataExporter">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:prefLabel xml:lang="en">Data Exporter</skos:prefLabel>
+    <skos:definition xml:lang="en">An entity that 'exports' data where exporting is considered a form of data transfer</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#LegalEntity"/>
+    <skos:note xml:lang="en">The EU, in particular the EDPB, uses data exporter the context of cross-border data transfers/flows. These concepts are not bound by jurisdictional or geopolitical scopes within DPV and can thus be used for any notion of exporting</skos:note>
+    <dct:source xml:lang="en">(EDPB Recommendations 01/2020 on Data Transfers, https://edpb.europa.eu/our-work-tools/our-documents/recommendations/recommendations-012020-measures-supplement-transfer_en)</dct:source>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-09-08</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor xml:lang="en">David Hickey, Georg Krog, Paul Ryan, Harshvardhan Pandit</dct:contributor>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#JointDataControllers">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:prefLabel xml:lang="en">Joint Data Controllers</skos:prefLabel>
+    <skos:definition xml:lang="en">A group of Data Controllers that jointly determine the purposes and means of processing</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#DataController"/>
+    <skos:note xml:lang="en">To indicate the membership, hasDataController may be used</skos:note>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-02</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor xml:lang="en">Georg Krog, Harshvardhan Pandit</dct:contributor>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#hasRecipient">
     <skos:narrower rdf:resource="https://w3id.org/dpv#hasDataProcessor"/>
@@ -92,6 +125,72 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor xml:lang="en">Axel Polleres, Javier Fernández, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger</dct:contributor>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasDataImporter">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="en">has data importer</skos:prefLabel>
+    <skos:definition xml:lang="en">Indiciates inclusion or applicability of a LegalEntity in the role of Data Importer</skos:definition>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#DataImporter"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#DataImporter"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/dpv#hasRecipient"/>
+    <skos:broader rdf:resource="https://w3id.org/dpv#hasRecipient"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-09</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor xml:lang="en">Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit</dct:contributor>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasRepresentative">
+    <skos:narrower rdf:resource="https://w3id.org/dpv#hasDataProtectionOfficer"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasDataProcessor">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="en">has data processor</skos:prefLabel>
+    <skos:definition xml:lang="en">Indiciates inclusion or applicability of a Data Processor</skos:definition>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#DataProcessor"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#DataProcessor"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/dpv#hasRecipient"/>
+    <skos:broader rdf:resource="https://w3id.org/dpv#hasRecipient"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-09</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor xml:lang="en">Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit</dct:contributor>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#DataProcessor">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:prefLabel xml:lang="en">Data Processor</skos:prefLabel>
+    <skos:definition xml:lang="en">A ‘processor’ means a natural or legal person, public authority, agency or other body which processes personal data on behalf of the controller.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Recipient"/>
+    <dct:source xml:lang="en">(GDPR Art.4-8,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_8/oj)</dct:source>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-06-04</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor xml:lang="en">Harshvardhan J. Pandit</dct:contributor>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#DataProtectionOfficer">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:prefLabel xml:lang="en">Data Protection Officer</skos:prefLabel>
+    <skos:definition xml:lang="en">An entity within or authorised by an organisation to monitor internal compliance, inform and advise on data protection obligations and act as a contact point for data subjects and the supervisory authority.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Representative"/>
+    <dct:source xml:lang="en">(GDPR Art.37,https://eur-lex.europa.eu/eli/reg/2016/679/art_37/oj)</dct:source>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-11-04</dct:created>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-12-08</dct:modified>
+    <sw:term_status xml:lang="en">modified</sw:term_status>
+    <dct:contributor xml:lang="en">Georg Krog, Paul Ryan</dct:contributor>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#Recipient">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:prefLabel xml:lang="en">Recipient</skos:prefLabel>
+    <skos:definition xml:lang="en">Entities that receive personal data</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#LegalEntity"/>
+    <skos:related xml:lang="en">spl:AnyRecipient</skos:related>
+    <skos:note xml:lang="en">A recipient of personal data can be used to indicate any entity that receives personal data. This can be a Third Party, Processor (GDPR), or even a Controller.</skos:note>
+    <dct:source xml:lang="en">(SPECIAL Project,https://specialprivacy.ercim.eu/),(GDPR Art.4-9g,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_9/oj)</dct:source>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-04-05</dct:created>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-11-04</dct:modified>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor xml:lang="en">Axel Polleres, Javier Fernández</dct:contributor>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#hasDataExporter">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -101,6 +200,19 @@
     <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#DataExporter"/>
     <rdfs:subPropertyOf rdf:resource="https://w3id.org/dpv#hasEntity"/>
     <skos:broader rdf:resource="https://w3id.org/dpv#hasEntity"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-09</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor xml:lang="en">Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit</dct:contributor>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasJointDataControllers">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="en">has joint data controllers</skos:prefLabel>
+    <skos:definition xml:lang="en">Indicates inclusion or applicability of a Joint Data Controller</skos:definition>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#JointDataControllers"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#JointDataControllers"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/dpv#hasDataController"/>
+    <skos:broader rdf:resource="https://w3id.org/dpv#hasDataController"/>
     <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-09</dct:created>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor xml:lang="en">Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit</dct:contributor>
@@ -118,78 +230,6 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor xml:lang="en">Paul Ryan, Rob Brennan</dct:contributor>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#DataImporter">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#Recipient"/>
-    <skos:prefLabel xml:lang="en">Data Importer</skos:prefLabel>
-    <skos:definition xml:lang="en">An entity that 'imports' data where importing is considered a form of data transfer</skos:definition>
-    <skos:note xml:lang="en">The EU, in particular the EDPB, uses data importing the context of cross-border data transfers/flows. These concepts are not bound by jurisdictional or geopolitical scopes within DPV and can thus be used for any notion of importing</skos:note>
-    <dct:source xml:lang="en">(EDPB Recommendations 01/2020 on Data Transfers, https://edpb.europa.eu/our-work-tools/our-documents/recommendations/recommendations-012020-measures-supplement-transfer_en)</dct:source>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-09-08</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor xml:lang="en">David Hickey, Georg Krog, Paul Ryan, Harshvardhan Pandit</dct:contributor>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#DataProtectionOfficer">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#Representative"/>
-    <skos:prefLabel xml:lang="en">Data Protection Officer</skos:prefLabel>
-    <skos:definition xml:lang="en">An entity within or authorised by an organisation to monitor internal compliance, inform and advise on data protection obligations and act as a contact point for data subjects and the supervisory authority.</skos:definition>
-    <dct:source xml:lang="en">(GDPR Art.37,https://eur-lex.europa.eu/eli/reg/2016/679/art_37/oj)</dct:source>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-11-04</dct:created>
-    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-12-08</dct:modified>
-    <sw:term_status xml:lang="en">modified</sw:term_status>
-    <dct:contributor xml:lang="en">Georg Krog, Paul Ryan</dct:contributor>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#DataExporter">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#LegalEntity"/>
-    <skos:prefLabel xml:lang="en">Data Exporter</skos:prefLabel>
-    <skos:definition xml:lang="en">An entity that 'exports' data where exporting is considered a form of data transfer</skos:definition>
-    <skos:note xml:lang="en">The EU, in particular the EDPB, uses data exporter the context of cross-border data transfers/flows. These concepts are not bound by jurisdictional or geopolitical scopes within DPV and can thus be used for any notion of exporting</skos:note>
-    <dct:source xml:lang="en">(EDPB Recommendations 01/2020 on Data Transfers, https://edpb.europa.eu/our-work-tools/our-documents/recommendations/recommendations-012020-measures-supplement-transfer_en)</dct:source>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-09-08</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor xml:lang="en">David Hickey, Georg Krog, Paul Ryan, Harshvardhan Pandit</dct:contributor>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#DataProcessor">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#Recipient"/>
-    <skos:prefLabel xml:lang="en">Data Processor</skos:prefLabel>
-    <skos:definition xml:lang="en">A ‘processor’ means a natural or legal person, public authority, agency or other body which processes personal data on behalf of the controller.</skos:definition>
-    <dct:source xml:lang="en">(GDPR Art.4-8,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_8/oj)</dct:source>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-06-04</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor xml:lang="en">Harshvardhan J. Pandit</dct:contributor>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#Recipient">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#LegalEntity"/>
-    <skos:prefLabel xml:lang="en">Recipient</skos:prefLabel>
-    <skos:definition xml:lang="en">Entities that receive personal data</skos:definition>
-    <skos:related xml:lang="en">spl:AnyRecipient</skos:related>
-    <skos:note xml:lang="en">A recipient of personal data can be used to indicate any entity that receives personal data. This can be a Third Party, Processor (GDPR), or even a Controller.</skos:note>
-    <dct:source xml:lang="en">(SPECIAL Project,https://specialprivacy.ercim.eu/),(GDPR Art.4-9g,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_9/oj)</dct:source>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-04-05</dct:created>
-    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-11-04</dct:modified>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor xml:lang="en">Axel Polleres, Javier Fernández</dct:contributor>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#ThirdParty">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#Recipient"/>
-    <skos:prefLabel xml:lang="en">Third Party</skos:prefLabel>
-    <skos:definition xml:lang="en">A ‘third party’ means a natural or legal person, public authority, agency or body other than the data subject, controller, processor and people who, under the direct authority of the controller or processor, are authorised to process personal data.</skos:definition>
-    <dct:source xml:lang="en">(GDPR Art.4-10,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_10/oj)</dct:source>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-06-04</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor xml:lang="en">Harshvardhan J. Pandit</dct:contributor>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#hasRecipientDataController">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -203,49 +243,9 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor xml:lang="en">Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit</dct:contributor>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#JointDataControllers">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#DataController"/>
-    <skos:prefLabel xml:lang="en">Joint Data Controllers</skos:prefLabel>
-    <skos:definition xml:lang="en">A group of Data Controllers that jointly determine the purposes and means of processing</skos:definition>
-    <skos:note xml:lang="en">To indicate the membership, hasDataController may be used</skos:note>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-02</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor xml:lang="en">Georg Krog, Harshvardhan Pandit</dct:contributor>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#DataController">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#LegalEntity"/>
-    <skos:prefLabel xml:lang="en">Data Controller</skos:prefLabel>
-    <skos:definition xml:lang="en">The individual or organisation that decides (or controls) the purpose(s) of processing personal data.</skos:definition>
-    <skos:note xml:lang="en">The terms 'Controller' is usually the more common form of indicating a Data Controller. In ISO/IEC the term 'PII Controller' is used.</skos:note>
-    <dct:source xml:lang="en">(GDPR Art.4-7g,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_7/oj)</dct:source>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-04-05</dct:created>
-    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-11-04</dct:modified>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor xml:lang="en">Axel Polleres, Javier Fernández</dct:contributor>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#hasJointDataControllers">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">has joint data controllers</skos:prefLabel>
-    <skos:definition xml:lang="en">Indicates inclusion or applicability of a Joint Data Controller</skos:definition>
-    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#JointDataControllers"/>
-    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#JointDataControllers"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/dpv#hasDataController"/>
-    <skos:broader rdf:resource="https://w3id.org/dpv#hasDataController"/>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-09</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor xml:lang="en">Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit</dct:contributor>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#hasEntity">
     <skos:narrower rdf:resource="https://w3id.org/dpv#hasDataController"/>
     <skos:narrower rdf:resource="https://w3id.org/dpv#hasRecipient"/>
     <skos:narrower rdf:resource="https://w3id.org/dpv#hasDataExporter"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#hasRepresentative">
-    <skos:narrower rdf:resource="https://w3id.org/dpv#hasDataProtectionOfficer"/>
   </rdf:Description>
 </rdf:RDF>

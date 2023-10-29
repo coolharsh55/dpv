@@ -83,33 +83,33 @@ dpv:ConsentRevoked a rdfs:Class,
     skos:prefLabel "Consent Revoked"@en .
 
 dpv:ConsentStatus a rdfs:Class,
-        skos:Concept,
-        dpv:Status ;
+        skos:Concept ;
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake"@en ;
     dct:created "2022-06-22"^^xsd:date ;
     dct:source "(GConsent,https://w3id.org/GConsent)"@en ;
+    rdfs:subClassOf dpv:Status ;
     sw:term_status "accepted"@en ;
     skos:definition "The state or status of 'consent' that provides information reflecting its operational status and validity for processing data"@en ;
     skos:note "States are useful as information artefacts to implement them in controlling processing, and to reflect the process and flow of obtaining and maintaining consent. For example, a database table that stores consent states for specific processing and can be queried to obtain them in an efficient manner. States are also useful in investigations to determine the use and validity of consenting practices"@en ;
     skos:prefLabel "Consent Status"@en .
 
 dpv:ConsentStatusInvalidForProcessing a rdfs:Class,
-        skos:Concept,
-        dpv:ConsentStatus ;
+        skos:Concept ;
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake"@en ;
     dct:created "2022-06-22"^^xsd:date ;
     dct:source "(GConsent,https://w3id.org/GConsent)"@en ;
+    rdfs:subClassOf dpv:ConsentStatus ;
     sw:term_status "accepted"@en ;
     skos:definition "States of consent that cannot be used as valid justifications for processing data"@en ;
     skos:note "This identifies the stages associated with consent that should not be used to process data"@en ;
     skos:prefLabel "Consent Status Invalid for Processing"@en .
 
 dpv:ConsentStatusValidForProcessing a rdfs:Class,
-        skos:Concept,
-        dpv:ConsentStatus ;
+        skos:Concept ;
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake"@en ;
     dct:created "2022-06-22"^^xsd:date ;
     dct:source "(GConsent,https://w3id.org/GConsent)"@en ;
+    rdfs:subClassOf dpv:ConsentStatus ;
     sw:term_status "accepted"@en ;
     skos:definition "States of consent that can be used as valid justifications for processing data"@en ;
     skos:note "Practically, given consent is the only valid state for processing"@en ;

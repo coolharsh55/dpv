@@ -175,12 +175,11 @@ def download_document(
     document_id, document_name, export_link, ext='xlsx'):
     '''Download the sheet and save to specified path in specified format'''
     url = export_link % (document_id, document_name)
-    INFO(f'Downloading {document_name}.{ext} ...', end='')
     try:
         request.urlretrieve(url, f'{DOCS_FOLDER}/{document_name}.{ext}')
-        INFO(f'DONE.')
+        INFO(f'Downloaded {document_name}.{ext}')
     except Exception as E:
-        INFO(f'ERROR :: {E}')
+        logging.error(f'ERROR :: {E}')
 
 
 # MAIN

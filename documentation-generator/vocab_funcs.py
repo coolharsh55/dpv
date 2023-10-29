@@ -73,22 +73,41 @@ def construct_parent_taxonomy(item, data, namespace):
     triples = []
     term, namespace = _get_term_from_prefix_notation(data['Term'], namespace)
     # TODO: remove dpv:Concept as a concept
-    # TODO: handle taxonomy i.e. as instances of a topconcept 
-    parents = item.split(',')
-    for parent in parents:
+    
+    # turn parents (if non-empty) into IRIs
+    parents_raw = data['ParentTerm'].strip()
+    parents_raw = parents_raw.split(',')
+    parents = [] 
+    for parent in parents_raw:
         parent = parent.strip()
-        if parent == 'dpv:Concept':
-            parent = NAMESPACES['skos']['Concept']
-        else:
+        if not parent:
+            continue
+        if parent != 'dpv:Concept':
             prefix, parentterm = parent.split(':')
             parent = NAMESPACES[prefix][parentterm]
-        if data['ParentType'] in ('a', 'sc'):
-            triples.append((namespace[term], RDF.type, parent))
         else:
-            prefix_top, topconcept = data['ParentType'].split(':')
-            topconcept = NAMESPACES[prefix_top][topconcept]
-            triples.append((namespace[term], RDF.type, topconcept))
-            # TODO: check skos broader/narrower transitive 
+            parent = RDFS.Class
+        parents.append(parent)
+    # check type of parent to handle
+    if item in ('a', 'sc'):
+        if item == 'a': # instance
+            annotation = RDF.type
+        elif item == 'sc': # subclass
+            annotation = RDFS.subClassOf
+        for parent in parents:
+            triples.append((namespace[term], annotation, parent))
+        return triples
+    # parent is a topconcept
+    prefix_top, topconcept = data['ParentType'].split(':')
+    topconcept = NAMESPACES[prefix_top][topconcept]
+    triples.append((namespace[term], RDF.type, topconcept))
+    if not parents:
+        # empty parents means this is a topconcept
+        triples.append((namespace[term], SKOS.broader, topconcept))
+        triples.append((topconcept, SKOS.narrower, namespace[term]))
+    else:
+        # parent non-empty means not a top concept, state relation
+        for parent in parents:
             triples.append((namespace[term], SKOS.broader, parent))
             triples.append((parent, SKOS.narrower, namespace[term]))
     return triples

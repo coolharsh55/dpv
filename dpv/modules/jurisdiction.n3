@@ -9,89 +9,89 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dpv:City a rdfs:Class,
-        skos:Concept,
-        dpv:Location ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-10-22"^^xsd:date ;
+    rdfs:subClassOf dpv:Location ;
     sw:term_status "accepted"@en ;
     skos:definition "A region consisting of urban population and commerce"@en ;
     skos:prefLabel "City"@en .
 
 dpv:CloudLocation a rdfs:Class,
-        skos:Concept,
-        dpv:RemoteLocation ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2020-10-05"^^xsd:date ;
+    rdfs:subClassOf dpv:RemoteLocation ;
     sw:term_status "modified"@en ;
     skos:definition "Location that is in the 'cloud' i.e. a logical location operated over the internet"@en ;
     skos:prefLabel "Cloud Location"@en .
 
 dpv:Country a rdfs:Class,
-        skos:Concept,
-        dpv:Location ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit, Georg P Krog"@en ;
     dct:created "2022-01-19"^^xsd:date ;
+    rdfs:subClassOf dpv:Location ;
     sw:term_status "accepted"@en ;
     skos:definition "A political entity indicative of a sovereign or non-sovereign territorial state comprising of distinct geographical areas"@en ;
     skos:note "The definition of country is not intended for political interpretation. DPVCG welcomes alternate definitions based in existing sources with global scope, such as UN or ISO."@en ;
     skos:prefLabel "Country"@en .
 
 dpv:DecentralisedLocations a rdfs:Class,
-        skos:Concept,
-        dpv:LocationFixture ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2020-10-05"^^xsd:date ;
+    rdfs:subClassOf dpv:LocationFixture ;
     sw:term_status "modified"@en ;
     skos:definition "Location that is spread across multiple separate areas with no distinction between their importance"@en ;
     skos:prefLabel "Decentralised Locations"@en .
 
 dpv:EconomicUnion a rdfs:Class,
-        skos:Concept,
-        dpv:Location ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-01-19"^^xsd:date ;
+    rdfs:subClassOf dpv:Location ;
     sw:term_status "accepted"@en ;
     skos:definition "A political union of two or more countries based on economic or trade agreements"@en ;
     skos:prefLabel "Economic Union"@en .
 
 dpv:FederatedLocations a rdfs:Class,
-        skos:Concept,
-        dpv:LocationFixture ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2020-10-05"^^xsd:date ;
+    rdfs:subClassOf dpv:LocationFixture ;
     sw:term_status "modified"@en ;
     skos:definition "Location that is federated across multiple separate areas with designation of a primary or central location"@en ;
     skos:prefLabel "Federated Locations"@en .
 
 dpv:FixedLocation a rdfs:Class,
-        skos:Concept,
-        dpv:LocationFixture ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2020-10-05"^^xsd:date ;
+    rdfs:subClassOf dpv:LocationFixture ;
     sw:term_status "modified"@en ;
     skos:definition "Location that is fixed i.e. known to occur at a specific place"@en ;
     skos:prefLabel "Fixed Location"@en .
 
 dpv:FixedMultipleLocations a rdfs:Class,
-        skos:Concept,
-        dpv:FixedLocation ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2020-10-05"^^xsd:date ;
+    rdfs:subClassOf dpv:FixedLocation ;
     sw:term_status "modified"@en ;
     skos:definition "Location that is fixed with multiple places e.g. multiple cities"@en ;
     skos:prefLabel "Fixed Multiple Locations"@en .
 
 dpv:FixedSingularLocation a rdfs:Class,
-        skos:Concept,
-        dpv:FixedLocation ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2020-10-05"^^xsd:date ;
+    rdfs:subClassOf dpv:FixedLocation ;
     sw:term_status "modified"@en ;
     skos:definition "Location that is fixed at a specific place e.g. a city"@en ;
     skos:prefLabel "Fixed Singular Location"@en .
@@ -100,16 +100,17 @@ dpv:Law a rdfs:Class,
         skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-01-19"^^xsd:date ;
+    rdfs:subClassOf rdfs:Class ;
     sw:term_status "accepted"@en ;
     skos:definition "A law is a set of rules created by government or authorities"@en ;
     skos:prefLabel "Law"@en .
 
 dpv:LocalLocation a rdfs:Class,
-        skos:Concept,
-        dpv:LocationLocality ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2020-10-05"^^xsd:date ;
+    rdfs:subClassOf dpv:LocationLocality ;
     sw:term_status "modified"@en ;
     skos:definition "Location is local"@en ;
     skos:prefLabel "Local Location"@en .
@@ -118,6 +119,7 @@ dpv:Location a rdfs:Class,
         skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit, Georg P Krog"@en ;
     dct:created "2022-01-19"^^xsd:date ;
+    rdfs:subClassOf rdfs:Class ;
     sw:term_status "accepted"@en ;
     skos:definition "A location is a position, site, or area where something is located"@en ;
     skos:note "Location may be geographic, physical, or virtual."@en ;
@@ -127,34 +129,35 @@ dpv:LocationFixture a rdfs:Class,
         skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-06-15"^^xsd:date ;
+    rdfs:subClassOf rdfs:Class ;
     sw:term_status "accepted"@en ;
     skos:definition "The fixture of location refers to whether the location is fixed"@en ;
     skos:prefLabel "Location Fixture"@en .
 
 dpv:LocationLocality a rdfs:Class,
-        skos:Concept,
-        dpv:Location ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2022-10-04"^^xsd:date ;
+    rdfs:subClassOf dpv:Location ;
     sw:term_status "modified"@en ;
     skos:definition "Locality refers to whether the specified location is local within some context, e.g. for the user"@en ;
     skos:prefLabel "Location Locality"@en .
 
 dpv:PrivateLocation a rdfs:Class,
-        skos:Concept,
-        dpv:LocalLocation ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-10-22"^^xsd:date ;
+    rdfs:subClassOf dpv:LocalLocation ;
     sw:term_status "accepted"@en ;
     skos:definition "Location that is not or cannot be accessed by the public and is controlled as a private space"@en ;
     skos:prefLabel "Private Location"@en .
 
 dpv:PublicLocation a rdfs:Class,
-        skos:Concept,
-        dpv:LocalLocation ;
+        skos:Concept ;
     dct:contributor "Georg P Krog"@en ;
     dct:created "2022-10-22"^^xsd:date ;
+    rdfs:subClassOf dpv:LocalLocation ;
     sw:term_status "accepted"@en ;
     skos:definition "Location that is or can be accessed by the public"@en ;
     skos:prefLabel "Public Location"@en .
@@ -170,76 +173,76 @@ dpv:RandomLocation a rdfs:Class,
     skos:prefLabel "Random Location"@en .
 
 dpv:Region a rdfs:Class,
-        skos:Concept,
-        dpv:Location ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-01-19"^^xsd:date ;
+    rdfs:subClassOf dpv:Location ;
     sw:term_status "accepted"@en ;
     skos:definition "A region is an area or site that is considered a location"@en ;
     skos:prefLabel "Region"@en .
 
 dpv:RemoteLocation a rdfs:Class,
-        skos:Concept,
-        dpv:LocationLocality ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2020-10-05"^^xsd:date ;
+    rdfs:subClassOf dpv:LocationLocality ;
     sw:term_status "modified"@en ;
     skos:definition "Location is remote i.e. not local"@en ;
     skos:prefLabel "Remote Location"@en .
 
 dpv:SupraNationalUnion a rdfs:Class,
-        skos:Concept,
-        dpv:Location ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-01-19"^^xsd:date ;
+    rdfs:subClassOf dpv:Location ;
     sw:term_status "accepted"@en ;
     skos:definition "A political union of two or more countries with an establishment of common authority"@en ;
     skos:prefLabel "Supranational Union"@en .
 
 dpv:ThirdCountry a rdfs:Class,
-        skos:Concept,
-        dpv:Country ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-02-09"^^xsd:date ;
+    rdfs:subClassOf dpv:Country ;
     sw:term_status "accepted"@en ;
     skos:definition "Represents a country outside applicable or compatible jurisdiction as outlined in law"@en ;
     skos:prefLabel "Third Country"@en .
 
 dpv:VariableLocation a rdfs:Class,
-        skos:Concept,
-        dpv:LocationFixture ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2020-10-05"^^xsd:date ;
+    rdfs:subClassOf dpv:LocationFixture ;
     sw:term_status "modified"@en ;
     skos:definition "Location that is known but is variable e.g. somewhere within a given area"@en ;
     skos:prefLabel "Variable Location"@en .
 
 dpv:WithinDevice a rdfs:Class,
-        skos:Concept,
-        dpv:LocalLocation ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2020-10-05"^^xsd:date ;
+    rdfs:subClassOf dpv:LocalLocation ;
     sw:term_status "modified"@en ;
     skos:definition "Location is local and entirely within a device, such as a smartphone"@en ;
     skos:prefLabel "Within Device"@en .
 
 dpv:WithinPhysicalEnvironment a rdfs:Class,
-        skos:Concept,
-        dpv:LocalLocation ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2020-10-06"^^xsd:date ;
+    rdfs:subClassOf dpv:LocalLocation ;
     sw:term_status "accepted"@en ;
     skos:definition "Location is local and entirely within a physical environment, such as a room"@en ;
     skos:prefLabel "Within Physical Environment"@en .
 
 dpv:WithinVirtualEnvironment a rdfs:Class,
-        skos:Concept,
-        dpv:LocalLocation ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2020-10-06"^^xsd:date ;
+    rdfs:subClassOf dpv:LocalLocation ;
     sw:term_status "accepted"@en ;
     skos:definition "Location is local and entirely within a virtual environment, such as a shared network directory"@en ;
     skos:prefLabel "Within Virtual Environment"@en .

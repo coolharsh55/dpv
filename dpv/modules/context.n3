@@ -18,20 +18,20 @@ dpv:Context a rdfs:Class,
     skos:prefLabel "Context"@en .
 
 dpv:ContinousFrequency a rdfs:Class,
-        skos:Concept,
-        dpv:Frequency ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2020-10-05"^^xsd:date ;
+    rdfs:subClassOf dpv:Frequency ;
     sw:term_status "modified"@en ;
     skos:definition "Frequency where occurences are continous"@en ;
     skos:prefLabel "Continous Frequency"@en .
 
 dpv:Duration a rdfs:Class,
-        skos:Concept,
-        dpv:Context ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-02-09"^^xsd:date ;
+    rdfs:subClassOf dpv:Context ;
     sw:term_status "accepted"@en ;
     skos:definition "The duration or temporal limitation"@en ;
     skos:prefLabel "Duration"@en .
@@ -47,29 +47,29 @@ dpv:EndlessDuration a rdfs:Class,
     skos:prefLabel "Endless Duration"@en .
 
 dpv:FixedOccurencesDuration a rdfs:Class,
-        skos:Concept,
-        dpv:Duration ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2020-10-05"^^xsd:date ;
+    rdfs:subClassOf dpv:Duration ;
     sw:term_status "modified"@en ;
     skos:definition "Duration that takes place a fixed number of times e.g. 3 times"@en ;
     skos:prefLabel "Fixed Occurences Duration"@en .
 
 dpv:Frequency a rdfs:Class,
-        skos:Concept,
-        dpv:Context ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-02-16"^^xsd:date ;
+    rdfs:subClassOf dpv:Context ;
     sw:term_status "accepted"@en ;
     skos:definition "The frequency or information about periods and repetitions in terms of recurrence."@en ;
     skos:prefLabel "Frequency"@en .
 
 dpv:Importance a rdfs:Class,
-        skos:Concept,
-        dpv:Context ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit, Paul Ryan, Georg P Krog, Julian Flake, Beatriz Esteves"@en ;
     dct:created "2022-02-09"^^xsd:date ;
+    rdfs:subClassOf dpv:Context ;
     sw:term_status "accepted"@en ;
     skos:definition "An indication of 'importance' within a context"@en ;
     skos:note "Importance can be used to express importance, desirability, relevance, or significance as a context."@en ;
@@ -86,19 +86,19 @@ dpv:IndeterminateDuration a rdfs:Class,
     skos:prefLabel "Indeterminate Duration"@en .
 
 dpv:Justification a rdfs:Class,
-        skos:Concept,
-        dpv:Context ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-06-15"^^xsd:date ;
+    rdfs:subClassOf dpv:Context ;
     sw:term_status "accepted"@en ;
     skos:definition "A form of documentation providing reaosns, explanations, or justifications"@en ;
     skos:prefLabel "Justification"@en .
 
 dpv:Necessity a rdfs:Class,
-        skos:Concept,
-        dpv:Context ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit, Paul Ryan, Georg P Krog, Julian Flake, Beatriz Esteves"@en ;
     dct:created "2022-02-12"^^xsd:date ;
+    rdfs:subClassOf dpv:Context ;
     sw:term_status "accepted"@en ;
     skos:definition "An indication of 'necessity' within a context"@en ;
     skos:note "Necessity can be used to express need, essentiality, requirement, or compulsion."@en ;
@@ -114,11 +114,11 @@ dpv:NotRequired a rdfs:Class,
     skos:prefLabel "Not Required"@en .
 
 dpv:OftenFrequency a rdfs:Class,
-        skos:Concept,
-        dpv:Frequency ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2020-10-05"^^xsd:date ;
+    rdfs:subClassOf dpv:Frequency ;
     sw:term_status "modified"@en ;
     skos:definition "Frequency where occurences are often or frequent, but not continous"@en ;
     skos:prefLabel "Often Frequency"@en .
@@ -151,10 +151,10 @@ dpv:Required a rdfs:Class,
     skos:prefLabel "Required"@en .
 
 dpv:Scope a rdfs:Class,
-        skos:Concept,
-        dpv:Context ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-06-15"^^xsd:date ;
+    rdfs:subClassOf dpv:Context ;
     sw:term_status "accepted"@en ;
     skos:definition "Indication of the extent or range or boundaries associated with(in) a context"@en ;
     skos:prefLabel "Scope"@en .
@@ -169,21 +169,21 @@ dpv:SecondaryImportance a rdfs:Class,
     skos:prefLabel "Secondary Importance"@en .
 
 dpv:SingularFrequency a rdfs:Class,
-        skos:Concept,
-        dpv:Frequency ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2020-10-05"^^xsd:date ;
+    rdfs:subClassOf dpv:Frequency ;
     sw:term_status "modified"@en ;
     skos:definition "Frequency where occurences are singular i.e. they take place only once"@en ;
     skos:prefLabel "Singular Frequency"@en .
 
 dpv:SporadicFrequency a rdfs:Class,
-        skos:Concept,
-        dpv:Frequency ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2020-10-05"^^xsd:date ;
+    rdfs:subClassOf dpv:Frequency ;
     sw:term_status "modified"@en ;
     skos:definition "Frequency where occurences are sporadic or infrequent or sparse"@en ;
     skos:prefLabel "Sporadic Frequency"@en .
@@ -198,31 +198,31 @@ dpv:Technology a rdfs:Class,
     skos:prefLabel "Technology"@en .
 
 dpv:TemporalDuration a rdfs:Class,
-        skos:Concept,
-        dpv:Duration ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2020-10-05"^^xsd:date ;
+    rdfs:subClassOf dpv:Duration ;
     sw:term_status "modified"@en ;
     skos:definition "Duration that has a fixed temporal duration e.g. 6 months"@en ;
     skos:prefLabel "Temporal Duration"@en .
 
 dpv:UntilEventDuration a rdfs:Class,
-        skos:Concept,
-        dpv:Duration ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2020-10-05"^^xsd:date ;
+    rdfs:subClassOf dpv:Duration ;
     sw:term_status "modified"@en ;
     skos:definition "Duration that takes place until a specific event occurs e.g. Account Closure"@en ;
     skos:prefLabel "Until Event Duration"@en .
 
 dpv:UntilTimeDuration a rdfs:Class,
-        skos:Concept,
-        dpv:Duration ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2020-10-05"^^xsd:date ;
+    rdfs:subClassOf dpv:Duration ;
     sw:term_status "modified"@en ;
     skos:definition "Duration that has a fixed end date e.g. 2022-12-31"@en ;
     skos:prefLabel "Until Time Duration"@en .

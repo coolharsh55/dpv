@@ -9,10 +9,10 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dpv:Benefit a rdfs:Class,
-        skos:Concept,
-        dpv:Impact ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit, Julian Flake, Georg P Krog, Fajar Ekaputra, Beatriz Esteves, Axel Polleres"@en ;
     dct:created "2022-03-23"^^xsd:date ;
+    rdfs:subClassOf dpv:Impact ;
     sw:term_status "accepted"@en ;
     skos:definition "Impact(s) that acts as or causes benefits"@en ;
     skos:prefLabel "Benefit"@en .
@@ -26,64 +26,64 @@ dpv:Consequence a rdfs:Class,
     skos:prefLabel "Consequence"@en .
 
 dpv:ConsequenceAsSideEffect a rdfs:Class,
-        skos:Concept,
-        dpv:Consequence ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-03-30"^^xsd:date ;
+    rdfs:subClassOf dpv:Consequence ;
     sw:term_status "accepted"@en ;
     skos:definition "The consequence(s) possible or arising as a side-effect of specified context"@en ;
     skos:prefLabel "Consequence as Side-Effect"@en .
 
 dpv:ConsequenceOfFailure a rdfs:Class,
-        skos:Concept,
-        dpv:Consequence ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit, Georg P Krog"@en ;
     dct:created "2022-03-23"^^xsd:date ;
+    rdfs:subClassOf dpv:Consequence ;
     sw:term_status "accepted"@en ;
     skos:definition "The consequence(s) possible or arising from failure of specified context"@en ;
     skos:prefLabel "Consequence of Failure"@en .
 
 dpv:ConsequenceOfSuccess a rdfs:Class,
-        skos:Concept,
-        dpv:Consequence ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit, Georg P Krog"@en ;
     dct:created "2022-03-23"^^xsd:date ;
+    rdfs:subClassOf dpv:Consequence ;
     sw:term_status "accepted"@en ;
     skos:definition "The consequence(s) possible or arising from success of specified context"@en ;
     skos:prefLabel "Consequence of Success"@en .
 
 dpv:Damage a rdfs:Class,
-        skos:Concept,
-        dpv:Impact ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-03-30"^^xsd:date ;
+    rdfs:subClassOf dpv:Impact ;
     sw:term_status "accepted"@en ;
     skos:definition "Impact that acts as or causes damages"@en ;
     skos:prefLabel "Damage"@en .
 
 dpv:Detriment a rdfs:Class,
-        skos:Concept,
-        dpv:Impact ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit, Julian Flake, Georg P Krog, Fajar Ekaputra, Beatriz Esteves"@en ;
     dct:created "2022-03-23"^^xsd:date ;
+    rdfs:subClassOf dpv:Impact ;
     sw:term_status "accepted"@en ;
     skos:definition "Impact that acts as or causes detriments"@en ;
     skos:prefLabel "Detriment"@en .
 
 dpv:Harm a rdfs:Class,
-        skos:Concept,
-        dpv:Damage ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit, Julian Flake, Georg P Krog, Fajar Ekaputra, Beatriz Esteves"@en ;
     dct:created "2022-08-13"^^xsd:date ;
+    rdfs:subClassOf dpv:Damage ;
     sw:term_status "changed"@en ;
     skos:definition "Impact that acts as or causes harms"@en ;
     skos:prefLabel "Harm"@en .
 
 dpv:Impact a rdfs:Class,
-        skos:Concept,
-        dpv:Consequence ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit, Julian Flake, Georg P Krog, Fajar Ekaputra, Beatriz Esteves"@en ;
     dct:created "2022-03-23"^^xsd:date ;
+    rdfs:subClassOf dpv:Consequence ;
     sw:term_status "accepted"@en ;
     skos:definition "The impact(s) possible or arising as a consequence from specified context"@en ;
     skos:note "Impact is a stronger notion of consequence in terms of influence, change, or effect on something e.g. for impact assessments"@en ;
@@ -99,19 +99,19 @@ dpv:Likelihood a rdfs:Class,
     skos:prefLabel "Likelihood"@en .
 
 dpv:MaterialDamage a rdfs:Class,
-        skos:Concept,
-        dpv:Damage ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-03-30"^^xsd:date ;
+    rdfs:subClassOf dpv:Damage ;
     sw:term_status "accepted"@en ;
     skos:definition "Impact that acts as or causes material damages"@en ;
     skos:prefLabel "Material Damage"@en .
 
 dpv:NonMaterialDamage a rdfs:Class,
-        skos:Concept,
-        dpv:Damage ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-03-30"^^xsd:date ;
+    rdfs:subClassOf dpv:Damage ;
     sw:term_status "accepted"@en ;
     skos:definition "Impact that acts as or causes non-material damages"@en ;
     skos:prefLabel "Non-Material Damage"@en .
@@ -135,10 +135,10 @@ dpv:RiskLevel a rdfs:Class,
     skos:prefLabel "Risk Level"@en .
 
 dpv:RiskMitigationMeasure a rdfs:Class,
-        skos:Concept,
-        dpv:TechnicalOrganisationalMeasure ;
+        skos:Concept ;
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan"@en ;
     dct:created "2020-11-04"^^xsd:date ;
+    rdfs:subClassOf dpv:TechnicalOrganisationalMeasure ;
     sw:term_status "accepted"@en ;
     skos:definition "Measures intended to mitigate, minimise, or prevent risk."@en ;
     skos:prefLabel "Risk Mitigation Measure"@en .

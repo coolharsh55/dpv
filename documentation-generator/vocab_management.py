@@ -51,13 +51,6 @@ from rdflib import Graph
 NS = Graph()
 NS.ns = { k:v for k,v in NAMESPACES.items() }
 
-TOPCONCEPT = {
-    'dpv': { },
-    'dpv-pd': {
-        'core': 'dpv:PersonalData',
-        },
-}
-
 ###################### contributors
 
 '''A Jinja2 filter that takes author names and returns their affiliations'''

@@ -387,21 +387,21 @@ risk:ParetoCharts a rdfs:Class,
     skos:prefLabel "Pareto Charts"@en .
 
 risk:QualitativeRiskAssessmentTechnique a rdfs:Class,
-        skos:Concept,
-        risk:RiskAssessmentTechnique ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-08-18"^^xsd:date ;
     dct:source "(IEC 31010:2019,https://www.iso.org/standard/72140.html)"@en ;
+    rdfs:subClassOf risk:RiskAssessmentTechnique ;
     sw:term_status "accepted"@en ;
     skos:definition "A risk assessment technique that uses qualitative methods"@en ;
     skos:prefLabel "Qualitative Risk Assessment Technique"@en .
 
 risk:QuantitativeRiskAssessmentTechnique a rdfs:Class,
-        skos:Concept,
-        risk:RiskAssessmentTechnique ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-08-18"^^xsd:date ;
     dct:source "(IEC 31010:2019,https://www.iso.org/standard/72140.html)"@en ;
+    rdfs:subClassOf risk:RiskAssessmentTechnique ;
     sw:term_status "accepted"@en ;
     skos:definition "A risk assessment technique that uses quantitative methods"@en ;
     skos:prefLabel "Quantitative Risk Assessment Technique"@en .
@@ -418,11 +418,11 @@ risk:ReliabilityCentredMaintenance a rdfs:Class,
     skos:prefLabel "Reliability Centred Maintenance"@en .
 
 risk:RiskAssessmentTechnique a rdfs:Class,
-        skos:Concept,
-        dpv:RiskManagementProcess ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-08-18"^^xsd:date ;
     dct:source "(IEC 31010:2019,https://www.iso.org/standard/72140.html)"@en ;
+    rdfs:subClassOf dpv:RiskManagementProcess ;
     sw:term_status "accepted"@en ;
     skos:definition "A technique or method used to analyse and identify risk levels, sources, likelihoods, severities, and other necessary information required to conduct risk management procedures"@en ;
     skos:prefLabel "Risk Assessment Technique"@en .

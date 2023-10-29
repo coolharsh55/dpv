@@ -7,66 +7,66 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 tech:Cookie a rdfs:Class,
-        skos:Concept,
-        dpv-tech:LocalStorage ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-06-15"^^xsd:date ;
+    rdfs:subClassOf dpv-tech:LocalStorage ;
     sw:term_status "accepted"@en ;
     skos:definition "A HTTP or web or internet cookie"@en ;
     skos:prefLabel "Cookie"@en .
 
 tech:Database a rdfs:Class,
-        skos:Concept,
-        dpv-tech:DataStorageTechnology ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-06-15"^^xsd:date ;
+    rdfs:subClassOf dpv-tech:DataStorageTechnology ;
     sw:term_status "accepted"@en ;
     skos:definition "A database, database management system (DBMS), or application database"@en ;
     skos:prefLabel "Database"@en .
 
 tech:FileSystem a rdfs:Class,
-        skos:Concept,
-        dpv-tech:DataStorageTechnology ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-06-15"^^xsd:date ;
+    rdfs:subClassOf dpv-tech:DataStorageTechnology ;
     sw:term_status "accepted"@en ;
     skos:definition "A data storage and retrieval interface provided by an operating system"@en ;
     skos:prefLabel "File System"@en .
 
 tech:IdentityManagementTechnology a rdfs:Class,
-        skos:Concept,
-        dpv-tech:IdentityTechnology,
-        dpv-tech:ManagementTechnology ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-06-15"^^xsd:date ;
+    rdfs:subClassOf dpv-tech:IdentityTechnology,
+        dpv-tech:ManagementTechnology ;
     sw:term_status "accepted"@en ;
     skos:definition "Technologies providing identity provision, verification, management, and governance"@en ;
     skos:prefLabel "Identity Management Technology"@en .
 
 tech:IdentityWallet a rdfs:Class,
-        skos:Concept,
-        dpv-tech:DataStorageTechnology,
-        dpv-tech:IdentityManagementTechnology ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-06-15"^^xsd:date ;
+    rdfs:subClassOf dpv-tech:DataStorageTechnology,
+        dpv-tech:IdentityManagementTechnology ;
     sw:term_status "accepted"@en ;
     skos:definition "product and service that allows the user to store identity data, credentials and attributes linked to her/his identity, to provide them to relying parties on request and to use them for authentication, online and offline, and to create qualified electronic signatures and seals"@en ;
     skos:prefLabel "Identity Wallet"@en .
 
 tech:PersonalInformationManagementSystem a rdfs:Class,
-        skos:Concept,
-        dpv-tech:DataManagementTechnology ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-06-15"^^xsd:date ;
+    rdfs:subClassOf dpv-tech:DataManagementTechnology ;
     sw:term_status "accepted"@en ;
     skos:definition "A PIMS is a system that helps to give individuals more control over their personal data by managing their personal data in secure, on-premises or online storage systems and sharing it when and with whomever they choose"@en ;
     skos:prefLabel "Personal Information Management System"@en .
 
 tech:SmartphoneApplication a rdfs:Class,
-        skos:Concept,
-        dpv-tech:Application ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-06-15"^^xsd:date ;
+    rdfs:subClassOf dpv-tech:Application ;
     sw:term_status "accepted"@en ;
     skos:definition "A computing or digital program on a smartphone device"@en ;
     skos:prefLabel "Smartphone Application"@en .

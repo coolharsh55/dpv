@@ -9,19 +9,19 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dpv:OrganisationalMeasure a rdfs:Class,
-        skos:Concept,
-        dpv:TechnicalOrganisationalMeasure ;
+        skos:Concept ;
     dct:contributor "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar"@en ;
     dct:created "2019-04-05"^^xsd:date ;
+    rdfs:subClassOf dpv:TechnicalOrganisationalMeasure ;
     sw:term_status "accepted"@en ;
     skos:definition "Organisational measures required/followed when processing data of the declared category"@en ;
     skos:prefLabel "Organisational Measure"@en .
 
 dpv:TechnicalMeasure a rdfs:Class,
-        skos:Concept,
-        dpv:TechnicalOrganisationalMeasure ;
+        skos:Concept ;
     dct:contributor "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar"@en ;
     dct:created "2019-04-05"^^xsd:date ;
+    rdfs:subClassOf dpv:TechnicalOrganisationalMeasure ;
     sw:term_status "accepted"@en ;
     skos:definition "Technical measures required/followed when processing data of the declared category"@en ;
     skos:prefLabel "Technical Measure"@en .

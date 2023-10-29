@@ -9,28 +9,28 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dpv:DataSubjectScale a rdfs:Class,
-        skos:Concept,
-        dpv:Scale ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit, Georg P Krog, Rana Saniei"@en ;
     dct:created "2022-06-15"^^xsd:date ;
+    rdfs:subClassOf dpv:Scale ;
     sw:term_status "accepted"@en ;
     skos:definition "Scale of Data Subject(s)"@en ;
     skos:prefLabel "Data Subject Scale"@en .
 
 dpv:DataVolume a rdfs:Class,
-        skos:Concept,
-        dpv:Scale ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit, Georg P Krog, Rana Saniei"@en ;
     dct:created "2022-06-15"^^xsd:date ;
+    rdfs:subClassOf dpv:Scale ;
     sw:term_status "accepted"@en ;
     skos:definition "Volume or Scale of Data"@en ;
     skos:prefLabel "Data Volume"@en .
 
 dpv:GeographicCoverage a rdfs:Class,
-        skos:Concept,
-        dpv:Scale ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit, Georg P Krog, Paul Ryan"@en ;
     dct:created "2022-06-15"^^xsd:date ;
+    rdfs:subClassOf dpv:Scale ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicate of scale in terms of geographic coverage"@en ;
     skos:prefLabel "Geographic Coverage"@en .
@@ -167,10 +167,10 @@ dpv:NearlyGlobalScale a rdfs:Class,
     skos:prefLabel "Nearly Global Scale"@en .
 
 dpv:ProcessingScale a rdfs:Class,
-        skos:Concept,
-        dpv:Scale ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit, Piero Bonatti"@en ;
     dct:created "2022-09-07"^^xsd:date ;
+    rdfs:subClassOf dpv:Scale ;
     sw:term_status "accepted"@en ;
     skos:definition "Scale of Processing"@en ;
     skos:note "The exact definition of what constitutes \"scale\" depends on use of jurisdictional, domain-specific, or other forms of externally defined criterias. Where possible, this should be reflected by extending the scales provided with the appropriate context."@en ;
@@ -186,10 +186,10 @@ dpv:RegionalScale a rdfs:Class,
     skos:prefLabel "Regional Scale"@en .
 
 dpv:Scale a rdfs:Class,
-        skos:Concept,
-        dpv:ProcessingContext ;
+        skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit, Georg P Krog, Rana Saniei"@en ;
     dct:created "2022-06-15"^^xsd:date ;
+    rdfs:subClassOf dpv:ProcessingContext ;
     sw:term_status "accepted"@en ;
     skos:definition "A measurement along some dimension"@en ;
     skos:note "Scales are subjective concepts that need to be defined and interpreted within the context of their application. For example, what would be small within one context could be large within another."@en ;
