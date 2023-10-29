@@ -287,14 +287,7 @@
   <section id="vocab-entities-legalrole">
     <h3>Legal Roles</h3>
     <p><i>Legal Role</i> is the role taken on by a legal entity based on definitions or criterias from laws, regulations, or other such normative sources. Legal roles assist in representing the role and responsibility of an entity within the context of processing, and from this to determine the requirements and obligations that should apply, and their compliance or conformance.</p>
-    {% if entities_legalrole_classes %}
-    <section id="entities_legalrole-classes">
-    </section>
-    {% endif %}
-    {% if entities_legalrole_properties %}
-    <section id="entities_legalrole-properties">
-    </section>
-    {% endif %}
+    {{ list_items(modules['entities-legalrole']['classes']) }}
   </section>
 
   <section id="vocab-entities-authorities">
@@ -611,7 +604,18 @@
 
 <section id="vocabulary">
 <h2>Vocabulary Index</h2>
-  {{ table_classes(vocab, skip_heading=True) }}
+  <section id="dpv-classes">
+    <h3>DPV defined Classes</h3>
+    {{ index_concepts(vocab, filter="classes", skip_heading=True) }}
+  </section>
+  <section id="dpv-properties">
+  <h3>DPV defined Properties</h3>
+    {{ index_concepts(vocab, filter="properties", skip_heading=True) }}
+  </section>
+  <section id="external-concepts">
+    <h3>External concepts reused</h3>
+    {{ index_concepts(vocab, filter="external", skip_heading=True) }}
+  </section>
 </section>
 
 {% endblock VOCAB %}

@@ -7,16 +7,6 @@
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
    xmlns:sw="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
-  <rdf:Description rdf:about="https://w3id.org/dpv#hasRecipient">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">dpv:hasRecipient</skos:prefLabel>
-    <skos:definition xml:lang="en">Indicates the Recipient of a Right Exercise Activity</skos:definition>
-    <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
-    <schema:domainIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
-    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#Recipient"/>
-    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#Recipient"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#isExercisedAt">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -30,91 +20,19 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor xml:lang="en">Harshvardhan J. Pandit</dct:contributor>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#DataSubjectRight">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#Right"/>
-    <skos:prefLabel xml:lang="en">Data Subject Right</skos:prefLabel>
-    <skos:definition xml:lang="en">The rights applicable or provided to a Data Subject</skos:definition>
-    <skos:note xml:lang="en">Based on use of definitions, the notion of 'Data Subject Right' can be equivalent to 'Individual Right' or 'Right of a Person'</skos:note>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-11-18</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor xml:lang="en">Beatriz Esteves, Georg P Krog, Harshvardhan Pandit</dct:contributor>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#hasRight">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">has right</skos:prefLabel>
-    <skos:definition xml:lang="en">Indicates use or applicability of Right</skos:definition>
-    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#Right"/>
-    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#Right"/>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-11-18</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor xml:lang="en">Harshvardhan J. Pandit</dct:contributor>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#RightExerciseNotice">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <skos:prefLabel xml:lang="en">Right Exercise Notice</skos:prefLabel>
-    <skos:definition xml:lang="en">Information associated with exercising of an active right</skos:definition>
-    <skos:note xml:lang="en">This concept is intended for providing information regarding a right exercise. For specific instances of such exercises, see RightExerciseActivity and RightExerciseRecord.</skos:note>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-10-22</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor xml:lang="en">Harshvardhan J Pandit, Beatriz Esteves, Georg P Krog, Paul Ryan</dct:contributor>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#dpv:hasJustification">
+  <rdf:Description rdf:about="https://w3id.org/dpv#dcat:Resource">
     <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-02</dct:created>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor xml:lang="en">Harshvardhan J. Pandit</dct:contributor>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#PassiveRight">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#Right"/>
-    <skos:prefLabel xml:lang="en">Passive Right</skos:prefLabel>
-    <skos:definition xml:lang="en">The right(s) applicable, provided, or expected that are always (passively) applicable</skos:definition>
-    <skos:note xml:lang="en">Passive rights do not require the entity to request or exercise them. They are considered to be always applicable. For example, the Right to Privacy (in EU) does not require an exercise for it to be fulfilled.</skos:note>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-10-22</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor xml:lang="en">Harshvardhan J Pandit, Beatriz Esteves, Georg P Krog, Paul Ryan</dct:contributor>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#RightExerciseRecord">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#Record"/>
-    <skos:prefLabel xml:lang="en">Right Exercise Record</skos:prefLabel>
-    <skos:definition xml:lang="en">Record of a Right being exercised</skos:definition>
-    <skos:note xml:lang="en">This concept represents a record of one or more right exercise activities, such as those associated with a single data subject or service or entity</skos:note>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-02</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor xml:lang="en">Harshvardhan J Pandit, Beatriz Esteves, Georg P Krog, Paul Ryan</dct:contributor>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#hasJustification">
+  <rdf:Description rdf:about="http://purl.org/dc/terms/hasPart">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">dpv:hasJustification</skos:prefLabel>
-    <skos:definition xml:lang="en">Specifying a justification for non-fulfilment of Right Exercise</skos:definition>
-    <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
-    <schema:domainIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
-    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#Justification"/>
-    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#Justification"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/accessRights">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">dct:accessRights</skos:prefLabel>
-    <skos:definition xml:lang="en">Specfiying constraints on access associated with Rights Exercising (e.g. User must log in) or access to provided data (e.g. access via link)</skos:definition>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#dct:isPartOf">
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-02</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor xml:lang="en">Harshvardhan J. Pandit</dct:contributor>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Resource">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <skos:prefLabel xml:lang="en">dcat:Resource</skos:prefLabel>
-    <skos:definition xml:lang="en">A dataset, data service, or any other resource associated with Right Exercise - such as for providing a copy of personal data</skos:definition>
+    <skos:prefLabel xml:lang="en">dct:hasPart</skos:prefLabel>
+    <skos:usageNote xml:lang="en">Specifying a RightExerciseRecord has RightExerciseActivity as part of its records</skos:usageNote>
+    <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#RightExerciseRecord"/>
+    <schema:domainIncludes rdf:resource="https://w3id.org/dpv#RightExerciseRecord"/>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#Right">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -137,7 +55,218 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor xml:lang="en">Harshvardhan J Pandit, Beatriz Esteves, Georg P Krog, Paul Ryan</dct:contributor>
   </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/format">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="en">dct:format</skos:prefLabel>
+    <skos:usageNote xml:lang="en">Specifying the format of provided information, for example a CSV dataset</skos:usageNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/page">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="en">foaf:page</skos:prefLabel>
+    <skos:usageNote xml:lang="en">Indicates a web page or document providing information or functionality associated with a Right Exercise</skos:usageNote>
+    <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
+    <schema:domainIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasStatus">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="en">dpv:hasStatus</skos:prefLabel>
+    <skos:usageNote xml:lang="en">Indicates the status of a Right Exercise Activity</skos:usageNote>
+    <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
+    <schema:domainIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#Status"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#Status"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasRecipient">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="en">dpv:hasRecipient</skos:prefLabel>
+    <skos:usageNote xml:lang="en">Indicates the Recipient of a Right Exercise Activity</skos:usageNote>
+    <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
+    <schema:domainIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#Recipient"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#Recipient"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/accessRights">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="en">dct:accessRights</skos:prefLabel>
+    <skos:usageNote xml:lang="en">Specfiying constraints on access associated with Rights Exercising (e.g. User must log in) or access to provided data (e.g. access via link)</skos:usageNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#isImplementedByEntity">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="en">dpv:isImplementedByEntity</skos:prefLabel>
+    <skos:usageNote xml:lang="en">Indicates the Entity that implements or performs a Right Exercise Activity</skos:usageNote>
+    <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
+    <schema:domainIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#Entity"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#PassiveRight">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#Right"/>
+    <skos:prefLabel xml:lang="en">Passive Right</skos:prefLabel>
+    <skos:definition xml:lang="en">The right(s) applicable, provided, or expected that are always (passively) applicable</skos:definition>
+    <skos:note xml:lang="en">Passive rights do not require the entity to request or exercise them. They are considered to be always applicable. For example, the Right to Privacy (in EU) does not require an exercise for it to be fulfilled.</skos:note>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-10-22</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor xml:lang="en">Harshvardhan J Pandit, Beatriz Esteves, Georg P Krog, Paul Ryan</dct:contributor>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#RightExerciseNotice">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:prefLabel xml:lang="en">Right Exercise Notice</skos:prefLabel>
+    <skos:definition xml:lang="en">Information associated with exercising of an active right</skos:definition>
+    <skos:note xml:lang="en">This concept is intended for providing information regarding a right exercise. For specific instances of such exercises, see RightExerciseActivity and RightExerciseRecord.</skos:note>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-10-22</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor xml:lang="en">Harshvardhan J Pandit, Beatriz Esteves, Georg P Krog, Paul Ryan</dct:contributor>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasJustification">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="en">dpv:hasJustification</skos:prefLabel>
+    <skos:usageNote xml:lang="en">Specifying a justification for non-fulfilment of Right Exercise</skos:usageNote>
+    <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
+    <schema:domainIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#Justification"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#Justification"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#RightNonFulfilmentNotice">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#Notice"/>
+    <skos:prefLabel xml:lang="en">Right Non-Fulfilment Notice</skos:prefLabel>
+    <skos:definition xml:lang="en">Notice provided regarding non-fulfilment of a right</skos:definition>
+    <skos:note xml:lang="en">This notice is associated with situations where information is provided with the intention of communicating non-fulfilment of a right. For example, to provide justifications on why a right could not be fulfilled or providing information about another entity  who should be approached for exercising this right.</skos:note>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-02</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor xml:lang="en">Harshvardhan J. Pandit, Beatriz Esteves</dct:contributor>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#dpv:isImplementedByEntity">
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-02</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor xml:lang="en">Harshvardhan J. Pandit</dct:contributor>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#isAfter">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="en">dpv:isAfter</skos:prefLabel>
+    <skos:usageNote xml:lang="en">Specifying a RightExerciseActivity occurs before another RightExerciseActivity</skos:usageNote>
+    <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
+    <schema:domainIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#foaf:page">
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-02</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor xml:lang="en">Harshvardhan J. Pandit</dct:contributor>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#dct:format">
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-02</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor xml:lang="en">Harshvardhan J. Pandit</dct:contributor>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#dpv:hasRecipient">
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-02</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor xml:lang="en">Harshvardhan J. Pandit</dct:contributor>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://purl.org/dc/terms/isPartOf">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="en">dct:isPartOf</skos:prefLabel>
+    <skos:usageNote xml:lang="en">Specifying a RightExerciseActivity is part of a RightExerciseRecord</skos:usageNote>
+    <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
+    <schema:domainIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#RightExerciseRecord"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#RightExerciseRecord"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#DataSubjectRight">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#Right"/>
+    <skos:prefLabel xml:lang="en">Data Subject Right</skos:prefLabel>
+    <skos:definition xml:lang="en">The rights applicable or provided to a Data Subject</skos:definition>
+    <skos:note xml:lang="en">Based on use of definitions, the notion of 'Data Subject Right' can be equivalent to 'Individual Right' or 'Right of a Person'</skos:note>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-11-18</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor xml:lang="en">Beatriz Esteves, Georg P Krog, Harshvardhan Pandit</dct:contributor>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#RightExerciseActivity">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:prefLabel xml:lang="en">Right Exercise Activity</skos:prefLabel>
+    <skos:definition xml:lang="en">An activity representing an exercising of an active right</skos:definition>
+    <skos:note xml:lang="en">There may be multiple activities associated with exercising and fulfilling rights. See the RightExerciseRecord concept for record-keeping of such activities in a cohesive manner.</skos:note>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-02</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor xml:lang="en">Harshvardhan J Pandit, Beatriz Esteves, Georg P Krog, Paul Ryan</dct:contributor>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#dpv:isBefore">
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-02</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor xml:lang="en">Harshvardhan J. Pandit</dct:contributor>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#dct:isPartOf">
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-02</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor xml:lang="en">Harshvardhan J. Pandit</dct:contributor>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#dct:accessRights">
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-02</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor xml:lang="en">Harshvardhan J. Pandit</dct:contributor>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasRight">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="en">has right</skos:prefLabel>
+    <skos:definition xml:lang="en">Indicates use or applicability of Right</skos:definition>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#Right"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#Right"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-11-18</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor xml:lang="en">Harshvardhan J. Pandit</dct:contributor>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#isBefore">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="en">dpv:isBefore</skos:prefLabel>
+    <skos:usageNote xml:lang="en">Specifying a RightExerciseActivity occurs before another RightExerciseActivity</skos:usageNote>
+    <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
+    <schema:domainIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#RightExerciseRecord">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#Record"/>
+    <skos:prefLabel xml:lang="en">Right Exercise Record</skos:prefLabel>
+    <skos:definition xml:lang="en">Record of a Right being exercised</skos:definition>
+    <skos:note xml:lang="en">This concept represents a record of one or more right exercise activities, such as those associated with a single data subject or service or entity</skos:note>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-02</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor xml:lang="en">Harshvardhan J Pandit, Beatriz Esteves, Georg P Krog, Paul Ryan</dct:contributor>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/ns/dcat#Resource">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:prefLabel xml:lang="en">dcat:Resource</skos:prefLabel>
+    <skos:usageNote xml:lang="en">A dataset, data service, or any other resource associated with Right Exercise - such as for providing a copy of personal data</skos:usageNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#dct:valid">
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-02</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor xml:lang="en">Harshvardhan J. Pandit</dct:contributor>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#dpv:hasStatus">
     <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-02</dct:created>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor xml:lang="en">Harshvardhan J. Pandit</dct:contributor>
@@ -153,102 +282,13 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor xml:lang="en">Harshvardhan J. Pandit, Beatriz Esteves</dct:contributor>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#dct:accessRights">
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-02</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor xml:lang="en">Harshvardhan J. Pandit</dct:contributor>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#hasStatus">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">dpv:hasStatus</skos:prefLabel>
-    <skos:definition xml:lang="en">Indicates the status of a Right Exercise Activity</skos:definition>
-    <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
-    <schema:domainIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
-    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#Status"/>
-    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#Status"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/hasPart">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">dct:hasPart</skos:prefLabel>
-    <skos:definition xml:lang="en">Specifying a RightExerciseRecord has RightExerciseActivity as part of its records</skos:definition>
-    <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#RightExerciseRecord"/>
-    <schema:domainIncludes rdf:resource="https://w3id.org/dpv#RightExerciseRecord"/>
-    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
-    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#RightExerciseActivity">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <skos:prefLabel xml:lang="en">Right Exercise Activity</skos:prefLabel>
-    <skos:definition xml:lang="en">An activity representing an exercising of an active right</skos:definition>
-    <skos:note xml:lang="en">There may be multiple activities associated with exercising and fulfilling rights. See the RightExerciseRecord concept for record-keeping of such activities in a cohesive manner.</skos:note>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-02</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor xml:lang="en">Harshvardhan J Pandit, Beatriz Esteves, Georg P Krog, Paul Ryan</dct:contributor>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#isAfter">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">dpv:isAfter</skos:prefLabel>
-    <skos:definition xml:lang="en">Specifying a RightExerciseActivity occurs before another RightExerciseActivity</skos:definition>
-    <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
-    <schema:domainIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
-    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
-    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/format">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">dct:format</skos:prefLabel>
-    <skos:definition xml:lang="en">Specifying the format of provided information, for example a CSV dataset</skos:definition>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#dct:hasPart">
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-02</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor xml:lang="en">Harshvardhan J. Pandit</dct:contributor>
-  </rdf:Description>
   <rdf:Description rdf:about="http://purl.org/dc/terms/valid">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <skos:prefLabel xml:lang="en">dct:valid</skos:prefLabel>
-    <skos:definition xml:lang="en">Specfiying the temporal validity of an activity associated with Right Exercise. For example, limits on duration for providing or accessing provided information</skos:definition>
+    <skos:usageNote xml:lang="en">Specfiying the temporal validity of an activity associated with Right Exercise. For example, limits on duration for providing or accessing provided information</skos:usageNote>
   </rdf:Description>
-  <rdf:Description rdf:about="http://purl.org/dc/terms/isPartOf">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">dct:isPartOf</skos:prefLabel>
-    <skos:definition xml:lang="en">Specifying a RightExerciseActivity is part of a RightExerciseRecord</skos:definition>
-    <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
-    <schema:domainIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
-    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#RightExerciseRecord"/>
-    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#RightExerciseRecord"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#RightNonFulfilmentNotice">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#Notice"/>
-    <skos:prefLabel xml:lang="en">Right Non-Fulfilment Notice</skos:prefLabel>
-    <skos:definition xml:lang="en">Notice provided regarding non-fulfilment of a right</skos:definition>
-    <skos:note xml:lang="en">This notice is associated with situations where information is provided with the intention of communicating non-fulfilment of a right. For example, to provide justifications on why a right could not be fulfilled or providing information about another entity  who should be approached for exercising this right.</skos:note>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-02</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor xml:lang="en">Harshvardhan J. Pandit, Beatriz Esteves</dct:contributor>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/page">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">foaf:page</skos:prefLabel>
-    <skos:definition xml:lang="en">Indicates a web page or document providing information or functionality associated with a Right Exercise</skos:definition>
-    <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
-    <schema:domainIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#dcat:Resource">
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-02</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#dpv:isBefore">
+  <rdf:Description rdf:about="https://w3id.org/dpv#dct:hasPart">
     <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-02</dct:created>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor xml:lang="en">Harshvardhan J. Pandit</dct:contributor>
@@ -258,47 +298,7 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor xml:lang="en">Harshvardhan J. Pandit</dct:contributor>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#isBefore">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">dpv:isBefore</skos:prefLabel>
-    <skos:definition xml:lang="en">Specifying a RightExerciseActivity occurs before another RightExerciseActivity</skos:definition>
-    <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
-    <schema:domainIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
-    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
-    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#isImplementedByEntity">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">dpv:isImplementedByEntity</skos:prefLabel>
-    <skos:definition xml:lang="en">Indicates the Entity that implements or performs a Right Exercise Activity</skos:definition>
-    <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
-    <schema:domainIncludes rdf:resource="https://w3id.org/dpv#RightExerciseActivity"/>
-    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#Entity"/>
-    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#Entity"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#dpv:hasStatus">
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-02</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor xml:lang="en">Harshvardhan J. Pandit</dct:contributor>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#dpv:isImplementedByEntity">
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-02</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor xml:lang="en">Harshvardhan J. Pandit</dct:contributor>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#dct:valid">
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-02</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor xml:lang="en">Harshvardhan J. Pandit</dct:contributor>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#foaf:page">
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-02</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor xml:lang="en">Harshvardhan J. Pandit</dct:contributor>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#dct:format">
+  <rdf:Description rdf:about="https://w3id.org/dpv#dpv:hasJustification">
     <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-02</dct:created>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor xml:lang="en">Harshvardhan J. Pandit</dct:contributor>

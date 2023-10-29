@@ -37,6 +37,27 @@ VOCABS = {
             'core': f'{IMPORT_PATH}/dpv/modules/core.ttl',
             'personal_data': f'{IMPORT_PATH}/dpv/modules/personal_data.ttl',
             'purposes': f'{IMPORT_PATH}/dpv/modules/purposes.ttl',
+            'processing': f'{IMPORT_PATH}/dpv/modules/processing.ttl',
+            'TOM': f'{IMPORT_PATH}/dpv/modules/TOM.ttl',
+            'technical-measures': f'{IMPORT_PATH}/dpv/modules/technical_measures.ttl',
+            'organisational-measures': f'{IMPORT_PATH}/dpv/modules/organisational_measures.ttl',
+            'entities': f'{IMPORT_PATH}/dpv/modules/entities.ttl',
+            'entities_authority': f'{IMPORT_PATH}/dpv/modules/entities_authority.ttl',
+            'entities-legalrole': f'{IMPORT_PATH}/dpv/modules/entities_legalrole.ttl',
+            'entities-organisation': f'{IMPORT_PATH}/dpv/modules/entities_organisation.ttl',
+            'entities-datasubject': f'{IMPORT_PATH}/dpv/modules/entities_datasubject.ttl',
+            'legal-basis': f'{IMPORT_PATH}/dpv/modules/legal_basis.ttl',
+            'consent': f'{IMPORT_PATH}/dpv/modules/consent.ttl',
+            'consent-types': f'{IMPORT_PATH}/dpv/modules/consent_types.ttl',
+            'consent-status': f'{IMPORT_PATH}/dpv/modules/consent_status.ttl',
+            'context': f'{IMPORT_PATH}/dpv/modules/context.ttl',
+            'processing-context': f'{IMPORT_PATH}/dpv/modules/processing_context.ttl',
+            'processing-scale': f'{IMPORT_PATH}/dpv/modules/processing_scale.ttl',
+            'status': f'{IMPORT_PATH}/dpv/modules/status.ttl',
+            'risk': f'{IMPORT_PATH}/dpv/modules/risk.ttl',
+            'jurisdiction': f'{IMPORT_PATH}/dpv/modules/jurisdiction.ttl',
+            'rights': f'{IMPORT_PATH}/dpv/modules/rights.ttl',
+            'rules': f'{IMPORT_PATH}/dpv/modules/rules.ttl',
         },
         'template': 'template_dpv.jinja2'
     }
@@ -79,8 +100,11 @@ class DATA(object):
                 vocab_data[term] = {
                     'iri': s,
                     'prefixed': term,
-                    'term': term.split(':')[1]
+                    'term': term.split(':')[1],
+                    '_dpvterm': s.startswith('https://w3id.org/dpv'),
                 }
+                if not vocab_data[term]['_dpvterm']:
+                    vocab_data[term]['term'] = term
             term = vocab_data[term]
             
             # add contents for p and o
@@ -101,6 +125,10 @@ class DATA(object):
                     'prefixed': obj,
                     'term': obj.split(':')[1]
                 }
+                if p == RDF.type and o == RDFS.Class:
+                    term['_type'] = "class"
+                elif p == RDF.type and o == RDF.Property:
+                    term['_type'] = "property"                    
             else:
                 obj = str(o)
         DATA.data[vocab] = vocab_data
@@ -184,6 +212,7 @@ if __name__ == '__main__':
                 vocab=DATA.data['dpv'],
                 modules=DATA.modules['dpv']))
         DEBUG(f'wrote {vocab} spec at f{EXPORT_PATH}/{vocab}/index.html')
+        # TODO: replace duplicate code with filecopy
         with open(f'{EXPORT_PATH}/{vocab}/{vocab}.html', 'w+') as fd:
             fd.write(template.render(
                 data=DATA.data,

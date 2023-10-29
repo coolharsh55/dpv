@@ -12,8 +12,8 @@
 
 dcat:Resource a rdfs:Class,
         skos:Concept ;
-    skos:definition "A dataset, data service, or any other resource associated with Right Exercise - such as for providing a copy of personal data"@en ;
-    skos:prefLabel "dcat:Resource"@en .
+    skos:prefLabel "dcat:Resource"@en ;
+    skos:usageNote "A dataset, data service, or any other resource associated with Right Exercise - such as for providing a copy of personal data"@en .
 
 dpv:ActiveRight a rdfs:Class,
         skos:Concept,
@@ -104,20 +104,20 @@ dpv:RightNonFulfilmentNotice a rdfs:Class,
 
 dct:accessRights a rdf:Property,
         skos:Concept ;
-    skos:definition "Specfiying constraints on access associated with Rights Exercising (e.g. User must log in) or access to provided data (e.g. access via link)"@en ;
-    skos:prefLabel "dct:accessRights"@en .
+    skos:prefLabel "dct:accessRights"@en ;
+    skos:usageNote "Specfiying constraints on access associated with Rights Exercising (e.g. User must log in) or access to provided data (e.g. access via link)"@en .
 
 dct:format a rdf:Property,
         skos:Concept ;
-    skos:definition "Specifying the format of provided information, for example a CSV dataset"@en ;
-    skos:prefLabel "dct:format"@en .
+    skos:prefLabel "dct:format"@en ;
+    skos:usageNote "Specifying the format of provided information, for example a CSV dataset"@en .
 
 dct:hasPart a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:RightExerciseRecord ;
     dcam:rangeIncludes dpv:RightExerciseActivity ;
-    skos:definition "Specifying a RightExerciseRecord has RightExerciseActivity as part of its records"@en ;
     skos:prefLabel "dct:hasPart"@en ;
+    skos:usageNote "Specifying a RightExerciseRecord has RightExerciseActivity as part of its records"@en ;
     schema:domainIncludes dpv:RightExerciseRecord ;
     schema:rangeIncludes dpv:RightExerciseActivity .
 
@@ -125,21 +125,21 @@ dct:isPartOf a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:RightExerciseActivity ;
     dcam:rangeIncludes dpv:RightExerciseRecord ;
-    skos:definition "Specifying a RightExerciseActivity is part of a RightExerciseRecord"@en ;
     skos:prefLabel "dct:isPartOf"@en ;
+    skos:usageNote "Specifying a RightExerciseActivity is part of a RightExerciseRecord"@en ;
     schema:domainIncludes dpv:RightExerciseActivity ;
     schema:rangeIncludes dpv:RightExerciseRecord .
 
 dct:valid a rdf:Property,
         skos:Concept ;
-    skos:definition "Specfiying the temporal validity of an activity associated with Right Exercise. For example, limits on duration for providing or accessing provided information"@en ;
-    skos:prefLabel "dct:valid"@en .
+    skos:prefLabel "dct:valid"@en ;
+    skos:usageNote "Specfiying the temporal validity of an activity associated with Right Exercise. For example, limits on duration for providing or accessing provided information"@en .
 
 foaf:page a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:RightExerciseActivity ;
-    skos:definition "Indicates a web page or document providing information or functionality associated with a Right Exercise"@en ;
     skos:prefLabel "foaf:page"@en ;
+    skos:usageNote "Indicates a web page or document providing information or functionality associated with a Right Exercise"@en ;
     schema:domainIncludes dpv:RightExerciseActivity .
 
 <https://w3id.org/dpv#dcat:Resource> dct:created "2022-11-02"^^xsd:date ;
@@ -197,8 +197,8 @@ dpv:hasJustification a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:RightExerciseActivity ;
     dcam:rangeIncludes dpv:Justification ;
-    skos:definition "Specifying a justification for non-fulfilment of Right Exercise"@en ;
     skos:prefLabel "dpv:hasJustification"@en ;
+    skos:usageNote "Specifying a justification for non-fulfilment of Right Exercise"@en ;
     schema:domainIncludes dpv:RightExerciseActivity ;
     schema:rangeIncludes dpv:Justification .
 
@@ -206,8 +206,8 @@ dpv:hasRecipient a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:RightExerciseActivity ;
     dcam:rangeIncludes dpv:Recipient ;
-    skos:definition "Indicates the Recipient of a Right Exercise Activity"@en ;
     skos:prefLabel "dpv:hasRecipient"@en ;
+    skos:usageNote "Indicates the Recipient of a Right Exercise Activity"@en ;
     schema:domainIncludes dpv:RightExerciseActivity ;
     schema:rangeIncludes dpv:Recipient .
 
@@ -225,8 +225,8 @@ dpv:hasStatus a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:RightExerciseActivity ;
     dcam:rangeIncludes dpv:Status ;
-    skos:definition "Indicates the status of a Right Exercise Activity"@en ;
     skos:prefLabel "dpv:hasStatus"@en ;
+    skos:usageNote "Indicates the status of a Right Exercise Activity"@en ;
     schema:domainIncludes dpv:RightExerciseActivity ;
     schema:rangeIncludes dpv:Status .
 
@@ -234,8 +234,8 @@ dpv:isAfter a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:RightExerciseActivity ;
     dcam:rangeIncludes dpv:RightExerciseActivity ;
-    skos:definition "Specifying a RightExerciseActivity occurs before another RightExerciseActivity"@en ;
     skos:prefLabel "dpv:isAfter"@en ;
+    skos:usageNote "Specifying a RightExerciseActivity occurs before another RightExerciseActivity"@en ;
     schema:domainIncludes dpv:RightExerciseActivity ;
     schema:rangeIncludes dpv:RightExerciseActivity .
 
@@ -243,8 +243,8 @@ dpv:isBefore a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:RightExerciseActivity ;
     dcam:rangeIncludes dpv:RightExerciseActivity ;
-    skos:definition "Specifying a RightExerciseActivity occurs before another RightExerciseActivity"@en ;
     skos:prefLabel "dpv:isBefore"@en ;
+    skos:usageNote "Specifying a RightExerciseActivity occurs before another RightExerciseActivity"@en ;
     schema:domainIncludes dpv:RightExerciseActivity ;
     schema:rangeIncludes dpv:RightExerciseActivity .
 
@@ -264,8 +264,8 @@ dpv:isImplementedByEntity a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:RightExerciseActivity ;
     dcam:rangeIncludes dpv:Entity ;
-    skos:definition "Indicates the Entity that implements or performs a Right Exercise Activity"@en ;
     skos:prefLabel "dpv:isImplementedByEntity"@en ;
+    skos:usageNote "Indicates the Entity that implements or performs a Right Exercise Activity"@en ;
     schema:domainIncludes dpv:RightExerciseActivity ;
     schema:rangeIncludes dpv:Entity .
 

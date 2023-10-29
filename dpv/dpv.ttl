@@ -12,8 +12,8 @@
 
 dcat:Resource a rdfs:Class,
         skos:Concept ;
-    skos:definition "A dataset, data service, or any other resource associated with Right Exercise - such as for providing a copy of personal data"@en ;
-    skos:prefLabel "dcat:Resource"@en .
+    skos:prefLabel "dcat:Resource"@en ;
+    skos:usageNote "A dataset, data service, or any other resource associated with Right Exercise - such as for providing a copy of personal data"@en .
 
 dpv:AcademicResearch a rdfs:Class,
         skos:Concept,
@@ -1390,11 +1390,11 @@ dpv:DataController a rdfs:Class,
     rdfs:subClassOf dpv:LegalEntity ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:LegalEntity ;
-    skos:definition "An Data Controller can be a Data Source, e.g. a Controller inferring data or generating data"@en,
-        "The individual or organisation that decides (or controls) the purpose(s) of processing personal data."@en ;
+    skos:definition "The individual or organisation that decides (or controls) the purpose(s) of processing personal data."@en ;
     skos:note "The terms 'Controller' is usually the more common form of indicating a Data Controller. In ISO/IEC the term 'PII Controller' is used."@en ;
     skos:prefLabel "Data Controller"@en,
-        "dpv:DataController"@en .
+        "dpv:DataController"@en ;
+    skos:usageNote "An Data Controller can be a Data Source, e.g. a Controller inferring data or generating data"@en .
 
 dpv:DataExporter a rdfs:Class,
         skos:Concept,
@@ -1549,11 +1549,11 @@ dpv:DataSubject a rdfs:Class,
     rdfs:subClassOf dpv:LegalEntity ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:LegalEntity ;
-    skos:definition "A Data Subject as a Data Source, e.g. when data is collected via a form or observed from their activities"@en,
-        "The individual (or category of individuals) whose personal data is being processed"@en ;
+    skos:definition "The individual (or category of individuals) whose personal data is being processed"@en ;
     skos:note "The term 'data subject' is specific to the GDPR, but is functionally equivalent to the term 'individual' and the ISO/IEC term 'PII Principle'."@en ;
     skos:prefLabel "Data Subject"@en,
-        "dpv:DataSubject"@en .
+        "dpv:DataSubject"@en ;
+    skos:usageNote "A Data Subject as a Data Source, e.g. when data is collected via a form or observed from their activities"@en .
 
 dpv:DataSubjectRight a rdfs:Class,
         skos:Concept,
@@ -5251,10 +5251,10 @@ dpv:ThirdParty a rdfs:Class,
     dct:created "2019-06-04"^^xsd:date ;
     dct:source "(GDPR Art.4-10,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_10/oj)"@en ;
     sw:term_status "accepted"@en ;
-    skos:definition "A Third Party can be a Data Source, e.g. when data is collected from an entity that is neither the Controller nor the Data Subject"@en,
-        "A ‘third party’ means a natural or legal person, public authority, agency or body other than the data subject, controller, processor and people who, under the direct authority of the controller or processor, are authorised to process personal data."@en ;
+    skos:definition "A ‘third party’ means a natural or legal person, public authority, agency or body other than the data subject, controller, processor and people who, under the direct authority of the controller or processor, are authorised to process personal data."@en ;
     skos:prefLabel "Third Party"@en,
-        "dpv:ThirdParty"@en .
+        "dpv:ThirdParty"@en ;
+    skos:usageNote "A Third Party can be a Data Source, e.g. when data is collected from an entity that is neither the Controller nor the Data Subject"@en .
 
 dpv:ThirdPartyAgreement a rdfs:Class,
         skos:Concept ;
@@ -5656,20 +5656,20 @@ dpv:ZeroKnowledgeAuthentication a rdfs:Class,
 
 dct:accessRights a rdf:Property,
         skos:Concept ;
-    skos:definition "Specfiying constraints on access associated with Rights Exercising (e.g. User must log in) or access to provided data (e.g. access via link)"@en ;
-    skos:prefLabel "dct:accessRights"@en .
+    skos:prefLabel "dct:accessRights"@en ;
+    skos:usageNote "Specfiying constraints on access associated with Rights Exercising (e.g. User must log in) or access to provided data (e.g. access via link)"@en .
 
 dct:format a rdf:Property,
         skos:Concept ;
-    skos:definition "Specifying the format of provided information, for example a CSV dataset"@en ;
-    skos:prefLabel "dct:format"@en .
+    skos:prefLabel "dct:format"@en ;
+    skos:usageNote "Specifying the format of provided information, for example a CSV dataset"@en .
 
 dct:hasPart a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:RightExerciseRecord ;
     dcam:rangeIncludes dpv:RightExerciseActivity ;
-    skos:definition "Specifying a RightExerciseRecord has RightExerciseActivity as part of its records"@en ;
     skos:prefLabel "dct:hasPart"@en ;
+    skos:usageNote "Specifying a RightExerciseRecord has RightExerciseActivity as part of its records"@en ;
     schema:domainIncludes dpv:RightExerciseRecord ;
     schema:rangeIncludes dpv:RightExerciseActivity .
 
@@ -5677,21 +5677,21 @@ dct:isPartOf a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:RightExerciseActivity ;
     dcam:rangeIncludes dpv:RightExerciseRecord ;
-    skos:definition "Specifying a RightExerciseActivity is part of a RightExerciseRecord"@en ;
     skos:prefLabel "dct:isPartOf"@en ;
+    skos:usageNote "Specifying a RightExerciseActivity is part of a RightExerciseRecord"@en ;
     schema:domainIncludes dpv:RightExerciseActivity ;
     schema:rangeIncludes dpv:RightExerciseRecord .
 
 dct:valid a rdf:Property,
         skos:Concept ;
-    skos:definition "Specfiying the temporal validity of an activity associated with Right Exercise. For example, limits on duration for providing or accessing provided information"@en ;
-    skos:prefLabel "dct:valid"@en .
+    skos:prefLabel "dct:valid"@en ;
+    skos:usageNote "Specfiying the temporal validity of an activity associated with Right Exercise. For example, limits on duration for providing or accessing provided information"@en .
 
 foaf:page a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:RightExerciseActivity ;
-    skos:definition "Indicates a web page or document providing information or functionality associated with a Right Exercise"@en ;
     skos:prefLabel "foaf:page"@en ;
+    skos:usageNote "Indicates a web page or document providing information or functionality associated with a Right Exercise"@en ;
     schema:domainIncludes dpv:RightExerciseActivity .
 
 <https://w3id.org/dpv#dcat:Resource> dct:created "2022-11-02"^^xsd:date ;
@@ -5896,10 +5896,10 @@ dpv:hasJustification a rdf:Property,
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
-    skos:definition "Indicates a justification for specified concept or context"@en,
-        "Specifying a justification for non-fulfilment of Right Exercise"@en ;
+    skos:definition "Indicates a justification for specified concept or context"@en ;
     skos:prefLabel "dpv:hasJustification"@en,
         "has justification"@en ;
+    skos:usageNote "Specifying a justification for non-fulfilment of Right Exercise"@en ;
     schema:domainIncludes dpv:RightExerciseActivity ;
     schema:rangeIncludes dpv:Justification .
 
@@ -6078,10 +6078,10 @@ dpv:isAfter a rdf:Property,
     dct:contributor "Georg P. Krog, Harshvardhan J. Pandit, Julian Flake"@en ;
     dct:created "2022-03-02"^^xsd:date ;
     sw:term_status "accepted"@en ;
-    skos:definition "Indicates the specified concepts is 'after' this concept in some context"@en,
-        "Specifying a RightExerciseActivity occurs before another RightExerciseActivity"@en ;
+    skos:definition "Indicates the specified concepts is 'after' this concept in some context"@en ;
     skos:prefLabel "dpv:isAfter"@en,
         "is after"@en ;
+    skos:usageNote "Specifying a RightExerciseActivity occurs before another RightExerciseActivity"@en ;
     schema:domainIncludes dpv:RightExerciseActivity ;
     schema:rangeIncludes dpv:RightExerciseActivity .
 
@@ -6102,10 +6102,10 @@ dpv:isBefore a rdf:Property,
     dct:contributor "Georg P. Krog, Harshvardhan J. Pandit, Julian Flake"@en ;
     dct:created "2022-03-02"^^xsd:date ;
     sw:term_status "accepted"@en ;
-    skos:definition "Indicates the specified concepts is 'before' this concept in some context"@en,
-        "Specifying a RightExerciseActivity occurs before another RightExerciseActivity"@en ;
+    skos:definition "Indicates the specified concepts is 'before' this concept in some context"@en ;
     skos:prefLabel "dpv:isBefore"@en,
         "is before"@en ;
+    skos:usageNote "Specifying a RightExerciseActivity occurs before another RightExerciseActivity"@en ;
     schema:domainIncludes dpv:RightExerciseActivity ;
     schema:rangeIncludes dpv:RightExerciseActivity .
 
@@ -6129,11 +6129,11 @@ dpv:isImplementedByEntity a rdf:Property,
     dct:created "2019-05-07"^^xsd:date ;
     dct:modified "2022-01-26"^^xsd:date ;
     sw:term_status "changed"@en ;
-    skos:definition "Indicates implementation details such as entities or agents"@en,
-        "Indicates the Entity that implements or performs a Right Exercise Activity"@en ;
+    skos:definition "Indicates implementation details such as entities or agents"@en ;
     skos:note "The use of 'entity' is inclusive of entities (e.g. Data Processor) as well as 'agent' (e.g. DPO). For indicating technological implementation, the property isImplementedByTechnology should be used."@en ;
     skos:prefLabel "dpv:isImplementedByEntity"@en,
         "is implemented by entity"@en ;
+    skos:usageNote "Indicates the Entity that implements or performs a Right Exercise Activity"@en ;
     schema:domainIncludes dpv:RightExerciseActivity ;
     schema:rangeIncludes dpv:Entity .
 
@@ -6700,13 +6700,13 @@ dpv:hasStatus a rdf:Property,
     dct:contributor "Harshvardhan J. Pandit"@en ;
     dct:created "2022-05-18"^^xsd:date ;
     sw:term_status "accepted"@en ;
-    skos:definition "Indicates the status of a Right Exercise Activity"@en,
-        "Indicates the status of specified concept"@en ;
+    skos:definition "Indicates the status of specified concept"@en ;
     skos:narrower dpv:hasActivityStatus,
         dpv:hasAuditStatus,
         dpv:hasComplianceStatus ;
     skos:prefLabel "dpv:hasStatus"@en,
         "has status"@en ;
+    skos:usageNote "Indicates the status of a Right Exercise Activity"@en ;
     schema:domainIncludes dpv:RightExerciseActivity ;
     schema:rangeIncludes dpv:Status .
 
@@ -6736,14 +6736,14 @@ dpv:hasRecipient a rdf:Property,
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasEntity ;
-    skos:definition "Indicates Recipient of Personal Data"@en,
-        "Indicates the Recipient of a Right Exercise Activity"@en ;
+    skos:definition "Indicates Recipient of Personal Data"@en ;
     skos:narrower dpv:hasDataImporter,
         dpv:hasDataProcessor,
         dpv:hasRecipientDataController,
         dpv:hasRecipientThirdParty ;
     skos:prefLabel "dpv:hasRecipient"@en,
         "has recipient"@en ;
+    skos:usageNote "Indicates the Recipient of a Right Exercise Activity"@en ;
     schema:domainIncludes dpv:RightExerciseActivity ;
     schema:rangeIncludes dpv:Recipient .
 
