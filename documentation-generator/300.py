@@ -42,7 +42,7 @@ VOCABS = {
             'technical-measures': f'{IMPORT_PATH}/dpv/modules/technical_measures.ttl',
             'organisational-measures': f'{IMPORT_PATH}/dpv/modules/organisational_measures.ttl',
             'entities': f'{IMPORT_PATH}/dpv/modules/entities.ttl',
-            'entities_authority': f'{IMPORT_PATH}/dpv/modules/entities_authority.ttl',
+            'entities-authority': f'{IMPORT_PATH}/dpv/modules/entities_authority.ttl',
             'entities-legalrole': f'{IMPORT_PATH}/dpv/modules/entities_legalrole.ttl',
             'entities-organisation': f'{IMPORT_PATH}/dpv/modules/entities_organisation.ttl',
             'entities-datasubject': f'{IMPORT_PATH}/dpv/modules/entities_datasubject.ttl',
