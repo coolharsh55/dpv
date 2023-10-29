@@ -35,7 +35,10 @@ def construct_label(item, data, namespace):
 def contruct_description(item, data, namespace):
     triples = []
     term, namespace = _get_term_from_prefix_notation(data['Term'], namespace)
-    triples.append((namespace[term], SKOS.definition, Literal(item, lang='en')))
+    annotation = SKOS.definition
+    if data['Term'] != term: # e.g. dpv:Concept and Concept
+        annotation = SKOS.usageNote
+    triples.append((namespace[term], annotation, Literal(item, lang='en')))
     return triples
 
 
