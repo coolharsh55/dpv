@@ -572,6 +572,14 @@
     {{ index_concepts(vocab, filter="properties") }}
   </section>
   <section id="external-concepts">
+    <p>DPV uses the following terms from [[RDF]] and  [[RDFS]] with their defined meanings:</p>
+    <ul>
+      <li id="rdf:type"><dfn>rdf:type</dfn> to denote a concept is an instance of another concept</li>
+      <li id="rdfs:Class"><dfn>rdfs:Class</dfn> to denote a concept is a Class or a category</li>
+      <li id="rdfs:subClassOf"><dfn>rdfs:subClassOf</dfn> to specify the concept is a subclass (subtype, sub-category, subset) of another concept</li>
+      <li id="rdf:Property"><dfn>rdf:Property</dfn> to denote a concept is a property or a relation</li>
+      </ul>
+    <p>The following external concepts are re-used within DPV:</p>
     {{ index_concepts(vocab, filter="external") }}
   </section>
 </section>
@@ -615,43 +623,36 @@
     <thead>
       <th>Concept</th>
       <th>[[DPV]]</th>
-      <th>[[DPV-SKOS]]</th>
       <th>[[DPV-OWL]]</th>
     </thead>
     <tbody>
       <tr>
         <td>Concept</td>
-        <td><code>dpv:Concept</code>
         </td><td><code>skos:Concept</code></td>
         <td><code>owl:Class</code></td>
       </tr>
       <tr>
         <td>is subtype of</td>
-        <td><code>dpv:isSubTypeOf</code>
         </td><td><code>skos:broader</code></td>
         <td><code>owl:subClassOf</code></td>
       </tr>
       <tr>
         <td>is instance of</td>
-        <td><code>dpv:isInstanceOf</code>
         </td><td><code>rdf:type</code></td>
         <td><code>rdf:type</code></td>
       </tr>
       <tr>
         <td>has concept</td>
-        <td><code>dpv:Relation</code>
         </td><td><code>rdf:Property</code></td>
         <td><code>owl:ObjectProperty</code></td>
       </tr>
       <tr>
         <td>relationship domain</td>
-        <td><code>dpv:domain</code>
         </td><td><code>rdfs:domain</code></td>
         <td><code>rdfs:domain</code></td>
       </tr>
       <tr>
         <td>relationship range</td>
-        <td><code>dpv:range</code>
         </td><td><code>rdfs:range</code></td>
         <td><code>rdfs:range</code></td>
       </tr>

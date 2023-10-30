@@ -141,7 +141,7 @@ DPV_FILES = (
             'RiskLevels', 
             'RiskMatrix', 
             'RiskControls', 
-            'RiskAssessmentTechniques', 
+            'RiskAssessment', 
             'RiskManagement', 
             'RiskMethodology',
             'Justifications',
@@ -182,9 +182,7 @@ def download_document(
         logging.error(f'ERROR :: {E}')
 
 
-# MAIN
-import subprocess
-if __name__ == '__main__':
+def _download_spreadsheets():
     INFO('-'*40)
     INFO('Downloading spreadsheets...')
     INFO('-'*40)
@@ -195,6 +193,9 @@ if __name__ == '__main__':
             document_name=document_name,
             export_link=GOOGLE_EXCEL_EXPORT_LINK,
         ext='xlsx')
+
+
+def _extract_CSVs():
     INFO('-'*40)
     INFO('Extracting CSVs...')
     INFO('-'*40)
@@ -206,3 +207,10 @@ if __name__ == '__main__':
                 subprocess.run(["xlsx2csv", f"{DOCS_FOLDER}/{document_name}.xlsx", "-n", f"{sheet_name}"], stdout=outfile)
             INFO(f'Wrote {sheet_name}.csv from {document_name}.xlsx')
         INFO('-'*40)
+
+
+# MAIN
+import subprocess
+if __name__ == '__main__':
+    _download_spreadsheets()
+    _extract_CSVs()

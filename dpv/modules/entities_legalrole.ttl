@@ -6,90 +6,75 @@
 @prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dpv:DataController a rdfs:Class,
         skos:Concept ;
-    dct:contributor "Axel Polleres, Javier Fernández"@en ;
-    dct:created "2019-04-05"^^xsd:date ;
-    dct:modified "2020-11-04"^^xsd:date ;
     dct:source "(GDPR Art.4-7g,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_7/oj)"@en ;
     rdfs:subClassOf dpv:LegalEntity ;
+    rdfs:superClassOf dpv:JointDataControllers ;
     sw:term_status "accepted"@en ;
     skos:definition "The individual or organisation that decides (or controls) the purpose(s) of processing personal data."@en ;
-    skos:note "The terms 'Controller' is usually the more common form of indicating a Data Controller. In ISO/IEC the term 'PII Controller' is used."@en ;
+    skos:note "The terms 'Controller', 'Data Controller', and 'PII Controller' refer to the same concept"@en ;
     skos:prefLabel "Data Controller"@en .
 
 dpv:DataExporter a rdfs:Class,
         skos:Concept ;
-    dct:contributor "David Hickey, Georg Krog, Paul Ryan, Harshvardhan Pandit"@en ;
-    dct:created "2021-09-08"^^xsd:date ;
     dct:source "(EDPB Recommendations 01/2020 on Data Transfers, https://edpb.europa.eu/our-work-tools/our-documents/recommendations/recommendations-012020-measures-supplement-transfer_en)"@en ;
     rdfs:subClassOf dpv:LegalEntity ;
     sw:term_status "accepted"@en ;
     skos:definition "An entity that 'exports' data where exporting is considered a form of data transfer"@en ;
-    skos:note "The EU, in particular the EDPB, uses data exporter the context of cross-border data transfers/flows. These concepts are not bound by jurisdictional or geopolitical scopes within DPV and can thus be used for any notion of exporting"@en ;
+    skos:note "The term 'Data Exporter' is used by the EU-EDPB as the entity that transfer data across borders. While the EDPB refers to the jurisdictional border of EU, the term within DPV can be used to denote any 'export' or transfer or transmission of data and is thus a broader concept than the EDPB's definition."@en ;
     skos:prefLabel "Data Exporter"@en .
 
 dpv:DataImporter a rdfs:Class,
         skos:Concept ;
-    dct:contributor "David Hickey, Georg Krog, Paul Ryan, Harshvardhan Pandit"@en ;
-    dct:created "2021-09-08"^^xsd:date ;
     dct:source "(EDPB Recommendations 01/2020 on Data Transfers, https://edpb.europa.eu/our-work-tools/our-documents/recommendations/recommendations-012020-measures-supplement-transfer_en)"@en ;
     rdfs:subClassOf dpv:Recipient ;
     sw:term_status "accepted"@en ;
     skos:definition "An entity that 'imports' data where importing is considered a form of data transfer"@en ;
-    skos:note "The EU, in particular the EDPB, uses data importing the context of cross-border data transfers/flows. These concepts are not bound by jurisdictional or geopolitical scopes within DPV and can thus be used for any notion of importing"@en ;
+    skos:note "The term 'Data Importer' is used by the EU-EDPB as the entity that receives transferred data across borders. While the EDPB refers to the jurisdictional border of EU, the term within DPV can be used to denote any 'import' or reception of transfer or transmission of data and is thus a broader concept than the EDPB's definition."@en ;
     skos:prefLabel "Data Importer"@en .
 
 dpv:DataProcessor a rdfs:Class,
         skos:Concept ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2019-06-04"^^xsd:date ;
     dct:source "(GDPR Art.4-8,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_8/oj)"@en ;
     rdfs:subClassOf dpv:Recipient ;
+    rdfs:superClassOf dpv:DataSubProcessor ;
     sw:term_status "accepted"@en ;
     skos:definition "A ‘processor’ means a natural or legal person, public authority, agency or other body which processes personal data on behalf of the controller."@en ;
     skos:prefLabel "Data Processor"@en .
 
 dpv:DataProtectionOfficer a rdfs:Class,
         skos:Concept ;
-    dct:contributor "Georg Krog, Paul Ryan"@en ;
-    dct:created "2020-11-04"^^xsd:date ;
-    dct:modified "2021-12-08"^^xsd:date ;
     dct:source "(GDPR Art.37,https://eur-lex.europa.eu/eli/reg/2016/679/art_37/oj)"@en ;
     rdfs:subClassOf dpv:Representative ;
-    sw:term_status "modified"@en ;
+    sw:term_status "accepted"@en ;
     skos:definition "An entity within or authorised by an organisation to monitor internal compliance, inform and advise on data protection obligations and act as a contact point for data subjects and the supervisory authority."@en ;
     skos:prefLabel "Data Protection Officer"@en .
 
 dpv:DataSubProcessor a rdfs:Class,
         skos:Concept ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2020-11-25"^^xsd:date ;
     rdfs:subClassOf dpv:DataProcessor ;
     sw:term_status "accepted"@en ;
     skos:definition "A 'sub-processor' is a processor engaged by another processor"@en ;
-    skos:note "sub-processor' is a commonly used term similar to 'sub-contractor' and does not have a specific legal definition"@en ;
+    skos:note "A 'Sub-Processor' is always a 'Processor' with the distinction of not directly being appointed by the 'Controller'"@en ;
     skos:prefLabel "Data Sub-Processor"@en .
 
 dpv:JointDataControllers a rdfs:Class,
         skos:Concept ;
-    dct:contributor "Georg Krog, Harshvardhan Pandit"@en ;
-    dct:created "2022-02-02"^^xsd:date ;
     rdfs:subClassOf dpv:DataController ;
     sw:term_status "accepted"@en ;
     skos:definition "A group of Data Controllers that jointly determine the purposes and means of processing"@en ;
-    skos:note "To indicate the membership, hasDataController may be used"@en ;
+    skos:note "While Joint Data Controllers operate together, they are made up of individually distinct legal entities. To indicate the membership of this group, hasDataController should be used to denote each Data Controller. The concept of Joint Data Controllers also allows specifying a single group as the 'Controller' and to specify role and responsibilities within that group for each entity using DPV's concepts (e.g. isImplementedByEntity)"@en ;
     skos:prefLabel "Joint Data Controllers"@en .
 
 dpv:Recipient a rdfs:Class,
         skos:Concept ;
-    dct:contributor "Axel Polleres, Javier Fernández"@en ;
-    dct:created "2019-04-05"^^xsd:date ;
-    dct:modified "2020-11-04"^^xsd:date ;
     dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/),(GDPR Art.4-9g,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_9/oj)"@en ;
     rdfs:subClassOf dpv:LegalEntity ;
+    rdfs:superClassOf dpv:DataImporter,
+        dpv:DataProcessor,
+        dpv:ThirdParty ;
     sw:term_status "accepted"@en ;
     skos:definition "Entities that receive personal data"@en ;
     skos:note "A recipient of personal data can be used to indicate any entity that receives personal data. This can be a Third Party, Processor (GDPR), or even a Controller."@en ;
@@ -98,19 +83,17 @@ dpv:Recipient a rdfs:Class,
 
 dpv:ThirdParty a rdfs:Class,
         skos:Concept ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2019-06-04"^^xsd:date ;
     dct:source "(GDPR Art.4-10,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_10/oj)"@en ;
     rdfs:subClassOf dpv:Recipient ;
     sw:term_status "accepted"@en ;
     skos:definition "A ‘third party’ means a natural or legal person, public authority, agency or body other than the data subject, controller, processor and people who, under the direct authority of the controller or processor, are authorised to process personal data."@en ;
     skos:prefLabel "Third Party"@en .
 
+dpv:Representative rdfs:superClassOf dpv:DataProtectionOfficer .
+
 dpv:hasDataExporter a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv:DataExporter ;
-    dct:contributor "Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit"@en ;
-    dct:created "2022-02-09"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasEntity ;
@@ -121,8 +104,6 @@ dpv:hasDataExporter a rdf:Property,
 dpv:hasDataImporter a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv:DataImporter ;
-    dct:contributor "Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit"@en ;
-    dct:created "2022-02-09"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasRecipient ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasRecipient ;
@@ -133,8 +114,6 @@ dpv:hasDataImporter a rdf:Property,
 dpv:hasDataProcessor a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv:DataProcessor ;
-    dct:contributor "Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit"@en ;
-    dct:created "2022-02-09"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasRecipient ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasRecipient ;
@@ -145,8 +124,6 @@ dpv:hasDataProcessor a rdf:Property,
 dpv:hasDataProtectionOfficer a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv:DataProtectionOfficer ;
-    dct:contributor "Paul Ryan, Rob Brennan"@en ;
-    dct:created "2022-03-02"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasRepresentative ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasRepresentative ;
@@ -157,8 +134,6 @@ dpv:hasDataProtectionOfficer a rdf:Property,
 dpv:hasJointDataControllers a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv:JointDataControllers ;
-    dct:contributor "Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit"@en ;
-    dct:created "2022-02-09"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasDataController ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasDataController ;
@@ -169,8 +144,6 @@ dpv:hasJointDataControllers a rdf:Property,
 dpv:hasRecipientDataController a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv:DataController ;
-    dct:contributor "Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit"@en ;
-    dct:created "2022-02-09"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasRecipient ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasRecipient ;
@@ -181,8 +154,6 @@ dpv:hasRecipientDataController a rdf:Property,
 dpv:hasRecipientThirdParty a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv:ThirdParty ;
-    dct:contributor "Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit"@en ;
-    dct:created "2022-02-09"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasRecipient ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasRecipient ;
@@ -190,15 +161,18 @@ dpv:hasRecipientThirdParty a rdf:Property,
     skos:prefLabel "has recipient third party"@en ;
     schema:rangeIncludes dpv:ThirdParty .
 
-dpv:hasRepresentative skos:narrower dpv:hasDataProtectionOfficer .
+dpv:hasRepresentative rdfs:superPropertyOf dpv:hasDataProtectionOfficer ;
+    skos:narrower dpv:hasDataProtectionOfficer .
+
+dpv:LegalEntity rdfs:superClassOf dpv:DataController,
+        dpv:DataExporter,
+        dpv:Recipient .
 
 dpv:hasDataController a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv:DataController ;
-    dct:contributor "Axel Polleres, Javier Fernández, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger"@en ;
-    dct:created "2019-04-04"^^xsd:date ;
-    dct:modified "2020-11-04"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasEntity ;
+    rdfs:superPropertyOf dpv:hasJointDataControllers ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasEntity ;
     skos:definition "Indicates association with Data Controller"@en ;
@@ -206,18 +180,22 @@ dpv:hasDataController a rdf:Property,
     skos:prefLabel "has data controller"@en ;
     schema:rangeIncludes dpv:DataController .
 
-dpv:hasEntity skos:narrower dpv:hasDataController,
+dpv:hasEntity rdfs:superPropertyOf dpv:hasDataController,
+        dpv:hasDataExporter,
+        dpv:hasRecipient ;
+    skos:narrower dpv:hasDataController,
         dpv:hasDataExporter,
         dpv:hasRecipient .
 
 dpv:hasRecipient a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv:Recipient ;
-    dct:contributor "Axel Polleres, Javier Fernández, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger"@en ;
-    dct:created "2019-04-04"^^xsd:date ;
-    dct:modified "2020-11-04"^^xsd:date ;
     dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/)"@en ;
     rdfs:subPropertyOf dpv:hasEntity ;
+    rdfs:superPropertyOf dpv:hasDataImporter,
+        dpv:hasDataProcessor,
+        dpv:hasRecipientDataController,
+        dpv:hasRecipientThirdParty ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasEntity ;
     skos:definition "Indicates Recipient of Personal Data"@en ;

@@ -1,43 +1,12 @@
 [
   {
-    "@id": "https://w3id.org/dpv#UninformedConsent",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
+    "@id": "https://w3id.org/dpv#Consent",
+    "http://www.w3.org/2004/02/skos/core#narrower": [
       {
-        "@language": "en",
-        "@value": "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
+        "@id": "https://w3id.org/dpv#UninformedConsent"
+      },
       {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-21"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#Consent"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Consent that is uninformed i.e. without requirement to provide sufficient information to make a consenting decision"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Uninformed Consent"
+        "@id": "https://w3id.org/dpv#InformedConsent"
       }
     ]
   },
@@ -45,29 +14,18 @@
     "@id": "https://w3id.org/dpv#ExplicitlyExpressedConsent",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-21"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#ExpressedConsent"
-      }
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#LegalBasis"
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
         "@language": "en",
         "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#ExpressedConsent"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -90,32 +48,52 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#ImpliedConsent",
+    "@id": "https://w3id.org/dpv#UninformedConsent",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-21"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#InformedConsent"
-      }
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#LegalBasis"
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
         "@language": "en",
         "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#Consent"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Consent that is uninformed i.e. without requirement to provide sufficient information to make a consenting decision"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Uninformed Consent"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#ImpliedConsent",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#LegalBasis"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#InformedConsent"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -138,86 +116,32 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#InformedConsent",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-21"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#Consent"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Consent that is informed i.e. with the requirement to provide sufficient information to make a consenting decision"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "The specifics for what information should be provided or made available will depend on the context, use-case, or relevant legal requirements"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Informed Consent"
-      }
-    ]
-  },
-  {
     "@id": "https://w3id.org/dpv#ExpressedConsent",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-21"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#InformedConsent"
-      }
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#LegalBasis"
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
         "@language": "en",
         "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#InformedConsent"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
         "@value": "Consent that is expressed through an action intended to convey a consenting decision"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv#ExplicitlyExpressedConsent"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#note": [
@@ -230,6 +154,51 @@
       {
         "@language": "en",
         "@value": "Expressed Consent"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#InformedConsent",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#LegalBasis"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#Consent"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Consent that is informed i.e. with the requirement to provide sufficient information to make a consenting decision"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv#ImpliedConsent"
+      },
+      {
+        "@id": "https://w3id.org/dpv#ExpressedConsent"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "The specifics for what information should be provided or made available will depend on the context, use-case, or relevant legal requirements"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Informed Consent"
       }
     ]
   }

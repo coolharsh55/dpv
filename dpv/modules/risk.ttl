@@ -1,125 +1,116 @@
 @prefix dcam: <http://purl.org/dc/dcam/> .
-@prefix dct: <http://purl.org/dc/terms/> .
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dpv:Benefit a rdfs:Class,
-        skos:Concept ;
-    dct:contributor "Harshvardhan J. Pandit, Julian Flake, Georg P Krog, Fajar Ekaputra, Beatriz Esteves, Axel Polleres"@en ;
-    dct:created "2022-03-23"^^xsd:date ;
-    rdfs:subClassOf dpv:Impact ;
+        skos:Concept,
+        dpv:Impact ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Impact ;
     skos:definition "Impact(s) that acts as or causes benefits"@en ;
     skos:prefLabel "Benefit"@en .
 
 dpv:Consequence a rdfs:Class,
         skos:Concept ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-01-26"^^xsd:date ;
+    rdfs:superClassOf dpv:Impact ;
     sw:term_status "accepted"@en ;
     skos:definition "The consequence(s) possible or arising from specified context"@en ;
+    skos:narrower dpv:ConsequenceAsSideEffect,
+        dpv:ConsequenceOfFailure,
+        dpv:ConsequenceOfSuccess ;
     skos:prefLabel "Consequence"@en .
 
 dpv:ConsequenceAsSideEffect a rdfs:Class,
-        skos:Concept ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-03-30"^^xsd:date ;
-    rdfs:subClassOf dpv:Consequence ;
+        skos:Concept,
+        dpv:Consequence ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Consequence ;
     skos:definition "The consequence(s) possible or arising as a side-effect of specified context"@en ;
     skos:prefLabel "Consequence as Side-Effect"@en .
 
 dpv:ConsequenceOfFailure a rdfs:Class,
-        skos:Concept ;
-    dct:contributor "Harshvardhan J. Pandit, Georg P Krog"@en ;
-    dct:created "2022-03-23"^^xsd:date ;
-    rdfs:subClassOf dpv:Consequence ;
+        skos:Concept,
+        dpv:Consequence ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Consequence ;
     skos:definition "The consequence(s) possible or arising from failure of specified context"@en ;
     skos:prefLabel "Consequence of Failure"@en .
 
 dpv:ConsequenceOfSuccess a rdfs:Class,
-        skos:Concept ;
-    dct:contributor "Harshvardhan J. Pandit, Georg P Krog"@en ;
-    dct:created "2022-03-23"^^xsd:date ;
-    rdfs:subClassOf dpv:Consequence ;
+        skos:Concept,
+        dpv:Consequence ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Consequence ;
     skos:definition "The consequence(s) possible or arising from success of specified context"@en ;
     skos:prefLabel "Consequence of Success"@en .
 
 dpv:Damage a rdfs:Class,
-        skos:Concept ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-03-30"^^xsd:date ;
-    rdfs:subClassOf dpv:Impact ;
+        skos:Concept,
+        dpv:Impact ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Impact ;
     skos:definition "Impact that acts as or causes damages"@en ;
+    skos:narrower dpv:Harm,
+        dpv:MaterialDamage,
+        dpv:NonMaterialDamage ;
     skos:prefLabel "Damage"@en .
 
 dpv:Detriment a rdfs:Class,
-        skos:Concept ;
-    dct:contributor "Harshvardhan J. Pandit, Julian Flake, Georg P Krog, Fajar Ekaputra, Beatriz Esteves"@en ;
-    dct:created "2022-03-23"^^xsd:date ;
-    rdfs:subClassOf dpv:Impact ;
+        skos:Concept,
+        dpv:Impact ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Impact ;
     skos:definition "Impact that acts as or causes detriments"@en ;
     skos:prefLabel "Detriment"@en .
 
 dpv:Harm a rdfs:Class,
-        skos:Concept ;
-    dct:contributor "Harshvardhan J. Pandit, Julian Flake, Georg P Krog, Fajar Ekaputra, Beatriz Esteves"@en ;
-    dct:created "2022-08-13"^^xsd:date ;
-    rdfs:subClassOf dpv:Damage ;
+        skos:Concept,
+        dpv:Impact ;
     sw:term_status "changed"@en ;
+    skos:broader dpv:Damage ;
     skos:definition "Impact that acts as or causes harms"@en ;
     skos:prefLabel "Harm"@en .
 
 dpv:Impact a rdfs:Class,
         skos:Concept ;
-    dct:contributor "Harshvardhan J. Pandit, Julian Flake, Georg P Krog, Fajar Ekaputra, Beatriz Esteves"@en ;
-    dct:created "2022-03-23"^^xsd:date ;
     rdfs:subClassOf dpv:Consequence ;
     sw:term_status "accepted"@en ;
     skos:definition "The impact(s) possible or arising as a consequence from specified context"@en ;
+    skos:narrower dpv:Benefit,
+        dpv:Damage,
+        dpv:Detriment ;
     skos:note "Impact is a stronger notion of consequence in terms of influence, change, or effect on something e.g. for impact assessments"@en ;
     skos:prefLabel "Impact"@en .
 
 dpv:Likelihood a rdfs:Class,
         skos:Concept ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-07-22"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "The likelihood or probability or chance of something taking place or occuring"@en ;
     skos:note "Likelihood can be expressed in a subjective manner, such as 'Unlikely', or in a quantitative manner such as \"Twice in a Day\" (frequency per period). The suggestion is to use quantitative values, or to associate them with subjective terms used so as to enable accurate interpretations and interoperability. See the concepts related to Frequency and Duration for possible uses as a combination to express Likelihood."@en ;
     skos:prefLabel "Likelihood"@en .
 
 dpv:MaterialDamage a rdfs:Class,
-        skos:Concept ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-03-30"^^xsd:date ;
-    rdfs:subClassOf dpv:Damage ;
+        skos:Concept,
+        dpv:Impact ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Damage ;
     skos:definition "Impact that acts as or causes material damages"@en ;
     skos:prefLabel "Material Damage"@en .
 
 dpv:NonMaterialDamage a rdfs:Class,
-        skos:Concept ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-03-30"^^xsd:date ;
-    rdfs:subClassOf dpv:Damage ;
+        skos:Concept,
+        dpv:Impact ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Damage ;
     skos:definition "Impact that acts as or causes non-material damages"@en ;
     skos:prefLabel "Non-Material Damage"@en .
 
 dpv:Risk a rdfs:Class,
         skos:Concept ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2020-11-18"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "A risk or possibility or uncertainty of negative effects, impacts, or consequences."@en ;
     skos:note "Risks can be associated with one or more different concepts such as purpose, processing, personal data, technical or organisational measure."@en ;
@@ -127,8 +118,6 @@ dpv:Risk a rdfs:Class,
 
 dpv:RiskLevel a rdfs:Class,
         skos:Concept ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-07-20"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "The magnitude of a risk expressed as an indication to aid in its management"@en ;
     skos:note "Risk Levels can be defined as a combination of different characteristics. For example, ISO 31073:2022 defines it as a combination of consequences and their likelihood. Another example would be the Risk Matrix where Risk Level is defined as a combination of Likelihood and Severity associated with the Risk."@en ;
@@ -136,8 +125,6 @@ dpv:RiskLevel a rdfs:Class,
 
 dpv:RiskMitigationMeasure a rdfs:Class,
         skos:Concept ;
-    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan"@en ;
-    dct:created "2020-11-04"^^xsd:date ;
     rdfs:subClassOf dpv:TechnicalOrganisationalMeasure ;
     sw:term_status "accepted"@en ;
     skos:definition "Measures intended to mitigate, minimise, or prevent risk."@en ;
@@ -145,8 +132,6 @@ dpv:RiskMitigationMeasure a rdfs:Class,
 
 dpv:Severity a rdfs:Class,
         skos:Concept ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-07-21"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "The magnitude of being unwanted or having negative effects such as harmful impacts"@en ;
     skos:note "Severity can be associated with Risk, or its Consequences and Impacts"@en ;
@@ -155,8 +140,6 @@ dpv:Severity a rdfs:Class,
 dpv:hasLikelihood a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv:Likelihood ;
-    dct:contributor "Harshvardhan J. Pandit, Georg P Krog, Paul Ryan, Julian Flake"@en ;
-    dct:created "2022-07-20"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the likelihood associated with a concept"@en ;
     skos:prefLabel "has likelihood"@en ;
@@ -166,8 +149,6 @@ dpv:hasResidualRisk a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:Risk ;
     dcam:rangeIncludes dpv:Risk ;
-    dct:contributor "Harshvardhan J. Pandit, Georg P Krog, Paul Ryan, Julian Flake"@en ;
-    dct:created "2022-07-20"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the associated risk is the remaining or residual risk from applying mitigation measures or treatments to this risk"@en ;
     skos:prefLabel "has residual risk"@en ;
@@ -177,8 +158,6 @@ dpv:hasResidualRisk a rdf:Property,
 dpv:hasRisk a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv:Risk ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2020-11-18"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates applicability of Risk for this concept"@en ;
     skos:prefLabel "has risk"@en ;
@@ -188,8 +167,6 @@ dpv:hasRiskLevel a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:Risk ;
     dcam:rangeIncludes dpv:RiskLevel ;
-    dct:contributor "Harshvardhan J. Pandit, Georg P Krog, Paul Ryan, Julian Flake"@en ;
-    dct:created "2022-07-20"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the associated risk level associated with a risk"@en ;
     skos:prefLabel "has risk level"@en ;
@@ -199,8 +176,6 @@ dpv:hasRiskLevel a rdf:Property,
 dpv:hasSeverity a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv:Severity ;
-    dct:contributor "Harshvardhan J. Pandit, Georg P Krog, Paul Ryan, Julian Flake"@en ;
-    dct:created "2022-07-20"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the severity associated with a concept"@en ;
     skos:prefLabel "has severity"@en ;
@@ -210,8 +185,6 @@ dpv:isResidualRiskOf a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:Risk ;
     dcam:rangeIncludes dpv:Risk ;
-    dct:contributor "Harshvardhan J. Pandit, Georg P Krog, Paul Ryan, Julian Flake"@en ;
-    dct:created "2022-07-20"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates this risk is the remaining or residual risk from applying mitigation measures or treatments to specified risk"@en ;
     skos:prefLabel "is residual risk of"@en ;
@@ -222,58 +195,18 @@ dpv:mitigatesRisk a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:RiskMitigationMeasure ;
     dcam:rangeIncludes dpv:Risk ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2020-11-04"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates risks mitigated by this concept"@en ;
     skos:prefLabel "mitigates risk"@en ;
     schema:domainIncludes dpv:RiskMitigationMeasure ;
     schema:rangeIncludes dpv:Risk .
 
-dpv:hasImpact a rdf:Property,
-        skos:Concept ;
-    dcam:rangeIncludes dpv:Impact ;
-    dct:contributor "Harshvardhan J. Pandit, Julian Flake, Georg P Krog, Fajar Ekaputra, Beatriz Esteves"@en ;
-    dct:created "2022-05-18"^^xsd:date ;
-    rdfs:subPropertyOf dpv:hasConsequence ;
-    sw:term_status "accepted"@en ;
-    skos:broader dpv:hasConsequence ;
-    skos:definition "Indicates impact(s) possible or arising as consequences from specified concept"@en ;
-    skos:prefLabel "has impact"@en ;
-    schema:rangeIncludes dpv:Impact .
-
-dpv:hasImpactOn a rdf:Property,
-        skos:Concept ;
-    dcam:domainIncludes dpv:Impact ;
-    dct:contributor "Harshvardhan J. Pandit, Julian Flake, Georg P Krog, Fajar Ekaputra, Beatriz Esteves"@en ;
-    dct:created "2022-05-18"^^xsd:date ;
-    rdfs:subPropertyOf dpv:hasConsequenceOn ;
-    sw:term_status "accepted"@en ;
-    skos:broader dpv:hasConsequenceOn ;
-    skos:definition "Indicates the thing (e.g. plan, process, or entity) affected by an impact"@en ;
-    skos:prefLabel "has impact on"@en ;
-    schema:domainIncludes dpv:Impact .
-
-dpv:isMitigatedByMeasure a rdf:Property,
-        skos:Concept ;
-    dcam:domainIncludes dpv:Risk ;
-    dcam:rangeIncludes dpv:RiskMitigationMeasure ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-02-09"^^xsd:date ;
-    rdfs:subPropertyOf dpv:hasTechnicalOrganisationalMeasure ;
-    sw:term_status "accepted"@en ;
-    skos:broader dpv:hasTechnicalOrganisationalMeasure ;
-    skos:definition "Indicate a risk is mitigated by specified measure"@en ;
-    skos:prefLabel "is mitigated by measure"@en ;
-    schema:domainIncludes dpv:Risk ;
-    schema:rangeIncludes dpv:RiskMitigationMeasure .
+dpv:TechnicalOrganisationalMeasure rdfs:superClassOf dpv:RiskMitigationMeasure .
 
 dpv:hasConsequence a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv:Consequence ;
-    dct:contributor "Harshvardhan J. Pandit, Julian Flake, Georg P Krog, Fajar Ekaputra, Beatriz Esteves"@en ;
-    dct:created "2020-11-04"^^xsd:date ;
-    dct:modified "2021-09-21"^^xsd:date ;
+    rdfs:superPropertyOf dpv:hasImpact ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates consenquence(s) possible or arising from specified concept"@en ;
     skos:narrower dpv:hasImpact ;
@@ -284,13 +217,45 @@ dpv:hasConsequence a rdf:Property,
 dpv:hasConsequenceOn a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:Consequence ;
-    dct:contributor "Harshvardhan J. Pandit, Georg P Krog"@en ;
-    dct:created "2022-11-24"^^xsd:date ;
+    rdfs:superPropertyOf dpv:hasImpactOn ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the thing (e.g. plan, process, or entity) affected by a consequence"@en ;
     skos:narrower dpv:hasImpactOn ;
     skos:prefLabel "has consequence on"@en ;
     schema:domainIncludes dpv:Consequence .
 
-dpv:hasTechnicalOrganisationalMeasure skos:narrower dpv:isMitigatedByMeasure .
+dpv:hasImpact a rdf:Property,
+        skos:Concept ;
+    dcam:rangeIncludes dpv:Impact ;
+    rdfs:subPropertyOf dpv:hasConsequence ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:hasConsequence ;
+    skos:definition "Indicates impact(s) possible or arising as consequences from specified concept"@en ;
+    skos:prefLabel "has impact"@en ;
+    schema:rangeIncludes dpv:Impact .
+
+dpv:hasImpactOn a rdf:Property,
+        skos:Concept ;
+    dcam:domainIncludes dpv:Impact ;
+    rdfs:subPropertyOf dpv:hasConsequenceOn ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:hasConsequenceOn ;
+    skos:definition "Indicates the thing (e.g. plan, process, or entity) affected by an impact"@en ;
+    skos:prefLabel "has impact on"@en ;
+    schema:domainIncludes dpv:Impact .
+
+dpv:hasTechnicalOrganisationalMeasure rdfs:superPropertyOf dpv:isMitigatedByMeasure ;
+    skos:narrower dpv:isMitigatedByMeasure .
+
+dpv:isMitigatedByMeasure a rdf:Property,
+        skos:Concept ;
+    dcam:domainIncludes dpv:Risk ;
+    dcam:rangeIncludes dpv:RiskMitigationMeasure ;
+    rdfs:subPropertyOf dpv:hasTechnicalOrganisationalMeasure ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:hasTechnicalOrganisationalMeasure ;
+    skos:definition "Indicate a risk is mitigated by specified measure"@en ;
+    skos:prefLabel "is mitigated by measure"@en ;
+    schema:domainIncludes dpv:Risk ;
+    schema:rangeIncludes dpv:RiskMitigationMeasure .
 

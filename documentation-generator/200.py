@@ -93,7 +93,8 @@ for vocab, vocab_data in CSVFILES.items():
         PROPOSED[vocab][module] = []
         for schema_name, filepath in module_data.items():
             schema = vocab_schemas.get_schema(schema_name)
-            INFO(f'MODULE: {module} with schema: {schema_name}')
+            INFO(f'MODULE: {module}')
+            INFO(f'parsing {filepath} with schema: {schema_name}')
             header, csvdata = load_CSV(filepath)
             # clean data (dangling spaces)
             header = [x.strip() for x in header]

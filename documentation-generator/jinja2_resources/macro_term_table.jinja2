@@ -52,11 +52,11 @@
   <li>
     <strong>{{term}}</strong>: {{data['skos:definition']}} <br/>
     {% if data['skos:broader'] %}
-      broader concepts: {% for parent in data['skos:broader']|get_concept_list%}
+      narrower than: {% for parent in data['skos:broader']|get_concept_list%}
       <a href="#{{parent['term']}}"><code>{{ parent['prefixed'] }}</code></a>{{ "," if not loop.last }}
       {% endfor %}; 
     {% elif data['rdfs:subClassOf'] %}
-      broader concepts: {% for parent in data['rdfs:subClassOf']|get_concept_list%}
+      narrower than: {% for parent in data['rdfs:subClassOf']|get_concept_list%}
       <a href="#{{parent['term']}}"><code>{{ parent['prefixed'] }}</code></a>{{ "," if not loop.last }}
       {% endfor %}; 
     {% endif %}

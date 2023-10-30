@@ -55,10 +55,10 @@ NS.ns = { k:v for k,v in NAMESPACES.items() }
 IMPORT_CSV_PATH = './vocab_csv'
 CSVFILES = {
     'dpv': {
-        'core': {
-            'classes': f'{IMPORT_CSV_PATH}/BaseOntology.csv',
-            'properties': f'{IMPORT_CSV_PATH}/BaseOntology_properties.csv',
-        },
+        # 'core': {
+        #     'classes': f'{IMPORT_CSV_PATH}/BaseOntology.csv',
+        #     'properties': f'{IMPORT_CSV_PATH}/BaseOntology_properties.csv',
+        # },
         'personal_data': {
             'classes': f'{IMPORT_CSV_PATH}/PersonalData.csv',
             'properties': f'{IMPORT_CSV_PATH}/PersonalData_properties.csv',
@@ -249,7 +249,7 @@ CSVFILES = {
             'taxonomy': f'{IMPORT_CSV_PATH}/RiskControls.csv',
         },
         'risk_assessment': {
-            'taxonomy': f'{IMPORT_CSV_PATH}/RiskAssessmentTechniques.csv',
+            'taxonomy': f'{IMPORT_CSV_PATH}/RiskAssessment.csv',
         },
         'risk_methodology': {
             'taxonomy': f'{IMPORT_CSV_PATH}/RiskMethodology.csv',

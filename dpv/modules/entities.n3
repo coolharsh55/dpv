@@ -6,29 +6,25 @@
 @prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dpv:Entity a rdfs:Class,
         skos:Concept ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-02-02"^^xsd:date ;
+    rdfs:superClassOf dpv:LegalEntity,
+        dpv:NaturalPerson ;
     sw:term_status "accepted"@en ;
     skos:definition "A human or non-human 'thing' that constitutes as an entity"@en ;
     skos:prefLabel "Entity"@en .
 
 dpv:LegalEntity a rdfs:Class,
         skos:Concept ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2019-04-05"^^xsd:date ;
     rdfs:subClassOf dpv:Entity ;
+    rdfs:superClassOf dpv:Representative ;
     sw:term_status "accepted"@en ;
     skos:definition "A human or non-human 'thing' that constitutes as an entity and which is recognised and defined in law"@en ;
     skos:prefLabel "Legal Entity"@en .
 
 dpv:NaturalPerson a rdfs:Class,
         skos:Concept ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-02-09"^^xsd:date ;
     rdfs:subClassOf dpv:Entity ;
     sw:term_status "accepted"@en ;
     skos:definition "A human"@en ;
@@ -36,8 +32,6 @@ dpv:NaturalPerson a rdfs:Class,
 
 dpv:Representative a rdfs:Class,
         skos:Concept ;
-    dct:contributor "Georg Krog, Paul Ryan, Harshvardhan J. Pandit, Beatriz Esteves"@en ;
-    dct:created "2020-11-04"^^xsd:date ;
     dct:source "(GDPR Art.27,https://eur-lex.europa.eu/eli/reg/2016/679/art_27/oj)"@en ;
     rdfs:subClassOf dpv:LegalEntity ;
     sw:term_status "accepted"@en ;
@@ -47,8 +41,6 @@ dpv:Representative a rdfs:Class,
 dpv:hasAddress a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:Entity ;
-    dct:contributor "Harshvardhan J.Pandit, Georg P Krog, Paul Ryan, Beatriz Esteves"@en ;
-    dct:created "2020-11-04"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifies address of a legal entity such as street address or pin code"@en ;
     skos:prefLabel "has address"@en ;
@@ -57,8 +49,6 @@ dpv:hasAddress a rdf:Property,
 dpv:hasContact a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:Entity ;
-    dct:contributor "Harshvardhan J.Pandit, Georg P Krog, Paul Ryan, Beatriz Esteves"@en ;
-    dct:created "2020-11-04"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifies contact details of a legal entity such as phone  or email"@en ;
     skos:prefLabel "has contact"@en ;
@@ -67,8 +57,6 @@ dpv:hasContact a rdf:Property,
 dpv:hasName a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:Entity ;
-    dct:contributor "Harshvardhan J.Pandit, Georg P Krog, Paul Ryan, Beatriz Esteves"@en ;
-    dct:created "2020-11-04"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifies name of a legal entity"@en ;
     skos:prefLabel "has name"@en ;
@@ -78,8 +66,6 @@ dpv:hasRepresentative a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:Entity ;
     dcam:rangeIncludes dpv:Representative ;
-    dct:contributor "Harshvardhan J.Pandit, Georg P Krog, Paul Ryan, Beatriz Esteves"@en ;
-    dct:created "2020-11-04"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasEntity ;
@@ -91,8 +77,6 @@ dpv:hasRepresentative a rdf:Property,
 dpv:hasResponsibleEntity a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv:Entity ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-03-02"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasEntity ;
@@ -104,8 +88,6 @@ dpv:isRepresentativeFor a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:Representative ;
     dcam:rangeIncludes dpv:Entity ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-11-09"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasEntity ;
@@ -117,8 +99,9 @@ dpv:isRepresentativeFor a rdf:Property,
 dpv:hasEntity a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv:Entity ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-02-09"^^xsd:date ;
+    rdfs:superPropertyOf dpv:hasRepresentative,
+        dpv:hasResponsibleEntity,
+        dpv:isRepresentativeFor ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates inclusion or applicability of an entity to some concept"@en ;
     skos:narrower dpv:hasRepresentative,

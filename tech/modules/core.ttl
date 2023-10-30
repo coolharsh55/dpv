@@ -1,5 +1,4 @@
 @prefix dcam: <http://purl.org/dc/dcam/> .
-@prefix dct: <http://purl.org/dc/terms/> .
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix dpv-tech: <https://w3id.org/dpv/dpv-tech#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -8,75 +7,64 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix tech: <https://w3id.org/dpv/tech#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 tech:CommunicationMechanism a rdfs:Class,
         skos:Concept ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-06-15"^^xsd:date ;
     rdfs:subClassOf rdfs:Class ;
     sw:term_status "accepted"@en ;
     skos:definition "Communication mechanism used or provided by Technologoy"@en ;
     skos:prefLabel "Communication Mechanism"@en .
 
 tech:DataTechnology a rdfs:Class,
-        skos:Concept ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-06-15"^^xsd:date ;
-    rdfs:subClassOf dpv:Technology ;
+        skos:Concept,
+        dpv:Technology ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Technology ;
     skos:definition "Technology that uses or interacts with data"@en ;
     skos:prefLabel "Data Technology"@en .
 
 tech:IdentityTechnology a rdfs:Class,
-        skos:Concept ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-06-15"^^xsd:date ;
-    rdfs:subClassOf dpv:Technology ;
+        skos:Concept,
+        dpv:Technology ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Technology ;
     skos:definition "Technology related to identity or identifiers"@en ;
     skos:prefLabel "Identity Technology"@en .
 
 tech:ManagementTechnology a rdfs:Class,
-        skos:Concept ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-06-15"^^xsd:date ;
-    rdfs:subClassOf dpv:Technology ;
+        skos:Concept,
+        dpv:Technology ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Technology ;
     skos:definition "Technology that enables or provides management"@en ;
     skos:prefLabel "Management Technology"@en .
 
 tech:OperationalTechnology a rdfs:Class,
-        skos:Concept ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-06-15"^^xsd:date ;
-    rdfs:subClassOf dpv:Technology ;
+        skos:Concept,
+        dpv:Technology ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Technology ;
     skos:definition "Technology that enables or performs or executes operations and processes"@en ;
     skos:prefLabel "Operational Technology"@en .
 
 tech:SecurityTechnology a rdfs:Class,
-        skos:Concept ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-06-15"^^xsd:date ;
-    rdfs:subClassOf dpv:Technology ;
+        skos:Concept,
+        dpv:Technology ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Technology ;
     skos:definition "Technology that enables or provides security"@en ;
     skos:prefLabel "Security Technology"@en .
 
 tech:SurveillanceTechnology a rdfs:Class,
-        skos:Concept ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-06-15"^^xsd:date ;
-    rdfs:subClassOf dpv:Technology ;
+        skos:Concept,
+        dpv:Technology ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Technology ;
     skos:definition "Technology related to surveillance of individuals or people"@en ;
     skos:prefLabel "Surveillance Technology"@en .
 
 tech:TechnologyActor a rdfs:Class,
         skos:Concept ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-06-15"^^xsd:date ;
     rdfs:subClassOf dpv:Entity ;
     sw:term_status "accepted"@en ;
     skos:definition "Actors and Entities involved in provision, use, and management of Technology"@en ;
@@ -84,8 +72,6 @@ tech:TechnologyActor a rdfs:Class,
 
 tech:TechnologyProvisionMethod a rdfs:Class,
         skos:Concept ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-06-15"^^xsd:date ;
     rdfs:subClassOf rdfs:Class ;
     sw:term_status "accepted"@en ;
     skos:definition "Method associated with provision or use of technology"@en ;
@@ -93,19 +79,16 @@ tech:TechnologyProvisionMethod a rdfs:Class,
 
 tech:TechnologyReadinessLevel a rdfs:Class,
         skos:Concept ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-06-15"^^xsd:date ;
-    rdfs:subClassOf dpv:Technology ;
+    rdfs:subClassOf rdfs:Class ;
     sw:term_status "accepted"@en ;
     skos:definition "Indication of maturity of Technology (ISO 16290:2013)"@en ;
     skos:prefLabel "Technology Readiness Level"@en .
 
 tech:TechnologyUsageLocation a rdfs:Class,
-        skos:Concept ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-06-15"^^xsd:date ;
-    rdfs:subClassOf dpv:Location ;
+        skos:Concept,
+        dpv:Location ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Location ;
     skos:definition "Location for where technology is provided or used"@en ;
     skos:prefLabel "Technology Usage Location"@en .
 
@@ -113,9 +96,7 @@ tech:hasCommunicationMechanism a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:Technology ;
     dcam:rangeIncludes dpv-tech:CommunicationMechanism ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-07-02"^^xsd:date ;
-    sw:term_status "changed"@en ;
+    sw:term_status "accepted"@en ;
     skos:definition "Indicates communication mechanisms used or provided by technology"@en ;
     skos:prefLabel "has communication mechanism"@en ;
     schema:domainIncludes dpv:Technology ;
@@ -125,9 +106,7 @@ tech:hasTRL a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:Technology ;
     dcam:rangeIncludes dpv-tech:TechnologyReadinessLevel ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-07-02"^^xsd:date ;
-    sw:term_status "changed"@en ;
+    sw:term_status "accepted"@en ;
     skos:definition "Indicates technology maturity level"@en ;
     skos:prefLabel "has TRL"@en ;
     schema:domainIncludes dpv:Technology ;
@@ -137,11 +116,24 @@ tech:hasTechnologyActor a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:Technology ;
     dcam:rangeIncludes dpv-tech:TechnologyActor ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-10-21"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates an actor associated with technology"@en ;
     skos:prefLabel "has technology actor"@en ;
     schema:domainIncludes dpv:Technology ;
     schema:rangeIncludes dpv-tech:TechnologyActor .
+
+dpv:Entity rdfs:superClassOf tech:TechnologyActor .
+
+dpv:Location skos:narrower tech:TechnologyUsageLocation .
+
+rdfs:Class rdfs:superClassOf tech:CommunicationMechanism,
+        tech:TechnologyProvisionMethod,
+        tech:TechnologyReadinessLevel .
+
+dpv:Technology skos:narrower tech:DataTechnology,
+        tech:IdentityTechnology,
+        tech:ManagementTechnology,
+        tech:OperationalTechnology,
+        tech:SecurityTechnology,
+        tech:SurveillanceTechnology .
 

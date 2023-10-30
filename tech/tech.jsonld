@@ -1,64 +1,18 @@
 [
   {
-    "@id": "https://w3id.org/dpv/tech#DataStorageTechnology",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
+    "@id": "https://w3id.org/dpv/dpv-tech#IdentityTechnology",
+    "http://www.w3.org/2004/02/skos/core#narrower": [
       {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#DataTechnology"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Technology related to storing data"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Data Storage Technology"
+        "@id": "https://w3id.org/dpv/tech#IdentityManagementTechnology"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#System",
+    "@id": "https://w3id.org/dpv/tech#MonitoringSecurityTechnology",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
+      "https://w3id.org/dpv#Technology"
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
@@ -66,16 +20,21 @@
         "@value": "accepted"
       }
     ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#SecurityTechnology"
+      }
+    ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Technology provided as a system"
+        "@value": "Technology related to monitoring of vulnerabilities, threats, exploitations"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "System"
+        "@value": "Monitoring Security Technology"
       }
     ]
   },
@@ -83,29 +42,18 @@
     "@id": "https://w3id.org/dpv/tech#ManagementTechnology",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#Technology"
-      }
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Technology"
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
         "@language": "en",
         "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#Technology"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -122,61 +70,68 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#Component",
+    "@id": "https://w3id.org/dpv/dpv-tech#SecurityTechnology",
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv/tech#DataSecurityTechnology"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#PET"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#DetectionSecurityTechnology"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#PreventionSecurityTechnology"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#MitigationSecurityTechnology"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#MonitoringSecurityTechnology"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#SecurityManagementTechnology"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#Subscription",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
       "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
     ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
         "@language": "en",
         "@value": "accepted"
       }
     ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
+      }
+    ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Technology provided as a component"
+        "@value": "Technology that is provided or used as a periodic subscription"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Component"
+        "@value": "Subscription"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#Product",
+    "@id": "https://w3id.org/dpv/tech#OperationEnvironment",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
+      "https://w3id.org/dpv#Technology"
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
@@ -184,37 +139,30 @@
         "@value": "accepted"
       }
     ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#OperationalTechnology"
+      }
+    ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Technology that is provided as a product"
+        "@value": "Technology that provides an environment for operations to be executed"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Product"
+        "@value": "Operation Environment"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#FixedUse",
+    "@id": "https://w3id.org/dpv/tech#PersonalInformationManagementSystem",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
+      "https://w3id.org/dpv#Technology"
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
@@ -222,41 +170,30 @@
         "@value": "accepted"
       }
     ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#DataManagementTechnology"
+      }
+    ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Technology that can be used a fixed numner of times"
+        "@value": "A PIMS is a system that helps to give individuals more control over their personal data by managing their personal data in secure, on-premises or online storage systems and sharing it when and with whomever they choose"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Fixed Use"
+        "@value": "Personal Information Management System"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#CovertSurveillanceTechnology",
+    "@id": "https://w3id.org/dpv/tech#CellularNetworkCommunication",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#SurveillanceTechnology"
-      }
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv/dpv-tech#CommunicationMechanism"
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
@@ -264,52 +201,9 @@
         "@value": "accepted"
       }
     ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Surveillance that is covert i.e. invisible or non-apparent or implicit"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "For example, a web resource that performs tracking in the background"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Covert SurveillanceTechnology"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#CellularNetwork",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "http://www.w3.org/2004/02/skos/core#broader": [
       {
         "@id": "https://w3id.org/dpv/dpv-tech#Networking"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -321,7 +215,171 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Cellular Network"
+        "@value": "Cellular Network Communication"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#IdentityWallet",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Technology"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#IdentityManagementTechnology"
+      },
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#DataStorageTechnology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "product and service that allows the user to store identity data, credentials and attributes linked to her/his identity, to provide them to relying parties on request and to use them for authentication, online and offline, and to create qualified electronic signatures and seals"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Identity Wallet"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#SmartphoneApplication",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Technology"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#Application"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A computing or digital program on a smartphone device"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Smartphone Application"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#TechnologyDeveloper",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#TechnologyActor"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Actor that develops Technology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Technology Developer"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#NetworkingCommunication",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv/dpv-tech#CommunicationMechanism"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#CommunicationMechanism"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Technology utilising networking communication"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Networking Communication"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/dpv-tech#DataManagementTechnology",
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv/tech#PersonalInformationManagementSystem"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#TechnologyProvisionMethod",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Class"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Method associated with provision or use of technology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Technology Provision Method"
       }
     ]
   },
@@ -341,24 +399,6 @@
         "@id": "https://w3id.org/dpv/dpv-tech#TechnologyDeveloper"
       }
     ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-07-02"
-      }
-    ],
-    "http://purl.org/dc/terms/modified": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-10-21"
-      }
-    ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
         "@id": "https://w3id.org/dpv/dpv-tech#hasTechnologyActor"
@@ -367,7 +407,7 @@
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
         "@language": "en",
-        "@value": "changed"
+        "@value": "accepted"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#broader": [
@@ -399,135 +439,6 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#FileSystem",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#DataStorageTechnology"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A data storage and retrieval interface provided by an operating system"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "File System"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#MonitoringSecurityTechnology",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit, Julian Flake, Georg P Krog, Paul Ryan"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#SecurityTechnology"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Technology related to monitoring of vulnerabilities, threats, exploitations"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Monitoring Security Technology"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#IdentityWallet",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#IdentityManagementTechnology"
-      },
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#DataStorageTechnology"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "product and service that allows the user to store identity data, credentials and attributes linked to her/his identity, to provide them to relying parties on request and to use them for authentication, online and offline, and to create qualified electronic signatures and seals"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Identity Wallet"
-      }
-    ]
-  },
-  {
     "@id": "https://w3id.org/dpv/tech#hasUser",
     "@type": [
       "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
@@ -543,24 +454,6 @@
         "@id": "https://w3id.org/dpv/dpv-tech#TechnologyUser"
       }
     ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-07-02"
-      }
-    ],
-    "http://purl.org/dc/terms/modified": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-10-21"
-      }
-    ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
         "@id": "https://w3id.org/dpv/dpv-tech#hasTechnologyActor"
@@ -569,7 +462,7 @@
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
         "@language": "en",
-        "@value": "changed"
+        "@value": "accepted"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#broader": [
@@ -601,126 +494,92 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#WiFi",
+    "@id": "https://w3id.org/dpv/tech#InternetCommunication",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv/dpv-tech#CommunicationMechanism"
     ],
-    "http://purl.org/dc/terms/contributor": [
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
         "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
+        "@value": "accepted"
       }
     ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "http://www.w3.org/2004/02/skos/core#broader": [
       {
         "@id": "https://w3id.org/dpv/dpv-tech#Networking"
       }
     ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Technology utilising wifi wireless networking communication"
+        "@value": "Technology utilising internet communication"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "WiFi"
+        "@value": "Internet Communication"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#hasCommunicationMechanism",
-    "@type": [
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://purl.org/dc/dcam/domainIncludes": [
+    "@id": "https://w3id.org/dpv/dpv-tech#Networking",
+    "http://www.w3.org/2004/02/skos/core#narrower": [
       {
-        "@id": "https://w3id.org/dpv#Technology"
-      }
-    ],
-    "http://purl.org/dc/dcam/rangeIncludes": [
+        "@id": "https://w3id.org/dpv/tech#LocalNetworkCommunication"
+      },
       {
-        "@id": "https://w3id.org/dpv/dpv-tech#CommunicationMechanism"
-      }
-    ],
-    "http://purl.org/dc/terms/contributor": [
+        "@id": "https://w3id.org/dpv/tech#InternetCommunication"
+      },
       {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
+        "@id": "https://w3id.org/dpv/tech#WiFiCommunication"
+      },
       {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-07-02"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+        "@id": "https://w3id.org/dpv/tech#BluetoothCommunication"
+      },
       {
-        "@language": "en",
-        "@value": "changed"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Indicates communication mechanisms used or provided by technology"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "has communication mechanism"
-      }
-    ],
-    "https://schema.org/domainIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Technology"
-      }
-    ],
-    "https://schema.org/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#CommunicationMechanism"
+        "@id": "https://w3id.org/dpv/tech#CellularNetworkCommunication"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#OperationDevice",
+    "@id": "https://w3id.org/dpv/dpv-tech#CommunicationMechanism",
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv/tech#NetworkingCommunication"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#GPSCommunication"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/dpv-tech#LocalStorage",
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv/tech#Cookie"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/dpv-tech#SurveillanceTechnology",
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv/tech#OvertSurveillanceTechnology"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#CovertSurveillanceTechnology"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#Cookie",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#OperationalTechnology"
-      }
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Technology"
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
@@ -728,78 +587,29 @@
         "@value": "accepted"
       }
     ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
+    "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@language": "en",
-        "@value": "Technology that acts as an equipment or mechanism for operations"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Operation Device"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#PET",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit, Julian Flake, Georg P Krog, Paul Ryan"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#SecurityTechnology"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
+        "@id": "https://w3id.org/dpv/dpv-tech#LocalStorage"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Privacy Enhancing Technologies (PETs) that provide minimisation or security related to data and privacy"
+        "@value": "A HTTP or web or internet cookie"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "PET (Privacy Enhancing Technology)"
+        "@value": "Cookie"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#TechnologyUser",
+    "@id": "https://w3id.org/dpv/tech#TechnologySubject",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
@@ -815,37 +625,135 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Actor that uses Technologoy"
+        "@value": "Actor that is subject of use of Technology"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Technology User"
+        "@value": "Technology Subject"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#Bluetooth",
+    "@id": "https://w3id.org/dpv#Location",
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv/tech#TechnologyUsageLocation"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#DataSecurityTechnology",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Technology"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#DataTechnology"
+      },
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#SecurityTechnology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Technology related to security of data"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Data Security Technology"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#Product",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Technology that is provided as a product"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Product"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#Service",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Technology provided or used as service(s)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "Removed plural suffix for consistency in terms"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Service"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#TechnologyActor",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/dpv/dpv-tech#Networking"
+        "@id": "https://w3id.org/dpv#Entity"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -857,55 +765,155 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Technology utilising bluetooth communication"
+        "@value": "Actors and Entities involved in provision, use, and management of Technology"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Bluetooth"
+        "@value": "Technology Actor"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#DataCopyingTechnology",
+    "@id": "https://w3id.org/dpv/tech#DataManagementTechnology",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Technology"
     ],
-    "http://purl.org/dc/terms/contributor": [
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
         "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
+        "@value": "accepted"
       }
     ],
-    "http://purl.org/dc/terms/created": [
+    "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
+        "@id": "https://w3id.org/dpv/dpv-tech#DataTechnology"
+      },
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#ManagementTechnology"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Technology related to management of data"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Data Management Technology"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#Application",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Technology"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#OperationalTechnology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A computing or digital program"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Application"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#DataTransferTechnology",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Technology"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
       {
         "@id": "https://w3id.org/dpv/dpv-tech#DataTechnology"
       }
     ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Technology related to copying data"
+        "@value": "Technology related to transfering data"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Data Copying Technology"
+        "@value": "Data Transfer Technology"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/dpv-tech#OperationalTechnology",
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv/tech#OperationEnvironment"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#OperationDevice"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#OperationManagement"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#Application"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod",
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv/tech#FixedUse"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#Subscription"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#Product"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#Goods"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#Service"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#Algorithmic"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#System"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#Component"
       }
     ]
   },
@@ -914,18 +922,6 @@
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
@@ -952,69 +948,19 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#DataOrganisingTechnology",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
+    "@id": "https://w3id.org/dpv#Entity",
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
       {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#DataTechnology"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Technology realted to organising data"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Data Organising Technology"
+        "@id": "https://w3id.org/dpv/tech#TechnologyActor"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#SmartphoneApplication",
+    "@id": "https://w3id.org/dpv/tech#System",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#Application"
-      }
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
@@ -1022,16 +968,193 @@
         "@value": "accepted"
       }
     ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
+      }
+    ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "A computing or digital program on a smartphone device"
+        "@value": "Technology provided as a system"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Smartphone Application"
+        "@value": "System"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#DataUsageTechnology",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Technology"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#DataTechnology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Technology related to using data"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Data Usage Technology"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/dpv-tech#hasTechnologyActor",
+    "http://www.w3.org/2000/01/rdf-schema#superPropertyOf": [
+      {
+        "@id": "https://w3id.org/dpv/tech#hasProvider"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#hasDeveloper"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#hasUser"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#hasSubject"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv/tech#hasProvider"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#hasDeveloper"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#hasUser"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#hasSubject"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#TechnologyUsageLocation",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Location"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#Location"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Location for where technology is provided or used"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Technology Usage Location"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#DataObtainingTechnology",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Technology"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#DataTechnology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Technology related to obtain data"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Data Obtaining Technology"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/dpv-tech#TechnologyActor",
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/tech#TechnologyProvider"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#TechnologyDeveloper"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#TechnologyUser"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#TechnologySubject"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#Component",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Technology provided as a component"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Component"
       }
     ]
   },
@@ -1042,22 +1165,15 @@
       "http://www.w3.org/2000/01/rdf-schema#Class",
       "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
     ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
         "@language": "en",
         "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -1080,22 +1196,15 @@
       "http://www.w3.org/2000/01/rdf-schema#Class",
       "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
     ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
         "@language": "en",
         "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -1112,68 +1221,200 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#DataTransformationTechnology",
+    "@id": "https://w3id.org/dpv/tech#DataDisclosureTechnology",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Technology"
     ],
-    "http://purl.org/dc/terms/contributor": [
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
         "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
+        "@value": "accepted"
       }
     ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "http://www.w3.org/2004/02/skos/core#broader": [
       {
         "@id": "https://w3id.org/dpv/dpv-tech#DataTechnology"
       }
     ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Technology related to transforming data"
+        "@value": "Technology related to disclosing data"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Data Transformation Technology"
+        "@value": "Data Disclosure Technology"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#Cookie",
+    "@id": "https://w3id.org/dpv/tech#OperationalTechnology",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Technology"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#Technology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Technology that enables or performs or executes operations and processes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Operational Technology"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#DataStorageTechnology",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Technology"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#DataTechnology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Technology related to storing data"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Data Storage Technology"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#LocalNetworkCommunication",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv/dpv-tech#CommunicationMechanism"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#Networking"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Technology utilising local networking communication"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Local Network Communication"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#DataTechnology",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Technology"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#Technology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Technology that uses or interacts with data"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Data Technology"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#MitigationSecurityTechnology",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Technology"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#SecurityTechnology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Technology related to mitigation of vulnerabilities, threats, exploitations"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Mitigation Security Technology"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#TechnologyUser",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/dpv/dpv-tech#LocalStorage"
+        "@id": "https://w3id.org/dpv/dpv-tech#TechnologyActor"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -1185,13 +1426,154 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "A HTTP or web or internet cookie"
+        "@value": "Actor that uses Technologoy"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Cookie"
+        "@value": "Technology User"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#CovertSurveillanceTechnology",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Technology"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#SurveillanceTechnology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Surveillance that is covert i.e. invisible or non-apparent or implicit"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "For example, a web resource that performs tracking in the background"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Covert SurveillanceTechnology"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/dpv-tech#Application",
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv/tech#SmartphoneApplication"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#WiFiCommunication",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv/dpv-tech#CommunicationMechanism"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#Networking"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Technology utilising wifi wireless networking communication"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "WiFi Communication"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#SecurityManagementTechnology",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Technology"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#SecurityTechnology"
+      },
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#ManagementTechnology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Technology related to management of security"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Security Management Technology"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#DataCopyingTechnology",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Technology"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#DataTechnology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Technology related to copying data"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Data Copying Technology"
       }
     ]
   },
@@ -1209,18 +1591,6 @@
     "http://purl.org/dc/dcam/rangeIncludes": [
       {
         "@id": "https://w3id.org/dpv/dpv-tech#TechnologyActor"
-      }
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-10-21"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -1253,72 +1623,276 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#DataSecurityTechnology",
+    "@id": "https://w3id.org/dpv/tech#IdentityTechnology",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Technology"
     ],
-    "http://purl.org/dc/terms/contributor": [
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
         "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
+        "@value": "accepted"
       }
     ],
-    "http://purl.org/dc/terms/created": [
+    "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
+        "@id": "https://w3id.org/dpv#Technology"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Technology related to identity or identifiers"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Identity Technology"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#DataRemovalTechnology",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Technology"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
       {
         "@id": "https://w3id.org/dpv/dpv-tech#DataTechnology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Technology related to removing data"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Data Removal Technology"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/dpv-tech#DataStorageTechnology",
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv/tech#Database"
       },
+      {
+        "@id": "https://w3id.org/dpv/tech#FileSystem"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#IdentityWallet"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/dpv-tech#ManagementTechnology",
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv/tech#DataManagementTechnology"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#SecurityManagementTechnology"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#IdentityManagementTechnology"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#OperationManagement",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Technology"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#OperationalTechnology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Technology that manages operations"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Operation Management"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#DataTransformationTechnology",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Technology"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#DataTechnology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Technology related to transforming data"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Data Transformation Technology"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#hasTRL",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/dcam/domainIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Technology"
+      }
+    ],
+    "http://purl.org/dc/dcam/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#TechnologyReadinessLevel"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Indicates technology maturity level"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "has TRL"
+      }
+    ],
+    "https://schema.org/domainIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Technology"
+      }
+    ],
+    "https://schema.org/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#TechnologyReadinessLevel"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#OvertSurveillanceTechnology",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Technology"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#SurveillanceTechnology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Surveillance that is overt i.e. visible or apparent or explicit"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "For example, a CCTV with a notice"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Overt Surveillance Technology"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#DetectionSecurityTechnology",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Technology"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
       {
         "@id": "https://w3id.org/dpv/dpv-tech#SecurityTechnology"
       }
     ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Technology related to security of data"
+        "@value": "Technology related to detection of vulnerabilities, threats, and exploitations"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Data Security Technology"
+        "@value": "Detection Security Technology"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#DataUsageTechnology",
+    "@id": "https://w3id.org/dpv/tech#IdentityManagementTechnology",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#DataTechnology"
-      }
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Technology"
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
@@ -1326,40 +1900,72 @@
         "@value": "accepted"
       }
     ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#IdentityTechnology"
+      },
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#ManagementTechnology"
+      }
+    ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Technology related to using data"
+        "@value": "Technologies providing identity provision, verification, management, and governance"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Data Usage Technology"
+        "@value": "Identity Management Technology"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#DataObtainingTechnology",
+    "@id": "https://w3id.org/dpv/tech#FixedUse",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
     ],
-    "http://purl.org/dc/terms/contributor": [
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
         "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
+        "@value": "accepted"
       }
     ],
-    "http://purl.org/dc/terms/created": [
+    "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
+        "@id": "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "http://www.w3.org/2004/02/skos/core#definition": [
       {
-        "@id": "https://w3id.org/dpv/dpv-tech#DataTechnology"
+        "@language": "en",
+        "@value": "Technology that can be used a fixed numner of times"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Fixed Use"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#hasCommunicationMechanism",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/dcam/domainIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Technology"
+      }
+    ],
+    "http://purl.org/dc/dcam/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#CommunicationMechanism"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -1371,13 +1977,91 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Technology related to obtain data"
+        "@value": "Indicates communication mechanisms used or provided by technology"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Data Obtaining Technology"
+        "@value": "has communication mechanism"
+      }
+    ],
+    "https://schema.org/domainIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Technology"
+      }
+    ],
+    "https://schema.org/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#CommunicationMechanism"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#SecurityTechnology",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Technology"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#Technology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Technology that enables or provides security"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Security Technology"
+      }
+    ]
+  },
+  {
+    "@id": "http://www.w3.org/2000/01/rdf-schema#Class",
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/tech#TechnologyProvisionMethod"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#CommunicationMechanism"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#TechnologyReadinessLevel"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#Technology",
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv/tech#DataTechnology"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#OperationalTechnology"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#SecurityTechnology"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#ManagementTechnology"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#IdentityTechnology"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#SurveillanceTechnology"
       }
     ]
   },
@@ -1397,24 +2081,6 @@
         "@id": "https://w3id.org/dpv/dpv-tech#TechnologySubject"
       }
     ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-07-02"
-      }
-    ],
-    "http://purl.org/dc/terms/modified": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-10-21"
-      }
-    ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
         "@id": "https://w3id.org/dpv/dpv-tech#hasTechnologyActor"
@@ -1423,7 +2089,7 @@
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
         "@language": "en",
-        "@value": "changed"
+        "@value": "accepted"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#broader": [
@@ -1455,22 +2121,87 @@
     ]
   },
   {
+    "@id": "https://w3id.org/dpv/tech#SurveillanceTechnology",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Technology"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#Technology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Technology related to surveillance of individuals or people"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Surveillance Technology"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/dpv-tech#DataTechnology",
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv/tech#DataCopyingTechnology"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#DataDisclosureTechnology"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#DataObtainingTechnology"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#DataOrganisingTechnology"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#DataRemovalTechnology"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#DataStorageTechnology"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#DataTransferTechnology"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#DataTransformationTechnology"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#DataUsageTechnology"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#DataSecurityTechnology"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#DataManagementTechnology"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/dpv-tech#IdentityManagementTechnology",
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv/tech#IdentityWallet"
+      }
+    ]
+  },
+  {
     "@id": "https://w3id.org/dpv/tech#TechnologyProvider",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
@@ -1497,26 +2228,81 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#Networking",
+    "@id": "https://w3id.org/dpv/tech#FileSystem",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Technology"
     ],
-    "http://purl.org/dc/terms/contributor": [
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
         "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
+        "@value": "accepted"
       }
     ],
-    "http://purl.org/dc/terms/created": [
+    "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
+        "@id": "https://w3id.org/dpv/dpv-tech#DataStorageTechnology"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "http://www.w3.org/2004/02/skos/core#definition": [
       {
-        "@id": "https://w3id.org/dpv/dpv-tech#CommunicationMechanism"
+        "@language": "en",
+        "@value": "A data storage and retrieval interface provided by an operating system"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "File System"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#DataOrganisingTechnology",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Technology"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#DataTechnology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Technology realted to organising data"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Data Organising Technology"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#hasProvisionMethod",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/dcam/domainIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Technology"
+      }
+    ],
+    "http://purl.org/dc/dcam/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -1528,13 +2314,85 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Technology utilising networking communication"
+        "@value": "Specifies the provision or usage method of technology"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Networking"
+        "@value": "has provision method"
+      }
+    ],
+    "https://schema.org/domainIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Technology"
+      }
+    ],
+    "https://schema.org/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#OperationDevice",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Technology"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#OperationalTechnology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Technology that acts as an equipment or mechanism for operations"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Operation Device"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#Database",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Technology"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#DataStorageTechnology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A database, database management system (DBMS), or application database"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Database"
       }
     ]
   },
@@ -1542,29 +2400,18 @@
     "@id": "https://w3id.org/dpv/tech#PreventionSecurityTechnology",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit, Julian Flake, Georg P Krog, Paul Ryan"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#SecurityTechnology"
-      }
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Technology"
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
         "@language": "en",
         "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#SecurityTechnology"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -1581,27 +2428,11 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#DataTechnology",
+    "@id": "https://w3id.org/dpv/tech#BluetoothCommunication",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#Technology"
-      }
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv/dpv-tech#CommunicationMechanism"
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
@@ -1609,471 +2440,21 @@
         "@value": "accepted"
       }
     ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Technology that uses or interacts with data"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Data Technology"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#OperationManagement",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#OperationalTechnology"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Technology that manages operations"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Operation Management"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#DataManagementTechnology",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#DataTechnology"
-      },
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#ManagementTechnology"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Technology related to management of data"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Data Management Technology"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#hasTRL",
-    "@type": [
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://purl.org/dc/dcam/domainIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Technology"
-      }
-    ],
-    "http://purl.org/dc/dcam/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#TechnologyReadinessLevel"
-      }
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-07-02"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "changed"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Indicates technology maturity level"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "has TRL"
-      }
-    ],
-    "https://schema.org/domainIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Technology"
-      }
-    ],
-    "https://schema.org/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#TechnologyReadinessLevel"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#GPS",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#CommunicationMechanism"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Technology utilising GPS communication"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "GPS"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#IdentityTechnology",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#Technology"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Technology related to identity or identifiers"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Identity Technology"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#MitigationSecurityTechnology",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit, Julian Flake, Georg P Krog, Paul Ryan"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#SecurityTechnology"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Technology related to mitigation of vulnerabilities, threats, exploitations"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Mitigation Security Technology"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#TechnologyUsageLocation",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#Location"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Location for where technology is provided or used"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Technology Usage Location"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#DetectionSecurityTechnology",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit, Julian Flake, Georg P Krog, Paul Ryan"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#SecurityTechnology"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Technology related to detection of vulnerabilities, threats, and exploitations"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Detection Security Technology"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#LocalNetwork",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "http://www.w3.org/2004/02/skos/core#broader": [
       {
         "@id": "https://w3id.org/dpv/dpv-tech#Networking"
       }
     ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Technology utilising local networking communication"
+        "@value": "Technology utilising bluetooth communication"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Local Network"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#TechnologyActor",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#Entity"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Actors and Entities involved in provision, use, and management of Technology"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Technology Actor"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/dpv-tech#hasTechnologyActor",
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv/tech#hasProvider"
-      },
-      {
-        "@id": "https://w3id.org/dpv/tech#hasDeveloper"
-      },
-      {
-        "@id": "https://w3id.org/dpv/tech#hasUser"
-      },
-      {
-        "@id": "https://w3id.org/dpv/tech#hasSubject"
+        "@value": "Bluetooth Communication"
       }
     ]
   },
@@ -2093,24 +2474,6 @@
         "@id": "https://w3id.org/dpv/dpv-tech#TechnologyProvider"
       }
     ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-07-02"
-      }
-    ],
-    "http://purl.org/dc/terms/modified": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-10-21"
-      }
-    ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
         "@id": "https://w3id.org/dpv/dpv-tech#hasTechnologyActor"
@@ -2119,7 +2482,7 @@
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
         "@language": "en",
-        "@value": "changed"
+        "@value": "accepted"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#broader": [
@@ -2151,27 +2514,11 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#SecurityTechnology",
+    "@id": "https://w3id.org/dpv/tech#PET",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#Technology"
-      }
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Technology"
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
@@ -2179,41 +2526,30 @@
         "@value": "accepted"
       }
     ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#SecurityTechnology"
+      }
+    ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Technology that enables or provides security"
+        "@value": "Privacy Enhancing Technologies (PETs) that provide minimisation or security related to data and privacy"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Security Technology"
+        "@value": "PET (Privacy Enhancing Technology)"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#DataDisclosureTechnology",
+    "@id": "https://w3id.org/dpv/tech#GPSCommunication",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#DataTechnology"
-      }
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv/dpv-tech#CommunicationMechanism"
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
@@ -2221,229 +2557,21 @@
         "@value": "accepted"
       }
     ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
+    "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@language": "en",
-        "@value": "Technology related to disclosing data"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Data Disclosure Technology"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#Internet",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#Networking"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
+        "@id": "https://w3id.org/dpv/dpv-tech#CommunicationMechanism"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Technology utilising internet communication"
+        "@value": "Technology utilising GPS communication"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Internet"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#TechnologyProvisionMethod",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Class"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Method associated with provision or use of technology"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Technology Provision Method"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#Application",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#OperationalTechnology"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A computing or digital program"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Application"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#OperationEnvironment",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#OperationalTechnology"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Technology that provides an environment for operations to be executed"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Operation Environment"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#IdentityManagementTechnology",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#IdentityTechnology"
-      },
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#ManagementTechnology"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Technologies providing identity provision, verification, management, and governance"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Identity Management Technology"
+        "@value": "GPS Communication"
       }
     ]
   },
@@ -2453,21 +2581,9 @@
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/dpv#Technology"
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Class"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -2486,574 +2602,6 @@
       {
         "@language": "en",
         "@value": "Technology Readiness Level"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#TechnologySubject",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#TechnologyActor"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Actor that is subject of use of Technology"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Technology Subject"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#OperationalTechnology",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#Technology"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Technology that enables or performs or executes operations and processes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Operational Technology"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#PersonalInformationManagementSystem",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#DataManagementTechnology"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A PIMS is a system that helps to give individuals more control over their personal data by managing their personal data in secure, on-premises or online storage systems and sharing it when and with whomever they choose"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Personal Information Management System"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#SurveillanceTechnology",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#Technology"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Technology related to surveillance of individuals or people"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Surveillance Technology"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#hasProvisionMethod",
-    "@type": [
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://purl.org/dc/dcam/domainIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Technology"
-      }
-    ],
-    "http://purl.org/dc/dcam/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
-      }
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-07-02"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "changed"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Specifies the provision or usage method of technology"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "has provision method"
-      }
-    ],
-    "https://schema.org/domainIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Technology"
-      }
-    ],
-    "https://schema.org/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#DataRemovalTechnology",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#DataTechnology"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Technology related to removing data"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Data Removal Technology"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#Service",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "changed"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Technology provided or used as service(s)"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "Removed plural suffix for consistency in terms"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Service"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#DataTransferTechnology",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#DataTechnology"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Technology related to transfering data"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Data Transfer Technology"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#TechnologyDeveloper",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#TechnologyActor"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Actor that develops Technology"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Technology Developer"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#OvertSurveillanceTechnology",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#SurveillanceTechnology"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Surveillance that is overt i.e. visible or apparent or explicit"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "For example, a CCTV with a notice"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Overt Surveillance Technology"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#Database",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#DataStorageTechnology"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A database, database management system (DBMS), or application database"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Database"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#SecurityManagementTechnology",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit, Julian Flake, Georg P Krog, Paul Ryan"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#SecurityTechnology"
-      },
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#ManagementTechnology"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Technology related to management of security"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Security Management Technology"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#Subscription",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@language": "en",
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Technology that is provided or used as a periodic subscription"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Subscription"
       }
     ]
   }

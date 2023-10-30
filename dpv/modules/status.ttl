@@ -1,37 +1,32 @@
 @prefix dcam: <http://purl.org/dc/dcam/> .
-@prefix dct: <http://purl.org/dc/terms/> .
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dpv:ActivityCompleted a rdfs:Class,
         skos:Concept,
         dpv:ActivityStatus ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-05-18"^^xsd:date ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:ActivityStatus ;
     skos:definition "State of an activity that has completed i.e. is fully in the past"@en ;
     skos:prefLabel "Activity Completed"@en .
 
 dpv:ActivityHalted a rdfs:Class,
         skos:Concept,
         dpv:ActivityStatus ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-05-18"^^xsd:date ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:ActivityStatus ;
     skos:definition "State of an activity that was occuring in the past, and has been halted or paused or stoped"@en ;
     skos:prefLabel "Activity Halted"@en .
 
 dpv:ActivityNotCompleted a rdfs:Class,
         skos:Concept,
         dpv:ActivityStatus ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-11-30"^^xsd:date ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:ActivityStatus ;
     skos:definition "State of an activity that could not be completed, but has reached some end state"@en ;
     skos:note "This relates to a 'Stop' state as distinct from a 'Halt' state. It makes no comments on whether the Acitivity can be resumed or continued towards completion."@en ;
     skos:prefLabel "Acitivity Not Completed"@en .
@@ -39,45 +34,44 @@ dpv:ActivityNotCompleted a rdfs:Class,
 dpv:ActivityOngoing a rdfs:Class,
         skos:Concept,
         dpv:ActivityStatus ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-05-18"^^xsd:date ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:ActivityStatus ;
     skos:definition "State of an activity occuring in continuation i.e. currently ongoing"@en ;
     skos:prefLabel "Activity Ongoing"@en .
 
 dpv:ActivityProposed a rdfs:Class,
         skos:Concept,
         dpv:ActivityStatus ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-05-18"^^xsd:date ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:ActivityStatus ;
     skos:definition "State of an activity being proposed or planned i.e. yet to occur"@en ;
     skos:prefLabel "Activity Proposed"@en .
 
 dpv:ActivityStatus a rdfs:Class,
         skos:Concept ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-05-18"^^xsd:date ;
     rdfs:subClassOf dpv:Status ;
     sw:term_status "accepted"@en ;
     skos:definition "Status associated with activity operations and lifecycles"@en ;
+    skos:narrower dpv:ActivityCompleted,
+        dpv:ActivityHalted,
+        dpv:ActivityNotCompleted,
+        dpv:ActivityOngoing,
+        dpv:ActivityProposed ;
     skos:prefLabel "Activity Status"@en .
 
 dpv:AuditApproved a rdfs:Class,
         skos:Concept,
         dpv:AuditStatus ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-05-18"^^xsd:date ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:AuditStatus ;
     skos:definition "State of being approved through the audit"@en ;
     skos:prefLabel "Audit Approved"@en .
 
 dpv:AuditConditionallyApproved a rdfs:Class,
         skos:Concept,
         dpv:AuditStatus ;
-    dct:contributor "Paul Ryan"@en ;
-    dct:created "2022-06-29"^^xsd:date ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:AuditStatus ;
     skos:definition "State of being conditionally approved through the audit"@en ;
     skos:note "A \"conditional approval\" is intended to reflect states where the audit has identified further changes which must be implemented before considering the audit has been 'passed', without requiring another audit to validate them. This is distinct from the case where an audit has state 'rejected', which means changes must be made and submitted for review. The requirements of a 'conditional acceptance' are expected to be minor or not significant enough to warrant another audit to review them."@en ;
     skos:prefLabel "Audit Conditionally Approved"@en .
@@ -85,82 +79,83 @@ dpv:AuditConditionallyApproved a rdfs:Class,
 dpv:AuditNotRequired a rdfs:Class,
         skos:Concept,
         dpv:AuditStatus ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-05-18"^^xsd:date ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:AuditStatus ;
     skos:definition "State where an audit is determined as not being required"@en ;
     skos:prefLabel "Audit Not Required"@en .
 
 dpv:AuditRejected a rdfs:Class,
         skos:Concept,
         dpv:AuditStatus ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-05-18"^^xsd:date ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:AuditStatus ;
     skos:definition "State of not being approved or being rejected through the audit"@en ;
     skos:prefLabel "Audit Rejected"@en .
 
 dpv:AuditRequested a rdfs:Class,
         skos:Concept,
         dpv:AuditStatus ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-05-18"^^xsd:date ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:AuditStatus ;
     skos:definition "State of an audit being requested whose outcome is not yet known"@en ;
     skos:prefLabel "Audit Requested"@en .
 
 dpv:AuditRequired a rdfs:Class,
         skos:Concept,
         dpv:AuditStatus ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-05-18"^^xsd:date ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:AuditStatus ;
     skos:definition "State where an audit is determined as being required but has not been conducted"@en ;
     skos:prefLabel "Audit Required"@en .
 
 dpv:AuditStatus a rdfs:Class,
         skos:Concept ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-05-18"^^xsd:date ;
     rdfs:subClassOf dpv:Status ;
     sw:term_status "accepted"@en ;
     skos:definition "Status associated with Auditing or Investigation"@en ;
+    skos:narrower dpv:AuditApproved,
+        dpv:AuditConditionallyApproved,
+        dpv:AuditNotRequired,
+        dpv:AuditRejected,
+        dpv:AuditRequested,
+        dpv:AuditRequired ;
     skos:prefLabel "Audit Status"@en .
 
 dpv:ComplianceIndeterminate a rdfs:Class,
         skos:Concept,
         dpv:ComplianceStatus ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-09-07"^^xsd:date ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:ComplianceStatus ;
     skos:definition "State where the status of compliance has not been fully assessed, evaluated, or determined"@en ;
     skos:prefLabel "Compliance Indeterminate"@en .
 
 dpv:ComplianceStatus a rdfs:Class,
         skos:Concept ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-05-18"^^xsd:date ;
     rdfs:subClassOf dpv:Status ;
+    rdfs:superClassOf dpv:Lawfulness ;
     sw:term_status "accepted"@en ;
     skos:definition "Status associated with Compliance with some norms, objectives, or requirements"@en ;
+    skos:narrower dpv:ComplianceIndeterminate,
+        dpv:ComplianceUnknown,
+        dpv:ComplianceViolation,
+        dpv:Compliant,
+        dpv:NonCompliant,
+        dpv:PartiallyCompliant ;
     skos:prefLabel "Compliance Status"@en .
 
 dpv:ComplianceUnknown a rdfs:Class,
         skos:Concept,
         dpv:ComplianceStatus ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-09-07"^^xsd:date ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:ComplianceStatus ;
     skos:definition "State where the status of compliance is unknown"@en ;
     skos:prefLabel "Compliance Unknown"@en .
 
 dpv:ComplianceViolation a rdfs:Class,
         skos:Concept,
         dpv:ComplianceStatus ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-05-18"^^xsd:date ;
-    dct:modified "2022-09-07"^^xsd:date ;
-    sw:term_status "changed"@en ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:ComplianceStatus ;
     skos:definition "State where compliance cannot be achieved due to requirements being violated"@en ;
     skos:note "Changed from \"violation of compliance\" for consistency with other terms"@en ;
     skos:prefLabel "Compliance Violation"@en .
@@ -168,64 +163,59 @@ dpv:ComplianceViolation a rdfs:Class,
 dpv:Compliant a rdfs:Class,
         skos:Concept,
         dpv:ComplianceStatus ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-05-18"^^xsd:date ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:ComplianceStatus ;
     skos:definition "State of being fully compliant"@en ;
     skos:prefLabel "Compliant"@en .
 
 dpv:ConformanceStatus a rdfs:Class,
         skos:Concept ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-10-22"^^xsd:date ;
     rdfs:subClassOf dpv:Status ;
     sw:term_status "accepted"@en ;
     skos:definition "Status associated with conformance to a standard, guideline, code, or recommendation"@en ;
+    skos:narrower dpv:Conformant,
+        dpv:NonConformant ;
     skos:prefLabel "Conformance Status"@en .
 
 dpv:Conformant a rdfs:Class,
         skos:Concept,
         dpv:ConformanceStatus ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-10-22"^^xsd:date ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:ConformanceStatus ;
     skos:definition "State of being conformant"@en ;
     skos:prefLabel "Conformant"@en .
 
 dpv:Lawful a rdfs:Class,
         skos:Concept,
         dpv:Lawfulness ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-10-19"^^xsd:date ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Lawfulness ;
     skos:definition "State of being lawful or legally compliant"@en ;
     skos:prefLabel "Lawful"@en .
 
 dpv:Lawfulness a rdfs:Class,
         skos:Concept ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-10-19"^^xsd:date ;
     rdfs:subClassOf dpv:ComplianceStatus ;
     sw:term_status "accepted"@en ;
     skos:definition "Status associated with expressing lawfullness or legal compliance"@en ;
+    skos:narrower dpv:Lawful,
+        dpv:LawfulnessUnkown,
+        dpv:Unlawful ;
     skos:prefLabel "Lawfulness"@en .
 
 dpv:LawfulnessUnkown a rdfs:Class,
         skos:Concept,
         dpv:Lawfulness ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-10-19"^^xsd:date ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Lawfulness ;
     skos:definition "State of the lawfulness not being known"@en ;
     skos:prefLabel "Lawfulness Unknown"@en .
 
 dpv:NonCompliant a rdfs:Class,
         skos:Concept,
         dpv:ComplianceStatus ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-05-18"^^xsd:date ;
-    dct:modified "2022-09-07"^^xsd:date ;
-    sw:term_status "changed"@en ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:ComplianceStatus ;
     skos:definition "State of non-compliance where objectives have not been met, but have not been violated"@en ;
     skos:note "Changed from not compliant for consistency in commonly used terms"@en ;
     skos:prefLabel "Non Compliant"@en .
@@ -233,125 +223,124 @@ dpv:NonCompliant a rdfs:Class,
 dpv:NonConformant a rdfs:Class,
         skos:Concept,
         dpv:ConformanceStatus ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-10-22"^^xsd:date ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:ConformanceStatus ;
     skos:definition "State of being non-conformant"@en ;
     skos:prefLabel "NonConformant"@en .
 
 dpv:PartiallyCompliant a rdfs:Class,
         skos:Concept,
         dpv:ComplianceStatus ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-05-18"^^xsd:date ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:ComplianceStatus ;
     skos:definition "State of partially being compliant i.e. only some objectives have been met, and others have not been in violation"@en ;
     skos:prefLabel "Partially Compliant"@en .
 
 dpv:RequestAccepted a rdfs:Class,
         skos:Concept,
         dpv:RequestStatus ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-11-30"^^xsd:date ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:RequestStatus ;
     skos:definition "State of a request being accepted towards fulfilment"@en ;
     skos:prefLabel "Request Accepted"@en .
 
 dpv:RequestAcknowledged a rdfs:Class,
         skos:Concept,
         dpv:RequestStatus ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-11-30"^^xsd:date ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:RequestStatus ;
     skos:definition "State of a request being acknowledged"@en ;
     skos:prefLabel "Request Acknowledged"@en .
 
 dpv:RequestActionDelayed a rdfs:Class,
         skos:Concept,
         dpv:RequestStatus ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-11-30"^^xsd:date ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:RequestStatus ;
     skos:definition "State of a request being delayed towards fulfilment"@en ;
     skos:prefLabel "Request Action Delayed"@en .
 
 dpv:RequestFulfilled a rdfs:Class,
         skos:Concept,
         dpv:RequestStatus ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-11-30"^^xsd:date ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:RequestStatus ;
     skos:definition "State of a request being fulfilled"@en ;
     skos:prefLabel "Request Fulfilled"@en .
 
 dpv:RequestInitiated a rdfs:Class,
         skos:Concept,
         dpv:RequestStatus ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-11-30"^^xsd:date ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:RequestStatus ;
     skos:definition "State of a request being initiated"@en ;
     skos:prefLabel "Request Initiated"@en .
 
 dpv:RequestRejected a rdfs:Class,
         skos:Concept,
         dpv:RequestStatus ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-11-30"^^xsd:date ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:RequestStatus ;
     skos:definition "State of a request being rejected towards non-fulfilment"@en ;
     skos:prefLabel "Request Rejected"@en .
 
 dpv:RequestRequiredActionPerformed a rdfs:Class,
         skos:Concept,
         dpv:RequestStatus ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-11-30"^^xsd:date ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:RequestStatus ;
     skos:definition "State of a request's required action having been performed by the other party"@en ;
     skos:prefLabel "Request Required Action Performed"@en .
 
 dpv:RequestRequiresAction a rdfs:Class,
         skos:Concept,
         dpv:RequestStatus ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-11-30"^^xsd:date ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:RequestStatus ;
     skos:definition "State of a request requiring an action to be performed from another party"@en ;
     skos:prefLabel "Request Requires Action"@en .
 
 dpv:RequestStatus a rdfs:Class,
         skos:Concept ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-11-30"^^xsd:date ;
     rdfs:subClassOf dpv:Status ;
     sw:term_status "accepted"@en ;
     skos:definition "Status associated with requests"@en ;
+    skos:narrower dpv:RequestAccepted,
+        dpv:RequestAcknowledged,
+        dpv:RequestActionDelayed,
+        dpv:RequestFulfilled,
+        dpv:RequestInitiated,
+        dpv:RequestRejected,
+        dpv:RequestRequiredActionPerformed,
+        dpv:RequestRequiresAction,
+        dpv:RequestStatusQuery,
+        dpv:RequestUnfulfilled ;
     skos:prefLabel "Request Status"@en .
 
 dpv:RequestStatusQuery a rdfs:Class,
         skos:Concept,
         dpv:RequestStatus ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-11-30"^^xsd:date ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:RequestStatus ;
     skos:definition "State of a request's status being queried"@en ;
     skos:prefLabel "Request Status Query"@en .
 
 dpv:RequestUnfulfilled a rdfs:Class,
         skos:Concept,
         dpv:RequestStatus ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-11-30"^^xsd:date ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:RequestStatus ;
     skos:definition "State of a request being unfulfilled"@en ;
     skos:prefLabel "Request Unfulfilled"@en .
 
 dpv:Status a rdfs:Class,
         skos:Concept ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-05-18"^^xsd:date ;
     rdfs:subClassOf dpv:Context ;
+    rdfs:superClassOf dpv:ActivityStatus,
+        dpv:AuditStatus,
+        dpv:ComplianceStatus,
+        dpv:ConformanceStatus,
+        dpv:RequestStatus ;
     sw:term_status "accepted"@en ;
     skos:definition "The status or state of something"@en ;
     skos:prefLabel "Status"@en .
@@ -359,17 +348,16 @@ dpv:Status a rdfs:Class,
 dpv:Unlawful a rdfs:Class,
         skos:Concept,
         dpv:Lawfulness ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-10-19"^^xsd:date ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Lawfulness ;
     skos:definition "State of being unlawful or legally non-compliant"@en ;
     skos:prefLabel "Unlawful"@en .
+
+dpv:Context rdfs:superClassOf dpv:Status .
 
 dpv:hasActivityStatus a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv:ActivityStatus ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-05-18"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasStatus ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasStatus ;
@@ -380,8 +368,6 @@ dpv:hasActivityStatus a rdf:Property,
 dpv:hasAuditStatus a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv:AuditStatus ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-06-22"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasStatus ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasStatus ;
@@ -392,8 +378,6 @@ dpv:hasAuditStatus a rdf:Property,
 dpv:hasLawfulness a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv:Lawfulness ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-10-22"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasComplianceStatus ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasComplianceStatus ;
@@ -404,9 +388,8 @@ dpv:hasLawfulness a rdf:Property,
 dpv:hasComplianceStatus a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv:ComplianceStatus ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-05-18"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasStatus ;
+    rdfs:superPropertyOf dpv:hasLawfulness ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasStatus ;
     skos:definition "Indicates the status of compliance of specified concept"@en ;
@@ -417,8 +400,9 @@ dpv:hasComplianceStatus a rdf:Property,
 dpv:hasStatus a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv:Status ;
-    dct:contributor "Harshvardhan J. Pandit"@en ;
-    dct:created "2022-05-18"^^xsd:date ;
+    rdfs:superPropertyOf dpv:hasActivityStatus,
+        dpv:hasAuditStatus,
+        dpv:hasComplianceStatus ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the status of specified concept"@en ;
     skos:narrower dpv:hasActivityStatus,

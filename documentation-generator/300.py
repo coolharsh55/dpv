@@ -34,7 +34,7 @@ VOCABS = {
     'dpv': {
         'vocab': f'{IMPORT_PATH}/dpv/dpv.ttl',
         'modules': {
-            'core': f'{IMPORT_PATH}/dpv/modules/core.ttl',
+            # 'core': f'{IMPORT_PATH}/dpv/modules/core.ttl',
             'personal_data': f'{IMPORT_PATH}/dpv/modules/personal_data.ttl',
             'purposes': f'{IMPORT_PATH}/dpv/modules/purposes.ttl',
             'processing': f'{IMPORT_PATH}/dpv/modules/processing.ttl',

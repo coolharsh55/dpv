@@ -29,15 +29,17 @@ def construct_property(item, data, namespace):
 def construct_label(item, data, namespace):
     triples = []
     term, namespace = _get_term_from_prefix_notation(data['Term'], namespace)
+    if ':' in data['Term'] and namespace.startswith('https://w3id.org/dpv'):
+        return triples
     triples.append((namespace[term], SKOS.prefLabel, Literal(item, lang='en')))
     return triples
 
-def contruct_description(item, data, namespace):
+def contruct_definition(item, data, namespace):
     triples = []
     term, namespace = _get_term_from_prefix_notation(data['Term'], namespace)
     annotation = SKOS.definition
     if data['Term'] != term: # e.g. dpv:Concept and Concept
-        annotation = SKOS.usageNote
+        annotation = SKOS.scopeNote
     triples.append((namespace[term], annotation, Literal(item, lang='en')))
     return triples
 
@@ -63,6 +65,7 @@ def construct_parent(item, data, namespace):
             triples.append((namespace[term], RDF.type, parent))
         elif data['ParentType'] == 'sc':
             triples.append((namespace[term], RDFS.subClassOf, parent))
+            triples.append((parent, RDFS.superClassOf, namespace[term]))
             triples.append((namespace[term], SKOS.broader, parent))
             triples.append((parent, SKOS.narrower, namespace[term]))
     return triples
@@ -90,12 +93,12 @@ def construct_parent_taxonomy(item, data, namespace):
         parents.append(parent)
     # check type of parent to handle
     if item in ('a', 'sc'):
-        if item == 'a': # instance
-            annotation = RDF.type
-        elif item == 'sc': # subclass
-            annotation = RDFS.subClassOf
         for parent in parents:
-            triples.append((namespace[term], annotation, parent))
+            if item == 'a': # instance
+                triples.append((namespace[term], RDF.type, parent))
+            elif item == 'sc': # subclass
+                triples.append((namespace[term], RDFS.subClassOf, parent))
+                triples.append((parent, RDFS.superClassOf, namespace[term]))
         return triples
     # parent is a topconcept
     prefix_top, topconcept = data['ParentType'].split(':')
@@ -127,6 +130,7 @@ def construct_parent_property(item, data, namespace):
             prefix, parentterm = parent.split(':')
             parent = NAMESPACES[prefix][parentterm]
         triples.append((term, RDFS.subPropertyOf, parent))
+        triples.append((parent, RDFS.superPropertyOf, term))
         triples.append((term, SKOS.broader, parent))
         triples.append((parent, SKOS.narrower, term))
     return triples
@@ -196,24 +200,36 @@ def construct_source(item, data, namespace):
 
 
 def construct_date_created(item, data, namespace):
+    if ':' in data['Term']:
+        return [] # external term
+    if item not in VOCAB_TERM_ACCEPT:
+        return [] # status is not acceptable
     triples = []
-    term = namespace[data['Term']]
+    term, namespace = _get_term_from_prefix_notation(data['Term'], namespace)
     triples.append((term, DCT.created, Literal(item, datatype=XSD.date)))
     return triples
 
 
 def construct_date_modified(item, data, namespace):
+    if ':' in data['Term']:
+        return [] # external term
+    if item not in VOCAB_TERM_ACCEPT:
+        return [] # status is not acceptable
     triples = []
     if not item:
         return
-    term = namespace[data['Term']]
+    term, namespace = _get_term_from_prefix_notation(data['Term'], namespace)
     triples.append((term, DCT.modified, Literal(item, datatype=XSD.date)))
     return triples
 
 
 def construct_contributors(item, data, namespace):
+    if ':' in data['Term']:
+        return [] # external term
+    if item not in VOCAB_TERM_ACCEPT:
+        return [] # status is not acceptable
     triples = []
-    term = namespace[data['Term']]
+    term, namespace = _get_term_from_prefix_notation(data['Term'], namespace)
     # TODO: make contributor be URI or a literal (if website available)
     triples.append((term, DCT.contributor, Literal(item, lang='en')))
     return triples
