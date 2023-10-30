@@ -224,6 +224,10 @@ def construct_resolution(item, data, namespace):
 
 
 def construct_status(item, data, namespace):
+    if ':' in data['Term']:
+        return [] # external term
+    if item not in VOCAB_TERM_ACCEPT:
+        return [] # status is not acceptable
     return [(namespace[data['Term']], SW.term_status, Literal(item, lang='en'))]
 
 
