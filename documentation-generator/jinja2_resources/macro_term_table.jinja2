@@ -17,7 +17,8 @@
     {% if inscope %}
     <section class="term-def" id="{{term}}">
       <h4>{{ concept['skos:prefLabel'] }}</h4>
-        <p>
+      <div class="term-contents">
+      <p>
         Term: <dfn>{{ concept['term'] }}</dfn><br/>
         IRI: <a href="{{ concept['iri'] }}">{{ concept['iri'] }}</a><br/>
         Prefixed: <a href="{{ concept['iri'] }}">{{ concept['prefixed'] }}</a>
@@ -40,8 +41,8 @@
         {% if concept['dct:modified'] %}Date Modified: <i>{{ concept['dct:modified'] }}</i><br/>{% endif %}
         {% if concept['dct:contributor'] %}Contributors: <i>{{ concept['dct:contributor'] }}</i><br/>{% endif %}
         {% if concept['skos:related'] %}Related: <i>{{ concept['skos:related'] }}</i><br/>{% endif %}
-        
       </p>
+      </div>
     </section>
     {% endif %}
 {% endfor %}
