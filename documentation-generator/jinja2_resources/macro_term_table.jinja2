@@ -19,28 +19,22 @@
       <h4>{{ concept['skos:prefLabel'] }}</h4>
       <div class="term-contents">
       <p>
-        Term: <dfn>{{ concept['term'] }}</dfn><br/>
-        IRI: <a href="{{ concept['iri'] }}">{{ concept['iri'] }}</a><br/>
-        Prefixed: <a href="{{ concept['iri'] }}">{{ concept['prefixed'] }}</a>
-        </p>
-        <p>
-        Label: <i>{{ concept['skos:prefLabel'] }}</i><br/>
-        Description: <i>{{ concept['skos:definition'] }}</i><br/>
-        {% if concept['skos:note'] %}Usage Note: <i>{{ concept['skos:note'] }}</i><br/>{% endif %}
-        </p>
-        <p>
-        Type: <i>{% for parent in concept['rdf:type']|get_concept_list %}<a href="{{parent['iri']}}">{{parent['prefixed']}}</a>{{", " if not loop.last }}{% endfor %}</i><br/>
-        {% if concept['skos:broader'] %}Narrower than: <i>{% for parent in concept['skos:broader']|get_concept_list %}<a href="{{parent['iri']}}">{{parent['prefixed']}}</a>{{", " if not loop.last }}{% endfor %}</i><br/>{% endif %}
-        {% if concept['rdfs:subPropertyOf'] %}Sub-property of: <i>{% for parent in concept['rdfs:subPropertyOf']|get_concept_list %}<a href="{{parent['iri']}}">{{parent['prefixed']}}</a>{{", " if not loop.last }}{% endfor %}</i><br/>{% endif %}
-        {% if concept['dcam:domainIncludes'] %}Domain includes: <i>{% for parent in concept['dcam:domainIncludes']|get_concept_list %}<a href="{{parent['iri']}}">{{parent['prefixed']}}</a>{{", " if not loop.last }}{% endfor %}</i><br/>{% endif %}
-        {% if concept['dcam:rangeIncludes'] %}Range includes: <i>{% for parent in concept['dcam:rangeIncludes']|get_concept_list %}<a href="{{parent['iri']}}">{{parent['prefixed']}}</a>{{", " if not loop.last }}{% endfor %}</i><br/>{% endif %}
-        </p>
-        <p>
-        {% if concept['dct:source'] %}Source: <i>{{ concept['dct:source'] }}</i><br/>{% endif %}
-        {% if concept['dct:created'] %}Date Created: <i>{{ concept['dct:created'] }}</i><br/>{% endif %}
-        {% if concept['dct:modified'] %}Date Modified: <i>{{ concept['dct:modified'] }}</i><br/>{% endif %}
-        {% if concept['dct:contributor'] %}Contributors: <i>{{ concept['dct:contributor'] }}</i><br/>{% endif %}
-        {% if concept['skos:related'] %}Related: <i>{{ concept['skos:related'] }}</i><br/>{% endif %}
+        <span class="dfn-label">Term:</span> <dfn>{{ concept['term'] }}</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="{{ concept['iri'] }}">{{ concept['iri'] }}</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="{{ concept['iri'] }}">{{ concept['prefixed'] }}</a>
+        <span class="dfn-label">Label:</span> <i>{{ concept['skos:prefLabel'] }}</i><br/>
+        <span class="dfn-label">Description:</span> <i>{{ concept['skos:definition'] }}</i><br/>
+        {% if concept['skos:note'] %}<span class="dfn-label">Usage Note:</span> <i>{{ concept['skos:note'] }}</i><br/>{% endif %}
+        <span class="dfn-label">Type:</span> <i>{% for parent in concept['rdf:type']|get_concept_list %}<a href="{{parent['iri']}}">{{parent['prefixed']}}</a>{{", " if not loop.last }}{% endfor %}</i><br/>
+        {% if concept['skos:broader'] %}<span class="dfn-label">Narrower than:</span> <i>{% for parent in concept['skos:broader']|get_concept_list %}<a href="{{parent['iri']}}">{{parent['prefixed']}}</a>{{", " if not loop.last }}{% endfor %}</i><br/>{% endif %}
+        {% if concept['rdfs:subPropertyOf'] %}<span class="dfn-label">Sub-property of:</span> <i>{% for parent in concept['rdfs:subPropertyOf']|get_concept_list %}<a href="{{parent['iri']}}">{{parent['prefixed']}}</a>{{", " if not loop.last }}{% endfor %}</i><br/>{% endif %}
+        {% if concept['dcam:domainIncludes'] %}<span class="dfn-label">Domain includes:</span> <i>{% for parent in concept['dcam:domainIncludes']|get_concept_list %}<a href="{{parent['iri']}}">{{parent['prefixed']}}</a>{{", " if not loop.last }}{% endfor %}</i><br/>{% endif %}
+        {% if concept['dcam:rangeIncludes'] %}<span class="dfn-label">Range includes:</span> <i>{% for parent in concept['dcam:rangeIncludes']|get_concept_list %}<a href="{{parent['iri']}}">{{parent['prefixed']}}</a>{{", " if not loop.last }}{% endfor %}</i><br/>{% endif %}
+        {% if concept['dct:source'] %}<span class="dfn-label">Source:</span> <i>{{ concept['dct:source'] }}</i><br/>{% endif %}
+        {% if concept['dct:created'] %}<span class="dfn-label">Date Created:</span> <i>{{ concept['dct:created'] }}</i><br/>{% endif %}
+        {% if concept['dct:modified'] %}<span class="dfn-label">Date Modified:</span> <i>{{ concept['dct:modified'] }}</i><br/>{% endif %}
+        {% if concept['dct:contributor'] %}<span class="dfn-label">Contributors:</span> <i>{{ concept['dct:contributor'] }}</i><br/>{% endif %}
+        {% if concept['skos:related'] %}<span class="dfn-label">Related:</span> <i>{{ concept['skos:related'] }}</i><br/>{% endif %}
       </p>
       </div>
     </section>

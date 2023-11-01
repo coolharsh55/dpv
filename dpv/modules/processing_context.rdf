@@ -8,13 +8,23 @@
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
    xmlns:sw="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
-  <rdf:Description rdf:about="https://w3id.org/dpv#PublicDataSource">
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasAlgorithmicLogic">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="en">has algorithmic logic</skos:prefLabel>
+    <skos:definition xml:lang="en">Indicates the logic used in processing such as for automated decision making</skos:definition>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#AlgorithmicLogic"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#AlgorithmicLogic"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#EvaluationOfIndividuals">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#DataSource"/>
-    <skos:prefLabel xml:lang="en">Public Data Source</skos:prefLabel>
-    <skos:definition xml:lang="en">A source of data that is publicly accessible or available</skos:definition>
-    <skos:note xml:lang="en">The term 'Public' is used here in a broad sense. Actual consideration of what is 'Public Data' can vary based on several contextual or jurisdictional factors such as  definition of open, methods of access, permissions and licenses.</skos:note>
+    <rdf:type rdf:resource="https://w3id.org/dpv#ProcessingContext"/>
+    <skos:prefLabel xml:lang="en">Evaluation of Individuals</skos:prefLabel>
+    <skos:definition xml:lang="en">Processing that involves evaluation of individuals</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#EvaluationScoring"/>
+    <dct:source xml:lang="en">(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)</dct:source>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#HumanInvolvement">
@@ -29,6 +39,92 @@
     <skos:narrower rdf:resource="https://w3id.org/dpv#HumanInvolvementForOversight"/>
     <skos:narrower rdf:resource="https://w3id.org/dpv#HumanInvolvementForVerification"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#PartiallyAutomatedProcessing">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#AutomationOfProcessing"/>
+    <skos:prefLabel xml:lang="en">Partially Automated Processing</skos:prefLabel>
+    <skos:definition xml:lang="en">Processing that is partially automated or semi-automated</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#AutomationOfProcessing"/>
+    <skos:note xml:lang="en">For example, a series of distinct processing operations that are automated individually or have some human involvement</skos:note>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#AutomatedDecisionMaking">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:prefLabel xml:lang="en">Automated Decision Making</skos:prefLabel>
+    <skos:definition xml:lang="en">Processing that involves automated decision making</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#DecisionMaking"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#AutomationOfProcessing"/>
+    <skos:note xml:lang="en">Automated decision making can be defined as “the ability to make decisions by technological means without human involvement.” (“Guidelines on Automated individual decision-making and Profiling for the purposes of Regulation 2016/679 (wp251rev.01)”, 2018, p. 8)</skos:note>
+    <dct:source xml:lang="en">(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)</dct:source>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#SystematicMonitoring">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#ProcessingContext"/>
+    <skos:prefLabel xml:lang="en">Systematic Monitoring</skos:prefLabel>
+    <skos:definition xml:lang="en">Processing that involves systematic monitoring of individuals</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#ProcessingContext"/>
+    <dct:source xml:lang="en">(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)</dct:source>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#AlgorithmicLogic">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:prefLabel xml:lang="en">Algorithmic Logic</skos:prefLabel>
+    <skos:definition xml:lang="en">The algorithmic logic applied or used</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#AutomationOfProcessing"/>
+    <skos:note xml:lang="en">Algorithmic Logic is intended as a broad concept for explaining the use of algorithms and automated decisions making within Processing. To describe the actual algorithm, see the Algorithm concept.</skos:note>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#AutomatedProcessingWithHumanReview">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#AutomationOfProcessing"/>
+    <skos:prefLabel xml:lang="en">Automated Processing with Human Review</skos:prefLabel>
+    <skos:definition xml:lang="en">Processing that is automated and involves review by Humans</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#HumanInvolvementForVerification"/>
+    <skos:note xml:lang="en">For example, a human verifying outputs of an algorithm for correctness or impact to individuals</skos:note>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#AutomatedProcessingWithHumanOversight">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#AutomationOfProcessing"/>
+    <skos:prefLabel xml:lang="en">Automated Processing with Human Oversight</skos:prefLabel>
+    <skos:definition xml:lang="en">Processing that is automated and involves oversight by Humans</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#HumanInvolvementForOversight"/>
+    <skos:note xml:lang="en">For example, a human watching metrics to ensure correctness of procedural values and outputs as processing takes place</skos:note>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasProcessingAutomation">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="en">has processing automation</skos:prefLabel>
+    <skos:definition xml:lang="en">Indicates the use or extent of automation associated with processing</skos:definition>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#AutomationOfProcessing"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#AutomationOfProcessing"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasDataSource">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="en">has data source</skos:prefLabel>
+    <skos:definition xml:lang="en">Indicates the source or origin of data being processed</skos:definition>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#DataSource"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#DataSource"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#StorageRestoration">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:prefLabel xml:lang="en">Storage Restoration</skos:prefLabel>
+    <skos:definition xml:lang="en">Regularity and temporal span of data restoration/backup mechanisms that guarantee that data is preserved</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#StorageCondition"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#HumanInvolvementForOversight">
     <skos:narrower rdf:resource="https://w3id.org/dpv#AutomatedProcessingWithHumanOversight"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -39,36 +135,6 @@
     <skos:broader rdf:resource="https://w3id.org/dpv#HumanInvolvement"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#hasStorageCondition">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">has storage condition</skos:prefLabel>
-    <skos:definition xml:lang="en">Indicates information about storage condition</skos:definition>
-    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#StorageCondition"/>
-    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#StorageCondition"/>
-    <dct:source xml:lang="en">(SPECIAL Project,https://specialprivacy.ercim.eu/)</dct:source>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#CompletelyManualProcessing">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#AutomationOfProcessing"/>
-    <skos:prefLabel xml:lang="en">Completely Manual Processing</skos:prefLabel>
-    <skos:definition xml:lang="en">Processing that is completely un-automated or fully manual</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#AutomationOfProcessing"/>
-    <skos:note xml:lang="en">For example, a human performing some processing operation</skos:note>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#HumanInvolvementForInput">
-    <skos:narrower rdf:resource="https://w3id.org/dpv#AutomatedProcessingWithHumanInput"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#HumanInvolvement"/>
-    <skos:prefLabel xml:lang="en">Human Involvement for Input</skos:prefLabel>
-    <skos:definition xml:lang="en">Human involvement for the purposes of providing inputs</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#HumanInvolvement"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#DataPublishedByDataSubject">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
@@ -76,80 +142,6 @@
     <skos:prefLabel xml:lang="en">Data published by Data Subject</skos:prefLabel>
     <skos:definition xml:lang="en">Data is published by the data subject</skos:definition>
     <skos:note xml:lang="en">This refers to where that data was made publicly available by the data subject. An example of this would be a social media profile that the data subject has made publicly accessible.</skos:note>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#DataController">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <skos:scopeNote xml:lang="en">An Data Controller can be a Data Source, e.g. a Controller inferring data or generating data</skos:scopeNote>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#EvaluationScoring">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#ProcessingContext"/>
-    <skos:prefLabel xml:lang="en">Evaluation and Scoring</skos:prefLabel>
-    <skos:definition xml:lang="en">Processing that involves evaluation and scoring of individuals</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#ProcessingContext"/>
-    <dct:source xml:lang="en">(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)</dct:source>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:narrower rdf:resource="https://w3id.org/dpv#EvaluationOfIndividuals"/>
-    <skos:narrower rdf:resource="https://w3id.org/dpv#ScoringOfIndividuals"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#StorageCondition">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <skos:prefLabel xml:lang="en">Storage Condition</skos:prefLabel>
-    <skos:definition xml:lang="en">Conditions required or followed regarding storage of data</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#ProcessingContext"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#StorageDeletion"/>
-    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#StorageDuration"/>
-    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#StorageLocation"/>
-    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#StorageRestoration"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#StorageDeletion">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <skos:prefLabel xml:lang="en">Storage Deletion</skos:prefLabel>
-    <skos:definition xml:lang="en">Deletion or Erasure of data including any deletion guarantees</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#StorageCondition"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#StorageDuration">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <skos:prefLabel xml:lang="en">Storage Duration</skos:prefLabel>
-    <skos:definition xml:lang="en">Duration or temporal limitation on storage of personal data</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#StorageCondition"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Duration"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#StorageLocation">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <skos:prefLabel xml:lang="en">Storage Location</skos:prefLabel>
-    <skos:definition xml:lang="en">Location or geospatial scope where the data is stored</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#StorageCondition"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Location"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#hasHumanInvolvement">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">has human involvement</skos:prefLabel>
-    <skos:definition xml:lang="en">Indicates Involvement of humans in processing such as within automated decision making process</skos:definition>
-    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#HumanInvolvement"/>
-    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#HumanInvolvement"/>
-    <skos:note xml:lang="en">Human involvement is also relevant to 'human in the loop'</skos:note>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#FullyAutomatedProcessing">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#AutomationOfProcessing"/>
-    <skos:prefLabel xml:lang="en">Fully Automated Processing</skos:prefLabel>
-    <skos:definition xml:lang="en">Processing that is fully automated</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#AutomationOfProcessing"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#AutomationOfProcessing">
@@ -166,36 +158,8 @@
     <skos:narrower rdf:resource="https://w3id.org/dpv#FullyAutomatedProcessing"/>
     <skos:narrower rdf:resource="https://w3id.org/dpv#PartiallyAutomatedProcessing"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#AutomatedDecisionMaking">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <skos:prefLabel xml:lang="en">Automated Decision Making</skos:prefLabel>
-    <skos:definition xml:lang="en">Processing that involves automated decision making</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#DecisionMaking"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#AutomationOfProcessing"/>
-    <skos:note xml:lang="en">Automated decision making can be defined as “the ability to make decisions by technological means without human involvement.” (“Guidelines on Automated individual decision-making and Profiling for the purposes of Regulation 2016/679 (wp251rev.01)”, 2018, p. 8)</skos:note>
-    <dct:source xml:lang="en">(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)</dct:source>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#Location">
     <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#StorageLocation"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#AlgorithmicLogic">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <skos:prefLabel xml:lang="en">Algorithmic Logic</skos:prefLabel>
-    <skos:definition xml:lang="en">The algorithmic logic applied or used</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#AutomationOfProcessing"/>
-    <skos:note xml:lang="en">Algorithmic Logic is intended as a broad concept for explaining the use of algorithms and automated decisions making within Processing. To describe the actual algorithm, see the Algorithm concept.</skos:note>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#NonPublicDataSource">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#DataSource"/>
-    <skos:prefLabel xml:lang="en">Non-Public Data Source</skos:prefLabel>
-    <skos:definition xml:lang="en">A source of data that is not publicly accessible or available</skos:definition>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#InnovativeUseOfNewTechnologies">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -205,30 +169,6 @@
     <skos:definition xml:lang="en">Processing that involves use of innovative and new technologies</skos:definition>
     <skos:broader rdf:resource="https://w3id.org/dpv#ProcessingContext"/>
     <dct:source xml:lang="en">(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)</dct:source>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#ThirdParty">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <skos:scopeNote xml:lang="en">A Third Party can be a Data Source, e.g. when data is collected from an entity that is neither the Controller nor the Data Subject</skos:scopeNote>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#AutomatedProcessingWithHumanInput">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#AutomationOfProcessing"/>
-    <skos:prefLabel xml:lang="en">Automated Processing with Human Input</skos:prefLabel>
-    <skos:definition xml:lang="en">Processing that is automated and involves inputs by Humans</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#HumanInvolvementForInput"/>
-    <skos:note xml:lang="en">For example, an algorithm that takes inputs from humans and performs operations based on them</skos:note>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#hasProcessingAutomation">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">has processing automation</skos:prefLabel>
-    <skos:definition xml:lang="en">Indicates the use or extent of automation associated with processing</skos:definition>
-    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#AutomationOfProcessing"/>
-    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#AutomationOfProcessing"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#ProcessingContext">
@@ -247,15 +187,46 @@
     <skos:narrower rdf:resource="https://w3id.org/dpv#InnovativeUseOfNewTechnologies"/>
     <skos:narrower rdf:resource="https://w3id.org/dpv#SystematicMonitoring"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#SystematicMonitoring">
+  <rdf:Description rdf:about="https://w3id.org/dpv#ScoringOfIndividuals">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#ProcessingContext"/>
-    <skos:prefLabel xml:lang="en">Systematic Monitoring</skos:prefLabel>
-    <skos:definition xml:lang="en">Processing that involves systematic monitoring of individuals</skos:definition>
+    <skos:prefLabel xml:lang="en">Scoring of Individuals</skos:prefLabel>
+    <skos:definition xml:lang="en">Processing that involves scoring of individuals</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#EvaluationScoring"/>
+    <dct:source xml:lang="en">(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)</dct:source>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#StorageDuration">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:prefLabel xml:lang="en">Storage Duration</skos:prefLabel>
+    <skos:definition xml:lang="en">Duration or temporal limitation on storage of personal data</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#StorageCondition"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Duration"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasHumanInvolvement">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="en">has human involvement</skos:prefLabel>
+    <skos:definition xml:lang="en">Indicates Involvement of humans in processing such as within automated decision making process</skos:definition>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#HumanInvolvement"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#HumanInvolvement"/>
+    <skos:note xml:lang="en">Human involvement is also relevant to 'human in the loop'</skos:note>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#EvaluationScoring">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#ProcessingContext"/>
+    <skos:prefLabel xml:lang="en">Evaluation and Scoring</skos:prefLabel>
+    <skos:definition xml:lang="en">Processing that involves evaluation and scoring of individuals</skos:definition>
     <skos:broader rdf:resource="https://w3id.org/dpv#ProcessingContext"/>
     <dct:source xml:lang="en">(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)</dct:source>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:narrower rdf:resource="https://w3id.org/dpv#EvaluationOfIndividuals"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv#ScoringOfIndividuals"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#DataSource">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -266,23 +237,58 @@
     <skos:note xml:lang="en">Source' is the direct point of data collection; 'origin' would indicate the original/others points of where the data originates from.</skos:note>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#hasDataSource">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  <rdf:Description rdf:about="https://w3id.org/dpv#HumanInvolvementForInput">
+    <skos:narrower rdf:resource="https://w3id.org/dpv#AutomatedProcessingWithHumanInput"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">has data source</skos:prefLabel>
-    <skos:definition xml:lang="en">Indicates the source or origin of data being processed</skos:definition>
-    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#DataSource"/>
-    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#DataSource"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#HumanInvolvement"/>
+    <skos:prefLabel xml:lang="en">Human Involvement for Input</skos:prefLabel>
+    <skos:definition xml:lang="en">Human involvement for the purposes of providing inputs</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#HumanInvolvement"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#PartiallyAutomatedProcessing">
+  <rdf:Description rdf:about="https://w3id.org/dpv#FullyAutomatedProcessing">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#AutomationOfProcessing"/>
-    <skos:prefLabel xml:lang="en">Partially Automated Processing</skos:prefLabel>
-    <skos:definition xml:lang="en">Processing that is partially automated or semi-automated</skos:definition>
+    <skos:prefLabel xml:lang="en">Fully Automated Processing</skos:prefLabel>
+    <skos:definition xml:lang="en">Processing that is fully automated</skos:definition>
     <skos:broader rdf:resource="https://w3id.org/dpv#AutomationOfProcessing"/>
-    <skos:note xml:lang="en">For example, a series of distinct processing operations that are automated individually or have some human involvement</skos:note>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#CompletelyManualProcessing">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#AutomationOfProcessing"/>
+    <skos:prefLabel xml:lang="en">Completely Manual Processing</skos:prefLabel>
+    <skos:definition xml:lang="en">Processing that is completely un-automated or fully manual</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#AutomationOfProcessing"/>
+    <skos:note xml:lang="en">For example, a human performing some processing operation</skos:note>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#DataSubject">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:scopeNote xml:lang="en">A Data Subject as a Data Source, e.g. when data is collected via a form or observed from their activities</skos:scopeNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasStorageCondition">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="en">has storage condition</skos:prefLabel>
+    <skos:definition xml:lang="en">Indicates information about storage condition</skos:definition>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#StorageCondition"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#StorageCondition"/>
+    <dct:source xml:lang="en">(SPECIAL Project,https://specialprivacy.ercim.eu/)</dct:source>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#AutomatedProcessingWithHumanInput">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#AutomationOfProcessing"/>
+    <skos:prefLabel xml:lang="en">Automated Processing with Human Input</skos:prefLabel>
+    <skos:definition xml:lang="en">Processing that is automated and involves inputs by Humans</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#HumanInvolvementForInput"/>
+    <skos:note xml:lang="en">For example, an algorithm that takes inputs from humans and performs operations based on them</skos:note>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#HumanInvolvementForVerification">
@@ -295,33 +301,13 @@
     <skos:broader rdf:resource="https://w3id.org/dpv#HumanInvolvement"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#AutomatedProcessingWithHumanReview">
+  <rdf:Description rdf:about="https://w3id.org/dpv#PublicDataSource">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#AutomationOfProcessing"/>
-    <skos:prefLabel xml:lang="en">Automated Processing with Human Review</skos:prefLabel>
-    <skos:definition xml:lang="en">Processing that is automated and involves review by Humans</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#HumanInvolvementForVerification"/>
-    <skos:note xml:lang="en">For example, a human verifying outputs of an algorithm for correctness or impact to individuals</skos:note>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#hasAlgorithmicLogic">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">has algorithmic logic</skos:prefLabel>
-    <skos:definition xml:lang="en">Indicates the logic used in processing such as for automated decision making</skos:definition>
-    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#AlgorithmicLogic"/>
-    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#AlgorithmicLogic"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#ScoringOfIndividuals">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#ProcessingContext"/>
-    <skos:prefLabel xml:lang="en">Scoring of Individuals</skos:prefLabel>
-    <skos:definition xml:lang="en">Processing that involves scoring of individuals</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#EvaluationScoring"/>
-    <dct:source xml:lang="en">(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)</dct:source>
+    <rdf:type rdf:resource="https://w3id.org/dpv#DataSource"/>
+    <skos:prefLabel xml:lang="en">Public Data Source</skos:prefLabel>
+    <skos:definition xml:lang="en">A source of data that is publicly accessible or available</skos:definition>
+    <skos:note xml:lang="en">The term 'Public' is used here in a broad sense. Actual consideration of what is 'Public Data' can vary based on several contextual or jurisdictional factors such as  definition of open, methods of access, permissions and licenses.</skos:note>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#DecisionMaking">
@@ -333,43 +319,57 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#AutomatedDecisionMaking"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#AutomatedProcessingWithHumanOversight">
+  <rdf:Description rdf:about="https://w3id.org/dpv#NonPublicDataSource">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#AutomationOfProcessing"/>
-    <skos:prefLabel xml:lang="en">Automated Processing with Human Oversight</skos:prefLabel>
-    <skos:definition xml:lang="en">Processing that is automated and involves oversight by Humans</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#HumanInvolvementForOversight"/>
-    <skos:note xml:lang="en">For example, a human watching metrics to ensure correctness of procedural values and outputs as processing takes place</skos:note>
+    <rdf:type rdf:resource="https://w3id.org/dpv#DataSource"/>
+    <skos:prefLabel xml:lang="en">Non-Public Data Source</skos:prefLabel>
+    <skos:definition xml:lang="en">A source of data that is not publicly accessible or available</skos:definition>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#StorageDeletion">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:prefLabel xml:lang="en">Storage Deletion</skos:prefLabel>
+    <skos:definition xml:lang="en">Deletion or Erasure of data including any deletion guarantees</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#StorageCondition"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#StorageCondition">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:prefLabel xml:lang="en">Storage Condition</skos:prefLabel>
+    <skos:definition xml:lang="en">Conditions required or followed regarding storage of data</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#ProcessingContext"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#StorageDeletion"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#StorageDuration"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#StorageLocation"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#StorageRestoration"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#ThirdParty">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:scopeNote xml:lang="en">A Third Party can be a Data Source, e.g. when data is collected from an entity that is neither the Controller nor the Data Subject</skos:scopeNote>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#Context">
     <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#ProcessingContext"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#StorageRestoration">
+  <rdf:Description rdf:about="https://w3id.org/dpv#StorageLocation">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <skos:prefLabel xml:lang="en">Storage Restoration</skos:prefLabel>
-    <skos:definition xml:lang="en">Regularity and temporal span of data restoration/backup mechanisms that guarantee that data is preserved</skos:definition>
+    <skos:prefLabel xml:lang="en">Storage Location</skos:prefLabel>
+    <skos:definition xml:lang="en">Location or geospatial scope where the data is stored</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#StorageCondition"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Location"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#EvaluationOfIndividuals">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#ProcessingContext"/>
-    <skos:prefLabel xml:lang="en">Evaluation of Individuals</skos:prefLabel>
-    <skos:definition xml:lang="en">Processing that involves evaluation of individuals</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#EvaluationScoring"/>
-    <dct:source xml:lang="en">(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)</dct:source>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#DataSubject">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <skos:scopeNote xml:lang="en">A Data Subject as a Data Source, e.g. when data is collected via a form or observed from their activities</skos:scopeNote>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#Duration">
     <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#StorageDuration"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#DataController">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:scopeNote xml:lang="en">An Data Controller can be a Data Source, e.g. a Controller inferring data or generating data</skos:scopeNote>
   </rdf:Description>
 </rdf:RDF>

@@ -490,8 +490,8 @@ dpv:Citizen a rdfs:Class,
     skos:prefLabel "Citizen"@en .
 
 dpv:City a rdfs:Class,
-        skos:Concept ;
-    rdfs:subClassOf dpv:Location ;
+        skos:Concept,
+        dpv:Location ;
     sw:term_status "accepted"@en ;
     skos:definition "A region consisting of urban population and commerce"@en ;
     skos:prefLabel "City"@en .
@@ -966,9 +966,8 @@ dpv:CounterMoneyLaundering a rdfs:Class,
     skos:prefLabel "Counter Money Laundering"@en .
 
 dpv:Country a rdfs:Class,
-        skos:Concept ;
-    rdfs:subClassOf dpv:Location ;
-    rdfs:superClassOf dpv:ThirdCountry ;
+        skos:Concept,
+        dpv:Location ;
     sw:term_status "accepted"@en ;
     skos:definition "A political entity indicative of a sovereign or non-sovereign territorial state comprising of distinct geographical areas"@en ;
     skos:note "The definition of country is not intended for political interpretation. DPVCG welcomes alternate definitions based in existing sources with global scope, such as UN or ISO."@en ;
@@ -1528,8 +1527,8 @@ dpv:Duration a rdfs:Class,
     skos:prefLabel "Duration"@en .
 
 dpv:EconomicUnion a rdfs:Class,
-        skos:Concept ;
-    rdfs:subClassOf dpv:Location ;
+        skos:Concept,
+        dpv:Location ;
     sw:term_status "accepted"@en ;
     skos:definition "A political union of two or more countries based on economic or trade agreements"@en ;
     skos:prefLabel "Economic Union"@en .
@@ -2245,7 +2244,6 @@ dpv:LargeScaleProcessing a rdfs:Class,
 
 dpv:Law a rdfs:Class,
         skos:Concept ;
-    rdfs:subClassOf rdfs:Class ;
     sw:term_status "accepted"@en ;
     skos:definition "A law is a set of rules created by government or authorities"@en ;
     skos:prefLabel "Law"@en .
@@ -2285,7 +2283,6 @@ dpv:LegalAgreement a rdfs:Class,
 
 dpv:LegalBasis a rdfs:Class,
         skos:Concept ;
-    rdfs:subClassOf rdfs:Class ;
     sw:term_status "accepted"@en ;
     skos:definition "The Legal basis used to justify processing of personal data"@en ;
     skos:narrower dpv:Consent,
@@ -2410,13 +2407,7 @@ dpv:LocalityScale a rdfs:Class,
 
 dpv:Location a rdfs:Class,
         skos:Concept ;
-    rdfs:subClassOf rdfs:Class ;
-    rdfs:superClassOf dpv:City,
-        dpv:Country,
-        dpv:EconomicUnion,
-        dpv:Region,
-        dpv:StorageLocation,
-        dpv:SupraNationalUnion ;
+    rdfs:superClassOf dpv:StorageLocation ;
     sw:term_status "accepted"@en ;
     skos:definition "A location is a position, site, or area where something is located"@en ;
     skos:narrower dpv:LocationLocality ;
@@ -2425,7 +2416,6 @@ dpv:Location a rdfs:Class,
 
 dpv:LocationFixture a rdfs:Class,
         skos:Concept ;
-    rdfs:subClassOf rdfs:Class ;
     sw:term_status "accepted"@en ;
     skos:definition "The fixture of location refers to whether the location is fixed"@en ;
     skos:narrower dpv:DecentralisedLocations,
@@ -3433,8 +3423,8 @@ dpv:RecordsOfActivities a rdfs:Class,
     skos:prefLabel "Records of Activities"@en .
 
 dpv:Region a rdfs:Class,
-        skos:Concept ;
-    rdfs:subClassOf dpv:Location ;
+        skos:Concept,
+        dpv:Location ;
     sw:term_status "accepted"@en ;
     skos:definition "A region is an area or site that is considered a location"@en ;
     skos:prefLabel "Region"@en .
@@ -4220,8 +4210,8 @@ dpv:SupraNationalAuthority a rdfs:Class,
     skos:prefLabel "Supra-National Authority"@en .
 
 dpv:SupraNationalUnion a rdfs:Class,
-        skos:Concept ;
-    rdfs:subClassOf dpv:Location ;
+        skos:Concept,
+        dpv:Location ;
     sw:term_status "accepted"@en ;
     skos:definition "A political union of two or more countries with an establishment of common authority"@en ;
     skos:prefLabel "Supranational Union"@en .
@@ -4303,8 +4293,8 @@ dpv:TemporalDuration a rdfs:Class,
     skos:prefLabel "Temporal Duration"@en .
 
 dpv:ThirdCountry a rdfs:Class,
-        skos:Concept ;
-    rdfs:subClassOf dpv:Country ;
+        skos:Concept,
+        dpv:Country ;
     sw:term_status "accepted"@en ;
     skos:definition "Represents a country outside applicable or compatible jurisdiction as outlined in law"@en ;
     skos:prefLabel "Third Country"@en .
@@ -5542,9 +5532,4 @@ dpv:hasEntity a rdf:Property,
     skos:note "parent property for controller, processor, data subject, authority, etc.?"@en ;
     skos:prefLabel "has entity"@en ;
     schema:rangeIncludes dpv:Entity .
-
-rdfs:Class rdfs:superClassOf dpv:Law,
-        dpv:LegalBasis,
-        dpv:Location,
-        dpv:LocationFixture .
 

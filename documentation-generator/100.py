@@ -212,5 +212,11 @@ def _extract_CSVs():
 # MAIN
 import subprocess
 if __name__ == '__main__':
-    _download_spreadsheets()
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--d', nargs='?', default=True, const=False, help="will not download files")
+    args = parser.parse_args()
+    if args.d is True:
+        _download_spreadsheets()
     _extract_CSVs()
+

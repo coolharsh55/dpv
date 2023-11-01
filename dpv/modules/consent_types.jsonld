@@ -1,16 +1,5 @@
 [
   {
-    "@id": "https://w3id.org/dpv#Consent",
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv#UninformedConsent"
-      },
-      {
-        "@id": "https://w3id.org/dpv#InformedConsent"
-      }
-    ]
-  },
-  {
     "@id": "https://w3id.org/dpv#ExplicitlyExpressedConsent",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
@@ -48,37 +37,6 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#UninformedConsent",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#LegalBasis"
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#Consent"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Consent that is uninformed i.e. without requirement to provide sufficient information to make a consenting decision"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Uninformed Consent"
-      }
-    ]
-  },
-  {
     "@id": "https://w3id.org/dpv#ImpliedConsent",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
@@ -112,6 +70,62 @@
       {
         "@language": "en",
         "@value": "Implied Consent"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#Consent",
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv#UninformedConsent"
+      },
+      {
+        "@id": "https://w3id.org/dpv#InformedConsent"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#InformedConsent",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#LegalBasis"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#Consent"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Consent that is informed i.e. with the requirement to provide sufficient information to make a consenting decision"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv#ImpliedConsent"
+      },
+      {
+        "@id": "https://w3id.org/dpv#ExpressedConsent"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "The specifics for what information should be provided or made available will depend on the context, use-case, or relevant legal requirements"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Informed Consent"
       }
     ]
   },
@@ -158,7 +172,7 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#InformedConsent",
+    "@id": "https://w3id.org/dpv#UninformedConsent",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
@@ -178,27 +192,13 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Consent that is informed i.e. with the requirement to provide sufficient information to make a consenting decision"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv#ImpliedConsent"
-      },
-      {
-        "@id": "https://w3id.org/dpv#ExpressedConsent"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "The specifics for what information should be provided or made available will depend on the context, use-case, or relevant legal requirements"
+        "@value": "Consent that is uninformed i.e. without requirement to provide sufficient information to make a consenting decision"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Informed Consent"
+        "@value": "Uninformed Consent"
       }
     ]
   }

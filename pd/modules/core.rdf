@@ -16,12 +16,22 @@
     <dct:source xml:lang="en">(EnterPrivacy Categories of Personal Information, https://enterprivacy.com/wp-content/uploads/2018/09/Categories-of-Personal-Information.pdf)</dct:source>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/pd#Social">
+  <rdf:Description rdf:about="https://w3id.org/dpv/pd#Historical">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Social</skos:prefLabel>
-    <skos:definition xml:lang="en">Information about social aspects such as family, public life, or professional networks.</skos:definition>
+    <skos:prefLabel xml:lang="en">Historical</skos:prefLabel>
+    <skos:definition xml:lang="en">Information about historical data related to or relevant regarding history or past events</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <dct:source xml:lang="en">(EnterPrivacy Categories of Personal Information, https://enterprivacy.com/wp-content/uploads/2018/09/Categories-of-Personal-Information.pdf)</dct:source>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/pd#Tracking">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Tracking</skos:prefLabel>
+    <skos:definition xml:lang="en">Information used to track an individual or group e.g. location or email</skos:definition>
     <skos:broader rdf:resource="https://w3id.org/dpv#PersonalData"/>
     <dct:source xml:lang="en">(EnterPrivacy Categories of Personal Information, https://enterprivacy.com/wp-content/uploads/2018/09/Categories-of-Personal-Information.pdf)</dct:source>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
@@ -36,14 +46,15 @@
     <dct:source xml:lang="en">(EnterPrivacy Categories of Personal Information, https://enterprivacy.com/wp-content/uploads/2018/09/Categories-of-Personal-Information.pdf)</dct:source>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/pd#Profile">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Profile</skos:prefLabel>
-    <skos:definition xml:lang="en">Profile or user profile is information and representation of characteristics associated with person(s) or group(s)</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
+  <rdf:Description rdf:about="https://w3id.org/dpv#PersonalData">
+    <skos:narrower rdf:resource="https://w3id.org/dpv/pd#External"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv/pd#Financial"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv/pd#Historical"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv/pd#Household"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv/pd#Internal"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv/pd#Profile"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv/pd#Social"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv/pd#Tracking"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/pd#Household">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -54,35 +65,24 @@
     <skos:broader rdf:resource="https://w3id.org/dpv#PersonalData"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/pd#Tracking">
+  <rdf:Description rdf:about="https://w3id.org/dpv/pd#Profile">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Tracking</skos:prefLabel>
-    <skos:definition xml:lang="en">Information used to track an individual or group e.g. location or email</skos:definition>
+    <skos:prefLabel xml:lang="en">Profile</skos:prefLabel>
+    <skos:definition xml:lang="en">Profile or user profile is information and representation of characteristics associated with person(s) or group(s)</skos:definition>
     <skos:broader rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <dct:source xml:lang="en">(EnterPrivacy Categories of Personal Information, https://enterprivacy.com/wp-content/uploads/2018/09/Categories-of-Personal-Information.pdf)</dct:source>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/pd#Historical">
+  <rdf:Description rdf:about="https://w3id.org/dpv/pd#Social">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
-    <skos:prefLabel xml:lang="en">Historical</skos:prefLabel>
-    <skos:definition xml:lang="en">Information about historical data related to or relevant regarding history or past events</skos:definition>
+    <skos:prefLabel xml:lang="en">Social</skos:prefLabel>
+    <skos:definition xml:lang="en">Information about social aspects such as family, public life, or professional networks.</skos:definition>
     <skos:broader rdf:resource="https://w3id.org/dpv#PersonalData"/>
     <dct:source xml:lang="en">(EnterPrivacy Categories of Personal Information, https://enterprivacy.com/wp-content/uploads/2018/09/Categories-of-Personal-Information.pdf)</dct:source>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#PersonalData">
-    <skos:narrower rdf:resource="https://w3id.org/dpv/pd#External"/>
-    <skos:narrower rdf:resource="https://w3id.org/dpv/pd#Financial"/>
-    <skos:narrower rdf:resource="https://w3id.org/dpv/pd#Historical"/>
-    <skos:narrower rdf:resource="https://w3id.org/dpv/pd#Household"/>
-    <skos:narrower rdf:resource="https://w3id.org/dpv/pd#Internal"/>
-    <skos:narrower rdf:resource="https://w3id.org/dpv/pd#Profile"/>
-    <skos:narrower rdf:resource="https://w3id.org/dpv/pd#Social"/>
-    <skos:narrower rdf:resource="https://w3id.org/dpv/pd#Tracking"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/pd#Internal">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>

@@ -136,8 +136,17 @@
     border: 1px solid black;
   }
   .term-contents {
-    border: 1px solid lightgray;
+    box-shadow: 2px 2px 2px darkgray; 
+  }
+  .term-contents > p {
+    border-top: 1px solid lightgray;
+    border-left: 1px solid lightgray;
+    padding-top: 5px;
+    padding-bottom: 5px;
     padding-left: 2px;
+  }
+  .dfn-label {
+    font-family: monospace;
   }
 </style>
 </head>
@@ -281,13 +290,15 @@
 
   {{ list_items(modules['entities']['classes']) }}
 
+  <p>Refer to the <a href="/dpv/modules/entities">entities documentation</a> for more information, use-cases, examples, and best practices.</p>
+
   <section id="vocab-entities-legalrole">
     <h3>Legal Roles</h3>
     <p><i>Legal Role</i> is the role taken on by a legal entity based on definitions or criterias from laws, regulations, or other such normative sources. Legal roles assist in representing the role and responsibility of an entity within the context of processing, and from this to determine the requirements and obligations that should apply, and their compliance or conformance.</p>
     {{ list_items(modules['entities-legalrole']['classes']) }}
   </section>
 
-  <section id="vocab-entities-authority">
+  <section id="vocab-entities-authorities">
     <h3>Authorities</h3>
     <p>The concept [=Authority=] is a specific Governmental Organisation authorised to enforce a law or regulation. Authorities can be associated with a specific domain, topic, or jurisdiction. DPV currently defines regional authorities for [=NationalAuthority=], [=RegionalAuthority=], and [=SupraNationalAuthority=], and [=DataProtectionAuthority=] represents authorities associated with data protection and privacy. To associate authorities with concepts, the relations [=hasAuthority=] and [=isAuthorityFor=] are provided.</p>
     {{ list_items(modules['entities-authority']['classes']) }}

@@ -1,5 +1,39 @@
 [
   {
+    "@id": "https://w3id.org/dpv/tech#SecurityManagementTechnology",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Technology"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#SecurityTechnology"
+      },
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#ManagementTechnology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Technology related to management of security"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Security Management Technology"
+      }
+    ]
+  },
+  {
     "@id": "https://w3id.org/dpv/tech#DetectionSecurityTechnology",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
@@ -31,10 +65,33 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/dpv-tech#ManagementTechnology",
-    "http://www.w3.org/2004/02/skos/core#narrower": [
+    "@id": "https://w3id.org/dpv/tech#PET",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Technology"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
-        "@id": "https://w3id.org/dpv/tech#SecurityManagementTechnology"
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#SecurityTechnology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Privacy Enhancing Technologies (PETs) that provide minimisation or security related to data and privacy"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "PET (Privacy Enhancing Technology)"
       }
     ]
   },
@@ -66,37 +123,6 @@
       {
         "@language": "en",
         "@value": "Monitoring Security Technology"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#MitigationSecurityTechnology",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Technology"
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#SecurityTechnology"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Technology related to mitigation of vulnerabilities, threats, exploitations"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Mitigation Security Technology"
       }
     ]
   },
@@ -155,38 +181,15 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#PET",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Technology"
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+    "@id": "https://w3id.org/dpv/dpv-tech#ManagementTechnology",
+    "http://www.w3.org/2004/02/skos/core#narrower": [
       {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#SecurityTechnology"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Privacy Enhancing Technologies (PETs) that provide minimisation or security related to data and privacy"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "PET (Privacy Enhancing Technology)"
+        "@id": "https://w3id.org/dpv/tech#SecurityManagementTechnology"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#SecurityManagementTechnology",
+    "@id": "https://w3id.org/dpv/tech#MitigationSecurityTechnology",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
@@ -201,21 +204,18 @@
     "http://www.w3.org/2004/02/skos/core#broader": [
       {
         "@id": "https://w3id.org/dpv/dpv-tech#SecurityTechnology"
-      },
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#ManagementTechnology"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Technology related to management of security"
+        "@value": "Technology related to mitigation of vulnerabilities, threats, exploitations"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Security Management Technology"
+        "@value": "Mitigation Security Technology"
       }
     ]
   }

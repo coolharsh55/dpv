@@ -33,6 +33,7 @@ from vocab_management import generate_author_affiliation, NAMESPACES, NS
 VOCABS = {
     'dpv': {
         'vocab': f'{IMPORT_PATH}/dpv/dpv.ttl',
+        'template': 'template_dpv.jinja2',
         'modules': {
             # 'core': f'{IMPORT_PATH}/dpv/modules/core.ttl',
             'personal_data': f'{IMPORT_PATH}/dpv/modules/personal_data.ttl',
@@ -59,7 +60,9 @@ VOCABS = {
             'rights': f'{IMPORT_PATH}/dpv/modules/rights.ttl',
             'rules': f'{IMPORT_PATH}/dpv/modules/rules.ttl',
         },
-        'template': 'template_dpv.jinja2'
+        'module-template': {
+            'entities': 'contents_dpv_entities.jinja2',
+        },
     }
 }
 
@@ -153,7 +156,6 @@ class DATA(object):
         for s, _, _ in graph:
             term = s.n3(graph.namespace_manager)
             module_data_temp[term] = DATA.data[vocab][term]
-        # TODO: sort module into classes and properties
         module_data = {
             'classes': {},
             'properties': {},
@@ -202,8 +204,18 @@ if __name__ == '__main__':
     for vocab, vocab_data in VOCABS.items(): 
         DEBUG(f'VOCAB: {vocab}')
         DATA.load_vocab(vocab_data['vocab'], vocab)
+        module_data = {}
         for module, filepath in vocab_data['modules'].items():
             DATA.load_module(filepath, module, vocab)
+            # create collection to generate module pages
+            module_name = module.split('-')[0] # e.g. consent-type = consent
+            if module_name not in module_data:
+                module_data[module_name] = {}
+                module_data[module_name]['index'] = {}
+            module_data[module_name][module] = DATA.modules[vocab][module]
+            for data in DATA.modules[vocab][module].values():
+                for k, v in data.items():
+                    module_data[module_name]['index'][k] = v
 
         template = template_env.get_template(vocab_data['template'])
         with open(f'{EXPORT_PATH}/{vocab}/index.html', 'w+') as fd:
@@ -219,6 +231,21 @@ if __name__ == '__main__':
                 vocab=DATA.data['dpv'],
                 modules=DATA.modules['dpv']))
         DEBUG(f'wrote {vocab} spec at f{EXPORT_PATH}/{vocab}/{vocab}.html')
+
+        if 'module-template' not in vocab_data:
+            continue # this vocab doesn't have module specific docs
+        # generate module docs
+        for module, data in module_data.items():
+            if module not in vocab_data['module-template']:
+                continue
+            template = template_env.get_template(vocab_data['module-template'][module])
+            with open(f'{EXPORT_PATH}/{vocab}/modules/{module}.html', 'w+') as fd:
+                fd.write(template.render(
+                    data=data,
+                    vocab=DATA.data['dpv'],
+                    modules=DATA.modules['dpv']))
+                DEBUG(f'wrote {vocab}/{module} docs at f{EXPORT_PATH}/{vocab}/modules/{module}.html')
+            
 # load a module file - create a dict with references to the global list
 
     # for k, v in DATA.data.items():

@@ -55,53 +55,6 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#TechnologyProvider",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#TechnologyActor"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Actor that provides Technology"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Technology Provider"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/dpv-tech#TechnologyActor",
-    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/tech#TechnologyProvider"
-      },
-      {
-        "@id": "https://w3id.org/dpv/tech#TechnologyDeveloper"
-      },
-      {
-        "@id": "https://w3id.org/dpv/tech#TechnologyUser"
-      },
-      {
-        "@id": "https://w3id.org/dpv/tech#TechnologySubject"
-      }
-    ]
-  },
-  {
     "@id": "https://w3id.org/dpv/tech#TechnologyUser",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
@@ -193,112 +146,19 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#hasProvider",
-    "@type": [
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://purl.org/dc/dcam/domainIncludes": [
+    "@id": "https://w3id.org/dpv/dpv-tech#TechnologyActor",
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
       {
-        "@id": "https://w3id.org/dpv#Technology"
-      }
-    ],
-    "http://purl.org/dc/dcam/rangeIncludes": [
+        "@id": "https://w3id.org/dpv/tech#TechnologyProvider"
+      },
       {
-        "@id": "https://w3id.org/dpv/dpv-tech#TechnologyProvider"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+        "@id": "https://w3id.org/dpv/tech#TechnologyDeveloper"
+      },
       {
-        "@id": "https://w3id.org/dpv/dpv-tech#hasTechnologyActor"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+        "@id": "https://w3id.org/dpv/tech#TechnologyUser"
+      },
       {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#hasTechnologyActor"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Indicates technology provider"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "has provider"
-      }
-    ],
-    "https://schema.org/domainIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Technology"
-      }
-    ],
-    "https://schema.org/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#TechnologyProvider"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#hasSubject",
-    "@type": [
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://purl.org/dc/dcam/domainIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Technology"
-      }
-    ],
-    "http://purl.org/dc/dcam/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#TechnologySubject"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#hasTechnologyActor"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#hasTechnologyActor"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Indicates technology subject"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "has subject"
-      }
-    ],
-    "https://schema.org/domainIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Technology"
-      }
-    ],
-    "https://schema.org/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#TechnologySubject"
+        "@id": "https://w3id.org/dpv/tech#TechnologySubject"
       }
     ]
   },
@@ -358,6 +218,91 @@
     ]
   },
   {
+    "@id": "https://w3id.org/dpv/tech#hasSubject",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/dcam/domainIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Technology"
+      }
+    ],
+    "http://purl.org/dc/dcam/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#TechnologySubject"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#hasTechnologyActor"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#hasTechnologyActor"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Indicates technology subject"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "has subject"
+      }
+    ],
+    "https://schema.org/domainIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Technology"
+      }
+    ],
+    "https://schema.org/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#TechnologySubject"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#TechnologyProvider",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#TechnologyActor"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Actor that provides Technology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Technology Provider"
+      }
+    ]
+  },
+  {
     "@id": "https://w3id.org/dpv/tech#TechnologySubject",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
@@ -384,6 +329,61 @@
       {
         "@language": "en",
         "@value": "Technology Subject"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#hasProvider",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/dcam/domainIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Technology"
+      }
+    ],
+    "http://purl.org/dc/dcam/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#TechnologyProvider"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#hasTechnologyActor"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#hasTechnologyActor"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Indicates technology provider"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "has provider"
+      }
+    ],
+    "https://schema.org/domainIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Technology"
+      }
+    ],
+    "https://schema.org/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#TechnologyProvider"
       }
     ]
   }

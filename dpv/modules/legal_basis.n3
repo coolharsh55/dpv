@@ -50,7 +50,6 @@ dpv:EnterIntoContract a rdfs:Class,
 
 dpv:LegalBasis a rdfs:Class,
         skos:Concept ;
-    rdfs:subClassOf rdfs:Class ;
     sw:term_status "accepted"@en ;
     skos:definition "The Legal basis used to justify processing of personal data"@en ;
     skos:narrower dpv:Consent,
@@ -157,6 +156,4 @@ dpv:hasLegalBasis a rdf:Property,
     schema:rangeIncludes dpv:LegalBasis .
 
 dpv:LegalAgreement skos:narrower dpv:Contract .
-
-rdfs:Class rdfs:superClassOf dpv:LegalBasis .
 

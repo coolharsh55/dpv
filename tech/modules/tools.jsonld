@@ -1,32 +1,9 @@
 [
   {
-    "@id": "https://w3id.org/dpv/tech#PersonalInformationManagementSystem",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Technology"
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+    "@id": "https://w3id.org/dpv/dpv-tech#IdentityManagementTechnology",
+    "http://www.w3.org/2004/02/skos/core#narrower": [
       {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#DataManagementTechnology"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A PIMS is a system that helps to give individuals more control over their personal data by managing their personal data in secure, on-premises or online storage systems and sharing it when and with whomever they choose"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Personal Information Management System"
+        "@id": "https://w3id.org/dpv/tech#IdentityWallet"
       }
     ]
   },
@@ -58,6 +35,53 @@
       {
         "@language": "en",
         "@value": "Smartphone Application"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#Cookie",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Technology"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#LocalStorage"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A HTTP or web or internet cookie"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Cookie"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/dpv-tech#Application",
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv/tech#SmartphoneApplication"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/dpv-tech#IdentityTechnology",
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv/tech#IdentityManagementTechnology"
       }
     ]
   },
@@ -96,14 +120,6 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/dpv-tech#ManagementTechnology",
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv/tech#IdentityManagementTechnology"
-      }
-    ]
-  },
-  {
     "@id": "https://w3id.org/dpv/tech#IdentityManagementTechnology",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
@@ -138,49 +154,16 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/dpv-tech#IdentityManagementTechnology",
+    "@id": "https://w3id.org/dpv/dpv-tech#DataStorageTechnology",
     "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv/tech#Database"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#FileSystem"
+      },
       {
         "@id": "https://w3id.org/dpv/tech#IdentityWallet"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/dpv-tech#IdentityTechnology",
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv/tech#IdentityManagementTechnology"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#FileSystem",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Technology"
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#DataStorageTechnology"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A data storage and retrieval interface provided by an operating system"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "File System"
       }
     ]
   },
@@ -216,31 +199,7 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/dpv-tech#LocalStorage",
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv/tech#Cookie"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/dpv-tech#Application",
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv/tech#SmartphoneApplication"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/dpv-tech#DataManagementTechnology",
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv/tech#PersonalInformationManagementSystem"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#Cookie",
+    "@id": "https://w3id.org/dpv/tech#PersonalInformationManagementSystem",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
@@ -254,33 +213,74 @@
     ],
     "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@id": "https://w3id.org/dpv/dpv-tech#LocalStorage"
+        "@id": "https://w3id.org/dpv/dpv-tech#DataManagementTechnology"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "A HTTP or web or internet cookie"
+        "@value": "A PIMS is a system that helps to give individuals more control over their personal data by managing their personal data in secure, on-premises or online storage systems and sharing it when and with whomever they choose"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Cookie"
+        "@value": "Personal Information Management System"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/dpv-tech#DataStorageTechnology",
+    "@id": "https://w3id.org/dpv/dpv-tech#LocalStorage",
     "http://www.w3.org/2004/02/skos/core#narrower": [
       {
-        "@id": "https://w3id.org/dpv/tech#Database"
-      },
+        "@id": "https://w3id.org/dpv/tech#Cookie"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#FileSystem",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Technology"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
-        "@id": "https://w3id.org/dpv/tech#FileSystem"
-      },
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@id": "https://w3id.org/dpv/tech#IdentityWallet"
+        "@id": "https://w3id.org/dpv/dpv-tech#DataStorageTechnology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A data storage and retrieval interface provided by an operating system"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "File System"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/dpv-tech#ManagementTechnology",
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv/tech#IdentityManagementTechnology"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/dpv-tech#DataManagementTechnology",
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv/tech#PersonalInformationManagementSystem"
       }
     ]
   }
