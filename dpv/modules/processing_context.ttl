@@ -11,7 +11,9 @@ dpv:AlgorithmicLogic a rdfs:Class,
         skos:Concept ;
     rdfs:subClassOf dpv:AutomationOfProcessing ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:AutomationOfProcessing ;
     skos:definition "The algorithmic logic applied or used"@en ;
+    skos:inScheme dpv:processing-context-classes ;
     skos:note "Algorithmic Logic is intended as a broad concept for explaining the use of algorithms and automated decisions making within Processing. To describe the actual algorithm, see the Algorithm concept."@en ;
     skos:prefLabel "Algorithmic Logic"@en .
 
@@ -21,7 +23,10 @@ dpv:AutomatedDecisionMaking a rdfs:Class,
     rdfs:subClassOf dpv:AutomationOfProcessing,
         dpv:DecisionMaking ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:AutomationOfProcessing,
+        dpv:DecisionMaking ;
     skos:definition "Processing that involves automated decision making"@en ;
+    skos:inScheme dpv:processing-context-classes ;
     skos:note "Automated decision making can be defined as “the ability to make decisions by technological means without human involvement.” (“Guidelines on Automated individual decision-making and Profiling for the purposes of Regulation 2016/679 (wp251rev.01)”, 2018, p. 8)"@en ;
     skos:prefLabel "Automated Decision Making"@en .
 
@@ -31,6 +36,7 @@ dpv:AutomatedProcessingWithHumanInput a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:HumanInvolvementForInput ;
     skos:definition "Processing that is automated and involves inputs by Humans"@en ;
+    skos:inScheme dpv:processing-context-classes ;
     skos:note "For example, an algorithm that takes inputs from humans and performs operations based on them"@en ;
     skos:prefLabel "Automated Processing with Human Input"@en .
 
@@ -40,6 +46,7 @@ dpv:AutomatedProcessingWithHumanOversight a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:HumanInvolvementForOversight ;
     skos:definition "Processing that is automated and involves oversight by Humans"@en ;
+    skos:inScheme dpv:processing-context-classes ;
     skos:note "For example, a human watching metrics to ensure correctness of procedural values and outputs as processing takes place"@en ;
     skos:prefLabel "Automated Processing with Human Oversight"@en .
 
@@ -49,6 +56,7 @@ dpv:AutomatedProcessingWithHumanReview a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:HumanInvolvementForVerification ;
     skos:definition "Processing that is automated and involves review by Humans"@en ;
+    skos:inScheme dpv:processing-context-classes ;
     skos:note "For example, a human verifying outputs of an algorithm for correctness or impact to individuals"@en ;
     skos:prefLabel "Automated Processing with Human Review"@en .
 
@@ -58,8 +66,12 @@ dpv:AutomationOfProcessing a rdfs:Class,
     rdfs:superClassOf dpv:AlgorithmicLogic,
         dpv:AutomatedDecisionMaking ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:ProcessingContext ;
     skos:definition "Contextual information about the degree of automation and human involvement associated with Processing"@en ;
-    skos:narrower dpv:CompletelyManualProcessing,
+    skos:inScheme dpv:processing-context-classes ;
+    skos:narrower dpv:AlgorithmicLogic,
+        dpv:AutomatedDecisionMaking,
+        dpv:CompletelyManualProcessing,
         dpv:FullyAutomatedProcessing,
         dpv:PartiallyAutomatedProcessing ;
     skos:note "It is difficult to provide a formal definition of automation since any and all processing may be considered automation. This concept instead is intended to explicitly signal the utilisation of automation and its extent towards some context - such as decision making, and to indicate the involvement of humans."@en ;
@@ -71,18 +83,22 @@ dpv:CompletelyManualProcessing a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:AutomationOfProcessing ;
     skos:definition "Processing that is completely un-automated or fully manual"@en ;
+    skos:inScheme dpv:processing-context-classes ;
     skos:note "For example, a human performing some processing operation"@en ;
     skos:prefLabel "Completely Manual Processing"@en .
 
 dpv:DataController a rdfs:Class,
         skos:Concept ;
+    skos:inScheme dpv:processing-context-classes ;
     skos:scopeNote "An Data Controller can be a Data Source, e.g. a Controller inferring data or generating data"@en .
 
 dpv:DataPublishedByDataSubject a rdfs:Class,
         skos:Concept,
         dpv:DataSource ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:DataSource ;
     skos:definition "Data is published by the data subject"@en ;
+    skos:inScheme dpv:processing-context-classes ;
     skos:note "This refers to where that data was made publicly available by the data subject. An example of this would be a social media profile that the data subject has made publicly accessible."@en ;
     skos:prefLabel "Data published by Data Subject"@en .
 
@@ -90,12 +106,18 @@ dpv:DataSource a rdfs:Class,
         skos:Concept ;
     rdfs:subClassOf dpv:ProcessingContext ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:ProcessingContext ;
     skos:definition "The source or origin of data"@en ;
+    skos:inScheme dpv:processing-context-classes ;
+    skos:narrower dpv:DataPublishedByDataSubject,
+        dpv:NonPublicDataSource,
+        dpv:PublicDataSource ;
     skos:note "Source' is the direct point of data collection; 'origin' would indicate the original/others points of where the data originates from."@en ;
     skos:prefLabel "Data Source"@en .
 
 dpv:DataSubject a rdfs:Class,
         skos:Concept ;
+    skos:inScheme dpv:processing-context-classes ;
     skos:scopeNote "A Data Subject as a Data Source, e.g. when data is collected via a form or observed from their activities"@en .
 
 dpv:DecisionMaking a rdfs:Class,
@@ -103,7 +125,10 @@ dpv:DecisionMaking a rdfs:Class,
     rdfs:subClassOf dpv:ProcessingContext ;
     rdfs:superClassOf dpv:AutomatedDecisionMaking ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:ProcessingContext ;
     skos:definition "Processing that involves decision making"@en ;
+    skos:inScheme dpv:processing-context-classes ;
+    skos:narrower dpv:AutomatedDecisionMaking ;
     skos:prefLabel "Decision Making"@en .
 
 dpv:EvaluationOfIndividuals a rdfs:Class,
@@ -113,6 +138,7 @@ dpv:EvaluationOfIndividuals a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:EvaluationScoring ;
     skos:definition "Processing that involves evaluation of individuals"@en ;
+    skos:inScheme dpv:processing-context-classes ;
     skos:prefLabel "Evaluation of Individuals"@en .
 
 dpv:EvaluationScoring a rdfs:Class,
@@ -122,6 +148,7 @@ dpv:EvaluationScoring a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:ProcessingContext ;
     skos:definition "Processing that involves evaluation and scoring of individuals"@en ;
+    skos:inScheme dpv:processing-context-classes ;
     skos:narrower dpv:EvaluationOfIndividuals,
         dpv:ScoringOfIndividuals ;
     skos:prefLabel "Evaluation and Scoring"@en .
@@ -132,13 +159,16 @@ dpv:FullyAutomatedProcessing a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:AutomationOfProcessing ;
     skos:definition "Processing that is fully automated"@en ;
+    skos:inScheme dpv:processing-context-classes ;
     skos:prefLabel "Fully Automated Processing"@en .
 
 dpv:HumanInvolvement a rdfs:Class,
         skos:Concept ;
     rdfs:subClassOf dpv:ProcessingContext ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:ProcessingContext ;
     skos:definition "The involvement of humans in specified context"@en ;
+    skos:inScheme dpv:processing-context-classes ;
     skos:narrower dpv:HumanInvolvementForInput,
         dpv:HumanInvolvementForOversight,
         dpv:HumanInvolvementForVerification ;
@@ -151,6 +181,7 @@ dpv:HumanInvolvementForInput a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:HumanInvolvement ;
     skos:definition "Human involvement for the purposes of providing inputs"@en ;
+    skos:inScheme dpv:processing-context-classes ;
     skos:narrower dpv:AutomatedProcessingWithHumanInput ;
     skos:prefLabel "Human Involvement for Input"@en .
 
@@ -160,6 +191,7 @@ dpv:HumanInvolvementForOversight a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:HumanInvolvement ;
     skos:definition "Human involvement for the purposes of having oversight over a system, its operations, inputs, or outputs"@en ;
+    skos:inScheme dpv:processing-context-classes ;
     skos:narrower dpv:AutomatedProcessingWithHumanOversight ;
     skos:prefLabel "Human Involvement for Oversight"@en .
 
@@ -169,6 +201,7 @@ dpv:HumanInvolvementForVerification a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:HumanInvolvement ;
     skos:definition "Human involvement for the purposes of verification of a system, its operations, inputs, or outputs"@en ;
+    skos:inScheme dpv:processing-context-classes ;
     skos:narrower dpv:AutomatedProcessingWithHumanReview ;
     skos:prefLabel "Human Involvement for Verification"@en .
 
@@ -179,13 +212,16 @@ dpv:InnovativeUseOfNewTechnologies a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:ProcessingContext ;
     skos:definition "Processing that involves use of innovative and new technologies"@en ;
+    skos:inScheme dpv:processing-context-classes ;
     skos:prefLabel "Innovative Use of New Technologies"@en .
 
 dpv:NonPublicDataSource a rdfs:Class,
         skos:Concept,
         dpv:DataSource ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:DataSource ;
     skos:definition "A source of data that is not publicly accessible or available"@en ;
+    skos:inScheme dpv:processing-context-classes ;
     skos:prefLabel "Non-Public Data Source"@en .
 
 dpv:PartiallyAutomatedProcessing a rdfs:Class,
@@ -194,6 +230,7 @@ dpv:PartiallyAutomatedProcessing a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:AutomationOfProcessing ;
     skos:definition "Processing that is partially automated or semi-automated"@en ;
+    skos:inScheme dpv:processing-context-classes ;
     skos:note "For example, a series of distinct processing operations that are automated individually or have some human involvement"@en ;
     skos:prefLabel "Partially Automated Processing"@en .
 
@@ -206,9 +243,16 @@ dpv:ProcessingContext a rdfs:Class,
         dpv:HumanInvolvement,
         dpv:StorageCondition ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Context ;
     skos:definition "Context or conditions within which processing takes place"@en ;
-    skos:narrower dpv:EvaluationScoring,
+    skos:inScheme dpv:processing-context-classes ;
+    skos:narrower dpv:AutomationOfProcessing,
+        dpv:DataSource,
+        dpv:DecisionMaking,
+        dpv:EvaluationScoring,
+        dpv:HumanInvolvement,
         dpv:InnovativeUseOfNewTechnologies,
+        dpv:StorageCondition,
         dpv:SystematicMonitoring ;
     skos:prefLabel "Processing Context"@en .
 
@@ -216,7 +260,9 @@ dpv:PublicDataSource a rdfs:Class,
         skos:Concept,
         dpv:DataSource ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:DataSource ;
     skos:definition "A source of data that is publicly accessible or available"@en ;
+    skos:inScheme dpv:processing-context-classes ;
     skos:note "The term 'Public' is used here in a broad sense. Actual consideration of what is 'Public Data' can vary based on several contextual or jurisdictional factors such as  definition of open, methods of access, permissions and licenses."@en ;
     skos:prefLabel "Public Data Source"@en .
 
@@ -227,6 +273,7 @@ dpv:ScoringOfIndividuals a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:EvaluationScoring ;
     skos:definition "Processing that involves scoring of individuals"@en ;
+    skos:inScheme dpv:processing-context-classes ;
     skos:prefLabel "Scoring of Individuals"@en .
 
 dpv:StorageCondition a rdfs:Class,
@@ -237,14 +284,22 @@ dpv:StorageCondition a rdfs:Class,
         dpv:StorageLocation,
         dpv:StorageRestoration ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:ProcessingContext ;
     skos:definition "Conditions required or followed regarding storage of data"@en ;
+    skos:inScheme dpv:processing-context-classes ;
+    skos:narrower dpv:StorageDeletion,
+        dpv:StorageDuration,
+        dpv:StorageLocation,
+        dpv:StorageRestoration ;
     skos:prefLabel "Storage Condition"@en .
 
 dpv:StorageDeletion a rdfs:Class,
         skos:Concept ;
     rdfs:subClassOf dpv:StorageCondition ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:StorageCondition ;
     skos:definition "Deletion or Erasure of data including any deletion guarantees"@en ;
+    skos:inScheme dpv:processing-context-classes ;
     skos:prefLabel "Storage Deletion"@en .
 
 dpv:StorageDuration a rdfs:Class,
@@ -252,7 +307,10 @@ dpv:StorageDuration a rdfs:Class,
     rdfs:subClassOf dpv:Duration,
         dpv:StorageCondition ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Duration,
+        dpv:StorageCondition ;
     skos:definition "Duration or temporal limitation on storage of personal data"@en ;
+    skos:inScheme dpv:processing-context-classes ;
     skos:prefLabel "Storage Duration"@en .
 
 dpv:StorageLocation a rdfs:Class,
@@ -260,14 +318,19 @@ dpv:StorageLocation a rdfs:Class,
     rdfs:subClassOf dpv:Location,
         dpv:StorageCondition ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Location,
+        dpv:StorageCondition ;
     skos:definition "Location or geospatial scope where the data is stored"@en ;
+    skos:inScheme dpv:processing-context-classes ;
     skos:prefLabel "Storage Location"@en .
 
 dpv:StorageRestoration a rdfs:Class,
         skos:Concept ;
     rdfs:subClassOf dpv:StorageCondition ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:StorageCondition ;
     skos:definition "Regularity and temporal span of data restoration/backup mechanisms that guarantee that data is preserved"@en ;
+    skos:inScheme dpv:processing-context-classes ;
     skos:prefLabel "Storage Restoration"@en .
 
 dpv:SystematicMonitoring a rdfs:Class,
@@ -277,10 +340,12 @@ dpv:SystematicMonitoring a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:ProcessingContext ;
     skos:definition "Processing that involves systematic monitoring of individuals"@en ;
+    skos:inScheme dpv:processing-context-classes ;
     skos:prefLabel "Systematic Monitoring"@en .
 
 dpv:ThirdParty a rdfs:Class,
         skos:Concept ;
+    skos:inScheme dpv:processing-context-classes ;
     skos:scopeNote "A Third Party can be a Data Source, e.g. when data is collected from an entity that is neither the Controller nor the Data Subject"@en .
 
 dpv:hasAlgorithmicLogic a rdf:Property,
@@ -288,6 +353,7 @@ dpv:hasAlgorithmicLogic a rdf:Property,
     dcam:rangeIncludes dpv:AlgorithmicLogic ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the logic used in processing such as for automated decision making"@en ;
+    skos:inScheme dpv:processing-context-properties ;
     skos:prefLabel "has algorithmic logic"@en ;
     schema:rangeIncludes dpv:AlgorithmicLogic .
 
@@ -296,6 +362,7 @@ dpv:hasDataSource a rdf:Property,
     dcam:rangeIncludes dpv:DataSource ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the source or origin of data being processed"@en ;
+    skos:inScheme dpv:processing-context-properties ;
     skos:prefLabel "has data source"@en ;
     schema:rangeIncludes dpv:DataSource .
 
@@ -304,6 +371,7 @@ dpv:hasHumanInvolvement a rdf:Property,
     dcam:rangeIncludes dpv:HumanInvolvement ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates Involvement of humans in processing such as within automated decision making process"@en ;
+    skos:inScheme dpv:processing-context-properties ;
     skos:note "Human involvement is also relevant to 'human in the loop'"@en ;
     skos:prefLabel "has human involvement"@en ;
     schema:rangeIncludes dpv:HumanInvolvement .
@@ -313,6 +381,7 @@ dpv:hasProcessingAutomation a rdf:Property,
     dcam:rangeIncludes dpv:AutomationOfProcessing ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the use or extent of automation associated with processing"@en ;
+    skos:inScheme dpv:processing-context-properties ;
     skos:prefLabel "has processing automation"@en ;
     schema:rangeIncludes dpv:AutomationOfProcessing .
 
@@ -322,12 +391,20 @@ dpv:hasStorageCondition a rdf:Property,
     dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/)"@en ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates information about storage condition"@en ;
+    skos:inScheme dpv:processing-context-properties ;
     skos:prefLabel "has storage condition"@en ;
     schema:rangeIncludes dpv:StorageCondition .
 
-dpv:Context rdfs:superClassOf dpv:ProcessingContext .
+dpv:Context rdfs:superClassOf dpv:ProcessingContext ;
+    skos:narrower dpv:ProcessingContext .
 
-dpv:Duration rdfs:superClassOf dpv:StorageDuration .
+dpv:Duration rdfs:superClassOf dpv:StorageDuration ;
+    skos:narrower dpv:StorageDuration .
 
-dpv:Location rdfs:superClassOf dpv:StorageLocation .
+dpv:Location rdfs:superClassOf dpv:StorageLocation ;
+    skos:narrower dpv:StorageLocation .
+
+dpv:processing-context-properties a skos:ConceptScheme .
+
+dpv:processing-context-classes a skos:ConceptScheme .
 

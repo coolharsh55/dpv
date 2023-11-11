@@ -10,6 +10,7 @@ risk:AvoidSource a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader risk:ControlRiskSource ;
     skos:definition "Risk Control that avoids the risk source"@en ;
+    skos:inScheme risk:risk-controls-classes ;
     skos:prefLabel "Avoid Source"@en .
 
 risk:ChangeConsequence a rdfs:Class,
@@ -18,6 +19,7 @@ risk:ChangeConsequence a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader risk:ControlConsequence ;
     skos:definition "Risk Control that changes Consequence"@en ;
+    skos:inScheme risk:risk-controls-classes ;
     skos:prefLabel "Change Consequence"@en .
 
 risk:ChangeImpact a rdfs:Class,
@@ -26,6 +28,7 @@ risk:ChangeImpact a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader risk:ControlImpact ;
     skos:definition "Risk Control that changes Impact"@en ;
+    skos:inScheme risk:risk-controls-classes ;
     skos:prefLabel "Change Impact"@en .
 
 risk:ControlConsequence a rdfs:Class,
@@ -34,6 +37,7 @@ risk:ControlConsequence a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:RiskMitigationMeasure ;
     skos:definition "Risk Mitigation Measure that controls the Consequences"@en ;
+    skos:inScheme risk:risk-controls-classes ;
     skos:narrower risk:ChangeConsequence,
         risk:ControlImpact,
         risk:RemoveConsequence ;
@@ -45,6 +49,7 @@ risk:ControlImpact a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader risk:ControlConsequence ;
     skos:definition "Risk Mitigation Measure that controls Impacts"@en ;
+    skos:inScheme risk:risk-controls-classes ;
     skos:narrower risk:ChangeImpact,
         risk:RemoveImpact ;
     skos:prefLabel "Control Impact"@en .
@@ -55,6 +60,7 @@ risk:ControlMonitors a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:RiskMitigationMeasure ;
     skos:definition "Risk Mitigation Measure that uses controls to monitor events"@en ;
+    skos:inScheme risk:risk-controls-classes ;
     skos:narrower risk:MonitorConsequence,
         risk:MonitorImpact,
         risk:MonitorRisk,
@@ -70,6 +76,7 @@ risk:ControlRiskSource a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:RiskMitigationMeasure ;
     skos:definition "Risk Mitigation Measure that controls the Risk Source"@en ;
+    skos:inScheme risk:risk-controls-classes ;
     skos:narrower risk:AvoidSource,
         risk:HaltSource,
         risk:RemoveSource ;
@@ -81,6 +88,7 @@ risk:HaltSource a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader risk:ControlRiskSource ;
     skos:definition "Risk Control that halts the risk source or prevents it from materialising"@en ;
+    skos:inScheme risk:risk-controls-classes ;
     skos:prefLabel "Halt Source"@en .
 
 risk:MonitorConsequence a rdfs:Class,
@@ -89,6 +97,7 @@ risk:MonitorConsequence a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader risk:ControlMonitors ;
     skos:definition "Risk Control that monitors a Risk Consequence"@en ;
+    skos:inScheme risk:risk-controls-classes ;
     skos:prefLabel "Monitor Consequence"@en .
 
 risk:MonitorImpact a rdfs:Class,
@@ -97,6 +106,7 @@ risk:MonitorImpact a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader risk:ControlMonitors ;
     skos:definition "Risk Control that monitors a Risk Impact"@en ;
+    skos:inScheme risk:risk-controls-classes ;
     skos:prefLabel "Monitor Impact"@en .
 
 risk:MonitorRisk a rdfs:Class,
@@ -105,6 +115,7 @@ risk:MonitorRisk a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader risk:ControlMonitors ;
     skos:definition "Risk Control that monitors a Risk"@en ;
+    skos:inScheme risk:risk-controls-classes ;
     skos:prefLabel "Monitor Risk"@en .
 
 risk:MonitorRiskControl a rdfs:Class,
@@ -113,6 +124,7 @@ risk:MonitorRiskControl a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader risk:ControlMonitors ;
     skos:definition "Risk Control that monitors another Risk Control"@en ;
+    skos:inScheme risk:risk-controls-classes ;
     skos:prefLabel "Monitor Risk Control"@en .
 
 risk:MonitorRiskSource a rdfs:Class,
@@ -121,6 +133,7 @@ risk:MonitorRiskSource a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader risk:ControlMonitors ;
     skos:definition "Risk Control that monitors a Risk Source"@en ;
+    skos:inScheme risk:risk-controls-classes ;
     skos:prefLabel "Monitor Risk Source"@en .
 
 risk:MonitorVulnerabilities a rdfs:Class,
@@ -129,6 +142,7 @@ risk:MonitorVulnerabilities a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader risk:ControlMonitors ;
     skos:definition "Risk Control that monitors a Risk Vulnerability"@en ;
+    skos:inScheme risk:risk-controls-classes ;
     skos:prefLabel "Monitor Vulnerabilities"@en .
 
 risk:ReduceLikelihood a rdfs:Class,
@@ -137,6 +151,7 @@ risk:ReduceLikelihood a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:RiskMitigationMeasure ;
     skos:definition "Risk Control that reduces the likelihood of an event"@en ;
+    skos:inScheme risk:risk-controls-classes ;
     skos:prefLabel "Reduce Likelihood"@en .
 
 risk:ReduceSeverity a rdfs:Class,
@@ -145,6 +160,7 @@ risk:ReduceSeverity a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:RiskMitigationMeasure ;
     skos:definition "Risk Control that reduces the severity of an event"@en ;
+    skos:inScheme risk:risk-controls-classes ;
     skos:prefLabel "Reduce Severity"@en .
 
 risk:RemoveConsequence a rdfs:Class,
@@ -153,6 +169,7 @@ risk:RemoveConsequence a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader risk:ControlConsequence ;
     skos:definition "Risk Control that removes Consequence i.e. prevents it from materialising"@en ;
+    skos:inScheme risk:risk-controls-classes ;
     skos:prefLabel "Remove Consequence"@en .
 
 risk:RemoveImpact a rdfs:Class,
@@ -161,6 +178,7 @@ risk:RemoveImpact a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader risk:ControlImpact ;
     skos:definition "Risk Control that removes Impact i.e. prevents it from materialising"@en ;
+    skos:inScheme risk:risk-controls-classes ;
     skos:prefLabel "Remove Impact"@en .
 
 risk:RemoveSource a rdfs:Class,
@@ -169,6 +187,7 @@ risk:RemoveSource a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader risk:ControlRiskSource ;
     skos:definition "Risk Control that removes the risk source"@en ;
+    skos:inScheme risk:risk-controls-classes ;
     skos:prefLabel "Remove Source"@en .
 
 risk:ShareRisk a rdfs:Class,
@@ -177,7 +196,10 @@ risk:ShareRisk a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:RiskMitigationMeasure ;
     skos:definition "Risk Mitigation Measure that shares Risk e.g. amongst stakeholders"@en ;
+    skos:inScheme risk:risk-controls-classes ;
     skos:prefLabel "Share Risk"@en .
+
+risk:risk-controls-classes a skos:ConceptScheme .
 
 dpv:RiskMitigationMeasure skos:narrower risk:ControlConsequence,
         risk:ControlMonitors,

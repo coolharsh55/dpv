@@ -12,6 +12,7 @@ pd:External a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:PersonalData ;
     skos:definition "Information about external characteristics that can be observed"@en ;
+    skos:inScheme pd:core-classes ;
     skos:prefLabel "External"@en .
 
 pd:Financial a rdfs:Class,
@@ -21,6 +22,7 @@ pd:Financial a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:PersonalData ;
     skos:definition "Information about finance including monetary characteristics and transactions"@en ;
+    skos:inScheme pd:core-classes ;
     skos:prefLabel "Financial"@en ;
     skos:related "svd:Financial"@en .
 
@@ -31,6 +33,7 @@ pd:Historical a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:PersonalData ;
     skos:definition "Information about historical data related to or relevant regarding history or past events"@en ;
+    skos:inScheme pd:core-classes ;
     skos:prefLabel "Historical"@en .
 
 pd:Household a rdfs:Class,
@@ -39,6 +42,7 @@ pd:Household a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:PersonalData ;
     skos:definition "Information about personal or household activities"@en ;
+    skos:inScheme pd:core-classes ;
     skos:prefLabel "Household"@en .
 
 pd:Internal a rdfs:Class,
@@ -48,6 +52,7 @@ pd:Internal a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:PersonalData ;
     skos:definition "Informatoin about internal characteristics that cannot be seen or observed"@en ;
+    skos:inScheme pd:core-classes ;
     skos:prefLabel "Internal"@en .
 
 pd:Profile a rdfs:Class,
@@ -56,6 +61,7 @@ pd:Profile a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:PersonalData ;
     skos:definition "Profile or user profile is information and representation of characteristics associated with person(s) or group(s)"@en ;
+    skos:inScheme pd:core-classes ;
     skos:prefLabel "Profile"@en .
 
 pd:Social a rdfs:Class,
@@ -65,6 +71,7 @@ pd:Social a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:PersonalData ;
     skos:definition "Information about social aspects such as family, public life, or professional networks."@en ;
+    skos:inScheme pd:core-classes ;
     skos:prefLabel "Social"@en .
 
 pd:Tracking a rdfs:Class,
@@ -74,7 +81,10 @@ pd:Tracking a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:PersonalData ;
     skos:definition "Information used to track an individual or group e.g. location or email"@en ;
+    skos:inScheme pd:core-classes ;
     skos:prefLabel "Tracking"@en .
+
+pd:core-classes a skos:ConceptScheme .
 
 dpv:PersonalData skos:narrower pd:External,
         pd:Financial,

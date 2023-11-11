@@ -10,19 +10,26 @@ dpv:OrganisationalMeasure a rdfs:Class,
         skos:Concept ;
     rdfs:subClassOf dpv:TechnicalOrganisationalMeasure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:TechnicalOrganisationalMeasure ;
     skos:definition "Organisational measures required/followed when processing data of the declared category"@en ;
+    skos:inScheme dpv:TOM-classes ;
     skos:prefLabel "Organisational Measure"@en .
 
 dpv:TechnicalMeasure a rdfs:Class,
         skos:Concept ;
     rdfs:subClassOf dpv:TechnicalOrganisationalMeasure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:TechnicalOrganisationalMeasure ;
     skos:definition "Technical measures required/followed when processing data of the declared category"@en ;
+    skos:inScheme dpv:TOM-classes ;
     skos:prefLabel "Technical Measure"@en .
 
 dpv:TechnicalOrganisationalMeasure a rdfs:Class,
         skos:Concept ;
     rdfs:superClassOf dpv:OrganisationalMeasure,
+        dpv:TechnicalMeasure ;
+    skos:inScheme dpv:TOM-classes ;
+    skos:narrower dpv:OrganisationalMeasure,
         dpv:TechnicalMeasure ;
     skos:scopeNote "The Technical and Organisational measures used."@en .
 
@@ -31,6 +38,7 @@ dpv:isPolicyFor a rdf:Property,
     dcam:domainIncludes dpv:Policy ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the context or application of policy"@en ;
+    skos:inScheme dpv:TOM-properties ;
     skos:prefLabel "is policy for"@en ;
     schema:domainIncludes dpv:Policy .
 
@@ -41,6 +49,7 @@ dpv:hasNotice a rdf:Property,
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasOrganisationalMeasure ;
     skos:definition "Indicates the use or applicability of a Notice for the specified context"@en ;
+    skos:inScheme dpv:TOM-properties ;
     skos:prefLabel "has notice"@en ;
     schema:rangeIncludes dpv:Notice .
 
@@ -51,6 +60,7 @@ dpv:hasPolicy a rdf:Property,
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasTechnicalOrganisationalMeasure ;
     skos:definition "Indicates policy applicable or used"@en ;
+    skos:inScheme dpv:TOM-properties ;
     skos:prefLabel "has policy"@en ;
     schema:rangeIncludes dpv:Policy .
 
@@ -61,8 +71,11 @@ dpv:hasTechnicalMeasure a rdf:Property,
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasTechnicalOrganisationalMeasure ;
     skos:definition "Indicates use or applicability of Technical measure"@en ;
+    skos:inScheme dpv:TOM-properties ;
     skos:prefLabel "has technical measure"@en ;
     schema:rangeIncludes dpv:TechnicalMeasure .
+
+dpv:TOM-classes a skos:ConceptScheme .
 
 dpv:hasOrganisationalMeasure a rdf:Property,
         skos:Concept ;
@@ -72,9 +85,12 @@ dpv:hasOrganisationalMeasure a rdf:Property,
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasTechnicalOrganisationalMeasure ;
     skos:definition "Indicates use or applicability of Organisational measure"@en ;
+    skos:inScheme dpv:TOM-properties ;
     skos:narrower dpv:hasNotice ;
     skos:prefLabel "has organisational measure"@en ;
     schema:rangeIncludes dpv:OrganisationalMeasure .
+
+dpv:TOM-properties a skos:ConceptScheme .
 
 dpv:hasTechnicalOrganisationalMeasure a rdf:Property,
         skos:Concept ;
@@ -84,6 +100,7 @@ dpv:hasTechnicalOrganisationalMeasure a rdf:Property,
         dpv:hasTechnicalMeasure ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates use or applicability of Technical or Organisational measure"@en ;
+    skos:inScheme dpv:TOM-properties ;
     skos:narrower dpv:hasOrganisationalMeasure,
         dpv:hasPolicy,
         dpv:hasTechnicalMeasure ;

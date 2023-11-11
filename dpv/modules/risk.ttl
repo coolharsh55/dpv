@@ -12,6 +12,7 @@ dpv:Benefit a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:Impact ;
     skos:definition "Impact(s) that acts as or causes benefits"@en ;
+    skos:inScheme dpv:risk-classes ;
     skos:prefLabel "Benefit"@en .
 
 dpv:Consequence a rdfs:Class,
@@ -19,9 +20,11 @@ dpv:Consequence a rdfs:Class,
     rdfs:superClassOf dpv:Impact ;
     sw:term_status "accepted"@en ;
     skos:definition "The consequence(s) possible or arising from specified context"@en ;
+    skos:inScheme dpv:risk-classes ;
     skos:narrower dpv:ConsequenceAsSideEffect,
         dpv:ConsequenceOfFailure,
-        dpv:ConsequenceOfSuccess ;
+        dpv:ConsequenceOfSuccess,
+        dpv:Impact ;
     skos:prefLabel "Consequence"@en .
 
 dpv:ConsequenceAsSideEffect a rdfs:Class,
@@ -30,6 +33,7 @@ dpv:ConsequenceAsSideEffect a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:Consequence ;
     skos:definition "The consequence(s) possible or arising as a side-effect of specified context"@en ;
+    skos:inScheme dpv:risk-classes ;
     skos:prefLabel "Consequence as Side-Effect"@en .
 
 dpv:ConsequenceOfFailure a rdfs:Class,
@@ -38,6 +42,7 @@ dpv:ConsequenceOfFailure a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:Consequence ;
     skos:definition "The consequence(s) possible or arising from failure of specified context"@en ;
+    skos:inScheme dpv:risk-classes ;
     skos:prefLabel "Consequence of Failure"@en .
 
 dpv:ConsequenceOfSuccess a rdfs:Class,
@@ -46,6 +51,7 @@ dpv:ConsequenceOfSuccess a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:Consequence ;
     skos:definition "The consequence(s) possible or arising from success of specified context"@en ;
+    skos:inScheme dpv:risk-classes ;
     skos:prefLabel "Consequence of Success"@en .
 
 dpv:Damage a rdfs:Class,
@@ -54,6 +60,7 @@ dpv:Damage a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:Impact ;
     skos:definition "Impact that acts as or causes damages"@en ;
+    skos:inScheme dpv:risk-classes ;
     skos:narrower dpv:Harm,
         dpv:MaterialDamage,
         dpv:NonMaterialDamage ;
@@ -65,6 +72,7 @@ dpv:Detriment a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:Impact ;
     skos:definition "Impact that acts as or causes detriments"@en ;
+    skos:inScheme dpv:risk-classes ;
     skos:prefLabel "Detriment"@en .
 
 dpv:Harm a rdfs:Class,
@@ -73,13 +81,16 @@ dpv:Harm a rdfs:Class,
     sw:term_status "changed"@en ;
     skos:broader dpv:Damage ;
     skos:definition "Impact that acts as or causes harms"@en ;
+    skos:inScheme dpv:risk-classes ;
     skos:prefLabel "Harm"@en .
 
 dpv:Impact a rdfs:Class,
         skos:Concept ;
     rdfs:subClassOf dpv:Consequence ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Consequence ;
     skos:definition "The impact(s) possible or arising as a consequence from specified context"@en ;
+    skos:inScheme dpv:risk-classes ;
     skos:narrower dpv:Benefit,
         dpv:Damage,
         dpv:Detriment ;
@@ -90,6 +101,7 @@ dpv:Likelihood a rdfs:Class,
         skos:Concept ;
     sw:term_status "accepted"@en ;
     skos:definition "The likelihood or probability or chance of something taking place or occuring"@en ;
+    skos:inScheme dpv:risk-classes ;
     skos:note "Likelihood can be expressed in a subjective manner, such as 'Unlikely', or in a quantitative manner such as \"Twice in a Day\" (frequency per period). The suggestion is to use quantitative values, or to associate them with subjective terms used so as to enable accurate interpretations and interoperability. See the concepts related to Frequency and Duration for possible uses as a combination to express Likelihood."@en ;
     skos:prefLabel "Likelihood"@en .
 
@@ -99,6 +111,7 @@ dpv:MaterialDamage a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:Damage ;
     skos:definition "Impact that acts as or causes material damages"@en ;
+    skos:inScheme dpv:risk-classes ;
     skos:prefLabel "Material Damage"@en .
 
 dpv:NonMaterialDamage a rdfs:Class,
@@ -107,12 +120,14 @@ dpv:NonMaterialDamage a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:Damage ;
     skos:definition "Impact that acts as or causes non-material damages"@en ;
+    skos:inScheme dpv:risk-classes ;
     skos:prefLabel "Non-Material Damage"@en .
 
 dpv:Risk a rdfs:Class,
         skos:Concept ;
     sw:term_status "accepted"@en ;
     skos:definition "A risk or possibility or uncertainty of negative effects, impacts, or consequences."@en ;
+    skos:inScheme dpv:risk-classes ;
     skos:note "Risks can be associated with one or more different concepts such as purpose, processing, personal data, technical or organisational measure."@en ;
     skos:prefLabel "Risk"@en .
 
@@ -120,6 +135,7 @@ dpv:RiskLevel a rdfs:Class,
         skos:Concept ;
     sw:term_status "accepted"@en ;
     skos:definition "The magnitude of a risk expressed as an indication to aid in its management"@en ;
+    skos:inScheme dpv:risk-classes ;
     skos:note "Risk Levels can be defined as a combination of different characteristics. For example, ISO 31073:2022 defines it as a combination of consequences and their likelihood. Another example would be the Risk Matrix where Risk Level is defined as a combination of Likelihood and Severity associated with the Risk."@en ;
     skos:prefLabel "Risk Level"@en .
 
@@ -127,13 +143,16 @@ dpv:RiskMitigationMeasure a rdfs:Class,
         skos:Concept ;
     rdfs:subClassOf dpv:TechnicalOrganisationalMeasure ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:TechnicalOrganisationalMeasure ;
     skos:definition "Measures intended to mitigate, minimise, or prevent risk."@en ;
+    skos:inScheme dpv:risk-classes ;
     skos:prefLabel "Risk Mitigation Measure"@en .
 
 dpv:Severity a rdfs:Class,
         skos:Concept ;
     sw:term_status "accepted"@en ;
     skos:definition "The magnitude of being unwanted or having negative effects such as harmful impacts"@en ;
+    skos:inScheme dpv:risk-classes ;
     skos:note "Severity can be associated with Risk, or its Consequences and Impacts"@en ;
     skos:prefLabel "Severity"@en .
 
@@ -142,6 +161,7 @@ dpv:hasLikelihood a rdf:Property,
     dcam:rangeIncludes dpv:Likelihood ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the likelihood associated with a concept"@en ;
+    skos:inScheme dpv:risk-properties ;
     skos:prefLabel "has likelihood"@en ;
     schema:rangeIncludes dpv:Likelihood .
 
@@ -151,6 +171,7 @@ dpv:hasResidualRisk a rdf:Property,
     dcam:rangeIncludes dpv:Risk ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the associated risk is the remaining or residual risk from applying mitigation measures or treatments to this risk"@en ;
+    skos:inScheme dpv:risk-properties ;
     skos:prefLabel "has residual risk"@en ;
     schema:domainIncludes dpv:Risk ;
     schema:rangeIncludes dpv:Risk .
@@ -160,6 +181,7 @@ dpv:hasRisk a rdf:Property,
     dcam:rangeIncludes dpv:Risk ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates applicability of Risk for this concept"@en ;
+    skos:inScheme dpv:risk-properties ;
     skos:prefLabel "has risk"@en ;
     schema:rangeIncludes dpv:Risk .
 
@@ -169,6 +191,7 @@ dpv:hasRiskLevel a rdf:Property,
     dcam:rangeIncludes dpv:RiskLevel ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the associated risk level associated with a risk"@en ;
+    skos:inScheme dpv:risk-properties ;
     skos:prefLabel "has risk level"@en ;
     schema:domainIncludes dpv:Risk ;
     schema:rangeIncludes dpv:RiskLevel .
@@ -178,6 +201,7 @@ dpv:hasSeverity a rdf:Property,
     dcam:rangeIncludes dpv:Severity ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the severity associated with a concept"@en ;
+    skos:inScheme dpv:risk-properties ;
     skos:prefLabel "has severity"@en ;
     schema:rangeIncludes dpv:Severity .
 
@@ -187,6 +211,7 @@ dpv:isResidualRiskOf a rdf:Property,
     dcam:rangeIncludes dpv:Risk ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates this risk is the remaining or residual risk from applying mitigation measures or treatments to specified risk"@en ;
+    skos:inScheme dpv:risk-properties ;
     skos:prefLabel "is residual risk of"@en ;
     schema:domainIncludes dpv:Risk ;
     schema:rangeIncludes dpv:Risk .
@@ -197,11 +222,13 @@ dpv:mitigatesRisk a rdf:Property,
     dcam:rangeIncludes dpv:Risk ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates risks mitigated by this concept"@en ;
+    skos:inScheme dpv:risk-properties ;
     skos:prefLabel "mitigates risk"@en ;
     schema:domainIncludes dpv:RiskMitigationMeasure ;
     schema:rangeIncludes dpv:Risk .
 
-dpv:TechnicalOrganisationalMeasure rdfs:superClassOf dpv:RiskMitigationMeasure .
+dpv:TechnicalOrganisationalMeasure rdfs:superClassOf dpv:RiskMitigationMeasure ;
+    skos:narrower dpv:RiskMitigationMeasure .
 
 dpv:hasConsequence a rdf:Property,
         skos:Concept ;
@@ -209,6 +236,7 @@ dpv:hasConsequence a rdf:Property,
     rdfs:superPropertyOf dpv:hasImpact ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates consenquence(s) possible or arising from specified concept"@en ;
+    skos:inScheme dpv:risk-properties ;
     skos:narrower dpv:hasImpact ;
     skos:note "Removed plural suffix for consistency"@en ;
     skos:prefLabel "has consequence"@en ;
@@ -220,6 +248,7 @@ dpv:hasConsequenceOn a rdf:Property,
     rdfs:superPropertyOf dpv:hasImpactOn ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the thing (e.g. plan, process, or entity) affected by a consequence"@en ;
+    skos:inScheme dpv:risk-properties ;
     skos:narrower dpv:hasImpactOn ;
     skos:prefLabel "has consequence on"@en ;
     schema:domainIncludes dpv:Consequence .
@@ -231,6 +260,7 @@ dpv:hasImpact a rdf:Property,
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasConsequence ;
     skos:definition "Indicates impact(s) possible or arising as consequences from specified concept"@en ;
+    skos:inScheme dpv:risk-properties ;
     skos:prefLabel "has impact"@en ;
     schema:rangeIncludes dpv:Impact .
 
@@ -241,6 +271,7 @@ dpv:hasImpactOn a rdf:Property,
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasConsequenceOn ;
     skos:definition "Indicates the thing (e.g. plan, process, or entity) affected by an impact"@en ;
+    skos:inScheme dpv:risk-properties ;
     skos:prefLabel "has impact on"@en ;
     schema:domainIncludes dpv:Impact .
 
@@ -255,7 +286,12 @@ dpv:isMitigatedByMeasure a rdf:Property,
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasTechnicalOrganisationalMeasure ;
     skos:definition "Indicate a risk is mitigated by specified measure"@en ;
+    skos:inScheme dpv:risk-properties ;
     skos:prefLabel "is mitigated by measure"@en ;
     schema:domainIncludes dpv:Risk ;
     schema:rangeIncludes dpv:RiskMitigationMeasure .
+
+dpv:risk-properties a skos:ConceptScheme .
+
+dpv:risk-classes a skos:ConceptScheme .
 

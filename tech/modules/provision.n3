@@ -14,6 +14,7 @@ tech:Algorithmic a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv-tech:TechnologyProvisionMethod ;
     skos:definition "Technology provided as an algorithm or method"@en ;
+    skos:inScheme tech:provision-classes ;
     skos:prefLabel "Algorithmic"@en .
 
 tech:Component a rdfs:Class,
@@ -22,6 +23,7 @@ tech:Component a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv-tech:TechnologyProvisionMethod ;
     skos:definition "Technology provided as a component"@en ;
+    skos:inScheme tech:provision-classes ;
     skos:prefLabel "Component"@en .
 
 tech:FixedUse a rdfs:Class,
@@ -30,6 +32,7 @@ tech:FixedUse a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv-tech:TechnologyProvisionMethod ;
     skos:definition "Technology that can be used a fixed numner of times"@en ;
+    skos:inScheme tech:provision-classes ;
     skos:prefLabel "Fixed Use"@en .
 
 tech:Goods a rdfs:Class,
@@ -38,6 +41,7 @@ tech:Goods a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv-tech:TechnologyProvisionMethod ;
     skos:definition "Technology provided or used as goods"@en ;
+    skos:inScheme tech:provision-classes ;
     skos:prefLabel "Goods"@en .
 
 tech:Product a rdfs:Class,
@@ -46,6 +50,7 @@ tech:Product a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv-tech:TechnologyProvisionMethod ;
     skos:definition "Technology that is provided as a product"@en ;
+    skos:inScheme tech:provision-classes ;
     skos:prefLabel "Product"@en .
 
 tech:Service a rdfs:Class,
@@ -54,6 +59,7 @@ tech:Service a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv-tech:TechnologyProvisionMethod ;
     skos:definition "Technology provided or used as service(s)"@en ;
+    skos:inScheme tech:provision-classes ;
     skos:note "Removed plural suffix for consistency in terms"@en ;
     skos:prefLabel "Service"@en .
 
@@ -63,6 +69,7 @@ tech:Subscription a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv-tech:TechnologyProvisionMethod ;
     skos:definition "Technology that is provided or used as a periodic subscription"@en ;
+    skos:inScheme tech:provision-classes ;
     skos:prefLabel "Subscription"@en .
 
 tech:System a rdfs:Class,
@@ -71,6 +78,7 @@ tech:System a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv-tech:TechnologyProvisionMethod ;
     skos:definition "Technology provided as a system"@en ;
+    skos:inScheme tech:provision-classes ;
     skos:prefLabel "System"@en .
 
 tech:hasProvisionMethod a rdf:Property,
@@ -79,9 +87,14 @@ tech:hasProvisionMethod a rdf:Property,
     dcam:rangeIncludes dpv-tech:TechnologyProvisionMethod ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifies the provision or usage method of technology"@en ;
+    skos:inScheme tech:provision-properties ;
     skos:prefLabel "has provision method"@en ;
     schema:domainIncludes dpv:Technology ;
     schema:rangeIncludes dpv-tech:TechnologyProvisionMethod .
+
+tech:provision-properties a skos:ConceptScheme .
+
+tech:provision-classes a skos:ConceptScheme .
 
 dpv-tech:TechnologyProvisionMethod skos:narrower tech:Algorithmic,
         tech:Component,

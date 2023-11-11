@@ -11,6 +11,7 @@ tech:DataCopyingTechnology a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv-tech:DataTechnology ;
     skos:definition "Technology related to copying data"@en ;
+    skos:inScheme tech:data-classes ;
     skos:prefLabel "Data Copying Technology"@en .
 
 tech:DataDisclosureTechnology a rdfs:Class,
@@ -19,6 +20,7 @@ tech:DataDisclosureTechnology a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv-tech:DataTechnology ;
     skos:definition "Technology related to disclosing data"@en ;
+    skos:inScheme tech:data-classes ;
     skos:prefLabel "Data Disclosure Technology"@en .
 
 tech:DataManagementTechnology a rdfs:Class,
@@ -28,6 +30,7 @@ tech:DataManagementTechnology a rdfs:Class,
     skos:broader dpv-tech:DataTechnology,
         dpv-tech:ManagementTechnology ;
     skos:definition "Technology related to management of data"@en ;
+    skos:inScheme tech:data-classes ;
     skos:prefLabel "Data Management Technology"@en .
 
 tech:DataObtainingTechnology a rdfs:Class,
@@ -36,6 +39,7 @@ tech:DataObtainingTechnology a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv-tech:DataTechnology ;
     skos:definition "Technology related to obtain data"@en ;
+    skos:inScheme tech:data-classes ;
     skos:prefLabel "Data Obtaining Technology"@en .
 
 tech:DataOrganisingTechnology a rdfs:Class,
@@ -44,6 +48,7 @@ tech:DataOrganisingTechnology a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv-tech:DataTechnology ;
     skos:definition "Technology realted to organising data"@en ;
+    skos:inScheme tech:data-classes ;
     skos:prefLabel "Data Organising Technology"@en .
 
 tech:DataRemovalTechnology a rdfs:Class,
@@ -52,6 +57,7 @@ tech:DataRemovalTechnology a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv-tech:DataTechnology ;
     skos:definition "Technology related to removing data"@en ;
+    skos:inScheme tech:data-classes ;
     skos:prefLabel "Data Removal Technology"@en .
 
 tech:DataSecurityTechnology a rdfs:Class,
@@ -61,6 +67,7 @@ tech:DataSecurityTechnology a rdfs:Class,
     skos:broader dpv-tech:DataTechnology,
         dpv-tech:SecurityTechnology ;
     skos:definition "Technology related to security of data"@en ;
+    skos:inScheme tech:data-classes ;
     skos:prefLabel "Data Security Technology"@en .
 
 tech:DataStorageTechnology a rdfs:Class,
@@ -69,6 +76,7 @@ tech:DataStorageTechnology a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv-tech:DataTechnology ;
     skos:definition "Technology related to storing data"@en ;
+    skos:inScheme tech:data-classes ;
     skos:prefLabel "Data Storage Technology"@en .
 
 tech:DataTransferTechnology a rdfs:Class,
@@ -77,6 +85,7 @@ tech:DataTransferTechnology a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv-tech:DataTechnology ;
     skos:definition "Technology related to transfering data"@en ;
+    skos:inScheme tech:data-classes ;
     skos:prefLabel "Data Transfer Technology"@en .
 
 tech:DataTransformationTechnology a rdfs:Class,
@@ -85,6 +94,7 @@ tech:DataTransformationTechnology a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv-tech:DataTechnology ;
     skos:definition "Technology related to transforming data"@en ;
+    skos:inScheme tech:data-classes ;
     skos:prefLabel "Data Transformation Technology"@en .
 
 tech:DataUsageTechnology a rdfs:Class,
@@ -93,6 +103,7 @@ tech:DataUsageTechnology a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv-tech:DataTechnology ;
     skos:definition "Technology related to using data"@en ;
+    skos:inScheme tech:data-classes ;
     skos:prefLabel "Data Usage Technology"@en .
 
 dpv-tech:ManagementTechnology skos:narrower tech:DataManagementTechnology .
@@ -110,4 +121,6 @@ dpv-tech:DataTechnology skos:narrower tech:DataCopyingTechnology,
         tech:DataTransferTechnology,
         tech:DataTransformationTechnology,
         tech:DataUsageTechnology .
+
+tech:data-classes a skos:ConceptScheme .
 

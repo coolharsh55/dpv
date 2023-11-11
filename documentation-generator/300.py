@@ -11,7 +11,7 @@ TEMPLATE_PATH = './jinja2_resources'
 
 import json
 from rdflib import Graph, Namespace
-from rdflib import RDF, RDFS, OWL
+from rdflib import RDF, RDFS, OWL, SKOS
 from rdflib import URIRef
 from rdform import DataGraph, RDFS_Resource
 import logging
@@ -21,6 +21,7 @@ logging.basicConfig(
 DEBUG = logging.debug
 
 from vocab_management import generate_author_affiliation, NAMESPACES, NS
+from vocab_management import prefix_from_iri
 
 
 # What does HTML document require?
@@ -75,6 +76,7 @@ class DATA(object):
     # }
     data = {}
     modules = {}
+    schemes = {}
     concepts = {}
     
 
@@ -131,12 +133,19 @@ class DATA(object):
                 if p == RDF.type and o == RDFS.Class:
                     term['_type'] = "class"
                 elif p == RDF.type and o == RDF.Property:
-                    term['_type'] = "property"                    
+                    term['_type'] = "property" 
+                elif p == SKOS.inScheme:
+                    if prefix_from_iri(o) not in DATA.schemes:
+                        DATA.schemes[prefix_from_iri(o)] = {}
+                    DATA.schemes[prefix_from_iri(o)][term['prefixed']] = term
             else:
                 obj = str(o)
         DATA.data[vocab] = vocab_data
         for concept in vocab_data.values():
             DATA.concepts[concept['iri']] = concept
+
+        for scheme in DATA.schemes:
+            DEBUG(f'registered scheme {prefix_from_iri(scheme)}')
         return
 
     @staticmethod
@@ -159,6 +168,7 @@ class DATA(object):
         module_data = {
             'classes': {},
             'properties': {},
+            'schemes': {}
         }
         for k, v in module_data_temp.items():
             if v['term'][0].islower():
@@ -168,6 +178,15 @@ class DATA(object):
         if vocab not in DATA.modules:
             DATA.modules[vocab] = {}
         DATA.modules[vocab][module] = module_data
+
+        if f'{vocab}:{module}-classes' in DATA.schemes:
+            scheme = DATA.schemes[f'{vocab}:{module}-classes']
+            # DEBUG(f'{module} has scheme {vocab}:{module}-classes')
+            module_data['schemes']['classes'] = scheme
+        if f'{vocab}:{module}-properties' in DATA.schemes:
+            scheme = DATA.schemes[f'{vocab}:{module}-properties']
+            # DEBUG(f'{module} has scheme {vocab}:{module}-properties')
+            module_data['schemes']['properties'] = scheme
         return
 
 
@@ -181,6 +200,30 @@ def get_concept_list(term):
         key=lambda x: x['iri'])
 
 
+def organise_hierarchy(terms, top=None):
+    '''organise the given list of terms into a hierarchy
+    returns { parent: { children: {} } }'''
+    data = {}
+    for term in terms:
+        data[term] = { 'parents': [], 'children': [] }
+
+    for key, term in terms.items():
+        if 'skos:broader' in term: # has parents
+            parents = term['skos:broader'] # get parents
+            if type(parents) is not list: # single parent
+                parents = [parents]
+            for parent in parents: # check parents are not present in terms
+                if prefix_from_iri(parent) in terms:
+                    data[key]['parents'].append(prefix_from_iri(parent))
+                    data[prefix_from_iri(parent)]['children'].append(key)
+    
+    if top is None:
+        results = {k:terms[k] for k,v in data.items() if not v['parents']}
+    else:
+        results = {k:terms[k] for k,v in data.items() if top in v['parents']}
+    return {k:results[k] for k in sorted(results.keys(), key=str.casefold)}
+
+
 from jinja2 import FileSystemLoader, Environment
 template_loader = FileSystemLoader(searchpath=f'{TEMPLATE_PATH}')
 template_env = Environment(
@@ -189,13 +232,14 @@ template_env = Environment(
 
 JINJA2_FILTERS = {
     'fragment_this': lambda x: x,
-    'prefix_this': lambda x: x,
+    'prefix_this': prefix_from_iri,
     'subclasses': lambda x: x,
     'saved_label': lambda x: x,
     'generate_author_affiliation': generate_author_affiliation,
     'get_example_title': lambda x: x,
     'get_namespace_reference': lambda x: x,
     'get_concept_list': get_concept_list,
+    'organise_hierarchy': organise_hierarchy,
 }
 template_env.filters.update(JINJA2_FILTERS)
 
@@ -245,12 +289,4 @@ if __name__ == '__main__':
                     vocab=DATA.data['dpv'],
                     modules=DATA.modules['dpv']))
                 DEBUG(f'wrote {vocab}/{module} docs at f{EXPORT_PATH}/{vocab}/modules/{module}.html')
-            
-# load a module file - create a dict with references to the global list
-
-    # for k, v in DATA.data.items():
-    #     for i, j in v.items():
-    #         if not i.startswith("_module"):
-    #             continue
-    #         DEBUG(f"{i}")
-    #         DEBUG(j.keys())
+                

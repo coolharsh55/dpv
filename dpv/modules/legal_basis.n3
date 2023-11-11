@@ -12,14 +12,17 @@ dpv:Consent a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:LegalBasis ;
     skos:definition "Consent of the Data Subject for specified processing"@en ;
+    skos:inScheme dpv:legal-basis-classes ;
     skos:prefLabel "Consent"@en .
 
 dpv:Contract a rdfs:Class,
         skos:Concept,
         dpv:LegalBasis ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:LegalAgreement ;
+    skos:broader dpv:LegalAgreement,
+        dpv:LegalBasis ;
     skos:definition "Creation, completion, fulfilment, or performance of a contract involving specified processing"@en ;
+    skos:inScheme dpv:legal-basis-classes ;
     skos:narrower dpv:ContractPerformance,
         dpv:EnterIntoContract ;
     skos:prefLabel "Contract"@en .
@@ -30,6 +33,7 @@ dpv:ContractPerformance a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:Contract ;
     skos:definition "Fulfilment or performance of a contract involving specified processing"@en ;
+    skos:inScheme dpv:legal-basis-classes ;
     skos:prefLabel "Contract Performance"@en .
 
 dpv:DataTransferLegalBasis a rdfs:Class,
@@ -38,6 +42,7 @@ dpv:DataTransferLegalBasis a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:LegalBasis ;
     skos:definition "Specific or special categories and instances of legal basis intended for justifying data transfers"@en ;
+    skos:inScheme dpv:legal-basis-classes ;
     skos:prefLabel "Data Transfer Legal Basis"@en .
 
 dpv:EnterIntoContract a rdfs:Class,
@@ -46,13 +51,16 @@ dpv:EnterIntoContract a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:Contract ;
     skos:definition "Processing necessary to enter into contract"@en ;
+    skos:inScheme dpv:legal-basis-classes ;
     skos:prefLabel "Enter Into Contract"@en .
 
 dpv:LegalBasis a rdfs:Class,
         skos:Concept ;
     sw:term_status "accepted"@en ;
     skos:definition "The Legal basis used to justify processing of personal data"@en ;
+    skos:inScheme dpv:legal-basis-classes ;
     skos:narrower dpv:Consent,
+        dpv:Contract,
         dpv:DataTransferLegalBasis,
         dpv:LegalObligation,
         dpv:LegitimateInterest,
@@ -68,6 +76,7 @@ dpv:LegalObligation a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:LegalBasis ;
     skos:definition "Legal Obligation to conduct the specified processing"@en ;
+    skos:inScheme dpv:legal-basis-classes ;
     skos:prefLabel "Legal Obligation"@en .
 
 dpv:LegitimateInterest a rdfs:Class,
@@ -76,6 +85,7 @@ dpv:LegitimateInterest a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:LegalBasis ;
     skos:definition "Legitimate Interests of a Party as justification for specified processing"@en ;
+    skos:inScheme dpv:legal-basis-classes ;
     skos:narrower dpv:LegitimateInterestOfController,
         dpv:LegitimateInterestOfDataSubject,
         dpv:LegitimateInterestOfThirdParty ;
@@ -87,6 +97,7 @@ dpv:LegitimateInterestOfController a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:LegitimateInterest ;
     skos:definition "Legitimate Interests of a Data Controller in conducting specified processing"@en ;
+    skos:inScheme dpv:legal-basis-classes ;
     skos:prefLabel "Legitimate Interest of Controller"@en .
 
 dpv:LegitimateInterestOfDataSubject a rdfs:Class,
@@ -95,6 +106,7 @@ dpv:LegitimateInterestOfDataSubject a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:LegitimateInterest ;
     skos:definition "Legitimate Interests of the Data Subject in conducting specified processing"@en ;
+    skos:inScheme dpv:legal-basis-classes ;
     skos:prefLabel "Legitimate Interest of Data Subject"@en .
 
 dpv:LegitimateInterestOfThirdParty a rdfs:Class,
@@ -103,6 +115,7 @@ dpv:LegitimateInterestOfThirdParty a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:LegitimateInterest ;
     skos:definition "Legitimate Interests of a Third Party in conducting specified processing"@en ;
+    skos:inScheme dpv:legal-basis-classes ;
     skos:prefLabel "Legitimate Interest of Third Party"@en .
 
 dpv:OfficialAuthorityOfController a rdfs:Class,
@@ -111,6 +124,7 @@ dpv:OfficialAuthorityOfController a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:LegalBasis ;
     skos:definition "Processing necessary or authorised through the official authority granted to or vested in the Data Controller"@en ;
+    skos:inScheme dpv:legal-basis-classes ;
     skos:prefLabel "Official Authority of Controller"@en .
 
 dpv:PublicInterest a rdfs:Class,
@@ -119,6 +133,7 @@ dpv:PublicInterest a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:LegalBasis ;
     skos:definition "Processing is necessary or beneficial for interest of the public or society at large"@en ;
+    skos:inScheme dpv:legal-basis-classes ;
     skos:prefLabel "Public Interest"@en .
 
 dpv:VitalInterest a rdfs:Class,
@@ -127,6 +142,7 @@ dpv:VitalInterest a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:LegalBasis ;
     skos:definition "Processing is necessary or required to protect vital interests of a data subject or other natural person"@en ;
+    skos:inScheme dpv:legal-basis-classes ;
     skos:narrower dpv:VitalInterestOfNaturalPerson ;
     skos:prefLabel "Vital Interest"@en .
 
@@ -136,6 +152,7 @@ dpv:VitalInterestOfDataSubject a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:VitalInterestOfNaturalPerson ;
     skos:definition "Processing is necessary or required to protect vital interests of a data subject"@en ;
+    skos:inScheme dpv:legal-basis-classes ;
     skos:prefLabel "Vital Interest of Data Subject"@en .
 
 dpv:VitalInterestOfNaturalPerson a rdfs:Class,
@@ -144,6 +161,7 @@ dpv:VitalInterestOfNaturalPerson a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:VitalInterest ;
     skos:definition "Processing is necessary or required to protect vital interests of a natural person"@en ;
+    skos:inScheme dpv:legal-basis-classes ;
     skos:narrower dpv:VitalInterestOfDataSubject ;
     skos:prefLabel "Vital Interest of Natural Person"@en .
 
@@ -152,8 +170,13 @@ dpv:hasLegalBasis a rdf:Property,
     dcam:rangeIncludes dpv:LegalBasis ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates use or applicability of a Legal Basis"@en ;
+    skos:inScheme dpv:legal-basis-properties ;
     skos:prefLabel "has legal basis"@en ;
     schema:rangeIncludes dpv:LegalBasis .
 
 dpv:LegalAgreement skos:narrower dpv:Contract .
+
+dpv:legal-basis-properties a skos:ConceptScheme .
+
+dpv:legal-basis-classes a skos:ConceptScheme .
 

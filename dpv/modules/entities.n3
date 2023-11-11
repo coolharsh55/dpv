@@ -13,6 +13,9 @@ dpv:Entity a rdfs:Class,
         dpv:NaturalPerson ;
     sw:term_status "accepted"@en ;
     skos:definition "A human or non-human 'thing' that constitutes as an entity"@en ;
+    skos:inScheme dpv:entities-classes ;
+    skos:narrower dpv:LegalEntity,
+        dpv:NaturalPerson ;
     skos:prefLabel "Entity"@en .
 
 dpv:LegalEntity a rdfs:Class,
@@ -20,14 +23,19 @@ dpv:LegalEntity a rdfs:Class,
     rdfs:subClassOf dpv:Entity ;
     rdfs:superClassOf dpv:Representative ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Entity ;
     skos:definition "A human or non-human 'thing' that constitutes as an entity and which is recognised and defined in law"@en ;
+    skos:inScheme dpv:entities-classes ;
+    skos:narrower dpv:Representative ;
     skos:prefLabel "Legal Entity"@en .
 
 dpv:NaturalPerson a rdfs:Class,
         skos:Concept ;
     rdfs:subClassOf dpv:Entity ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Entity ;
     skos:definition "A human"@en ;
+    skos:inScheme dpv:entities-classes ;
     skos:prefLabel "Natural Person"@en .
 
 dpv:Representative a rdfs:Class,
@@ -35,7 +43,9 @@ dpv:Representative a rdfs:Class,
     dct:source "(GDPR Art.27,https://eur-lex.europa.eu/eli/reg/2016/679/art_27/oj)"@en ;
     rdfs:subClassOf dpv:LegalEntity ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:LegalEntity ;
     skos:definition "A representative of a legal entity"@en ;
+    skos:inScheme dpv:entities-classes ;
     skos:prefLabel "Representative"@en .
 
 dpv:hasAddress a rdf:Property,
@@ -43,6 +53,7 @@ dpv:hasAddress a rdf:Property,
     dcam:domainIncludes dpv:Entity ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifies address of a legal entity such as street address or pin code"@en ;
+    skos:inScheme dpv:entities-properties ;
     skos:prefLabel "has address"@en ;
     schema:domainIncludes dpv:Entity .
 
@@ -51,6 +62,7 @@ dpv:hasContact a rdf:Property,
     dcam:domainIncludes dpv:Entity ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifies contact details of a legal entity such as phone  or email"@en ;
+    skos:inScheme dpv:entities-properties ;
     skos:prefLabel "has contact"@en ;
     schema:domainIncludes dpv:Entity .
 
@@ -59,6 +71,7 @@ dpv:hasName a rdf:Property,
     dcam:domainIncludes dpv:Entity ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifies name of a legal entity"@en ;
+    skos:inScheme dpv:entities-properties ;
     skos:prefLabel "has name"@en ;
     schema:domainIncludes dpv:Entity .
 
@@ -70,6 +83,7 @@ dpv:hasRepresentative a rdf:Property,
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasEntity ;
     skos:definition "Specifies representative of the legal entity"@en ;
+    skos:inScheme dpv:entities-properties ;
     skos:prefLabel "has representative"@en ;
     schema:domainIncludes dpv:Entity ;
     schema:rangeIncludes dpv:Representative .
@@ -81,6 +95,7 @@ dpv:hasResponsibleEntity a rdf:Property,
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasEntity ;
     skos:definition "Specifies the indicated entity is responsible within some context"@en ;
+    skos:inScheme dpv:entities-properties ;
     skos:prefLabel "has responsible entity"@en ;
     schema:rangeIncludes dpv:Entity .
 
@@ -92,9 +107,12 @@ dpv:isRepresentativeFor a rdf:Property,
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasEntity ;
     skos:definition "Indicates the entity is a representative for specified entity"@en ;
+    skos:inScheme dpv:entities-properties ;
     skos:prefLabel "is representative for"@en ;
     schema:domainIncludes dpv:Representative ;
     schema:rangeIncludes dpv:Entity .
+
+dpv:entities-classes a skos:ConceptScheme .
 
 dpv:hasEntity a rdf:Property,
         skos:Concept ;
@@ -104,10 +122,13 @@ dpv:hasEntity a rdf:Property,
         dpv:isRepresentativeFor ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates inclusion or applicability of an entity to some concept"@en ;
+    skos:inScheme dpv:entities-properties ;
     skos:narrower dpv:hasRepresentative,
         dpv:hasResponsibleEntity,
         dpv:isRepresentativeFor ;
     skos:note "parent property for controller, processor, data subject, authority, etc.?"@en ;
     skos:prefLabel "has entity"@en ;
     schema:rangeIncludes dpv:Entity .
+
+dpv:entities-properties a skos:ConceptScheme .
 

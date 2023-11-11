@@ -13,6 +13,7 @@ eu-gdpr:A6-1-a a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:ExpressedConsent ;
     skos:definition "Legal basis based on data subject's given consent to the processing of his or her personal data for one or more specific purposes"@en ;
+    skos:inScheme eu-gdpr:legal-basis-classes ;
     skos:note "Consent can be explicit or non-explicit. To express these specifically, see the explicit and non-explicit variations provided for Art.6-1a."@en ;
     skos:prefLabel "Art.6(1-a) consent"@en .
 
@@ -24,6 +25,7 @@ eu-gdpr:A6-1-a-explicit-consent a rdfs:Class,
     skos:broader dpv:ExplicitlyExpressedConsent,
         dpv-gdpr:A6-1-a ;
     skos:definition "Legal basis based on data subject's given explicit consent to the processing of his or her personal data for one or more specific purposes"@en ;
+    skos:inScheme eu-gdpr:legal-basis-classes ;
     skos:note "Valid consent in this case would have requirements for being 'explicit' in addition to requirements defined by A4-11. This is also mentioned in the Article 29 Working Party document \"Guidelines on Consent under Regulation 2016/679 (wp259rev.01)\""@en ;
     skos:prefLabel "Art 6(1-a) explicit consent"@en .
 
@@ -35,6 +37,7 @@ eu-gdpr:A6-1-a-non-explicit-consent a rdfs:Class,
     skos:broader dpv:ExpressedConsent,
         dpv-gdpr:A6-1a ;
     skos:definition "Legal basis based on data subject's given non-explicit express consent to the processing of his or her personal data for one or more specific purposes"@en ;
+    skos:inScheme eu-gdpr:legal-basis-classes ;
     skos:note "Definition of consent: A data subject's unambigious/clear affirmative action that signifies an agreement to process their personal data (Rigo Wenning) . What is referred to as 'non-explicit consent' here is also termed as 'regular' consent in the Article 29 Working Party document \"Guidelines on Consent under Regulation 2016/679 (wp259rev.01)\". This is the legal basis that requires consent but not at the level of being 'explicit'."@en ;
     skos:prefLabel "Art.6(1-a) regular consent"@en .
 
@@ -45,6 +48,7 @@ eu-gdpr:A6-1-b a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:Contract ;
     skos:definition "Legal basis based on performance of a contract to which the data subject is party or in order to take steps at the request of the data subject prior to entering into a contract"@en ;
+    skos:inScheme eu-gdpr:legal-basis-classes ;
     skos:prefLabel "Art 6(1-b) contract"@en .
 
 eu-gdpr:A6-1-b-contract-performance a rdfs:Class,
@@ -55,6 +59,7 @@ eu-gdpr:A6-1-b-contract-performance a rdfs:Class,
     skos:broader dpv:ContractPerformance,
         dpv-gdpr:A6-1-b ;
     skos:definition "Legal basis based on performance of a contract to which the data subject is party"@en ;
+    skos:inScheme eu-gdpr:legal-basis-classes ;
     skos:prefLabel "Art 6(1-b) contract performance"@en .
 
 eu-gdpr:A6-1-b-enter-into-contract a rdfs:Class,
@@ -65,6 +70,7 @@ eu-gdpr:A6-1-b-enter-into-contract a rdfs:Class,
     skos:broader dpv:EnterIntoContract,
         dpv-gdpr:A6-1-b ;
     skos:definition "Legal basis based on taking steps at the request of the data subject prior to entering into a contract"@en ;
+    skos:inScheme eu-gdpr:legal-basis-classes ;
     skos:prefLabel "Art 6(1-b) enter into contract"@en .
 
 eu-gdpr:A6-1-c a rdfs:Class,
@@ -74,6 +80,7 @@ eu-gdpr:A6-1-c a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:LegalObligation ;
     skos:definition "Legal basis based on compliance with a legal obligation to which the controller is subject"@en ;
+    skos:inScheme eu-gdpr:legal-basis-classes ;
     skos:prefLabel "Art 6(1-c) legal obligation"@en .
 
 eu-gdpr:A6-1-d a rdfs:Class,
@@ -83,6 +90,7 @@ eu-gdpr:A6-1-d a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:VitalInterest ;
     skos:definition "Legal basis based on protecting the vital interests of the data subject or of another natural person"@en ;
+    skos:inScheme eu-gdpr:legal-basis-classes ;
     skos:prefLabel "Art 6(1-d) protect vital interests"@en .
 
 eu-gdpr:A6-1-d-data-subject a rdfs:Class,
@@ -93,6 +101,7 @@ eu-gdpr:A6-1-d-data-subject a rdfs:Class,
     skos:broader dpv:VitalInterestOfDataSubject,
         dpv-gdpr:A6-1-d ;
     skos:definition "Legal basis based on protecting the vital interests of the data subject"@en ;
+    skos:inScheme eu-gdpr:legal-basis-classes ;
     skos:prefLabel "Art 6(1-d) protect vital interests of data subject"@en .
 
 eu-gdpr:A6-1-d-natual-person a rdfs:Class,
@@ -103,6 +112,7 @@ eu-gdpr:A6-1-d-natual-person a rdfs:Class,
     skos:broader dpv:VitalInterestOfNaturalPerson,
         dpv-gdpr:A6-1-d ;
     skos:definition "Legal basis based on protecting the vital interests of another natural person that is not the data subject"@en ;
+    skos:inScheme eu-gdpr:legal-basis-classes ;
     skos:prefLabel "Art 6(1-d) protect vital interests of natural person"@en .
 
 eu-gdpr:A6-1-e a rdfs:Class,
@@ -113,6 +123,7 @@ eu-gdpr:A6-1-e a rdfs:Class,
     skos:broader dpv:OfficialAuthorityOfController,
         dpv:PublicInterest ;
     skos:definition "Legal basis based on performance of a task carried out in the public interest or in the exercise of official authority vested in the controller"@en ;
+    skos:inScheme eu-gdpr:legal-basis-classes ;
     skos:prefLabel "Art 6(1-e) public interest or official authority"@en .
 
 eu-gdpr:A6-1-e-official-authority a rdfs:Class,
@@ -123,6 +134,7 @@ eu-gdpr:A6-1-e-official-authority a rdfs:Class,
     skos:broader dpv:OfficialAuthorityOfController,
         dpv-gdpr:A6-1-e ;
     skos:definition "Legal basis based on the exercise of official authority vested in the controller"@en ;
+    skos:inScheme eu-gdpr:legal-basis-classes ;
     skos:prefLabel "Art 6(1-e) official authority"@en .
 
 eu-gdpr:A6-1-e-public-interest a rdfs:Class,
@@ -133,6 +145,7 @@ eu-gdpr:A6-1-e-public-interest a rdfs:Class,
     skos:broader dpv:PublicInterest,
         dpv-gdpr:A6-1-e ;
     skos:definition "Legal basis based on performance of a task carried out in the public interest"@en ;
+    skos:inScheme eu-gdpr:legal-basis-classes ;
     skos:prefLabel "Art 6(1-e) public interest"@en .
 
 eu-gdpr:A6-1-f a rdfs:Class,
@@ -142,6 +155,7 @@ eu-gdpr:A6-1-f a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:LegitimateInterest ;
     skos:definition "Legal basis based on the purposes of the legitimate interests pursued by the controller or by a third party, except where such interests are overridden by the interests or fundamental rights and freedoms of the data subject which require protection of personal data, in particular where the data subject is a child"@en ;
+    skos:inScheme eu-gdpr:legal-basis-classes ;
     skos:prefLabel "Art 6(1-f) legitimate interest"@en .
 
 eu-gdpr:A6-1-f-controller a rdfs:Class,
@@ -152,6 +166,7 @@ eu-gdpr:A6-1-f-controller a rdfs:Class,
     skos:broader dpv:LegitimateInterestOfController,
         dpv-gdpr:A6-1-f ;
     skos:definition "Legal basis based on the purposes of the legitimate interests pursued by the controller, except where such interests are overridden by the interests or fundamental rights and freedoms of the data subject which require protection of personal data, in particular where the data subject is a child"@en ;
+    skos:inScheme eu-gdpr:legal-basis-classes ;
     skos:prefLabel "Art 6(1-f) legitimate interest of controller"@en .
 
 eu-gdpr:A6-1-f-third-party a rdfs:Class,
@@ -162,6 +177,7 @@ eu-gdpr:A6-1-f-third-party a rdfs:Class,
     skos:broader dpv:LegitimateInterestOfThirdParty,
         dpv-gdpr:A6-1-f ;
     skos:definition "Legal basis based on the purposes of the legitimate interests pursued by a third party, except where such interests are overridden by the interests or fundamental rights and freedoms of the data subject which require protection of personal data, in particular where the data subject is a child"@en ;
+    skos:inScheme eu-gdpr:legal-basis-classes ;
     skos:prefLabel "Art 6(1-f) legitimate interest of third party"@en .
 
 dpv:Contract skos:narrower eu-gdpr:A6-1-b .
@@ -210,4 +226,6 @@ dpv-gdpr:A6-1-e skos:narrower eu-gdpr:A6-1-e-official-authority,
 
 dpv-gdpr:A6-1-f skos:narrower eu-gdpr:A6-1-f-controller,
         eu-gdpr:A6-1-f-third-party .
+
+eu-gdpr:legal-basis-classes a skos:ConceptScheme .
 

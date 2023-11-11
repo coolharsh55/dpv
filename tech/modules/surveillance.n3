@@ -11,6 +11,7 @@ tech:CovertSurveillanceTechnology a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv-tech:SurveillanceTechnology ;
     skos:definition "Surveillance that is covert i.e. invisible or non-apparent or implicit"@en ;
+    skos:inScheme tech:surveillance-classes ;
     skos:note "For example, a web resource that performs tracking in the background"@en ;
     skos:prefLabel "Covert SurveillanceTechnology"@en .
 
@@ -20,9 +21,12 @@ tech:OvertSurveillanceTechnology a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv-tech:SurveillanceTechnology ;
     skos:definition "Surveillance that is overt i.e. visible or apparent or explicit"@en ;
+    skos:inScheme tech:surveillance-classes ;
     skos:note "For example, a CCTV with a notice"@en ;
     skos:prefLabel "Overt Surveillance Technology"@en .
 
 dpv-tech:SurveillanceTechnology skos:narrower tech:CovertSurveillanceTechnology,
         tech:OvertSurveillanceTechnology .
+
+tech:surveillance-classes a skos:ConceptScheme .
 

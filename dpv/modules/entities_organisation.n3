@@ -9,21 +9,27 @@ dpv:AcademicScientificOrganisation a rdfs:Class,
     dct:source "(ADMS controlled vocabulary,http://purl.org/adms)"@en ;
     rdfs:subClassOf dpv:Organisation ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Organisation ;
     skos:definition "Organisations related to academia or scientific pursuits e.g. Universities, Schools, Research Bodies"@en ;
+    skos:inScheme dpv:entities-organisation-classes ;
     skos:prefLabel "Academic or Scientific Organisation"@en .
 
 dpv:ForProfitOrganisation a rdfs:Class,
         skos:Concept ;
     rdfs:subClassOf dpv:Organisation ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Organisation ;
     skos:definition "An organisation that aims to achieve profit as its primary goal"@en ;
+    skos:inScheme dpv:entities-organisation-classes ;
     skos:prefLabel "For-Profit Organisation"@en .
 
 dpv:GovernmentalOrganisation a rdfs:Class,
         skos:Concept ;
     rdfs:subClassOf dpv:Organisation ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Organisation ;
     skos:definition "An organisation managed or part of government"@en ;
+    skos:inScheme dpv:entities-organisation-classes ;
     skos:prefLabel "Governmental Organisation"@en .
 
 dpv:IndustryConsortium a rdfs:Class,
@@ -31,7 +37,9 @@ dpv:IndustryConsortium a rdfs:Class,
     dct:source "(ADMS controlled vocabulary,http://purl.org/adms)"@en ;
     rdfs:subClassOf dpv:Organisation ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Organisation ;
     skos:definition "A consortium established and comprising on industry organisations"@en ;
+    skos:inScheme dpv:entities-organisation-classes ;
     skos:prefLabel "Industry Consortium"@en .
 
 dpv:InternationalOrganisation a rdfs:Class,
@@ -39,7 +47,9 @@ dpv:InternationalOrganisation a rdfs:Class,
     dct:source "(GDPR Art.4-26,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_26/oj)"@en ;
     rdfs:subClassOf dpv:Organisation ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Organisation ;
     skos:definition "An organisation and its subordinate bodies governed by public international law, or any other body which is set up by, or on the basis of, an agreement between two or more countries"@en ;
+    skos:inScheme dpv:entities-organisation-classes ;
     skos:prefLabel "International Organisation"@en .
 
 dpv:NonGovernmentalOrganisation a rdfs:Class,
@@ -47,7 +57,9 @@ dpv:NonGovernmentalOrganisation a rdfs:Class,
     dct:source "(ADMS controlled vocabulary,http://purl.org/adms)"@en ;
     rdfs:subClassOf dpv:Organisation ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Organisation ;
     skos:definition "An organisation not part of or independent from the government"@en ;
+    skos:inScheme dpv:entities-organisation-classes ;
     skos:prefLabel "Non-Governmental Organisation"@en .
 
 dpv:NonProfitOrganisation a rdfs:Class,
@@ -55,7 +67,9 @@ dpv:NonProfitOrganisation a rdfs:Class,
     dct:source "(ADMS controlled vocabulary,http://purl.org/adms)"@en ;
     rdfs:subClassOf dpv:Organisation ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Organisation ;
     skos:definition "An organisation that does not aim to achieve profit as its primary goal"@en ;
+    skos:inScheme dpv:entities-organisation-classes ;
     skos:prefLabel "Non-Profit Organisation"@en .
 
 dpv:Organisation a rdfs:Class,
@@ -69,17 +83,32 @@ dpv:Organisation a rdfs:Class,
         dpv:NonGovernmentalOrganisation,
         dpv:NonProfitOrganisation ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:LegalEntity ;
     skos:definition "A general term reflecting a company or a business or a group acting as a unit"@en ;
+    skos:inScheme dpv:entities-organisation-classes ;
+    skos:narrower dpv:AcademicScientificOrganisation,
+        dpv:ForProfitOrganisation,
+        dpv:GovernmentalOrganisation,
+        dpv:IndustryConsortium,
+        dpv:InternationalOrganisation,
+        dpv:NonGovernmentalOrganisation,
+        dpv:NonProfitOrganisation ;
     skos:prefLabel "Organisation"@en .
 
 dpv:OrganisationalUnit a rdfs:Class,
         skos:Concept ;
     rdfs:subClassOf dpv:Entity ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Entity ;
     skos:definition "Entity within an organisation that does not constitute as a separate legal entity"@en ;
+    skos:inScheme dpv:entities-organisation-classes ;
     skos:prefLabel "Organisational Unit"@en .
 
-dpv:Entity rdfs:superClassOf dpv:OrganisationalUnit .
+dpv:Entity rdfs:superClassOf dpv:OrganisationalUnit ;
+    skos:narrower dpv:OrganisationalUnit .
 
-dpv:LegalEntity rdfs:superClassOf dpv:Organisation .
+dpv:LegalEntity rdfs:superClassOf dpv:Organisation ;
+    skos:narrower dpv:Organisation .
+
+dpv:entities-organisation-classes a skos:ConceptScheme .
 

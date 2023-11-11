@@ -11,6 +11,7 @@ eu-gdpr:GDPRComplianceUnknown a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv-gdpr:GDPRLawfulness ;
     skos:definition "State where lawfulness or compliance with GDPR is unknown"@en ;
+    skos:inScheme eu-gdpr:compliance-classes ;
     skos:prefLabel "GDPR Compliance Unknown"@en .
 
 eu-gdpr:GDPRCompliant a rdfs:Class,
@@ -19,6 +20,7 @@ eu-gdpr:GDPRCompliant a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv-gdpr:GDPRLawfulness ;
     skos:definition "State of being lawful or legally compliant for GDPR"@en ;
+    skos:inScheme eu-gdpr:compliance-classes ;
     skos:prefLabel "GDPR Compliant"@en .
 
 eu-gdpr:GDPRLawfulness a rdfs:Class,
@@ -27,6 +29,7 @@ eu-gdpr:GDPRLawfulness a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:Lawfulness ;
     skos:definition "Status or state associated with being lawful or legally compliant regarding GDPR"@en ;
+    skos:inScheme eu-gdpr:compliance-classes ;
     skos:prefLabel "GDPR Lawfulness"@en .
 
 eu-gdpr:GDPRNonCompliant a rdfs:Class,
@@ -35,11 +38,14 @@ eu-gdpr:GDPRNonCompliant a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv-gdpr:GDPRLawfulness ;
     skos:definition "State of being unlawful or legally non-compliant for GDPR"@en ;
+    skos:inScheme eu-gdpr:compliance-classes ;
     skos:prefLabel "GDPR Non-compliant"@en .
 
 dpv-gdpr:GDPRLawfulness skos:narrower eu-gdpr:GDPRComplianceUnknown,
         eu-gdpr:GDPRCompliant,
         eu-gdpr:GDPRNonCompliant .
+
+eu-gdpr:compliance-classes a skos:ConceptScheme .
 
 dpv:Lawfulness skos:narrower eu-gdpr:GDPRLawfulness .
 

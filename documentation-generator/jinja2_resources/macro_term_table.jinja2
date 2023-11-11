@@ -1,7 +1,7 @@
 {% macro index_concepts(vocab, filter, skip_heading=False) %}
   {% if not skip_heading %}<h3>{{filter|title}}</h3>
   {% endif %}
-  {% for concept in vocab.values()|sort(attribute='iri') %}
+  {% for iri, concept in vocab.items()|sort(attribute=0) %}
     {% if filter == "external" %}
       {% set inscope = not concept['_dpvterm'] %}
       {% set term = concept['skos:prefLabel'] %}
@@ -42,20 +42,34 @@
 {% endfor %}
 {% endmacro %}
 
-{% macro list_items(vocab) %}
-<ul>{% for term, data in vocab.items() | sort %}
+{% macro list_item_single(topconcepts, concepts, data) %}
+  {{ topconcepts }}
+  {% for term in topconcepts %}
   <li>
-    <strong>{{term}}</strong>: {{data['skos:definition']}} <br/>
-    {% if data['skos:broader'] %}
-      narrower than: {% for parent in data['skos:broader']|get_concept_list%}
-      <a href="#{{parent['term']}}"><code>{{ parent['prefixed'] }}</code></a>{{ "," if not loop.last }}
-      {% endfor %}; 
-    {% elif data['rdfs:subClassOf'] %}
-      narrower than: {% for parent in data['rdfs:subClassOf']|get_concept_list%}
-      <a href="#{{parent['term']}}"><code>{{ parent['prefixed'] }}</code></a>{{ "," if not loop.last }}
-      {% endfor %}; 
+    <strong>{{term}}</strong>: {{data[term]['skos:definition']}} 
+      <small><a href="#{{data[term]['term']}}">go to full definition</a></small><br/>
+      data: {{ topconcepts[term] }}
+    {% if concepts[term]['children'] %}
+      <ul>
+        {{ list_item_single(concepts[term]['children'], concepts, data) }}
+      </ul>
     {% endif %}
-    see <a href="#{{data['term']}}">complete term definition</a>
-    </li>
-{% endfor %}</ul>
+  </li>
+  {% endfor %}
+{% endmacro %}
+
+{% macro list_items(vocab) %}
+{% endmacro %}
+
+{% macro list_hierarchy(vocab, head=None) %}
+{% set concepts = vocab|organise_hierarchy(head) %}
+{% if concepts %}<ul class="concept-list">
+{% for term, data in concepts.items() %}
+  <li>
+    <strong>{{term}}</strong>: {{data['skos:definition']}} 
+      <small><a href="#{{data['term']}}">go to full definition</a></small>
+      {{ list_hierarchy(vocab, head=term) }}
+  </li>
+{% endfor %}
+</ul>{% endif %}
 {% endmacro %}

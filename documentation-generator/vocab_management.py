@@ -51,6 +51,14 @@ from rdflib import Graph
 NS = Graph()
 NS.ns = { k:v for k,v in NAMESPACES.items() }
 
+def prefix_from_iri(iri):
+    for prefix, ns in NAMESPACES.items():
+        if iri.startswith(ns):
+            term = iri.replace(ns, '')
+            return f'{prefix}:{term}'
+    return None
+
+
 ###################### CSV files
 IMPORT_CSV_PATH = './vocab_csv'
 CSVFILES = {
@@ -76,10 +84,10 @@ CSVFILES = {
             'properties': f'{IMPORT_CSV_PATH}/TOM_properties.csv',
         },
         'technical_measures': {
-            'classes': f'{IMPORT_CSV_PATH}/TechnicalMeasure.csv',
+            'taxonomy': f'{IMPORT_CSV_PATH}/TechnicalMeasure.csv',
         },
         'organisational_measures': {
-            'classes': f'{IMPORT_CSV_PATH}/OrganisationalMeasure.csv',
+            'taxonomy': f'{IMPORT_CSV_PATH}/OrganisationalMeasure.csv',
         },
         'entities': {
             'taxonomy': f'{IMPORT_CSV_PATH}/Entities.csv',

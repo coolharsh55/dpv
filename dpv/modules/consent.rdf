@@ -12,15 +12,7 @@
     <skos:prefLabel xml:lang="en">has indication method</skos:prefLabel>
     <skos:definition xml:lang="en">Specifies the method by which an entity has indicated the specific context</skos:definition>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#isIndicatedBy">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">is indicated by</skos:prefLabel>
-    <skos:definition xml:lang="en">Specifies entity who indicates the specific context</skos:definition>
-    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#Entity"/>
-    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#Entity"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#consent-properties"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#isIndicatedAtTime">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
@@ -28,6 +20,7 @@
     <skos:prefLabel xml:lang="en">is indicated at time</skos:prefLabel>
     <skos:definition xml:lang="en">Specifies the temporal information for when the entity has indicated the specific context</skos:definition>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#consent-properties"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#hasConsentStatus">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
@@ -37,5 +30,19 @@
     <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#ConsentStatus"/>
     <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#ConsentStatus"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#consent-properties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#isIndicatedBy">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="en">is indicated by</skos:prefLabel>
+    <skos:definition xml:lang="en">Specifies entity who indicates the specific context</skos:definition>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#Entity"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#Entity"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#consent-properties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#consent-properties">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
   </rdf:Description>
 </rdf:RDF>

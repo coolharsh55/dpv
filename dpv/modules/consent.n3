@@ -10,6 +10,7 @@ dpv:hasConsentStatus a rdf:Property,
     dcam:rangeIncludes dpv:ConsentStatus ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifies the state or status of consent"@en ;
+    skos:inScheme dpv:consent-properties ;
     skos:prefLabel "has consent status"@en ;
     schema:rangeIncludes dpv:ConsentStatus .
 
@@ -17,12 +18,14 @@ dpv:hasIndicationMethod a rdf:Property,
         skos:Concept ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifies the method by which an entity has indicated the specific context"@en ;
+    skos:inScheme dpv:consent-properties ;
     skos:prefLabel "has indication method"@en .
 
 dpv:isIndicatedAtTime a rdf:Property,
         skos:Concept ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifies the temporal information for when the entity has indicated the specific context"@en ;
+    skos:inScheme dpv:consent-properties ;
     skos:prefLabel "is indicated at time"@en .
 
 dpv:isIndicatedBy a rdf:Property,
@@ -30,6 +33,9 @@ dpv:isIndicatedBy a rdf:Property,
     dcam:rangeIncludes dpv:Entity ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifies entity who indicates the specific context"@en ;
+    skos:inScheme dpv:consent-properties ;
     skos:prefLabel "is indicated by"@en ;
     schema:rangeIncludes dpv:Entity .
+
+dpv:consent-properties a skos:ConceptScheme .
 

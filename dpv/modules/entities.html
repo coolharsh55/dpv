@@ -374,104 +374,86 @@
   </figure>
   <p>DPV relies on existing well-founded interpretations for its concepts, which in this case relate to <i>Entity</i> as a generic universal concept and <i>LegalEntity</i> specifically referring to roles defined legally or within legal norms. Expanding on these, DPV provides a taxonomy of entities based on their application within laws and use-cases in the form of <a href="#vocab-entities-legalrole"><i>Legal roles</i></a>, such as [=DataController=], [=DataSubject=], and [=Authority=]. Later, these concepts are expanded into taxonomies for different kinds of entities categorised under a common concept. For example, <a href="#vocab-entities-datasubject">categories of <i>Data Subjects</i></a> such as [=Adult=], [=User=], or [=Employee=]; or <a href="#vocab-entities-authorities">kinds of <i>Authorities</i></a>, or <a href="#vocab-entities-organisation">categories of <i>Organisations</i></a>.</p>
 
-  <ul>  <li>
-    <strong>dpv:Entity</strong>: A human or non-human &#39;thing&#39; that constitutes as an entity <br/>
-    see <a href="#Entity">complete term definition</a>
-    </li>
+  <ul class="concept-list">
   <li>
-    <strong>dpv:LegalEntity</strong>: A human or non-human &#39;thing&#39; that constitutes as an entity and which is recognised and defined in law <br/>
-      narrower than:       <a href="#Entity"><code>dpv:Entity</code></a>
-; 
-    see <a href="#LegalEntity">complete term definition</a>
-    </li>
+    <strong>dpv:Entity</strong>: A human or non-human &#39;thing&#39; that constitutes as an entity 
+      <small><a href="#Entity">go to full definition</a></small>
+      <ul class="concept-list">
   <li>
-    <strong>dpv:NaturalPerson</strong>: A human <br/>
-      narrower than:       <a href="#Entity"><code>dpv:Entity</code></a>
-; 
-    see <a href="#NaturalPerson">complete term definition</a>
-    </li>
+    <strong>dpv:LegalEntity</strong>: A human or non-human &#39;thing&#39; that constitutes as an entity and which is recognised and defined in law 
+      <small><a href="#LegalEntity">go to full definition</a></small>
+      <ul class="concept-list">
   <li>
-    <strong>dpv:Representative</strong>: A representative of a legal entity <br/>
-      narrower than:       <a href="#LegalEntity"><code>dpv:LegalEntity</code></a>
-; 
-    see <a href="#Representative">complete term definition</a>
-    </li>
+    <strong>dpv:Representative</strong>: A representative of a legal entity 
+      <small><a href="#Representative">go to full definition</a></small>
+      
+  </li>
 </ul>
-
+  </li>
+  <li>
+    <strong>dpv:NaturalPerson</strong>: A human 
+      <small><a href="#NaturalPerson">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+</ul>
 
   </section>
 
   <section id="vocab-entities-legalrole">
     <h2>Legal Roles</h2>
     <p><i>Legal Role</i> is the role taken on by a legal entity based on definitions or criterias from laws, regulations, or other such normative sources. Legal roles assist in representing the role and responsibility of an entity within the context of processing, and from this to determine the requirements and obligations that should apply, and their compliance or conformance.</p>
-    <ul>  <li>
-    <strong>dpv:DataController</strong>: The individual or organisation that decides (or controls) the purpose(s) of processing personal data. <br/>
-      narrower than:       <a href="#LegalEntity"><code>dpv:LegalEntity</code></a>
-; 
-    see <a href="#DataController">complete term definition</a>
-    </li>
+    <ul class="concept-list">
   <li>
-    <strong>dpv:DataExporter</strong>: An entity that &#39;exports&#39; data where exporting is considered a form of data transfer <br/>
-      narrower than:       <a href="#LegalEntity"><code>dpv:LegalEntity</code></a>
-; 
-    see <a href="#DataExporter">complete term definition</a>
-    </li>
+    <strong>dpv:DataController</strong>: The individual or organisation that decides (or controls) the purpose(s) of processing personal data. 
+      <small><a href="#DataController">go to full definition</a></small>
+      <ul class="concept-list">
   <li>
-    <strong>dpv:DataImporter</strong>: An entity that &#39;imports&#39; data where importing is considered a form of data transfer <br/>
-      narrower than:       <a href="#Recipient"><code>dpv:Recipient</code></a>
-; 
-    see <a href="#DataImporter">complete term definition</a>
-    </li>
-  <li>
-    <strong>dpv:DataProcessor</strong>: A ‘processor’ means a natural or legal person, public authority, agency or other body which processes personal data on behalf of the controller. <br/>
-      narrower than:       <a href="#Recipient"><code>dpv:Recipient</code></a>
-; 
-    see <a href="#DataProcessor">complete term definition</a>
-    </li>
-  <li>
-    <strong>dpv:DataProtectionOfficer</strong>: An entity within or authorised by an organisation to monitor internal compliance, inform and advise on data protection obligations and act as a contact point for data subjects and the supervisory authority. <br/>
-      narrower than:       <a href="#Representative"><code>dpv:Representative</code></a>
-; 
-    see <a href="#DataProtectionOfficer">complete term definition</a>
-    </li>
-  <li>
-    <strong>dpv:DataSubProcessor</strong>: A &#39;sub-processor&#39; is a processor engaged by another processor <br/>
-      narrower than:       <a href="#DataProcessor"><code>dpv:DataProcessor</code></a>
-; 
-    see <a href="#DataSubProcessor">complete term definition</a>
-    </li>
-  <li>
-    <strong>dpv:JointDataControllers</strong>: A group of Data Controllers that jointly determine the purposes and means of processing <br/>
-      narrower than:       <a href="#DataController"><code>dpv:DataController</code></a>
-; 
-    see <a href="#JointDataControllers">complete term definition</a>
-    </li>
-  <li>
-    <strong>dpv:LegalEntity</strong>: A human or non-human &#39;thing&#39; that constitutes as an entity and which is recognised and defined in law <br/>
-      narrower than:       <a href="#Entity"><code>dpv:Entity</code></a>
-; 
-    see <a href="#LegalEntity">complete term definition</a>
-    </li>
-  <li>
-    <strong>dpv:Recipient</strong>: Entities that receive personal data <br/>
-      narrower than:       <a href="#LegalEntity"><code>dpv:LegalEntity</code></a>
-; 
-    see <a href="#Recipient">complete term definition</a>
-    </li>
-  <li>
-    <strong>dpv:Representative</strong>: A representative of a legal entity <br/>
-      narrower than:       <a href="#LegalEntity"><code>dpv:LegalEntity</code></a>
-; 
-    see <a href="#Representative">complete term definition</a>
-    </li>
-  <li>
-    <strong>dpv:ThirdParty</strong>: A ‘third party’ means a natural or legal person, public authority, agency or body other than the data subject, controller, processor and people who, under the direct authority of the controller or processor, are authorised to process personal data. <br/>
-      narrower than:       <a href="#Recipient"><code>dpv:Recipient</code></a>
-; 
-    see <a href="#ThirdParty">complete term definition</a>
-    </li>
+    <strong>dpv:JointDataControllers</strong>: A group of Data Controllers that jointly determine the purposes and means of processing 
+      <small><a href="#JointDataControllers">go to full definition</a></small>
+      
+  </li>
 </ul>
-
+  </li>
+  <li>
+    <strong>dpv:DataExporter</strong>: An entity that &#39;exports&#39; data where exporting is considered a form of data transfer 
+      <small><a href="#DataExporter">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:DataProtectionOfficer</strong>: An entity within or authorised by an organisation to monitor internal compliance, inform and advise on data protection obligations and act as a contact point for data subjects and the supervisory authority. 
+      <small><a href="#DataProtectionOfficer">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:Recipient</strong>: Entities that receive personal data 
+      <small><a href="#Recipient">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:DataImporter</strong>: An entity that &#39;imports&#39; data where importing is considered a form of data transfer 
+      <small><a href="#DataImporter">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:DataProcessor</strong>: A ‘processor’ means a natural or legal person, public authority, agency or other body which processes personal data on behalf of the controller. 
+      <small><a href="#DataProcessor">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:DataSubProcessor</strong>: A &#39;sub-processor&#39; is a processor engaged by another processor 
+      <small><a href="#DataSubProcessor">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:ThirdParty</strong>: A ‘third party’ means a natural or legal person, public authority, agency or body other than the data subject, controller, processor and people who, under the direct authority of the controller or processor, are authorised to process personal data. 
+      <small><a href="#ThirdParty">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+</ul>
     <section id="desc-data-controller">
         <h3>Data Controller</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -497,297 +479,389 @@
   <section id="vocab-entities-authorities">
     <h2>Authorities</h2>
     <p>The concept [=Authority=] is a specific Governmental Organisation authorised to enforce a law or regulation. Authorities can be associated with a specific domain, topic, or jurisdiction. DPV currently defines regional authorities for [=NationalAuthority=], [=RegionalAuthority=], and [=SupraNationalAuthority=], and [=DataProtectionAuthority=] represents authorities associated with data protection and privacy. To associate authorities with concepts, the relations [=hasAuthority=] and [=isAuthorityFor=] are provided.</p>
-    <ul>  <li>
-    <strong>dpv:Authority</strong>: An authority with the power to create or enforce laws, or determine their compliance. <br/>
-      narrower than:       <a href="#GovernmentalOrganisation"><code>dpv:GovernmentalOrganisation</code></a>,
-      <a href="#LegalEntity"><code>dpv:LegalEntity</code></a>
-; 
-    see <a href="#Authority">complete term definition</a>
-    </li>
+    <ul class="concept-list">
   <li>
-    <strong>dpv:DataProtectionAuthority</strong>: An authority tasked with overseeing legal compliance regarding privacy and data protection laws. <br/>
-      narrower than:       <a href="#Authority"><code>dpv:Authority</code></a>
-; 
-    see <a href="#DataProtectionAuthority">complete term definition</a>
-    </li>
+    <strong>dpv:GovernmentalOrganisation</strong>: An organisation managed or part of government 
+      <small><a href="#GovernmentalOrganisation">go to full definition</a></small>
+      <ul class="concept-list">
   <li>
-    <strong>dpv:GovernmentalOrganisation</strong>: An organisation managed or part of government <br/>
-      narrower than:       <a href="#Organisation"><code>dpv:Organisation</code></a>
-; 
-    see <a href="#GovernmentalOrganisation">complete term definition</a>
-    </li>
+    <strong>dpv:Authority</strong>: An authority with the power to create or enforce laws, or determine their compliance. 
+      <small><a href="#Authority">go to full definition</a></small>
+      <ul class="concept-list">
   <li>
-    <strong>dpv:LegalEntity</strong>: A human or non-human &#39;thing&#39; that constitutes as an entity and which is recognised and defined in law <br/>
-      narrower than:       <a href="#Entity"><code>dpv:Entity</code></a>
-; 
-    see <a href="#LegalEntity">complete term definition</a>
-    </li>
+    <strong>dpv:DataProtectionAuthority</strong>: An authority tasked with overseeing legal compliance regarding privacy and data protection laws. 
+      <small><a href="#DataProtectionAuthority">go to full definition</a></small>
+      
+  </li>
   <li>
-    <strong>dpv:NationalAuthority</strong>: An authority tasked with overseeing legal compliance for a nation <br/>
-      narrower than:       <a href="#Authority"><code>dpv:Authority</code></a>
-; 
-    see <a href="#NationalAuthority">complete term definition</a>
-    </li>
+    <strong>dpv:NationalAuthority</strong>: An authority tasked with overseeing legal compliance for a nation 
+      <small><a href="#NationalAuthority">go to full definition</a></small>
+      
+  </li>
   <li>
-    <strong>dpv:RegionalAuthority</strong>: An authority tasked with overseeing legal compliance for a region <br/>
-      narrower than:       <a href="#Authority"><code>dpv:Authority</code></a>
-; 
-    see <a href="#RegionalAuthority">complete term definition</a>
-    </li>
+    <strong>dpv:RegionalAuthority</strong>: An authority tasked with overseeing legal compliance for a region 
+      <small><a href="#RegionalAuthority">go to full definition</a></small>
+      
+  </li>
   <li>
-    <strong>dpv:SupraNationalAuthority</strong>: An authority tasked with overseeing legal compliance for a supra-national union e.g. EU <br/>
-      narrower than:       <a href="#Authority"><code>dpv:Authority</code></a>
-; 
-    see <a href="#SupraNationalAuthority">complete term definition</a>
-    </li>
+    <strong>dpv:SupraNationalAuthority</strong>: An authority tasked with overseeing legal compliance for a supra-national union e.g. EU 
+      <small><a href="#SupraNationalAuthority">go to full definition</a></small>
+      
+  </li>
 </ul>
-
+  </li>
+</ul>
+  </li>
+</ul>
   </section>
 
   <section id="vocab-entities-organisation">
     <h2>Organisation</h2>
-    <ul>  <li>
-    <strong>dpv:AcademicScientificOrganisation</strong>: Organisations related to academia or scientific pursuits e.g. Universities, Schools, Research Bodies <br/>
-      narrower than:       <a href="#Organisation"><code>dpv:Organisation</code></a>
-; 
-    see <a href="#AcademicScientificOrganisation">complete term definition</a>
-    </li>
+    <ul class="concept-list">
   <li>
-    <strong>dpv:Entity</strong>: A human or non-human &#39;thing&#39; that constitutes as an entity <br/>
-    see <a href="#Entity">complete term definition</a>
-    </li>
+    <strong>dpv:Entity</strong>: A human or non-human &#39;thing&#39; that constitutes as an entity 
+      <small><a href="#Entity">go to full definition</a></small>
+      <ul class="concept-list">
   <li>
-    <strong>dpv:ForProfitOrganisation</strong>: An organisation that aims to achieve profit as its primary goal <br/>
-      narrower than:       <a href="#Organisation"><code>dpv:Organisation</code></a>
-; 
-    see <a href="#ForProfitOrganisation">complete term definition</a>
-    </li>
+    <strong>dpv:LegalEntity</strong>: A human or non-human &#39;thing&#39; that constitutes as an entity and which is recognised and defined in law 
+      <small><a href="#LegalEntity">go to full definition</a></small>
+      <ul class="concept-list">
   <li>
-    <strong>dpv:GovernmentalOrganisation</strong>: An organisation managed or part of government <br/>
-      narrower than:       <a href="#Organisation"><code>dpv:Organisation</code></a>
-; 
-    see <a href="#GovernmentalOrganisation">complete term definition</a>
-    </li>
+    <strong>dpv:Organisation</strong>: A general term reflecting a company or a business or a group acting as a unit 
+      <small><a href="#Organisation">go to full definition</a></small>
+      <ul class="concept-list">
   <li>
-    <strong>dpv:IndustryConsortium</strong>: A consortium established and comprising on industry organisations <br/>
-      narrower than:       <a href="#Organisation"><code>dpv:Organisation</code></a>
-; 
-    see <a href="#IndustryConsortium">complete term definition</a>
-    </li>
+    <strong>dpv:AcademicScientificOrganisation</strong>: Organisations related to academia or scientific pursuits e.g. Universities, Schools, Research Bodies 
+      <small><a href="#AcademicScientificOrganisation">go to full definition</a></small>
+      
+  </li>
   <li>
-    <strong>dpv:InternationalOrganisation</strong>: An organisation and its subordinate bodies governed by public international law, or any other body which is set up by, or on the basis of, an agreement between two or more countries <br/>
-      narrower than:       <a href="#Organisation"><code>dpv:Organisation</code></a>
-; 
-    see <a href="#InternationalOrganisation">complete term definition</a>
-    </li>
+    <strong>dpv:ForProfitOrganisation</strong>: An organisation that aims to achieve profit as its primary goal 
+      <small><a href="#ForProfitOrganisation">go to full definition</a></small>
+      
+  </li>
   <li>
-    <strong>dpv:LegalEntity</strong>: A human or non-human &#39;thing&#39; that constitutes as an entity and which is recognised and defined in law <br/>
-      narrower than:       <a href="#Entity"><code>dpv:Entity</code></a>
-; 
-    see <a href="#LegalEntity">complete term definition</a>
-    </li>
+    <strong>dpv:GovernmentalOrganisation</strong>: An organisation managed or part of government 
+      <small><a href="#GovernmentalOrganisation">go to full definition</a></small>
+      
+  </li>
   <li>
-    <strong>dpv:NonGovernmentalOrganisation</strong>: An organisation not part of or independent from the government <br/>
-      narrower than:       <a href="#Organisation"><code>dpv:Organisation</code></a>
-; 
-    see <a href="#NonGovernmentalOrganisation">complete term definition</a>
-    </li>
+    <strong>dpv:IndustryConsortium</strong>: A consortium established and comprising on industry organisations 
+      <small><a href="#IndustryConsortium">go to full definition</a></small>
+      
+  </li>
   <li>
-    <strong>dpv:NonProfitOrganisation</strong>: An organisation that does not aim to achieve profit as its primary goal <br/>
-      narrower than:       <a href="#Organisation"><code>dpv:Organisation</code></a>
-; 
-    see <a href="#NonProfitOrganisation">complete term definition</a>
-    </li>
+    <strong>dpv:InternationalOrganisation</strong>: An organisation and its subordinate bodies governed by public international law, or any other body which is set up by, or on the basis of, an agreement between two or more countries 
+      <small><a href="#InternationalOrganisation">go to full definition</a></small>
+      
+  </li>
   <li>
-    <strong>dpv:Organisation</strong>: A general term reflecting a company or a business or a group acting as a unit <br/>
-      narrower than:       <a href="#LegalEntity"><code>dpv:LegalEntity</code></a>
-; 
-    see <a href="#Organisation">complete term definition</a>
-    </li>
+    <strong>dpv:NonGovernmentalOrganisation</strong>: An organisation not part of or independent from the government 
+      <small><a href="#NonGovernmentalOrganisation">go to full definition</a></small>
+      
+  </li>
   <li>
-    <strong>dpv:OrganisationalUnit</strong>: Entity within an organisation that does not constitute as a separate legal entity <br/>
-      narrower than:       <a href="#Entity"><code>dpv:Entity</code></a>
-; 
-    see <a href="#OrganisationalUnit">complete term definition</a>
-    </li>
+    <strong>dpv:NonProfitOrganisation</strong>: An organisation that does not aim to achieve profit as its primary goal 
+      <small><a href="#NonProfitOrganisation">go to full definition</a></small>
+      
+  </li>
 </ul>
-
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:OrganisationalUnit</strong>: Entity within an organisation that does not constitute as a separate legal entity 
+      <small><a href="#OrganisationalUnit">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+</ul>
   </section>
 
   <section id="vocab-entities-datasubject">
     <h2>Data Subjects</h2>
     <p>DPV provides a taxonomy of data subject types to assist with describing what kind of individuals or groups are associated with an use-case. Some examples of such types are agency-based roles: [=Adult=] and [=Child=], [=ParentOfDataSubject=], [=GuardianOfDataSubject=]; those associated with vulnerability: [=VulnerableDataSubject=], [=ElderlyDataSubject=], [=AsylumSeeker=]; domain-specific roles such as [=Patient=], [=Employee=], [=Student=], jurisdictional roles such as [=Citizen=], [=NonCitizen=], [=Immigrant=]; and general roles such as [=User=], [=Member=], [=Participant=], and [=Client=].</p>
-    <ul>  <li>
-    <strong>dpv:Adult</strong>: A natural person that is not a child i.e. has attained some legally specified age of adulthood <br/>
-      narrower than:       <a href="#DataSubject"><code>dpv:DataSubject</code></a>
-; 
-    see <a href="#Adult">complete term definition</a>
-    </li>
+    <ul class="concept-list">
   <li>
-    <strong>dpv:Applicant</strong>: Data subjects that are applicants in some context <br/>
-      narrower than:       <a href="#DataSubject"><code>dpv:DataSubject</code></a>
-; 
-    see <a href="#Applicant">complete term definition</a>
-    </li>
+    <strong>dpv:LegalEntity</strong>: A human or non-human &#39;thing&#39; that constitutes as an entity and which is recognised and defined in law 
+      <small><a href="#LegalEntity">go to full definition</a></small>
+      <ul class="concept-list">
   <li>
-    <strong>dpv:AsylumSeeker</strong>: Data subjects that are asylum seekers <br/>
-      narrower than:       <a href="#VulnerableDataSubject"><code>dpv:VulnerableDataSubject</code></a>
-; 
-    see <a href="#AsylumSeeker">complete term definition</a>
-    </li>
+    <strong>dpv:DataSubject</strong>: The individual (or category of individuals) whose personal data is being processed 
+      <small><a href="#DataSubject">go to full definition</a></small>
+      <ul class="concept-list">
   <li>
-    <strong>dpv:Child</strong>: A &#39;child&#39; is a natural legal person who is below a certain legal age depending on the legal jurisdiction. <br/>
-      narrower than:       <a href="#DataSubject"><code>dpv:DataSubject</code></a>
-; 
-    see <a href="#Child">complete term definition</a>
-    </li>
+    <strong>dpv:Adult</strong>: A natural person that is not a child i.e. has attained some legally specified age of adulthood 
+      <small><a href="#Adult">go to full definition</a></small>
+      
+  </li>
   <li>
-    <strong>dpv:Citizen</strong>: Data subjects that are citizens (for a jurisdiction) <br/>
-      narrower than:       <a href="#DataSubject"><code>dpv:DataSubject</code></a>
-; 
-    see <a href="#Citizen">complete term definition</a>
-    </li>
+    <strong>dpv:Applicant</strong>: Data subjects that are applicants in some context 
+      <small><a href="#Applicant">go to full definition</a></small>
+      
+  </li>
   <li>
-    <strong>dpv:Client</strong>: Data subjects that are clients or recipients of services <br/>
-      narrower than:       <a href="#Customer"><code>dpv:Customer</code></a>
-; 
-    see <a href="#Client">complete term definition</a>
-    </li>
+    <strong>dpv:Child</strong>: A &#39;child&#39; is a natural legal person who is below a certain legal age depending on the legal jurisdiction. 
+      <small><a href="#Child">go to full definition</a></small>
+      
+  </li>
   <li>
-    <strong>dpv:Consumer</strong>: Data subjects that consume goods or services for direct use <br/>
-      narrower than:       <a href="#DataSubject"><code>dpv:DataSubject</code></a>
-; 
-    see <a href="#Consumer">complete term definition</a>
-    </li>
+    <strong>dpv:Citizen</strong>: Data subjects that are citizens (for a jurisdiction) 
+      <small><a href="#Citizen">go to full definition</a></small>
+      
+  </li>
   <li>
-    <strong>dpv:Customer</strong>: Data subjects that purchase goods or services <br/>
-      narrower than:       <a href="#DataSubject"><code>dpv:DataSubject</code></a>
-; 
-    see <a href="#Customer">complete term definition</a>
-    </li>
+    <strong>dpv:Consumer</strong>: Data subjects that consume goods or services for direct use 
+      <small><a href="#Consumer">go to full definition</a></small>
+      
+  </li>
   <li>
-    <strong>dpv:DataSubject</strong>: The individual (or category of individuals) whose personal data is being processed <br/>
-      narrower than:       <a href="#LegalEntity"><code>dpv:LegalEntity</code></a>,
-      <a href="#NaturalPerson"><code>dpv:NaturalPerson</code></a>
-; 
-    see <a href="#DataSubject">complete term definition</a>
-    </li>
+    <strong>dpv:Customer</strong>: Data subjects that purchase goods or services 
+      <small><a href="#Customer">go to full definition</a></small>
+      <ul class="concept-list">
   <li>
-    <strong>dpv:ElderlyDataSubject</strong>: Data subjects that are considered elderly (i.e. based on age) <br/>
-      narrower than:       <a href="#VulnerableDataSubject"><code>dpv:VulnerableDataSubject</code></a>
-; 
-    see <a href="#ElderlyDataSubject">complete term definition</a>
-    </li>
-  <li>
-    <strong>dpv:Employee</strong>: Data subjects that are employees <br/>
-      narrower than:       <a href="#DataSubject"><code>dpv:DataSubject</code></a>
-; 
-    see <a href="#Employee">complete term definition</a>
-    </li>
-  <li>
-    <strong>dpv:GuardianOfDataSubject</strong>: Guardian(s) of data subjects such as children <br/>
-      narrower than:       <a href="#DataSubject"><code>dpv:DataSubject</code></a>
-; 
-    see <a href="#GuardianOfDataSubject">complete term definition</a>
-    </li>
-  <li>
-    <strong>dpv:Immigrant</strong>: Data subjects that are immigrants (for a jurisdiction) <br/>
-      narrower than:       <a href="#DataSubject"><code>dpv:DataSubject</code></a>
-; 
-    see <a href="#Immigrant">complete term definition</a>
-    </li>
-  <li>
-    <strong>dpv:JobApplicant</strong>: Data subjects that apply for jobs or employments <br/>
-      narrower than:       <a href="#DataSubject"><code>dpv:DataSubject</code></a>
-; 
-    see <a href="#JobApplicant">complete term definition</a>
-    </li>
-  <li>
-    <strong>dpv:LegalEntity</strong>: A human or non-human &#39;thing&#39; that constitutes as an entity and which is recognised and defined in law <br/>
-      narrower than:       <a href="#Entity"><code>dpv:Entity</code></a>
-; 
-    see <a href="#LegalEntity">complete term definition</a>
-    </li>
-  <li>
-    <strong>dpv:Member</strong>: Data subjects that are members of a group, organisation, or other collectives <br/>
-      narrower than:       <a href="#DataSubject"><code>dpv:DataSubject</code></a>
-; 
-    see <a href="#Member">complete term definition</a>
-    </li>
-  <li>
-    <strong>dpv:MentallyVulnerableDataSubject</strong>: Data subjects that are considered mentally vulnerable <br/>
-      narrower than:       <a href="#VulnerableDataSubject"><code>dpv:VulnerableDataSubject</code></a>
-; 
-    see <a href="#MentallyVulnerableDataSubject">complete term definition</a>
-    </li>
-  <li>
-    <strong>dpv:NaturalPerson</strong>: A human <br/>
-      narrower than:       <a href="#Entity"><code>dpv:Entity</code></a>
-; 
-    see <a href="#NaturalPerson">complete term definition</a>
-    </li>
-  <li>
-    <strong>dpv:NonCitizen</strong>: Data subjects that are not citizens (for a jurisdiction) <br/>
-      narrower than:       <a href="#DataSubject"><code>dpv:DataSubject</code></a>
-; 
-    see <a href="#NonCitizen">complete term definition</a>
-    </li>
-  <li>
-    <strong>dpv:ParentOfDataSubject</strong>: Parent(s) of data subjects such as children <br/>
-      narrower than:       <a href="#DataSubject"><code>dpv:DataSubject</code></a>
-; 
-    see <a href="#ParentOfDataSubject">complete term definition</a>
-    </li>
-  <li>
-    <strong>dpv:Participant</strong>: Data subjects that participate in some context such as volunteers in a function <br/>
-      narrower than:       <a href="#DataSubject"><code>dpv:DataSubject</code></a>
-; 
-    see <a href="#Participant">complete term definition</a>
-    </li>
-  <li>
-    <strong>dpv:Patient</strong>: Data subjects that receive medican attention, treatment, care, advice, or other health related services <br/>
-      narrower than:       <a href="#DataSubject"><code>dpv:DataSubject</code></a>
-; 
-    see <a href="#Patient">complete term definition</a>
-    </li>
-  <li>
-    <strong>dpv:Student</strong>: Data subjects that are students <br/>
-      narrower than:       <a href="#DataSubject"><code>dpv:DataSubject</code></a>
-; 
-    see <a href="#Student">complete term definition</a>
-    </li>
-  <li>
-    <strong>dpv:Subscriber</strong>: Data subjects that subscribe to service(s) <br/>
-      narrower than:       <a href="#DataSubject"><code>dpv:DataSubject</code></a>
-; 
-    see <a href="#Subscriber">complete term definition</a>
-    </li>
-  <li>
-    <strong>dpv:Tourist</strong>: Data subjects that are tourists i.e. not citizens and not immigrants <br/>
-      narrower than:       <a href="#DataSubject"><code>dpv:DataSubject</code></a>
-; 
-    see <a href="#Tourist">complete term definition</a>
-    </li>
-  <li>
-    <strong>dpv:User</strong>: Data subjects that use service(s) <br/>
-      narrower than:       <a href="#DataSubject"><code>dpv:DataSubject</code></a>
-; 
-    see <a href="#User">complete term definition</a>
-    </li>
-  <li>
-    <strong>dpv:Visitor</strong>: Data subjects that are temporary visitors <br/>
-      narrower than:       <a href="#DataSubject"><code>dpv:DataSubject</code></a>
-; 
-    see <a href="#Visitor">complete term definition</a>
-    </li>
-  <li>
-    <strong>dpv:VulnerableDataSubject</strong>: Data Subjects which should be considered &#39;vulnerable&#39; and therefore would require additional measures and safeguards <br/>
-      narrower than:       <a href="#DataSubject"><code>dpv:DataSubject</code></a>
-; 
-    see <a href="#VulnerableDataSubject">complete term definition</a>
-    </li>
+    <strong>dpv:Client</strong>: Data subjects that are clients or recipients of services 
+      <small><a href="#Client">go to full definition</a></small>
+      
+  </li>
 </ul>
-
+  </li>
+  <li>
+    <strong>dpv:Employee</strong>: Data subjects that are employees 
+      <small><a href="#Employee">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:GuardianOfDataSubject</strong>: Guardian(s) of data subjects such as children 
+      <small><a href="#GuardianOfDataSubject">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:Immigrant</strong>: Data subjects that are immigrants (for a jurisdiction) 
+      <small><a href="#Immigrant">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:JobApplicant</strong>: Data subjects that apply for jobs or employments 
+      <small><a href="#JobApplicant">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:Member</strong>: Data subjects that are members of a group, organisation, or other collectives 
+      <small><a href="#Member">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:NonCitizen</strong>: Data subjects that are not citizens (for a jurisdiction) 
+      <small><a href="#NonCitizen">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:ParentOfDataSubject</strong>: Parent(s) of data subjects such as children 
+      <small><a href="#ParentOfDataSubject">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:Participant</strong>: Data subjects that participate in some context such as volunteers in a function 
+      <small><a href="#Participant">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:Patient</strong>: Data subjects that receive medican attention, treatment, care, advice, or other health related services 
+      <small><a href="#Patient">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:Student</strong>: Data subjects that are students 
+      <small><a href="#Student">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:Subscriber</strong>: Data subjects that subscribe to service(s) 
+      <small><a href="#Subscriber">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:Tourist</strong>: Data subjects that are tourists i.e. not citizens and not immigrants 
+      <small><a href="#Tourist">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:User</strong>: Data subjects that use service(s) 
+      <small><a href="#User">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:Visitor</strong>: Data subjects that are temporary visitors 
+      <small><a href="#Visitor">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:VulnerableDataSubject</strong>: Data Subjects which should be considered &#39;vulnerable&#39; and therefore would require additional measures and safeguards 
+      <small><a href="#VulnerableDataSubject">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:AsylumSeeker</strong>: Data subjects that are asylum seekers 
+      <small><a href="#AsylumSeeker">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:ElderlyDataSubject</strong>: Data subjects that are considered elderly (i.e. based on age) 
+      <small><a href="#ElderlyDataSubject">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:MentallyVulnerableDataSubject</strong>: Data subjects that are considered mentally vulnerable 
+      <small><a href="#MentallyVulnerableDataSubject">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:NaturalPerson</strong>: A human 
+      <small><a href="#NaturalPerson">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:DataSubject</strong>: The individual (or category of individuals) whose personal data is being processed 
+      <small><a href="#DataSubject">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:Adult</strong>: A natural person that is not a child i.e. has attained some legally specified age of adulthood 
+      <small><a href="#Adult">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:Applicant</strong>: Data subjects that are applicants in some context 
+      <small><a href="#Applicant">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:Child</strong>: A &#39;child&#39; is a natural legal person who is below a certain legal age depending on the legal jurisdiction. 
+      <small><a href="#Child">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:Citizen</strong>: Data subjects that are citizens (for a jurisdiction) 
+      <small><a href="#Citizen">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:Consumer</strong>: Data subjects that consume goods or services for direct use 
+      <small><a href="#Consumer">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:Customer</strong>: Data subjects that purchase goods or services 
+      <small><a href="#Customer">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:Client</strong>: Data subjects that are clients or recipients of services 
+      <small><a href="#Client">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:Employee</strong>: Data subjects that are employees 
+      <small><a href="#Employee">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:GuardianOfDataSubject</strong>: Guardian(s) of data subjects such as children 
+      <small><a href="#GuardianOfDataSubject">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:Immigrant</strong>: Data subjects that are immigrants (for a jurisdiction) 
+      <small><a href="#Immigrant">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:JobApplicant</strong>: Data subjects that apply for jobs or employments 
+      <small><a href="#JobApplicant">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:Member</strong>: Data subjects that are members of a group, organisation, or other collectives 
+      <small><a href="#Member">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:NonCitizen</strong>: Data subjects that are not citizens (for a jurisdiction) 
+      <small><a href="#NonCitizen">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:ParentOfDataSubject</strong>: Parent(s) of data subjects such as children 
+      <small><a href="#ParentOfDataSubject">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:Participant</strong>: Data subjects that participate in some context such as volunteers in a function 
+      <small><a href="#Participant">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:Patient</strong>: Data subjects that receive medican attention, treatment, care, advice, or other health related services 
+      <small><a href="#Patient">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:Student</strong>: Data subjects that are students 
+      <small><a href="#Student">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:Subscriber</strong>: Data subjects that subscribe to service(s) 
+      <small><a href="#Subscriber">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:Tourist</strong>: Data subjects that are tourists i.e. not citizens and not immigrants 
+      <small><a href="#Tourist">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:User</strong>: Data subjects that use service(s) 
+      <small><a href="#User">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:Visitor</strong>: Data subjects that are temporary visitors 
+      <small><a href="#Visitor">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:VulnerableDataSubject</strong>: Data Subjects which should be considered &#39;vulnerable&#39; and therefore would require additional measures and safeguards 
+      <small><a href="#VulnerableDataSubject">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:AsylumSeeker</strong>: Data subjects that are asylum seekers 
+      <small><a href="#AsylumSeeker">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:ElderlyDataSubject</strong>: Data subjects that are considered elderly (i.e. based on age) 
+      <small><a href="#ElderlyDataSubject">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:MentallyVulnerableDataSubject</strong>: Data subjects that are considered mentally vulnerable 
+      <small><a href="#MentallyVulnerableDataSubject">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
   </section>
 
   <section>
@@ -804,7 +878,7 @@
         <span class="dfn-label">Label:</span> <i>Academic or Scientific Organisation</i><br/>
         <span class="dfn-label">Description:</span> <i>Organisations related to academia or scientific pursuits e.g. Universities, Schools, Research Bodies</i><br/>
         <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
-<span class="dfn-label">Source:</span> <i>(ADMS controlled vocabulary,http://purl.org/adms)</i><br/>      </p>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Organisation">dpv:Organisation</a></i><br/><span class="dfn-label">Source:</span> <i>(ADMS controlled vocabulary,http://purl.org/adms)</i><br/>      </p>
       </div>
     </section>
     <section class="term-def" id="Adult">
@@ -856,7 +930,7 @@
         <span class="dfn-label">Label:</span> <i>Authority</i><br/>
         <span class="dfn-label">Description:</span> <i>An authority with the power to create or enforce laws, or determine their compliance.</i><br/>
         <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
-      </p>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#GovernmentalOrganisation">dpv:GovernmentalOrganisation</a></i><br/>      </p>
       </div>
     </section>
     <section class="term-def" id="Child">
@@ -934,7 +1008,7 @@
         <span class="dfn-label">Label:</span> <i>Data Controller</i><br/>
         <span class="dfn-label">Description:</span> <i>The individual or organisation that decides (or controls) the purpose(s) of processing personal data.</i><br/>
 <span class="dfn-label">Usage Note:</span> <i>The terms &#39;Controller&#39;, &#39;Data Controller&#39;, and &#39;PII Controller&#39; refer to the same concept</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
-<span class="dfn-label">Source:</span> <i>(GDPR Art.4-7g,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_7/oj)</i><br/>      </p>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#LegalEntity">dpv:LegalEntity</a></i><br/><span class="dfn-label">Source:</span> <i>(GDPR Art.4-7g,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_7/oj)</i><br/>      </p>
       </div>
     </section>
     <section class="term-def" id="DataExporter">
@@ -947,7 +1021,7 @@
         <span class="dfn-label">Label:</span> <i>Data Exporter</i><br/>
         <span class="dfn-label">Description:</span> <i>An entity that &#39;exports&#39; data where exporting is considered a form of data transfer</i><br/>
 <span class="dfn-label">Usage Note:</span> <i>The term &#39;Data Exporter&#39; is used by the EU-EDPB as the entity that transfer data across borders. While the EDPB refers to the jurisdictional border of EU, the term within DPV can be used to denote any &#39;export&#39; or transfer or transmission of data and is thus a broader concept than the EDPB&#39;s definition.</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
-<span class="dfn-label">Source:</span> <i>(EDPB Recommendations 01/2020 on Data Transfers, https://edpb.europa.eu/our-work-tools/our-documents/recommendations/recommendations-012020-measures-supplement-transfer_en)</i><br/>      </p>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#LegalEntity">dpv:LegalEntity</a></i><br/><span class="dfn-label">Source:</span> <i>(EDPB Recommendations 01/2020 on Data Transfers, https://edpb.europa.eu/our-work-tools/our-documents/recommendations/recommendations-012020-measures-supplement-transfer_en)</i><br/>      </p>
       </div>
     </section>
     <section class="term-def" id="DataImporter">
@@ -960,7 +1034,7 @@
         <span class="dfn-label">Label:</span> <i>Data Importer</i><br/>
         <span class="dfn-label">Description:</span> <i>An entity that &#39;imports&#39; data where importing is considered a form of data transfer</i><br/>
 <span class="dfn-label">Usage Note:</span> <i>The term &#39;Data Importer&#39; is used by the EU-EDPB as the entity that receives transferred data across borders. While the EDPB refers to the jurisdictional border of EU, the term within DPV can be used to denote any &#39;import&#39; or reception of transfer or transmission of data and is thus a broader concept than the EDPB&#39;s definition.</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
-<span class="dfn-label">Source:</span> <i>(EDPB Recommendations 01/2020 on Data Transfers, https://edpb.europa.eu/our-work-tools/our-documents/recommendations/recommendations-012020-measures-supplement-transfer_en)</i><br/>      </p>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Recipient">dpv:Recipient</a></i><br/><span class="dfn-label">Source:</span> <i>(EDPB Recommendations 01/2020 on Data Transfers, https://edpb.europa.eu/our-work-tools/our-documents/recommendations/recommendations-012020-measures-supplement-transfer_en)</i><br/>      </p>
       </div>
     </section>
     <section class="term-def" id="DataProcessor">
@@ -973,7 +1047,7 @@
         <span class="dfn-label">Label:</span> <i>Data Processor</i><br/>
         <span class="dfn-label">Description:</span> <i>A ‘processor’ means a natural or legal person, public authority, agency or other body which processes personal data on behalf of the controller.</i><br/>
         <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
-<span class="dfn-label">Source:</span> <i>(GDPR Art.4-8,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_8/oj)</i><br/>      </p>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Recipient">dpv:Recipient</a></i><br/><span class="dfn-label">Source:</span> <i>(GDPR Art.4-8,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_8/oj)</i><br/>      </p>
       </div>
     </section>
     <section class="term-def" id="DataProtectionAuthority">
@@ -986,7 +1060,7 @@
         <span class="dfn-label">Label:</span> <i>Data Protection Authority</i><br/>
         <span class="dfn-label">Description:</span> <i>An authority tasked with overseeing legal compliance regarding privacy and data protection laws.</i><br/>
         <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
-      </p>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Authority">dpv:Authority</a></i><br/>      </p>
       </div>
     </section>
     <section class="term-def" id="DataProtectionOfficer">
@@ -999,7 +1073,7 @@
         <span class="dfn-label">Label:</span> <i>Data Protection Officer</i><br/>
         <span class="dfn-label">Description:</span> <i>An entity within or authorised by an organisation to monitor internal compliance, inform and advise on data protection obligations and act as a contact point for data subjects and the supervisory authority.</i><br/>
         <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
-<span class="dfn-label">Source:</span> <i>(GDPR Art.37,https://eur-lex.europa.eu/eli/reg/2016/679/art_37/oj)</i><br/>      </p>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Representative">dpv:Representative</a></i><br/><span class="dfn-label">Source:</span> <i>(GDPR Art.37,https://eur-lex.europa.eu/eli/reg/2016/679/art_37/oj)</i><br/>      </p>
       </div>
     </section>
     <section class="term-def" id="DataSubject">
@@ -1012,7 +1086,7 @@
         <span class="dfn-label">Label:</span> <i>Data Subject</i><br/>
         <span class="dfn-label">Description:</span> <i>The individual (or category of individuals) whose personal data is being processed</i><br/>
 <span class="dfn-label">Usage Note:</span> <i>The term &#39;data subject&#39; is specific to the GDPR, but is functionally equivalent to the term &#39;individual&#39; and the ISO/IEC term &#39;PII Principle&#39;.</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
-<span class="dfn-label">Source:</span> <i>(GDPR Art.4-1g,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_1/oj)</i><br/>      </p>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#LegalEntity">dpv:LegalEntity</a>, <a href="https://w3id.org/dpv#NaturalPerson">dpv:NaturalPerson</a></i><br/><span class="dfn-label">Source:</span> <i>(GDPR Art.4-1g,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_1/oj)</i><br/>      </p>
       </div>
     </section>
     <section class="term-def" id="DataSubProcessor">
@@ -1025,7 +1099,7 @@
         <span class="dfn-label">Label:</span> <i>Data Sub-Processor</i><br/>
         <span class="dfn-label">Description:</span> <i>A &#39;sub-processor&#39; is a processor engaged by another processor</i><br/>
 <span class="dfn-label">Usage Note:</span> <i>A &#39;Sub-Processor&#39; is always a &#39;Processor&#39; with the distinction of not directly being appointed by the &#39;Controller&#39;</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
-      </p>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#DataProcessor">dpv:DataProcessor</a></i><br/>      </p>
       </div>
     </section>
     <section class="term-def" id="ElderlyDataSubject">
@@ -1077,7 +1151,7 @@
         <span class="dfn-label">Label:</span> <i>For-Profit Organisation</i><br/>
         <span class="dfn-label">Description:</span> <i>An organisation that aims to achieve profit as its primary goal</i><br/>
         <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
-      </p>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Organisation">dpv:Organisation</a></i><br/>      </p>
       </div>
     </section>
     <section class="term-def" id="GovernmentalOrganisation">
@@ -1090,7 +1164,7 @@
         <span class="dfn-label">Label:</span> <i>Governmental Organisation</i><br/>
         <span class="dfn-label">Description:</span> <i>An organisation managed or part of government</i><br/>
         <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
-      </p>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Organisation">dpv:Organisation</a></i><br/>      </p>
       </div>
     </section>
     <section class="term-def" id="GuardianOfDataSubject">
@@ -1129,7 +1203,7 @@
         <span class="dfn-label">Label:</span> <i>Industry Consortium</i><br/>
         <span class="dfn-label">Description:</span> <i>A consortium established and comprising on industry organisations</i><br/>
         <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
-<span class="dfn-label">Source:</span> <i>(ADMS controlled vocabulary,http://purl.org/adms)</i><br/>      </p>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Organisation">dpv:Organisation</a></i><br/><span class="dfn-label">Source:</span> <i>(ADMS controlled vocabulary,http://purl.org/adms)</i><br/>      </p>
       </div>
     </section>
     <section class="term-def" id="InternationalOrganisation">
@@ -1142,7 +1216,7 @@
         <span class="dfn-label">Label:</span> <i>International Organisation</i><br/>
         <span class="dfn-label">Description:</span> <i>An organisation and its subordinate bodies governed by public international law, or any other body which is set up by, or on the basis of, an agreement between two or more countries</i><br/>
         <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
-<span class="dfn-label">Source:</span> <i>(GDPR Art.4-26,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_26/oj)</i><br/>      </p>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Organisation">dpv:Organisation</a></i><br/><span class="dfn-label">Source:</span> <i>(GDPR Art.4-26,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_26/oj)</i><br/>      </p>
       </div>
     </section>
     <section class="term-def" id="JobApplicant">
@@ -1168,7 +1242,7 @@
         <span class="dfn-label">Label:</span> <i>Joint Data Controllers</i><br/>
         <span class="dfn-label">Description:</span> <i>A group of Data Controllers that jointly determine the purposes and means of processing</i><br/>
 <span class="dfn-label">Usage Note:</span> <i>While Joint Data Controllers operate together, they are made up of individually distinct legal entities. To indicate the membership of this group, hasDataController should be used to denote each Data Controller. The concept of Joint Data Controllers also allows specifying a single group as the &#39;Controller&#39; and to specify role and responsibilities within that group for each entity using DPV&#39;s concepts (e.g. isImplementedByEntity)</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
-      </p>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#DataController">dpv:DataController</a></i><br/>      </p>
       </div>
     </section>
     <section class="term-def" id="LegalEntity">
@@ -1181,7 +1255,7 @@
         <span class="dfn-label">Label:</span> <i>Legal Entity</i><br/>
         <span class="dfn-label">Description:</span> <i>A human or non-human &#39;thing&#39; that constitutes as an entity and which is recognised and defined in law</i><br/>
         <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
-      </p>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Entity">dpv:Entity</a></i><br/>      </p>
       </div>
     </section>
     <section class="term-def" id="Member">
@@ -1220,7 +1294,7 @@
         <span class="dfn-label">Label:</span> <i>National Authority</i><br/>
         <span class="dfn-label">Description:</span> <i>An authority tasked with overseeing legal compliance for a nation</i><br/>
         <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
-<span class="dfn-label">Source:</span> <i>(ADMS controlled vocabulary,http://purl.org/adms)</i><br/>      </p>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Authority">dpv:Authority</a></i><br/><span class="dfn-label">Source:</span> <i>(ADMS controlled vocabulary,http://purl.org/adms)</i><br/>      </p>
       </div>
     </section>
     <section class="term-def" id="NaturalPerson">
@@ -1233,7 +1307,7 @@
         <span class="dfn-label">Label:</span> <i>Natural Person</i><br/>
         <span class="dfn-label">Description:</span> <i>A human</i><br/>
         <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
-      </p>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Entity">dpv:Entity</a></i><br/>      </p>
       </div>
     </section>
     <section class="term-def" id="NonCitizen">
@@ -1259,7 +1333,7 @@
         <span class="dfn-label">Label:</span> <i>Non-Governmental Organisation</i><br/>
         <span class="dfn-label">Description:</span> <i>An organisation not part of or independent from the government</i><br/>
         <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
-<span class="dfn-label">Source:</span> <i>(ADMS controlled vocabulary,http://purl.org/adms)</i><br/>      </p>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Organisation">dpv:Organisation</a></i><br/><span class="dfn-label">Source:</span> <i>(ADMS controlled vocabulary,http://purl.org/adms)</i><br/>      </p>
       </div>
     </section>
     <section class="term-def" id="NonProfitOrganisation">
@@ -1272,7 +1346,7 @@
         <span class="dfn-label">Label:</span> <i>Non-Profit Organisation</i><br/>
         <span class="dfn-label">Description:</span> <i>An organisation that does not aim to achieve profit as its primary goal</i><br/>
         <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
-<span class="dfn-label">Source:</span> <i>(ADMS controlled vocabulary,http://purl.org/adms)</i><br/>      </p>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Organisation">dpv:Organisation</a></i><br/><span class="dfn-label">Source:</span> <i>(ADMS controlled vocabulary,http://purl.org/adms)</i><br/>      </p>
       </div>
     </section>
     <section class="term-def" id="Organisation">
@@ -1285,7 +1359,7 @@
         <span class="dfn-label">Label:</span> <i>Organisation</i><br/>
         <span class="dfn-label">Description:</span> <i>A general term reflecting a company or a business or a group acting as a unit</i><br/>
         <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
-      </p>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#LegalEntity">dpv:LegalEntity</a></i><br/>      </p>
       </div>
     </section>
     <section class="term-def" id="OrganisationalUnit">
@@ -1298,7 +1372,7 @@
         <span class="dfn-label">Label:</span> <i>Organisational Unit</i><br/>
         <span class="dfn-label">Description:</span> <i>Entity within an organisation that does not constitute as a separate legal entity</i><br/>
         <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
-      </p>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Entity">dpv:Entity</a></i><br/>      </p>
       </div>
     </section>
     <section class="term-def" id="ParentOfDataSubject">
@@ -1350,7 +1424,7 @@
         <span class="dfn-label">Label:</span> <i>Recipient</i><br/>
         <span class="dfn-label">Description:</span> <i>Entities that receive personal data</i><br/>
 <span class="dfn-label">Usage Note:</span> <i>A recipient of personal data can be used to indicate any entity that receives personal data. This can be a Third Party, Processor (GDPR), or even a Controller.</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
-<span class="dfn-label">Source:</span> <i>(SPECIAL Project,https://specialprivacy.ercim.eu/),(GDPR Art.4-9g,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_9/oj)</i><br/><span class="dfn-label">Related:</span> <i>spl:AnyRecipient</i><br/>      </p>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#LegalEntity">dpv:LegalEntity</a></i><br/><span class="dfn-label">Source:</span> <i>(SPECIAL Project,https://specialprivacy.ercim.eu/),(GDPR Art.4-9g,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_9/oj)</i><br/><span class="dfn-label">Related:</span> <i>spl:AnyRecipient</i><br/>      </p>
       </div>
     </section>
     <section class="term-def" id="RegionalAuthority">
@@ -1363,7 +1437,7 @@
         <span class="dfn-label">Label:</span> <i>Regional Authority</i><br/>
         <span class="dfn-label">Description:</span> <i>An authority tasked with overseeing legal compliance for a region</i><br/>
         <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
-<span class="dfn-label">Source:</span> <i>(ADMS controlled vocabulary,http://purl.org/adms)</i><br/>      </p>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Authority">dpv:Authority</a></i><br/><span class="dfn-label">Source:</span> <i>(ADMS controlled vocabulary,http://purl.org/adms)</i><br/>      </p>
       </div>
     </section>
     <section class="term-def" id="Representative">
@@ -1376,7 +1450,7 @@
         <span class="dfn-label">Label:</span> <i>Representative</i><br/>
         <span class="dfn-label">Description:</span> <i>A representative of a legal entity</i><br/>
         <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
-<span class="dfn-label">Source:</span> <i>(GDPR Art.27,https://eur-lex.europa.eu/eli/reg/2016/679/art_27/oj)</i><br/>      </p>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#LegalEntity">dpv:LegalEntity</a></i><br/><span class="dfn-label">Source:</span> <i>(GDPR Art.27,https://eur-lex.europa.eu/eli/reg/2016/679/art_27/oj)</i><br/>      </p>
       </div>
     </section>
     <section class="term-def" id="Student">
@@ -1415,7 +1489,7 @@
         <span class="dfn-label">Label:</span> <i>Supra-National Authority</i><br/>
         <span class="dfn-label">Description:</span> <i>An authority tasked with overseeing legal compliance for a supra-national union e.g. EU</i><br/>
         <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
-<span class="dfn-label">Source:</span> <i>(ADMS controlled vocabulary,http://purl.org/adms)</i><br/>      </p>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Authority">dpv:Authority</a></i><br/><span class="dfn-label">Source:</span> <i>(ADMS controlled vocabulary,http://purl.org/adms)</i><br/>      </p>
       </div>
     </section>
     <section class="term-def" id="ThirdParty">
@@ -1428,7 +1502,7 @@
         <span class="dfn-label">Label:</span> <i>Third Party</i><br/>
         <span class="dfn-label">Description:</span> <i>A ‘third party’ means a natural or legal person, public authority, agency or body other than the data subject, controller, processor and people who, under the direct authority of the controller or processor, are authorised to process personal data.</i><br/>
         <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
-<span class="dfn-label">Source:</span> <i>(GDPR Art.4-10,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_10/oj)</i><br/>      </p>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Recipient">dpv:Recipient</a></i><br/><span class="dfn-label">Source:</span> <i>(GDPR Art.4-10,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_10/oj)</i><br/>      </p>
       </div>
     </section>
     <section class="term-def" id="Tourist">
@@ -1759,6 +1833,32 @@
       </ul>
     <p>The following external concepts are re-used within DPV:</p>
     <h3>External</h3>
+    <section class="term-def" id="">
+      <h4></h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn></dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href=""></a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href=""></a>
+        <span class="dfn-label">Label:</span> <i></i><br/>
+        <span class="dfn-label">Description:</span> <i></i><br/>
+        <span class="dfn-label">Type:</span> <i></i><br/>
+      </p>
+      </div>
+    </section>
+    <section class="term-def" id="">
+      <h4></h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn></dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href=""></a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href=""></a>
+        <span class="dfn-label">Label:</span> <i></i><br/>
+        <span class="dfn-label">Description:</span> <i></i><br/>
+        <span class="dfn-label">Type:</span> <i></i><br/>
+      </p>
+      </div>
+    </section>
 
   </section>
 </section>

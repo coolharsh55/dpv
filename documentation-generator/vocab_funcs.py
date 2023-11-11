@@ -63,11 +63,15 @@ def construct_parent(item, data, namespace):
             parent = NAMESPACES[prefix][parentterm]
         if data['ParentType'] == 'a':
             triples.append((namespace[term], RDF.type, parent))
+            if parent.startswith('https://w3id.org/dpv'):
+                    triples.append((namespace[term], SKOS.broader, parent))
+                    triples.append((parent, SKOS.narrower, namespace[term]))
         elif data['ParentType'] == 'sc':
             triples.append((namespace[term], RDFS.subClassOf, parent))
             triples.append((parent, RDFS.superClassOf, namespace[term]))
-            triples.append((namespace[term], SKOS.broader, parent))
-            triples.append((parent, SKOS.narrower, namespace[term]))
+            if parent.startswith('https://w3id.org/dpv'):
+                    triples.append((namespace[term], SKOS.broader, parent))
+                    triples.append((parent, SKOS.narrower, namespace[term]))
     return triples
 
 
@@ -96,9 +100,15 @@ def construct_parent_taxonomy(item, data, namespace):
         for parent in parents:
             if item == 'a': # instance
                 triples.append((namespace[term], RDF.type, parent))
+                if parent.startswith('https://w3id.org/dpv'):
+                    triples.append((namespace[term], SKOS.broader, parent))
+                    triples.append((parent, SKOS.narrower, namespace[term]))
             elif item == 'sc': # subclass
                 triples.append((namespace[term], RDFS.subClassOf, parent))
                 triples.append((parent, RDFS.superClassOf, namespace[term]))
+                if parent.startswith('https://w3id.org/dpv'):
+                    triples.append((namespace[term], SKOS.broader, parent))
+                    triples.append((parent, SKOS.narrower, namespace[term]))
         return triples
     # parent is a topconcept
     prefix_top, topconcept = data['ParentType'].split(':')

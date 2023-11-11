@@ -13,6 +13,7 @@ tech:CommunicationMechanism a rdfs:Class,
     rdfs:subClassOf rdfs:Class ;
     sw:term_status "accepted"@en ;
     skos:definition "Communication mechanism used or provided by Technologoy"@en ;
+    skos:inScheme tech:core-classes ;
     skos:prefLabel "Communication Mechanism"@en .
 
 tech:DataTechnology a rdfs:Class,
@@ -21,6 +22,7 @@ tech:DataTechnology a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:Technology ;
     skos:definition "Technology that uses or interacts with data"@en ;
+    skos:inScheme tech:core-classes ;
     skos:prefLabel "Data Technology"@en .
 
 tech:IdentityTechnology a rdfs:Class,
@@ -29,6 +31,7 @@ tech:IdentityTechnology a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:Technology ;
     skos:definition "Technology related to identity or identifiers"@en ;
+    skos:inScheme tech:core-classes ;
     skos:prefLabel "Identity Technology"@en .
 
 tech:ManagementTechnology a rdfs:Class,
@@ -37,6 +40,7 @@ tech:ManagementTechnology a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:Technology ;
     skos:definition "Technology that enables or provides management"@en ;
+    skos:inScheme tech:core-classes ;
     skos:prefLabel "Management Technology"@en .
 
 tech:OperationalTechnology a rdfs:Class,
@@ -45,6 +49,7 @@ tech:OperationalTechnology a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:Technology ;
     skos:definition "Technology that enables or performs or executes operations and processes"@en ;
+    skos:inScheme tech:core-classes ;
     skos:prefLabel "Operational Technology"@en .
 
 tech:SecurityTechnology a rdfs:Class,
@@ -53,6 +58,7 @@ tech:SecurityTechnology a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:Technology ;
     skos:definition "Technology that enables or provides security"@en ;
+    skos:inScheme tech:core-classes ;
     skos:prefLabel "Security Technology"@en .
 
 tech:SurveillanceTechnology a rdfs:Class,
@@ -61,13 +67,16 @@ tech:SurveillanceTechnology a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:Technology ;
     skos:definition "Technology related to surveillance of individuals or people"@en ;
+    skos:inScheme tech:core-classes ;
     skos:prefLabel "Surveillance Technology"@en .
 
 tech:TechnologyActor a rdfs:Class,
         skos:Concept ;
     rdfs:subClassOf dpv:Entity ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Entity ;
     skos:definition "Actors and Entities involved in provision, use, and management of Technology"@en ;
+    skos:inScheme tech:core-classes ;
     skos:prefLabel "Technology Actor"@en .
 
 tech:TechnologyProvisionMethod a rdfs:Class,
@@ -75,6 +84,7 @@ tech:TechnologyProvisionMethod a rdfs:Class,
     rdfs:subClassOf rdfs:Class ;
     sw:term_status "accepted"@en ;
     skos:definition "Method associated with provision or use of technology"@en ;
+    skos:inScheme tech:core-classes ;
     skos:prefLabel "Technology Provision Method"@en .
 
 tech:TechnologyReadinessLevel a rdfs:Class,
@@ -82,6 +92,7 @@ tech:TechnologyReadinessLevel a rdfs:Class,
     rdfs:subClassOf rdfs:Class ;
     sw:term_status "accepted"@en ;
     skos:definition "Indication of maturity of Technology (ISO 16290:2013)"@en ;
+    skos:inScheme tech:core-classes ;
     skos:prefLabel "Technology Readiness Level"@en .
 
 tech:TechnologyUsageLocation a rdfs:Class,
@@ -90,6 +101,7 @@ tech:TechnologyUsageLocation a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:Location ;
     skos:definition "Location for where technology is provided or used"@en ;
+    skos:inScheme tech:core-classes ;
     skos:prefLabel "Technology Usage Location"@en .
 
 tech:hasCommunicationMechanism a rdf:Property,
@@ -98,6 +110,7 @@ tech:hasCommunicationMechanism a rdf:Property,
     dcam:rangeIncludes dpv-tech:CommunicationMechanism ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates communication mechanisms used or provided by technology"@en ;
+    skos:inScheme tech:core-properties ;
     skos:prefLabel "has communication mechanism"@en ;
     schema:domainIncludes dpv:Technology ;
     schema:rangeIncludes dpv-tech:CommunicationMechanism .
@@ -108,6 +121,7 @@ tech:hasTRL a rdf:Property,
     dcam:rangeIncludes dpv-tech:TechnologyReadinessLevel ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates technology maturity level"@en ;
+    skos:inScheme tech:core-properties ;
     skos:prefLabel "has TRL"@en ;
     schema:domainIncludes dpv:Technology ;
     schema:rangeIncludes dpv-tech:TechnologyReadinessLevel .
@@ -118,13 +132,19 @@ tech:hasTechnologyActor a rdf:Property,
     dcam:rangeIncludes dpv-tech:TechnologyActor ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates an actor associated with technology"@en ;
+    skos:inScheme tech:core-properties ;
     skos:prefLabel "has technology actor"@en ;
     schema:domainIncludes dpv:Technology ;
     schema:rangeIncludes dpv-tech:TechnologyActor .
 
-dpv:Entity rdfs:superClassOf tech:TechnologyActor .
+dpv:Entity rdfs:superClassOf tech:TechnologyActor ;
+    skos:narrower tech:TechnologyActor .
 
 dpv:Location skos:narrower tech:TechnologyUsageLocation .
+
+tech:core-properties a skos:ConceptScheme .
+
+tech:core-classes a skos:ConceptScheme .
 
 rdfs:Class rdfs:superClassOf tech:CommunicationMechanism,
         tech:TechnologyProvisionMethod,

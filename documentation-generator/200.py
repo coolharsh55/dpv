@@ -124,7 +124,22 @@ for vocab, vocab_data in CSVFILES.items():
                     if not item:
                         continue
                     module_triples += func(item, row, namespace)
-        INFO(f'Triples: {len(module_triples)} accepted, {len(PROPOSED[vocab][module])} proposed')
+        classes = []
+        properties = []
+        for s, p, o in module_triples:
+            if p != RDF.type: continue
+            if o == RDFS.Class: classes.append(s)
+            elif o == RDF.Property: properties.append(s)
+        if classes:
+            module_triples.append((namespace[f"{module.replace('_','-')}-classes"], RDF.type, SKOS.ConceptScheme))
+            for c in classes:
+                module_triples.append((c, SKOS.inScheme, namespace[f"{module.replace('_','-')}-classes"]))
+        if properties:
+            module_triples.append((namespace[f"{module.replace('_','-')}-properties"], RDF.type, SKOS.ConceptScheme))
+            for p in properties:
+                module_triples.append((p, SKOS.inScheme, namespace[f"{module.replace('_','-')}-properties"]))
+        
+        INFO(f'Triples: {len(module_triples)} accepted for {len(classes)} classes and {len(properties)} properties, with {len(PROPOSED[vocab][module])} proposed')
         # export module triples
         exportpath = RDF_STRUCTURE[vocab]['modules']
         filepath = f'{exportpath}/{module}'

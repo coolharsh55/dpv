@@ -12,6 +12,7 @@ eu-dga:RightToDataConversionOptOut a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:Right ;
     skos:definition "Right of data subjects and data holders to opt-out of data conversions e.g. enhance interoperability or harmonisation with standards"@en ;
+    skos:inScheme eu-dga:legal-rights-classes ;
     skos:prefLabel "Right to Data Conversion Opt-out"@en .
 
 eu-dga:RightToImpartialReview a rdfs:Class,
@@ -21,6 +22,7 @@ eu-dga:RightToImpartialReview a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:Right ;
     skos:definition "Right of data subjects and data holders to get an review by an impartial body with the appropriate expertise"@en ;
+    skos:inScheme eu-dga:legal-rights-classes ;
     skos:prefLabel "Right to Impartial Review"@en .
 
 eu-dga:RightToLodgeComplaint a rdfs:Class,
@@ -30,7 +32,10 @@ eu-dga:RightToLodgeComplaint a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:Right ;
     skos:definition "Right of data subjects and data holders to lodge a complaint"@en ;
+    skos:inScheme eu-dga:legal-rights-classes ;
     skos:prefLabel "Right to Lodge Complaint"@en .
+
+eu-dga:legal-rights-classes a skos:ConceptScheme .
 
 dpv:Right skos:narrower eu-dga:RightToDataConversionOptOut,
         eu-dga:RightToImpartialReview,

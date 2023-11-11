@@ -11,6 +11,7 @@
 
 dcat:Resource a rdfs:Class,
         skos:Concept ;
+    skos:inScheme dpv:rights-classes ;
     skos:prefLabel "dcat:Resource"@en ;
     skos:scopeNote "A dataset, data service, or any other resource associated with Right Exercise - such as for providing a copy of personal data"@en .
 
@@ -20,6 +21,7 @@ dpv:ActiveRight a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:Right ;
     skos:definition "The right(s) applicable, provided, or expected that need to be (actively) exercised"@en ;
+    skos:inScheme dpv:rights-classes ;
     skos:note "Active rights require the entity to expressly exercise them. For example, a Data Subject exercising their right to withdraw their consent."@en ;
     skos:prefLabel "Active Right"@en .
 
@@ -29,6 +31,7 @@ dpv:DataSubjectRight a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:Right ;
     skos:definition "The rights applicable or provided to a Data Subject"@en ;
+    skos:inScheme dpv:rights-classes ;
     skos:note "Based on use of definitions, the notion of 'Data Subject Right' can be equivalent to 'Individual Right' or 'Right of a Person'"@en ;
     skos:prefLabel "Data Subject Right"@en .
 
@@ -38,6 +41,7 @@ dpv:PassiveRight a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:Right ;
     skos:definition "The right(s) applicable, provided, or expected that are always (passively) applicable"@en ;
+    skos:inScheme dpv:rights-classes ;
     skos:note "Passive rights do not require the entity to request or exercise them. They are considered to be always applicable. For example, the Right to Privacy (in EU) does not require an exercise for it to be fulfilled."@en ;
     skos:prefLabel "Passive Right"@en .
 
@@ -45,6 +49,7 @@ dpv:Right a rdfs:Class,
         skos:Concept ;
     sw:term_status "accepted"@en ;
     skos:definition "The right(s) applicable, provided, or expected"@en ;
+    skos:inScheme dpv:rights-classes ;
     skos:narrower dpv:ActiveRight,
         dpv:DataSubjectRight,
         dpv:PassiveRight ;
@@ -57,6 +62,7 @@ dpv:RightExerciseActivity a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:OrganisationalMeasure ;
     skos:definition "An activity representing an exercising of an active right"@en ;
+    skos:inScheme dpv:rights-classes ;
     skos:note "There may be multiple activities associated with exercising and fulfilling rights. See the RightExerciseRecord concept for record-keeping of such activities in a cohesive manner."@en ;
     skos:prefLabel "Right Exercise Activity"@en .
 
@@ -66,6 +72,7 @@ dpv:RightExerciseNotice a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:OrganisationalMeasure ;
     skos:definition "Information associated with exercising of an active right"@en ;
+    skos:inScheme dpv:rights-classes ;
     skos:note "This concept is intended for providing information regarding a right exercise. For specific instances of such exercises, see RightExerciseActivity and RightExerciseRecord."@en ;
     skos:prefLabel "Right Exercise Notice"@en .
 
@@ -75,6 +82,7 @@ dpv:RightExerciseRecord a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:Record ;
     skos:definition "Record of a Right being exercised"@en ;
+    skos:inScheme dpv:rights-classes ;
     skos:note "This concept represents a record of one or more right exercise activities, such as those associated with a single data subject or service or entity"@en ;
     skos:prefLabel "Right Exercise Record"@en .
 
@@ -84,6 +92,7 @@ dpv:RightFulfilmentNotice a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:Notice ;
     skos:definition "Notice provided regarding fulfilment of a right"@en ;
+    skos:inScheme dpv:rights-classes ;
     skos:note "This notice is associated with situations where information is provided with the intention of progressing the fulfilment of a right. For example, a notice asking for more information regarding the scope of the right, or providing information on where to access the data provided under a right."@en ;
     skos:prefLabel "Right Fulfilment Notice"@en .
 
@@ -93,16 +102,19 @@ dpv:RightNonFulfilmentNotice a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:Notice ;
     skos:definition "Notice provided regarding non-fulfilment of a right"@en ;
+    skos:inScheme dpv:rights-classes ;
     skos:note "This notice is associated with situations where information is provided with the intention of communicating non-fulfilment of a right. For example, to provide justifications on why a right could not be fulfilled or providing information about another entity  who should be approached for exercising this right."@en ;
     skos:prefLabel "Right Non-Fulfilment Notice"@en .
 
 dct:accessRights a rdf:Property,
         skos:Concept ;
+    skos:inScheme dpv:rights-properties ;
     skos:prefLabel "dct:accessRights"@en ;
     skos:scopeNote "Specfiying constraints on access associated with Rights Exercising (e.g. User must log in) or access to provided data (e.g. access via link)"@en .
 
 dct:format a rdf:Property,
         skos:Concept ;
+    skos:inScheme dpv:rights-properties ;
     skos:prefLabel "dct:format"@en ;
     skos:scopeNote "Specifying the format of provided information, for example a CSV dataset"@en .
 
@@ -110,6 +122,7 @@ dct:hasPart a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:RightExerciseRecord ;
     dcam:rangeIncludes dpv:RightExerciseActivity ;
+    skos:inScheme dpv:rights-properties ;
     skos:prefLabel "dct:hasPart"@en ;
     skos:scopeNote "Specifying a RightExerciseRecord has RightExerciseActivity as part of its records"@en ;
     schema:domainIncludes dpv:RightExerciseRecord ;
@@ -119,6 +132,7 @@ dct:isPartOf a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:RightExerciseActivity ;
     dcam:rangeIncludes dpv:RightExerciseRecord ;
+    skos:inScheme dpv:rights-properties ;
     skos:prefLabel "dct:isPartOf"@en ;
     skos:scopeNote "Specifying a RightExerciseActivity is part of a RightExerciseRecord"@en ;
     schema:domainIncludes dpv:RightExerciseActivity ;
@@ -126,12 +140,14 @@ dct:isPartOf a rdf:Property,
 
 dct:valid a rdf:Property,
         skos:Concept ;
+    skos:inScheme dpv:rights-properties ;
     skos:prefLabel "dct:valid"@en ;
     skos:scopeNote "Specfiying the temporal validity of an activity associated with Right Exercise. For example, limits on duration for providing or accessing provided information"@en .
 
 foaf:page a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:RightExerciseActivity ;
+    skos:inScheme dpv:rights-properties ;
     skos:prefLabel "foaf:page"@en ;
     skos:scopeNote "Indicates a web page or document providing information or functionality associated with a Right Exercise"@en ;
     schema:domainIncludes dpv:RightExerciseActivity .
@@ -140,6 +156,7 @@ dpv:hasJustification a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:RightExerciseActivity ;
     dcam:rangeIncludes dpv:Justification ;
+    skos:inScheme dpv:rights-properties ;
     skos:scopeNote "Specifying a justification for non-fulfilment of Right Exercise"@en ;
     schema:domainIncludes dpv:RightExerciseActivity ;
     schema:rangeIncludes dpv:Justification .
@@ -148,6 +165,7 @@ dpv:hasRecipient a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:RightExerciseActivity ;
     dcam:rangeIncludes dpv:Recipient ;
+    skos:inScheme dpv:rights-properties ;
     skos:scopeNote "Indicates the Recipient of a Right Exercise Activity"@en ;
     schema:domainIncludes dpv:RightExerciseActivity ;
     schema:rangeIncludes dpv:Recipient .
@@ -157,6 +175,7 @@ dpv:hasRight a rdf:Property,
     dcam:rangeIncludes dpv:Right ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates use or applicability of Right"@en ;
+    skos:inScheme dpv:rights-properties ;
     skos:prefLabel "has right"@en ;
     schema:rangeIncludes dpv:Right .
 
@@ -164,6 +183,7 @@ dpv:hasStatus a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:RightExerciseActivity ;
     dcam:rangeIncludes dpv:Status ;
+    skos:inScheme dpv:rights-properties ;
     skos:scopeNote "Indicates the status of a Right Exercise Activity"@en ;
     schema:domainIncludes dpv:RightExerciseActivity ;
     schema:rangeIncludes dpv:Status .
@@ -172,6 +192,7 @@ dpv:isAfter a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:RightExerciseActivity ;
     dcam:rangeIncludes dpv:RightExerciseActivity ;
+    skos:inScheme dpv:rights-properties ;
     skos:scopeNote "Specifying a RightExerciseActivity occurs before another RightExerciseActivity"@en ;
     schema:domainIncludes dpv:RightExerciseActivity ;
     schema:rangeIncludes dpv:RightExerciseActivity .
@@ -180,6 +201,7 @@ dpv:isBefore a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:RightExerciseActivity ;
     dcam:rangeIncludes dpv:RightExerciseActivity ;
+    skos:inScheme dpv:rights-properties ;
     skos:scopeNote "Specifying a RightExerciseActivity occurs before another RightExerciseActivity"@en ;
     schema:domainIncludes dpv:RightExerciseActivity ;
     schema:rangeIncludes dpv:RightExerciseActivity .
@@ -190,6 +212,7 @@ dpv:isExercisedAt a rdf:Property,
     dcam:rangeIncludes dpv:RightExerciseNotice ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates context or information about exercising a right"@en ;
+    skos:inScheme dpv:rights-properties ;
     skos:prefLabel "is exercised at"@en ;
     schema:domainIncludes dpv:ActiveRight ;
     schema:rangeIncludes dpv:RightExerciseNotice .
@@ -198,6 +221,7 @@ dpv:isImplementedByEntity a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:RightExerciseActivity ;
     dcam:rangeIncludes dpv:Entity ;
+    skos:inScheme dpv:rights-properties ;
     skos:scopeNote "Indicates the Entity that implements or performs a Right Exercise Activity"@en ;
     schema:domainIncludes dpv:RightExerciseActivity ;
     schema:rangeIncludes dpv:Entity .
@@ -209,4 +233,8 @@ dpv:Notice skos:narrower dpv:RightFulfilmentNotice,
 
 dpv:OrganisationalMeasure skos:narrower dpv:RightExerciseActivity,
         dpv:RightExerciseNotice .
+
+dpv:rights-classes a skos:ConceptScheme .
+
+dpv:rights-properties a skos:ConceptScheme .
 

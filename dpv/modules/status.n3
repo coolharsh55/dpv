@@ -12,6 +12,7 @@ dpv:ActivityCompleted a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:ActivityStatus ;
     skos:definition "State of an activity that has completed i.e. is fully in the past"@en ;
+    skos:inScheme dpv:status-classes ;
     skos:prefLabel "Activity Completed"@en .
 
 dpv:ActivityHalted a rdfs:Class,
@@ -20,6 +21,7 @@ dpv:ActivityHalted a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:ActivityStatus ;
     skos:definition "State of an activity that was occuring in the past, and has been halted or paused or stoped"@en ;
+    skos:inScheme dpv:status-classes ;
     skos:prefLabel "Activity Halted"@en .
 
 dpv:ActivityNotCompleted a rdfs:Class,
@@ -28,6 +30,7 @@ dpv:ActivityNotCompleted a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:ActivityStatus ;
     skos:definition "State of an activity that could not be completed, but has reached some end state"@en ;
+    skos:inScheme dpv:status-classes ;
     skos:note "This relates to a 'Stop' state as distinct from a 'Halt' state. It makes no comments on whether the Acitivity can be resumed or continued towards completion."@en ;
     skos:prefLabel "Acitivity Not Completed"@en .
 
@@ -37,6 +40,7 @@ dpv:ActivityOngoing a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:ActivityStatus ;
     skos:definition "State of an activity occuring in continuation i.e. currently ongoing"@en ;
+    skos:inScheme dpv:status-classes ;
     skos:prefLabel "Activity Ongoing"@en .
 
 dpv:ActivityProposed a rdfs:Class,
@@ -45,13 +49,16 @@ dpv:ActivityProposed a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:ActivityStatus ;
     skos:definition "State of an activity being proposed or planned i.e. yet to occur"@en ;
+    skos:inScheme dpv:status-classes ;
     skos:prefLabel "Activity Proposed"@en .
 
 dpv:ActivityStatus a rdfs:Class,
         skos:Concept ;
     rdfs:subClassOf dpv:Status ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Status ;
     skos:definition "Status associated with activity operations and lifecycles"@en ;
+    skos:inScheme dpv:status-classes ;
     skos:narrower dpv:ActivityCompleted,
         dpv:ActivityHalted,
         dpv:ActivityNotCompleted,
@@ -65,6 +72,7 @@ dpv:AuditApproved a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:AuditStatus ;
     skos:definition "State of being approved through the audit"@en ;
+    skos:inScheme dpv:status-classes ;
     skos:prefLabel "Audit Approved"@en .
 
 dpv:AuditConditionallyApproved a rdfs:Class,
@@ -73,6 +81,7 @@ dpv:AuditConditionallyApproved a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:AuditStatus ;
     skos:definition "State of being conditionally approved through the audit"@en ;
+    skos:inScheme dpv:status-classes ;
     skos:note "A \"conditional approval\" is intended to reflect states where the audit has identified further changes which must be implemented before considering the audit has been 'passed', without requiring another audit to validate them. This is distinct from the case where an audit has state 'rejected', which means changes must be made and submitted for review. The requirements of a 'conditional acceptance' are expected to be minor or not significant enough to warrant another audit to review them."@en ;
     skos:prefLabel "Audit Conditionally Approved"@en .
 
@@ -82,6 +91,7 @@ dpv:AuditNotRequired a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:AuditStatus ;
     skos:definition "State where an audit is determined as not being required"@en ;
+    skos:inScheme dpv:status-classes ;
     skos:prefLabel "Audit Not Required"@en .
 
 dpv:AuditRejected a rdfs:Class,
@@ -90,6 +100,7 @@ dpv:AuditRejected a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:AuditStatus ;
     skos:definition "State of not being approved or being rejected through the audit"@en ;
+    skos:inScheme dpv:status-classes ;
     skos:prefLabel "Audit Rejected"@en .
 
 dpv:AuditRequested a rdfs:Class,
@@ -98,6 +109,7 @@ dpv:AuditRequested a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:AuditStatus ;
     skos:definition "State of an audit being requested whose outcome is not yet known"@en ;
+    skos:inScheme dpv:status-classes ;
     skos:prefLabel "Audit Requested"@en .
 
 dpv:AuditRequired a rdfs:Class,
@@ -106,13 +118,16 @@ dpv:AuditRequired a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:AuditStatus ;
     skos:definition "State where an audit is determined as being required but has not been conducted"@en ;
+    skos:inScheme dpv:status-classes ;
     skos:prefLabel "Audit Required"@en .
 
 dpv:AuditStatus a rdfs:Class,
         skos:Concept ;
     rdfs:subClassOf dpv:Status ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Status ;
     skos:definition "Status associated with Auditing or Investigation"@en ;
+    skos:inScheme dpv:status-classes ;
     skos:narrower dpv:AuditApproved,
         dpv:AuditConditionallyApproved,
         dpv:AuditNotRequired,
@@ -127,6 +142,7 @@ dpv:ComplianceIndeterminate a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:ComplianceStatus ;
     skos:definition "State where the status of compliance has not been fully assessed, evaluated, or determined"@en ;
+    skos:inScheme dpv:status-classes ;
     skos:prefLabel "Compliance Indeterminate"@en .
 
 dpv:ComplianceStatus a rdfs:Class,
@@ -134,11 +150,14 @@ dpv:ComplianceStatus a rdfs:Class,
     rdfs:subClassOf dpv:Status ;
     rdfs:superClassOf dpv:Lawfulness ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Status ;
     skos:definition "Status associated with Compliance with some norms, objectives, or requirements"@en ;
+    skos:inScheme dpv:status-classes ;
     skos:narrower dpv:ComplianceIndeterminate,
         dpv:ComplianceUnknown,
         dpv:ComplianceViolation,
         dpv:Compliant,
+        dpv:Lawfulness,
         dpv:NonCompliant,
         dpv:PartiallyCompliant ;
     skos:prefLabel "Compliance Status"@en .
@@ -149,6 +168,7 @@ dpv:ComplianceUnknown a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:ComplianceStatus ;
     skos:definition "State where the status of compliance is unknown"@en ;
+    skos:inScheme dpv:status-classes ;
     skos:prefLabel "Compliance Unknown"@en .
 
 dpv:ComplianceViolation a rdfs:Class,
@@ -157,6 +177,7 @@ dpv:ComplianceViolation a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:ComplianceStatus ;
     skos:definition "State where compliance cannot be achieved due to requirements being violated"@en ;
+    skos:inScheme dpv:status-classes ;
     skos:note "Changed from \"violation of compliance\" for consistency with other terms"@en ;
     skos:prefLabel "Compliance Violation"@en .
 
@@ -166,13 +187,16 @@ dpv:Compliant a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:ComplianceStatus ;
     skos:definition "State of being fully compliant"@en ;
+    skos:inScheme dpv:status-classes ;
     skos:prefLabel "Compliant"@en .
 
 dpv:ConformanceStatus a rdfs:Class,
         skos:Concept ;
     rdfs:subClassOf dpv:Status ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Status ;
     skos:definition "Status associated with conformance to a standard, guideline, code, or recommendation"@en ;
+    skos:inScheme dpv:status-classes ;
     skos:narrower dpv:Conformant,
         dpv:NonConformant ;
     skos:prefLabel "Conformance Status"@en .
@@ -183,6 +207,7 @@ dpv:Conformant a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:ConformanceStatus ;
     skos:definition "State of being conformant"@en ;
+    skos:inScheme dpv:status-classes ;
     skos:prefLabel "Conformant"@en .
 
 dpv:Lawful a rdfs:Class,
@@ -191,13 +216,16 @@ dpv:Lawful a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:Lawfulness ;
     skos:definition "State of being lawful or legally compliant"@en ;
+    skos:inScheme dpv:status-classes ;
     skos:prefLabel "Lawful"@en .
 
 dpv:Lawfulness a rdfs:Class,
         skos:Concept ;
     rdfs:subClassOf dpv:ComplianceStatus ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:ComplianceStatus ;
     skos:definition "Status associated with expressing lawfullness or legal compliance"@en ;
+    skos:inScheme dpv:status-classes ;
     skos:narrower dpv:Lawful,
         dpv:LawfulnessUnkown,
         dpv:Unlawful ;
@@ -209,6 +237,7 @@ dpv:LawfulnessUnkown a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:Lawfulness ;
     skos:definition "State of the lawfulness not being known"@en ;
+    skos:inScheme dpv:status-classes ;
     skos:prefLabel "Lawfulness Unknown"@en .
 
 dpv:NonCompliant a rdfs:Class,
@@ -217,6 +246,7 @@ dpv:NonCompliant a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:ComplianceStatus ;
     skos:definition "State of non-compliance where objectives have not been met, but have not been violated"@en ;
+    skos:inScheme dpv:status-classes ;
     skos:note "Changed from not compliant for consistency in commonly used terms"@en ;
     skos:prefLabel "Non Compliant"@en .
 
@@ -226,6 +256,7 @@ dpv:NonConformant a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:ConformanceStatus ;
     skos:definition "State of being non-conformant"@en ;
+    skos:inScheme dpv:status-classes ;
     skos:prefLabel "NonConformant"@en .
 
 dpv:PartiallyCompliant a rdfs:Class,
@@ -234,6 +265,7 @@ dpv:PartiallyCompliant a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:ComplianceStatus ;
     skos:definition "State of partially being compliant i.e. only some objectives have been met, and others have not been in violation"@en ;
+    skos:inScheme dpv:status-classes ;
     skos:prefLabel "Partially Compliant"@en .
 
 dpv:RequestAccepted a rdfs:Class,
@@ -242,6 +274,7 @@ dpv:RequestAccepted a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:RequestStatus ;
     skos:definition "State of a request being accepted towards fulfilment"@en ;
+    skos:inScheme dpv:status-classes ;
     skos:prefLabel "Request Accepted"@en .
 
 dpv:RequestAcknowledged a rdfs:Class,
@@ -250,6 +283,7 @@ dpv:RequestAcknowledged a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:RequestStatus ;
     skos:definition "State of a request being acknowledged"@en ;
+    skos:inScheme dpv:status-classes ;
     skos:prefLabel "Request Acknowledged"@en .
 
 dpv:RequestActionDelayed a rdfs:Class,
@@ -258,6 +292,7 @@ dpv:RequestActionDelayed a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:RequestStatus ;
     skos:definition "State of a request being delayed towards fulfilment"@en ;
+    skos:inScheme dpv:status-classes ;
     skos:prefLabel "Request Action Delayed"@en .
 
 dpv:RequestFulfilled a rdfs:Class,
@@ -266,6 +301,7 @@ dpv:RequestFulfilled a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:RequestStatus ;
     skos:definition "State of a request being fulfilled"@en ;
+    skos:inScheme dpv:status-classes ;
     skos:prefLabel "Request Fulfilled"@en .
 
 dpv:RequestInitiated a rdfs:Class,
@@ -274,6 +310,7 @@ dpv:RequestInitiated a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:RequestStatus ;
     skos:definition "State of a request being initiated"@en ;
+    skos:inScheme dpv:status-classes ;
     skos:prefLabel "Request Initiated"@en .
 
 dpv:RequestRejected a rdfs:Class,
@@ -282,6 +319,7 @@ dpv:RequestRejected a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:RequestStatus ;
     skos:definition "State of a request being rejected towards non-fulfilment"@en ;
+    skos:inScheme dpv:status-classes ;
     skos:prefLabel "Request Rejected"@en .
 
 dpv:RequestRequiredActionPerformed a rdfs:Class,
@@ -290,6 +328,7 @@ dpv:RequestRequiredActionPerformed a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:RequestStatus ;
     skos:definition "State of a request's required action having been performed by the other party"@en ;
+    skos:inScheme dpv:status-classes ;
     skos:prefLabel "Request Required Action Performed"@en .
 
 dpv:RequestRequiresAction a rdfs:Class,
@@ -298,13 +337,16 @@ dpv:RequestRequiresAction a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:RequestStatus ;
     skos:definition "State of a request requiring an action to be performed from another party"@en ;
+    skos:inScheme dpv:status-classes ;
     skos:prefLabel "Request Requires Action"@en .
 
 dpv:RequestStatus a rdfs:Class,
         skos:Concept ;
     rdfs:subClassOf dpv:Status ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Status ;
     skos:definition "Status associated with requests"@en ;
+    skos:inScheme dpv:status-classes ;
     skos:narrower dpv:RequestAccepted,
         dpv:RequestAcknowledged,
         dpv:RequestActionDelayed,
@@ -323,6 +365,7 @@ dpv:RequestStatusQuery a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:RequestStatus ;
     skos:definition "State of a request's status being queried"@en ;
+    skos:inScheme dpv:status-classes ;
     skos:prefLabel "Request Status Query"@en .
 
 dpv:RequestUnfulfilled a rdfs:Class,
@@ -331,6 +374,7 @@ dpv:RequestUnfulfilled a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:RequestStatus ;
     skos:definition "State of a request being unfulfilled"@en ;
+    skos:inScheme dpv:status-classes ;
     skos:prefLabel "Request Unfulfilled"@en .
 
 dpv:Status a rdfs:Class,
@@ -342,7 +386,14 @@ dpv:Status a rdfs:Class,
         dpv:ConformanceStatus,
         dpv:RequestStatus ;
     sw:term_status "accepted"@en ;
+    skos:broader dpv:Context ;
     skos:definition "The status or state of something"@en ;
+    skos:inScheme dpv:status-classes ;
+    skos:narrower dpv:ActivityStatus,
+        dpv:AuditStatus,
+        dpv:ComplianceStatus,
+        dpv:ConformanceStatus,
+        dpv:RequestStatus ;
     skos:prefLabel "Status"@en .
 
 dpv:Unlawful a rdfs:Class,
@@ -351,9 +402,11 @@ dpv:Unlawful a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:Lawfulness ;
     skos:definition "State of being unlawful or legally non-compliant"@en ;
+    skos:inScheme dpv:status-classes ;
     skos:prefLabel "Unlawful"@en .
 
-dpv:Context rdfs:superClassOf dpv:Status .
+dpv:Context rdfs:superClassOf dpv:Status ;
+    skos:narrower dpv:Status .
 
 dpv:hasActivityStatus a rdf:Property,
         skos:Concept ;
@@ -362,6 +415,7 @@ dpv:hasActivityStatus a rdf:Property,
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasStatus ;
     skos:definition "Indicates the status of activity of specified concept"@en ;
+    skos:inScheme dpv:status-properties ;
     skos:prefLabel "has activity status"@en ;
     schema:rangeIncludes dpv:ActivityStatus .
 
@@ -372,6 +426,7 @@ dpv:hasAuditStatus a rdf:Property,
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasStatus ;
     skos:definition "Indicates the status of audit associated with specified concept"@en ;
+    skos:inScheme dpv:status-properties ;
     skos:prefLabel "has audit status"@en ;
     schema:rangeIncludes dpv:AuditStatus .
 
@@ -382,6 +437,7 @@ dpv:hasLawfulness a rdf:Property,
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasComplianceStatus ;
     skos:definition "Indicates the status of being lawful or legally compliant"@en ;
+    skos:inScheme dpv:status-properties ;
     skos:prefLabel "has lawfulness"@en ;
     schema:rangeIncludes dpv:Lawfulness .
 
@@ -393,9 +449,12 @@ dpv:hasComplianceStatus a rdf:Property,
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasStatus ;
     skos:definition "Indicates the status of compliance of specified concept"@en ;
+    skos:inScheme dpv:status-properties ;
     skos:narrower dpv:hasLawfulness ;
     skos:prefLabel "has compliance status"@en ;
     schema:rangeIncludes dpv:ComplianceStatus .
+
+dpv:status-properties a skos:ConceptScheme .
 
 dpv:hasStatus a rdf:Property,
         skos:Concept ;
@@ -405,9 +464,12 @@ dpv:hasStatus a rdf:Property,
         dpv:hasComplianceStatus ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the status of specified concept"@en ;
+    skos:inScheme dpv:status-properties ;
     skos:narrower dpv:hasActivityStatus,
         dpv:hasAuditStatus,
         dpv:hasComplianceStatus ;
     skos:prefLabel "has status"@en ;
     schema:rangeIncludes dpv:Status .
+
+dpv:status-classes a skos:ConceptScheme .
 

@@ -12,6 +12,7 @@ eu-dga:A12-e-Exchange-Approval a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:LegalBasis ;
     skos:definition "Explicit request or approval of the data subject or data holder to utilise additional specific tools for the purposes of facilitating exchange of data"@en ;
+    skos:inScheme eu-dga:legal-basis-classes ;
     skos:prefLabel "Art 12(e) Data Exchange Approval"@en .
 
 eu-dga:A2-6-Permission a rdfs:Class,
@@ -21,6 +22,7 @@ eu-dga:A2-6-Permission a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:NonPersonalDataLegalBasis ;
     skos:definition "The legal basis justfiying processing of non-personal data based on the permission of an entity"@en ;
+    skos:inScheme eu-dga:legal-basis-classes ;
     skos:note "dpv:LegalBasis needs to be divided into dpv:PersonalDataLegalBasis and dpv:NonPersonalDataLegalBasis"@en ;
     skos:prefLabel "Art 2(6) Permission"@en .
 
@@ -31,6 +33,7 @@ eu-dga:A31-2-Transfer-Agreement a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:DataTransferLegalBasis ;
     skos:definition "Data Transfer International Agreement"@en ;
+    skos:inScheme eu-dga:legal-basis-classes ;
     skos:prefLabel "Art 31(2) Data Transfer International Agreement"@en .
 
 eu-dga:A31-3-Third-Country-Judgement a rdfs:Class,
@@ -40,6 +43,7 @@ eu-dga:A31-3-Third-Country-Judgement a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:DataTransferLegalBasis ;
     skos:definition "Data Transfer Third Country Judgement"@en ;
+    skos:inScheme eu-dga:legal-basis-classes ;
     skos:prefLabel "Art 31(3) Data Transfer Third Country Judgement"@en .
 
 eu-dga:A5-11-MCC a rdfs:Class,
@@ -49,6 +53,7 @@ eu-dga:A5-11-MCC a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:DataTransferLegalBasis ;
     skos:definition "Model Contractual Clauses"@en ;
+    skos:inScheme eu-dga:legal-basis-classes ;
     skos:prefLabel "Art 5(11) Model Contractual Clauses"@en .
 
 eu-dga:A5-12-Adequacy-Decision a rdfs:Class,
@@ -58,6 +63,7 @@ eu-dga:A5-12-Adequacy-Decision a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:DataTransferLegalBasis ;
     skos:definition "Adequacy Decision permitting the transfer of data"@en ;
+    skos:inScheme eu-dga:legal-basis-classes ;
     skos:prefLabel "Art 5(12) Adequacy Decision"@en .
 
 eu-dga:A5-9-Transfer-Permission a rdfs:Class,
@@ -67,6 +73,7 @@ eu-dga:A5-9-Transfer-Permission a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:DataTransferLegalBasis ;
     skos:definition "The legal basis justfiying processing of non-personal data based on the permission of an entity to transfer data"@en ;
+    skos:inScheme eu-dga:legal-basis-classes ;
     skos:prefLabel "Art 5(9) Permission for Transfer"@en .
 
 dpv:NonPersonalDataLegalBasis skos:narrower eu-dga:A2-6-Permission .
@@ -76,6 +83,8 @@ dpv:DataTransferLegalBasis skos:narrower eu-dga:A31-2-Transfer-Agreement,
         eu-dga:A5-11-MCC,
         eu-dga:A5-12-Adequacy-Decision,
         eu-dga:A5-9-Transfer-Permission .
+
+eu-dga:legal-basis-classes a skos:ConceptScheme .
 
 dpv:LegalBasis skos:narrower eu-dga:A12-e-Exchange-Approval .
 

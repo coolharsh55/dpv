@@ -9,6 +9,7 @@ dpv:ExplicitlyExpressedConsent a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:ExpressedConsent ;
     skos:definition "Consent that is expressed through an explicit action solely conveying a consenting decision"@en ;
+    skos:inScheme dpv:consent-types-classes ;
     skos:note "Explicitly expressed consent is a more specific form of Expressed consent where the action taken must 'explicitly' relate to only the consent decision. Expressed consent where the consenting is part of other matters therefore cannot satisfy the requirements of explicitly expressed consent. An example of explicit action expressing the consenting decision is a button on a web form where the form only relates to consent, or it is accompanied with suitable text that reiterates what the consenting decision is about"@en ;
     skos:prefLabel "Explicitly Expressed Consent"@en .
 
@@ -18,6 +19,7 @@ dpv:ExpressedConsent a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:InformedConsent ;
     skos:definition "Consent that is expressed through an action intended to convey a consenting decision"@en ;
+    skos:inScheme dpv:consent-types-classes ;
     skos:narrower dpv:ExplicitlyExpressedConsent ;
     skos:note "Expressed consent requires the individual take a specific and unambigious action that directly indicates their consent. This action may be a part of other processes such as setting preferences, or agreeing to a contract, or other matters not relating to consent. An example of expressed consent is interacting with a checkbox within a dashboard or clicking a button on a web form"@en ;
     skos:prefLabel "Expressed Consent"@en .
@@ -28,6 +30,7 @@ dpv:ImpliedConsent a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:InformedConsent ;
     skos:definition "Consent that is implied indirectly through an action not associated solely with conveying a consenting decision"@en ;
+    skos:inScheme dpv:consent-types-classes ;
     skos:note "Implied consent is expected to also be Informed Consent. An example is a CCTV notice outside a monitored area that informs the individuals that by walking in they would be consenting to the use of camera for surveillance."@en ;
     skos:prefLabel "Implied Consent"@en .
 
@@ -37,6 +40,7 @@ dpv:InformedConsent a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:Consent ;
     skos:definition "Consent that is informed i.e. with the requirement to provide sufficient information to make a consenting decision"@en ;
+    skos:inScheme dpv:consent-types-classes ;
     skos:narrower dpv:ExpressedConsent,
         dpv:ImpliedConsent ;
     skos:note "The specifics for what information should be provided or made available will depend on the context, use-case, or relevant legal requirements"@en ;
@@ -48,8 +52,11 @@ dpv:UninformedConsent a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv:Consent ;
     skos:definition "Consent that is uninformed i.e. without requirement to provide sufficient information to make a consenting decision"@en ;
+    skos:inScheme dpv:consent-types-classes ;
     skos:prefLabel "Uninformed Consent"@en .
 
 dpv:Consent skos:narrower dpv:InformedConsent,
         dpv:UninformedConsent .
+
+dpv:consent-types-classes a skos:ConceptScheme .
 

@@ -11,6 +11,7 @@ tech:DetectionSecurityTechnology a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv-tech:SecurityTechnology ;
     skos:definition "Technology related to detection of vulnerabilities, threats, and exploitations"@en ;
+    skos:inScheme tech:security-classes ;
     skos:prefLabel "Detection Security Technology"@en .
 
 tech:MitigationSecurityTechnology a rdfs:Class,
@@ -19,6 +20,7 @@ tech:MitigationSecurityTechnology a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv-tech:SecurityTechnology ;
     skos:definition "Technology related to mitigation of vulnerabilities, threats, exploitations"@en ;
+    skos:inScheme tech:security-classes ;
     skos:prefLabel "Mitigation Security Technology"@en .
 
 tech:MonitoringSecurityTechnology a rdfs:Class,
@@ -27,6 +29,7 @@ tech:MonitoringSecurityTechnology a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv-tech:SecurityTechnology ;
     skos:definition "Technology related to monitoring of vulnerabilities, threats, exploitations"@en ;
+    skos:inScheme tech:security-classes ;
     skos:prefLabel "Monitoring Security Technology"@en .
 
 tech:PET a rdfs:Class,
@@ -35,6 +38,7 @@ tech:PET a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv-tech:SecurityTechnology ;
     skos:definition "Privacy Enhancing Technologies (PETs) that provide minimisation or security related to data and privacy"@en ;
+    skos:inScheme tech:security-classes ;
     skos:prefLabel "PET (Privacy Enhancing Technology)"@en .
 
 tech:PreventionSecurityTechnology a rdfs:Class,
@@ -43,6 +47,7 @@ tech:PreventionSecurityTechnology a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:broader dpv-tech:SecurityTechnology ;
     skos:definition "Technology related to prevention of vulnerabilities, threats, exploitations"@en ;
+    skos:inScheme tech:security-classes ;
     skos:prefLabel "Prevention Security Technology"@en .
 
 tech:SecurityManagementTechnology a rdfs:Class,
@@ -52,6 +57,7 @@ tech:SecurityManagementTechnology a rdfs:Class,
     skos:broader dpv-tech:ManagementTechnology,
         dpv-tech:SecurityTechnology ;
     skos:definition "Technology related to management of security"@en ;
+    skos:inScheme tech:security-classes ;
     skos:prefLabel "Security Management Technology"@en .
 
 dpv-tech:ManagementTechnology skos:narrower tech:SecurityManagementTechnology .
@@ -62,4 +68,6 @@ dpv-tech:SecurityTechnology skos:narrower tech:DetectionSecurityTechnology,
         tech:PET,
         tech:PreventionSecurityTechnology,
         tech:SecurityManagementTechnology .
+
+tech:security-classes a skos:ConceptScheme .
 
