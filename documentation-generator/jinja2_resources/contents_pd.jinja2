@@ -10,10 +10,10 @@
    // All config options at https://respec.org/docs/ 
    var respecConfig = {
     shortName: "dpv-pd",
-    title: "DPV-PD: Extended Personal Data concepts for DPV",
-    subtitle: "version 1",
-    publishDate: "2022-12-05",
-    specStatus: "CG-FINAL",
+    title: "Personal Data Extension",
+    subtitle: "Data Privacy Vocabulary (DPV)",
+    publishDate: "2023-11-13",
+    specStatus: "CG-DRAFT",
     group: "dpvcg",
     latestVersion: "https://w3id.org/dpv/dpv-pd",
     canonicalUri: "https://w3id.org/dpv/dpv-pd",
@@ -131,6 +131,21 @@
     padding: 2px;
     border: 1px solid black;
   }
+  .concept-list li {
+    list-style-type: upper-alpha;
+  }
+  .concept-list li ul li {
+    list-style-type: decimal;
+  }
+  .concept-list li ul li ul li {
+    list-style-type: lower-latin;
+  }
+  .concept-list li ul li ul li ul li {
+    list-style-type: lower-roman;
+  }
+  .concept-list ul {
+    border-left: 3px solid lightgray;
+  }
 </style>
 </head>
 <body>
@@ -147,14 +162,18 @@
 {% endblock INTRODUCTION %}
 {% block VOCAB %}
   <section id="vocab">
-    <h2>Taxonomy</h2>
+    <h2>Core Taxonomy</h2>
     <div class="issue" title="better organisation of concepts">
     <p>The current layout presents a rather large list of concepts without easier representation of how they are structured as a hierarchy. To improve this, two approaches can be taken: (1) separate them based on the top categories and have each in its own section; (2) diagram(s) that showcase how the concepts are arranged.</p>
     </div>
-    <section id="dpv-pd-classes">
-    {{ table_classes(dpv_pd_classes) }}
-    </section>
 
+    {{ list_hierarchy(modules['core']['classes']) }}
+
+  </section>
+
+  <section>
+    <h2>Extended Taxonomy</h2>
+    {{ list_hierarchy(modules['extended']['classes']) }}
   </section>
 
   <section id="external-vocabs">
@@ -163,6 +182,27 @@
   <p>DPV's list of concepts is not universal nor exhaustive. It also is opinionated in that there are other vocabularies with different perspectives on categorisation of personal data concepts. This section should list such other external vocabularies, and how they relate to DPV's PD extension for personal data categories.</p>
   </div>
   </section>
+
+  <section id="vocabulary">
+<h2>Vocabulary Index</h2>
+  <section id="dpv-classes">
+    {{ index_concepts(vocab, filter="classes") }}
+  </section>
+  <section id="dpv-properties">
+    {{ index_concepts(vocab, filter="properties") }}
+  </section>
+  <section id="external-concepts">
+    <p>DPV uses the following terms from [[RDF]] and  [[RDFS]] with their defined meanings:</p>
+    <ul>
+      <li id="rdf:type"><dfn>rdf:type</dfn> to denote a concept is an instance of another concept</li>
+      <li id="rdfs:Class"><dfn>rdfs:Class</dfn> to denote a concept is a Class or a category</li>
+      <li id="rdfs:subClassOf"><dfn>rdfs:subClassOf</dfn> to specify the concept is a subclass (subtype, sub-category, subset) of another concept</li>
+      <li id="rdf:Property"><dfn>rdf:Property</dfn> to denote a concept is a property or a relation</li>
+      </ul>
+    <p>The following external concepts are re-used within DPV:</p>
+    {{ index_concepts(vocab, filter="external") }}
+  </section>
+</section>
   
 {% endblock VOCAB %}
 

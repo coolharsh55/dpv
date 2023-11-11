@@ -73,6 +73,14 @@ VOCABS = {
             'rules': 'contents_dpv_rules.jinja2',
         },
     },
+    'pd': {
+        'vocab': f'{IMPORT_PATH}/pd/pd.ttl',
+        'template': 'template_dpv_pd.jinja2',
+        'modules': {
+            'core': f'{IMPORT_PATH}/pd/modules/core.ttl',
+            'extended': f'{IMPORT_PATH}/pd/modules/extended.ttl',
+        },
+    }
 }
 
 class DATA(object):
@@ -152,8 +160,8 @@ class DATA(object):
         for concept in vocab_data.values():
             DATA.concepts[concept['iri']] = concept
 
-        for scheme in DATA.schemes:
-            DEBUG(f'registered scheme {prefix_from_iri(scheme)}')
+        # for scheme in DATA.schemes:
+        #     DEBUG(f'registered scheme {prefix_from_iri(scheme)}')
         return
 
     @staticmethod
@@ -257,6 +265,7 @@ if __name__ == '__main__':
         DEBUG(f'VOCAB: {vocab}')
         DATA.load_vocab(vocab_data['vocab'], vocab)
         module_data = {}
+        DATA.modules[vocab] = {}
         for module, filepath in vocab_data['modules'].items():
             DATA.load_module(filepath, module, vocab)
             # create collection to generate module pages
@@ -268,20 +277,21 @@ if __name__ == '__main__':
             for data in DATA.modules[vocab][module].values():
                 for k, v in data.items():
                     module_data[module_name]['index'][k] = v
-
+        # else:
+        #     DATA.modules[vocab] = []
         template = template_env.get_template(vocab_data['template'])
         with open(f'{EXPORT_PATH}/{vocab}/index.html', 'w+') as fd:
             fd.write(template.render(
                 data=DATA.data,
-                vocab=DATA.data['dpv'],
-                modules=DATA.modules['dpv']))
+                vocab=DATA.data[vocab],
+                modules=DATA.modules[vocab]))
         DEBUG(f'wrote {vocab} spec at f{EXPORT_PATH}/{vocab}/index.html')
         # TODO: replace duplicate code with filecopy
         with open(f'{EXPORT_PATH}/{vocab}/{vocab}.html', 'w+') as fd:
             fd.write(template.render(
                 data=DATA.data,
-                vocab=DATA.data['dpv'],
-                modules=DATA.modules['dpv']))
+                vocab=DATA.data[vocab],
+                modules=DATA.modules[vocab]))
         DEBUG(f'wrote {vocab} spec at f{EXPORT_PATH}/{vocab}/{vocab}.html')
 
         if 'module-template' not in vocab_data:
@@ -296,6 +306,6 @@ if __name__ == '__main__':
             with open(f'{EXPORT_PATH}/{vocab}/modules/{module}.html', 'w+') as fd:
                 fd.write(template.render(
                     data=data,
-                    vocab=DATA.data['dpv'],
-                    modules=DATA.modules['dpv']))
+                    vocab=DATA.data[vocab],
+                    modules=DATA.modules[vocab]))
                 DEBUG(f'wrote {vocab}/{module} docs at f{EXPORT_PATH}/{vocab}/modules/{module}.html')
