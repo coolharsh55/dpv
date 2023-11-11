@@ -15,12 +15,12 @@
     shortName: "dpv",
     title: "Entities",
     subtitle: "Data Privacy Vocabulary (DPV)",
-    publishDate: "2022-12-05",
-    specStatus: "CG-FINAL",
+    publishDate: "2023-11-12",
+    specStatus: "CG-DRAFT",
     group: "dpvcg",
-    latestVersion: "https://w3id.org/dpv",
-    canonicalUri: "https://w3id.org/dpv",
-    edDraftURI: "https://w3id.org/dpv/ed/dpv",
+    latestVersion: "https://w3id.org/dpv/modules/entities",
+    canonicalUri: "https://w3id.org/dpv/modules/entities",
+    edDraftURI: "https://w3id.org/dpv/ed/dpv/modules/entities",
     github: "w3c/dpv",
     subjectPrefix: "[dpv]",
     doJsonLd: true,
@@ -115,23 +115,65 @@
   ex:lorem ex:ipsum "example" .</pre></code>
         </aside>
     </section>
+
+    <section id="desc-data-processor">
+        <h3>Data Processor</h3>
+    </section>
+
+    <section id="desc-recipient">
+        <h3>Data Recipient</h3>
+    </section>
+
+    <section id="desc-third-party">
+        <h3>Third Party</h3>
+    </section>
+
+    <section id="desc-DPO">
+        <h3>Data Protection Officer</h3>
+    </section>
+
+    <section id="desc-data-importer-exporter">
+        <h3>Data Importer/Exporter</h3>
+    </section>
+
   </section>
 
   <section id="vocab-entities-authorities">
     <h2>Authorities</h2>
     <p>The concept [=Authority=] is a specific Governmental Organisation authorised to enforce a law or regulation. Authorities can be associated with a specific domain, topic, or jurisdiction. DPV currently defines regional authorities for [=NationalAuthority=], [=RegionalAuthority=], and [=SupraNationalAuthority=], and [=DataProtectionAuthority=] represents authorities associated with data protection and privacy. To associate authorities with concepts, the relations [=hasAuthority=] and [=isAuthorityFor=] are provided.</p>
     {{ list_hierarchy(modules['entities-authority']['classes']) }}
+
+    <section id="desc-DPA">
+        <h3>Data Protection Authority</h3>
+    </section>
   </section>
 
   <section id="vocab-entities-organisation">
     <h2>Organisation</h2>
     {{ list_hierarchy(modules['entities-organisation']['classes']) }}
+
   </section>
 
   <section id="vocab-entities-datasubject">
     <h2>Data Subjects</h2>
     <p>DPV provides a taxonomy of data subject types to assist with describing what kind of individuals or groups are associated with an use-case. Some examples of such types are agency-based roles: [=Adult=] and [=Child=], [=ParentOfDataSubject=], [=GuardianOfDataSubject=]; those associated with vulnerability: [=VulnerableDataSubject=], [=ElderlyDataSubject=], [=AsylumSeeker=]; domain-specific roles such as [=Patient=], [=Employee=], [=Student=], jurisdictional roles such as [=Citizen=], [=NonCitizen=], [=Immigrant=]; and general roles such as [=User=], [=Member=], [=Participant=], and [=Client=].</p>
     {{ list_hierarchy(modules['entities-datasubject']['classes']) }}
+
+    <section id="desc-consumer-data-subject">
+        <h3>Consumer / Service Roles</h3>
+    </section>
+
+    <section id="desc-public-data-subject">
+        <h3>Public / Societal Roles</h3>
+    </section>
+
+    <section id="desc-children-data-subject">
+        <h3>Children</h3>
+    </section>
+
+    <section id="desc-vulnerable-data-subject">
+        <h3>Vulnerable Data Subjects</h3>
+    </section>
   </section>
 
   <section>

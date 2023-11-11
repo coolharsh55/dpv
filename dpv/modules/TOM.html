@@ -2,20 +2,20 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Technical &amp; Organisational Measures</title>
+  <title>Technical &amp; Organisational Measures (TOMs)</title>
   <script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove" defer></script>
   <script class="remove">
    // All config options at https://respec.org/docs/ 
    var respecConfig = {
     shortName: "dpv",
-    title: "Technical & Organisational Measures",
+    title: "Technical & Organisational Measures (TOMs)",
     subtitle: "Data Privacy Vocabulary (DPV)",
-    publishDate: "2022-12-05",
-    specStatus: "CG-FINAL",
+    publishDate: "2023-11-12",
+    specStatus: "CG-DRAFT",
     group: "dpvcg",
-    latestVersion: "https://w3id.org/dpv",
-    canonicalUri: "https://w3id.org/dpv",
-    edDraftURI: "https://w3id.org/dpv/ed/dpv",
+    latestVersion: "https://w3id.org/dpv/modules/context",
+    canonicalUri: "https://w3id.org/dpv/modules/context",
+    edDraftURI: "https://w3id.org/dpv/ed/dpv/modules/context",
     github: "w3c/dpv",
     subjectPrefix: "[dpv]",
     doJsonLd: true,
@@ -308,6 +308,21 @@
   .dfn-label {
     font-family: monospace;
   }
+  .concept-list li {
+    list-style-type: upper-alpha;
+  }
+  .concept-list li ul li {
+    list-style-type: decimal;
+  }
+  .concept-list li ul li ul li {
+    list-style-type: lower-latin;
+  }
+  .concept-list li ul li ul li ul li {
+    list-style-type: lower-roman;
+  }
+  .concept-list ul {
+    border-left: 3px solid lightgray;
+  }
 </style>
 </head>
 <body>
@@ -369,8 +384,8 @@
     <blockquote>This document assumes the reader is familiar with DPV through the [[[DPV-Primer]]], and thus focuses on providing a topically structured documentation of concepts defined by DPV.</blockquote>
 
   <figure>
-    <a href="../diagrams/techorgmeasures-2.png" target="_blank">
-      <img title="Overview of Technical & Organisational Measures taxonomy in DPV" src="../diagrams/techorgmeasures-2.png">
+    <a href="../../diagrams/techorgmeasures-2.png" target="_blank">
+      <img title="Overview of Technical & Organisational Measures taxonomy in DPV" src="../../diagrams/techorgmeasures-2.png">
     </a>
     <figcaption>Overview of Technical & Organisational Measures taxonomy in DPV (click to open in new window)</figcaption>
   </figure>
@@ -404,12 +419,13 @@
       
   </li>
 </ul>
-  
+  </section>
+
   <section id="vocab-technical-measures">
-    <h3>Technical Measures</h3>
+    <h2>Technical Measures</h2>
     <figure>
-    <a href="../diagrams/techmeasures-2.png" target="_blank">
-      <img title="Overview of Technical Measures taxonomy in DPV" src="../diagrams/techmeasures-2.png" style="width: auto; max-height: 500px;">
+    <a href="../../diagrams/techmeasures-2.png" target="_blank">
+      <img title="Overview of Technical Measures taxonomy in DPV" src="../../diagrams/techmeasures-2.png" style="width: auto; max-height: 500px;">
     </a>
     <figcaption>Overview of Technical Measures taxonomy in DPV (click to open in new window)</figcaption>
   </figure>
@@ -806,12 +822,41 @@
 </ul>
   </li>
 </ul>
+
+    <section>
+      <h3>Access Control</h3>
     </section>
+
+    <section>
+      <h3>Authentication</h3>
+    </section>
+
+    <section>
+      <h3>Cryptographic Methods</h3>
+    </section>
+
+    <section>
+      <h3>Data Backup</h3>
+    </section>
+
+    <section>
+      <h3>Sanitisation/Anonymisation</h3>
+    </section>
+
+    <section>
+      <h3>Encryption</h3>
+    </section>
+
+    <section>
+      <h3>Security</h3>
+    </section>
+  </section>
+  
   <section id="vocab-organisational-measures">
-    <h3>Organisational Measures</h3>
+    <h2>Organisational Measures</h2>
     <figure>
-    <a href="../diagrams/orgmeasures-2.png" target="_blank">
-      <img title="Overview of Organisational Measures taxonomy in DPV" src="../diagrams/orgmeasures-2.png">
+    <a href="../../diagrams/orgmeasures-2.png" target="_blank">
+      <img title="Overview of Organisational Measures taxonomy in DPV" src="../../diagrams/orgmeasures-2.png">
     </a>
     <figcaption>Overview of Organisational Measures taxonomy in DPV (click to open in new window)</figcaption>
   </figure>
@@ -1205,7 +1250,55 @@
   </li>
 </ul>
   </section>
+
+  <section>
+      <h3>Assessments</h3>
+    </section>
+
+    <section>
+      <h3>Consultations</h3>
+    </section>
+
+    <section>
+      <h3>Governance Procedures</h3>
+    </section>
+
+    <section>
+      <h3>Guidelines/Codes of Conduct</h3>
+    </section>
+
+    <section>
+      <h3>Legal Agreements/Contracts</h3>
+    </section>
+
+    <section>
+      <h3>Notices</h3>
+    </section>
+
+    <section>
+      <h3>Policies</h3>
+    </section>
+
+    <section>
+      <h3>Record Keeping</h3>
+    </section>
+
+    <section>
+      <h3>Security Procedures</h3>
+    </section>
+
+    <section>
+      <h3>Staff Training</h3>
+    </section>
 </section>
+
+  <section>
+    <h2>Legal Measures</h2>
+  </section>
+
+  <section>
+    <h2>Physical Measures</h2>
+  </section>
 
   <section>
   <h2>Vocabulary Index</h2>

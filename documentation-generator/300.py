@@ -49,15 +49,15 @@ VOCABS = {
             'entities-organisation': f'{IMPORT_PATH}/dpv/modules/entities_organisation.ttl',
             'entities-datasubject': f'{IMPORT_PATH}/dpv/modules/entities_datasubject.ttl',
             'legal_basis': f'{IMPORT_PATH}/dpv/modules/legal_basis.ttl',
-            'consent': f'{IMPORT_PATH}/dpv/modules/consent.ttl',
-            'consent-types': f'{IMPORT_PATH}/dpv/modules/consent_types.ttl',
-            'consent-status': f'{IMPORT_PATH}/dpv/modules/consent_status.ttl',
-            'context': f'{IMPORT_PATH}/dpv/modules/context.ttl',
+            'legal_basis-consent': f'{IMPORT_PATH}/dpv/modules/consent.ttl',
+            'legal_basis-consent-types': f'{IMPORT_PATH}/dpv/modules/consent_types.ttl',
+            'legal_basis-consent-status': f'{IMPORT_PATH}/dpv/modules/consent_status.ttl',
             'processing-context': f'{IMPORT_PATH}/dpv/modules/processing_context.ttl',
             'processing-scale': f'{IMPORT_PATH}/dpv/modules/processing_scale.ttl',
-            'status': f'{IMPORT_PATH}/dpv/modules/status.ttl',
+            'context': f'{IMPORT_PATH}/dpv/modules/context.ttl',
+            'context-status': f'{IMPORT_PATH}/dpv/modules/status.ttl',
+            'context-jurisdiction': f'{IMPORT_PATH}/dpv/modules/jurisdiction.ttl',
             'risk': f'{IMPORT_PATH}/dpv/modules/risk.ttl',
-            'jurisdiction': f'{IMPORT_PATH}/dpv/modules/jurisdiction.ttl',
             'rights': f'{IMPORT_PATH}/dpv/modules/rights.ttl',
             'rules': f'{IMPORT_PATH}/dpv/modules/rules.ttl',
         },
@@ -72,7 +72,7 @@ VOCABS = {
             'rights': 'contents_dpv_rights.jinja2',
             'rules': 'contents_dpv_rules.jinja2',
         },
-    }
+    },
 }
 
 class DATA(object):

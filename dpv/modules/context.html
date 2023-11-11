@@ -10,12 +10,12 @@
     shortName: "dpv",
     title: "Context",
     subtitle: "Data Privacy Vocabulary (DPV)",
-    publishDate: "2022-12-05",
-    specStatus: "CG-FINAL",
+    publishDate: "2023-11-12",
+    specStatus: "CG-DRAFT",
     group: "dpvcg",
-    latestVersion: "https://w3id.org/dpv",
-    canonicalUri: "https://w3id.org/dpv",
-    edDraftURI: "https://w3id.org/dpv/ed/dpv",
+    latestVersion: "https://w3id.org/dpv/modules/context",
+    canonicalUri: "https://w3id.org/dpv/modules/context",
+    edDraftURI: "https://w3id.org/dpv/ed/dpv/modules/context",
     github: "w3c/dpv",
     subjectPrefix: "[dpv]",
     doJsonLd: true,
@@ -369,11 +369,12 @@
     <blockquote>This document assumes the reader is familiar with DPV through the [[[DPV-Primer]]], and thus focuses on providing a topically structured documentation of concepts defined by DPV.</blockquote>
 
     <figure>
-    <img src="../diagrams/Context.png">
+    <img src="../../diagrams/Context.png">
     <figcaption></figcaption>
   </figure>
+  </section>
   <section>
-    <h3>Duration and Frequency</h3>
+    <h2>Duration and Frequency</h2>
     <p>To express the duration of events or operations, such as how long processing will take or the validity of consent, the concept [=Duration=] can be used. Duration is indicated using the relation [=hasDuration=], and has the following subtypes:</p>
     <ul>
     <li>[=TemporalDuration=] - indicating a relative temporal duration, e.g. 6 months.</li>
@@ -519,7 +520,7 @@
   </section>
 
   <section id="vocab-status">
-    <h3>Status</h3>
+    <h2>Status</h2>
     <p>To assist with expressing the state or status associated with various activities, DPV provides the [=Status=] concept that can be associated contextually using the [=hasStatus=] relation. Specific subtypes are provided as [=ActivityStatus=], [=ComplianceStatus=] including [=Lawfulness=], [=AuditStatus=], [=ConformanceStatus=], and [=RequestStatus=].</p>
 
     <p><strong>[=ActivityStatus=]</strong> represents a state or status of an activity's operations and lifecycle, which includes [=ActivityProposed=], [=ActivityOngoing=], [=ActivityHalted=], [=ActivityCompleted=], and [=ActivityNotCompleted=].</p>
@@ -750,7 +751,7 @@
 <section id="vocab-jurisdiction">
   <h2>Location &amp; Jurisdiction</h2>
   <figure>
-    <img src="../diagrams/location.png">
+    <img src="../../diagrams/location.png">
     <figcaption></figcaption>
   </figure>
   <p>To represent location, the concept [=Location=] along with relations [=hasLocation=] is provided. For geo-political locations, the concepts such as [=Country=] and [=SupraNationalUnion=] are subtyped, with [=hasCountry=] and [=ThirdCountry=] with [=hasThirdCountry=] provided for convenience in common uses (e.g. data storage, transfers).</p>
@@ -898,6 +899,292 @@
   <h2>Vocabulary Index</h2>
   <section id="classes">
     <h3>Classes</h3>
+    <section class="term-def" id="ActivityCompleted">
+      <h4>Activity Completed</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>ActivityCompleted</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#ActivityCompleted">https://w3id.org/dpv#ActivityCompleted</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#ActivityCompleted">dpv:ActivityCompleted</a>
+        <span class="dfn-label">Label:</span> <i>Activity Completed</i><br/>
+        <span class="dfn-label">Description:</span> <i>State of an activity that has completed i.e. is fully in the past</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#ActivityStatus">dpv:ActivityStatus</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ActivityStatus">dpv:ActivityStatus</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="ActivityHalted">
+      <h4>Activity Halted</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>ActivityHalted</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#ActivityHalted">https://w3id.org/dpv#ActivityHalted</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#ActivityHalted">dpv:ActivityHalted</a>
+        <span class="dfn-label">Label:</span> <i>Activity Halted</i><br/>
+        <span class="dfn-label">Description:</span> <i>State of an activity that was occuring in the past, and has been halted or paused or stoped</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#ActivityStatus">dpv:ActivityStatus</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ActivityStatus">dpv:ActivityStatus</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="ActivityNotCompleted">
+      <h4>Acitivity Not Completed</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>ActivityNotCompleted</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#ActivityNotCompleted">https://w3id.org/dpv#ActivityNotCompleted</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#ActivityNotCompleted">dpv:ActivityNotCompleted</a>
+        <span class="dfn-label">Label:</span> <i>Acitivity Not Completed</i><br/>
+        <span class="dfn-label">Description:</span> <i>State of an activity that could not be completed, but has reached some end state</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>This relates to a &#39;Stop&#39; state as distinct from a &#39;Halt&#39; state. It makes no comments on whether the Acitivity can be resumed or continued towards completion.</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#ActivityStatus">dpv:ActivityStatus</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ActivityStatus">dpv:ActivityStatus</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="ActivityOngoing">
+      <h4>Activity Ongoing</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>ActivityOngoing</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#ActivityOngoing">https://w3id.org/dpv#ActivityOngoing</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#ActivityOngoing">dpv:ActivityOngoing</a>
+        <span class="dfn-label">Label:</span> <i>Activity Ongoing</i><br/>
+        <span class="dfn-label">Description:</span> <i>State of an activity occuring in continuation i.e. currently ongoing</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#ActivityStatus">dpv:ActivityStatus</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ActivityStatus">dpv:ActivityStatus</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="ActivityProposed">
+      <h4>Activity Proposed</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>ActivityProposed</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#ActivityProposed">https://w3id.org/dpv#ActivityProposed</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#ActivityProposed">dpv:ActivityProposed</a>
+        <span class="dfn-label">Label:</span> <i>Activity Proposed</i><br/>
+        <span class="dfn-label">Description:</span> <i>State of an activity being proposed or planned i.e. yet to occur</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#ActivityStatus">dpv:ActivityStatus</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ActivityStatus">dpv:ActivityStatus</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="ActivityStatus">
+      <h4>Activity Status</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>ActivityStatus</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#ActivityStatus">https://w3id.org/dpv#ActivityStatus</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#ActivityStatus">dpv:ActivityStatus</a>
+        <span class="dfn-label">Label:</span> <i>Activity Status</i><br/>
+        <span class="dfn-label">Description:</span> <i>Status associated with activity operations and lifecycles</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Status">dpv:Status</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="AuditApproved">
+      <h4>Audit Approved</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>AuditApproved</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#AuditApproved">https://w3id.org/dpv#AuditApproved</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#AuditApproved">dpv:AuditApproved</a>
+        <span class="dfn-label">Label:</span> <i>Audit Approved</i><br/>
+        <span class="dfn-label">Description:</span> <i>State of being approved through the audit</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#AuditStatus">dpv:AuditStatus</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#AuditStatus">dpv:AuditStatus</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="AuditConditionallyApproved">
+      <h4>Audit Conditionally Approved</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>AuditConditionallyApproved</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#AuditConditionallyApproved">https://w3id.org/dpv#AuditConditionallyApproved</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#AuditConditionallyApproved">dpv:AuditConditionallyApproved</a>
+        <span class="dfn-label">Label:</span> <i>Audit Conditionally Approved</i><br/>
+        <span class="dfn-label">Description:</span> <i>State of being conditionally approved through the audit</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>A &#34;conditional approval&#34; is intended to reflect states where the audit has identified further changes which must be implemented before considering the audit has been &#39;passed&#39;, without requiring another audit to validate them. This is distinct from the case where an audit has state &#39;rejected&#39;, which means changes must be made and submitted for review. The requirements of a &#39;conditional acceptance&#39; are expected to be minor or not significant enough to warrant another audit to review them.</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#AuditStatus">dpv:AuditStatus</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#AuditStatus">dpv:AuditStatus</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="AuditNotRequired">
+      <h4>Audit Not Required</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>AuditNotRequired</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#AuditNotRequired">https://w3id.org/dpv#AuditNotRequired</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#AuditNotRequired">dpv:AuditNotRequired</a>
+        <span class="dfn-label">Label:</span> <i>Audit Not Required</i><br/>
+        <span class="dfn-label">Description:</span> <i>State where an audit is determined as not being required</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#AuditStatus">dpv:AuditStatus</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#AuditStatus">dpv:AuditStatus</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="AuditRejected">
+      <h4>Audit Rejected</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>AuditRejected</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#AuditRejected">https://w3id.org/dpv#AuditRejected</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#AuditRejected">dpv:AuditRejected</a>
+        <span class="dfn-label">Label:</span> <i>Audit Rejected</i><br/>
+        <span class="dfn-label">Description:</span> <i>State of not being approved or being rejected through the audit</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#AuditStatus">dpv:AuditStatus</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#AuditStatus">dpv:AuditStatus</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="AuditRequested">
+      <h4>Audit Requested</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>AuditRequested</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#AuditRequested">https://w3id.org/dpv#AuditRequested</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#AuditRequested">dpv:AuditRequested</a>
+        <span class="dfn-label">Label:</span> <i>Audit Requested</i><br/>
+        <span class="dfn-label">Description:</span> <i>State of an audit being requested whose outcome is not yet known</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#AuditStatus">dpv:AuditStatus</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#AuditStatus">dpv:AuditStatus</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="AuditRequired">
+      <h4>Audit Required</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>AuditRequired</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#AuditRequired">https://w3id.org/dpv#AuditRequired</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#AuditRequired">dpv:AuditRequired</a>
+        <span class="dfn-label">Label:</span> <i>Audit Required</i><br/>
+        <span class="dfn-label">Description:</span> <i>State where an audit is determined as being required but has not been conducted</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#AuditStatus">dpv:AuditStatus</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#AuditStatus">dpv:AuditStatus</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="AuditStatus">
+      <h4>Audit Status</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>AuditStatus</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#AuditStatus">https://w3id.org/dpv#AuditStatus</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#AuditStatus">dpv:AuditStatus</a>
+        <span class="dfn-label">Label:</span> <i>Audit Status</i><br/>
+        <span class="dfn-label">Description:</span> <i>Status associated with Auditing or Investigation</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Status">dpv:Status</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="City">
+      <h4>City</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>City</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#City">https://w3id.org/dpv#City</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#City">dpv:City</a>
+        <span class="dfn-label">Label:</span> <i>City</i><br/>
+        <span class="dfn-label">Description:</span> <i>A region consisting of urban population and commerce</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Location">dpv:Location</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Location">dpv:Location</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="CloudLocation">
+      <h4>Cloud Location</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>CloudLocation</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#CloudLocation">https://w3id.org/dpv#CloudLocation</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#CloudLocation">dpv:CloudLocation</a>
+        <span class="dfn-label">Label:</span> <i>Cloud Location</i><br/>
+        <span class="dfn-label">Description:</span> <i>Location that is in the &#39;cloud&#39; i.e. a logical location operated over the internet</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Location">dpv:Location</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#RemoteLocation">dpv:RemoteLocation</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="ComplianceIndeterminate">
+      <h4>Compliance Indeterminate</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>ComplianceIndeterminate</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#ComplianceIndeterminate">https://w3id.org/dpv#ComplianceIndeterminate</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#ComplianceIndeterminate">dpv:ComplianceIndeterminate</a>
+        <span class="dfn-label">Label:</span> <i>Compliance Indeterminate</i><br/>
+        <span class="dfn-label">Description:</span> <i>State where the status of compliance has not been fully assessed, evaluated, or determined</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#ComplianceStatus">dpv:ComplianceStatus</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ComplianceStatus">dpv:ComplianceStatus</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="ComplianceStatus">
+      <h4>Compliance Status</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>ComplianceStatus</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#ComplianceStatus">https://w3id.org/dpv#ComplianceStatus</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#ComplianceStatus">dpv:ComplianceStatus</a>
+        <span class="dfn-label">Label:</span> <i>Compliance Status</i><br/>
+        <span class="dfn-label">Description:</span> <i>Status associated with Compliance with some norms, objectives, or requirements</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Status">dpv:Status</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="ComplianceUnknown">
+      <h4>Compliance Unknown</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>ComplianceUnknown</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#ComplianceUnknown">https://w3id.org/dpv#ComplianceUnknown</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#ComplianceUnknown">dpv:ComplianceUnknown</a>
+        <span class="dfn-label">Label:</span> <i>Compliance Unknown</i><br/>
+        <span class="dfn-label">Description:</span> <i>State where the status of compliance is unknown</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#ComplianceStatus">dpv:ComplianceStatus</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ComplianceStatus">dpv:ComplianceStatus</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="ComplianceViolation">
+      <h4>Compliance Violation</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>ComplianceViolation</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#ComplianceViolation">https://w3id.org/dpv#ComplianceViolation</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#ComplianceViolation">dpv:ComplianceViolation</a>
+        <span class="dfn-label">Label:</span> <i>Compliance Violation</i><br/>
+        <span class="dfn-label">Description:</span> <i>State where compliance cannot be achieved due to requirements being violated</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>Changed from &#34;violation of compliance&#34; for consistency with other terms</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#ComplianceStatus">dpv:ComplianceStatus</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ComplianceStatus">dpv:ComplianceStatus</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="Compliant">
+      <h4>Compliant</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>Compliant</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#Compliant">https://w3id.org/dpv#Compliant</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#Compliant">dpv:Compliant</a>
+        <span class="dfn-label">Label:</span> <i>Compliant</i><br/>
+        <span class="dfn-label">Description:</span> <i>State of being fully compliant</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#ComplianceStatus">dpv:ComplianceStatus</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ComplianceStatus">dpv:ComplianceStatus</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="ConformanceStatus">
+      <h4>Conformance Status</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>ConformanceStatus</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#ConformanceStatus">https://w3id.org/dpv#ConformanceStatus</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#ConformanceStatus">dpv:ConformanceStatus</a>
+        <span class="dfn-label">Label:</span> <i>Conformance Status</i><br/>
+        <span class="dfn-label">Description:</span> <i>Status associated with conformance to a standard, guideline, code, or recommendation</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Status">dpv:Status</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="Conformant">
+      <h4>Conformant</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>Conformant</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#Conformant">https://w3id.org/dpv#Conformant</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#Conformant">dpv:Conformant</a>
+        <span class="dfn-label">Label:</span> <i>Conformant</i><br/>
+        <span class="dfn-label">Description:</span> <i>State of being conformant</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#ConformanceStatus">dpv:ConformanceStatus</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ConformanceStatus">dpv:ConformanceStatus</a></i><br/>      </p>
+      </div>
+    </section>
     <section class="term-def" id="Context">
       <h4>Context</h4>
       <div class="term-contents">
@@ -924,6 +1211,32 @@
 <span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Frequency">dpv:Frequency</a></i><br/>      </p>
       </div>
     </section>
+    <section class="term-def" id="Country">
+      <h4>Country</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>Country</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#Country">https://w3id.org/dpv#Country</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#Country">dpv:Country</a>
+        <span class="dfn-label">Label:</span> <i>Country</i><br/>
+        <span class="dfn-label">Description:</span> <i>A political entity indicative of a sovereign or non-sovereign territorial state comprising of distinct geographical areas</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>The definition of country is not intended for political interpretation. DPVCG welcomes alternate definitions based in existing sources with global scope, such as UN or ISO.</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Location">dpv:Location</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Location">dpv:Location</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="DecentralisedLocations">
+      <h4>Decentralised Locations</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>DecentralisedLocations</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#DecentralisedLocations">https://w3id.org/dpv#DecentralisedLocations</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#DecentralisedLocations">dpv:DecentralisedLocations</a>
+        <span class="dfn-label">Label:</span> <i>Decentralised Locations</i><br/>
+        <span class="dfn-label">Description:</span> <i>Location that is spread across multiple separate areas with no distinction between their importance</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#LocationFixture">dpv:LocationFixture</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#LocationFixture">dpv:LocationFixture</a></i><br/>      </p>
+      </div>
+    </section>
     <section class="term-def" id="Duration">
       <h4>Duration</h4>
       <div class="term-contents">
@@ -935,6 +1248,19 @@
         <span class="dfn-label">Description:</span> <i>The duration or temporal limitation</i><br/>
         <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
 <span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Context">dpv:Context</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="EconomicUnion">
+      <h4>Economic Union</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>EconomicUnion</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#EconomicUnion">https://w3id.org/dpv#EconomicUnion</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#EconomicUnion">dpv:EconomicUnion</a>
+        <span class="dfn-label">Label:</span> <i>Economic Union</i><br/>
+        <span class="dfn-label">Description:</span> <i>A political union of two or more countries based on economic or trade agreements</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Location">dpv:Location</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Location">dpv:Location</a></i><br/>      </p>
       </div>
     </section>
     <section class="term-def" id="EndlessDuration">
@@ -950,6 +1276,45 @@
 <span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Duration">dpv:Duration</a></i><br/>      </p>
       </div>
     </section>
+    <section class="term-def" id="FederatedLocations">
+      <h4>Federated Locations</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>FederatedLocations</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#FederatedLocations">https://w3id.org/dpv#FederatedLocations</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#FederatedLocations">dpv:FederatedLocations</a>
+        <span class="dfn-label">Label:</span> <i>Federated Locations</i><br/>
+        <span class="dfn-label">Description:</span> <i>Location that is federated across multiple separate areas with designation of a primary or central location</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#LocationFixture">dpv:LocationFixture</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#LocationFixture">dpv:LocationFixture</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="FixedLocation">
+      <h4>Fixed Location</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>FixedLocation</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#FixedLocation">https://w3id.org/dpv#FixedLocation</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#FixedLocation">dpv:FixedLocation</a>
+        <span class="dfn-label">Label:</span> <i>Fixed Location</i><br/>
+        <span class="dfn-label">Description:</span> <i>Location that is fixed i.e. known to occur at a specific place</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#LocationFixture">dpv:LocationFixture</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#LocationFixture">dpv:LocationFixture</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="FixedMultipleLocations">
+      <h4>Fixed Multiple Locations</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>FixedMultipleLocations</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#FixedMultipleLocations">https://w3id.org/dpv#FixedMultipleLocations</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#FixedMultipleLocations">dpv:FixedMultipleLocations</a>
+        <span class="dfn-label">Label:</span> <i>Fixed Multiple Locations</i><br/>
+        <span class="dfn-label">Description:</span> <i>Location that is fixed with multiple places e.g. multiple cities</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#LocationFixture">dpv:LocationFixture</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#FixedLocation">dpv:FixedLocation</a></i><br/>      </p>
+      </div>
+    </section>
     <section class="term-def" id="FixedOccurencesDuration">
       <h4>Fixed Occurences Duration</h4>
       <div class="term-contents">
@@ -961,6 +1326,19 @@
         <span class="dfn-label">Description:</span> <i>Duration that takes place a fixed number of times e.g. 3 times</i><br/>
         <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
 <span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Duration">dpv:Duration</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="FixedSingularLocation">
+      <h4>Fixed Singular Location</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>FixedSingularLocation</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#FixedSingularLocation">https://w3id.org/dpv#FixedSingularLocation</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#FixedSingularLocation">dpv:FixedSingularLocation</a>
+        <span class="dfn-label">Label:</span> <i>Fixed Singular Location</i><br/>
+        <span class="dfn-label">Description:</span> <i>Location that is fixed at a specific place e.g. a city</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#LocationFixture">dpv:LocationFixture</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#FixedLocation">dpv:FixedLocation</a></i><br/>      </p>
       </div>
     </section>
     <section class="term-def" id="Frequency">
@@ -1015,6 +1393,110 @@
 <span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Context">dpv:Context</a></i><br/>      </p>
       </div>
     </section>
+    <section class="term-def" id="Law">
+      <h4>Law</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>Law</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#Law">https://w3id.org/dpv#Law</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#Law">dpv:Law</a>
+        <span class="dfn-label">Label:</span> <i>Law</i><br/>
+        <span class="dfn-label">Description:</span> <i>A law is a set of rules created by government or authorities</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+      </p>
+      </div>
+    </section>
+    <section class="term-def" id="Lawful">
+      <h4>Lawful</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>Lawful</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#Lawful">https://w3id.org/dpv#Lawful</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#Lawful">dpv:Lawful</a>
+        <span class="dfn-label">Label:</span> <i>Lawful</i><br/>
+        <span class="dfn-label">Description:</span> <i>State of being lawful or legally compliant</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Lawfulness">dpv:Lawfulness</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Lawfulness">dpv:Lawfulness</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="Lawfulness">
+      <h4>Lawfulness</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>Lawfulness</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#Lawfulness">https://w3id.org/dpv#Lawfulness</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#Lawfulness">dpv:Lawfulness</a>
+        <span class="dfn-label">Label:</span> <i>Lawfulness</i><br/>
+        <span class="dfn-label">Description:</span> <i>Status associated with expressing lawfullness or legal compliance</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ComplianceStatus">dpv:ComplianceStatus</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="LawfulnessUnkown">
+      <h4>Lawfulness Unknown</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>LawfulnessUnkown</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#LawfulnessUnkown">https://w3id.org/dpv#LawfulnessUnkown</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#LawfulnessUnkown">dpv:LawfulnessUnkown</a>
+        <span class="dfn-label">Label:</span> <i>Lawfulness Unknown</i><br/>
+        <span class="dfn-label">Description:</span> <i>State of the lawfulness not being known</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Lawfulness">dpv:Lawfulness</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Lawfulness">dpv:Lawfulness</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="LocalLocation">
+      <h4>Local Location</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>LocalLocation</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#LocalLocation">https://w3id.org/dpv#LocalLocation</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#LocalLocation">dpv:LocalLocation</a>
+        <span class="dfn-label">Label:</span> <i>Local Location</i><br/>
+        <span class="dfn-label">Description:</span> <i>Location is local</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Location">dpv:Location</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#LocationLocality">dpv:LocationLocality</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="Location">
+      <h4>Location</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>Location</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#Location">https://w3id.org/dpv#Location</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#Location">dpv:Location</a>
+        <span class="dfn-label">Label:</span> <i>Location</i><br/>
+        <span class="dfn-label">Description:</span> <i>A location is a position, site, or area where something is located</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>Location may be geographic, physical, or virtual.</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+      </p>
+      </div>
+    </section>
+    <section class="term-def" id="LocationFixture">
+      <h4>Location Fixture</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>LocationFixture</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#LocationFixture">https://w3id.org/dpv#LocationFixture</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#LocationFixture">dpv:LocationFixture</a>
+        <span class="dfn-label">Label:</span> <i>Location Fixture</i><br/>
+        <span class="dfn-label">Description:</span> <i>The fixture of location refers to whether the location is fixed</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+      </p>
+      </div>
+    </section>
+    <section class="term-def" id="LocationLocality">
+      <h4>Location Locality</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>LocationLocality</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#LocationLocality">https://w3id.org/dpv#LocationLocality</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#LocationLocality">dpv:LocationLocality</a>
+        <span class="dfn-label">Label:</span> <i>Location Locality</i><br/>
+        <span class="dfn-label">Description:</span> <i>Locality refers to whether the specified location is local within some context, e.g. for the user</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Location">dpv:Location</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Location">dpv:Location</a></i><br/>      </p>
+      </div>
+    </section>
     <section class="term-def" id="Necessity">
       <h4>Necessity</h4>
       <div class="term-contents">
@@ -1026,6 +1508,32 @@
         <span class="dfn-label">Description:</span> <i>An indication of &#39;necessity&#39; within a context</i><br/>
 <span class="dfn-label">Usage Note:</span> <i>Necessity can be used to express need, essentiality, requirement, or compulsion.</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
 <span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Context">dpv:Context</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="NonCompliant">
+      <h4>Non Compliant</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>NonCompliant</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#NonCompliant">https://w3id.org/dpv#NonCompliant</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#NonCompliant">dpv:NonCompliant</a>
+        <span class="dfn-label">Label:</span> <i>Non Compliant</i><br/>
+        <span class="dfn-label">Description:</span> <i>State of non-compliance where objectives have not been met, but have not been violated</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>Changed from not compliant for consistency in commonly used terms</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#ComplianceStatus">dpv:ComplianceStatus</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ComplianceStatus">dpv:ComplianceStatus</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="NonConformant">
+      <h4>NonConformant</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>NonConformant</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#NonConformant">https://w3id.org/dpv#NonConformant</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#NonConformant">dpv:NonConformant</a>
+        <span class="dfn-label">Label:</span> <i>NonConformant</i><br/>
+        <span class="dfn-label">Description:</span> <i>State of being non-conformant</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#ConformanceStatus">dpv:ConformanceStatus</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ConformanceStatus">dpv:ConformanceStatus</a></i><br/>      </p>
       </div>
     </section>
     <section class="term-def" id="NotRequired">
@@ -1067,6 +1575,19 @@
 <span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Necessity">dpv:Necessity</a></i><br/>      </p>
       </div>
     </section>
+    <section class="term-def" id="PartiallyCompliant">
+      <h4>Partially Compliant</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>PartiallyCompliant</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#PartiallyCompliant">https://w3id.org/dpv#PartiallyCompliant</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#PartiallyCompliant">dpv:PartiallyCompliant</a>
+        <span class="dfn-label">Label:</span> <i>Partially Compliant</i><br/>
+        <span class="dfn-label">Description:</span> <i>State of partially being compliant i.e. only some objectives have been met, and others have not been in violation</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#ComplianceStatus">dpv:ComplianceStatus</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ComplianceStatus">dpv:ComplianceStatus</a></i><br/>      </p>
+      </div>
+    </section>
     <section class="term-def" id="PrimaryImportance">
       <h4>Primary Importance</h4>
       <div class="term-contents">
@@ -1078,6 +1599,214 @@
         <span class="dfn-label">Description:</span> <i>Indication of &#39;primary&#39; or &#39;main&#39; or &#39;core&#39; importance</i><br/>
         <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Importance">dpv:Importance</a></i><br/>
 <span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Importance">dpv:Importance</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="PrivateLocation">
+      <h4>Private Location</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>PrivateLocation</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#PrivateLocation">https://w3id.org/dpv#PrivateLocation</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#PrivateLocation">dpv:PrivateLocation</a>
+        <span class="dfn-label">Label:</span> <i>Private Location</i><br/>
+        <span class="dfn-label">Description:</span> <i>Location that is not or cannot be accessed by the public and is controlled as a private space</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Location">dpv:Location</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#LocalLocation">dpv:LocalLocation</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="PublicLocation">
+      <h4>Public Location</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>PublicLocation</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#PublicLocation">https://w3id.org/dpv#PublicLocation</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#PublicLocation">dpv:PublicLocation</a>
+        <span class="dfn-label">Label:</span> <i>Public Location</i><br/>
+        <span class="dfn-label">Description:</span> <i>Location that is or can be accessed by the public</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Location">dpv:Location</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#LocalLocation">dpv:LocalLocation</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="RandomLocation">
+      <h4>Random Location</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>RandomLocation</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#RandomLocation">https://w3id.org/dpv#RandomLocation</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#RandomLocation">dpv:RandomLocation</a>
+        <span class="dfn-label">Label:</span> <i>Random Location</i><br/>
+        <span class="dfn-label">Description:</span> <i>Location that is random or unknown</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#LocationFixture">dpv:LocationFixture</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#LocationFixture">dpv:LocationFixture</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="Region">
+      <h4>Region</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>Region</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#Region">https://w3id.org/dpv#Region</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#Region">dpv:Region</a>
+        <span class="dfn-label">Label:</span> <i>Region</i><br/>
+        <span class="dfn-label">Description:</span> <i>A region is an area or site that is considered a location</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Location">dpv:Location</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Location">dpv:Location</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="RemoteLocation">
+      <h4>Remote Location</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>RemoteLocation</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#RemoteLocation">https://w3id.org/dpv#RemoteLocation</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#RemoteLocation">dpv:RemoteLocation</a>
+        <span class="dfn-label">Label:</span> <i>Remote Location</i><br/>
+        <span class="dfn-label">Description:</span> <i>Location is remote i.e. not local</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Location">dpv:Location</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#LocationLocality">dpv:LocationLocality</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="RequestAccepted">
+      <h4>Request Accepted</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>RequestAccepted</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#RequestAccepted">https://w3id.org/dpv#RequestAccepted</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#RequestAccepted">dpv:RequestAccepted</a>
+        <span class="dfn-label">Label:</span> <i>Request Accepted</i><br/>
+        <span class="dfn-label">Description:</span> <i>State of a request being accepted towards fulfilment</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#RequestStatus">dpv:RequestStatus</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#RequestStatus">dpv:RequestStatus</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="RequestAcknowledged">
+      <h4>Request Acknowledged</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>RequestAcknowledged</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#RequestAcknowledged">https://w3id.org/dpv#RequestAcknowledged</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#RequestAcknowledged">dpv:RequestAcknowledged</a>
+        <span class="dfn-label">Label:</span> <i>Request Acknowledged</i><br/>
+        <span class="dfn-label">Description:</span> <i>State of a request being acknowledged</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#RequestStatus">dpv:RequestStatus</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#RequestStatus">dpv:RequestStatus</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="RequestActionDelayed">
+      <h4>Request Action Delayed</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>RequestActionDelayed</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#RequestActionDelayed">https://w3id.org/dpv#RequestActionDelayed</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#RequestActionDelayed">dpv:RequestActionDelayed</a>
+        <span class="dfn-label">Label:</span> <i>Request Action Delayed</i><br/>
+        <span class="dfn-label">Description:</span> <i>State of a request being delayed towards fulfilment</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#RequestStatus">dpv:RequestStatus</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#RequestStatus">dpv:RequestStatus</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="RequestFulfilled">
+      <h4>Request Fulfilled</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>RequestFulfilled</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#RequestFulfilled">https://w3id.org/dpv#RequestFulfilled</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#RequestFulfilled">dpv:RequestFulfilled</a>
+        <span class="dfn-label">Label:</span> <i>Request Fulfilled</i><br/>
+        <span class="dfn-label">Description:</span> <i>State of a request being fulfilled</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#RequestStatus">dpv:RequestStatus</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#RequestStatus">dpv:RequestStatus</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="RequestInitiated">
+      <h4>Request Initiated</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>RequestInitiated</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#RequestInitiated">https://w3id.org/dpv#RequestInitiated</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#RequestInitiated">dpv:RequestInitiated</a>
+        <span class="dfn-label">Label:</span> <i>Request Initiated</i><br/>
+        <span class="dfn-label">Description:</span> <i>State of a request being initiated</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#RequestStatus">dpv:RequestStatus</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#RequestStatus">dpv:RequestStatus</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="RequestRejected">
+      <h4>Request Rejected</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>RequestRejected</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#RequestRejected">https://w3id.org/dpv#RequestRejected</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#RequestRejected">dpv:RequestRejected</a>
+        <span class="dfn-label">Label:</span> <i>Request Rejected</i><br/>
+        <span class="dfn-label">Description:</span> <i>State of a request being rejected towards non-fulfilment</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#RequestStatus">dpv:RequestStatus</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#RequestStatus">dpv:RequestStatus</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="RequestRequiredActionPerformed">
+      <h4>Request Required Action Performed</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>RequestRequiredActionPerformed</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#RequestRequiredActionPerformed">https://w3id.org/dpv#RequestRequiredActionPerformed</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#RequestRequiredActionPerformed">dpv:RequestRequiredActionPerformed</a>
+        <span class="dfn-label">Label:</span> <i>Request Required Action Performed</i><br/>
+        <span class="dfn-label">Description:</span> <i>State of a request&#39;s required action having been performed by the other party</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#RequestStatus">dpv:RequestStatus</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#RequestStatus">dpv:RequestStatus</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="RequestRequiresAction">
+      <h4>Request Requires Action</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>RequestRequiresAction</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#RequestRequiresAction">https://w3id.org/dpv#RequestRequiresAction</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#RequestRequiresAction">dpv:RequestRequiresAction</a>
+        <span class="dfn-label">Label:</span> <i>Request Requires Action</i><br/>
+        <span class="dfn-label">Description:</span> <i>State of a request requiring an action to be performed from another party</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#RequestStatus">dpv:RequestStatus</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#RequestStatus">dpv:RequestStatus</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="RequestStatus">
+      <h4>Request Status</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>RequestStatus</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#RequestStatus">https://w3id.org/dpv#RequestStatus</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#RequestStatus">dpv:RequestStatus</a>
+        <span class="dfn-label">Label:</span> <i>Request Status</i><br/>
+        <span class="dfn-label">Description:</span> <i>Status associated with requests</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Status">dpv:Status</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="RequestStatusQuery">
+      <h4>Request Status Query</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>RequestStatusQuery</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#RequestStatusQuery">https://w3id.org/dpv#RequestStatusQuery</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#RequestStatusQuery">dpv:RequestStatusQuery</a>
+        <span class="dfn-label">Label:</span> <i>Request Status Query</i><br/>
+        <span class="dfn-label">Description:</span> <i>State of a request&#39;s status being queried</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#RequestStatus">dpv:RequestStatus</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#RequestStatus">dpv:RequestStatus</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="RequestUnfulfilled">
+      <h4>Request Unfulfilled</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>RequestUnfulfilled</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#RequestUnfulfilled">https://w3id.org/dpv#RequestUnfulfilled</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#RequestUnfulfilled">dpv:RequestUnfulfilled</a>
+        <span class="dfn-label">Label:</span> <i>Request Unfulfilled</i><br/>
+        <span class="dfn-label">Description:</span> <i>State of a request being unfulfilled</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#RequestStatus">dpv:RequestStatus</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#RequestStatus">dpv:RequestStatus</a></i><br/>      </p>
       </div>
     </section>
     <section class="term-def" id="Required">
@@ -1145,6 +1874,32 @@
 <span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Frequency">dpv:Frequency</a></i><br/>      </p>
       </div>
     </section>
+    <section class="term-def" id="Status">
+      <h4>Status</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>Status</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#Status">https://w3id.org/dpv#Status</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#Status">dpv:Status</a>
+        <span class="dfn-label">Label:</span> <i>Status</i><br/>
+        <span class="dfn-label">Description:</span> <i>The status or state of something</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Context">dpv:Context</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="SupraNationalUnion">
+      <h4>Supranational Union</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>SupraNationalUnion</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#SupraNationalUnion">https://w3id.org/dpv#SupraNationalUnion</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a>
+        <span class="dfn-label">Label:</span> <i>Supranational Union</i><br/>
+        <span class="dfn-label">Description:</span> <i>A political union of two or more countries with an establishment of common authority</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Location">dpv:Location</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Location">dpv:Location</a></i><br/>      </p>
+      </div>
+    </section>
     <section class="term-def" id="Technology">
       <h4>Technology</h4>
       <div class="term-contents">
@@ -1169,6 +1924,32 @@
         <span class="dfn-label">Description:</span> <i>Duration that has a fixed temporal duration e.g. 6 months</i><br/>
         <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
 <span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Duration">dpv:Duration</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="ThirdCountry">
+      <h4>Third Country</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>ThirdCountry</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#ThirdCountry">https://w3id.org/dpv#ThirdCountry</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#ThirdCountry">dpv:ThirdCountry</a>
+        <span class="dfn-label">Label:</span> <i>Third Country</i><br/>
+        <span class="dfn-label">Description:</span> <i>Represents a country outside applicable or compatible jurisdiction as outlined in law</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Country">dpv:Country</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Country">dpv:Country</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="Unlawful">
+      <h4>Unlawful</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>Unlawful</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#Unlawful">https://w3id.org/dpv#Unlawful</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#Unlawful">dpv:Unlawful</a>
+        <span class="dfn-label">Label:</span> <i>Unlawful</i><br/>
+        <span class="dfn-label">Description:</span> <i>State of being unlawful or legally non-compliant</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Lawfulness">dpv:Lawfulness</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Lawfulness">dpv:Lawfulness</a></i><br/>      </p>
       </div>
     </section>
     <section class="term-def" id="UntilEventDuration">
@@ -1197,10 +1978,114 @@
 <span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Duration">dpv:Duration</a></i><br/>      </p>
       </div>
     </section>
+    <section class="term-def" id="VariableLocation">
+      <h4>Variable Location</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>VariableLocation</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#VariableLocation">https://w3id.org/dpv#VariableLocation</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#VariableLocation">dpv:VariableLocation</a>
+        <span class="dfn-label">Label:</span> <i>Variable Location</i><br/>
+        <span class="dfn-label">Description:</span> <i>Location that is known but is variable e.g. somewhere within a given area</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#LocationFixture">dpv:LocationFixture</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#LocationFixture">dpv:LocationFixture</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="WithinDevice">
+      <h4>Within Device</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>WithinDevice</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#WithinDevice">https://w3id.org/dpv#WithinDevice</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#WithinDevice">dpv:WithinDevice</a>
+        <span class="dfn-label">Label:</span> <i>Within Device</i><br/>
+        <span class="dfn-label">Description:</span> <i>Location is local and entirely within a device, such as a smartphone</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Location">dpv:Location</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#LocalLocation">dpv:LocalLocation</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="WithinPhysicalEnvironment">
+      <h4>Within Physical Environment</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>WithinPhysicalEnvironment</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#WithinPhysicalEnvironment">https://w3id.org/dpv#WithinPhysicalEnvironment</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#WithinPhysicalEnvironment">dpv:WithinPhysicalEnvironment</a>
+        <span class="dfn-label">Label:</span> <i>Within Physical Environment</i><br/>
+        <span class="dfn-label">Description:</span> <i>Location is local and entirely within a physical environment, such as a room</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Location">dpv:Location</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#LocalLocation">dpv:LocalLocation</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="WithinVirtualEnvironment">
+      <h4>Within Virtual Environment</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>WithinVirtualEnvironment</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#WithinVirtualEnvironment">https://w3id.org/dpv#WithinVirtualEnvironment</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#WithinVirtualEnvironment">dpv:WithinVirtualEnvironment</a>
+        <span class="dfn-label">Label:</span> <i>Within Virtual Environment</i><br/>
+        <span class="dfn-label">Description:</span> <i>Location is local and entirely within a virtual environment, such as a shared network directory</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Location">dpv:Location</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#LocalLocation">dpv:LocalLocation</a></i><br/>      </p>
+      </div>
+    </section>
 
   </section>
   <section id="properties">
     <h3>Properties</h3>
+    <section class="term-def" id="hasActivityStatus">
+      <h4>has activity status</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>hasActivityStatus</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#hasActivityStatus">https://w3id.org/dpv#hasActivityStatus</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#hasActivityStatus">dpv:hasActivityStatus</a>
+        <span class="dfn-label">Label:</span> <i>has activity status</i><br/>
+        <span class="dfn-label">Description:</span> <i>Indicates the status of activity of specified concept</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#hasStatus">dpv:hasStatus</a></i><br/><span class="dfn-label">Sub-property of:</span> <i><a href="https://w3id.org/dpv#hasStatus">dpv:hasStatus</a></i><br/><span class="dfn-label">Range includes:</span> <i><a href="https://w3id.org/dpv#ActivityStatus">dpv:ActivityStatus</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="hasApplicableLaw">
+      <h4>has applicable law</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>hasApplicableLaw</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#hasApplicableLaw">https://w3id.org/dpv#hasApplicableLaw</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#hasApplicableLaw">dpv:hasApplicableLaw</a>
+        <span class="dfn-label">Label:</span> <i>has applicable law</i><br/>
+        <span class="dfn-label">Description:</span> <i>Indicates applicability of a Law</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Range includes:</span> <i><a href="https://w3id.org/dpv#Law">dpv:Law</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="hasAuditStatus">
+      <h4>has audit status</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>hasAuditStatus</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#hasAuditStatus">https://w3id.org/dpv#hasAuditStatus</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#hasAuditStatus">dpv:hasAuditStatus</a>
+        <span class="dfn-label">Label:</span> <i>has audit status</i><br/>
+        <span class="dfn-label">Description:</span> <i>Indicates the status of audit associated with specified concept</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#hasStatus">dpv:hasStatus</a></i><br/><span class="dfn-label">Sub-property of:</span> <i><a href="https://w3id.org/dpv#hasStatus">dpv:hasStatus</a></i><br/><span class="dfn-label">Range includes:</span> <i><a href="https://w3id.org/dpv#AuditStatus">dpv:AuditStatus</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="hasComplianceStatus">
+      <h4>has compliance status</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>hasComplianceStatus</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#hasComplianceStatus">https://w3id.org/dpv#hasComplianceStatus</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#hasComplianceStatus">dpv:hasComplianceStatus</a>
+        <span class="dfn-label">Label:</span> <i>has compliance status</i><br/>
+        <span class="dfn-label">Description:</span> <i>Indicates the status of compliance of specified concept</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#hasStatus">dpv:hasStatus</a></i><br/><span class="dfn-label">Sub-property of:</span> <i><a href="https://w3id.org/dpv#hasStatus">dpv:hasStatus</a></i><br/><span class="dfn-label">Range includes:</span> <i><a href="https://w3id.org/dpv#ComplianceStatus">dpv:ComplianceStatus</a></i><br/>      </p>
+      </div>
+    </section>
     <section class="term-def" id="hasContext">
       <h4>has context</h4>
       <div class="term-contents">
@@ -1212,6 +2097,19 @@
         <span class="dfn-label">Description:</span> <i>Indicates a purpose is restricted to the specified context(s)</i><br/>
         <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
 <span class="dfn-label">Range includes:</span> <i><a href="https://w3id.org/dpv#Context">dpv:Context</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="hasCountry">
+      <h4>has country</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>hasCountry</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#hasCountry">https://w3id.org/dpv#hasCountry</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#hasCountry">dpv:hasCountry</a>
+        <span class="dfn-label">Label:</span> <i>has country</i><br/>
+        <span class="dfn-label">Description:</span> <i>Indicates applicability of specified country</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#hasLocation">dpv:hasLocation</a></i><br/><span class="dfn-label">Sub-property of:</span> <i><a href="https://w3id.org/dpv#hasLocation">dpv:hasLocation</a></i><br/><span class="dfn-label">Range includes:</span> <i><a href="https://w3id.org/dpv#Country">dpv:Country</a></i><br/>      </p>
       </div>
     </section>
     <section class="term-def" id="hasDuration">
@@ -1253,6 +2151,19 @@
       </p>
       </div>
     </section>
+    <section class="term-def" id="hasJurisdiction">
+      <h4>has jurisdiction</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>hasJurisdiction</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#hasJurisdiction">https://w3id.org/dpv#hasJurisdiction</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#hasJurisdiction">dpv:hasJurisdiction</a>
+        <span class="dfn-label">Label:</span> <i>has jurisdiction</i><br/>
+        <span class="dfn-label">Description:</span> <i>Indicates applicability of specified jurisdiction</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Range includes:</span> <i><a href="https://w3id.org/dpv#Location">dpv:Location</a></i><br/>      </p>
+      </div>
+    </section>
     <section class="term-def" id="hasJustification">
       <h4>has justification</h4>
       <div class="term-contents">
@@ -1264,6 +2175,32 @@
         <span class="dfn-label">Description:</span> <i>Indicates a justification for specified concept or context</i><br/>
         <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
 <span class="dfn-label">Domain includes:</span> <i><a href="https://w3id.org/dpv#RightExerciseActivity">dpv:RightExerciseActivity</a></i><br/><span class="dfn-label">Range includes:</span> <i><a href="https://w3id.org/dpv#Justification">dpv:Justification</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="hasLawfulness">
+      <h4>has lawfulness</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>hasLawfulness</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#hasLawfulness">https://w3id.org/dpv#hasLawfulness</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#hasLawfulness">dpv:hasLawfulness</a>
+        <span class="dfn-label">Label:</span> <i>has lawfulness</i><br/>
+        <span class="dfn-label">Description:</span> <i>Indicates the status of being lawful or legally compliant</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#hasComplianceStatus">dpv:hasComplianceStatus</a></i><br/><span class="dfn-label">Sub-property of:</span> <i><a href="https://w3id.org/dpv#hasComplianceStatus">dpv:hasComplianceStatus</a></i><br/><span class="dfn-label">Range includes:</span> <i><a href="https://w3id.org/dpv#Lawfulness">dpv:Lawfulness</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="hasLocation">
+      <h4>has location</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>hasLocation</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#hasLocation">https://w3id.org/dpv#hasLocation</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#hasLocation">dpv:hasLocation</a>
+        <span class="dfn-label">Label:</span> <i>has location</i><br/>
+        <span class="dfn-label">Description:</span> <i>Indicates information about location</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Range includes:</span> <i><a href="https://w3id.org/dpv#Location">dpv:Location</a></i><br/><span class="dfn-label">Source:</span> <i>(SPECIAL Project,https://specialprivacy.ercim.eu/)</i><br/>      </p>
       </div>
     </section>
     <section class="term-def" id="hasOutcome">
@@ -1290,6 +2227,32 @@
         <span class="dfn-label">Description:</span> <i>Indicates the scope of specified concept or context</i><br/>
         <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
 <span class="dfn-label">Range includes:</span> <i><a href="https://w3id.org/dpv#Scope">dpv:Scope</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="hasStatus">
+      <h4>has status</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>hasStatus</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#hasStatus">https://w3id.org/dpv#hasStatus</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#hasStatus">dpv:hasStatus</a>
+        <span class="dfn-label">Label:</span> <i>has status</i><br/>
+        <span class="dfn-label">Description:</span> <i>Indicates the status of specified concept</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Domain includes:</span> <i><a href="https://w3id.org/dpv#RightExerciseActivity">dpv:RightExerciseActivity</a></i><br/><span class="dfn-label">Range includes:</span> <i><a href="https://w3id.org/dpv#Status">dpv:Status</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="hasThirdCountry">
+      <h4>has third country</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>hasThirdCountry</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#hasThirdCountry">https://w3id.org/dpv#hasThirdCountry</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#hasThirdCountry">dpv:hasThirdCountry</a>
+        <span class="dfn-label">Label:</span> <i>has third country</i><br/>
+        <span class="dfn-label">Description:</span> <i>Indicates applicability or relevance of a &#39;third country&#39;</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#hasCountry">dpv:hasCountry</a></i><br/><span class="dfn-label">Sub-property of:</span> <i><a href="https://w3id.org/dpv#hasCountry">dpv:hasCountry</a></i><br/><span class="dfn-label">Range includes:</span> <i><a href="https://w3id.org/dpv#ThirdCountry">dpv:ThirdCountry</a></i><br/>      </p>
       </div>
     </section>
     <section class="term-def" id="isAfter">

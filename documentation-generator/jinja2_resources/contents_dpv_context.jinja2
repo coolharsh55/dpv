@@ -15,12 +15,12 @@
     shortName: "dpv",
     title: "Context",
     subtitle: "Data Privacy Vocabulary (DPV)",
-    publishDate: "2022-12-05",
-    specStatus: "CG-FINAL",
+    publishDate: "2023-11-12",
+    specStatus: "CG-DRAFT",
     group: "dpvcg",
-    latestVersion: "https://w3id.org/dpv",
-    canonicalUri: "https://w3id.org/dpv",
-    edDraftURI: "https://w3id.org/dpv/ed/dpv",
+    latestVersion: "https://w3id.org/dpv/modules/context",
+    canonicalUri: "https://w3id.org/dpv/modules/context",
+    edDraftURI: "https://w3id.org/dpv/ed/dpv/modules/context",
     github: "w3c/dpv",
     subjectPrefix: "[dpv]",
     doJsonLd: true,
@@ -82,11 +82,12 @@
     <blockquote>This document assumes the reader is familiar with DPV through the [[[DPV-Primer]]], and thus focuses on providing a topically structured documentation of concepts defined by DPV.</blockquote>
 
     <figure>
-    <img src="../diagrams/Context.png">
+    <img src="../../diagrams/Context.png">
     <figcaption></figcaption>
   </figure>
+  </section>
   <section>
-    <h3>Duration and Frequency</h3>
+    <h2>Duration and Frequency</h2>
     <p>To express the duration of events or operations, such as how long processing will take or the validity of consent, the concept [=Duration=] can be used. Duration is indicated using the relation [=hasDuration=], and has the following subtypes:</p>
     <ul>
     <li>[=TemporalDuration=] - indicating a relative temporal duration, e.g. 6 months.</li>
@@ -111,7 +112,7 @@
   </section>
 
   <section id="vocab-status">
-    <h3>Status</h3>
+    <h2>Status</h2>
     <p>To assist with expressing the state or status associated with various activities, DPV provides the [=Status=] concept that can be associated contextually using the [=hasStatus=] relation. Specific subtypes are provided as [=ActivityStatus=], [=ComplianceStatus=] including [=Lawfulness=], [=AuditStatus=], [=ConformanceStatus=], and [=RequestStatus=].</p>
 
     <p><strong>[=ActivityStatus=]</strong> represents a state or status of an activity's operations and lifecycle, which includes [=ActivityProposed=], [=ActivityOngoing=], [=ActivityHalted=], [=ActivityCompleted=], and [=ActivityNotCompleted=].</p>
@@ -126,14 +127,14 @@
 
     <p><strong>[=RequestStatus=]</strong> represents the state or status of <i>requests</i>, which can be between entities such as data subjects and controllers regarding exercising of rights, or between controllers and processors regarding processing operations, or between authorities and controllers regarding compliance related communications. Types of request statues are: [=RequestInitiated=], [=RequestAcknowledged=], [=RequestAccepted=], [=RequestRejected=], [=RequestFulfilled=], [=RequestUnfulfilled=], [=RequestRequiresAction=], [=RequestRequiredActionPerformed=], [=RequestActionDelayed=], and [=RequestStatusQuery=].</p>
 
-    {{ list_hierarchy(modules['status']['classes']) }}
+    {{ list_hierarchy(modules['context-status']['classes']) }}
   </section>
 </section>
 
 <section id="vocab-jurisdiction">
   <h2>Location &amp; Jurisdiction</h2>
   <figure>
-    <img src="../diagrams/location.png">
+    <img src="../../diagrams/location.png">
     <figcaption></figcaption>
   </figure>
   <p>To represent location, the concept [=Location=] along with relations [=hasLocation=] is provided. For geo-political locations, the concepts such as [=Country=] and [=SupraNationalUnion=] are subtyped, with [=hasCountry=] and [=ThirdCountry=] with [=hasThirdCountry=] provided for convenience in common uses (e.g. data storage, transfers).</p>
@@ -141,7 +142,7 @@
   <p>To represent locations as jurisdictions, the relation [=hasJurisdiction=] is provided. The concept [=Law=] represents an official or authoritative law or regulation created by a government or an authority. To indicate applicability of laws within a jurisdiction, the relation [=hasApplicableLaw=] is provided.</p>
   <p>The [[[DPV-LEGAL]]] provides taxonomies extending these concepts, such as to represent specific countries, their laws, authorities, memberships, adequacy decisions, and other information.</p>
 
-  {{ list_hierarchy(modules['jurisdiction']['classes']) }}
+  {{ list_hierarchy(modules['context-jurisdiction']['classes']) }}
 </section>
 
   <section>

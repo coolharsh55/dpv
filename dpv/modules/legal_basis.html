@@ -10,12 +10,12 @@
     shortName: "dpv",
     title: "Legal Basis",
     subtitle: "Data Privacy Vocabulary (DPV)",
-    publishDate: "2022-12-05",
-    specStatus: "CG-FINAL",
+    publishDate: "2023-11-12",
+    specStatus: "CG-DRAFT",
     group: "dpvcg",
-    latestVersion: "https://w3id.org/dpv",
-    canonicalUri: "https://w3id.org/dpv",
-    edDraftURI: "https://w3id.org/dpv/ed/dpv",
+    latestVersion: "https://w3id.org/dpv/modules/legal_basis",
+    canonicalUri: "https://w3id.org/dpv/modules/legal_basis",
+    edDraftURI: "https://w3id.org/dpv/ed/dpv/modules/legal_basis",
     github: "w3c/dpv",
     subjectPrefix: "[dpv]",
     doJsonLd: true,
@@ -369,7 +369,7 @@
     <blockquote>This document assumes the reader is familiar with DPV through the [[[DPV-Primer]]], and thus focuses on providing a topically structured documentation of concepts defined by DPV.</blockquote>
 
   <figure>
-    <img src="../diagrams/legal_bases.png">
+    <img src="../../diagrams/legal_bases.png">
     <figcaption>Legal Bases in DPV</figcaption>
   </figure>
   <p>DPV provides the following categories of legal bases based on [[GDPR]] Article 6: consent of the data subject, contract, compliance with legal obligation, protecting vital interests of individuals, legitimate interests, public interest, and official authorities. Though derived from GDPR, these concepts can be applied for other jurisdictions and general use-cases. The legal bases are represented by the concept [=LegalBasis=] and associated using the relation [=hasLegalBasis=].</p>
@@ -490,6 +490,171 @@
 
   </section>
 
+  <section id="desc-contract">
+    <h3>Contract</h3>
+  </section>
+
+  <section id="desc-legal-obligation">
+    <h3>Legal Obligation</h3>
+  </section>
+
+  <section id="desc-consent">
+    <h3>Consent</h3>
+      <figure>
+      <a href="../../diagrams/Consent.png"><img src="../../diagrams/Consent.png"></a>
+      <figcaption></figcaption>
+    </figure>
+    <p>Consent in DPV is a specific legal basis representing <i>information associated with consent</i> rather than only <i>given consent</i>. Common information associated with consent includes tasks such as keeping track of whether "consent has been given/obtained", "issuing a consent request", and "withdrawing consent", as well as expressing requirements through terms such as "informed" and "explicit". To assist with representing these concepts as well as keeping records about how they are being applied, DPV provides the following consent concepts.</p>
+    <ul>
+      <li>[=Consent=] - a type of legal basis representing consent of the individual.</li>
+      <li><a href="#vocab-consent-types">Consent Types</a> - to represent criteria for consent, such as [=InformedConsent=] and [=ExplicitlyExpressedConsent=].</li>
+      <li><a href="#vocab-consent-status">Consent Status</a> - to represent and keep track of what state/status/stage the consenting process is at, for example indicating the journey or lifecycle from [=ConsentRequested=] to [=ConsentGiven=] and then [=ConsentWithdrawn=].</li>
+      <li><a href="vocab-consent-relations">Consent Relations</a> - to enable association of relevant information with consent, such as the notice used or provided, status of consent, or who indicated it.</li>
+    </ul>
+    <p>To indicate the duration or validity of a given consent instance, the existing contextual relation [=hasDuration=] along with specific forms of [=Duration=] can be used. For example, to indicate consent is valid until a specific event such as account closure, the duration subtype [=UntilEventDuration=] can be used with additional instantiation or annotation to indicate more details about the event (in this case the closure of account). Similarly, [=UntilTimeDuration=] indicates validity until a specific time instance or timestamp (e.g. 31 December 2022), and [=TemporalDuration=] indicates a relative time duration (e.g. 6 months). To indicate validity without an end condition, [=EndlessDuration=] can be used.</p>
+    <p>To specify consent provided by delegation, such as in the case of a parent or guardian providing consent for/with a child, the [=isIndicatedBy=] relation can be used to associate the parent or guardian responsible for providing consent (or its affirmation). Since by default the consent is presumed to be provided by the individual, when such individuals are associated with their consent, i.e. through [=hasDataSubject=], the additional information provided by [=isIndicatedBy=] can be considered redundant and is often omitted.</p>
+    <div class="note" title="Deprecated concepts">
+        <p>The concepts/relations for consent added in DPV v0.1 and later have been <i>deprecated</i> or removed from the DPV in favour of the newer set of concepts based on advances in legislative requirements as well as standardisation efforts such as [[[ISO-27560]]]. The list of deprecated concepts is provided in <a href="#appendix-deprecated">Appendix</a> and a note on converting existing implementations to use newer concepts is provided in [[DPV-GUIDE-Consent]].</p>
+     </div>
+    
+
+    <section id="vocab-consent-types">
+      <h4>Consent Types</h4>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:Consent</strong>: Consent of the Data Subject for specified processing 
+      <small><a href="#Consent">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:InformedConsent</strong>: Consent that is informed i.e. with the requirement to provide sufficient information to make a consenting decision 
+      <small><a href="#InformedConsent">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:ExpressedConsent</strong>: Consent that is expressed through an action intended to convey a consenting decision 
+      <small><a href="#ExpressedConsent">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:ExplicitlyExpressedConsent</strong>: Consent that is expressed through an explicit action solely conveying a consenting decision 
+      <small><a href="#ExplicitlyExpressedConsent">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:ImpliedConsent</strong>: Consent that is implied indirectly through an action not associated solely with conveying a consenting decision 
+      <small><a href="#ImpliedConsent">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:UninformedConsent</strong>: Consent that is uninformed i.e. without requirement to provide sufficient information to make a consenting decision 
+      <small><a href="#UninformedConsent">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+</ul>
+    </section>
+
+    <section id="vocab-consent-status">
+      <h4>Consent Status</h4>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:Status</strong>: The status or state of something 
+      <small><a href="#Status">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:ConsentStatus</strong>: The state or status of &#39;consent&#39; that provides information reflecting its operational status and validity for processing data 
+      <small><a href="#ConsentStatus">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:ConsentStatusInvalidForProcessing</strong>: States of consent that cannot be used as valid justifications for processing data 
+      <small><a href="#ConsentStatusInvalidForProcessing">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:ConsentExpired</strong>: The state where the temporal or contextual validity of consent has &#39;expired&#39; 
+      <small><a href="#ConsentExpired">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:ConsentInvalidated</strong>: The state where consent has been deemed to be invalid 
+      <small><a href="#ConsentInvalidated">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:ConsentRefused</strong>: The state where consent has been refused 
+      <small><a href="#ConsentRefused">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:ConsentRequestDeferred</strong>: State where a request for consent has been deferred without a decision 
+      <small><a href="#ConsentRequestDeferred">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:ConsentRequested</strong>: State where a request for consent has been made and is awaiting a decision 
+      <small><a href="#ConsentRequested">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:ConsentRevoked</strong>: The state where the consent is revoked by an entity other than the data subject and which prevents it from being further used as a valid state 
+      <small><a href="#ConsentRevoked">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:ConsentUnknown</strong>: State where information about consent is not available or is unknown 
+      <small><a href="#ConsentUnknown">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:ConsentWithdrawn</strong>: The state where the consent is withdrawn or revoked specifically by the data subject and which prevents it from being further used as a valid state 
+      <small><a href="#ConsentWithdrawn">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:ConsentStatusValidForProcessing</strong>: States of consent that can be used as valid justifications for processing data 
+      <small><a href="#ConsentStatusValidForProcessing">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:ConsentGiven</strong>: The state where consent has been given 
+      <small><a href="#ConsentGiven">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:RenewedConsentGiven</strong>: The state where a previously given consent has been &#39;renewed&#39; or &#39;refreshed&#39; or &#39;reaffirmed&#39; to form a new instance of given consent 
+      <small><a href="#RenewedConsentGiven">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+    </section>
+
+  </section>
+
+  <section id="desc-legitimate-interest">
+    <h3>Legitimate Interest</h3>
+  </section>
+
+  <section id="desc-official-authority">
+    <h3>Official Authority</h3>
+  </section>
+
+  <section id="desc-public-interest">
+    <h3>Public Interest</h3>
+  </section>
+
+  <section id="desc-vital-interest">
+    <h3>Protecting Vital Interests</h3>
+  </section>
+
   <section>
   <h2>Vocabulary Index</h2>
   <section id="classes">
@@ -505,6 +670,162 @@
         <span class="dfn-label">Description:</span> <i>Consent of the Data Subject for specified processing</i><br/>
         <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#LegalBasis">dpv:LegalBasis</a></i><br/>
 <span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#LegalBasis">dpv:LegalBasis</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="ConsentExpired">
+      <h4>Consent Expired</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>ConsentExpired</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#ConsentExpired">https://w3id.org/dpv#ConsentExpired</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#ConsentExpired">dpv:ConsentExpired</a>
+        <span class="dfn-label">Label:</span> <i>Consent Expired</i><br/>
+        <span class="dfn-label">Description:</span> <i>The state where the temporal or contextual validity of consent has &#39;expired&#39;</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>An example of this state is when the obtained consent has been assigned a duration - which has lapsed or &#39;expired&#39;, making it invalid to be used further for processing data</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#ConsentStatus">dpv:ConsentStatus</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ConsentStatusInvalidForProcessing">dpv:ConsentStatusInvalidForProcessing</a></i><br/><span class="dfn-label">Source:</span> <i>(GConsent,https://w3id.org/GConsent)</i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="ConsentGiven">
+      <h4>Consent Given</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>ConsentGiven</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#ConsentGiven">https://w3id.org/dpv#ConsentGiven</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#ConsentGiven">dpv:ConsentGiven</a>
+        <span class="dfn-label">Label:</span> <i>Consent Given</i><br/>
+        <span class="dfn-label">Description:</span> <i>The state where consent has been given</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>An example of this state is when the individual clicks on a button, ticks a checkbox, verbally agrees - or any other form that communicates their decision agreeing to the processing of data</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#ConsentStatus">dpv:ConsentStatus</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ConsentStatusValidForProcessing">dpv:ConsentStatusValidForProcessing</a></i><br/><span class="dfn-label">Source:</span> <i>(GConsent,https://w3id.org/GConsent)</i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="ConsentInvalidated">
+      <h4>Consent Invalidated</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>ConsentInvalidated</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#ConsentInvalidated">https://w3id.org/dpv#ConsentInvalidated</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#ConsentInvalidated">dpv:ConsentInvalidated</a>
+        <span class="dfn-label">Label:</span> <i>Consent Invalidated</i><br/>
+        <span class="dfn-label">Description:</span> <i>The state where consent has been deemed to be invalid</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>An example of this state is where an investigating authority or a court finds the collected consent did not meet requirements, and &#39;invalidates&#39; both prior and future uses of it to carry out processing</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#ConsentStatus">dpv:ConsentStatus</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ConsentStatusInvalidForProcessing">dpv:ConsentStatusInvalidForProcessing</a></i><br/><span class="dfn-label">Source:</span> <i>(GConsent,https://w3id.org/GConsent)</i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="ConsentRefused">
+      <h4>Consent Refused</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>ConsentRefused</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#ConsentRefused">https://w3id.org/dpv#ConsentRefused</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#ConsentRefused">dpv:ConsentRefused</a>
+        <span class="dfn-label">Label:</span> <i>Consent Refused</i><br/>
+        <span class="dfn-label">Description:</span> <i>The state where consent has been refused</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>An example of this state is when the individual clicks on a &#39;disagree&#39; or &#39;reject&#39; or &#39;refuse&#39; button, or leaves a checkbox unticked</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#ConsentStatus">dpv:ConsentStatus</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ConsentStatusInvalidForProcessing">dpv:ConsentStatusInvalidForProcessing</a></i><br/><span class="dfn-label">Source:</span> <i>(GConsent,https://w3id.org/GConsent)</i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="ConsentRequestDeferred">
+      <h4>Consent Request Deferred</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>ConsentRequestDeferred</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#ConsentRequestDeferred">https://w3id.org/dpv#ConsentRequestDeferred</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#ConsentRequestDeferred">dpv:ConsentRequestDeferred</a>
+        <span class="dfn-label">Label:</span> <i>Consent Request Deferred</i><br/>
+        <span class="dfn-label">Description:</span> <i>State where a request for consent has been deferred without a decision</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>An example of this state is when the individual closes or dismisses a notice without making a decision. This state is intended for making the distinction between a notice being provided (as a consent request) and the individual interacting with the notice without making a decision - where the &#39;ignoring of a notice&#39; is taken as consent being neither given nor refused</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#ConsentStatus">dpv:ConsentStatus</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ConsentStatusInvalidForProcessing">dpv:ConsentStatusInvalidForProcessing</a></i><br/><span class="dfn-label">Source:</span> <i>(GConsent,https://w3id.org/GConsent)</i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="ConsentRequested">
+      <h4>Consent Requested</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>ConsentRequested</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#ConsentRequested">https://w3id.org/dpv#ConsentRequested</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#ConsentRequested">dpv:ConsentRequested</a>
+        <span class="dfn-label">Label:</span> <i>Consent Requested</i><br/>
+        <span class="dfn-label">Description:</span> <i>State where a request for consent has been made and is awaiting a decision</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>An example of this state is when a notice has been presented to the individual but they have not made a decision</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#ConsentStatus">dpv:ConsentStatus</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ConsentStatusInvalidForProcessing">dpv:ConsentStatusInvalidForProcessing</a></i><br/><span class="dfn-label">Source:</span> <i>(GConsent,https://w3id.org/GConsent)</i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="ConsentRevoked">
+      <h4>Consent Revoked</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>ConsentRevoked</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#ConsentRevoked">https://w3id.org/dpv#ConsentRevoked</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#ConsentRevoked">dpv:ConsentRevoked</a>
+        <span class="dfn-label">Label:</span> <i>Consent Revoked</i><br/>
+        <span class="dfn-label">Description:</span> <i>The state where the consent is revoked by an entity other than the data subject and which prevents it from being further used as a valid state</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>An example of this state is when a Data Controller stops utilising previously obtaining consent, such as when that service no longer exists</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#ConsentStatus">dpv:ConsentStatus</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ConsentStatusInvalidForProcessing">dpv:ConsentStatusInvalidForProcessing</a></i><br/><span class="dfn-label">Source:</span> <i>(GConsent,https://w3id.org/GConsent)</i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="ConsentStatus">
+      <h4>Consent Status</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>ConsentStatus</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#ConsentStatus">https://w3id.org/dpv#ConsentStatus</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#ConsentStatus">dpv:ConsentStatus</a>
+        <span class="dfn-label">Label:</span> <i>Consent Status</i><br/>
+        <span class="dfn-label">Description:</span> <i>The state or status of &#39;consent&#39; that provides information reflecting its operational status and validity for processing data</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>States are useful as information artefacts to implement them in controlling processing, and to reflect the process and flow of obtaining and maintaining consent. For example, a database table that stores consent states for specific processing and can be queried to obtain them in an efficient manner. States are also useful in investigations to determine the use and validity of consenting practices</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Status">dpv:Status</a></i><br/><span class="dfn-label">Source:</span> <i>(GConsent,https://w3id.org/GConsent)</i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="ConsentStatusInvalidForProcessing">
+      <h4>Consent Status Invalid for Processing</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>ConsentStatusInvalidForProcessing</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#ConsentStatusInvalidForProcessing">https://w3id.org/dpv#ConsentStatusInvalidForProcessing</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#ConsentStatusInvalidForProcessing">dpv:ConsentStatusInvalidForProcessing</a>
+        <span class="dfn-label">Label:</span> <i>Consent Status Invalid for Processing</i><br/>
+        <span class="dfn-label">Description:</span> <i>States of consent that cannot be used as valid justifications for processing data</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>This identifies the stages associated with consent that should not be used to process data</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#ConsentStatus">dpv:ConsentStatus</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ConsentStatus">dpv:ConsentStatus</a></i><br/><span class="dfn-label">Source:</span> <i>(GConsent,https://w3id.org/GConsent)</i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="ConsentStatusValidForProcessing">
+      <h4>Consent Status Valid for Processing</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>ConsentStatusValidForProcessing</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#ConsentStatusValidForProcessing">https://w3id.org/dpv#ConsentStatusValidForProcessing</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#ConsentStatusValidForProcessing">dpv:ConsentStatusValidForProcessing</a>
+        <span class="dfn-label">Label:</span> <i>Consent Status Valid for Processing</i><br/>
+        <span class="dfn-label">Description:</span> <i>States of consent that can be used as valid justifications for processing data</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>Practically, given consent is the only valid state for processing</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#ConsentStatus">dpv:ConsentStatus</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ConsentStatus">dpv:ConsentStatus</a></i><br/><span class="dfn-label">Source:</span> <i>(GConsent,https://w3id.org/GConsent)</i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="ConsentUnknown">
+      <h4>Consent Unknown</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>ConsentUnknown</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#ConsentUnknown">https://w3id.org/dpv#ConsentUnknown</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#ConsentUnknown">dpv:ConsentUnknown</a>
+        <span class="dfn-label">Label:</span> <i>Consent Unknown</i><br/>
+        <span class="dfn-label">Description:</span> <i>State where information about consent is not available or is unknown</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>Consent states can be unknown, for example, when information is not available, or cannot be trusted, or is known to be inaccurate</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#ConsentStatus">dpv:ConsentStatus</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ConsentStatusInvalidForProcessing">dpv:ConsentStatusInvalidForProcessing</a></i><br/><span class="dfn-label">Source:</span> <i>(GConsent,https://w3id.org/GConsent)</i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="ConsentWithdrawn">
+      <h4>Consent Withdrawn</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>ConsentWithdrawn</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#ConsentWithdrawn">https://w3id.org/dpv#ConsentWithdrawn</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#ConsentWithdrawn">dpv:ConsentWithdrawn</a>
+        <span class="dfn-label">Label:</span> <i>Consent Withdrawn</i><br/>
+        <span class="dfn-label">Description:</span> <i>The state where the consent is withdrawn or revoked specifically by the data subject and which prevents it from being further used as a valid state</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>This state can be considered a form of &#39;revocation&#39; of consent, where the revocation can only be performed by the data subject. Therefore we suggest using ConsentRevoked when it is a non-data-subject entity, and ConsentWithdrawn when it is the data subject</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#ConsentStatus">dpv:ConsentStatus</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ConsentStatusInvalidForProcessing">dpv:ConsentStatusInvalidForProcessing</a></i><br/><span class="dfn-label">Source:</span> <i>(GConsent,https://w3id.org/GConsent)</i><br/>      </p>
       </div>
     </section>
     <section class="term-def" id="Contract">
@@ -557,6 +878,58 @@
         <span class="dfn-label">Description:</span> <i>Processing necessary to enter into contract</i><br/>
         <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#LegalBasis">dpv:LegalBasis</a></i><br/>
 <span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Contract">dpv:Contract</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="ExplicitlyExpressedConsent">
+      <h4>Explicitly Expressed Consent</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>ExplicitlyExpressedConsent</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#ExplicitlyExpressedConsent">https://w3id.org/dpv#ExplicitlyExpressedConsent</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#ExplicitlyExpressedConsent">dpv:ExplicitlyExpressedConsent</a>
+        <span class="dfn-label">Label:</span> <i>Explicitly Expressed Consent</i><br/>
+        <span class="dfn-label">Description:</span> <i>Consent that is expressed through an explicit action solely conveying a consenting decision</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>Explicitly expressed consent is a more specific form of Expressed consent where the action taken must &#39;explicitly&#39; relate to only the consent decision. Expressed consent where the consenting is part of other matters therefore cannot satisfy the requirements of explicitly expressed consent. An example of explicit action expressing the consenting decision is a button on a web form where the form only relates to consent, or it is accompanied with suitable text that reiterates what the consenting decision is about</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#LegalBasis">dpv:LegalBasis</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ExpressedConsent">dpv:ExpressedConsent</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="ExpressedConsent">
+      <h4>Expressed Consent</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>ExpressedConsent</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#ExpressedConsent">https://w3id.org/dpv#ExpressedConsent</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#ExpressedConsent">dpv:ExpressedConsent</a>
+        <span class="dfn-label">Label:</span> <i>Expressed Consent</i><br/>
+        <span class="dfn-label">Description:</span> <i>Consent that is expressed through an action intended to convey a consenting decision</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>Expressed consent requires the individual take a specific and unambigious action that directly indicates their consent. This action may be a part of other processes such as setting preferences, or agreeing to a contract, or other matters not relating to consent. An example of expressed consent is interacting with a checkbox within a dashboard or clicking a button on a web form</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#LegalBasis">dpv:LegalBasis</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#InformedConsent">dpv:InformedConsent</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="ImpliedConsent">
+      <h4>Implied Consent</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>ImpliedConsent</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#ImpliedConsent">https://w3id.org/dpv#ImpliedConsent</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#ImpliedConsent">dpv:ImpliedConsent</a>
+        <span class="dfn-label">Label:</span> <i>Implied Consent</i><br/>
+        <span class="dfn-label">Description:</span> <i>Consent that is implied indirectly through an action not associated solely with conveying a consenting decision</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>Implied consent is expected to also be Informed Consent. An example is a CCTV notice outside a monitored area that informs the individuals that by walking in they would be consenting to the use of camera for surveillance.</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#LegalBasis">dpv:LegalBasis</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#InformedConsent">dpv:InformedConsent</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="InformedConsent">
+      <h4>Informed Consent</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>InformedConsent</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#InformedConsent">https://w3id.org/dpv#InformedConsent</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#InformedConsent">dpv:InformedConsent</a>
+        <span class="dfn-label">Label:</span> <i>Informed Consent</i><br/>
+        <span class="dfn-label">Description:</span> <i>Consent that is informed i.e. with the requirement to provide sufficient information to make a consenting decision</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>The specifics for what information should be provided or made available will depend on the context, use-case, or relevant legal requirements</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#LegalBasis">dpv:LegalBasis</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Consent">dpv:Consent</a></i><br/>      </p>
       </div>
     </section>
     <section class="term-def" id="LegalAgreement">
@@ -676,6 +1049,45 @@
 <span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#LegalBasis">dpv:LegalBasis</a></i><br/>      </p>
       </div>
     </section>
+    <section class="term-def" id="RenewedConsentGiven">
+      <h4>Renewed Consent Given</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>RenewedConsentGiven</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#RenewedConsentGiven">https://w3id.org/dpv#RenewedConsentGiven</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#RenewedConsentGiven">dpv:RenewedConsentGiven</a>
+        <span class="dfn-label">Label:</span> <i>Renewed Consent Given</i><br/>
+        <span class="dfn-label">Description:</span> <i>The state where a previously given consent has been &#39;renewed&#39; or &#39;refreshed&#39; or &#39;reaffirmed&#39; to form a new instance of given consent</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>An example of this state is when a previously given consent has expired, and the individual is presented a notice regarding continuing associated processing operations - to which they agree. This state can be useful to keep track of &#39;reconfirmed&#39; or &#39;refreshed&#39; consent within consent records, assist notices and contextual agents to create better consenting dialogues, and assist with specific legal obligations related to subsequent consenting</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#ConsentStatus">dpv:ConsentStatus</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ConsentStatusValidForProcessing">dpv:ConsentStatusValidForProcessing</a></i><br/><span class="dfn-label">Source:</span> <i>(GConsent,https://w3id.org/GConsent)</i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="Status">
+      <h4>Status</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>Status</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#Status">https://w3id.org/dpv#Status</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#Status">dpv:Status</a>
+        <span class="dfn-label">Label:</span> <i>Status</i><br/>
+        <span class="dfn-label">Description:</span> <i>The status or state of something</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Context">dpv:Context</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="UninformedConsent">
+      <h4>Uninformed Consent</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>UninformedConsent</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#UninformedConsent">https://w3id.org/dpv#UninformedConsent</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#UninformedConsent">dpv:UninformedConsent</a>
+        <span class="dfn-label">Label:</span> <i>Uninformed Consent</i><br/>
+        <span class="dfn-label">Description:</span> <i>Consent that is uninformed i.e. without requirement to provide sufficient information to make a consenting decision</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#LegalBasis">dpv:LegalBasis</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Consent">dpv:Consent</a></i><br/>      </p>
+      </div>
+    </section>
     <section class="term-def" id="VitalInterest">
       <h4>Vital Interest</h4>
       <div class="term-contents">
@@ -719,6 +1131,32 @@
   </section>
   <section id="properties">
     <h3>Properties</h3>
+    <section class="term-def" id="hasConsentStatus">
+      <h4>has consent status</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>hasConsentStatus</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#hasConsentStatus">https://w3id.org/dpv#hasConsentStatus</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#hasConsentStatus">dpv:hasConsentStatus</a>
+        <span class="dfn-label">Label:</span> <i>has consent status</i><br/>
+        <span class="dfn-label">Description:</span> <i>Specifies the state or status of consent</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Range includes:</span> <i><a href="https://w3id.org/dpv#ConsentStatus">dpv:ConsentStatus</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="hasIndicationMethod">
+      <h4>has indication method</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>hasIndicationMethod</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#hasIndicationMethod">https://w3id.org/dpv#hasIndicationMethod</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#hasIndicationMethod">dpv:hasIndicationMethod</a>
+        <span class="dfn-label">Label:</span> <i>has indication method</i><br/>
+        <span class="dfn-label">Description:</span> <i>Specifies the method by which an entity has indicated the specific context</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+      </p>
+      </div>
+    </section>
     <section class="term-def" id="hasLegalBasis">
       <h4>has legal basis</h4>
       <div class="term-contents">
@@ -730,6 +1168,32 @@
         <span class="dfn-label">Description:</span> <i>Indicates use or applicability of a Legal Basis</i><br/>
         <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
 <span class="dfn-label">Range includes:</span> <i><a href="https://w3id.org/dpv#LegalBasis">dpv:LegalBasis</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="isIndicatedAtTime">
+      <h4>is indicated at time</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>isIndicatedAtTime</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#isIndicatedAtTime">https://w3id.org/dpv#isIndicatedAtTime</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#isIndicatedAtTime">dpv:isIndicatedAtTime</a>
+        <span class="dfn-label">Label:</span> <i>is indicated at time</i><br/>
+        <span class="dfn-label">Description:</span> <i>Specifies the temporal information for when the entity has indicated the specific context</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+      </p>
+      </div>
+    </section>
+    <section class="term-def" id="isIndicatedBy">
+      <h4>is indicated by</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>isIndicatedBy</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#isIndicatedBy">https://w3id.org/dpv#isIndicatedBy</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#isIndicatedBy">dpv:isIndicatedBy</a>
+        <span class="dfn-label">Label:</span> <i>is indicated by</i><br/>
+        <span class="dfn-label">Description:</span> <i>Specifies entity who indicates the specific context</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Range includes:</span> <i><a href="https://w3id.org/dpv#Entity">dpv:Entity</a></i><br/>      </p>
       </div>
     </section>
 

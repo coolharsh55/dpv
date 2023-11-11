@@ -439,16 +439,16 @@
     <div class="note" title="Deprecated concepts">
         <p>The concepts/relations for consent added in DPV v0.1 and later have been <i>deprecated</i> or removed from the DPV in favour of the newer set of concepts based on advances in legislative requirements as well as standardisation efforts such as [[[ISO-27560]]]. The list of deprecated concepts is provided in <a href="#appendix-deprecated">Appendix</a> and a note on converting existing implementations to use newer concepts is provided in [[DPV-GUIDE-Consent]].</p>
      </div>
-    {{ list_hierarchy(modules['consent']['classes']) }}
+    {{ list_hierarchy(modules['legal_basis-consent']['classes']) }}
 
     <section id="vocab-consent-types">
       <h4>Consent Types</h4>
-      {{ list_hierarchy(modules['consent-types']['classes']) }}
+      {{ list_hierarchy(modules['legal_basis-consent-types']['classes']) }}
     </section>
 
     <section id="vocab-consent-status">
       <h4>Consent Status</h4>
-      {{ list_hierarchy(modules['consent-status']['classes']) }}
+      {{ list_hierarchy(modules['legal_basis-consent-status']['classes']) }}
     </section>
 
   </section>
@@ -528,7 +528,7 @@
 
     <p><strong>[=RequestStatus=]</strong> represents the state or status of <i>requests</i>, which can be between entities such as data subjects and controllers regarding exercising of rights, or between controllers and processors regarding processing operations, or between authorities and controllers regarding compliance related communications. Types of request statues are: [=RequestInitiated=], [=RequestAcknowledged=], [=RequestAccepted=], [=RequestRejected=], [=RequestFulfilled=], [=RequestUnfulfilled=], [=RequestRequiresAction=], [=RequestRequiredActionPerformed=], [=RequestActionDelayed=], and [=RequestStatusQuery=].</p>
 
-    {{ list_hierarchy(modules['status']['classes']) }}
+    {{ list_hierarchy(modules['context-status']['classes']) }}
   </section>
 </section>
 
@@ -543,7 +543,7 @@
   <p>To represent locations as jurisdictions, the relation [=hasJurisdiction=] is provided. The concept [=Law=] represents an official or authoritative law or regulation created by a government or an authority. To indicate applicability of laws within a jurisdiction, the relation [=hasApplicableLaw=] is provided.</p>
   <p>The [[[DPV-LEGAL]]] provides taxonomies extending these concepts, such as to represent specific countries, their laws, authorities, memberships, adequacy decisions, and other information.</p>
 
-  {{ list_hierarchy(modules['jurisdiction']['classes']) }}
+  {{ list_hierarchy(modules['context-jurisdiction']['classes']) }}
 </section>
 
 <section id="vocab-risk">
