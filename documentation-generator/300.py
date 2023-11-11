@@ -41,14 +41,14 @@ VOCABS = {
             'purposes': f'{IMPORT_PATH}/dpv/modules/purposes.ttl',
             'processing': f'{IMPORT_PATH}/dpv/modules/processing.ttl',
             'TOM': f'{IMPORT_PATH}/dpv/modules/TOM.ttl',
-            'technical-measures': f'{IMPORT_PATH}/dpv/modules/technical_measures.ttl',
-            'organisational-measures': f'{IMPORT_PATH}/dpv/modules/organisational_measures.ttl',
+            'TOM-technical': f'{IMPORT_PATH}/dpv/modules/technical_measures.ttl',
+            'TOM-organisational': f'{IMPORT_PATH}/dpv/modules/organisational_measures.ttl',
             'entities': f'{IMPORT_PATH}/dpv/modules/entities.ttl',
             'entities-authority': f'{IMPORT_PATH}/dpv/modules/entities_authority.ttl',
             'entities-legalrole': f'{IMPORT_PATH}/dpv/modules/entities_legalrole.ttl',
             'entities-organisation': f'{IMPORT_PATH}/dpv/modules/entities_organisation.ttl',
             'entities-datasubject': f'{IMPORT_PATH}/dpv/modules/entities_datasubject.ttl',
-            'legal-basis': f'{IMPORT_PATH}/dpv/modules/legal_basis.ttl',
+            'legal_basis': f'{IMPORT_PATH}/dpv/modules/legal_basis.ttl',
             'consent': f'{IMPORT_PATH}/dpv/modules/consent.ttl',
             'consent-types': f'{IMPORT_PATH}/dpv/modules/consent_types.ttl',
             'consent-status': f'{IMPORT_PATH}/dpv/modules/consent_status.ttl',
@@ -63,6 +63,14 @@ VOCABS = {
         },
         'module-template': {
             'entities': 'contents_dpv_entities.jinja2',
+            'purposes': 'contents_dpv_purposes.jinja2',
+            'processing': 'contents_dpv_processing.jinja2',
+            'TOM': 'contents_dpv_TOM.jinja2',
+            'legal_basis': 'contents_dpv_legal_basis.jinja2',
+            'context': 'contents_dpv_context.jinja2',
+            'risk': 'contents_dpv_risk.jinja2',
+            'rights': 'contents_dpv_rights.jinja2',
+            'rules': 'contents_dpv_rules.jinja2',
         },
     }
 }
@@ -281,7 +289,9 @@ if __name__ == '__main__':
         # generate module docs
         for module, data in module_data.items():
             if module not in vocab_data['module-template']:
+                DEBUG(f'{module} has no template associated - skipping')
                 continue
+            DEBUG(f'exporting {module} page')
             template = template_env.get_template(vocab_data['module-template'][module])
             with open(f'{EXPORT_PATH}/{vocab}/modules/{module}.html', 'w+') as fd:
                 fd.write(template.render(
@@ -289,4 +299,3 @@ if __name__ == '__main__':
                     vocab=DATA.data['dpv'],
                     modules=DATA.modules['dpv']))
                 DEBUG(f'wrote {vocab}/{module} docs at f{EXPORT_PATH}/{vocab}/modules/{module}.html')
-                

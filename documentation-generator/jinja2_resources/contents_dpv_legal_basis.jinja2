@@ -1,0 +1,120 @@
+%{% from 'macro_term_table.jinja2' import index_concepts %}
+%{% from 'macro_term_table.jinja2' import list_hierarchy %}
+{% from 'macro_term_table.jinja2' import table_properties %}
+{% from 'macro_dpv_document_family.jinja2' import dpv_document_family, sotd %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Legal Basis{% endblock title %}</title>
+  <script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove" defer></script>
+  {% block RESPEC %}
+  <script class="remove">
+   // All config options at https://respec.org/docs/ 
+   var respecConfig = {
+    shortName: "dpv",
+    title: "Legal Basis",
+    subtitle: "Data Privacy Vocabulary (DPV)",
+    publishDate: "2022-12-05",
+    specStatus: "CG-FINAL",
+    group: "dpvcg",
+    latestVersion: "https://w3id.org/dpv",
+    canonicalUri: "https://w3id.org/dpv",
+    edDraftURI: "https://w3id.org/dpv/ed/dpv",
+    github: "w3c/dpv",
+    subjectPrefix: "[dpv]",
+    doJsonLd: true,
+    lint: { "no-unused-dfns": false, "local-refs-exist": true },
+    editors: [
+    {
+      name: "Harshvardhan J. Pandit",
+      url: "https://harshp.com/",
+      "company": "{{ "Harshvardhan J. Pandit" | generate_author_affiliation }}",
+    }
+    ],
+    localBiblio: {%  include 'references.json' %}
+  };
+</script>
+{% endblock RESPEC %}
+<style type="text/css">
+  /* Table styles, March 2016 */
+  table {
+    width:  auto;
+    margin-bottom: 10px;
+    border-collapse:collapse
+
+  }
+  th, td {
+    border:thin solid gray;
+    padding: 0.3em;
+  }
+  figure {
+    margin: 2px;
+    padding: 2px;
+    border: 1px solid black;
+  }
+  .term-contents {
+    box-shadow: 2px 2px 2px darkgray; 
+  }
+  .term-contents > p {
+    border-top: 1px solid lightgray;
+    border-left: 1px solid lightgray;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 2px;
+  }
+  .dfn-label {
+    font-family: monospace;
+  }
+</style>
+</head>
+<body>
+{% block ABSTRACT %}
+    <section id="abstract">
+      <p>The Data Privacy Vocabulary [[DPV]] enables expressing machine-readable metadata about the use and processing of personal data based on legislative requirements such as the General Data Protection Regulation [[GDPR]]. This document describes the DPV specification along with its data model.</p>
+      <p>The canonical URL for DPV is <a href="https://w3id.org/dpv">https://w3id.org/dpv</a> which contains (this) specification. The namespace for DPV terms is <a href="https://w3id.org/dpv#"><code>https://w3id.org/dpv#</code></a>, the suggested prefix is <code>dpv</code>, and this document along with source and releases are available at <a href="https://github.com/w3c/dpv">https://github.com/w3c/dpv</a>.</p>
+      {{ dpv_document_family(document='dpv-spec') }}
+      {{ sotd() }}
+    </section>
+{% endblock ABSTRACT %}
+  <section id="introduction">
+    <h2>Introduction</h2>
+    <blockquote>This document assumes the reader is familiar with DPV through the [[[DPV-Primer]]], and thus focuses on providing a topically structured documentation of concepts defined by DPV.</blockquote>
+
+  <figure>
+    <img src="../diagrams/legal_bases.png">
+    <figcaption>Legal Bases in DPV</figcaption>
+  </figure>
+  <p>DPV provides the following categories of legal bases based on [[GDPR]] Article 6: consent of the data subject, contract, compliance with legal obligation, protecting vital interests of individuals, legitimate interests, public interest, and official authorities. Though derived from GDPR, these concepts can be applied for other jurisdictions and general use-cases. The legal bases are represented by the concept [=LegalBasis=] and associated using the relation [=hasLegalBasis=].</p>
+
+  <p>When declaring a legal basis, it is important to denote under what law or jurisdiction that legal basis applies. For instance, using [=Consent=] as a legal basis has different obligations and requirements in EU (i.e. [[GDPR]]) as compared to other jurisdictions. Therefore, unless the information is to be implicitly interpreted through some specific legal lens or jurisdictional law, DPV recommends indicating the specific law or legal clause associated with the legal basis so as to scope its interpretation. This can be done using the relation [=hasJurisdiction=] or [=hasApplicableLaw=].</p>
+
+  <p>For GDPR, DPVCG provides the [[[DPV-GDPR]]] which defines the legal bases within [[GDPR]] by extending them from relevant concepts within the DPV. We welcome similar contributions for extending the GDPR extension as well as creating extensions for other laws and domains.</p>
+  
+  {{ list_hierarchy(modules['legal_basis']['classes']) }}
+
+  </section>
+
+  <section>
+  <h2>Vocabulary Index</h2>
+  <section id="classes">
+    {{ index_concepts(data['index'], filter="classes") }}
+  </section>
+  <section id="properties">
+    {{ index_concepts(data['index'], filter="properties") }}
+  </section>
+  <section id="external-concepts">
+    <p>DPV uses the following terms from [[RDF]] and  [[RDFS]] with their defined meanings:</p>
+    <ul>
+      <li id="rdf:type"><dfn>rdf:type</dfn> to denote a concept is an instance of another concept</li>
+      <li id="rdfs:Class"><dfn>rdfs:Class</dfn> to denote a concept is a Class or a category</li>
+      <li id="rdfs:subClassOf"><dfn>rdfs:subClassOf</dfn> to specify the concept is a subclass (subtype, sub-category, subset) of another concept</li>
+      <li id="rdf:Property"><dfn>rdf:Property</dfn> to denote a concept is a property or a relation</li>
+      </ul>
+    <p>The following external concepts are re-used within DPV:</p>
+    {{ index_concepts(data['index'], filter="external") }}
+  </section>
+</section>
+
+</body>
+</html>

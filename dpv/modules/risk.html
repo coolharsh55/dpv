@@ -1,0 +1,912 @@
+%%<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Risk Management</title>
+  <script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove" defer></script>
+  <script class="remove">
+   // All config options at https://respec.org/docs/ 
+   var respecConfig = {
+    shortName: "dpv",
+    title: "Risk Management",
+    subtitle: "Data Privacy Vocabulary (DPV)",
+    publishDate: "2022-12-05",
+    specStatus: "CG-FINAL",
+    group: "dpvcg",
+    latestVersion: "https://w3id.org/dpv",
+    canonicalUri: "https://w3id.org/dpv",
+    edDraftURI: "https://w3id.org/dpv/ed/dpv",
+    github: "w3c/dpv",
+    subjectPrefix: "[dpv]",
+    doJsonLd: true,
+    lint: { "no-unused-dfns": false, "local-refs-exist": true },
+    editors: [
+    {
+      name: "Harshvardhan J. Pandit",
+      url: "https://harshp.com/",
+      "company": "ADAPT Centre, Dublin City University",
+    }
+    ],
+    localBiblio: {
+  "DPVCG": {
+    "href": "https://www.w3.org/community/dpvcg/",
+    "title": "W3C Data Privacy Vocabularies and Controls Community Group (DPVCG)"
+  },
+  "__001": "DPV Core Family",
+  "DPV": {
+    "href": "https://www.w3id.org/dpv",
+    "title": "Data Privacy Vocabulary (DPV) Specification"
+  },
+  "DPV-GDPR": {
+    "href": "https://www.w3id.org/dpv/dpv-gdpr",
+    "title": "DPV-GDPR: Extension providing GDPR concepts"
+  },
+  "DPV-DGA": {
+    "href": "https://www.w3id.org/dpv/dpv-dga",
+    "title": "DPV-DGA: Extension providing DGA concepts"
+  },
+  "DPV-NACE": {
+    "href": "https://www.w3id.org/dpv/dpv-nace",
+    "title": "NACE Taxonomy serialised in RDFS"
+  },
+  "DPV-PD": {
+    "href": "https://www.w3id.org/dpv/dpv-pd",
+    "title": "DPV-PD: Extension providing Personal Data Categories"
+  },
+  "DPV-LEGAL": {
+    "href": "https://www.w3id.org/dpv/dpv-legal",
+    "title": "DPV-LEGAL: Extension providing Jurisdiction-relevant concepts"
+  },
+  "DPV-TECH": {
+    "href": "https://www.w3id.org/dpv/dpv-tech",
+    "title": "DPV-TECH: Extension providing Technology-relevant concepts"
+  },
+  "RISK": {
+    "href": "https://www.w3id.org/dpv/risk",
+    "title": "Risk Extension for DPV"
+  },
+  "RIGHTS": {
+    "href": "https://www.w3id.org/dpv/rights",
+    "title": "Rights Extension for Data Privacy Vocabulary"
+  },
+  "RIGHTS-EU": {
+    "href": "https://www.w3id.org/dpv/rights/eu",
+    "title": "Extension providing EU Rights"
+  },
+  "__002": "DPV-SKOS Family",
+  "DPV-SKOS": {
+    "href": "https://www.w3id.org/dpv/dpv-skos",
+    "title": "DPV-SKOS: Data Privacy Vocabulary serialised in RDFS & SKOS"
+  },
+  "DPV-SKOS-GDPR": {
+    "href": "https://www.w3id.org/dpv/dpv-skos/dpv-gdpr",
+    "title": "DPV-SKOS-GDPR: Extension providing GDPR concepts"
+  },
+  "DPV-SKOS-PD": {
+    "href": "https://www.w3id.org/dpv/dpv-skos/dpv-pd",
+    "title": "DPV-SKOS-PD: Extension providing Personal Data Categories"
+  },
+  "DPV-SKOS-LEGAL": {
+    "href": "https://www.w3id.org/dpv/dpv-skos/dpv-legal",
+    "title": "DPV-SKOS-LEGAL: Extension providing Jurisdiction-relevant concepts"
+  },
+  "DPV-SKOS-TECH": {
+    "href": "https://www.w3id.org/dpv/dpv-skos/dpv-tech",
+    "title": "DPV-SKOS-TECH: Extension providing Technology-relevant concepts"
+  },
+  "RISK-SKOS": {
+    "href": "https://www.w3id.org/dpv/dpv-skos/risk",
+    "title": "Risk Extension for DPV"
+  },
+  "RIGHTS-SKOS": {
+    "href": "https://www.w3id.org/dpv/dpv-skos/rights",
+    "title": "Rights Extension for Data Privacy Vocabulary"
+  },
+  "RIGHTS-EU-SKOS": {
+    "href": "https://www.w3id.org/dpv/dpv-skos/rights/eu",
+    "title": "Extension providing EU Rights"
+  },
+  "__003": "DPV-OWL Family",
+  "DPV-OWL": {
+    "href": "https://www.w3id.org/dpv/dpv-owl",
+    "title": "DPV-OWL: Data Privacy Vocabulary serialised in OWL2"
+  },
+  "DPV-OWL-GDPR": {
+    "href": "https://www.w3id.org/dpv/dpv-owl/dpv-gdpr",
+    "title": "DPV-OWL-GDPR: Extension providing GDPR concepts"
+  },
+  "DPV-OWL-NACE": {
+    "href": "https://www.w3id.org/dpv/dpv-owl/dpv-nace",
+    "title": "NACE Taxonomy serialised in RDFS"
+  },
+  "DPV-OWL-PD": {
+    "href": "https://www.w3id.org/dpv/dpv-owl/dpv-pd",
+    "title": "DPV-OWL-PD: Extension providing Personal Data Categories"
+  },
+  "DPV-OWL-LEGAL": {
+    "href": "https://www.w3id.org/dpv/dpv-owl/dpv-legal",
+    "title": "DPV-OWL-LEGAL: Extension providing Jurisdiction-relevant concepts"
+  },
+  "DPV-OWL-TECH": {
+    "href": "https://www.w3id.org/dpv/dpv-owl/dpv-tech",
+    "title": "DPV-OWL-TECH: Extension providing Technology-relevant concepts"
+  },
+  "RISK-OWL": {
+    "href": "https://www.w3id.org/dpv/dpv-owl/risk",
+    "title": "Risk Extension for DPV"
+  },
+  "RIGHTS-OWL": {
+    "href": "https://www.w3id.org/dpv/dpv-owl/rights",
+    "title": "Rights Extension for Data Privacy Vocabulary"
+  },
+  "RIGHTS-EU-OWL": {
+    "href": "https://www.w3id.org/dpv/dpv-owl/rights/eu",
+    "title": "Extension providing EU Rights"
+  },
+  "__004": "DPV Documentation & Guides",
+  "DPV-Primer": {
+    "href": "https://www.w3id.org/dpv/primer",
+    "title": "Primer for Data Privacy Vocabulary"
+  },
+  "DPV-ADOPTION": {
+    "href": "https://www.w3.org/community/dpvcg/wiki/Adoption_of_DPVCG",
+    "title": "Listing of DPV adoption and applications"
+  },
+  "DPV-GUIDES": {
+    "href": "https://w3id.org/dpv/guides",
+    "title": "Guidelines for Adoption and Use of DPV"
+  },
+  "DPV-GUIDE-Consent": {
+    "href": "https://w3id.org/dpv/guides/consent",
+    "title": "Guide for Consent Records using DPV"
+  },
+  "DPV-GUIDE-Notice": {
+    "href": "https://w3id.org/dpv/guides/notice",
+    "title": "Guide for Privacy Notices using DPV"
+  },
+  "DPV-GUIDE-Serialisations": {
+    "href": "https://w3id.org/dpv/guides/serialisations",
+    "title": "Guide on DPV's serialisations and semantics"
+  },
+  "DPV-GUIDE-SKOS": {
+    "href": "https://w3id.org/dpv/guides/dpv-skos",
+    "title": "Guide for using DPV with RDFS and SKOS"
+  },
+  "DPV-GUIDE-OWL2": {
+    "href": "https://w3id.org/dpv/guides/dpv-owl",
+    "title": "Guide for using DPV in OWL2"
+  },
+  "DPV-GUIDE-GDPR-DPIA": {
+    "href": "https://w3id.org/dpv/dpv-gdpr/dpia",
+    "title": "Guide for GDPR DPIA's using DPV"
+  },
+  "DPV-GUIDE-GDPR-ROPA": {
+    "href": "https://w3id.org/dpv/dpv-gdpr/ropa",
+    "title": "Guide for GDPR ROPA's using DPV"
+  },
+  "__005": "Examples",
+  "Examples": {
+    "href": "https://w3id.org/dpv/examples",
+    "title": "DPV Examples"
+  },
+  "__006": "Examples",
+  "UseCases-Requirements": {
+    "href": "https://w3id.org/dpv/use-cases",
+    "title": "DPV Use-Cases and Requirements"
+  },
+  "__000": "External Vocabularies",
+  "RDF": {
+    "href": "https://www.w3.org/TR/rdf11-concepts/",
+    "title": "RDF 1.1 Concepts and Abstract Syntax"
+  },
+  "RDFS": {
+    "href": "https://www.w3.org/TR/rdf-schema/",
+    "title": "RDF Schema 1.1"
+  },
+  "OWL" :{
+    "href": "https://www.w3.org/TR/owl2-overview/",
+    "title": "OWL 2 Web Ontology Language Document Overview (Second Edition)"
+  },
+  "SKOS": {
+    "href": "https://www.w3.org/TR/skos-reference/",
+    "title": "SKOS Simple Knowledge Organization System"
+  },
+  "__000": "External References",
+  "SPECIAL": {
+    "href": "https://www.specialprivacy.eu/",
+    "title": "SPECIAL H2020 Project"
+  },
+  "GDPR": {
+    "href": "https://eur-lex.europa.eu/eli/reg/2016/679/oj",
+    "title": "General Data Protection Regulation (GDPR)"
+  },
+  "DGA": {
+    "href": "https://eur-lex.europa.eu/eli/reg/2022/868/oj",
+    "title": "Data Governance Act (DGA)"
+  },
+  "NACE": {
+    "href": "https://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=LST_NOM_DTL&StrNom=NACE_REV2",
+    "title": "Statistical Classification of Economic Activities in the European Community (NACE)"
+  },
+  "NAICS": {
+    "href": "https://www.census.gov/eos/www/naics/",
+    "title": "North American Industry Classification System (NAICS)"
+  },
+  "ISIC": {
+    "href": "https://unstats.un.org/unsd/classifications",
+    "title": "International Standard Industrial Classification of All Economic Activities (ISIC)"
+  },
+  "GICS": {
+    "href": "https://www.msci.com/gics",
+    "title": "Global Industry Classification Standard (GICS)"
+  },
+  "NACE-NAICS": {
+    "href": "https://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=LST_NOM_DTL&StrNom=NACE_REV2",
+    "title": "NACE to NAICS mapping"
+  },
+  "EnterPrivacy": {
+    "href": "https://enterprivacy.com/wp-content/uploads/2018/09/Categories-of-Personal-Information.pdf",
+    "title": "Taxonomy of Personal Data Categories"
+  },
+  "TIME": {
+    "href": "https://www.w3.org/TR/owl-time/",
+    "title": "Time Ontology in OWL"
+  },
+  "ISO-27017": {
+    "href": "https://www.iso.org/standard/43757.html",
+    "title": "ISO/IEC 27017:2015 Information technology — Security techniques — Code of practice for information security controls based on ISO/IEC 27002 for cloud services"
+  },
+  "ISO-27560": {
+    "href": "https://www.iso.org/standard/80392.html",
+    "title": "ISO/IEC TS 27560 Privacy technologies — Consent record information structure"
+  },
+  "SHACL-UseCases": {
+    "href": "https://www.w3.org/TR/shacl-ucr/",
+    "title": "SHACL Use Cases and Requirements"
+  },
+  "DCT": {
+    "title": "DCMI Metadata Terms (DCT)",
+    "href": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/"
+  },
+  "DCAT": {
+    "title": "Data Catalog Vocabulary (DCAT) - Version 2",
+    "href": "http://www.w3.org/ns/dcat"
+  },
+  "RuleML": {
+    "title": "RuleML: Rule Markup Language",
+    "href": "www.ruleml.org/"
+  }
+}  };
+</script>
+<style type="text/css">
+  /* Table styles, March 2016 */
+  table {
+    width:  auto;
+    margin-bottom: 10px;
+    border-collapse:collapse
+
+  }
+  th, td {
+    border:thin solid gray;
+    padding: 0.3em;
+  }
+  figure {
+    margin: 2px;
+    padding: 2px;
+    border: 1px solid black;
+  }
+  .term-contents {
+    box-shadow: 2px 2px 2px darkgray; 
+  }
+  .term-contents > p {
+    border-top: 1px solid lightgray;
+    border-left: 1px solid lightgray;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 2px;
+  }
+  .dfn-label {
+    font-family: monospace;
+  }
+</style>
+</head>
+<body>
+    <section id="abstract">
+      <p>The Data Privacy Vocabulary [[DPV]] enables expressing machine-readable metadata about the use and processing of personal data based on legislative requirements such as the General Data Protection Regulation [[GDPR]]. This document describes the DPV specification along with its data model.</p>
+      <p>The canonical URL for DPV is <a href="https://w3id.org/dpv">https://w3id.org/dpv</a> which contains (this) specification. The namespace for DPV terms is <a href="https://w3id.org/dpv#"><code>https://w3id.org/dpv#</code></a>, the suggested prefix is <code>dpv</code>, and this document along with source and releases are available at <a href="https://github.com/w3c/dpv">https://github.com/w3c/dpv</a>.</p>
+      <section id="dpv-document-family" class="noTOC">
+    <h2>DPV Family of Documents</h2>
+    <ul>
+      <li>[[[DPV-Primer]]]:  An introductory document for DPV's concepts and taxonomies.
+        <p class="note">Newcomers to the DPV are <strong>strongly recommended to first read through the Primer</strong> to familiarise themselves with the semantics and concepts of DPV.</p>
+      </li>
+      <li>[[[DPV]]]: (this document) The formal and normative description of DPV and its concepts, with serialisations in RDFS & SKOS [[DPV-SKOS]] and OWL2 [[DPV-OWL]]</li>
+      <li>Extensions to Concepts: <ul>
+        <li>[[DPV-GDPR]]:  for GDPR concepts; serialisations: [[DPV-SKOS-GDPR]], [[DPV-OWL-GDPR]]</li>
+        <li>[[DPV-PD]]  for Personal Data concepts; serialisations: [[DPV-SKOS-PD]], [[DPV-OWL-PD]]</li>
+        <li>[[DPV-LEGAL]]  for Jurisdiction-relevant concepts; serialisations: [[DPV-SKOS-LEGAL]], [[DPV-OWL-LEGAL]]</li>
+        <li>[[DPV-TECH]]  for Technology concepts; serialisations: [[DPV-SKOS-TECH]], [[DPV-OWL-TECH]]</li>
+        <li>[[RISK]]  for Risk Assessment and Management concepts; serialisations: [[RISK-SKOS]], [[RISK-OWL]]</li>
+        </ul></li>
+      <li>[[[DPV-GUIDES]]]: <ul>
+        <li>[[[DPV-GUIDE-Serialisations]]]  (coming soon)</li>
+        <li>[[[DPV-GUIDE-SKOS]]]  (coming soon)</li>
+        <li>[[[DPV-GUIDE-OWL2]]] </li>
+        <li>[[[DPV-GUIDE-Notice]]]  (coming soon)</li>
+        <li>[[[DPV-GUIDE-Consent]]]  (being updated for v1)</li>
+        <li>[[[DPV-GUIDE-GDPR-DPIA]]]  (being updated for v1)</li>
+        <li>[[[DPV-GUIDE-GDPR-ROPA]]]  (being updated for v1)</li>
+        </ul></li>
+      <li>Other Resources:<ul>
+        <li>[[[UseCases-Requirements]]]</li>
+        <li>[[[Examples]]]</li>
+        <li>[[[DPV-NACE]]]</li>
+        <li>[[[RIGHTS-EU]]] serialisations: [[RIGHTS-EU-SKOS]], [[RIGHTS-EU-OWL]]</li>
+        </ul></li>
+    </ul>
+    <p><strong>Related Links</strong></p>
+    <ul>
+      <li>Releases are published on <a href="https://github.com/w3c/dpv/releases">GitHub</a></li>
+      <li>For a general overview of the Data Protection Vocabularies and Controls Community Group [[DPVCG]], its history, deliverables, and activities - refer to <a href="https://www.w3.org/community/dpvcg/"><u>DPVCG Website</u></a>.</p>
+      </li>
+      <li>
+        <p>The peer-reviewed article “<a href="https://link.springer.com/chapter/10.1007%2F978-3-030-33246-4_44"><u>Creating A Vocabulary for Data Privacy</u></a>” presents a historical overview of the DPVCG, and describes the methodology and structure of the DPV along with describing its creation. An open-access version can be accessed <a href="http://hdl.handle.net/2262/91581"><u>here</u></a>, <a href="http://doras.dcu.ie/23801/"><u>here</u></a>, and <a href="https://aic.ai.wu.ac.at/~polleres/publications/pand-etal-2019ODBASE.pdf"><u>here</u></a>.</p>
+      </li>
+    </ul>
+</section>
+
+      <section id="sotd">
+  <!-- sotd: Status of this document -->
+  <p>This document is published by the <a href="https://www.w3.org/community/dpvcg/">Data Privacy Vocabularies and Controls Community Group (DPVCG)</a> as a deliverable and report of its work in creating and maintaining the Data Privacy Vocabulary (DPV).</p>
+  <div class="note">
+    <p><strong>Contributing to the DPV and its extensions</strong> The DPVCG welcomes participation regarding the DPV, including expansion or refinement of its terms, addressing open issues, and welcomes suggestions on their resolution or mitigation. For further information, please see the <a href="https://github.com/w3c/dpv#contribution--participation">contribution section</a>.</p>
+  </div>
+</section>
+
+    </section>
+  <section id="introduction">
+    <h2>Introduction</h2>
+    <blockquote>This document assumes the reader is familiar with DPV through the [[[DPV-Primer]]], and thus focuses on providing a topically structured documentation of concepts defined by DPV.</blockquote>
+
+    <figure>
+    <img src="../diagrams/risk.png">
+    <figcaption></figcaption>
+  </figure>
+  <p>For risk management, DPV's provides a lightweight risk ontology based on commonly utilised concepts regarding risk mitigation and risk management. While these concepts permit rudimentary association of risks and mitigations within a use-case, it is important to note that DPV (currently)
+    does not provide comprehensive concepts for risk management.</p>
+    <p>For more developed representations of risk assessment, mitigation, and management vocabularies, we suggest the adoption of relevant standards, such as the ISO/IEC 31000 series, and welcome contribution for their representation within DPV through [[[RISK]]].</p>
+
+    <ul class="concept-list">
+  <li>
+    <strong>dpv:Consequence</strong>: The consequence(s) possible or arising from specified context 
+      <small><a href="#Consequence">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:ConsequenceAsSideEffect</strong>: The consequence(s) possible or arising as a side-effect of specified context 
+      <small><a href="#ConsequenceAsSideEffect">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:ConsequenceOfFailure</strong>: The consequence(s) possible or arising from failure of specified context 
+      <small><a href="#ConsequenceOfFailure">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:ConsequenceOfSuccess</strong>: The consequence(s) possible or arising from success of specified context 
+      <small><a href="#ConsequenceOfSuccess">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:Impact</strong>: The impact(s) possible or arising as a consequence from specified context 
+      <small><a href="#Impact">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:Benefit</strong>: Impact(s) that acts as or causes benefits 
+      <small><a href="#Benefit">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:Damage</strong>: Impact that acts as or causes damages 
+      <small><a href="#Damage">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:Harm</strong>: Impact that acts as or causes harms 
+      <small><a href="#Harm">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:MaterialDamage</strong>: Impact that acts as or causes material damages 
+      <small><a href="#MaterialDamage">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:NonMaterialDamage</strong>: Impact that acts as or causes non-material damages 
+      <small><a href="#NonMaterialDamage">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:Detriment</strong>: Impact that acts as or causes detriments 
+      <small><a href="#Detriment">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:Likelihood</strong>: The likelihood or probability or chance of something taking place or occuring 
+      <small><a href="#Likelihood">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:Risk</strong>: A risk or possibility or uncertainty of negative effects, impacts, or consequences. 
+      <small><a href="#Risk">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:RiskLevel</strong>: The magnitude of a risk expressed as an indication to aid in its management 
+      <small><a href="#RiskLevel">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:Severity</strong>: The magnitude of being unwanted or having negative effects such as harmful impacts 
+      <small><a href="#Severity">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:TechnicalOrganisationalMeasure</strong>:  
+      <small><a href="#TechnicalOrganisationalMeasure">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:RiskMitigationMeasure</strong>: Measures intended to mitigate, minimise, or prevent risk. 
+      <small><a href="#RiskMitigationMeasure">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+</ul>
+</section>
+  <section>
+  <h2>Vocabulary Index</h2>
+  <section id="classes">
+    <h3>Classes</h3>
+    <section class="term-def" id="Benefit">
+      <h4>Benefit</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>Benefit</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#Benefit">https://w3id.org/dpv#Benefit</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#Benefit">dpv:Benefit</a>
+        <span class="dfn-label">Label:</span> <i>Benefit</i><br/>
+        <span class="dfn-label">Description:</span> <i>Impact(s) that acts as or causes benefits</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Impact">dpv:Impact</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Impact">dpv:Impact</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="Consequence">
+      <h4>Consequence</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>Consequence</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#Consequence">https://w3id.org/dpv#Consequence</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#Consequence">dpv:Consequence</a>
+        <span class="dfn-label">Label:</span> <i>Consequence</i><br/>
+        <span class="dfn-label">Description:</span> <i>The consequence(s) possible or arising from specified context</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+      </p>
+      </div>
+    </section>
+    <section class="term-def" id="ConsequenceAsSideEffect">
+      <h4>Consequence as Side-Effect</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>ConsequenceAsSideEffect</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#ConsequenceAsSideEffect">https://w3id.org/dpv#ConsequenceAsSideEffect</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#ConsequenceAsSideEffect">dpv:ConsequenceAsSideEffect</a>
+        <span class="dfn-label">Label:</span> <i>Consequence as Side-Effect</i><br/>
+        <span class="dfn-label">Description:</span> <i>The consequence(s) possible or arising as a side-effect of specified context</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Consequence">dpv:Consequence</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Consequence">dpv:Consequence</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="ConsequenceOfFailure">
+      <h4>Consequence of Failure</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>ConsequenceOfFailure</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#ConsequenceOfFailure">https://w3id.org/dpv#ConsequenceOfFailure</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#ConsequenceOfFailure">dpv:ConsequenceOfFailure</a>
+        <span class="dfn-label">Label:</span> <i>Consequence of Failure</i><br/>
+        <span class="dfn-label">Description:</span> <i>The consequence(s) possible or arising from failure of specified context</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Consequence">dpv:Consequence</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Consequence">dpv:Consequence</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="ConsequenceOfSuccess">
+      <h4>Consequence of Success</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>ConsequenceOfSuccess</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#ConsequenceOfSuccess">https://w3id.org/dpv#ConsequenceOfSuccess</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#ConsequenceOfSuccess">dpv:ConsequenceOfSuccess</a>
+        <span class="dfn-label">Label:</span> <i>Consequence of Success</i><br/>
+        <span class="dfn-label">Description:</span> <i>The consequence(s) possible or arising from success of specified context</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Consequence">dpv:Consequence</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Consequence">dpv:Consequence</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="Damage">
+      <h4>Damage</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>Damage</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#Damage">https://w3id.org/dpv#Damage</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#Damage">dpv:Damage</a>
+        <span class="dfn-label">Label:</span> <i>Damage</i><br/>
+        <span class="dfn-label">Description:</span> <i>Impact that acts as or causes damages</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Impact">dpv:Impact</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Impact">dpv:Impact</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="Detriment">
+      <h4>Detriment</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>Detriment</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#Detriment">https://w3id.org/dpv#Detriment</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#Detriment">dpv:Detriment</a>
+        <span class="dfn-label">Label:</span> <i>Detriment</i><br/>
+        <span class="dfn-label">Description:</span> <i>Impact that acts as or causes detriments</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Impact">dpv:Impact</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Impact">dpv:Impact</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="Harm">
+      <h4>Harm</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>Harm</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#Harm">https://w3id.org/dpv#Harm</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#Harm">dpv:Harm</a>
+        <span class="dfn-label">Label:</span> <i>Harm</i><br/>
+        <span class="dfn-label">Description:</span> <i>Impact that acts as or causes harms</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Impact">dpv:Impact</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Damage">dpv:Damage</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="Impact">
+      <h4>Impact</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>Impact</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#Impact">https://w3id.org/dpv#Impact</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#Impact">dpv:Impact</a>
+        <span class="dfn-label">Label:</span> <i>Impact</i><br/>
+        <span class="dfn-label">Description:</span> <i>The impact(s) possible or arising as a consequence from specified context</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>Impact is a stronger notion of consequence in terms of influence, change, or effect on something e.g. for impact assessments</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Consequence">dpv:Consequence</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="Likelihood">
+      <h4>Likelihood</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>Likelihood</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#Likelihood">https://w3id.org/dpv#Likelihood</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#Likelihood">dpv:Likelihood</a>
+        <span class="dfn-label">Label:</span> <i>Likelihood</i><br/>
+        <span class="dfn-label">Description:</span> <i>The likelihood or probability or chance of something taking place or occuring</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>Likelihood can be expressed in a subjective manner, such as &#39;Unlikely&#39;, or in a quantitative manner such as &#34;Twice in a Day&#34; (frequency per period). The suggestion is to use quantitative values, or to associate them with subjective terms used so as to enable accurate interpretations and interoperability. See the concepts related to Frequency and Duration for possible uses as a combination to express Likelihood.</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+      </p>
+      </div>
+    </section>
+    <section class="term-def" id="MaterialDamage">
+      <h4>Material Damage</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>MaterialDamage</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#MaterialDamage">https://w3id.org/dpv#MaterialDamage</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#MaterialDamage">dpv:MaterialDamage</a>
+        <span class="dfn-label">Label:</span> <i>Material Damage</i><br/>
+        <span class="dfn-label">Description:</span> <i>Impact that acts as or causes material damages</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Impact">dpv:Impact</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Damage">dpv:Damage</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="NonMaterialDamage">
+      <h4>Non-Material Damage</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>NonMaterialDamage</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#NonMaterialDamage">https://w3id.org/dpv#NonMaterialDamage</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#NonMaterialDamage">dpv:NonMaterialDamage</a>
+        <span class="dfn-label">Label:</span> <i>Non-Material Damage</i><br/>
+        <span class="dfn-label">Description:</span> <i>Impact that acts as or causes non-material damages</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Impact">dpv:Impact</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Damage">dpv:Damage</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="Risk">
+      <h4>Risk</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>Risk</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#Risk">https://w3id.org/dpv#Risk</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#Risk">dpv:Risk</a>
+        <span class="dfn-label">Label:</span> <i>Risk</i><br/>
+        <span class="dfn-label">Description:</span> <i>A risk or possibility or uncertainty of negative effects, impacts, or consequences.</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>Risks can be associated with one or more different concepts such as purpose, processing, personal data, technical or organisational measure.</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+      </p>
+      </div>
+    </section>
+    <section class="term-def" id="RiskLevel">
+      <h4>Risk Level</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>RiskLevel</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#RiskLevel">https://w3id.org/dpv#RiskLevel</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#RiskLevel">dpv:RiskLevel</a>
+        <span class="dfn-label">Label:</span> <i>Risk Level</i><br/>
+        <span class="dfn-label">Description:</span> <i>The magnitude of a risk expressed as an indication to aid in its management</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>Risk Levels can be defined as a combination of different characteristics. For example, ISO 31073:2022 defines it as a combination of consequences and their likelihood. Another example would be the Risk Matrix where Risk Level is defined as a combination of Likelihood and Severity associated with the Risk.</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+      </p>
+      </div>
+    </section>
+    <section class="term-def" id="RiskMitigationMeasure">
+      <h4>Risk Mitigation Measure</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>RiskMitigationMeasure</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#RiskMitigationMeasure">https://w3id.org/dpv#RiskMitigationMeasure</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#RiskMitigationMeasure">dpv:RiskMitigationMeasure</a>
+        <span class="dfn-label">Label:</span> <i>Risk Mitigation Measure</i><br/>
+        <span class="dfn-label">Description:</span> <i>Measures intended to mitigate, minimise, or prevent risk.</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#TechnicalOrganisationalMeasure">dpv:TechnicalOrganisationalMeasure</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="Severity">
+      <h4>Severity</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>Severity</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#Severity">https://w3id.org/dpv#Severity</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#Severity">dpv:Severity</a>
+        <span class="dfn-label">Label:</span> <i>Severity</i><br/>
+        <span class="dfn-label">Description:</span> <i>The magnitude of being unwanted or having negative effects such as harmful impacts</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>Severity can be associated with Risk, or its Consequences and Impacts</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+      </p>
+      </div>
+    </section>
+    <section class="term-def" id="TechnicalOrganisationalMeasure">
+      <h4></h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>TechnicalOrganisationalMeasure</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#TechnicalOrganisationalMeasure">https://w3id.org/dpv#TechnicalOrganisationalMeasure</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#TechnicalOrganisationalMeasure">dpv:TechnicalOrganisationalMeasure</a>
+        <span class="dfn-label">Label:</span> <i></i><br/>
+        <span class="dfn-label">Description:</span> <i></i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+      </p>
+      </div>
+    </section>
+
+  </section>
+  <section id="properties">
+    <h3>Properties</h3>
+    <section class="term-def" id="hasConsequence">
+      <h4>has consequence</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>hasConsequence</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#hasConsequence">https://w3id.org/dpv#hasConsequence</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#hasConsequence">dpv:hasConsequence</a>
+        <span class="dfn-label">Label:</span> <i>has consequence</i><br/>
+        <span class="dfn-label">Description:</span> <i>Indicates consenquence(s) possible or arising from specified concept</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>Removed plural suffix for consistency</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Range includes:</span> <i><a href="https://w3id.org/dpv#Consequence">dpv:Consequence</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="hasConsequenceOn">
+      <h4>has consequence on</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>hasConsequenceOn</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#hasConsequenceOn">https://w3id.org/dpv#hasConsequenceOn</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#hasConsequenceOn">dpv:hasConsequenceOn</a>
+        <span class="dfn-label">Label:</span> <i>has consequence on</i><br/>
+        <span class="dfn-label">Description:</span> <i>Indicates the thing (e.g. plan, process, or entity) affected by a consequence</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Domain includes:</span> <i><a href="https://w3id.org/dpv#Consequence">dpv:Consequence</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="hasImpact">
+      <h4>has impact</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>hasImpact</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#hasImpact">https://w3id.org/dpv#hasImpact</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#hasImpact">dpv:hasImpact</a>
+        <span class="dfn-label">Label:</span> <i>has impact</i><br/>
+        <span class="dfn-label">Description:</span> <i>Indicates impact(s) possible or arising as consequences from specified concept</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#hasConsequence">dpv:hasConsequence</a></i><br/><span class="dfn-label">Sub-property of:</span> <i><a href="https://w3id.org/dpv#hasConsequence">dpv:hasConsequence</a></i><br/><span class="dfn-label">Range includes:</span> <i><a href="https://w3id.org/dpv#Impact">dpv:Impact</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="hasImpactOn">
+      <h4>has impact on</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>hasImpactOn</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#hasImpactOn">https://w3id.org/dpv#hasImpactOn</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#hasImpactOn">dpv:hasImpactOn</a>
+        <span class="dfn-label">Label:</span> <i>has impact on</i><br/>
+        <span class="dfn-label">Description:</span> <i>Indicates the thing (e.g. plan, process, or entity) affected by an impact</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#hasConsequenceOn">dpv:hasConsequenceOn</a></i><br/><span class="dfn-label">Sub-property of:</span> <i><a href="https://w3id.org/dpv#hasConsequenceOn">dpv:hasConsequenceOn</a></i><br/><span class="dfn-label">Domain includes:</span> <i><a href="https://w3id.org/dpv#Impact">dpv:Impact</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="hasLikelihood">
+      <h4>has likelihood</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>hasLikelihood</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#hasLikelihood">https://w3id.org/dpv#hasLikelihood</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#hasLikelihood">dpv:hasLikelihood</a>
+        <span class="dfn-label">Label:</span> <i>has likelihood</i><br/>
+        <span class="dfn-label">Description:</span> <i>Indicates the likelihood associated with a concept</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Range includes:</span> <i><a href="https://w3id.org/dpv#Likelihood">dpv:Likelihood</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="hasResidualRisk">
+      <h4>has residual risk</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>hasResidualRisk</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#hasResidualRisk">https://w3id.org/dpv#hasResidualRisk</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#hasResidualRisk">dpv:hasResidualRisk</a>
+        <span class="dfn-label">Label:</span> <i>has residual risk</i><br/>
+        <span class="dfn-label">Description:</span> <i>Indicates the associated risk is the remaining or residual risk from applying mitigation measures or treatments to this risk</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Domain includes:</span> <i><a href="https://w3id.org/dpv#Risk">dpv:Risk</a></i><br/><span class="dfn-label">Range includes:</span> <i><a href="https://w3id.org/dpv#Risk">dpv:Risk</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="hasRisk">
+      <h4>has risk</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>hasRisk</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#hasRisk">https://w3id.org/dpv#hasRisk</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#hasRisk">dpv:hasRisk</a>
+        <span class="dfn-label">Label:</span> <i>has risk</i><br/>
+        <span class="dfn-label">Description:</span> <i>Indicates applicability of Risk for this concept</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Range includes:</span> <i><a href="https://w3id.org/dpv#Risk">dpv:Risk</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="hasRiskLevel">
+      <h4>has risk level</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>hasRiskLevel</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#hasRiskLevel">https://w3id.org/dpv#hasRiskLevel</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#hasRiskLevel">dpv:hasRiskLevel</a>
+        <span class="dfn-label">Label:</span> <i>has risk level</i><br/>
+        <span class="dfn-label">Description:</span> <i>Indicates the associated risk level associated with a risk</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Domain includes:</span> <i><a href="https://w3id.org/dpv#Risk">dpv:Risk</a></i><br/><span class="dfn-label">Range includes:</span> <i><a href="https://w3id.org/dpv#RiskLevel">dpv:RiskLevel</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="hasSeverity">
+      <h4>has severity</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>hasSeverity</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#hasSeverity">https://w3id.org/dpv#hasSeverity</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#hasSeverity">dpv:hasSeverity</a>
+        <span class="dfn-label">Label:</span> <i>has severity</i><br/>
+        <span class="dfn-label">Description:</span> <i>Indicates the severity associated with a concept</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Range includes:</span> <i><a href="https://w3id.org/dpv#Severity">dpv:Severity</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="hasTechnicalOrganisationalMeasure">
+      <h4>has technical and organisational measure</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>hasTechnicalOrganisationalMeasure</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#hasTechnicalOrganisationalMeasure">https://w3id.org/dpv#hasTechnicalOrganisationalMeasure</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#hasTechnicalOrganisationalMeasure">dpv:hasTechnicalOrganisationalMeasure</a>
+        <span class="dfn-label">Label:</span> <i>has technical and organisational measure</i><br/>
+        <span class="dfn-label">Description:</span> <i>Indicates use or applicability of Technical or Organisational measure</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Range includes:</span> <i><a href="https://w3id.org/dpv#TechnicalOrganisationalMeasure">dpv:TechnicalOrganisationalMeasure</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="isMitigatedByMeasure">
+      <h4>is mitigated by measure</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>isMitigatedByMeasure</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#isMitigatedByMeasure">https://w3id.org/dpv#isMitigatedByMeasure</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#isMitigatedByMeasure">dpv:isMitigatedByMeasure</a>
+        <span class="dfn-label">Label:</span> <i>is mitigated by measure</i><br/>
+        <span class="dfn-label">Description:</span> <i>Indicate a risk is mitigated by specified measure</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#hasTechnicalOrganisationalMeasure">dpv:hasTechnicalOrganisationalMeasure</a></i><br/><span class="dfn-label">Sub-property of:</span> <i><a href="https://w3id.org/dpv#hasTechnicalOrganisationalMeasure">dpv:hasTechnicalOrganisationalMeasure</a></i><br/><span class="dfn-label">Domain includes:</span> <i><a href="https://w3id.org/dpv#Risk">dpv:Risk</a></i><br/><span class="dfn-label">Range includes:</span> <i><a href="https://w3id.org/dpv#RiskMitigationMeasure">dpv:RiskMitigationMeasure</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="isResidualRiskOf">
+      <h4>is residual risk of</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>isResidualRiskOf</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#isResidualRiskOf">https://w3id.org/dpv#isResidualRiskOf</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#isResidualRiskOf">dpv:isResidualRiskOf</a>
+        <span class="dfn-label">Label:</span> <i>is residual risk of</i><br/>
+        <span class="dfn-label">Description:</span> <i>Indicates this risk is the remaining or residual risk from applying mitigation measures or treatments to specified risk</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Domain includes:</span> <i><a href="https://w3id.org/dpv#Risk">dpv:Risk</a></i><br/><span class="dfn-label">Range includes:</span> <i><a href="https://w3id.org/dpv#Risk">dpv:Risk</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="mitigatesRisk">
+      <h4>mitigates risk</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>mitigatesRisk</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#mitigatesRisk">https://w3id.org/dpv#mitigatesRisk</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#mitigatesRisk">dpv:mitigatesRisk</a>
+        <span class="dfn-label">Label:</span> <i>mitigates risk</i><br/>
+        <span class="dfn-label">Description:</span> <i>Indicates risks mitigated by this concept</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Domain includes:</span> <i><a href="https://w3id.org/dpv#RiskMitigationMeasure">dpv:RiskMitigationMeasure</a></i><br/><span class="dfn-label">Range includes:</span> <i><a href="https://w3id.org/dpv#Risk">dpv:Risk</a></i><br/>      </p>
+      </div>
+    </section>
+
+  </section>
+  <section id="external-concepts">
+    <p>DPV uses the following terms from [[RDF]] and  [[RDFS]] with their defined meanings:</p>
+    <ul>
+      <li id="rdf:type"><dfn>rdf:type</dfn> to denote a concept is an instance of another concept</li>
+      <li id="rdfs:Class"><dfn>rdfs:Class</dfn> to denote a concept is a Class or a category</li>
+      <li id="rdfs:subClassOf"><dfn>rdfs:subClassOf</dfn> to specify the concept is a subclass (subtype, sub-category, subset) of another concept</li>
+      <li id="rdf:Property"><dfn>rdf:Property</dfn> to denote a concept is a property or a relation</li>
+      </ul>
+    <p>The following external concepts are re-used within DPV:</p>
+    <h3>External</h3>
+    <section class="term-def" id="">
+      <h4></h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn></dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href=""></a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href=""></a>
+        <span class="dfn-label">Label:</span> <i></i><br/>
+        <span class="dfn-label">Description:</span> <i></i><br/>
+        <span class="dfn-label">Type:</span> <i></i><br/>
+      </p>
+      </div>
+    </section>
+    <section class="term-def" id="">
+      <h4></h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn></dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href=""></a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href=""></a>
+        <span class="dfn-label">Label:</span> <i></i><br/>
+        <span class="dfn-label">Description:</span> <i></i><br/>
+        <span class="dfn-label">Type:</span> <i></i><br/>
+      </p>
+      </div>
+    </section>
+
+  </section>
+</section>
+
+</body>
+</html>

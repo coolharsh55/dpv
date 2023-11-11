@@ -16,6 +16,16 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#legal-basis-classes"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#LegitimateInterestOfDataSubject">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
+    <skos:prefLabel xml:lang="en">Legitimate Interest of Data Subject</skos:prefLabel>
+    <skos:definition xml:lang="en">Legitimate Interests of the Data Subject in conducting specified processing</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#LegitimateInterest"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#legal-basis-classes"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#LegalObligation">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
@@ -26,59 +36,39 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#legal-basis-classes"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#DataTransferLegalBasis">
+  <rdf:Description rdf:about="https://w3id.org/dpv#VitalInterestOfNaturalPerson">
+    <skos:narrower rdf:resource="https://w3id.org/dpv#VitalInterestOfDataSubject"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
-    <skos:prefLabel xml:lang="en">Data Transfer Legal Basis</skos:prefLabel>
-    <skos:definition xml:lang="en">Specific or special categories and instances of legal basis intended for justifying data transfers</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#LegalBasis"/>
+    <skos:prefLabel xml:lang="en">Vital Interest of Natural Person</skos:prefLabel>
+    <skos:definition xml:lang="en">Processing is necessary or required to protect vital interests of a natural person</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#VitalInterest"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#legal-basis-classes"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#PublicInterest">
+  <rdf:Description rdf:about="https://w3id.org/dpv#LegitimateInterestOfThirdParty">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
-    <skos:prefLabel xml:lang="en">Public Interest</skos:prefLabel>
-    <skos:definition xml:lang="en">Processing is necessary or beneficial for interest of the public or society at large</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#LegalBasis"/>
+    <skos:prefLabel xml:lang="en">Legitimate Interest of Third Party</skos:prefLabel>
+    <skos:definition xml:lang="en">Legitimate Interests of a Third Party in conducting specified processing</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#LegitimateInterest"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#legal-basis-classes"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#OfficialAuthorityOfController">
+  <rdf:Description rdf:about="https://w3id.org/dpv#ContractPerformance">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
-    <skos:prefLabel xml:lang="en">Official Authority of Controller</skos:prefLabel>
-    <skos:definition xml:lang="en">Processing necessary or authorised through the official authority granted to or vested in the Data Controller</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#LegalBasis"/>
+    <skos:prefLabel xml:lang="en">Contract Performance</skos:prefLabel>
+    <skos:definition xml:lang="en">Fulfilment or performance of a contract involving specified processing</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#Contract"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#legal-basis-classes"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#Contract">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
-    <skos:prefLabel xml:lang="en">Contract</skos:prefLabel>
-    <skos:definition xml:lang="en">Creation, completion, fulfilment, or performance of a contract involving specified processing</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#LegalAgreement"/>
-    <skos:broader rdf:resource="https://w3id.org/dpv#LegalBasis"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:narrower rdf:resource="https://w3id.org/dpv#ContractPerformance"/>
-    <skos:narrower rdf:resource="https://w3id.org/dpv#EnterIntoContract"/>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#legal-basis-classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#VitalInterest">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
-    <skos:prefLabel xml:lang="en">Vital Interest</skos:prefLabel>
-    <skos:definition xml:lang="en">Processing is necessary or required to protect vital interests of a data subject or other natural person</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#LegalBasis"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:narrower rdf:resource="https://w3id.org/dpv#VitalInterestOfNaturalPerson"/>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#legal-basis-classes"/>
+  <rdf:Description rdf:about="https://w3id.org/dpv#LegalAgreement">
+    <skos:narrower rdf:resource="https://w3id.org/dpv#Contract"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#LegalBasis">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -97,6 +87,36 @@
     <skos:narrower rdf:resource="https://w3id.org/dpv#VitalInterest"/>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#legal-basis-classes"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasLegalBasis">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="en">has legal basis</skos:prefLabel>
+    <skos:definition xml:lang="en">Indicates use or applicability of a Legal Basis</skos:definition>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#LegalBasis"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#LegalBasis"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#legal-basis-properties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#VitalInterestOfDataSubject">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
+    <skos:prefLabel xml:lang="en">Vital Interest of Data Subject</skos:prefLabel>
+    <skos:definition xml:lang="en">Processing is necessary or required to protect vital interests of a data subject</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#VitalInterestOfNaturalPerson"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#legal-basis-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#DataTransferLegalBasis">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
+    <skos:prefLabel xml:lang="en">Data Transfer Legal Basis</skos:prefLabel>
+    <skos:definition xml:lang="en">Specific or special categories and instances of legal basis intended for justifying data transfers</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#LegalBasis"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#legal-basis-classes"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#LegitimateInterest">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
@@ -110,23 +130,26 @@
     <skos:narrower rdf:resource="https://w3id.org/dpv#LegitimateInterestOfDataSubject"/>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#legal-basis-classes"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#LegitimateInterestOfThirdParty">
+  <rdf:Description rdf:about="https://w3id.org/dpv#Contract">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
-    <skos:prefLabel xml:lang="en">Legitimate Interest of Third Party</skos:prefLabel>
-    <skos:definition xml:lang="en">Legitimate Interests of a Third Party in conducting specified processing</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#LegitimateInterest"/>
+    <skos:prefLabel xml:lang="en">Contract</skos:prefLabel>
+    <skos:definition xml:lang="en">Creation, completion, fulfilment, or performance of a contract involving specified processing</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#LegalAgreement"/>
+    <skos:broader rdf:resource="https://w3id.org/dpv#LegalBasis"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:narrower rdf:resource="https://w3id.org/dpv#ContractPerformance"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv#EnterIntoContract"/>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#legal-basis-classes"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#VitalInterestOfDataSubject">
+  <rdf:Description rdf:about="https://w3id.org/dpv#OfficialAuthorityOfController">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
-    <skos:prefLabel xml:lang="en">Vital Interest of Data Subject</skos:prefLabel>
-    <skos:definition xml:lang="en">Processing is necessary or required to protect vital interests of a data subject</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#VitalInterestOfNaturalPerson"/>
+    <skos:prefLabel xml:lang="en">Official Authority of Controller</skos:prefLabel>
+    <skos:definition xml:lang="en">Processing necessary or authorised through the official authority granted to or vested in the Data Controller</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#LegalBasis"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#legal-basis-classes"/>
   </rdf:Description>
@@ -140,15 +163,26 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#legal-basis-classes"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#hasLegalBasis">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  <rdf:Description rdf:about="https://w3id.org/dpv#VitalInterest">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">has legal basis</skos:prefLabel>
-    <skos:definition xml:lang="en">Indicates use or applicability of a Legal Basis</skos:definition>
-    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#LegalBasis"/>
-    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#LegalBasis"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
+    <skos:prefLabel xml:lang="en">Vital Interest</skos:prefLabel>
+    <skos:definition xml:lang="en">Processing is necessary or required to protect vital interests of a data subject or other natural person</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#LegalBasis"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#legal-basis-properties"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv#VitalInterestOfNaturalPerson"/>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#legal-basis-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#PublicInterest">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
+    <skos:prefLabel xml:lang="en">Public Interest</skos:prefLabel>
+    <skos:definition xml:lang="en">Processing is necessary or beneficial for interest of the public or society at large</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#LegalBasis"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#legal-basis-classes"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#EnterIntoContract">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -160,44 +194,10 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#legal-basis-classes"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#ContractPerformance">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
-    <skos:prefLabel xml:lang="en">Contract Performance</skos:prefLabel>
-    <skos:definition xml:lang="en">Fulfilment or performance of a contract involving specified processing</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#Contract"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#legal-basis-classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#legal-basis-classes">
+  <rdf:Description rdf:about="https://w3id.org/dpv#legal-basis-properties">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#LegalAgreement">
-    <skos:narrower rdf:resource="https://w3id.org/dpv#Contract"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#VitalInterestOfNaturalPerson">
-    <skos:narrower rdf:resource="https://w3id.org/dpv#VitalInterestOfDataSubject"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
-    <skos:prefLabel xml:lang="en">Vital Interest of Natural Person</skos:prefLabel>
-    <skos:definition xml:lang="en">Processing is necessary or required to protect vital interests of a natural person</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#VitalInterest"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#legal-basis-classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#LegitimateInterestOfDataSubject">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
-    <skos:prefLabel xml:lang="en">Legitimate Interest of Data Subject</skos:prefLabel>
-    <skos:definition xml:lang="en">Legitimate Interests of the Data Subject in conducting specified processing</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#LegitimateInterest"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#legal-basis-classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#legal-basis-properties">
+  <rdf:Description rdf:about="https://w3id.org/dpv#legal-basis-classes">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
   </rdf:Description>
 </rdf:RDF>

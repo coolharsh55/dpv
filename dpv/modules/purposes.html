@@ -1,0 +1,1947 @@
+%%<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Purposes</title>
+  <script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove" defer></script>
+  <script class="remove">
+   // All config options at https://respec.org/docs/ 
+   var respecConfig = {
+    shortName: "dpv",
+    title: "Purposes",
+    subtitle: "Data Privacy Vocabulary (DPV)",
+    publishDate: "2022-12-05",
+    specStatus: "CG-FINAL",
+    group: "dpvcg",
+    latestVersion: "https://w3id.org/dpv",
+    canonicalUri: "https://w3id.org/dpv",
+    edDraftURI: "https://w3id.org/dpv/ed/dpv",
+    github: "w3c/dpv",
+    subjectPrefix: "[dpv]",
+    doJsonLd: true,
+    lint: { "no-unused-dfns": false, "local-refs-exist": true },
+    editors: [
+    {
+      name: "Harshvardhan J. Pandit",
+      url: "https://harshp.com/",
+      "company": "ADAPT Centre, Dublin City University",
+    }
+    ],
+    localBiblio: {
+  "DPVCG": {
+    "href": "https://www.w3.org/community/dpvcg/",
+    "title": "W3C Data Privacy Vocabularies and Controls Community Group (DPVCG)"
+  },
+  "__001": "DPV Core Family",
+  "DPV": {
+    "href": "https://www.w3id.org/dpv",
+    "title": "Data Privacy Vocabulary (DPV) Specification"
+  },
+  "DPV-GDPR": {
+    "href": "https://www.w3id.org/dpv/dpv-gdpr",
+    "title": "DPV-GDPR: Extension providing GDPR concepts"
+  },
+  "DPV-DGA": {
+    "href": "https://www.w3id.org/dpv/dpv-dga",
+    "title": "DPV-DGA: Extension providing DGA concepts"
+  },
+  "DPV-NACE": {
+    "href": "https://www.w3id.org/dpv/dpv-nace",
+    "title": "NACE Taxonomy serialised in RDFS"
+  },
+  "DPV-PD": {
+    "href": "https://www.w3id.org/dpv/dpv-pd",
+    "title": "DPV-PD: Extension providing Personal Data Categories"
+  },
+  "DPV-LEGAL": {
+    "href": "https://www.w3id.org/dpv/dpv-legal",
+    "title": "DPV-LEGAL: Extension providing Jurisdiction-relevant concepts"
+  },
+  "DPV-TECH": {
+    "href": "https://www.w3id.org/dpv/dpv-tech",
+    "title": "DPV-TECH: Extension providing Technology-relevant concepts"
+  },
+  "RISK": {
+    "href": "https://www.w3id.org/dpv/risk",
+    "title": "Risk Extension for DPV"
+  },
+  "RIGHTS": {
+    "href": "https://www.w3id.org/dpv/rights",
+    "title": "Rights Extension for Data Privacy Vocabulary"
+  },
+  "RIGHTS-EU": {
+    "href": "https://www.w3id.org/dpv/rights/eu",
+    "title": "Extension providing EU Rights"
+  },
+  "__002": "DPV-SKOS Family",
+  "DPV-SKOS": {
+    "href": "https://www.w3id.org/dpv/dpv-skos",
+    "title": "DPV-SKOS: Data Privacy Vocabulary serialised in RDFS & SKOS"
+  },
+  "DPV-SKOS-GDPR": {
+    "href": "https://www.w3id.org/dpv/dpv-skos/dpv-gdpr",
+    "title": "DPV-SKOS-GDPR: Extension providing GDPR concepts"
+  },
+  "DPV-SKOS-PD": {
+    "href": "https://www.w3id.org/dpv/dpv-skos/dpv-pd",
+    "title": "DPV-SKOS-PD: Extension providing Personal Data Categories"
+  },
+  "DPV-SKOS-LEGAL": {
+    "href": "https://www.w3id.org/dpv/dpv-skos/dpv-legal",
+    "title": "DPV-SKOS-LEGAL: Extension providing Jurisdiction-relevant concepts"
+  },
+  "DPV-SKOS-TECH": {
+    "href": "https://www.w3id.org/dpv/dpv-skos/dpv-tech",
+    "title": "DPV-SKOS-TECH: Extension providing Technology-relevant concepts"
+  },
+  "RISK-SKOS": {
+    "href": "https://www.w3id.org/dpv/dpv-skos/risk",
+    "title": "Risk Extension for DPV"
+  },
+  "RIGHTS-SKOS": {
+    "href": "https://www.w3id.org/dpv/dpv-skos/rights",
+    "title": "Rights Extension for Data Privacy Vocabulary"
+  },
+  "RIGHTS-EU-SKOS": {
+    "href": "https://www.w3id.org/dpv/dpv-skos/rights/eu",
+    "title": "Extension providing EU Rights"
+  },
+  "__003": "DPV-OWL Family",
+  "DPV-OWL": {
+    "href": "https://www.w3id.org/dpv/dpv-owl",
+    "title": "DPV-OWL: Data Privacy Vocabulary serialised in OWL2"
+  },
+  "DPV-OWL-GDPR": {
+    "href": "https://www.w3id.org/dpv/dpv-owl/dpv-gdpr",
+    "title": "DPV-OWL-GDPR: Extension providing GDPR concepts"
+  },
+  "DPV-OWL-NACE": {
+    "href": "https://www.w3id.org/dpv/dpv-owl/dpv-nace",
+    "title": "NACE Taxonomy serialised in RDFS"
+  },
+  "DPV-OWL-PD": {
+    "href": "https://www.w3id.org/dpv/dpv-owl/dpv-pd",
+    "title": "DPV-OWL-PD: Extension providing Personal Data Categories"
+  },
+  "DPV-OWL-LEGAL": {
+    "href": "https://www.w3id.org/dpv/dpv-owl/dpv-legal",
+    "title": "DPV-OWL-LEGAL: Extension providing Jurisdiction-relevant concepts"
+  },
+  "DPV-OWL-TECH": {
+    "href": "https://www.w3id.org/dpv/dpv-owl/dpv-tech",
+    "title": "DPV-OWL-TECH: Extension providing Technology-relevant concepts"
+  },
+  "RISK-OWL": {
+    "href": "https://www.w3id.org/dpv/dpv-owl/risk",
+    "title": "Risk Extension for DPV"
+  },
+  "RIGHTS-OWL": {
+    "href": "https://www.w3id.org/dpv/dpv-owl/rights",
+    "title": "Rights Extension for Data Privacy Vocabulary"
+  },
+  "RIGHTS-EU-OWL": {
+    "href": "https://www.w3id.org/dpv/dpv-owl/rights/eu",
+    "title": "Extension providing EU Rights"
+  },
+  "__004": "DPV Documentation & Guides",
+  "DPV-Primer": {
+    "href": "https://www.w3id.org/dpv/primer",
+    "title": "Primer for Data Privacy Vocabulary"
+  },
+  "DPV-ADOPTION": {
+    "href": "https://www.w3.org/community/dpvcg/wiki/Adoption_of_DPVCG",
+    "title": "Listing of DPV adoption and applications"
+  },
+  "DPV-GUIDES": {
+    "href": "https://w3id.org/dpv/guides",
+    "title": "Guidelines for Adoption and Use of DPV"
+  },
+  "DPV-GUIDE-Consent": {
+    "href": "https://w3id.org/dpv/guides/consent",
+    "title": "Guide for Consent Records using DPV"
+  },
+  "DPV-GUIDE-Notice": {
+    "href": "https://w3id.org/dpv/guides/notice",
+    "title": "Guide for Privacy Notices using DPV"
+  },
+  "DPV-GUIDE-Serialisations": {
+    "href": "https://w3id.org/dpv/guides/serialisations",
+    "title": "Guide on DPV's serialisations and semantics"
+  },
+  "DPV-GUIDE-SKOS": {
+    "href": "https://w3id.org/dpv/guides/dpv-skos",
+    "title": "Guide for using DPV with RDFS and SKOS"
+  },
+  "DPV-GUIDE-OWL2": {
+    "href": "https://w3id.org/dpv/guides/dpv-owl",
+    "title": "Guide for using DPV in OWL2"
+  },
+  "DPV-GUIDE-GDPR-DPIA": {
+    "href": "https://w3id.org/dpv/dpv-gdpr/dpia",
+    "title": "Guide for GDPR DPIA's using DPV"
+  },
+  "DPV-GUIDE-GDPR-ROPA": {
+    "href": "https://w3id.org/dpv/dpv-gdpr/ropa",
+    "title": "Guide for GDPR ROPA's using DPV"
+  },
+  "__005": "Examples",
+  "Examples": {
+    "href": "https://w3id.org/dpv/examples",
+    "title": "DPV Examples"
+  },
+  "__006": "Examples",
+  "UseCases-Requirements": {
+    "href": "https://w3id.org/dpv/use-cases",
+    "title": "DPV Use-Cases and Requirements"
+  },
+  "__000": "External Vocabularies",
+  "RDF": {
+    "href": "https://www.w3.org/TR/rdf11-concepts/",
+    "title": "RDF 1.1 Concepts and Abstract Syntax"
+  },
+  "RDFS": {
+    "href": "https://www.w3.org/TR/rdf-schema/",
+    "title": "RDF Schema 1.1"
+  },
+  "OWL" :{
+    "href": "https://www.w3.org/TR/owl2-overview/",
+    "title": "OWL 2 Web Ontology Language Document Overview (Second Edition)"
+  },
+  "SKOS": {
+    "href": "https://www.w3.org/TR/skos-reference/",
+    "title": "SKOS Simple Knowledge Organization System"
+  },
+  "__000": "External References",
+  "SPECIAL": {
+    "href": "https://www.specialprivacy.eu/",
+    "title": "SPECIAL H2020 Project"
+  },
+  "GDPR": {
+    "href": "https://eur-lex.europa.eu/eli/reg/2016/679/oj",
+    "title": "General Data Protection Regulation (GDPR)"
+  },
+  "DGA": {
+    "href": "https://eur-lex.europa.eu/eli/reg/2022/868/oj",
+    "title": "Data Governance Act (DGA)"
+  },
+  "NACE": {
+    "href": "https://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=LST_NOM_DTL&StrNom=NACE_REV2",
+    "title": "Statistical Classification of Economic Activities in the European Community (NACE)"
+  },
+  "NAICS": {
+    "href": "https://www.census.gov/eos/www/naics/",
+    "title": "North American Industry Classification System (NAICS)"
+  },
+  "ISIC": {
+    "href": "https://unstats.un.org/unsd/classifications",
+    "title": "International Standard Industrial Classification of All Economic Activities (ISIC)"
+  },
+  "GICS": {
+    "href": "https://www.msci.com/gics",
+    "title": "Global Industry Classification Standard (GICS)"
+  },
+  "NACE-NAICS": {
+    "href": "https://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=LST_NOM_DTL&StrNom=NACE_REV2",
+    "title": "NACE to NAICS mapping"
+  },
+  "EnterPrivacy": {
+    "href": "https://enterprivacy.com/wp-content/uploads/2018/09/Categories-of-Personal-Information.pdf",
+    "title": "Taxonomy of Personal Data Categories"
+  },
+  "TIME": {
+    "href": "https://www.w3.org/TR/owl-time/",
+    "title": "Time Ontology in OWL"
+  },
+  "ISO-27017": {
+    "href": "https://www.iso.org/standard/43757.html",
+    "title": "ISO/IEC 27017:2015 Information technology — Security techniques — Code of practice for information security controls based on ISO/IEC 27002 for cloud services"
+  },
+  "ISO-27560": {
+    "href": "https://www.iso.org/standard/80392.html",
+    "title": "ISO/IEC TS 27560 Privacy technologies — Consent record information structure"
+  },
+  "SHACL-UseCases": {
+    "href": "https://www.w3.org/TR/shacl-ucr/",
+    "title": "SHACL Use Cases and Requirements"
+  },
+  "DCT": {
+    "title": "DCMI Metadata Terms (DCT)",
+    "href": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/"
+  },
+  "DCAT": {
+    "title": "Data Catalog Vocabulary (DCAT) - Version 2",
+    "href": "http://www.w3.org/ns/dcat"
+  },
+  "RuleML": {
+    "title": "RuleML: Rule Markup Language",
+    "href": "www.ruleml.org/"
+  }
+}  };
+</script>
+<style type="text/css">
+  /* Table styles, March 2016 */
+  table {
+    width:  auto;
+    margin-bottom: 10px;
+    border-collapse:collapse
+
+  }
+  th, td {
+    border:thin solid gray;
+    padding: 0.3em;
+  }
+  figure {
+    margin: 2px;
+    padding: 2px;
+    border: 1px solid black;
+  }
+  .term-contents {
+    box-shadow: 2px 2px 2px darkgray; 
+  }
+  .term-contents > p {
+    border-top: 1px solid lightgray;
+    border-left: 1px solid lightgray;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 2px;
+  }
+  .dfn-label {
+    font-family: monospace;
+  }
+</style>
+</head>
+<body>
+    <section id="abstract">
+      <p>The Data Privacy Vocabulary [[DPV]] enables expressing machine-readable metadata about the use and processing of personal data based on legislative requirements such as the General Data Protection Regulation [[GDPR]]. This document describes the DPV specification along with its data model.</p>
+      <p>The canonical URL for DPV is <a href="https://w3id.org/dpv">https://w3id.org/dpv</a> which contains (this) specification. The namespace for DPV terms is <a href="https://w3id.org/dpv#"><code>https://w3id.org/dpv#</code></a>, the suggested prefix is <code>dpv</code>, and this document along with source and releases are available at <a href="https://github.com/w3c/dpv">https://github.com/w3c/dpv</a>.</p>
+      <section id="dpv-document-family" class="noTOC">
+    <h2>DPV Family of Documents</h2>
+    <ul>
+      <li>[[[DPV-Primer]]]:  An introductory document for DPV's concepts and taxonomies.
+        <p class="note">Newcomers to the DPV are <strong>strongly recommended to first read through the Primer</strong> to familiarise themselves with the semantics and concepts of DPV.</p>
+      </li>
+      <li>[[[DPV]]]: (this document) The formal and normative description of DPV and its concepts, with serialisations in RDFS & SKOS [[DPV-SKOS]] and OWL2 [[DPV-OWL]]</li>
+      <li>Extensions to Concepts: <ul>
+        <li>[[DPV-GDPR]]:  for GDPR concepts; serialisations: [[DPV-SKOS-GDPR]], [[DPV-OWL-GDPR]]</li>
+        <li>[[DPV-PD]]  for Personal Data concepts; serialisations: [[DPV-SKOS-PD]], [[DPV-OWL-PD]]</li>
+        <li>[[DPV-LEGAL]]  for Jurisdiction-relevant concepts; serialisations: [[DPV-SKOS-LEGAL]], [[DPV-OWL-LEGAL]]</li>
+        <li>[[DPV-TECH]]  for Technology concepts; serialisations: [[DPV-SKOS-TECH]], [[DPV-OWL-TECH]]</li>
+        <li>[[RISK]]  for Risk Assessment and Management concepts; serialisations: [[RISK-SKOS]], [[RISK-OWL]]</li>
+        </ul></li>
+      <li>[[[DPV-GUIDES]]]: <ul>
+        <li>[[[DPV-GUIDE-Serialisations]]]  (coming soon)</li>
+        <li>[[[DPV-GUIDE-SKOS]]]  (coming soon)</li>
+        <li>[[[DPV-GUIDE-OWL2]]] </li>
+        <li>[[[DPV-GUIDE-Notice]]]  (coming soon)</li>
+        <li>[[[DPV-GUIDE-Consent]]]  (being updated for v1)</li>
+        <li>[[[DPV-GUIDE-GDPR-DPIA]]]  (being updated for v1)</li>
+        <li>[[[DPV-GUIDE-GDPR-ROPA]]]  (being updated for v1)</li>
+        </ul></li>
+      <li>Other Resources:<ul>
+        <li>[[[UseCases-Requirements]]]</li>
+        <li>[[[Examples]]]</li>
+        <li>[[[DPV-NACE]]]</li>
+        <li>[[[RIGHTS-EU]]] serialisations: [[RIGHTS-EU-SKOS]], [[RIGHTS-EU-OWL]]</li>
+        </ul></li>
+    </ul>
+    <p><strong>Related Links</strong></p>
+    <ul>
+      <li>Releases are published on <a href="https://github.com/w3c/dpv/releases">GitHub</a></li>
+      <li>For a general overview of the Data Protection Vocabularies and Controls Community Group [[DPVCG]], its history, deliverables, and activities - refer to <a href="https://www.w3.org/community/dpvcg/"><u>DPVCG Website</u></a>.</p>
+      </li>
+      <li>
+        <p>The peer-reviewed article “<a href="https://link.springer.com/chapter/10.1007%2F978-3-030-33246-4_44"><u>Creating A Vocabulary for Data Privacy</u></a>” presents a historical overview of the DPVCG, and describes the methodology and structure of the DPV along with describing its creation. An open-access version can be accessed <a href="http://hdl.handle.net/2262/91581"><u>here</u></a>, <a href="http://doras.dcu.ie/23801/"><u>here</u></a>, and <a href="https://aic.ai.wu.ac.at/~polleres/publications/pand-etal-2019ODBASE.pdf"><u>here</u></a>.</p>
+      </li>
+    </ul>
+</section>
+
+      <section id="sotd">
+  <!-- sotd: Status of this document -->
+  <p>This document is published by the <a href="https://www.w3.org/community/dpvcg/">Data Privacy Vocabularies and Controls Community Group (DPVCG)</a> as a deliverable and report of its work in creating and maintaining the Data Privacy Vocabulary (DPV).</p>
+  <div class="note">
+    <p><strong>Contributing to the DPV and its extensions</strong> The DPVCG welcomes participation regarding the DPV, including expansion or refinement of its terms, addressing open issues, and welcomes suggestions on their resolution or mitigation. For further information, please see the <a href="https://github.com/w3c/dpv#contribution--participation">contribution section</a>.</p>
+  </div>
+</section>
+
+    </section>
+  <section id="introduction">
+    <h2>Introduction</h2>
+    <blockquote>This document assumes the reader is familiar with DPV through the [[[DPV-Primer]]], and thus focuses on providing a topically structured documentation of concepts defined by DPV.</blockquote>
+
+  <figure>
+    <a href="../../diagrams/purpose-2.png" target="_blank">
+      <img title="Overview of Purpose taxonomy in DPV" src="../diagrams/purpose-2.png">
+    </a>
+    <figcaption>Overview of Purpose taxonomy in DPV (click to open in new window)</figcaption>
+  </figure>
+  <p>DPV’s taxonomy of purposes is used to represent the reason or justification for processing of personal data. For this, purposes are organised within DPV based on how they relate to the processing of personal data in terms of several factors, such as: management functions related to information (e.g. records, account, finance), fulfilment of objectives (e.g. delivery of goods), providing goods and services (e.g. service provision), intended benefits (e.g. optimisations for service provider or consumer), and legal compliance.</p>
+
+  <p>DPV provides a taxonomy of Purpose <i>instances</i> for use with [=hasPurpose=] relation. In addition, DPV also defines the concept [=Sector=] (associated using [=hasSector=]) to indicate a contextual interpretation of the purpose within a specified sector.</p>
+
+  <ul class="concept-list">
+  <li>
+    <strong>dpv:Purpose</strong>: The purpose of processing personal data 
+      <small><a href="#Purpose">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:AccountManagement</strong>: Account Management refers to purposes associated with account management, such as to create, provide, maintain, and manage accounts 
+      <small><a href="#AccountManagement">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:CommunicationManagement</strong>: Communication Management refers to purposes associated with providing or managing communication activities e.g. to send an email for notifying some information 
+      <small><a href="#CommunicationManagement">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:CommunicationForCustomerCare</strong>: Customer Care Communication refers to purposes associated with communicating with customers for assisting them, resolving issues, ensuring satisfaction, etc. in relation to services provided 
+      <small><a href="#CommunicationForCustomerCare">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:CustomerManagement</strong>: Customer Management refers to purposes associated with managing activities related with past, current, and future customers 
+      <small><a href="#CustomerManagement">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:CustomerCare</strong>: Customer Care refers to purposes associated with purposes for providing assistance, resolving issues, ensuring satisfaction, etc. in relation to services provided 
+      <small><a href="#CustomerCare">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:CommunicationForCustomerCare</strong>: Customer Care Communication refers to purposes associated with communicating with customers for assisting them, resolving issues, ensuring satisfaction, etc. in relation to services provided 
+      <small><a href="#CommunicationForCustomerCare">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:CustomerClaimsManagement</strong>: Customer Claims Management refers to purposes associated with managing claims, including repayment of monies owed 
+      <small><a href="#CustomerClaimsManagement">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:CustomerOrderManagement</strong>: Customer Order Management refers to purposes associated with managing customer orders i.e. processing of an order related to customer&#39;s purchase of good or services 
+      <small><a href="#CustomerOrderManagement">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:CustomerRelationshipManagement</strong>: Customer Relationship Management refers to purposes associated with managing and analysing interactions with past, current, and potential customers 
+      <small><a href="#CustomerRelationshipManagement">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:ImproveInternalCRMProcesses</strong>: Purposes associated with improving customer-relationship management (CRM) processes 
+      <small><a href="#ImproveInternalCRMProcesses">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:CustomerSolvencyMonitoring</strong>: Customer Solvency Monitoring refers to purposes associated with monitor solvency of customers for financial diligence 
+      <small><a href="#CustomerSolvencyMonitoring">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:CreditChecking</strong>: Purposes associated with monitoring, performing, or assessing credit worthiness or solvency 
+      <small><a href="#CreditChecking">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:MaintainCreditCheckingDatabase</strong>: Purposes associated with maintaining a Credit Checking Database 
+      <small><a href="#MaintainCreditCheckingDatabase">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:MaintainCreditRatingDatabase</strong>: Purposes associated with maintaining a Credit Rating Database 
+      <small><a href="#MaintainCreditRatingDatabase">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:EnforceSecurity</strong>: Purposes associated with ensuring and enforcing security for data, personnel, or other related matters 
+      <small><a href="#EnforceSecurity">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:AntiTerrorismOperations</strong>: Purposes associated with activities that detect, prevent, mitigate, or perform other activities for anti-terrorism 
+      <small><a href="#AntiTerrorismOperations">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:EnforceAccessControl</strong>: Purposes associated with conducting or enforcing access control as a form of security 
+      <small><a href="#EnforceAccessControl">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:FraudPreventionAndDetection</strong>: Purposes associated with fraud detection, prevention, and mitigation 
+      <small><a href="#FraudPreventionAndDetection">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:CounterMoneyLaundering</strong>: Purposes associated with detection, prevention, and mitigation of mitigate money laundering 
+      <small><a href="#CounterMoneyLaundering">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:MaintainFraudDatabase</strong>: Purposes associated with maintaining a database related to identifying and identified fraud risks and fraud incidents 
+      <small><a href="#MaintainFraudDatabase">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:IdentityVerification</strong>: Purposes associated with verifying or authorising identity as a form of security 
+      <small><a href="#IdentityVerification">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:EstablishContractualAgreement</strong>: Purposes associated with carrying out data processing to establish an agreement, such as for entering into a contract 
+      <small><a href="#EstablishContractualAgreement">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:FulfilmentOfObligation</strong>: Purposes associated with carrying out data processing to fulfill an obligation 
+      <small><a href="#FulfilmentOfObligation">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:FulfilmentOfContractualObligation</strong>: Purposes associated with carrying out data processing to fulfill a contractual obligation 
+      <small><a href="#FulfilmentOfContractualObligation">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:LegalCompliance</strong>: Purposes associated with carrying out data processing to fulfill a legal or statutory obligation 
+      <small><a href="#LegalCompliance">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:HumanResourceManagement</strong>: Purposes associated with managing humans and &#39;human resources&#39; within the organisation for effective and efficient operations. 
+      <small><a href="#HumanResourceManagement">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:PersonnelManagement</strong>: Purposes associated with management of personnel associated with the organisation e.g. evaluation and management of employees and intermediaries 
+      <small><a href="#PersonnelManagement">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:PersonnelHiring</strong>: Purposes associated with management and execution of hiring processes of personnel 
+      <small><a href="#PersonnelHiring">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:PersonnelPayment</strong>: Purposes associated with management and execution of payment of personnel 
+      <small><a href="#PersonnelPayment">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:Marketing</strong>: Purposes associated with conducting marketing in relation to organisation or products or services e.g. promoting, selling, and distributing 
+      <small><a href="#Marketing">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:Advertising</strong>: Purposes associated with conducting advertising i.e. process or artefact used to call attention to a product, service, etc. through announcements, notices, or other forms of communication 
+      <small><a href="#Advertising">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:PersonalisedAdvertising</strong>: Purposes associated with creating and providing personalised advertising 
+      <small><a href="#PersonalisedAdvertising">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:TargetedAdvertising</strong>: Purposes associated with creating and providing pesonalised advertisement where the personalisation is targeted to a specific individual or group of individuals 
+      <small><a href="#TargetedAdvertising">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:DirectMarketing</strong>: Purposes associated with conducting direct marketing i.e. marketing communicated directly to the individual 
+      <small><a href="#DirectMarketing">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:PublicRelations</strong>: Purposes associated with managing and conducting public relations processes, including creating goodwill for the organisation 
+      <small><a href="#PublicRelations">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:SocialMediaMarketing</strong>: Purposes associated with conducting marketing through social media 
+      <small><a href="#SocialMediaMarketing">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:OrganisationGovernance</strong>: Purposes associated with conducting activities and functions for governance of an organisation 
+      <small><a href="#OrganisationGovernance">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:DisputeManagement</strong>: Purposes associated with activities that manage disputes by natural persons, private bodies, or public authorities relevant to organisation 
+      <small><a href="#DisputeManagement">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:MemberPartnerManagement</strong>: Purposes associated with maintaining a registry of shareholders, members, or partners for governance, administration, and management functions 
+      <small><a href="#MemberPartnerManagement">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:OrganisationComplianceManagement</strong>: Purposes associated with managing compliance for organisation in relation to internal policies 
+      <small><a href="#OrganisationComplianceManagement">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:OrganisationRiskManagement</strong>: Purposes associated with managing risk for organisation&#39;s activities 
+      <small><a href="#OrganisationRiskManagement">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:Personalisation</strong>: Purposes associated with creating and providing customisation based on attributes and/or needs of person(s) or context(s). 
+      <small><a href="#Personalisation">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:PersonalisedAdvertising</strong>: Purposes associated with creating and providing personalised advertising 
+      <small><a href="#PersonalisedAdvertising">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:TargetedAdvertising</strong>: Purposes associated with creating and providing pesonalised advertisement where the personalisation is targeted to a specific individual or group of individuals 
+      <small><a href="#TargetedAdvertising">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:ServicePersonalisation</strong>: Purposes associated with providing personalisation within services or product or activities 
+      <small><a href="#ServicePersonalisation">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:PersonalisedBenefits</strong>: Purposes associated with creating and providing personalised benefits for a service 
+      <small><a href="#PersonalisedBenefits">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:ProvidePersonalisedRecommendations</strong>: Purposes associated with creating and providing personalised recommendations 
+      <small><a href="#ProvidePersonalisedRecommendations">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:ProvideEventRecommendations</strong>: Purposes associated with creating and providing personalised recommendations for events 
+      <small><a href="#ProvideEventRecommendations">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:ProvideProductRecommendations</strong>: Purposes associated with creating and providing product recommendations e.g. suggest similar products 
+      <small><a href="#ProvideProductRecommendations">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:UserInterfacePersonalisation</strong>: Purposes associated with personalisation of interfaces presented to the user 
+      <small><a href="#UserInterfacePersonalisation">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:RecordManagement</strong>: Purposes associated with manage creation, storage, and use of records relevant to operations, events, and processes e.g. to store logs or access requests 
+      <small><a href="#RecordManagement">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:ResearchAndDevelopment</strong>: Purposes associated with conducting research and development for new methods, products, or services 
+      <small><a href="#ResearchAndDevelopment">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:AcademicResearch</strong>: Purposes associated with conducting or assisting with research conducted in an academic context e.g. within universities 
+      <small><a href="#AcademicResearch">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:CommercialResearch</strong>: Purposes associated with conducting research in a commercial setting or with intention to commercialise e.g. in a company or sponsored by a company 
+      <small><a href="#CommercialResearch">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:NonCommercialResearch</strong>: Purposes associated with conducting research in a non-commercial setting e.g. for a non-profit-organisation (NGO) 
+      <small><a href="#NonCommercialResearch">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:ServiceProvision</strong>: Purposes associated with providing service or product or activities 
+      <small><a href="#ServiceProvision">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:PaymentManagement</strong>: Purposes associated with processing and managing payment in relation to service, including invoicing and records 
+      <small><a href="#PaymentManagement">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:RepairImpairments</strong>: Purposes associated with identifying, rectifying, or otherwise undertaking activities intended to fix or repair impairments to existing functionalities 
+      <small><a href="#RepairImpairments">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:RequestedServiceProvision</strong>: Purposes associated with delivering services as requested by user or consumer 
+      <small><a href="#RequestedServiceProvision">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:DeliveryOfGoods</strong>: Purposes associated with delivering goods and services requested or asked by consumer 
+      <small><a href="#DeliveryOfGoods">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:SearchFunctionalities</strong>: Purposes associated with providing searching, querying, or other forms of information retrieval related functionalities 
+      <small><a href="#SearchFunctionalities">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:SellProducts</strong>: Purposes associated with selling products or services 
+      <small><a href="#SellProducts">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:SellDataToThirdParties</strong>: Purposes associated with selling or sharing data or information to third parties 
+      <small><a href="#SellDataToThirdParties">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:SellInsightsFromData</strong>: Purposes associated with selling or sharing insights obtained from analysis of data 
+      <small><a href="#SellInsightsFromData">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:SellProductsToDataSubject</strong>: Purposes associated with selling products or services to the user, consumer, or data subjects 
+      <small><a href="#SellProductsToDataSubject">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:ServiceOptimisation</strong>: Purposes associated with optimisation of services or activities 
+      <small><a href="#ServiceOptimisation">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:OptimisationForConsumer</strong>: Purposes associated with optimisation of activities and services for consumer or user 
+      <small><a href="#OptimisationForConsumer">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:OptimiseUserInterface</strong>: Purposes associated with optimisation of interfaces presented to the user 
+      <small><a href="#OptimiseUserInterface">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:OptimisationForController</strong>: Purposes associated with optimisation of activities and services for provider or controller 
+      <small><a href="#OptimisationForController">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:ImproveExistingProductsAndServices</strong>: Purposes associated with improving existing products and services 
+      <small><a href="#ImproveExistingProductsAndServices">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:ImproveInternalCRMProcesses</strong>: Purposes associated with improving customer-relationship management (CRM) processes 
+      <small><a href="#ImproveInternalCRMProcesses">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:IncreaseServiceRobustness</strong>: Purposes associated with improving robustness and resilience of services 
+      <small><a href="#IncreaseServiceRobustness">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:InternalResourceOptimisation</strong>: Purposes associated with optimisation of internal resource availability and usage for organisation 
+      <small><a href="#InternalResourceOptimisation">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:ServicePersonalisation</strong>: Purposes associated with providing personalisation within services or product or activities 
+      <small><a href="#ServicePersonalisation">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:PersonalisedBenefits</strong>: Purposes associated with creating and providing personalised benefits for a service 
+      <small><a href="#PersonalisedBenefits">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:ProvidePersonalisedRecommendations</strong>: Purposes associated with creating and providing personalised recommendations 
+      <small><a href="#ProvidePersonalisedRecommendations">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:ProvideEventRecommendations</strong>: Purposes associated with creating and providing personalised recommendations for events 
+      <small><a href="#ProvideEventRecommendations">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:ProvideProductRecommendations</strong>: Purposes associated with creating and providing product recommendations e.g. suggest similar products 
+      <small><a href="#ProvideProductRecommendations">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:UserInterfacePersonalisation</strong>: Purposes associated with personalisation of interfaces presented to the user 
+      <small><a href="#UserInterfacePersonalisation">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:ServiceRegistration</strong>: Purposes associated with registering users and collecting information required for providing a service 
+      <small><a href="#ServiceRegistration">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:ServiceUsageAnalytics</strong>: Purposes associated with conducting analysis and reporting related to usage of services or products 
+      <small><a href="#ServiceUsageAnalytics">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:TechnicalServiceProvision</strong>: Purposes associated with managing and providing technical processes and functions necessary for delivering services 
+      <small><a href="#TechnicalServiceProvision">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:VendorManagement</strong>: Purposes associated with manage orders, payment, evaluation, and prospecting related to vendors 
+      <small><a href="#VendorManagement">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:VendorPayment</strong>: Purposes associated with managing payment of vendors 
+      <small><a href="#VendorPayment">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:VendorRecordsManagement</strong>: Purposes associated with managing records and orders related to vendors 
+      <small><a href="#VendorRecordsManagement">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:VendorSelectionAssessment</strong>: Purposes associated with managing selection, assessment, and evaluation related to vendors 
+      <small><a href="#VendorSelectionAssessment">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:Sector</strong>: Sector describes the area of application or domain that indicates or restricts scope for interpretation and application of purpose e.g. Agriculture, Banking 
+      <small><a href="#Sector">go to full definition</a></small>
+      
+  </li>
+</ul>
+
+  </section>
+
+  <section>
+  <h2>Vocabulary Index</h2>
+  <section id="classes">
+    <h3>Classes</h3>
+    <section class="term-def" id="AcademicResearch">
+      <h4>Academic Research</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>AcademicResearch</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#AcademicResearch">https://w3id.org/dpv#AcademicResearch</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#AcademicResearch">dpv:AcademicResearch</a>
+        <span class="dfn-label">Label:</span> <i>Academic Research</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with conducting or assisting with research conducted in an academic context e.g. within universities</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ResearchAndDevelopment">dpv:ResearchAndDevelopment</a></i><br/><span class="dfn-label">Related:</span> <i>svpu:Education</i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="AccountManagement">
+      <h4>Account Management</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>AccountManagement</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#AccountManagement">https://w3id.org/dpv#AccountManagement</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#AccountManagement">dpv:AccountManagement</a>
+        <span class="dfn-label">Label:</span> <i>Account Management</i><br/>
+        <span class="dfn-label">Description:</span> <i>Account Management refers to purposes associated with account management, such as to create, provide, maintain, and manage accounts</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="Advertising">
+      <h4>Advertising</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>Advertising</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#Advertising">https://w3id.org/dpv#Advertising</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#Advertising">dpv:Advertising</a>
+        <span class="dfn-label">Label:</span> <i>Advertising</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with conducting advertising i.e. process or artefact used to call attention to a product, service, etc. through announcements, notices, or other forms of communication</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>Advertising is a subset of Marketing. Advertising by itself does not indicate &#39;personalisation&#39; i.e. personalised ads.</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Marketing">dpv:Marketing</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="AntiTerrorismOperations">
+      <h4>Anti-Terrorism Operations</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>AntiTerrorismOperations</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#AntiTerrorismOperations">https://w3id.org/dpv#AntiTerrorismOperations</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#AntiTerrorismOperations">dpv:AntiTerrorismOperations</a>
+        <span class="dfn-label">Label:</span> <i>Anti-Terrorism Operations</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with activities that detect, prevent, mitigate, or perform other activities for anti-terrorism</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#EnforceSecurity">dpv:EnforceSecurity</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="CommercialResearch">
+      <h4>Commercial Research</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>CommercialResearch</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#CommercialResearch">https://w3id.org/dpv#CommercialResearch</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#CommercialResearch">dpv:CommercialResearch</a>
+        <span class="dfn-label">Label:</span> <i>Commercial Research</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with conducting research in a commercial setting or with intention to commercialise e.g. in a company or sponsored by a company</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ResearchAndDevelopment">dpv:ResearchAndDevelopment</a></i><br/><span class="dfn-label">Related:</span> <i>svpu:Develop</i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="CommunicationForCustomerCare">
+      <h4>Communication for Customer Care</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>CommunicationForCustomerCare</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#CommunicationForCustomerCare">https://w3id.org/dpv#CommunicationForCustomerCare</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#CommunicationForCustomerCare">dpv:CommunicationForCustomerCare</a>
+        <span class="dfn-label">Label:</span> <i>Communication for Customer Care</i><br/>
+        <span class="dfn-label">Description:</span> <i>Customer Care Communication refers to purposes associated with communicating with customers for assisting them, resolving issues, ensuring satisfaction, etc. in relation to services provided</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#CommunicationManagement">dpv:CommunicationManagement</a>, <a href="https://w3id.org/dpv#CustomerCare">dpv:CustomerCare</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="CommunicationManagement">
+      <h4>Communication Management</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>CommunicationManagement</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#CommunicationManagement">https://w3id.org/dpv#CommunicationManagement</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#CommunicationManagement">dpv:CommunicationManagement</a>
+        <span class="dfn-label">Label:</span> <i>Communication Management</i><br/>
+        <span class="dfn-label">Description:</span> <i>Communication Management refers to purposes associated with providing or managing communication activities e.g. to send an email for notifying some information</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>This purpose by itself does not sufficiently and clearly indicate what the communication is about. As such, it is recommended to combine it with another purpose to indicate the application. For example, Communication of Payment.</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="CounterMoneyLaundering">
+      <h4>Counter Money Laundering</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>CounterMoneyLaundering</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#CounterMoneyLaundering">https://w3id.org/dpv#CounterMoneyLaundering</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#CounterMoneyLaundering">dpv:CounterMoneyLaundering</a>
+        <span class="dfn-label">Label:</span> <i>Counter Money Laundering</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with detection, prevention, and mitigation of mitigate money laundering</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#FraudPreventionAndDetection">dpv:FraudPreventionAndDetection</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="CreditChecking">
+      <h4>Credit Checking</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>CreditChecking</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#CreditChecking">https://w3id.org/dpv#CreditChecking</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#CreditChecking">dpv:CreditChecking</a>
+        <span class="dfn-label">Label:</span> <i>Credit Checking</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with monitoring, performing, or assessing credit worthiness or solvency</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#CustomerSolvencyMonitoring">dpv:CustomerSolvencyMonitoring</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="CustomerCare">
+      <h4>Customer Care</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>CustomerCare</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#CustomerCare">https://w3id.org/dpv#CustomerCare</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#CustomerCare">dpv:CustomerCare</a>
+        <span class="dfn-label">Label:</span> <i>Customer Care</i><br/>
+        <span class="dfn-label">Description:</span> <i>Customer Care refers to purposes associated with purposes for providing assistance, resolving issues, ensuring satisfaction, etc. in relation to services provided</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#CustomerManagement">dpv:CustomerManagement</a></i><br/><span class="dfn-label">Related:</span> <i>svpu:Feedback</i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="CustomerClaimsManagement">
+      <h4>Customer Claims Management</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>CustomerClaimsManagement</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#CustomerClaimsManagement">https://w3id.org/dpv#CustomerClaimsManagement</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#CustomerClaimsManagement">dpv:CustomerClaimsManagement</a>
+        <span class="dfn-label">Label:</span> <i>Customer Claims Management</i><br/>
+        <span class="dfn-label">Description:</span> <i>Customer Claims Management refers to purposes associated with managing claims, including repayment of monies owed</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#CustomerManagement">dpv:CustomerManagement</a></i><br/><span class="dfn-label">Source:</span> <i>(Belgian DPA ROPA Template, https://www.privacycommission.be/nl/model-voor-een-register-van-de-verwerkingsactiviteiten)</i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="CustomerManagement">
+      <h4>Customer Management</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>CustomerManagement</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#CustomerManagement">https://w3id.org/dpv#CustomerManagement</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#CustomerManagement">dpv:CustomerManagement</a>
+        <span class="dfn-label">Label:</span> <i>Customer Management</i><br/>
+        <span class="dfn-label">Description:</span> <i>Customer Management refers to purposes associated with managing activities related with past, current, and future customers</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="CustomerOrderManagement">
+      <h4>Customer Order Management</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>CustomerOrderManagement</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#CustomerOrderManagement">https://w3id.org/dpv#CustomerOrderManagement</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#CustomerOrderManagement">dpv:CustomerOrderManagement</a>
+        <span class="dfn-label">Label:</span> <i>Customer Order Management</i><br/>
+        <span class="dfn-label">Description:</span> <i>Customer Order Management refers to purposes associated with managing customer orders i.e. processing of an order related to customer&#39;s purchase of good or services</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#CustomerManagement">dpv:CustomerManagement</a></i><br/><span class="dfn-label">Source:</span> <i>(Belgian DPA ROPA Template, https://www.privacycommission.be/nl/model-voor-een-register-van-de-verwerkingsactiviteiten)</i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="CustomerRelationshipManagement">
+      <h4>Customer Relationship Management</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>CustomerRelationshipManagement</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#CustomerRelationshipManagement">https://w3id.org/dpv#CustomerRelationshipManagement</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#CustomerRelationshipManagement">dpv:CustomerRelationshipManagement</a>
+        <span class="dfn-label">Label:</span> <i>Customer Relationship Management</i><br/>
+        <span class="dfn-label">Description:</span> <i>Customer Relationship Management refers to purposes associated with managing and analysing interactions with past, current, and potential customers</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#CustomerManagement">dpv:CustomerManagement</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="CustomerSolvencyMonitoring">
+      <h4>Customer Solvency Monitoring</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>CustomerSolvencyMonitoring</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#CustomerSolvencyMonitoring">https://w3id.org/dpv#CustomerSolvencyMonitoring</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#CustomerSolvencyMonitoring">dpv:CustomerSolvencyMonitoring</a>
+        <span class="dfn-label">Label:</span> <i>Customer Solvency Monitoring</i><br/>
+        <span class="dfn-label">Description:</span> <i>Customer Solvency Monitoring refers to purposes associated with monitor solvency of customers for financial diligence</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#CustomerManagement">dpv:CustomerManagement</a></i><br/><span class="dfn-label">Source:</span> <i>(Belgian DPA ROPA Template, https://www.privacycommission.be/nl/model-voor-een-register-van-de-verwerkingsactiviteiten)</i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="DeliveryOfGoods">
+      <h4>Delivery of Goods</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>DeliveryOfGoods</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#DeliveryOfGoods">https://w3id.org/dpv#DeliveryOfGoods</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#DeliveryOfGoods">dpv:DeliveryOfGoods</a>
+        <span class="dfn-label">Label:</span> <i>Delivery of Goods</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with delivering goods and services requested or asked by consumer</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#RequestedServiceProvision">dpv:RequestedServiceProvision</a></i><br/><span class="dfn-label">Related:</span> <i>svpu:Delivery</i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="DirectMarketing">
+      <h4>Direct Marketing</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>DirectMarketing</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#DirectMarketing">https://w3id.org/dpv#DirectMarketing</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#DirectMarketing">dpv:DirectMarketing</a>
+        <span class="dfn-label">Label:</span> <i>Direct Marketing</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with conducting direct marketing i.e. marketing communicated directly to the individual</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Marketing">dpv:Marketing</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="DisputeManagement">
+      <h4>Dispute Management</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>DisputeManagement</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#DisputeManagement">https://w3id.org/dpv#DisputeManagement</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#DisputeManagement">dpv:DisputeManagement</a>
+        <span class="dfn-label">Label:</span> <i>Dispute Management</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with activities that manage disputes by natural persons, private bodies, or public authorities relevant to organisation</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#OrganisationGovernance">dpv:OrganisationGovernance</a></i><br/><span class="dfn-label">Source:</span> <i>(Belgian DPA ROPA Template, https://www.privacycommission.be/nl/model-voor-een-register-van-de-verwerkingsactiviteiten)</i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="EnforceAccessControl">
+      <h4>Enforce Access Control</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>EnforceAccessControl</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#EnforceAccessControl">https://w3id.org/dpv#EnforceAccessControl</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#EnforceAccessControl">dpv:EnforceAccessControl</a>
+        <span class="dfn-label">Label:</span> <i>Enforce Access Control</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with conducting or enforcing access control as a form of security</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>Was previously &#34;Access Control&#34;. Prefixed to distinguish from Technical Measure.</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#EnforceSecurity">dpv:EnforceSecurity</a></i><br/><span class="dfn-label">Related:</span> <i>svpu:Login</i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="EnforceSecurity">
+      <h4>Enforce Security</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>EnforceSecurity</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#EnforceSecurity">https://w3id.org/dpv#EnforceSecurity</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#EnforceSecurity">dpv:EnforceSecurity</a>
+        <span class="dfn-label">Label:</span> <i>Enforce Security</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with ensuring and enforcing security for data, personnel, or other related matters</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>Was previous &#34;Security&#34;. Prefixed to distinguish from TechOrg measures.</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="EstablishContractualAgreement">
+      <h4>Establish Contractual Agreement</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>EstablishContractualAgreement</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#EstablishContractualAgreement">https://w3id.org/dpv#EstablishContractualAgreement</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#EstablishContractualAgreement">dpv:EstablishContractualAgreement</a>
+        <span class="dfn-label">Label:</span> <i>Establish Contractual Agreement</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with carrying out data processing to establish an agreement, such as for entering into a contract</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="FraudPreventionAndDetection">
+      <h4>Fraud Prevention and Detection</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>FraudPreventionAndDetection</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#FraudPreventionAndDetection">https://w3id.org/dpv#FraudPreventionAndDetection</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#FraudPreventionAndDetection">dpv:FraudPreventionAndDetection</a>
+        <span class="dfn-label">Label:</span> <i>Fraud Prevention and Detection</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with fraud detection, prevention, and mitigation</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#EnforceSecurity">dpv:EnforceSecurity</a></i><br/><span class="dfn-label">Related:</span> <i>svpu:Government</i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="FulfilmentOfContractualObligation">
+      <h4>Fulfilment of Contractual Obligation</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>FulfilmentOfContractualObligation</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#FulfilmentOfContractualObligation">https://w3id.org/dpv#FulfilmentOfContractualObligation</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#FulfilmentOfContractualObligation">dpv:FulfilmentOfContractualObligation</a>
+        <span class="dfn-label">Label:</span> <i>Fulfilment of Contractual Obligation</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with carrying out data processing to fulfill a contractual obligation</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#FulfilmentOfObligation">dpv:FulfilmentOfObligation</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="FulfilmentOfObligation">
+      <h4>Fulfilment of Obligation</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>FulfilmentOfObligation</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#FulfilmentOfObligation">https://w3id.org/dpv#FulfilmentOfObligation</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#FulfilmentOfObligation">dpv:FulfilmentOfObligation</a>
+        <span class="dfn-label">Label:</span> <i>Fulfilment of Obligation</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with carrying out data processing to fulfill an obligation</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="HumanResourceManagement">
+      <h4>Human Resource Management</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>HumanResourceManagement</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#HumanResourceManagement">https://w3id.org/dpv#HumanResourceManagement</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#HumanResourceManagement">dpv:HumanResourceManagement</a>
+        <span class="dfn-label">Label:</span> <i>Human Resource Management</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with managing humans and &#39;human resources&#39; within the organisation for effective and efficient operations.</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>HR is a broad concept. Its management includes, amongst others - recruiting employees and intermediaries e.g. brokers, independent representatives; payroll administration, remunerations, commissions, and wages; and application of social legislation.</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/><span class="dfn-label">Source:</span> <i>(Belgian DPA ROPA Template, https://www.privacycommission.be/nl/model-voor-een-register-van-de-verwerkingsactiviteiten)</i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="IdentityVerification">
+      <h4>Identity Verification</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>IdentityVerification</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#IdentityVerification">https://w3id.org/dpv#IdentityVerification</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#IdentityVerification">dpv:IdentityVerification</a>
+        <span class="dfn-label">Label:</span> <i>Identity Verification</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with verifying or authorising identity as a form of security</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#EnforceSecurity">dpv:EnforceSecurity</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="ImproveExistingProductsAndServices">
+      <h4>Improve Existing Products and Services</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>ImproveExistingProductsAndServices</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#ImproveExistingProductsAndServices">https://w3id.org/dpv#ImproveExistingProductsAndServices</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#ImproveExistingProductsAndServices">dpv:ImproveExistingProductsAndServices</a>
+        <span class="dfn-label">Label:</span> <i>Improve Existing Products and Services</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with improving existing products and services</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#OptimisationForController">dpv:OptimisationForController</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="ImproveInternalCRMProcesses">
+      <h4>Improve Internal CRM Processes</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>ImproveInternalCRMProcesses</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#ImproveInternalCRMProcesses">https://w3id.org/dpv#ImproveInternalCRMProcesses</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#ImproveInternalCRMProcesses">dpv:ImproveInternalCRMProcesses</a>
+        <span class="dfn-label">Label:</span> <i>Improve Internal CRM Processes</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with improving customer-relationship management (CRM) processes</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#CustomerRelationshipManagement">dpv:CustomerRelationshipManagement</a>, <a href="https://w3id.org/dpv#OptimisationForController">dpv:OptimisationForController</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="IncreaseServiceRobustness">
+      <h4>Increase Service Robustness</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>IncreaseServiceRobustness</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#IncreaseServiceRobustness">https://w3id.org/dpv#IncreaseServiceRobustness</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#IncreaseServiceRobustness">dpv:IncreaseServiceRobustness</a>
+        <span class="dfn-label">Label:</span> <i>Increase Service Robustness</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with improving robustness and resilience of services</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#OptimisationForController">dpv:OptimisationForController</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="InternalResourceOptimisation">
+      <h4>Internal Resource Optimisation</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>InternalResourceOptimisation</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#InternalResourceOptimisation">https://w3id.org/dpv#InternalResourceOptimisation</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#InternalResourceOptimisation">dpv:InternalResourceOptimisation</a>
+        <span class="dfn-label">Label:</span> <i>Internal Resource Optimisation</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with optimisation of internal resource availability and usage for organisation</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#OptimisationForController">dpv:OptimisationForController</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="LegalCompliance">
+      <h4>Legal Compliance</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>LegalCompliance</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#LegalCompliance">https://w3id.org/dpv#LegalCompliance</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#LegalCompliance">dpv:LegalCompliance</a>
+        <span class="dfn-label">Label:</span> <i>Legal Compliance</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with carrying out data processing to fulfill a legal or statutory obligation</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>This purpose only refers to processing that is additionally required in order to fulfill the obligations and requirements associated with a law. For example, the use of consent would have its own separate purposes, with this purpose addressing a legal requirement for maintaining consent record (along with RecordManagement). This purpose will typically be used with Legal Obligation as the legal basis.</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#FulfilmentOfObligation">dpv:FulfilmentOfObligation</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="MaintainCreditCheckingDatabase">
+      <h4>Maintain Credit Checking Database</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>MaintainCreditCheckingDatabase</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#MaintainCreditCheckingDatabase">https://w3id.org/dpv#MaintainCreditCheckingDatabase</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#MaintainCreditCheckingDatabase">dpv:MaintainCreditCheckingDatabase</a>
+        <span class="dfn-label">Label:</span> <i>Maintain Credit Checking Database</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with maintaining a Credit Checking Database</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#CreditChecking">dpv:CreditChecking</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="MaintainCreditRatingDatabase">
+      <h4>Maintain Credit Rating Database</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>MaintainCreditRatingDatabase</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#MaintainCreditRatingDatabase">https://w3id.org/dpv#MaintainCreditRatingDatabase</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#MaintainCreditRatingDatabase">dpv:MaintainCreditRatingDatabase</a>
+        <span class="dfn-label">Label:</span> <i>Maintain Credit Rating Database</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with maintaining a Credit Rating Database</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#CreditChecking">dpv:CreditChecking</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="MaintainFraudDatabase">
+      <h4>MaintainFraudDatabase</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>MaintainFraudDatabase</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#MaintainFraudDatabase">https://w3id.org/dpv#MaintainFraudDatabase</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#MaintainFraudDatabase">dpv:MaintainFraudDatabase</a>
+        <span class="dfn-label">Label:</span> <i>MaintainFraudDatabase</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with maintaining a database related to identifying and identified fraud risks and fraud incidents</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#FraudPreventionAndDetection">dpv:FraudPreventionAndDetection</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="Marketing">
+      <h4>Marketing</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>Marketing</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#Marketing">https://w3id.org/dpv#Marketing</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#Marketing">dpv:Marketing</a>
+        <span class="dfn-label">Label:</span> <i>Marketing</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with conducting marketing in relation to organisation or products or services e.g. promoting, selling, and distributing</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>Was commercial interest, changed to consider Marketing a separate Purpose category by itself</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="MemberPartnerManagement">
+      <h4>Members and Partners Management</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>MemberPartnerManagement</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#MemberPartnerManagement">https://w3id.org/dpv#MemberPartnerManagement</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#MemberPartnerManagement">dpv:MemberPartnerManagement</a>
+        <span class="dfn-label">Label:</span> <i>Members and Partners Management</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with maintaining a registry of shareholders, members, or partners for governance, administration, and management functions</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#OrganisationGovernance">dpv:OrganisationGovernance</a></i><br/><span class="dfn-label">Source:</span> <i>(Belgian DPA ROPA Template, https://www.privacycommission.be/nl/model-voor-een-register-van-de-verwerkingsactiviteiten)</i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="NonCommercialResearch">
+      <h4>Non-Commercial Research</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>NonCommercialResearch</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#NonCommercialResearch">https://w3id.org/dpv#NonCommercialResearch</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#NonCommercialResearch">dpv:NonCommercialResearch</a>
+        <span class="dfn-label">Label:</span> <i>Non-Commercial Research</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with conducting research in a non-commercial setting e.g. for a non-profit-organisation (NGO)</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ResearchAndDevelopment">dpv:ResearchAndDevelopment</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="OptimisationForConsumer">
+      <h4>Optimisation for Consumer</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>OptimisationForConsumer</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#OptimisationForConsumer">https://w3id.org/dpv#OptimisationForConsumer</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#OptimisationForConsumer">dpv:OptimisationForConsumer</a>
+        <span class="dfn-label">Label:</span> <i>Optimisation for Consumer</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with optimisation of activities and services for consumer or user</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>The term optmisation here refers to the efficiency of the service in terms of technical provision (or similar means) with benefits for everybody. Personalisation implies making changes that benefit the current user or persona.</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ServiceOptimisation">dpv:ServiceOptimisation</a></i><br/><span class="dfn-label">Related:</span> <i>svpu:Custom</i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="OptimisationForController">
+      <h4>Optimisation for Controller</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>OptimisationForController</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#OptimisationForController">https://w3id.org/dpv#OptimisationForController</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#OptimisationForController">dpv:OptimisationForController</a>
+        <span class="dfn-label">Label:</span> <i>Optimisation for Controller</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with optimisation of activities and services for provider or controller</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ServiceOptimisation">dpv:ServiceOptimisation</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="OptimiseUserInterface">
+      <h4>Optimise User Interface</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>OptimiseUserInterface</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#OptimiseUserInterface">https://w3id.org/dpv#OptimiseUserInterface</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#OptimiseUserInterface">dpv:OptimiseUserInterface</a>
+        <span class="dfn-label">Label:</span> <i>Optimise User Interface</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with optimisation of interfaces presented to the user</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#OptimisationForConsumer">dpv:OptimisationForConsumer</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="OrganisationComplianceManagement">
+      <h4>Organisation Compliance Management</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>OrganisationComplianceManagement</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#OrganisationComplianceManagement">https://w3id.org/dpv#OrganisationComplianceManagement</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#OrganisationComplianceManagement">dpv:OrganisationComplianceManagement</a>
+        <span class="dfn-label">Label:</span> <i>Organisation Compliance Management</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with managing compliance for organisation in relation to internal policies</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>Note that this concept relates to internal organisational compliance. The concept LegalCompliance should be used for external legal or regulatory compliance.</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#OrganisationGovernance">dpv:OrganisationGovernance</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="OrganisationGovernance">
+      <h4>Organisation Governance</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>OrganisationGovernance</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#OrganisationGovernance">https://w3id.org/dpv#OrganisationGovernance</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#OrganisationGovernance">dpv:OrganisationGovernance</a>
+        <span class="dfn-label">Label:</span> <i>Organisation Governance</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with conducting activities and functions for governance of an organisation</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/><span class="dfn-label">Source:</span> <i>(Belgian DPA ROPA Template, https://www.privacycommission.be/nl/model-voor-een-register-van-de-verwerkingsactiviteiten)</i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="OrganisationRiskManagement">
+      <h4>Organisation Risk Management</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>OrganisationRiskManagement</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#OrganisationRiskManagement">https://w3id.org/dpv#OrganisationRiskManagement</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#OrganisationRiskManagement">dpv:OrganisationRiskManagement</a>
+        <span class="dfn-label">Label:</span> <i>Organisation Risk Management</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with managing risk for organisation&#39;s activities</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#OrganisationGovernance">dpv:OrganisationGovernance</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="PaymentManagement">
+      <h4>Payment Management</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>PaymentManagement</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#PaymentManagement">https://w3id.org/dpv#PaymentManagement</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#PaymentManagement">dpv:PaymentManagement</a>
+        <span class="dfn-label">Label:</span> <i>Payment Management</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with processing and managing payment in relation to service, including invoicing and records</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ServiceProvision">dpv:ServiceProvision</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="Personalisation">
+      <h4>Personalisation</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>Personalisation</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#Personalisation">https://w3id.org/dpv#Personalisation</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#Personalisation">dpv:Personalisation</a>
+        <span class="dfn-label">Label:</span> <i>Personalisation</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with creating and providing customisation based on attributes and/or needs of person(s) or context(s).</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>This term is a blanket purpose category for indicating personalisation of some other purpose, e.g. by creating a subclass of the other concept and Personalisation</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="PersonalisedAdvertising">
+      <h4>Personalised Advertising</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>PersonalisedAdvertising</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#PersonalisedAdvertising">https://w3id.org/dpv#PersonalisedAdvertising</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#PersonalisedAdvertising">dpv:PersonalisedAdvertising</a>
+        <span class="dfn-label">Label:</span> <i>Personalised Advertising</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with creating and providing personalised advertising</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Advertising">dpv:Advertising</a>, <a href="https://w3id.org/dpv#Personalisation">dpv:Personalisation</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="PersonalisedBenefits">
+      <h4>Personalised Benefits</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>PersonalisedBenefits</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#PersonalisedBenefits">https://w3id.org/dpv#PersonalisedBenefits</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#PersonalisedBenefits">dpv:PersonalisedBenefits</a>
+        <span class="dfn-label">Label:</span> <i>Personalised Benefits</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with creating and providing personalised benefits for a service</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ServicePersonalisation">dpv:ServicePersonalisation</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="PersonnelHiring">
+      <h4>Personnel Hiring</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>PersonnelHiring</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#PersonnelHiring">https://w3id.org/dpv#PersonnelHiring</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#PersonnelHiring">dpv:PersonnelHiring</a>
+        <span class="dfn-label">Label:</span> <i>Personnel Hiring</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with management and execution of hiring processes of personnel</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#PersonnelManagement">dpv:PersonnelManagement</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="PersonnelManagement">
+      <h4>Personnel Management</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>PersonnelManagement</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#PersonnelManagement">https://w3id.org/dpv#PersonnelManagement</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#PersonnelManagement">dpv:PersonnelManagement</a>
+        <span class="dfn-label">Label:</span> <i>Personnel Management</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with management of personnel associated with the organisation e.g. evaluation and management of employees and intermediaries</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#HumanResourceManagement">dpv:HumanResourceManagement</a></i><br/><span class="dfn-label">Source:</span> <i>(Belgian DPA ROPA Template, https://www.privacycommission.be/nl/model-voor-een-register-van-de-verwerkingsactiviteiten)</i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="PersonnelPayment">
+      <h4>Personnel Payment</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>PersonnelPayment</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#PersonnelPayment">https://w3id.org/dpv#PersonnelPayment</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#PersonnelPayment">dpv:PersonnelPayment</a>
+        <span class="dfn-label">Label:</span> <i>Personnel Payment</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with management and execution of payment of personnel</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#PersonnelManagement">dpv:PersonnelManagement</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="ProvideEventRecommendations">
+      <h4>Provide Event Recommendations</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>ProvideEventRecommendations</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#ProvideEventRecommendations">https://w3id.org/dpv#ProvideEventRecommendations</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#ProvideEventRecommendations">dpv:ProvideEventRecommendations</a>
+        <span class="dfn-label">Label:</span> <i>Provide Event Recommendations</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with creating and providing personalised recommendations for events</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ProvidePersonalisedRecommendations">dpv:ProvidePersonalisedRecommendations</a></i><br/><span class="dfn-label">Source:</span> <i>(SPECIAL Project,https://specialprivacy.ercim.eu/)</i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="ProvidePersonalisedRecommendations">
+      <h4>Provide Personalised Recommendations</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>ProvidePersonalisedRecommendations</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#ProvidePersonalisedRecommendations">https://w3id.org/dpv#ProvidePersonalisedRecommendations</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#ProvidePersonalisedRecommendations">dpv:ProvidePersonalisedRecommendations</a>
+        <span class="dfn-label">Label:</span> <i>Provide Personalised Recommendations</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with creating and providing personalised recommendations</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ServicePersonalisation">dpv:ServicePersonalisation</a></i><br/><span class="dfn-label">Source:</span> <i>(SPECIAL Project,https://specialprivacy.ercim.eu/)</i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="ProvideProductRecommendations">
+      <h4>Provide Product Recommendations</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>ProvideProductRecommendations</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#ProvideProductRecommendations">https://w3id.org/dpv#ProvideProductRecommendations</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#ProvideProductRecommendations">dpv:ProvideProductRecommendations</a>
+        <span class="dfn-label">Label:</span> <i>Provide Product Recommendations</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with creating and providing product recommendations e.g. suggest similar products</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ProvidePersonalisedRecommendations">dpv:ProvidePersonalisedRecommendations</a></i><br/><span class="dfn-label">Related:</span> <i>svpu:Marketing</i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="PublicRelations">
+      <h4>Public Relations</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>PublicRelations</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#PublicRelations">https://w3id.org/dpv#PublicRelations</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#PublicRelations">dpv:PublicRelations</a>
+        <span class="dfn-label">Label:</span> <i>Public Relations</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with managing and conducting public relations processes, including creating goodwill for the organisation</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Marketing">dpv:Marketing</a></i><br/><span class="dfn-label">Source:</span> <i>(Belgian DPA ROPA Template, https://www.privacycommission.be/nl/model-voor-een-register-van-de-verwerkingsactiviteiten)</i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="Purpose">
+      <h4>Purpose</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>Purpose</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#Purpose">https://w3id.org/dpv#Purpose</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a>
+        <span class="dfn-label">Label:</span> <i>Purpose</i><br/>
+        <span class="dfn-label">Description:</span> <i>The purpose of processing personal data</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Source:</span> <i>(SPECIAL Project,https://specialprivacy.ercim.eu/)</i><br/><span class="dfn-label">Related:</span> <i>spl:AnyPurpose</i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="RecordManagement">
+      <h4>Record Management</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>RecordManagement</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#RecordManagement">https://w3id.org/dpv#RecordManagement</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#RecordManagement">dpv:RecordManagement</a>
+        <span class="dfn-label">Label:</span> <i>Record Management</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with manage creation, storage, and use of records relevant to operations, events, and processes e.g. to store logs or access requests</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>This purpose relates specifiaclly for record creation and management. This can be combined or used along with other purposes to express intentions such as records for legal compliance or vendor payments.</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="RepairImpairments">
+      <h4>Repair Impairments</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>RepairImpairments</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#RepairImpairments">https://w3id.org/dpv#RepairImpairments</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#RepairImpairments">dpv:RepairImpairments</a>
+        <span class="dfn-label">Label:</span> <i>Repair Impairments</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with identifying, rectifying, or otherwise undertaking activities intended to fix or repair impairments to existing functionalities</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>An example of identifying and rectifying impairments is the process of finding and fixing errors in products, commonly referred to as debugging</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ServiceProvision">dpv:ServiceProvision</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="RequestedServiceProvision">
+      <h4>Requested Service Provision</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>RequestedServiceProvision</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#RequestedServiceProvision">https://w3id.org/dpv#RequestedServiceProvision</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#RequestedServiceProvision">dpv:RequestedServiceProvision</a>
+        <span class="dfn-label">Label:</span> <i>Requested Service Provision</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with delivering services as requested by user or consumer</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>The use of &#39;request&#39; here includes where an user explicitly asks for the service and also when an established contract requires the provision of the service</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ServiceProvision">dpv:ServiceProvision</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="ResearchAndDevelopment">
+      <h4>Research and Development</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>ResearchAndDevelopment</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#ResearchAndDevelopment">https://w3id.org/dpv#ResearchAndDevelopment</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#ResearchAndDevelopment">dpv:ResearchAndDevelopment</a>
+        <span class="dfn-label">Label:</span> <i>Research and Development</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with conducting research and development for new methods, products, or services</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="SearchFunctionalities">
+      <h4>Search Functionalities</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>SearchFunctionalities</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#SearchFunctionalities">https://w3id.org/dpv#SearchFunctionalities</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#SearchFunctionalities">dpv:SearchFunctionalities</a>
+        <span class="dfn-label">Label:</span> <i>Search Functionalities</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with providing searching, querying, or other forms of information retrieval related functionalities</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ServiceProvision">dpv:ServiceProvision</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="Sector">
+      <h4>Sector</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>Sector</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#Sector">https://w3id.org/dpv#Sector</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#Sector">dpv:Sector</a>
+        <span class="dfn-label">Label:</span> <i>Sector</i><br/>
+        <span class="dfn-label">Description:</span> <i>Sector describes the area of application or domain that indicates or restricts scope for interpretation and application of purpose e.g. Agriculture, Banking</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>There are various sector codes used commonly to indicate the domain of an organisation or business. Examples include NACE (EU), ISIC (UN), SIC and NAICS (USA).</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+      </p>
+      </div>
+    </section>
+    <section class="term-def" id="SellDataToThirdParties">
+      <h4>Sell Data to Third Parties</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>SellDataToThirdParties</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#SellDataToThirdParties">https://w3id.org/dpv#SellDataToThirdParties</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#SellDataToThirdParties">dpv:SellDataToThirdParties</a>
+        <span class="dfn-label">Label:</span> <i>Sell Data to Third Parties</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with selling or sharing data or information to third parties</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>Sell here means exchange, submit, or provide in return for direct or indirect compensation. Was subclass of commercial interest, changed to reflect selling something</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#SellProducts">dpv:SellProducts</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="SellInsightsFromData">
+      <h4>Sell Insights from Data</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>SellInsightsFromData</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#SellInsightsFromData">https://w3id.org/dpv#SellInsightsFromData</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#SellInsightsFromData">dpv:SellInsightsFromData</a>
+        <span class="dfn-label">Label:</span> <i>Sell Insights from Data</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with selling or sharing insights obtained from analysis of data</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>Sell here means exchange, submit, or provide in return for direct or indirect compensation. Was subclass of commercial interest, changed to reflect selling something</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#SellProducts">dpv:SellProducts</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="SellProducts">
+      <h4>Sell Products</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>SellProducts</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#SellProducts">https://w3id.org/dpv#SellProducts</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#SellProducts">dpv:SellProducts</a>
+        <span class="dfn-label">Label:</span> <i>Sell Products</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with selling products or services</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>Sell here means exchange, submit, or provide in return for direct or indirect compensation.</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ServiceProvision">dpv:ServiceProvision</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="SellProductsToDataSubject">
+      <h4>Sell Products to Data Subject</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>SellProductsToDataSubject</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#SellProductsToDataSubject">https://w3id.org/dpv#SellProductsToDataSubject</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#SellProductsToDataSubject">dpv:SellProductsToDataSubject</a>
+        <span class="dfn-label">Label:</span> <i>Sell Products to Data Subject</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with selling products or services to the user, consumer, or data subjects</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>Sell Products here refers to processing necessary to provide and complete a sale to customers. It should not be confused with providing services with a cost based on an established agreement.</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#SellProducts">dpv:SellProducts</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="ServiceOptimisation">
+      <h4>Service Optimisation</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>ServiceOptimisation</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#ServiceOptimisation">https://w3id.org/dpv#ServiceOptimisation</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#ServiceOptimisation">dpv:ServiceOptimisation</a>
+        <span class="dfn-label">Label:</span> <i>Service Optimisation</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with optimisation of services or activities</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>Subclass of ServiceProvision since optimisation is usually considered part of providing services</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ServiceProvision">dpv:ServiceProvision</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="ServicePersonalisation">
+      <h4>Service Personalisation</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>ServicePersonalisation</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#ServicePersonalisation">https://w3id.org/dpv#ServicePersonalisation</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#ServicePersonalisation">dpv:ServicePersonalisation</a>
+        <span class="dfn-label">Label:</span> <i>Service Personalisation</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with providing personalisation within services or product or activities</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Personalisation">dpv:Personalisation</a>, <a href="https://w3id.org/dpv#ServiceProvision">dpv:ServiceProvision</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="ServiceProvision">
+      <h4>Service Provision</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>ServiceProvision</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#ServiceProvision">https://w3id.org/dpv#ServiceProvision</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#ServiceProvision">dpv:ServiceProvision</a>
+        <span class="dfn-label">Label:</span> <i>Service Provision</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with providing service or product or activities</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="ServiceRegistration">
+      <h4>Service Registration</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>ServiceRegistration</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#ServiceRegistration">https://w3id.org/dpv#ServiceRegistration</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#ServiceRegistration">dpv:ServiceRegistration</a>
+        <span class="dfn-label">Label:</span> <i>Service Registration</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with registering users and collecting information required for providing a service</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>An example of service registration is to provide a form that collects information such as preferred language or media format for downloading a movie</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ServiceProvision">dpv:ServiceProvision</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="ServiceUsageAnalytics">
+      <h4>Service Usage Analytics</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>ServiceUsageAnalytics</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#ServiceUsageAnalytics">https://w3id.org/dpv#ServiceUsageAnalytics</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#ServiceUsageAnalytics">dpv:ServiceUsageAnalytics</a>
+        <span class="dfn-label">Label:</span> <i>Service Usage Analytics</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with conducting analysis and reporting related to usage of services or products</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>Was &#34;UsageAnalytics&#34;, prefixed with Service to better reflect scope</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ServiceProvision">dpv:ServiceProvision</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="SocialMediaMarketing">
+      <h4>Social Media Marketing</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>SocialMediaMarketing</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#SocialMediaMarketing">https://w3id.org/dpv#SocialMediaMarketing</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#SocialMediaMarketing">dpv:SocialMediaMarketing</a>
+        <span class="dfn-label">Label:</span> <i>Social Media Marketing</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with conducting marketing through social media</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Marketing">dpv:Marketing</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="TargetedAdvertising">
+      <h4>Targeted Advertising</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>TargetedAdvertising</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#TargetedAdvertising">https://w3id.org/dpv#TargetedAdvertising</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#TargetedAdvertising">dpv:TargetedAdvertising</a>
+        <span class="dfn-label">Label:</span> <i>Targeted Advertising</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with creating and providing pesonalised advertisement where the personalisation is targeted to a specific individual or group of individuals</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#PersonalisedAdvertising">dpv:PersonalisedAdvertising</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="TechnicalServiceProvision">
+      <h4>Technical Service Provision</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>TechnicalServiceProvision</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#TechnicalServiceProvision">https://w3id.org/dpv#TechnicalServiceProvision</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#TechnicalServiceProvision">dpv:TechnicalServiceProvision</a>
+        <span class="dfn-label">Label:</span> <i>Technical Service Provision</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with managing and providing technical processes and functions necessary for delivering services</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ServiceProvision">dpv:ServiceProvision</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="UserInterfacePersonalisation">
+      <h4>User Interface Personalisation</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>UserInterfacePersonalisation</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#UserInterfacePersonalisation">https://w3id.org/dpv#UserInterfacePersonalisation</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#UserInterfacePersonalisation">dpv:UserInterfacePersonalisation</a>
+        <span class="dfn-label">Label:</span> <i>User Interface Personalisation</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with personalisation of interfaces presented to the user</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>Examples of user-interface personalisation include changing the language to match the locale</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#ServicePersonalisation">dpv:ServicePersonalisation</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="VendorManagement">
+      <h4>Vendor Management</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>VendorManagement</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#VendorManagement">https://w3id.org/dpv#VendorManagement</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#VendorManagement">dpv:VendorManagement</a>
+        <span class="dfn-label">Label:</span> <i>Vendor Management</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with manage orders, payment, evaluation, and prospecting related to vendors</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/><span class="dfn-label">Source:</span> <i>(Belgian DPA ROPA Template, https://www.privacycommission.be/nl/model-voor-een-register-van-de-verwerkingsactiviteiten)</i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="VendorPayment">
+      <h4>Vendor Payment</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>VendorPayment</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#VendorPayment">https://w3id.org/dpv#VendorPayment</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#VendorPayment">dpv:VendorPayment</a>
+        <span class="dfn-label">Label:</span> <i>Vendor Payment</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with managing payment of vendors</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#VendorManagement">dpv:VendorManagement</a></i><br/><span class="dfn-label">Source:</span> <i>(Belgian DPA ROPA Template, https://www.privacycommission.be/nl/model-voor-een-register-van-de-verwerkingsactiviteiten)</i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="VendorRecordsManagement">
+      <h4>Vendor Records Management</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>VendorRecordsManagement</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#VendorRecordsManagement">https://w3id.org/dpv#VendorRecordsManagement</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#VendorRecordsManagement">dpv:VendorRecordsManagement</a>
+        <span class="dfn-label">Label:</span> <i>Vendor Records Management</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with managing records and orders related to vendors</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#VendorManagement">dpv:VendorManagement</a></i><br/><span class="dfn-label">Source:</span> <i>(Belgian DPA ROPA Template, https://www.privacycommission.be/nl/model-voor-een-register-van-de-verwerkingsactiviteiten)</i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="VendorSelectionAssessment">
+      <h4>Vendor Selection Assessment</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>VendorSelectionAssessment</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#VendorSelectionAssessment">https://w3id.org/dpv#VendorSelectionAssessment</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#VendorSelectionAssessment">dpv:VendorSelectionAssessment</a>
+        <span class="dfn-label">Label:</span> <i>Vendor Selection Assessment</i><br/>
+        <span class="dfn-label">Description:</span> <i>Purposes associated with managing selection, assessment, and evaluation related to vendors</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#VendorManagement">dpv:VendorManagement</a></i><br/><span class="dfn-label">Source:</span> <i>(Belgian DPA ROPA Template, https://www.privacycommission.be/nl/model-voor-een-register-van-de-verwerkingsactiviteiten)</i><br/>      </p>
+      </div>
+    </section>
+
+  </section>
+  <section id="properties">
+    <h3>Properties</h3>
+    <section class="term-def" id="hasPurpose">
+      <h4>has purpose</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>hasPurpose</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#hasPurpose">https://w3id.org/dpv#hasPurpose</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#hasPurpose">dpv:hasPurpose</a>
+        <span class="dfn-label">Label:</span> <i>has purpose</i><br/>
+        <span class="dfn-label">Description:</span> <i>Indicates association with Purpose</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Range includes:</span> <i><a href="https://w3id.org/dpv#Purpose">dpv:Purpose</a></i><br/><span class="dfn-label">Source:</span> <i>(SPECIAL Project,https://specialprivacy.ercim.eu/)</i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="hasSector">
+      <h4>has sector</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>hasSector</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#hasSector">https://w3id.org/dpv#hasSector</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#hasSector">dpv:hasSector</a>
+        <span class="dfn-label">Label:</span> <i>has sector</i><br/>
+        <span class="dfn-label">Description:</span> <i>Indicates the purpose is associated with activities in the indicated (Economic) Sector(s)</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Range includes:</span> <i><a href="https://w3id.org/dpv#Sector">dpv:Sector</a></i><br/>      </p>
+      </div>
+    </section>
+
+  </section>
+  <section id="external-concepts">
+    <p>DPV uses the following terms from [[RDF]] and  [[RDFS]] with their defined meanings:</p>
+    <ul>
+      <li id="rdf:type"><dfn>rdf:type</dfn> to denote a concept is an instance of another concept</li>
+      <li id="rdfs:Class"><dfn>rdfs:Class</dfn> to denote a concept is a Class or a category</li>
+      <li id="rdfs:subClassOf"><dfn>rdfs:subClassOf</dfn> to specify the concept is a subclass (subtype, sub-category, subset) of another concept</li>
+      <li id="rdf:Property"><dfn>rdf:Property</dfn> to denote a concept is a property or a relation</li>
+      </ul>
+    <p>The following external concepts are re-used within DPV:</p>
+    <h3>External</h3>
+    <section class="term-def" id="">
+      <h4></h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn></dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href=""></a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href=""></a>
+        <span class="dfn-label">Label:</span> <i></i><br/>
+        <span class="dfn-label">Description:</span> <i></i><br/>
+        <span class="dfn-label">Type:</span> <i></i><br/>
+      </p>
+      </div>
+    </section>
+    <section class="term-def" id="">
+      <h4></h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn></dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href=""></a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href=""></a>
+        <span class="dfn-label">Label:</span> <i></i><br/>
+        <span class="dfn-label">Description:</span> <i></i><br/>
+        <span class="dfn-label">Type:</span> <i></i><br/>
+      </p>
+      </div>
+    </section>
+
+  </section>
+</section>
+
+</body>
+</html>

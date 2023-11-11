@@ -4,32 +4,12 @@
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
    xmlns:sw="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
-  <rdf:Description rdf:about="https://w3id.org/dpv/tech#OperationDevice">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#Technology"/>
-    <skos:prefLabel xml:lang="en">Operation Device</skos:prefLabel>
-    <skos:definition xml:lang="en">Technology that acts as an equipment or mechanism for operations</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-tech#OperationalTechnology"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv/tech#ops-classes"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/tech#Application">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#Technology"/>
     <skos:prefLabel xml:lang="en">Application</skos:prefLabel>
     <skos:definition xml:lang="en">A computing or digital program</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-tech#OperationalTechnology"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv/tech#ops-classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/tech#OperationManagement">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#Technology"/>
-    <skos:prefLabel xml:lang="en">Operation Management</skos:prefLabel>
-    <skos:definition xml:lang="en">Technology that manages operations</skos:definition>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-tech#OperationalTechnology"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv/tech#ops-classes"/>
@@ -44,13 +24,33 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv/tech#ops-classes"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/tech#OperationManagement">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#Technology"/>
+    <skos:prefLabel xml:lang="en">Operation Management</skos:prefLabel>
+    <skos:definition xml:lang="en">Technology that manages operations</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-tech#OperationalTechnology"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv/tech#ops-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/tech#OperationDevice">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#Technology"/>
+    <skos:prefLabel xml:lang="en">Operation Device</skos:prefLabel>
+    <skos:definition xml:lang="en">Technology that acts as an equipment or mechanism for operations</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-tech#OperationalTechnology"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv/tech#ops-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/tech#ops-classes">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-tech#OperationalTechnology">
     <skos:narrower rdf:resource="https://w3id.org/dpv/tech#OperationEnvironment"/>
     <skos:narrower rdf:resource="https://w3id.org/dpv/tech#OperationDevice"/>
     <skos:narrower rdf:resource="https://w3id.org/dpv/tech#OperationManagement"/>
     <skos:narrower rdf:resource="https://w3id.org/dpv/tech#Application"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/tech#ops-classes">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
   </rdf:Description>
 </rdf:RDF>

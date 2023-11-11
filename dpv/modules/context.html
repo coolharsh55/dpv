@@ -1,0 +1,1390 @@
+%%<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Context</title>
+  <script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove" defer></script>
+  <script class="remove">
+   // All config options at https://respec.org/docs/ 
+   var respecConfig = {
+    shortName: "dpv",
+    title: "Context",
+    subtitle: "Data Privacy Vocabulary (DPV)",
+    publishDate: "2022-12-05",
+    specStatus: "CG-FINAL",
+    group: "dpvcg",
+    latestVersion: "https://w3id.org/dpv",
+    canonicalUri: "https://w3id.org/dpv",
+    edDraftURI: "https://w3id.org/dpv/ed/dpv",
+    github: "w3c/dpv",
+    subjectPrefix: "[dpv]",
+    doJsonLd: true,
+    lint: { "no-unused-dfns": false, "local-refs-exist": true },
+    editors: [
+    {
+      name: "Harshvardhan J. Pandit",
+      url: "https://harshp.com/",
+      "company": "ADAPT Centre, Dublin City University",
+    }
+    ],
+    localBiblio: {
+  "DPVCG": {
+    "href": "https://www.w3.org/community/dpvcg/",
+    "title": "W3C Data Privacy Vocabularies and Controls Community Group (DPVCG)"
+  },
+  "__001": "DPV Core Family",
+  "DPV": {
+    "href": "https://www.w3id.org/dpv",
+    "title": "Data Privacy Vocabulary (DPV) Specification"
+  },
+  "DPV-GDPR": {
+    "href": "https://www.w3id.org/dpv/dpv-gdpr",
+    "title": "DPV-GDPR: Extension providing GDPR concepts"
+  },
+  "DPV-DGA": {
+    "href": "https://www.w3id.org/dpv/dpv-dga",
+    "title": "DPV-DGA: Extension providing DGA concepts"
+  },
+  "DPV-NACE": {
+    "href": "https://www.w3id.org/dpv/dpv-nace",
+    "title": "NACE Taxonomy serialised in RDFS"
+  },
+  "DPV-PD": {
+    "href": "https://www.w3id.org/dpv/dpv-pd",
+    "title": "DPV-PD: Extension providing Personal Data Categories"
+  },
+  "DPV-LEGAL": {
+    "href": "https://www.w3id.org/dpv/dpv-legal",
+    "title": "DPV-LEGAL: Extension providing Jurisdiction-relevant concepts"
+  },
+  "DPV-TECH": {
+    "href": "https://www.w3id.org/dpv/dpv-tech",
+    "title": "DPV-TECH: Extension providing Technology-relevant concepts"
+  },
+  "RISK": {
+    "href": "https://www.w3id.org/dpv/risk",
+    "title": "Risk Extension for DPV"
+  },
+  "RIGHTS": {
+    "href": "https://www.w3id.org/dpv/rights",
+    "title": "Rights Extension for Data Privacy Vocabulary"
+  },
+  "RIGHTS-EU": {
+    "href": "https://www.w3id.org/dpv/rights/eu",
+    "title": "Extension providing EU Rights"
+  },
+  "__002": "DPV-SKOS Family",
+  "DPV-SKOS": {
+    "href": "https://www.w3id.org/dpv/dpv-skos",
+    "title": "DPV-SKOS: Data Privacy Vocabulary serialised in RDFS & SKOS"
+  },
+  "DPV-SKOS-GDPR": {
+    "href": "https://www.w3id.org/dpv/dpv-skos/dpv-gdpr",
+    "title": "DPV-SKOS-GDPR: Extension providing GDPR concepts"
+  },
+  "DPV-SKOS-PD": {
+    "href": "https://www.w3id.org/dpv/dpv-skos/dpv-pd",
+    "title": "DPV-SKOS-PD: Extension providing Personal Data Categories"
+  },
+  "DPV-SKOS-LEGAL": {
+    "href": "https://www.w3id.org/dpv/dpv-skos/dpv-legal",
+    "title": "DPV-SKOS-LEGAL: Extension providing Jurisdiction-relevant concepts"
+  },
+  "DPV-SKOS-TECH": {
+    "href": "https://www.w3id.org/dpv/dpv-skos/dpv-tech",
+    "title": "DPV-SKOS-TECH: Extension providing Technology-relevant concepts"
+  },
+  "RISK-SKOS": {
+    "href": "https://www.w3id.org/dpv/dpv-skos/risk",
+    "title": "Risk Extension for DPV"
+  },
+  "RIGHTS-SKOS": {
+    "href": "https://www.w3id.org/dpv/dpv-skos/rights",
+    "title": "Rights Extension for Data Privacy Vocabulary"
+  },
+  "RIGHTS-EU-SKOS": {
+    "href": "https://www.w3id.org/dpv/dpv-skos/rights/eu",
+    "title": "Extension providing EU Rights"
+  },
+  "__003": "DPV-OWL Family",
+  "DPV-OWL": {
+    "href": "https://www.w3id.org/dpv/dpv-owl",
+    "title": "DPV-OWL: Data Privacy Vocabulary serialised in OWL2"
+  },
+  "DPV-OWL-GDPR": {
+    "href": "https://www.w3id.org/dpv/dpv-owl/dpv-gdpr",
+    "title": "DPV-OWL-GDPR: Extension providing GDPR concepts"
+  },
+  "DPV-OWL-NACE": {
+    "href": "https://www.w3id.org/dpv/dpv-owl/dpv-nace",
+    "title": "NACE Taxonomy serialised in RDFS"
+  },
+  "DPV-OWL-PD": {
+    "href": "https://www.w3id.org/dpv/dpv-owl/dpv-pd",
+    "title": "DPV-OWL-PD: Extension providing Personal Data Categories"
+  },
+  "DPV-OWL-LEGAL": {
+    "href": "https://www.w3id.org/dpv/dpv-owl/dpv-legal",
+    "title": "DPV-OWL-LEGAL: Extension providing Jurisdiction-relevant concepts"
+  },
+  "DPV-OWL-TECH": {
+    "href": "https://www.w3id.org/dpv/dpv-owl/dpv-tech",
+    "title": "DPV-OWL-TECH: Extension providing Technology-relevant concepts"
+  },
+  "RISK-OWL": {
+    "href": "https://www.w3id.org/dpv/dpv-owl/risk",
+    "title": "Risk Extension for DPV"
+  },
+  "RIGHTS-OWL": {
+    "href": "https://www.w3id.org/dpv/dpv-owl/rights",
+    "title": "Rights Extension for Data Privacy Vocabulary"
+  },
+  "RIGHTS-EU-OWL": {
+    "href": "https://www.w3id.org/dpv/dpv-owl/rights/eu",
+    "title": "Extension providing EU Rights"
+  },
+  "__004": "DPV Documentation & Guides",
+  "DPV-Primer": {
+    "href": "https://www.w3id.org/dpv/primer",
+    "title": "Primer for Data Privacy Vocabulary"
+  },
+  "DPV-ADOPTION": {
+    "href": "https://www.w3.org/community/dpvcg/wiki/Adoption_of_DPVCG",
+    "title": "Listing of DPV adoption and applications"
+  },
+  "DPV-GUIDES": {
+    "href": "https://w3id.org/dpv/guides",
+    "title": "Guidelines for Adoption and Use of DPV"
+  },
+  "DPV-GUIDE-Consent": {
+    "href": "https://w3id.org/dpv/guides/consent",
+    "title": "Guide for Consent Records using DPV"
+  },
+  "DPV-GUIDE-Notice": {
+    "href": "https://w3id.org/dpv/guides/notice",
+    "title": "Guide for Privacy Notices using DPV"
+  },
+  "DPV-GUIDE-Serialisations": {
+    "href": "https://w3id.org/dpv/guides/serialisations",
+    "title": "Guide on DPV's serialisations and semantics"
+  },
+  "DPV-GUIDE-SKOS": {
+    "href": "https://w3id.org/dpv/guides/dpv-skos",
+    "title": "Guide for using DPV with RDFS and SKOS"
+  },
+  "DPV-GUIDE-OWL2": {
+    "href": "https://w3id.org/dpv/guides/dpv-owl",
+    "title": "Guide for using DPV in OWL2"
+  },
+  "DPV-GUIDE-GDPR-DPIA": {
+    "href": "https://w3id.org/dpv/dpv-gdpr/dpia",
+    "title": "Guide for GDPR DPIA's using DPV"
+  },
+  "DPV-GUIDE-GDPR-ROPA": {
+    "href": "https://w3id.org/dpv/dpv-gdpr/ropa",
+    "title": "Guide for GDPR ROPA's using DPV"
+  },
+  "__005": "Examples",
+  "Examples": {
+    "href": "https://w3id.org/dpv/examples",
+    "title": "DPV Examples"
+  },
+  "__006": "Examples",
+  "UseCases-Requirements": {
+    "href": "https://w3id.org/dpv/use-cases",
+    "title": "DPV Use-Cases and Requirements"
+  },
+  "__000": "External Vocabularies",
+  "RDF": {
+    "href": "https://www.w3.org/TR/rdf11-concepts/",
+    "title": "RDF 1.1 Concepts and Abstract Syntax"
+  },
+  "RDFS": {
+    "href": "https://www.w3.org/TR/rdf-schema/",
+    "title": "RDF Schema 1.1"
+  },
+  "OWL" :{
+    "href": "https://www.w3.org/TR/owl2-overview/",
+    "title": "OWL 2 Web Ontology Language Document Overview (Second Edition)"
+  },
+  "SKOS": {
+    "href": "https://www.w3.org/TR/skos-reference/",
+    "title": "SKOS Simple Knowledge Organization System"
+  },
+  "__000": "External References",
+  "SPECIAL": {
+    "href": "https://www.specialprivacy.eu/",
+    "title": "SPECIAL H2020 Project"
+  },
+  "GDPR": {
+    "href": "https://eur-lex.europa.eu/eli/reg/2016/679/oj",
+    "title": "General Data Protection Regulation (GDPR)"
+  },
+  "DGA": {
+    "href": "https://eur-lex.europa.eu/eli/reg/2022/868/oj",
+    "title": "Data Governance Act (DGA)"
+  },
+  "NACE": {
+    "href": "https://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=LST_NOM_DTL&StrNom=NACE_REV2",
+    "title": "Statistical Classification of Economic Activities in the European Community (NACE)"
+  },
+  "NAICS": {
+    "href": "https://www.census.gov/eos/www/naics/",
+    "title": "North American Industry Classification System (NAICS)"
+  },
+  "ISIC": {
+    "href": "https://unstats.un.org/unsd/classifications",
+    "title": "International Standard Industrial Classification of All Economic Activities (ISIC)"
+  },
+  "GICS": {
+    "href": "https://www.msci.com/gics",
+    "title": "Global Industry Classification Standard (GICS)"
+  },
+  "NACE-NAICS": {
+    "href": "https://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=LST_NOM_DTL&StrNom=NACE_REV2",
+    "title": "NACE to NAICS mapping"
+  },
+  "EnterPrivacy": {
+    "href": "https://enterprivacy.com/wp-content/uploads/2018/09/Categories-of-Personal-Information.pdf",
+    "title": "Taxonomy of Personal Data Categories"
+  },
+  "TIME": {
+    "href": "https://www.w3.org/TR/owl-time/",
+    "title": "Time Ontology in OWL"
+  },
+  "ISO-27017": {
+    "href": "https://www.iso.org/standard/43757.html",
+    "title": "ISO/IEC 27017:2015 Information technology — Security techniques — Code of practice for information security controls based on ISO/IEC 27002 for cloud services"
+  },
+  "ISO-27560": {
+    "href": "https://www.iso.org/standard/80392.html",
+    "title": "ISO/IEC TS 27560 Privacy technologies — Consent record information structure"
+  },
+  "SHACL-UseCases": {
+    "href": "https://www.w3.org/TR/shacl-ucr/",
+    "title": "SHACL Use Cases and Requirements"
+  },
+  "DCT": {
+    "title": "DCMI Metadata Terms (DCT)",
+    "href": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/"
+  },
+  "DCAT": {
+    "title": "Data Catalog Vocabulary (DCAT) - Version 2",
+    "href": "http://www.w3.org/ns/dcat"
+  },
+  "RuleML": {
+    "title": "RuleML: Rule Markup Language",
+    "href": "www.ruleml.org/"
+  }
+}  };
+</script>
+<style type="text/css">
+  /* Table styles, March 2016 */
+  table {
+    width:  auto;
+    margin-bottom: 10px;
+    border-collapse:collapse
+
+  }
+  th, td {
+    border:thin solid gray;
+    padding: 0.3em;
+  }
+  figure {
+    margin: 2px;
+    padding: 2px;
+    border: 1px solid black;
+  }
+  .term-contents {
+    box-shadow: 2px 2px 2px darkgray; 
+  }
+  .term-contents > p {
+    border-top: 1px solid lightgray;
+    border-left: 1px solid lightgray;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 2px;
+  }
+  .dfn-label {
+    font-family: monospace;
+  }
+</style>
+</head>
+<body>
+    <section id="abstract">
+      <p>The Data Privacy Vocabulary [[DPV]] enables expressing machine-readable metadata about the use and processing of personal data based on legislative requirements such as the General Data Protection Regulation [[GDPR]]. This document describes the DPV specification along with its data model.</p>
+      <p>The canonical URL for DPV is <a href="https://w3id.org/dpv">https://w3id.org/dpv</a> which contains (this) specification. The namespace for DPV terms is <a href="https://w3id.org/dpv#"><code>https://w3id.org/dpv#</code></a>, the suggested prefix is <code>dpv</code>, and this document along with source and releases are available at <a href="https://github.com/w3c/dpv">https://github.com/w3c/dpv</a>.</p>
+      <section id="dpv-document-family" class="noTOC">
+    <h2>DPV Family of Documents</h2>
+    <ul>
+      <li>[[[DPV-Primer]]]:  An introductory document for DPV's concepts and taxonomies.
+        <p class="note">Newcomers to the DPV are <strong>strongly recommended to first read through the Primer</strong> to familiarise themselves with the semantics and concepts of DPV.</p>
+      </li>
+      <li>[[[DPV]]]: (this document) The formal and normative description of DPV and its concepts, with serialisations in RDFS & SKOS [[DPV-SKOS]] and OWL2 [[DPV-OWL]]</li>
+      <li>Extensions to Concepts: <ul>
+        <li>[[DPV-GDPR]]:  for GDPR concepts; serialisations: [[DPV-SKOS-GDPR]], [[DPV-OWL-GDPR]]</li>
+        <li>[[DPV-PD]]  for Personal Data concepts; serialisations: [[DPV-SKOS-PD]], [[DPV-OWL-PD]]</li>
+        <li>[[DPV-LEGAL]]  for Jurisdiction-relevant concepts; serialisations: [[DPV-SKOS-LEGAL]], [[DPV-OWL-LEGAL]]</li>
+        <li>[[DPV-TECH]]  for Technology concepts; serialisations: [[DPV-SKOS-TECH]], [[DPV-OWL-TECH]]</li>
+        <li>[[RISK]]  for Risk Assessment and Management concepts; serialisations: [[RISK-SKOS]], [[RISK-OWL]]</li>
+        </ul></li>
+      <li>[[[DPV-GUIDES]]]: <ul>
+        <li>[[[DPV-GUIDE-Serialisations]]]  (coming soon)</li>
+        <li>[[[DPV-GUIDE-SKOS]]]  (coming soon)</li>
+        <li>[[[DPV-GUIDE-OWL2]]] </li>
+        <li>[[[DPV-GUIDE-Notice]]]  (coming soon)</li>
+        <li>[[[DPV-GUIDE-Consent]]]  (being updated for v1)</li>
+        <li>[[[DPV-GUIDE-GDPR-DPIA]]]  (being updated for v1)</li>
+        <li>[[[DPV-GUIDE-GDPR-ROPA]]]  (being updated for v1)</li>
+        </ul></li>
+      <li>Other Resources:<ul>
+        <li>[[[UseCases-Requirements]]]</li>
+        <li>[[[Examples]]]</li>
+        <li>[[[DPV-NACE]]]</li>
+        <li>[[[RIGHTS-EU]]] serialisations: [[RIGHTS-EU-SKOS]], [[RIGHTS-EU-OWL]]</li>
+        </ul></li>
+    </ul>
+    <p><strong>Related Links</strong></p>
+    <ul>
+      <li>Releases are published on <a href="https://github.com/w3c/dpv/releases">GitHub</a></li>
+      <li>For a general overview of the Data Protection Vocabularies and Controls Community Group [[DPVCG]], its history, deliverables, and activities - refer to <a href="https://www.w3.org/community/dpvcg/"><u>DPVCG Website</u></a>.</p>
+      </li>
+      <li>
+        <p>The peer-reviewed article “<a href="https://link.springer.com/chapter/10.1007%2F978-3-030-33246-4_44"><u>Creating A Vocabulary for Data Privacy</u></a>” presents a historical overview of the DPVCG, and describes the methodology and structure of the DPV along with describing its creation. An open-access version can be accessed <a href="http://hdl.handle.net/2262/91581"><u>here</u></a>, <a href="http://doras.dcu.ie/23801/"><u>here</u></a>, and <a href="https://aic.ai.wu.ac.at/~polleres/publications/pand-etal-2019ODBASE.pdf"><u>here</u></a>.</p>
+      </li>
+    </ul>
+</section>
+
+      <section id="sotd">
+  <!-- sotd: Status of this document -->
+  <p>This document is published by the <a href="https://www.w3.org/community/dpvcg/">Data Privacy Vocabularies and Controls Community Group (DPVCG)</a> as a deliverable and report of its work in creating and maintaining the Data Privacy Vocabulary (DPV).</p>
+  <div class="note">
+    <p><strong>Contributing to the DPV and its extensions</strong> The DPVCG welcomes participation regarding the DPV, including expansion or refinement of its terms, addressing open issues, and welcomes suggestions on their resolution or mitigation. For further information, please see the <a href="https://github.com/w3c/dpv#contribution--participation">contribution section</a>.</p>
+  </div>
+</section>
+
+    </section>
+  <section id="introduction">
+    <h2>Introduction</h2>
+    <blockquote>This document assumes the reader is familiar with DPV through the [[[DPV-Primer]]], and thus focuses on providing a topically structured documentation of concepts defined by DPV.</blockquote>
+
+    <figure>
+    <img src="../diagrams/Context.png">
+    <figcaption></figcaption>
+  </figure>
+  <section>
+    <h3>Duration and Frequency</h3>
+    <p>To express the duration of events or operations, such as how long processing will take or the validity of consent, the concept [=Duration=] can be used. Duration is indicated using the relation [=hasDuration=], and has the following subtypes:</p>
+    <ul>
+    <li>[=TemporalDuration=] - indicating a relative temporal duration, e.g. 6 months.</li>
+    <li>[=UntilTimeDuration=] - indicating duration that occurs until the end of specified time, e.g. until 31 DEC 2022.</li>
+    <li>[=UntilEventDuration=] - indicating duration that occurs until the end of specified event, e.g. until account is closed.</li>
+    <li>[=FixedOccurencesDuration=] - a duration that is based on number of occurences, e.g. until you view it 3 times</li>
+    <li>[=EndlessDuration=] - indicating a duration without an end condition or temporal notation.</li>
+    </ul>
+    <p>[=Frequency=] indicates how frequently something occurs. Statistically, this can be expressed as the combination of number of occurences and a time period, which can further be expressed as a probabilitic value or a percentage. For example, for something occuring once every year, the frequency is: 1 or 100% for 1 year. While such <i>quantified</i> representations are important for determining metrics and performing operations, DPV focuses on the <i>qualitative</i> labelling of such representations within a specific context.</p>
+    <p>The relation [=hasFrequency=] associates a frequency with a context, and can be expressed using the following subtypes:</p>
+    <ul>
+      <li>[=ContinousFrequency=] - indicates things occuring continously, e.g. location collection happens continously.</li>
+      <li>[=SporadicFrequency=] - indicates things occuring sporadically or rarely or not often, e.g. collecting system usage logs every month.</li>
+      <li>[=OftenFrequency=] - indicates things happen often or regularly or commonly, e.g. online status is reported every 5 mins.</li>
+      <li>[=SingularFrequency=] - indicates things happen only once.</li>
+    </ul>
+    <p>DPV provides two subtypes of concepts to denote contextual - [=Importance=] and [=Necessity=], which can be applied to specific contexts such as [=PersonalDataHandling=], [=Purpose=], [=PersonalData=].</p>
+        <p>[=Importance=] is similar in application to [=Necessity=], and provides a way to indicate how <i>central</i> or <i>significant</i> the indicated operation(s) are to the context (e.g. to the Controller). Subtypes of importance are [=PrimaryImportance=] to indicate 'main' or 'central' or 'primary' importance, and [=SecondaryImportance=] to indicate 'auxiliary' or 'peripheral' or 'secondary' importance.</p>
+        <p>[=Necessity=] enables specifying whether the contextual information is [=Required=], is [=Optional=], or is [=NotRequired=]. These can be used to indicate, for example, which parts of processing operations (e.g. purposes, personal data) are optional, and whether a particular processing operation is required to be carried out.</i></p>
+
+    <ul class="concept-list">
+  <li>
+    <strong>dpv:Context</strong>: Contextually relevant information 
+      <small><a href="#Context">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:Duration</strong>: The duration or temporal limitation 
+      <small><a href="#Duration">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:EndlessDuration</strong>: Duration that is (known or intended to be) open ended or without an end 
+      <small><a href="#EndlessDuration">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:FixedOccurencesDuration</strong>: Duration that takes place a fixed number of times e.g. 3 times 
+      <small><a href="#FixedOccurencesDuration">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:IndeterminateDuration</strong>: Duration that is indeterminate or cannot be determined 
+      <small><a href="#IndeterminateDuration">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:TemporalDuration</strong>: Duration that has a fixed temporal duration e.g. 6 months 
+      <small><a href="#TemporalDuration">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:UntilEventDuration</strong>: Duration that takes place until a specific event occurs e.g. Account Closure 
+      <small><a href="#UntilEventDuration">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:UntilTimeDuration</strong>: Duration that has a fixed end date e.g. 2022-12-31 
+      <small><a href="#UntilTimeDuration">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:Frequency</strong>: The frequency or information about periods and repetitions in terms of recurrence. 
+      <small><a href="#Frequency">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:ContinousFrequency</strong>: Frequency where occurences are continous 
+      <small><a href="#ContinousFrequency">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:OftenFrequency</strong>: Frequency where occurences are often or frequent, but not continous 
+      <small><a href="#OftenFrequency">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:SingularFrequency</strong>: Frequency where occurences are singular i.e. they take place only once 
+      <small><a href="#SingularFrequency">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:SporadicFrequency</strong>: Frequency where occurences are sporadic or infrequent or sparse 
+      <small><a href="#SporadicFrequency">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:Importance</strong>: An indication of &#39;importance&#39; within a context 
+      <small><a href="#Importance">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:PrimaryImportance</strong>: Indication of &#39;primary&#39; or &#39;main&#39; or &#39;core&#39; importance 
+      <small><a href="#PrimaryImportance">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:SecondaryImportance</strong>: Indication of &#39;secondary&#39; or &#39;minor&#39; or &#39;auxiliary&#39; importance 
+      <small><a href="#SecondaryImportance">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:Justification</strong>: A form of documentation providing reaosns, explanations, or justifications 
+      <small><a href="#Justification">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:Necessity</strong>: An indication of &#39;necessity&#39; within a context 
+      <small><a href="#Necessity">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:NotRequired</strong>: Indication of neither being required nor optional i.e. not relevant or needed 
+      <small><a href="#NotRequired">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:Optional</strong>: Indication of &#39;optional&#39; or &#39;voluntary&#39; 
+      <small><a href="#Optional">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:Required</strong>: Indication of &#39;required&#39; or &#39;necessary&#39; 
+      <small><a href="#Required">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:Scope</strong>: Indication of the extent or range or boundaries associated with(in) a context 
+      <small><a href="#Scope">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:Technology</strong>: The technology, technological implementation, or any techniques, skills, methods, and processes used or applied 
+      <small><a href="#Technology">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </section>
+
+  <section id="vocab-status">
+    <h3>Status</h3>
+    <p>To assist with expressing the state or status associated with various activities, DPV provides the [=Status=] concept that can be associated contextually using the [=hasStatus=] relation. Specific subtypes are provided as [=ActivityStatus=], [=ComplianceStatus=] including [=Lawfulness=], [=AuditStatus=], [=ConformanceStatus=], and [=RequestStatus=].</p>
+
+    <p><strong>[=ActivityStatus=]</strong> represents a state or status of an activity's operations and lifecycle, which includes [=ActivityProposed=], [=ActivityOngoing=], [=ActivityHalted=], [=ActivityCompleted=], and [=ActivityNotCompleted=].</p>
+
+    <p><strong>[=ComplianceStatus=]</strong> represents status associated with <i>compliance</i> with some norms, objectives, or requirements. Types include [=Compliant=], [=PartiallyCompliant=], [=NonCompliant=], [=ComplianceViolation=], [=ComplianceUnknown=], [=ComplianceIndeterminate=]. The association with a law or objective can be specified using [=hasApplicableLaw=] or [=hasPolicy=] directly for the status or indirectly through the concept whose status is being represented.</p>
+
+    <p><strong>[=Lawfulness=]</strong> represents a special type of [=ComplianceStatus=] which relates to legal compliance, or <i>lawfulness</i>, and has types [=Lawful=], [=Unlawful=], and [=LawfulnessUnkown=].</p>
+
+    <p><strong>[=AuditStatus=]</strong> represents the state or status of an audit, where the term <i>audit</i> is loosely defined, and may or may not relate to legal compliance - for e.g. for impact assessments, or as part of certification, or organisational quality assurance processes. Types of audits include [=AuditApproved=], [=AuditConditionallyApproved=], [=AuditRejected=], [=AuditRequested=], [=AuditNotRequired=], and [=AuditRequired=].</p>
+
+    <p><strong>[=ConformanceStatus=]</strong> represents the status of <i>conformance</i>, which is defined distinctly from <i>compliance</i> by considering voluntary association or following of a guideline, requirement, standard, or policy, and where compliance is related to the (legal or other systematically defined) <i>conformity</i> of a given system or use-case with <i>rules</i> which may dictate obligations and prohibitions that must be followed. To provide an illustrative example, consider <i>conformance</i> with a standard on best practices regarding security may assist in the demonstration of <i>compliance</i> with a legal norm requiring organisational measures of security. Types of conformance defined are: [=Conformant=] and [=NonConformant=].</p>
+
+    <p><strong>[=RequestStatus=]</strong> represents the state or status of <i>requests</i>, which can be between entities such as data subjects and controllers regarding exercising of rights, or between controllers and processors regarding processing operations, or between authorities and controllers regarding compliance related communications. Types of request statues are: [=RequestInitiated=], [=RequestAcknowledged=], [=RequestAccepted=], [=RequestRejected=], [=RequestFulfilled=], [=RequestUnfulfilled=], [=RequestRequiresAction=], [=RequestRequiredActionPerformed=], [=RequestActionDelayed=], and [=RequestStatusQuery=].</p>
+
+    <ul class="concept-list">
+  <li>
+    <strong>dpv:Context</strong>: Contextually relevant information 
+      <small><a href="#Context">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:Status</strong>: The status or state of something 
+      <small><a href="#Status">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:ActivityStatus</strong>: Status associated with activity operations and lifecycles 
+      <small><a href="#ActivityStatus">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:ActivityCompleted</strong>: State of an activity that has completed i.e. is fully in the past 
+      <small><a href="#ActivityCompleted">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:ActivityHalted</strong>: State of an activity that was occuring in the past, and has been halted or paused or stoped 
+      <small><a href="#ActivityHalted">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:ActivityNotCompleted</strong>: State of an activity that could not be completed, but has reached some end state 
+      <small><a href="#ActivityNotCompleted">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:ActivityOngoing</strong>: State of an activity occuring in continuation i.e. currently ongoing 
+      <small><a href="#ActivityOngoing">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:ActivityProposed</strong>: State of an activity being proposed or planned i.e. yet to occur 
+      <small><a href="#ActivityProposed">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:AuditStatus</strong>: Status associated with Auditing or Investigation 
+      <small><a href="#AuditStatus">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:AuditApproved</strong>: State of being approved through the audit 
+      <small><a href="#AuditApproved">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:AuditConditionallyApproved</strong>: State of being conditionally approved through the audit 
+      <small><a href="#AuditConditionallyApproved">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:AuditNotRequired</strong>: State where an audit is determined as not being required 
+      <small><a href="#AuditNotRequired">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:AuditRejected</strong>: State of not being approved or being rejected through the audit 
+      <small><a href="#AuditRejected">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:AuditRequested</strong>: State of an audit being requested whose outcome is not yet known 
+      <small><a href="#AuditRequested">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:AuditRequired</strong>: State where an audit is determined as being required but has not been conducted 
+      <small><a href="#AuditRequired">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:ComplianceStatus</strong>: Status associated with Compliance with some norms, objectives, or requirements 
+      <small><a href="#ComplianceStatus">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:ComplianceIndeterminate</strong>: State where the status of compliance has not been fully assessed, evaluated, or determined 
+      <small><a href="#ComplianceIndeterminate">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:ComplianceUnknown</strong>: State where the status of compliance is unknown 
+      <small><a href="#ComplianceUnknown">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:ComplianceViolation</strong>: State where compliance cannot be achieved due to requirements being violated 
+      <small><a href="#ComplianceViolation">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:Compliant</strong>: State of being fully compliant 
+      <small><a href="#Compliant">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:Lawfulness</strong>: Status associated with expressing lawfullness or legal compliance 
+      <small><a href="#Lawfulness">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:Lawful</strong>: State of being lawful or legally compliant 
+      <small><a href="#Lawful">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:LawfulnessUnkown</strong>: State of the lawfulness not being known 
+      <small><a href="#LawfulnessUnkown">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:Unlawful</strong>: State of being unlawful or legally non-compliant 
+      <small><a href="#Unlawful">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:NonCompliant</strong>: State of non-compliance where objectives have not been met, but have not been violated 
+      <small><a href="#NonCompliant">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:PartiallyCompliant</strong>: State of partially being compliant i.e. only some objectives have been met, and others have not been in violation 
+      <small><a href="#PartiallyCompliant">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:ConformanceStatus</strong>: Status associated with conformance to a standard, guideline, code, or recommendation 
+      <small><a href="#ConformanceStatus">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:Conformant</strong>: State of being conformant 
+      <small><a href="#Conformant">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:NonConformant</strong>: State of being non-conformant 
+      <small><a href="#NonConformant">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:RequestStatus</strong>: Status associated with requests 
+      <small><a href="#RequestStatus">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:RequestAccepted</strong>: State of a request being accepted towards fulfilment 
+      <small><a href="#RequestAccepted">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:RequestAcknowledged</strong>: State of a request being acknowledged 
+      <small><a href="#RequestAcknowledged">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:RequestActionDelayed</strong>: State of a request being delayed towards fulfilment 
+      <small><a href="#RequestActionDelayed">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:RequestFulfilled</strong>: State of a request being fulfilled 
+      <small><a href="#RequestFulfilled">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:RequestInitiated</strong>: State of a request being initiated 
+      <small><a href="#RequestInitiated">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:RequestRejected</strong>: State of a request being rejected towards non-fulfilment 
+      <small><a href="#RequestRejected">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:RequestRequiredActionPerformed</strong>: State of a request&#39;s required action having been performed by the other party 
+      <small><a href="#RequestRequiredActionPerformed">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:RequestRequiresAction</strong>: State of a request requiring an action to be performed from another party 
+      <small><a href="#RequestRequiresAction">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:RequestStatusQuery</strong>: State of a request&#39;s status being queried 
+      <small><a href="#RequestStatusQuery">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:RequestUnfulfilled</strong>: State of a request being unfulfilled 
+      <small><a href="#RequestUnfulfilled">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </section>
+</section>
+
+<section id="vocab-jurisdiction">
+  <h2>Location &amp; Jurisdiction</h2>
+  <figure>
+    <img src="../diagrams/location.png">
+    <figcaption></figcaption>
+  </figure>
+  <p>To represent location, the concept [=Location=] along with relations [=hasLocation=] is provided. For geo-political locations, the concepts such as [=Country=] and [=SupraNationalUnion=] are subtyped, with [=hasCountry=] and [=ThirdCountry=] with [=hasThirdCountry=] provided for convenience in common uses (e.g. data storage, transfers).</p>
+  <p>To define contextual location concepts, such as there being several locations, or that the location is 'local' to an event, DPV provides two concepts. [=LocationFixture=] specifies whether the location is 'fixed' or 'deterministic', with subtypes for <i>fixed single</i>, <i>fixed multiple</i>, and <i>variable</i> locations. [=LocationLocality=] specifies whether the location is 'local' within the context, with subtypes for <i>local</i>, <i>remote</i>, <i>within a device</i>, or <i>in cloud</i>.</p>
+  <p>To represent locations as jurisdictions, the relation [=hasJurisdiction=] is provided. The concept [=Law=] represents an official or authoritative law or regulation created by a government or an authority. To indicate applicability of laws within a jurisdiction, the relation [=hasApplicableLaw=] is provided.</p>
+  <p>The [[[DPV-LEGAL]]] provides taxonomies extending these concepts, such as to represent specific countries, their laws, authorities, memberships, adequacy decisions, and other information.</p>
+
+  <ul class="concept-list">
+  <li>
+    <strong>dpv:Law</strong>: A law is a set of rules created by government or authorities 
+      <small><a href="#Law">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:Location</strong>: A location is a position, site, or area where something is located 
+      <small><a href="#Location">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:City</strong>: A region consisting of urban population and commerce 
+      <small><a href="#City">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:Country</strong>: A political entity indicative of a sovereign or non-sovereign territorial state comprising of distinct geographical areas 
+      <small><a href="#Country">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:ThirdCountry</strong>: Represents a country outside applicable or compatible jurisdiction as outlined in law 
+      <small><a href="#ThirdCountry">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:EconomicUnion</strong>: A political union of two or more countries based on economic or trade agreements 
+      <small><a href="#EconomicUnion">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:LocationLocality</strong>: Locality refers to whether the specified location is local within some context, e.g. for the user 
+      <small><a href="#LocationLocality">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:LocalLocation</strong>: Location is local 
+      <small><a href="#LocalLocation">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:PrivateLocation</strong>: Location that is not or cannot be accessed by the public and is controlled as a private space 
+      <small><a href="#PrivateLocation">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:PublicLocation</strong>: Location that is or can be accessed by the public 
+      <small><a href="#PublicLocation">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:WithinDevice</strong>: Location is local and entirely within a device, such as a smartphone 
+      <small><a href="#WithinDevice">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:WithinPhysicalEnvironment</strong>: Location is local and entirely within a physical environment, such as a room 
+      <small><a href="#WithinPhysicalEnvironment">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:WithinVirtualEnvironment</strong>: Location is local and entirely within a virtual environment, such as a shared network directory 
+      <small><a href="#WithinVirtualEnvironment">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:RemoteLocation</strong>: Location is remote i.e. not local 
+      <small><a href="#RemoteLocation">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:CloudLocation</strong>: Location that is in the &#39;cloud&#39; i.e. a logical location operated over the internet 
+      <small><a href="#CloudLocation">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:Region</strong>: A region is an area or site that is considered a location 
+      <small><a href="#Region">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:SupraNationalUnion</strong>: A political union of two or more countries with an establishment of common authority 
+      <small><a href="#SupraNationalUnion">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:LocationFixture</strong>: The fixture of location refers to whether the location is fixed 
+      <small><a href="#LocationFixture">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:DecentralisedLocations</strong>: Location that is spread across multiple separate areas with no distinction between their importance 
+      <small><a href="#DecentralisedLocations">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:FederatedLocations</strong>: Location that is federated across multiple separate areas with designation of a primary or central location 
+      <small><a href="#FederatedLocations">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:FixedLocation</strong>: Location that is fixed i.e. known to occur at a specific place 
+      <small><a href="#FixedLocation">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>dpv:FixedMultipleLocations</strong>: Location that is fixed with multiple places e.g. multiple cities 
+      <small><a href="#FixedMultipleLocations">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:FixedSingularLocation</strong>: Location that is fixed at a specific place e.g. a city 
+      <small><a href="#FixedSingularLocation">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:RandomLocation</strong>: Location that is random or unknown 
+      <small><a href="#RandomLocation">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:VariableLocation</strong>: Location that is known but is variable e.g. somewhere within a given area 
+      <small><a href="#VariableLocation">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+</ul>
+</section>
+
+  <section>
+  <h2>Vocabulary Index</h2>
+  <section id="classes">
+    <h3>Classes</h3>
+    <section class="term-def" id="Context">
+      <h4>Context</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>Context</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#Context">https://w3id.org/dpv#Context</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#Context">dpv:Context</a>
+        <span class="dfn-label">Label:</span> <i>Context</i><br/>
+        <span class="dfn-label">Description:</span> <i>Contextually relevant information</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>Context is a catch-all concept for information of relevance not possible to represent through other core concepts. DPV offers specific contextual concepts such as Necessity, Frequency, and Duration. More can be created by extending Context within use-cases.</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+      </p>
+      </div>
+    </section>
+    <section class="term-def" id="ContinousFrequency">
+      <h4>Continous Frequency</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>ContinousFrequency</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#ContinousFrequency">https://w3id.org/dpv#ContinousFrequency</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#ContinousFrequency">dpv:ContinousFrequency</a>
+        <span class="dfn-label">Label:</span> <i>Continous Frequency</i><br/>
+        <span class="dfn-label">Description:</span> <i>Frequency where occurences are continous</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Frequency">dpv:Frequency</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Frequency">dpv:Frequency</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="Duration">
+      <h4>Duration</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>Duration</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#Duration">https://w3id.org/dpv#Duration</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#Duration">dpv:Duration</a>
+        <span class="dfn-label">Label:</span> <i>Duration</i><br/>
+        <span class="dfn-label">Description:</span> <i>The duration or temporal limitation</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Context">dpv:Context</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="EndlessDuration">
+      <h4>Endless Duration</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>EndlessDuration</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#EndlessDuration">https://w3id.org/dpv#EndlessDuration</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#EndlessDuration">dpv:EndlessDuration</a>
+        <span class="dfn-label">Label:</span> <i>Endless Duration</i><br/>
+        <span class="dfn-label">Description:</span> <i>Duration that is (known or intended to be) open ended or without an end</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Duration">dpv:Duration</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Duration">dpv:Duration</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="FixedOccurencesDuration">
+      <h4>Fixed Occurences Duration</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>FixedOccurencesDuration</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#FixedOccurencesDuration">https://w3id.org/dpv#FixedOccurencesDuration</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#FixedOccurencesDuration">dpv:FixedOccurencesDuration</a>
+        <span class="dfn-label">Label:</span> <i>Fixed Occurences Duration</i><br/>
+        <span class="dfn-label">Description:</span> <i>Duration that takes place a fixed number of times e.g. 3 times</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Duration">dpv:Duration</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="Frequency">
+      <h4>Frequency</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>Frequency</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#Frequency">https://w3id.org/dpv#Frequency</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#Frequency">dpv:Frequency</a>
+        <span class="dfn-label">Label:</span> <i>Frequency</i><br/>
+        <span class="dfn-label">Description:</span> <i>The frequency or information about periods and repetitions in terms of recurrence.</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Context">dpv:Context</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="Importance">
+      <h4>Importance</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>Importance</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#Importance">https://w3id.org/dpv#Importance</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#Importance">dpv:Importance</a>
+        <span class="dfn-label">Label:</span> <i>Importance</i><br/>
+        <span class="dfn-label">Description:</span> <i>An indication of &#39;importance&#39; within a context</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>Importance can be used to express importance, desirability, relevance, or significance as a context.</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Context">dpv:Context</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="IndeterminateDuration">
+      <h4>Indeterminate Duration</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>IndeterminateDuration</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#IndeterminateDuration">https://w3id.org/dpv#IndeterminateDuration</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#IndeterminateDuration">dpv:IndeterminateDuration</a>
+        <span class="dfn-label">Label:</span> <i>Indeterminate Duration</i><br/>
+        <span class="dfn-label">Description:</span> <i>Duration that is indeterminate or cannot be determined</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>Indeterminate means (exact or otherwise) information about the duration cannot be determined, which is distinct from &#39;EndlessDuration&#39; where it is known (or decided) that the duration is open-ended or without an end.</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Duration">dpv:Duration</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Duration">dpv:Duration</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="Justification">
+      <h4>Justification</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>Justification</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#Justification">https://w3id.org/dpv#Justification</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#Justification">dpv:Justification</a>
+        <span class="dfn-label">Label:</span> <i>Justification</i><br/>
+        <span class="dfn-label">Description:</span> <i>A form of documentation providing reaosns, explanations, or justifications</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Context">dpv:Context</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="Necessity">
+      <h4>Necessity</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>Necessity</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#Necessity">https://w3id.org/dpv#Necessity</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#Necessity">dpv:Necessity</a>
+        <span class="dfn-label">Label:</span> <i>Necessity</i><br/>
+        <span class="dfn-label">Description:</span> <i>An indication of &#39;necessity&#39; within a context</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>Necessity can be used to express need, essentiality, requirement, or compulsion.</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Context">dpv:Context</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="NotRequired">
+      <h4>Not Required</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>NotRequired</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#NotRequired">https://w3id.org/dpv#NotRequired</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#NotRequired">dpv:NotRequired</a>
+        <span class="dfn-label">Label:</span> <i>Not Required</i><br/>
+        <span class="dfn-label">Description:</span> <i>Indication of neither being required nor optional i.e. not relevant or needed</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Necessity">dpv:Necessity</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Necessity">dpv:Necessity</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="OftenFrequency">
+      <h4>Often Frequency</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>OftenFrequency</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#OftenFrequency">https://w3id.org/dpv#OftenFrequency</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#OftenFrequency">dpv:OftenFrequency</a>
+        <span class="dfn-label">Label:</span> <i>Often Frequency</i><br/>
+        <span class="dfn-label">Description:</span> <i>Frequency where occurences are often or frequent, but not continous</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Frequency">dpv:Frequency</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Frequency">dpv:Frequency</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="Optional">
+      <h4>Optional</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>Optional</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#Optional">https://w3id.org/dpv#Optional</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#Optional">dpv:Optional</a>
+        <span class="dfn-label">Label:</span> <i>Optional</i><br/>
+        <span class="dfn-label">Description:</span> <i>Indication of &#39;optional&#39; or &#39;voluntary&#39;</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Necessity">dpv:Necessity</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Necessity">dpv:Necessity</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="PrimaryImportance">
+      <h4>Primary Importance</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>PrimaryImportance</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#PrimaryImportance">https://w3id.org/dpv#PrimaryImportance</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#PrimaryImportance">dpv:PrimaryImportance</a>
+        <span class="dfn-label">Label:</span> <i>Primary Importance</i><br/>
+        <span class="dfn-label">Description:</span> <i>Indication of &#39;primary&#39; or &#39;main&#39; or &#39;core&#39; importance</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Importance">dpv:Importance</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Importance">dpv:Importance</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="Required">
+      <h4>Required</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>Required</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#Required">https://w3id.org/dpv#Required</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#Required">dpv:Required</a>
+        <span class="dfn-label">Label:</span> <i>Required</i><br/>
+        <span class="dfn-label">Description:</span> <i>Indication of &#39;required&#39; or &#39;necessary&#39;</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Necessity">dpv:Necessity</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Necessity">dpv:Necessity</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="Scope">
+      <h4>Scope</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>Scope</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#Scope">https://w3id.org/dpv#Scope</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#Scope">dpv:Scope</a>
+        <span class="dfn-label">Label:</span> <i>Scope</i><br/>
+        <span class="dfn-label">Description:</span> <i>Indication of the extent or range or boundaries associated with(in) a context</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Context">dpv:Context</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="SecondaryImportance">
+      <h4>Secondary Importance</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>SecondaryImportance</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#SecondaryImportance">https://w3id.org/dpv#SecondaryImportance</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#SecondaryImportance">dpv:SecondaryImportance</a>
+        <span class="dfn-label">Label:</span> <i>Secondary Importance</i><br/>
+        <span class="dfn-label">Description:</span> <i>Indication of &#39;secondary&#39; or &#39;minor&#39; or &#39;auxiliary&#39; importance</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Importance">dpv:Importance</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Importance">dpv:Importance</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="SingularFrequency">
+      <h4>Singular Frequency</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>SingularFrequency</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#SingularFrequency">https://w3id.org/dpv#SingularFrequency</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#SingularFrequency">dpv:SingularFrequency</a>
+        <span class="dfn-label">Label:</span> <i>Singular Frequency</i><br/>
+        <span class="dfn-label">Description:</span> <i>Frequency where occurences are singular i.e. they take place only once</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Frequency">dpv:Frequency</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Frequency">dpv:Frequency</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="SporadicFrequency">
+      <h4>Sporadic Frequency</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>SporadicFrequency</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#SporadicFrequency">https://w3id.org/dpv#SporadicFrequency</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#SporadicFrequency">dpv:SporadicFrequency</a>
+        <span class="dfn-label">Label:</span> <i>Sporadic Frequency</i><br/>
+        <span class="dfn-label">Description:</span> <i>Frequency where occurences are sporadic or infrequent or sparse</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Frequency">dpv:Frequency</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Frequency">dpv:Frequency</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="Technology">
+      <h4>Technology</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>Technology</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#Technology">https://w3id.org/dpv#Technology</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#Technology">dpv:Technology</a>
+        <span class="dfn-label">Label:</span> <i>Technology</i><br/>
+        <span class="dfn-label">Description:</span> <i>The technology, technological implementation, or any techniques, skills, methods, and processes used or applied</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>Examples (non-exhaustive) include: Algorithm, Process, Method, Skill, Database, Cookies, Server, Device</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+      </p>
+      </div>
+    </section>
+    <section class="term-def" id="TemporalDuration">
+      <h4>Temporal Duration</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>TemporalDuration</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#TemporalDuration">https://w3id.org/dpv#TemporalDuration</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#TemporalDuration">dpv:TemporalDuration</a>
+        <span class="dfn-label">Label:</span> <i>Temporal Duration</i><br/>
+        <span class="dfn-label">Description:</span> <i>Duration that has a fixed temporal duration e.g. 6 months</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Duration">dpv:Duration</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="UntilEventDuration">
+      <h4>Until Event Duration</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>UntilEventDuration</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#UntilEventDuration">https://w3id.org/dpv#UntilEventDuration</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#UntilEventDuration">dpv:UntilEventDuration</a>
+        <span class="dfn-label">Label:</span> <i>Until Event Duration</i><br/>
+        <span class="dfn-label">Description:</span> <i>Duration that takes place until a specific event occurs e.g. Account Closure</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Duration">dpv:Duration</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="UntilTimeDuration">
+      <h4>Until Time Duration</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>UntilTimeDuration</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#UntilTimeDuration">https://w3id.org/dpv#UntilTimeDuration</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#UntilTimeDuration">dpv:UntilTimeDuration</a>
+        <span class="dfn-label">Label:</span> <i>Until Time Duration</i><br/>
+        <span class="dfn-label">Description:</span> <i>Duration that has a fixed end date e.g. 2022-12-31</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Duration">dpv:Duration</a></i><br/>      </p>
+      </div>
+    </section>
+
+  </section>
+  <section id="properties">
+    <h3>Properties</h3>
+    <section class="term-def" id="hasContext">
+      <h4>has context</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>hasContext</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#hasContext">https://w3id.org/dpv#hasContext</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#hasContext">dpv:hasContext</a>
+        <span class="dfn-label">Label:</span> <i>has context</i><br/>
+        <span class="dfn-label">Description:</span> <i>Indicates a purpose is restricted to the specified context(s)</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Range includes:</span> <i><a href="https://w3id.org/dpv#Context">dpv:Context</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="hasDuration">
+      <h4>has duration</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>hasDuration</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#hasDuration">https://w3id.org/dpv#hasDuration</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#hasDuration">dpv:hasDuration</a>
+        <span class="dfn-label">Label:</span> <i>has duration</i><br/>
+        <span class="dfn-label">Description:</span> <i>Indicates information about duration</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Range includes:</span> <i><a href="https://w3id.org/dpv#Duration">dpv:Duration</a></i><br/><span class="dfn-label">Source:</span> <i>(SPECIAL Project,https://specialprivacy.ercim.eu/)</i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="hasFrequency">
+      <h4>has frequency</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>hasFrequency</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#hasFrequency">https://w3id.org/dpv#hasFrequency</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#hasFrequency">dpv:hasFrequency</a>
+        <span class="dfn-label">Label:</span> <i>has frequency</i><br/>
+        <span class="dfn-label">Description:</span> <i>Indicates the frequency with which something takes place</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Range includes:</span> <i><a href="https://w3id.org/dpv#Frequency">dpv:Frequency</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="hasIdentifier">
+      <h4>has identifier</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>hasIdentifier</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#hasIdentifier">https://w3id.org/dpv#hasIdentifier</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#hasIdentifier">dpv:hasIdentifier</a>
+        <span class="dfn-label">Label:</span> <i>has identifier</i><br/>
+        <span class="dfn-label">Description:</span> <i>Indicates an identifier associated for identification or reference</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+      </p>
+      </div>
+    </section>
+    <section class="term-def" id="hasJustification">
+      <h4>has justification</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>hasJustification</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#hasJustification">https://w3id.org/dpv#hasJustification</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#hasJustification">dpv:hasJustification</a>
+        <span class="dfn-label">Label:</span> <i>has justification</i><br/>
+        <span class="dfn-label">Description:</span> <i>Indicates a justification for specified concept or context</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Domain includes:</span> <i><a href="https://w3id.org/dpv#RightExerciseActivity">dpv:RightExerciseActivity</a></i><br/><span class="dfn-label">Range includes:</span> <i><a href="https://w3id.org/dpv#Justification">dpv:Justification</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="hasOutcome">
+      <h4>has outcome</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>hasOutcome</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#hasOutcome">https://w3id.org/dpv#hasOutcome</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#hasOutcome">dpv:hasOutcome</a>
+        <span class="dfn-label">Label:</span> <i>has outcome</i><br/>
+        <span class="dfn-label">Description:</span> <i>Indicates an outcome of specified concept or context</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+      </p>
+      </div>
+    </section>
+    <section class="term-def" id="hasScope">
+      <h4>has scope</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>hasScope</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#hasScope">https://w3id.org/dpv#hasScope</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#hasScope">dpv:hasScope</a>
+        <span class="dfn-label">Label:</span> <i>has scope</i><br/>
+        <span class="dfn-label">Description:</span> <i>Indicates the scope of specified concept or context</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Range includes:</span> <i><a href="https://w3id.org/dpv#Scope">dpv:Scope</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="isAfter">
+      <h4>is after</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>isAfter</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#isAfter">https://w3id.org/dpv#isAfter</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#isAfter">dpv:isAfter</a>
+        <span class="dfn-label">Label:</span> <i>is after</i><br/>
+        <span class="dfn-label">Description:</span> <i>Indicates the specified concepts is &#39;after&#39; this concept in some context</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Domain includes:</span> <i><a href="https://w3id.org/dpv#RightExerciseActivity">dpv:RightExerciseActivity</a></i><br/><span class="dfn-label">Range includes:</span> <i><a href="https://w3id.org/dpv#RightExerciseActivity">dpv:RightExerciseActivity</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="isBefore">
+      <h4>is before</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>isBefore</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#isBefore">https://w3id.org/dpv#isBefore</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#isBefore">dpv:isBefore</a>
+        <span class="dfn-label">Label:</span> <i>is before</i><br/>
+        <span class="dfn-label">Description:</span> <i>Indicates the specified concepts is &#39;before&#39; this concept in some context</i><br/>
+        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Domain includes:</span> <i><a href="https://w3id.org/dpv#RightExerciseActivity">dpv:RightExerciseActivity</a></i><br/><span class="dfn-label">Range includes:</span> <i><a href="https://w3id.org/dpv#RightExerciseActivity">dpv:RightExerciseActivity</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="isImplementedByEntity">
+      <h4>is implemented by entity</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>isImplementedByEntity</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#isImplementedByEntity">https://w3id.org/dpv#isImplementedByEntity</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#isImplementedByEntity">dpv:isImplementedByEntity</a>
+        <span class="dfn-label">Label:</span> <i>is implemented by entity</i><br/>
+        <span class="dfn-label">Description:</span> <i>Indicates implementation details such as entities or agents</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>The use of &#39;entity&#39; is inclusive of entities (e.g. Data Processor) as well as &#39;agent&#39; (e.g. DPO). For indicating technological implementation, the property isImplementedByTechnology should be used.</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Domain includes:</span> <i><a href="https://w3id.org/dpv#RightExerciseActivity">dpv:RightExerciseActivity</a></i><br/><span class="dfn-label">Range includes:</span> <i><a href="https://w3id.org/dpv#Entity">dpv:Entity</a></i><br/>      </p>
+      </div>
+    </section>
+    <section class="term-def" id="isImplementedUsingTechnology">
+      <h4>is implemented using technology</h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn>isImplementedUsingTechnology</dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#isImplementedUsingTechnology">https://w3id.org/dpv#isImplementedUsingTechnology</a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</a>
+        <span class="dfn-label">Label:</span> <i>is implemented using technology</i><br/>
+        <span class="dfn-label">Description:</span> <i>Indicates implementation details such as technologies or processes</i><br/>
+<span class="dfn-label">Usage Note:</span> <i>The term &#39;technology&#39; is inclusive of technologies, processes, and methods.</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property">rdf:Property</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Range includes:</span> <i><a href="https://w3id.org/dpv#Technology">dpv:Technology</a></i><br/>      </p>
+      </div>
+    </section>
+
+  </section>
+  <section id="external-concepts">
+    <p>DPV uses the following terms from [[RDF]] and  [[RDFS]] with their defined meanings:</p>
+    <ul>
+      <li id="rdf:type"><dfn>rdf:type</dfn> to denote a concept is an instance of another concept</li>
+      <li id="rdfs:Class"><dfn>rdfs:Class</dfn> to denote a concept is a Class or a category</li>
+      <li id="rdfs:subClassOf"><dfn>rdfs:subClassOf</dfn> to specify the concept is a subclass (subtype, sub-category, subset) of another concept</li>
+      <li id="rdf:Property"><dfn>rdf:Property</dfn> to denote a concept is a property or a relation</li>
+      </ul>
+    <p>The following external concepts are re-used within DPV:</p>
+    <h3>External</h3>
+    <section class="term-def" id="">
+      <h4></h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn></dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href=""></a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href=""></a>
+        <span class="dfn-label">Label:</span> <i></i><br/>
+        <span class="dfn-label">Description:</span> <i></i><br/>
+        <span class="dfn-label">Type:</span> <i></i><br/>
+      </p>
+      </div>
+    </section>
+    <section class="term-def" id="">
+      <h4></h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn></dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href=""></a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href=""></a>
+        <span class="dfn-label">Label:</span> <i></i><br/>
+        <span class="dfn-label">Description:</span> <i></i><br/>
+        <span class="dfn-label">Type:</span> <i></i><br/>
+      </p>
+      </div>
+    </section>
+
+  </section>
+</section>
+
+</body>
+</html>
