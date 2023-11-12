@@ -1,19 +1,20 @@
 {% from 'macro_term_table.jinja2' import table_classes %}
 {% from 'macro_term_table.jinja2' import table_properties %}
+{% from 'macro_term_table.jinja2' import list_hierarchy, index_concepts %}
 {% from 'macro_dpv_document_family.jinja2' import dpv_document_family, sotd %}
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Risk Extension for DPV</title>
+  <title>Risk Extension</title>
   <script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove" defer></script>
   <script class="remove">
    // All config options at https://respec.org/docs/ 
    var respecConfig = {
     shortName: "risk",
-    title: "Risk Extension for DPV",
-    subtitle: "version 0.8.2",
-    publishDate: "2022-10-06",
+    title: "Risk Extension",
+    subtitle: "Data Privacy Vocabulary (DPV)",
+    publishDate: "2023-11-13",
     specStatus: "CG-DRAFT",
     group: "dpvcg",
     latestVersion: "https://w3id.org/dpv/risk",
@@ -75,79 +76,34 @@
   <section id="vocab-risk-levels">
     <h2>Risk, Likelihood, Severity Levels</h2>
 
-    {% if risk_levels_classes %}
-    <section id="risk-levels-classes">
-    {{ table_classes(risk_levels_classes) }}
-    </section>
-    {% endif %}
-    {% if risk_levels_properties %}
-    <section id="risk-levels-properties">
-    {{ table_properties(risk_levels_properties) }}
-    </section>
-    {% endif %}
+    {{ list_hierarchy(modules['risk_levels']['classes']) }}
 
   </section>
 
   <section id="vocab-risk-controls">
     <h2>Risk Controls</h2>
 
-    {% if risk_controls_classes %}
-    <section id="risk-controls-classes">
-    {{ table_classes(risk_controls_classes) }}
-    </section>
-    {% endif %}
-    {% if risk_controls_properties %}
-    <section id="risk-controls-properties">
-    {{ table_properties(risk_levels_properties) }}
-    </section>
-    {% endif %}
+    {{ list_hierarchy(modules['risk_controls']['classes']) }}
 
   </section>
 
   <section id="vocab-risk-consequences">
     <h2>Consequences and Impacts</h2>
 
-    {% if risk_consequences_classes %}
-    <section id="risk_consequences-classes">
-    {{ table_classes(risk_consequences_classes) }}
-    </section>
-    {% endif %}
-    {% if riks_consequences_properties %}
-    <section id="risk_consequences-properties">
-    {{ table_properties(risk_consequences_properties) }}
-    </section>
-    {% endif %}
+    {{ list_hierarchy(modules['risk_consequences']['classes']) }}
   </section>
 
   <section id="vocab-risk-assessment">
     <h2>Risk Assessment Techniques</h2>
 
-    {% if risk_assessment_classes %}
-    <section id="risk-assessment-classes">
-    {{ table_classes(risk_assessment_classes) }}
-    </section>
-    {% endif %}
-    {% if risk_assessment_properties %}
-    <section id="risk-assessment-properties">
-    {{ table_properties(risk_assessment_properties) }}
-    </section>
-    {% endif %}
+    {{ list_hierarchy(modules['risk_assessment']['classes']) }}
 
   </section>
 
   <section id="vocab-risk-methodology">
     <h2>Risk Methodology</h2>
 
-    {% if risk_methodology_classes %}
-    <section id="risk-methodology-classes">
-    {{ table_classes(risk_methodology_classes) }}
-    </section>
-    {% endif %}
-    {% if risk_methodology_properties %}
-    <section id="risk-methodology-properties">
-    {{ table_properties(risk_methodology_properties) }}
-    </section>
-    {% endif %}
+    {{ list_hierarchy(modules['risk_methodology']['classes']) }}
 
   </section>
 
@@ -155,16 +111,7 @@
   <section id="vocab-risk-matrix">
     <h2>RiskMatrix</h2>
 
-    {% if risk_matrix_classes %}
-    <section id="risk-matrix-classes">
-    {{ table_classes(risk_matrix_classes) }}
-    </section>
-    {% endif %}
-    {% if risk_matrix_properties %}
-    <section id="risk-matrix-properties">
-    {{ table_properties(risk_matrix_properties) }}
-    </section>
-    {% endif %}
+    {{ list_hierarchy(modules['risk_matrix']['classes']) }}
 
   </section>
 
@@ -180,6 +127,27 @@
   {% endfor %}
 </section>
 {% endif %}
+
+<section id="vocabulary">
+<h2>Vocabulary Index</h2>
+  <section id="dpv-classes">
+    {{ index_concepts(vocab, filter="classes") }}
+  </section>
+  <section id="dpv-properties">
+    {{ index_concepts(vocab, filter="properties") }}
+  </section>
+  <section id="external-concepts">
+    <p>DPV uses the following terms from [[RDF]] and  [[RDFS]] with their defined meanings:</p>
+    <ul>
+      <li id="rdf:type"><dfn>rdf:type</dfn> to denote a concept is an instance of another concept</li>
+      <li id="rdfs:Class"><dfn>rdfs:Class</dfn> to denote a concept is a Class or a category</li>
+      <li id="rdfs:subClassOf"><dfn>rdfs:subClassOf</dfn> to specify the concept is a subclass (subtype, sub-category, subset) of another concept</li>
+      <li id="rdf:Property"><dfn>rdf:Property</dfn> to denote a concept is a property or a relation</li>
+      </ul>
+    <p>The following external concepts are re-used within DPV:</p>
+    {{ index_concepts(vocab, filter="external") }}
+  </section>
+</section>
 
 <section class="appendix" id="issue-summary">
 </section>

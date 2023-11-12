@@ -1,26 +1,27 @@
 {% from 'macro_term_table.jinja2' import table_classes %}
 {% from 'macro_term_table.jinja2' import table_properties %}
+{% from 'macro_term_table.jinja2' import list_hierarchy, index_concepts %}
 {% from 'macro_dpv_document_family.jinja2' import dpv_document_family, sotd %}
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
-  <title>DPV-TECH: Extension providing Technology concepts for DPV</title>
+  <title>TECH Extension</title>
   <script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove" defer></script>
   <script class="remove">
    // All config options at https://respec.org/docs/ 
    var respecConfig = {
-    shortName: "dpv-tech",
-    title: "DPV-TECH: Extension providing Technology concepts for DPV",
-    subtitle: "version 0.8.2",
-    publishDate: "2022-10-06",
+    shortName: "tech",
+    title: "TECH Extension",
+    subtitle: "Data Privacy Vocabulary (DPV)",
+    publishDate: "2023-11-13",
     specStatus: "CG-DRAFT",
     group: "dpvcg",
-    latestVersion: "https://w3id.org/dpv/dpv-tech",
-    canonicalUri: "https://w3id.org/dpv/dpv-tech",
-    edDraftURI: "https://w3id.org/dpv/ed/dpv-tech",
+    latestVersion: "https://w3id.org/dpv/tech",
+    canonicalUri: "https://w3id.org/dpv/tech",
+    edDraftURI: "https://w3id.org/dpv/ed/tech",
     github: "w3c/dpv",
-    subjectPrefix: "[dpv-tech]",
+    subjectPrefix: "[tech]",
     doJsonLd: true,
     lint: { "no-unused-dfns": false },
     editors: [
@@ -156,92 +157,86 @@
   <section id="vocab">
     <h2>Core Concepts</h2>
 
-    <section id="core-classes">
-      {{ table_classes(core_classes) }}
-    </section>
-    <section id="core-properties">
-      {{ table_properties(core_properties) }}
-    </section>
+    {{ list_hierarchy(modules['core']['classes']) }}
 
   </section>
 
   <section id="data">
     <h2>Data Tech</h2>
 
-    <section id="data-classes">
-      {{ table_classes(data_classes) }}
-    </section>
+    {{ list_hierarchy(modules['data']['classes']) }}
 
   </section>
 
   <section id="ops">
     <h2>Operational Tech</h2>
 
-    <section id="ops-classes">
-      {{ table_classes(ops_classes) }}
-    </section>
+    {{ list_hierarchy(modules['ops']['classes']) }}
 
   </section>
 
   <section id="security">
     <h2>Security Tech</h2>
 
-    <section id="security-classes">
-      {{ table_classes(security_classes) }}
-    </section>
+    {{ list_hierarchy(modules['security']['classes']) }}
 
   </section>
 
   <section id="surveillance">
     <h2>Surveillance Types</h2>
 
-    <section id="surveillance-classes">
-      {{ table_classes(surveillance_classes) }}
-    </section>
+    {{ list_hierarchy(modules['surveillance']['classes']) }}
 
   </section>
 
   <section id="provision">
     <h2>Provision Method</h2>
 
-    <section id="provision-classes">
-      {{ table_classes(provision_classes) }}
-    </section>
-    <section id="provision-properties">
-      {{ table_properties(provision_properties) }}
-    </section>
+    {{ list_hierarchy(modules['provision']['classes']) }}
 
   </section>
 
   <section id="actors">
     <h2>Actors</h2>
 
-    <section id="actors-classes">
-      {{ table_classes(actors_classes) }}
-    </section>
-    <section id="actors-properties">
-      {{ table_properties(actors_properties) }}
-    </section>
+    {{ list_hierarchy(modules['actors']['classes']) }}
 
   </section>
 
   <section id="comms">
     <h2>Communication Methods</h2>
 
-    <section id="comms-classes">
-      {{ table_classes(comms_classes) }}
-    </section>
+    {{ list_hierarchy(modules['comms']['classes']) }}
 
   </section>
 
   <section id="tools">
     <h2>Tools</h2>
 
-    <section id="tools-classes">
-      {{ table_classes(tools_classes) }}
-    </section>
+    {{ list_hierarchy(modules['tools']['classes']) }}
 
   </section>
+  
+  <section id="vocabulary">
+<h2>Vocabulary Index</h2>
+  <section id="dpv-classes">
+    {{ index_concepts(vocab, filter="classes") }}
+  </section>
+  <section id="dpv-properties">
+    {{ index_concepts(vocab, filter="properties") }}
+  </section>
+  <section id="external-concepts">
+    <p>DPV uses the following terms from [[RDF]] and  [[RDFS]] with their defined meanings:</p>
+    <ul>
+      <li id="rdf:type"><dfn>rdf:type</dfn> to denote a concept is an instance of another concept</li>
+      <li id="rdfs:Class"><dfn>rdfs:Class</dfn> to denote a concept is a Class or a category</li>
+      <li id="rdfs:subClassOf"><dfn>rdfs:subClassOf</dfn> to specify the concept is a subclass (subtype, sub-category, subset) of another concept</li>
+      <li id="rdf:Property"><dfn>rdf:Property</dfn> to denote a concept is a property or a relation</li>
+      </ul>
+    <p>The following external concepts are re-used within DPV:</p>
+    {{ index_concepts(vocab, filter="external") }}
+  </section>
+</section>
   
 {% if proposed %}
 <section id="proposed-terms" class="appendix">

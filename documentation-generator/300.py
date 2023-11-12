@@ -74,15 +74,47 @@ VOCABS = {
             'rules': 'contents_dpv_rules.jinja2',
         },
     },
+    # EXTENSIONS
     'pd': {
         'vocab': f'{IMPORT_PATH}/pd/pd.ttl',
-        'template': 'template_dpv_pd.jinja2',
+        'template': 'template_pd.jinja2',
         'export': f'{EXPORT_PATH}/pd',
         'modules': {
             'core': f'{IMPORT_PATH}/pd/modules/core.ttl',
             'extended': f'{IMPORT_PATH}/pd/modules/extended.ttl',
         },
     },
+    'tech': {
+        'vocab': f'{IMPORT_PATH}/tech/tech.ttl',
+        'template': 'template_tech.jinja2',
+        'export': f'{EXPORT_PATH}/tech',
+        'modules': {
+            'core': f'{IMPORT_PATH}/tech/modules/core.ttl',
+            'data': f'{IMPORT_PATH}/tech/modules/data.ttl',
+            'ops': f'{IMPORT_PATH}/tech/modules/ops.ttl',
+            'security': f'{IMPORT_PATH}/tech/modules/security.ttl',
+            'surveillance': f'{IMPORT_PATH}/tech/modules/surveillance.ttl',
+            'provision': f'{IMPORT_PATH}/tech/modules/provision.ttl',
+            'actors': f'{IMPORT_PATH}/tech/modules/actors.ttl',
+            'comms': f'{IMPORT_PATH}/tech/modules/comms.ttl',
+            'provision': f'{IMPORT_PATH}/tech/modules/provision.ttl',
+            'tools': f'{IMPORT_PATH}/tech/modules/tools.ttl',
+        },
+    },
+    'risk': {
+        'vocab': f'{IMPORT_PATH}/risk/risk.ttl',
+        'template': 'template_risk.jinja2',
+        'export': f'{EXPORT_PATH}/risk',
+        'modules': {
+            'risk_consequences': f'{IMPORT_PATH}/risk/modules/risk_consequences.ttl',
+            'risk_levels': f'{IMPORT_PATH}/risk/modules/risk_levels.ttl',
+            'risk_matrix': f'{IMPORT_PATH}/risk/modules/risk_matrix.ttl',
+            'risk_controls': f'{IMPORT_PATH}/risk/modules/risk_controls.ttl',
+            'risk_assessment': f'{IMPORT_PATH}/risk/modules/risk_assessment.ttl',
+            'risk_methodology': f'{IMPORT_PATH}/risk/modules/risk_methodology.ttl',
+        }
+    },
+    # LEGAL VOCABS
     'eu-gdpr': {
         'vocab': f'{IMPORT_PATH}/legal/eu/gdpr/eu-gdpr.ttl',
         'template': 'template_legal_eu_gdpr.jinja2',
@@ -109,6 +141,12 @@ VOCABS = {
             'services': f'{IMPORT_PATH}/legal/eu/dga/modules/services.ttl',
             'toms': f'{IMPORT_PATH}/legal/eu/dga/modules/toms.ttl',
         },
+    },
+    'eu-rights': {
+        'vocab': f'{IMPORT_PATH}/legal/eu/rights/eu-rights.ttl',
+        'template': 'template_legal_eu_rights.jinja2',
+        'export': f'{EXPORT_PATH}/legal/eu/rights',
+        'modules': {},
     },
 }
 
@@ -212,14 +250,11 @@ class DATA(object):
             module_data_temp[term] = DATA.data[vocab][term]
         module_data = {
             'classes': {},
-            'properties': {},
             'schemes': {}
         }
         for k, v in module_data_temp.items():
-            if v['term'][0].islower():
-                module_data['properties'][k] = v
-            else:
-                module_data['classes'][k] = v
+            if v['term'][0].islower(): pass
+            else: module_data['classes'][k] = v
         if vocab not in DATA.modules:
             DATA.modules[vocab] = {}
         DATA.modules[vocab][module] = module_data
@@ -231,7 +266,6 @@ class DATA(object):
         if f'{vocab}:{module}-properties' in DATA.schemes:
             scheme = DATA.schemes[f'{vocab}:{module}-properties']
             # DEBUG(f'{module} has scheme {vocab}:{module}-properties')
-            module_data['schemes']['properties'] = scheme
         return
 
 
