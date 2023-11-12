@@ -17,11 +17,11 @@
     <skos:narrower rdf:resource="https://w3id.org/dpv/tech#TechnologyUser"/>
     <skos:narrower rdf:resource="https://w3id.org/dpv/tech#TechnologySubject"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/tech#TechnologyDeveloper">
+  <rdf:Description rdf:about="https://w3id.org/dpv/tech#TechnologySubject">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <skos:prefLabel xml:lang="en">Technology Developer</skos:prefLabel>
-    <skos:definition xml:lang="en">Actor that develops Technology</skos:definition>
+    <skos:prefLabel xml:lang="en">Technology Subject</skos:prefLabel>
+    <skos:definition xml:lang="en">Actor that is subject of use of Technology</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/dpv/dpv-tech#TechnologyActor"/>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-tech#TechnologyActor"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
@@ -41,6 +41,16 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv/tech#actors-properties"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/tech#TechnologyDeveloper">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:prefLabel xml:lang="en">Technology Developer</skos:prefLabel>
+    <skos:definition xml:lang="en">Actor that develops Technology</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv/dpv-tech#TechnologyActor"/>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-tech#TechnologyActor"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv/tech#actors-classes"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-tech#hasTechnologyActor">
     <rdfs:superPropertyOf rdf:resource="https://w3id.org/dpv/tech#hasProvider"/>
     <rdfs:superPropertyOf rdf:resource="https://w3id.org/dpv/tech#hasDeveloper"/>
@@ -50,6 +60,48 @@
     <skos:narrower rdf:resource="https://w3id.org/dpv/tech#hasDeveloper"/>
     <skos:narrower rdf:resource="https://w3id.org/dpv/tech#hasUser"/>
     <skos:narrower rdf:resource="https://w3id.org/dpv/tech#hasSubject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/tech#hasProvider">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="en">has provider</skos:prefLabel>
+    <skos:definition xml:lang="en">Indicates technology provider</skos:definition>
+    <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#Technology"/>
+    <schema:domainIncludes rdf:resource="https://w3id.org/dpv#Technology"/>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv/dpv-tech#TechnologyProvider"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv/dpv-tech#TechnologyProvider"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/dpv/dpv-tech#hasTechnologyActor"/>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-tech#hasTechnologyActor"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv/tech#actors-properties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/tech#hasDeveloper">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="en">has developer</skos:prefLabel>
+    <skos:definition xml:lang="en">Indicates technology developer</skos:definition>
+    <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#Technology"/>
+    <schema:domainIncludes rdf:resource="https://w3id.org/dpv#Technology"/>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv/dpv-tech#TechnologyDeveloper"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv/dpv-tech#TechnologyDeveloper"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/dpv/dpv-tech#hasTechnologyActor"/>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-tech#hasTechnologyActor"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv/tech#actors-properties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/tech#hasUser">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="en">has user</skos:prefLabel>
+    <skos:definition xml:lang="en">Indicates technology user</skos:definition>
+    <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#Technology"/>
+    <schema:domainIncludes rdf:resource="https://w3id.org/dpv#Technology"/>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv/dpv-tech#TechnologyUser"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv/dpv-tech#TechnologyUser"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/dpv/dpv-tech#hasTechnologyActor"/>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-tech#hasTechnologyActor"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv/tech#actors-properties"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/tech#TechnologyUser">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -71,62 +123,10 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv/tech#actors-classes"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/tech#hasDeveloper">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">has developer</skos:prefLabel>
-    <skos:definition xml:lang="en">Indicates technology developer</skos:definition>
-    <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#Technology"/>
-    <schema:domainIncludes rdf:resource="https://w3id.org/dpv#Technology"/>
-    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv/dpv-tech#TechnologyDeveloper"/>
-    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv/dpv-tech#TechnologyDeveloper"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/dpv/dpv-tech#hasTechnologyActor"/>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-tech#hasTechnologyActor"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv/tech#actors-properties"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/tech#TechnologySubject">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <skos:prefLabel xml:lang="en">Technology Subject</skos:prefLabel>
-    <skos:definition xml:lang="en">Actor that is subject of use of Technology</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv/dpv-tech#TechnologyActor"/>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-tech#TechnologyActor"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv/tech#actors-classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/tech#hasProvider">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">has provider</skos:prefLabel>
-    <skos:definition xml:lang="en">Indicates technology provider</skos:definition>
-    <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#Technology"/>
-    <schema:domainIncludes rdf:resource="https://w3id.org/dpv#Technology"/>
-    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv/dpv-tech#TechnologyProvider"/>
-    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv/dpv-tech#TechnologyProvider"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/dpv/dpv-tech#hasTechnologyActor"/>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-tech#hasTechnologyActor"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv/tech#actors-properties"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/tech#actors-properties">
+  <rdf:Description rdf:about="https://w3id.org/dpv/tech#actors-classes">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/tech#hasUser">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">has user</skos:prefLabel>
-    <skos:definition xml:lang="en">Indicates technology user</skos:definition>
-    <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#Technology"/>
-    <schema:domainIncludes rdf:resource="https://w3id.org/dpv#Technology"/>
-    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv/dpv-tech#TechnologyUser"/>
-    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv/dpv-tech#TechnologyUser"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/dpv/dpv-tech#hasTechnologyActor"/>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-tech#hasTechnologyActor"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv/tech#actors-properties"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/tech#actors-classes">
+  <rdf:Description rdf:about="https://w3id.org/dpv/tech#actors-properties">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
   </rdf:Description>
 </rdf:RDF>

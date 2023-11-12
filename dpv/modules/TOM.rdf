@@ -7,40 +7,6 @@
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
    xmlns:sw="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
-  <rdf:Description rdf:about="https://w3id.org/dpv#hasPolicy">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">has policy</skos:prefLabel>
-    <skos:definition xml:lang="en">Indicates policy applicable or used</skos:definition>
-    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#Policy"/>
-    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#Policy"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/dpv#hasTechnicalOrganisationalMeasure"/>
-    <skos:broader rdf:resource="https://w3id.org/dpv#hasTechnicalOrganisationalMeasure"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#TOM-properties"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#hasTechnicalMeasure">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">has technical measure</skos:prefLabel>
-    <skos:definition xml:lang="en">Indicates use or applicability of Technical measure</skos:definition>
-    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#TechnicalMeasure"/>
-    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#TechnicalMeasure"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/dpv#hasTechnicalOrganisationalMeasure"/>
-    <skos:broader rdf:resource="https://w3id.org/dpv#hasTechnicalOrganisationalMeasure"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#TOM-properties"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#OrganisationalMeasure">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <skos:prefLabel xml:lang="en">Organisational Measure</skos:prefLabel>
-    <skos:definition xml:lang="en">Organisational measures required/followed when processing data of the declared category</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#TechnicalOrganisationalMeasure"/>
-    <skos:broader rdf:resource="https://w3id.org/dpv#TechnicalOrganisationalMeasure"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#TOM-classes"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#hasOrganisationalMeasure">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -55,15 +21,29 @@
     <skos:narrower rdf:resource="https://w3id.org/dpv#hasNotice"/>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#TOM-properties"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#TechnicalOrganisationalMeasure">
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasPolicy">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <skos:scopeNote xml:lang="en">The Technical and Organisational measures used.</skos:scopeNote>
-    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#TechnicalMeasure"/>
-    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#OrganisationalMeasure"/>
-    <skos:narrower rdf:resource="https://w3id.org/dpv#TechnicalMeasure"/>
-    <skos:narrower rdf:resource="https://w3id.org/dpv#OrganisationalMeasure"/>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#TOM-classes"/>
+    <skos:prefLabel xml:lang="en">has policy</skos:prefLabel>
+    <skos:definition xml:lang="en">Indicates policy applicable or used</skos:definition>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#Policy"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#Policy"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/dpv#hasTechnicalOrganisationalMeasure"/>
+    <skos:broader rdf:resource="https://w3id.org/dpv#hasTechnicalOrganisationalMeasure"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#TOM-properties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasNotice">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="en">has notice</skos:prefLabel>
+    <skos:definition xml:lang="en">Indicates the use or applicability of a Notice for the specified context</skos:definition>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#Notice"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#Notice"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/dpv#hasOrganisationalMeasure"/>
+    <skos:broader rdf:resource="https://w3id.org/dpv#hasOrganisationalMeasure"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#TOM-properties"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#hasTechnicalOrganisationalMeasure">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
@@ -81,17 +61,25 @@
     <skos:narrower rdf:resource="https://w3id.org/dpv#hasPolicy"/>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#TOM-properties"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#hasNotice">
+  <rdf:Description rdf:about="https://w3id.org/dpv#isPolicyFor">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">has notice</skos:prefLabel>
-    <skos:definition xml:lang="en">Indicates the use or applicability of a Notice for the specified context</skos:definition>
-    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#Notice"/>
-    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#Notice"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/dpv#hasOrganisationalMeasure"/>
-    <skos:broader rdf:resource="https://w3id.org/dpv#hasOrganisationalMeasure"/>
+    <skos:prefLabel xml:lang="en">is policy for</skos:prefLabel>
+    <skos:definition xml:lang="en">Indicates the context or application of policy</skos:definition>
+    <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#Policy"/>
+    <schema:domainIncludes rdf:resource="https://w3id.org/dpv#Policy"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#TOM-properties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#TechnicalOrganisationalMeasure">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:scopeNote xml:lang="en">The Technical and Organisational measures used.</skos:scopeNote>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#TechnicalMeasure"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#OrganisationalMeasure"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv#TechnicalMeasure"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv#OrganisationalMeasure"/>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#TOM-classes"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#TechnicalMeasure">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -103,20 +91,32 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#TOM-classes"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#isPolicyFor">
+  <rdf:Description rdf:about="https://w3id.org/dpv#OrganisationalMeasure">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:prefLabel xml:lang="en">Organisational Measure</skos:prefLabel>
+    <skos:definition xml:lang="en">Organisational measures required/followed when processing data of the declared category</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#TechnicalOrganisationalMeasure"/>
+    <skos:broader rdf:resource="https://w3id.org/dpv#TechnicalOrganisationalMeasure"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#TOM-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasTechnicalMeasure">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">is policy for</skos:prefLabel>
-    <skos:definition xml:lang="en">Indicates the context or application of policy</skos:definition>
-    <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#Policy"/>
-    <schema:domainIncludes rdf:resource="https://w3id.org/dpv#Policy"/>
+    <skos:prefLabel xml:lang="en">has technical measure</skos:prefLabel>
+    <skos:definition xml:lang="en">Indicates use or applicability of Technical measure</skos:definition>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#TechnicalMeasure"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#TechnicalMeasure"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/dpv#hasTechnicalOrganisationalMeasure"/>
+    <skos:broader rdf:resource="https://w3id.org/dpv#hasTechnicalOrganisationalMeasure"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#TOM-properties"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#TOM-classes">
+  <rdf:Description rdf:about="https://w3id.org/dpv#TOM-properties">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#TOM-properties">
+  <rdf:Description rdf:about="https://w3id.org/dpv#TOM-classes">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
   </rdf:Description>
 </rdf:RDF>

@@ -36,63 +36,7 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#NetworkingCommunication",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv/dpv-tech#CommunicationMechanism"
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#CommunicationMechanism"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Technology utilising networking communication"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv/tech#comms-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Networking Communication"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/dpv-tech#Networking",
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv/tech#LocalNetworkCommunication"
-      },
-      {
-        "@id": "https://w3id.org/dpv/tech#InternetCommunication"
-      },
-      {
-        "@id": "https://w3id.org/dpv/tech#WiFiCommunication"
-      },
-      {
-        "@id": "https://w3id.org/dpv/tech#BluetoothCommunication"
-      },
-      {
-        "@id": "https://w3id.org/dpv/tech#CellularNetworkCommunication"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#LocalNetworkCommunication",
+    "@id": "https://w3id.org/dpv/tech#InternetCommunication",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
@@ -112,7 +56,7 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Technology utilising local networking communication"
+        "@value": "Technology utilising internet communication"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -123,7 +67,7 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Local Network Communication"
+        "@value": "Internet Communication"
       }
     ]
   },
@@ -164,18 +108,7 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/dpv-tech#CommunicationMechanism",
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv/tech#NetworkingCommunication"
-      },
-      {
-        "@id": "https://w3id.org/dpv/tech#GPSCommunication"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#GPSCommunication",
+    "@id": "https://w3id.org/dpv/tech#NetworkingCommunication",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
@@ -195,7 +128,7 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Technology utilising GPS communication"
+        "@value": "Technology utilising networking communication"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -206,14 +139,8 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "GPS Communication"
+        "@value": "Networking Communication"
       }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#comms-classes",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
     ]
   },
   {
@@ -253,7 +180,44 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#InternetCommunication",
+    "@id": "https://w3id.org/dpv/dpv-tech#Networking",
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv/tech#LocalNetworkCommunication"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#InternetCommunication"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#WiFiCommunication"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#BluetoothCommunication"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#CellularNetworkCommunication"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/dpv-tech#CommunicationMechanism",
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv/tech#NetworkingCommunication"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#GPSCommunication"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#comms-classes",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#LocalNetworkCommunication",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
@@ -273,7 +237,7 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Technology utilising internet communication"
+        "@value": "Technology utilising local networking communication"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -284,7 +248,43 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Internet Communication"
+        "@value": "Local Network Communication"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#GPSCommunication",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv/dpv-tech#CommunicationMechanism"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#CommunicationMechanism"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Technology utilising GPS communication"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv/tech#comms-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "GPS Communication"
       }
     ]
   }

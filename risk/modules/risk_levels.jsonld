@@ -1,6 +1,6 @@
 [
   {
-    "@id": "https://w3id.org/dpv/risk#ExtremelyHighLikelihood",
+    "@id": "https://w3id.org/dpv/risk#VeryHighLikelihood",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
@@ -8,7 +8,7 @@
     ],
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
       {
-        "@value": "0.99,xsd:decimal"
+        "@value": "0.9,xsd:decimal"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -20,12 +20,15 @@
     "http://www.w3.org/2004/02/skos/core#broader": [
       {
         "@id": "https://w3id.org/dpv/risk#7LikelihoodLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#5LikelihoodLevels"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Level where Likelihood is Extremely High"
+        "@value": "Level where Likelihood is Very High"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -36,168 +39,13 @@
     "http://www.w3.org/2004/02/skos/core#note": [
       {
         "@language": "en",
-        "@value": "The suggested quantitative value for this concept is 0.99 on a scale of 0 to 1"
+        "@value": "The suggested quantitative value for this concept is 0.9 on a scale of 0 to 1"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Extremely High Likelihood"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/risk#3SeverityLevels",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Severity"
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#Severity"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Scale with 3 Severity Levels from High to Low"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv/risk#risk-levels-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv/risk#LowSeverity"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#ModerateSeverity"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#HighSeverity"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "3 Severity Levels"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/risk#3LikelihoodLevels",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Likelihood"
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#Likelihood"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Scale with 3 Likelihood Levels from High to Low"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv/risk#risk-levels-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv/risk#LowLikelihood"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#ModerateLikelihood"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#HighLikelihood"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "3 Likelihood Levels"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#RiskLevel",
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv/risk#3RiskLevels"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#5RiskLevels"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#7RiskLevels"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/risk#ExtremelyHighSeverity",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Severity"
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
-      {
-        "@value": "0.99,xsd:decimal"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv/risk#7SeverityLevels"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Level where Severity is Extremely High"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv/risk#risk-levels-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "The suggested quantitative value for this concept is 0.99 on a scale of 0 to 1"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Extremely High Severity"
+        "@value": "Very High Likelihood"
       }
     ]
   },
@@ -245,65 +93,6 @@
       {
         "@language": "en",
         "@value": "Extremely Low Likelihood"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/risk#risk-levels-classes",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/risk#HighRisk",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#RiskLevel"
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
-      {
-        "@value": "0.75,xsd:decimal"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv/risk#7RiskLevels"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#5RiskLevels"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#3RiskLevels"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Level where Risk is High"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv/risk#risk-levels-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "The suggested quantitative value for this concept is 0.75 on a scale of 0 to 1"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "High Risk"
       }
     ]
   },
@@ -361,6 +150,690 @@
     ]
   },
   {
+    "@id": "https://w3id.org/dpv/risk#VeryLowRisk",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#RiskLevel"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@value": "0.1,xsd:decimal"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/risk#7RiskLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#5RiskLevels"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Level where Risk is Very Low"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv/risk#risk-levels-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "The suggested quantitative value for this concept is 0.1 on a scale of 0 to 1"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Very Low Risk"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#Severity",
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv/risk#3SeverityLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#5SeverityLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#7SeverityLevels"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/risk#VeryHighRisk",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#RiskLevel"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@value": "0.9,xsd:decimal"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/risk#7RiskLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#5RiskLevels"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Level where Risk is Very High"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv/risk#risk-levels-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "The suggested quantitative value for this concept is 0.9 on a scale of 0 to 1"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Very High Risk"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#RiskLevel",
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv/risk#3RiskLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#5RiskLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#7RiskLevels"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/risk#ExtremelyHighLikelihood",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Likelihood"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@value": "0.99,xsd:decimal"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/risk#7LikelihoodLevels"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Level where Likelihood is Extremely High"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv/risk#risk-levels-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "The suggested quantitative value for this concept is 0.99 on a scale of 0 to 1"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Extremely High Likelihood"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/risk#3LikelihoodLevels",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Likelihood"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#Likelihood"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Scale with 3 Likelihood Levels from High to Low"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv/risk#risk-levels-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv/risk#LowLikelihood"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#ModerateLikelihood"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#HighLikelihood"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "3 Likelihood Levels"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/risk#ModerateRisk",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#RiskLevel"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@value": "0.5,xsd:decimal"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/risk#7RiskLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#5RiskLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#3RiskLevels"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Level where Risk is Moderate"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv/risk#risk-levels-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "The suggested quantitative value for this concept is 0.5 on a scale of 0 to 1"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Moderate Risk"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/risk#ExtremelyLowRisk",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#RiskLevel"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@value": "0.01,xsd:decimal"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/risk#7RiskLevels"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Level where Risk is Extremely Low"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv/risk#risk-levels-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "The suggested quantitative value for this concept is 0.01 on a scale of 0 to 1"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Extremely Low Risk"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/risk#3SeverityLevels",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Severity"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#Severity"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Scale with 3 Severity Levels from High to Low"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv/risk#risk-levels-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv/risk#LowSeverity"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#ModerateSeverity"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#HighSeverity"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "3 Severity Levels"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/risk#7RiskLevels",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#RiskLevel"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#RiskLevel"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Scale with 7 Risk Levels from Extremely High to Extremely Low"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv/risk#risk-levels-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv/risk#ExtremelyLowRisk"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#VeryLowRisk"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#LowRisk"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#ModerateRisk"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#HighRisk"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#VeryHighRisk"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#ExtremelyHighRisk"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "7 Risk Levels"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/risk#HighRisk",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#RiskLevel"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@value": "0.75,xsd:decimal"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/risk#7RiskLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#5RiskLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#3RiskLevels"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Level where Risk is High"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv/risk#risk-levels-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "The suggested quantitative value for this concept is 0.75 on a scale of 0 to 1"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "High Risk"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/risk#5SeverityLevels",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Severity"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#Severity"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Scale with 5 Severity Levels from Very High to Very Low"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv/risk#risk-levels-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv/risk#VeryLowSeverity"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#LowSeverity"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#ModerateSeverity"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#HighSeverity"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#VeryHighSeverity"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "5 Severity Levels"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/risk#ModerateSeverity",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Severity"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@value": "0.5,xsd:decimal"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/risk#7SeverityLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#5SeverityLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#3SeverityLevels"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Level where Severity is Moderate"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv/risk#risk-levels-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "The suggested quantitative value for this concept is 0.5 on a scale of 0 to 1"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Moderate Severity"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/risk#3RiskLevels",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#RiskLevel"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#RiskLevel"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Scale with 3 Risk Levels from High to Low"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv/risk#risk-levels-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv/risk#LowRisk"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#ModerateRisk"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#HighRisk"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "3 Risk Levels"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/risk#VeryHighSeverity",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Severity"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@value": "0.9,xsd:decimal"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/risk#7SeverityLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#5SeverityLevels"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Level where Severity is Very High"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv/risk#risk-levels-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "The suggested quantitative value for this concept is 0.9 on a scale of 0 to 1"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Very High Severity"
+      }
+    ]
+  },
+  {
     "@id": "https://w3id.org/dpv/risk#ExtremelyHighRisk",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
@@ -404,6 +877,165 @@
       {
         "@language": "en",
         "@value": "Extremely High Risk"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/risk#LowLikelihood",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Likelihood"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@value": "0.25,xsd:decimal"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/risk#7LikelihoodLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#5LikelihoodLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#3LikelihoodLevels"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Level where Likelihood is Low"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv/risk#risk-levels-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "The suggested quantitative value for this concept is 0.25 on a scale of 0 to 1"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Low Likelihood"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/risk#ModerateLikelihood",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Likelihood"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@value": "0.5,xsd:decimal"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/risk#7LikelihoodLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#5LikelihoodLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#3LikelihoodLevels"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Level where Likelihood is Moderate"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv/risk#risk-levels-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "The suggested quantitative value for this concept is 0.5 on a scale of 0 to 1"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Moderate Likelihood"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/risk#HighLikelihood",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Likelihood"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@value": "0.75,xsd:decimal"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/risk#7LikelihoodLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#5LikelihoodLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#3LikelihoodLevels"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Level where Likelihood is High"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv/risk#risk-levels-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "The suggested quantitative value for this concept is 0.75 on a scale of 0 to 1"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "High Likelihood"
       }
     ]
   },
@@ -457,59 +1089,6 @@
       {
         "@language": "en",
         "@value": "5 Likelihood Levels"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/risk#LowSeverity",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Severity"
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
-      {
-        "@value": "0.25,xsd:decimal"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv/risk#7SeverityLevels"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#5SeverityLevels"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#3SeverityLevels"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Level where Severity is Low"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv/risk#risk-levels-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "The suggested quantitative value for this concept is 0.25 on a scale of 0 to 1"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Low Severity"
       }
     ]
   },
@@ -573,60 +1152,7 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/risk#5SeverityLevels",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Severity"
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#Severity"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Scale with 5 Severity Levels from Very High to Very Low"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv/risk#risk-levels-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv/risk#VeryLowSeverity"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#LowSeverity"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#ModerateSeverity"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#HighSeverity"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#VeryHighSeverity"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "5 Severity Levels"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/risk#HighSeverity",
+    "@id": "https://w3id.org/dpv/risk#ExtremelyHighSeverity",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
@@ -634,7 +1160,7 @@
     ],
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
       {
-        "@value": "0.75,xsd:decimal"
+        "@value": "0.99,xsd:decimal"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -646,18 +1172,12 @@
     "http://www.w3.org/2004/02/skos/core#broader": [
       {
         "@id": "https://w3id.org/dpv/risk#7SeverityLevels"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#5SeverityLevels"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#3SeverityLevels"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Level where Severity is High"
+        "@value": "Level where Severity is Extremely High"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -668,18 +1188,18 @@
     "http://www.w3.org/2004/02/skos/core#note": [
       {
         "@language": "en",
-        "@value": "The suggested quantitative value for this concept is 0.75 on a scale of 0 to 1"
+        "@value": "The suggested quantitative value for this concept is 0.99 on a scale of 0 to 1"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "High Severity"
+        "@value": "Extremely High Severity"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/risk#HighLikelihood",
+    "@id": "https://w3id.org/dpv/risk#VeryLowLikelihood",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
@@ -687,7 +1207,7 @@
     ],
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
       {
-        "@value": "0.75,xsd:decimal"
+        "@value": "0.1,xsd:decimal"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -702,15 +1222,12 @@
       },
       {
         "@id": "https://w3id.org/dpv/risk#5LikelihoodLevels"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#3LikelihoodLevels"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Level where Likelihood is High"
+        "@value": "Level where Likelihood is Very Low"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -721,13 +1238,63 @@
     "http://www.w3.org/2004/02/skos/core#note": [
       {
         "@language": "en",
-        "@value": "The suggested quantitative value for this concept is 0.75 on a scale of 0 to 1"
+        "@value": "The suggested quantitative value for this concept is 0.1 on a scale of 0 to 1"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "High Likelihood"
+        "@value": "Very Low Likelihood"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/risk#VeryLowSeverity",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Severity"
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@value": "0.1,xsd:decimal"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/risk#7SeverityLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#5SeverityLevels"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Level where Severity is Very Low"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv/risk#risk-levels-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "The suggested quantitative value for this concept is 0.1 on a scale of 0 to 1"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Very Low Severity"
       }
     ]
   },
@@ -805,56 +1372,6 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/risk#VeryLowRisk",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#RiskLevel"
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
-      {
-        "@value": "0.1,xsd:decimal"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv/risk#7RiskLevels"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#5RiskLevels"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Level where Risk is Very Low"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv/risk#risk-levels-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "The suggested quantitative value for this concept is 0.1 on a scale of 0 to 1"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Very Low Risk"
-      }
-    ]
-  },
-  {
     "@id": "https://w3id.org/dpv/risk#5RiskLevels",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
@@ -908,15 +1425,15 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/risk#ExtremelyLowRisk",
+    "@id": "https://w3id.org/dpv/risk#HighSeverity",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#RiskLevel"
+      "https://w3id.org/dpv#Severity"
     ],
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
       {
-        "@value": "0.01,xsd:decimal"
+        "@value": "0.75,xsd:decimal"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -927,77 +1444,19 @@
     ],
     "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@id": "https://w3id.org/dpv/risk#7RiskLevels"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Level where Risk is Extremely Low"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv/risk#risk-levels-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "The suggested quantitative value for this concept is 0.01 on a scale of 0 to 1"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Extremely Low Risk"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#Severity",
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv/risk#3SeverityLevels"
+        "@id": "https://w3id.org/dpv/risk#7SeverityLevels"
       },
       {
         "@id": "https://w3id.org/dpv/risk#5SeverityLevels"
       },
       {
-        "@id": "https://w3id.org/dpv/risk#7SeverityLevels"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/risk#VeryHighLikelihood",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Likelihood"
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
-      {
-        "@value": "0.9,xsd:decimal"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv/risk#7LikelihoodLevels"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#5LikelihoodLevels"
+        "@id": "https://w3id.org/dpv/risk#3SeverityLevels"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Level where Likelihood is Very High"
+        "@value": "Level where Severity is High"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -1008,81 +1467,22 @@
     "http://www.w3.org/2004/02/skos/core#note": [
       {
         "@language": "en",
-        "@value": "The suggested quantitative value for this concept is 0.9 on a scale of 0 to 1"
+        "@value": "The suggested quantitative value for this concept is 0.75 on a scale of 0 to 1"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Very High Likelihood"
+        "@value": "High Severity"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/risk#7RiskLevels",
+    "@id": "https://w3id.org/dpv/risk#LowSeverity",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#RiskLevel"
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#RiskLevel"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Scale with 7 Risk Levels from Extremely High to Extremely Low"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv/risk#risk-levels-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv/risk#ExtremelyLowRisk"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#VeryLowRisk"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#LowRisk"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#ModerateRisk"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#HighRisk"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#VeryHighRisk"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#ExtremelyHighRisk"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "7 Risk Levels"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/risk#LowLikelihood",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Likelihood"
+      "https://w3id.org/dpv#Severity"
     ],
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
       {
@@ -1097,19 +1497,19 @@
     ],
     "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@id": "https://w3id.org/dpv/risk#7LikelihoodLevels"
+        "@id": "https://w3id.org/dpv/risk#7SeverityLevels"
       },
       {
-        "@id": "https://w3id.org/dpv/risk#5LikelihoodLevels"
+        "@id": "https://w3id.org/dpv/risk#5SeverityLevels"
       },
       {
-        "@id": "https://w3id.org/dpv/risk#3LikelihoodLevels"
+        "@id": "https://w3id.org/dpv/risk#3SeverityLevels"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Level where Likelihood is Low"
+        "@value": "Level where Severity is Low"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -1126,317 +1526,14 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Low Likelihood"
+        "@value": "Low Severity"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/risk#VeryHighSeverity",
+    "@id": "https://w3id.org/dpv/risk#risk-levels-classes",
     "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Severity"
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
-      {
-        "@value": "0.9,xsd:decimal"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv/risk#7SeverityLevels"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#5SeverityLevels"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Level where Severity is Very High"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv/risk#risk-levels-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "The suggested quantitative value for this concept is 0.9 on a scale of 0 to 1"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Very High Severity"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/risk#ModerateSeverity",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Severity"
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
-      {
-        "@value": "0.5,xsd:decimal"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv/risk#7SeverityLevels"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#5SeverityLevels"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#3SeverityLevels"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Level where Severity is Moderate"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv/risk#risk-levels-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "The suggested quantitative value for this concept is 0.5 on a scale of 0 to 1"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Moderate Severity"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/risk#VeryHighRisk",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#RiskLevel"
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
-      {
-        "@value": "0.9,xsd:decimal"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv/risk#7RiskLevels"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#5RiskLevels"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Level where Risk is Very High"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv/risk#risk-levels-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "The suggested quantitative value for this concept is 0.9 on a scale of 0 to 1"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Very High Risk"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/risk#VeryLowLikelihood",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Likelihood"
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
-      {
-        "@value": "0.1,xsd:decimal"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv/risk#7LikelihoodLevels"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#5LikelihoodLevels"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Level where Likelihood is Very Low"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv/risk#risk-levels-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "The suggested quantitative value for this concept is 0.1 on a scale of 0 to 1"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Very Low Likelihood"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/risk#ModerateLikelihood",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Likelihood"
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
-      {
-        "@value": "0.5,xsd:decimal"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv/risk#7LikelihoodLevels"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#5LikelihoodLevels"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#3LikelihoodLevels"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Level where Likelihood is Moderate"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv/risk#risk-levels-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "The suggested quantitative value for this concept is 0.5 on a scale of 0 to 1"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Moderate Likelihood"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/risk#ModerateRisk",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#RiskLevel"
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
-      {
-        "@value": "0.5,xsd:decimal"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv/risk#7RiskLevels"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#5RiskLevels"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#3RiskLevels"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Level where Risk is Moderate"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv/risk#risk-levels-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "The suggested quantitative value for this concept is 0.5 on a scale of 0 to 1"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Moderate Risk"
-      }
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
     ]
   },
   {
@@ -1483,103 +1580,6 @@
       {
         "@language": "en",
         "@value": "Extremely Low Severity"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/risk#3RiskLevels",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#RiskLevel"
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#RiskLevel"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Scale with 3 Risk Levels from High to Low"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv/risk#risk-levels-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv/risk#LowRisk"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#ModerateRisk"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#HighRisk"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "3 Risk Levels"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/risk#VeryLowSeverity",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Severity"
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
-      {
-        "@value": "0.1,xsd:decimal"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv/risk#7SeverityLevels"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#5SeverityLevels"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Level where Severity is Very Low"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv/risk#risk-levels-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "The suggested quantitative value for this concept is 0.1 on a scale of 0 to 1"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Very Low Severity"
       }
     ]
   }
