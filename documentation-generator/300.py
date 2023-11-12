@@ -97,6 +97,19 @@ VOCABS = {
             'compliance': f'{IMPORT_PATH}/legal/eu/gdpr/modules/compliance.ttl',
         },
     },
+    'eu-dga': {
+        'vocab': f'{IMPORT_PATH}/legal/eu/dga/eu-dga.ttl',
+        'template': 'template_legal_eu_dga.jinja2',
+        'export': f'{EXPORT_PATH}/legal/eu/dga',
+        'modules': {
+            'entities': f'{IMPORT_PATH}/legal/eu/dga/modules/entities.ttl',
+            'legal_basis': f'{IMPORT_PATH}/legal/eu/dga/modules/legal_basis.ttl',
+            'legal_rights': f'{IMPORT_PATH}/legal/eu/dga/modules/legal_rights.ttl',
+            'registers': f'{IMPORT_PATH}/legal/eu/dga/modules/registers.ttl',
+            'services': f'{IMPORT_PATH}/legal/eu/dga/modules/services.ttl',
+            'toms': f'{IMPORT_PATH}/legal/eu/dga/modules/toms.ttl',
+        },
+    },
 }
 
 class DATA(object):
