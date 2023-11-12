@@ -35,6 +35,7 @@ VOCABS = {
     'dpv': {
         'vocab': f'{IMPORT_PATH}/dpv/dpv.ttl',
         'template': 'template_dpv.jinja2',
+        'export': f'{EXPORT_PATH}/dpv',
         'modules': {
             # 'core': f'{IMPORT_PATH}/dpv/modules/core.ttl',
             'personal_data': f'{IMPORT_PATH}/dpv/modules/personal_data.ttl',
@@ -76,11 +77,26 @@ VOCABS = {
     'pd': {
         'vocab': f'{IMPORT_PATH}/pd/pd.ttl',
         'template': 'template_dpv_pd.jinja2',
+        'export': f'{EXPORT_PATH}/pd',
         'modules': {
             'core': f'{IMPORT_PATH}/pd/modules/core.ttl',
             'extended': f'{IMPORT_PATH}/pd/modules/extended.ttl',
         },
-    }
+    },
+    'eu-gdpr': {
+        'vocab': f'{IMPORT_PATH}/legal/eu/gdpr/eu-gdpr.ttl',
+        'template': 'template_legal_eu_gdpr.jinja2',
+        'export': f'{EXPORT_PATH}/legal/eu/gdpr',
+        'modules': {
+            'legal_basis': f'{IMPORT_PATH}/legal/eu/gdpr/modules/legal_basis.ttl',
+            'legal_basis-special': f'{IMPORT_PATH}/legal/eu/gdpr/modules/legal_basis_special.ttl',
+            'legal_basis-data_transfer': f'{IMPORT_PATH}/legal/eu/gdpr/modules/legal_basis_data_transfer.ttl',
+            'rights': f'{IMPORT_PATH}/legal/eu/gdpr/modules/rights.ttl',
+            'data_transfers': f'{IMPORT_PATH}/legal/eu/gdpr/modules/data_transfers.ttl',
+            'dpia': f'{IMPORT_PATH}/legal/eu/gdpr/modules/dpia.ttl',
+            'compliance': f'{IMPORT_PATH}/legal/eu/gdpr/modules/compliance.ttl',
+        },
+    },
 }
 
 class DATA(object):
@@ -280,19 +296,19 @@ if __name__ == '__main__':
         # else:
         #     DATA.modules[vocab] = []
         template = template_env.get_template(vocab_data['template'])
-        with open(f'{EXPORT_PATH}/{vocab}/index.html', 'w+') as fd:
+        with open(f'{vocab_data["export"]}/index.html', 'w+') as fd:
             fd.write(template.render(
                 data=DATA.data,
                 vocab=DATA.data[vocab],
                 modules=DATA.modules[vocab]))
-        DEBUG(f'wrote {vocab} spec at f{EXPORT_PATH}/{vocab}/index.html')
+        DEBUG(f'wrote {vocab} spec at {vocab_data["export"]}/index.html')
         # TODO: replace duplicate code with filecopy
-        with open(f'{EXPORT_PATH}/{vocab}/{vocab}.html', 'w+') as fd:
+        with open(f'{vocab_data["export"]}/{vocab}.html', 'w+') as fd:
             fd.write(template.render(
                 data=DATA.data,
                 vocab=DATA.data[vocab],
                 modules=DATA.modules[vocab]))
-        DEBUG(f'wrote {vocab} spec at f{EXPORT_PATH}/{vocab}/{vocab}.html')
+        DEBUG(f'wrote {vocab} spec at {vocab_data["export"]}/{vocab}.html')
 
         if 'module-template' not in vocab_data:
             continue # this vocab doesn't have module specific docs
@@ -303,9 +319,9 @@ if __name__ == '__main__':
                 continue
             DEBUG(f'exporting {module} page')
             template = template_env.get_template(vocab_data['module-template'][module])
-            with open(f'{EXPORT_PATH}/{vocab}/modules/{module}.html', 'w+') as fd:
+            with open(f'{vocab_data["export"]}/modules/{module}.html', 'w+') as fd:
                 fd.write(template.render(
                     data=data,
                     vocab=DATA.data[vocab],
                     modules=DATA.modules[vocab]))
-                DEBUG(f'wrote {vocab}/{module} docs at f{EXPORT_PATH}/{vocab}/modules/{module}.html')
+                DEBUG(f'wrote {vocab}/{module} docs at {vocab_data["export"]}/modules/{module}.html')

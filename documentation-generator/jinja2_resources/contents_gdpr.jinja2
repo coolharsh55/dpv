@@ -3,23 +3,23 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>{% block title %}DPV-GDPR: GDPR Extension for DPV{% endblock title%}</title>
+  <title>{% block title %}EU-GDPR Extension{% endblock title%}</title>
   <script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove" defer></script>
   {% block RESPEC %}
   <script class="remove">
    // All config options at https://respec.org/docs/ 
    var respecConfig = {
-    shortName: "dpv-gdpr",
-    title: "DPV-GDPR: GDPR Extension for DPV",
-    subtitle: "version 1",
-    publishDate: "2022-12-05",
-    specStatus: "CG-FINAL",
+    shortName: "eu-gdpr",
+    title: "EU GDPR Extension",
+    subtitle: "Data Privacy Vocabulary (DPV)",
+    publishDate: "2023-11-13",
+    specStatus: "CG-DRAFT",
     group: "dpvcg",
-    latestVersion: "https://w3id.org/dpv/dpv-gdpr",
-    canonicalUri: "https://w3id.org/dpv/dpv-gdpr",
-    edDraftURI: "https://w3id.org/dpv/ed/dpv-gdpr",
+    latestVersion: "https://w3id.org/dpv/legal/eu/gdpr",
+    canonicalUri: "https://w3id.org/dpv/legal/eu/gdpr",
+    edDraftURI: "https://w3id.org/dpv/ed/legal/eu/gdpr",
     github: "w3c/dpv",
-    subjectPrefix: "[dpv-gdpr]",
+    subjectPrefix: "[eu-gdpr]",
     doJsonLd: true,
     lint: { "no-unused-dfns": false, "local-refs-exist": true },
     editors: [
@@ -119,7 +119,7 @@
   };
 </script>
 {% endblock RESPEC %}
-<link rel="stylesheet" type="text/css" href="../media/common.css">
+<link rel="stylesheet" type="text/css" href="../../../media/common.css">
 </head>
 <body>
 {% block ABSTRACT %}
@@ -144,47 +144,24 @@
     <div class="note" title="DPV does not define validity of legal basis">
       <p>DPV and DPV-GDPR only define the legal basis as concepts, and do not define or provide information associated with their validity. For example, determining whether consent is valid, or the appropriateness of a legal basis for its application in a use-case. The DPVCG is interested in providing such "helpful assistance" through semantics, and welcomes discussions and contributions for the same.</p>
     </div>
+    </section>
 
     <section id="vocab-legal-basis-GDPR">
+    <h2>Legal Basis</h2>
+
+    <section>
     <h3>Core Legal Bases</h3>
-    {% if legal_basis_classes %}
-    <section id="legal_basis-classes">
-    {{ table_classes(legal_basis_classes) }}
-    </section>
-    {% endif %}
-    {% if legal_basis_properties %}
-    <section id="legal_basis-properties">
-    {{ table_properties(legal_basis_properties) }}
-    </section>
-    {% endif %}
+    {{ list_hierarchy(modules['legal_basis']['classes']) }}
     </section>
 
     <section id="vocab-legal-basis-special">
       <h3>Special Category Personal Data</h3>
-      {% if legal_basis_special_classes %}
-      <section id="legal_basis_special-classes">
-      {{ table_classes(legal_basis_special_classes) }}
-      </section>
-      {% endif %}
-      {% if legal_basis_special_properties %}
-      <section id="legal_basis_special-properties">
-      {{ table_properties(legal_basis_special_properties) }}
-      </section>
-      {% endif %}      
+      {{ list_hierarchy(modules['legal_basis-special']['classes']) }}
     </section>
 
     <section id="vocab-legal-basis-data-transfer">
       <h3>Data Transfer</h3>
-      {% if legal_basis_data_transfer_classes %}
-      <section id="legal_basis_data_transfer-classes">
-      {{ table_classes(legal_basis_data_transfer_classes) }}
-      </section>
-      {% endif %}
-      {% if legal_basis_data_transfer_properties %}
-      <section id="legal_basis_data_transfer-properties">
-      {{ table_properties(legal_basis_data_transfer_properties) }}
-      </section>
-      {% endif %}      
+      {{ list_hierarchy(modules['legal_basis-data_transfer']['classes']) }} 
     </section>
 
   </section>
@@ -194,29 +171,20 @@
     <p>GDPR provides several rights to the data subject, whose applicability depends on the context and nature of processing taking place. DPV lists these rights at an abstract level as concepts along with their origin in specific clauses of the GDPR.</p>
     <p>In addition to DPV's concepts regarding exercise of rights, DPV-GDPR provides additional concepts specific to the implementation of its rights. For example, [=SARNotice=] refers to the information provided in fulfilment of [=A15=] Right of Access, or using <a href="#rights-dcat:Resource"><code>dcat:Resource</code></a> to represent the dataset provided in fulfilment of [=A20=] Right to Data Portability.</p>
 
-    {% if rights_classes %}
-    <section id="rights-classes">
-    {{ table_classes(rights_classes, prefix='rights') }}
-    </section>
-    {% endif %}
-    {% if rights_properties %}
-    <section id="rights-properties">
-    {{ table_properties(rights_properties, prefix='rights') }}
-    </section>
-    {% endif %}
+    {{ list_hierarchy(modules['rights']['classes']) }}
   </section>
 
   <section id="vocab-legal-basis-rights-mappings">
     <h2>Legal Basis - Rights Mappings</h2>
-    {% for legalbasis, rights in legal_basis_rights_mapping %}
-      <section id="legalbasis-{{legalbasis.iri|fragment_this}}-rights">
-        <h3>{{legalbasis}}</h3>
-        <p>The following rights are applicable under this legal basis:</p>
-        <ul>{% for iri, label in rights %}
-          <li><a href="{{iri}}">{{ label }}</a></li>
-        {% endfor %}</ul>
-      </section>
-    {% endfor %}
+    ## {% for legalbasis, rights in legal_basis_rights_mapping %}
+    ##   <section id="legalbasis-{{legalbasis.iri|fragment_this}}-rights">
+    ##     <h3>{{legalbasis}}</h3>
+    ##     <p>The following rights are applicable under this legal basis:</p>
+    ##     <ul>{% for iri, label in rights %}
+    ##       <li><a href="{{iri}}">{{ label }}</a></li>
+    ##     {% endfor %}</ul>
+    ##   </section>
+    ## {% endfor %}
   </section>
 
   <section id="vocab-data-transfers">
@@ -227,16 +195,7 @@
       <p>The DPV-GDPR's concepts for transfer tools are currently symbolic, and do not provide a way to actually implement those tools. For example, to represent the information contained within a SCC or BCR. The DPVCG is interested in providing such implementations, and welcomes discussions and contributions for the same.</p>
     </div>
 
-    {% if data_transfers_classes %}
-    <section id="data_transfers-classes">
-    {{ table_classes(data_transfers_classes) }}
-    </section>
-    {% endif %}
-    {% if data_transfers_properties %}
-    <section id="data_transfers-properties">
-    {{ table_properties(data_transfers_properties) }}
-    </section>
-    {% endif %}
+    {{ list_hierarchy(modules['data_transfers']['classes']) }}
   </section>
 
   <section id="vocab-DPIA">
@@ -255,33 +214,36 @@
       <p>The DPVCG is working on updating the [[[DPV-GUIDE-GDPR-DPIA]]] based on recent updates in DPV and DPV-GDPR. In addition to these, we are also working on providing concepts for expressing impacts and risk management within [[[RISK]]].</p>
     </div>
 
-    {% if dpia_classes %}
-      <section id="dpia-classes">
-      {{ table_classes(dpia_classes) }}
-      </section>
-    {% endif %}
-    {% if dpia_properties %}
-      <section id="dpia-properties">
-      {{ table_properties(dpia_properties, prefix='DPIA') }}
-      </section>
-    {% endif %}
+    {{ list_hierarchy(modules['dpia']['classes']) }}
   </section>
 
   <section id="vocab-compliance">
     <h2>Compliance</h2>
     <p>The concepts in this section reflect the status of processing operations being in <i>compliance with GDPR</i>, by extending the <code>ComplianceStatus</code> from DPV for GDPR. It does not define the requirements for compliance itself.</p>
 
-    {% if compliance_classes %}
-      <section id="compliance-classes">
-      {{ table_classes(compliance_classes) }}
-      </section>
-    {% endif %}
-    {% if compliance_properties %}
-      <section id="compliance-properties">
-      {{ table_properties(compliance_properties) }}
-      </section>
-    {% endif %}
+    {{ list_hierarchy(modules['compliance']['classes']) }}
   </section>
+
+  <section id="vocabulary">
+<h2>Vocabulary Index</h2>
+  <section id="dpv-classes">
+    {{ index_concepts(vocab, filter="classes") }}
+  </section>
+  <section id="dpv-properties">
+    {{ index_concepts(vocab, filter="properties") }}
+  </section>
+  <section id="external-concepts">
+    <p>DPV uses the following terms from [[RDF]] and  [[RDFS]] with their defined meanings:</p>
+    <ul>
+      <li id="rdf:type"><dfn>rdf:type</dfn> to denote a concept is an instance of another concept</li>
+      <li id="rdfs:Class"><dfn>rdfs:Class</dfn> to denote a concept is a Class or a category</li>
+      <li id="rdfs:subClassOf"><dfn>rdfs:subClassOf</dfn> to specify the concept is a subclass (subtype, sub-category, subset) of another concept</li>
+      <li id="rdf:Property"><dfn>rdf:Property</dfn> to denote a concept is a property or a relation</li>
+      </ul>
+    <p>The following external concepts are re-used within DPV:</p>
+    {{ index_concepts(vocab, filter="external") }}
+  </section>
+</section>
 {% endblock VOCAB %}
 
 {% block ACKNOWLEDGEMENTS %}
@@ -321,6 +283,6 @@
   <h2>Deprecated Terms</h2>
 </section>
 {% endblock DEPRECATED %}
-<script type="text/javascript" src="../media/common.js" defer></script>
+<script type="text/javascript" src="../../../media/common.js" defer></script>
 </body>
 </html>
