@@ -41,19 +41,7 @@
     localBiblio: {%  include 'references.json' %}
   };
   </script>
-  <style type="text/css">
-  /* Table styles, March 2016 */
-  table {border-collapse:collapse}
-  th, td {
-    border:thin solid black;
-    padding: 0.3em;
-  }
-  figure {
-    margin: 2px;
-    padding: 2px;
-    border: 1px solid black;
-  }
-</style>
+  <link rel="stylesheet" type="text/css" href="../media/common.css">
 </head>
 
 <body>
@@ -91,7 +79,7 @@
     <section id="serialisations">
     <h3>DPV Serialisations</h3>
     <figure>
-        <img src="../diagrams/serialisations.png" />
+        <img src="../media/serialisations.png" />
         <figcaption>Serialisations of DPV specification</figcaption>
       </figure>
     <p>The DPV is serialised using [[RDF]] to provide a formal interoperable and machine-readable representation of information. While this enables its use as a semantic web vocabulary, the DPV can also be used without (or alongside) semantic web by either utilising a format such as [[JSON-LD]] that retains the semantics and provides convenience of using JSON, or through other formats such as a CSV or a flat-list of concepts. This section provides an overview of such approaches where DPV can be used both with and without semantic web.</p>
@@ -157,7 +145,7 @@
       <h3>Concepts and Relationships</h3>
       <p>[[DPV]] is a collection of <i>concepts</i>. Here the term 'concept' is broadly used as consisting of a <i>term</i> non-exhaustively representing any of the following: idea, thought, meaning, object, event, relations, class, or category. Thus, in DPV, 'concepts' consist of terms and relationships between them. These include: <i>Concept</i>, <i>has type</i>, <i>is instance of</i>, and <i>has applicable concept</i>.</p>
       <figure>
-        <img src="../diagrams/concepts_relations.png"/>
+        <img src="../media/concepts_relations.png"/>
         <figcaption>Concepts and Relationships</figcaption>
       </figure>
       <aside class="example">
@@ -347,7 +335,7 @@ exA:TVServiceOptimisation skos:closeMatch exB:TVServiceOptimisation .
     <section id="core-taxonomy">
       <h3>Structure of DPV</h3>
       <figure>
-        <img src="../diagrams/hierarchy-ex2.png" style="width: 100%; height: auto" />
+        <img src="../media/hierarchy-ex2.png" style="width: 100%; height: auto" />
         <figcaption>DPV as a set of hierarchies</figcaption>
       </figure>
     <p>DPV can be viewed as a hierarchical taxonomy of concepts where each <code><code>core concept</code></code> represents the top-most abstract concept in a tree and each of its children provide a lesser abstract or more concrete concept. For example, consider the concept of <a href="https://www.w3id.org/dpv#PersonalData"><code>PersonalData</code></a> which is the abstract representation of <em>personal data</em>. It can be further <i>refined</i> or <i>extended</i> as <code>SensitivePersonalData</code>, and further as <code>SpecialCategoryPersonalData</code> and then as <code>GeneticData</code> and so on.</p>
@@ -369,12 +357,12 @@ exA:TVServiceOptimisation skos:closeMatch exB:TVServiceOptimisation .
   <section id="core-concepts-overview">
     <h3>Overview of Core Concepts</h3>
     <figure>
-      <img src="../diagrams/base.png">
+      <img src="../media/base.png">
       <figcaption>Overview of concepts in DPV</figcaption>
     </figure>
     <section class="notoc"><h4>PersonalData</h4>
     <figure>
-        <img src="../diagrams/overview_PD.png"/>
+        <img src="../media/overview_PD.png"/>
         <figcaption>Indicating applicable or relevant <code>PersonalData</code></figcaption>
       </figure>
     <blockquote>
@@ -388,7 +376,7 @@ exA:TVServiceOptimisation skos:closeMatch exB:TVServiceOptimisation .
     <p>‘Personal data’ refers to any data about a natural person that can be used to identify them directly or, in combination with other information, indirectly. ‘Personal data’ is also commonly referred to as ‘personally identifiable information (PII)’. However the terms should not be interchangeably used as based on definitions (e.g. those in GDPR), ‘personal data’ can be interpreted as a broader term than PII, and where PII may refer to <u>only</u> to information that can directly identify a person. DPV’s definition of personal data is based on the broadest possible definition (i.e. from GDPR) as it covers a wider range of information considered ‘personal data’. Personal data can be declared as a category, such as ‘Email’, or an instance, such as ‘x@y.z’. <code>PersonalData</code> is associated with using the relation <code>hasPersonalData</code>.</p></section>
     <section class="notoc"><h4>Purpose</h4>
     <figure>
-        <img src="../diagrams/overview_Purpose.png"/>
+        <img src="../media/overview_Purpose.png"/>
         <figcaption>Indicating applicable or relevant <code>Purpose</code></figcaption>
       </figure>
     <blockquote>
@@ -403,7 +391,7 @@ exA:TVServiceOptimisation skos:closeMatch exB:TVServiceOptimisation .
   </section>
     <section class="notoc"><h4>Processing</h4>
     <figure>
-        <img src="../diagrams/overview_Processing.png"/>
+        <img src="../media/overview_Processing.png"/>
         <figcaption>Indicating applicable or relevant <code>Processing</code></figcaption>
       </figure>
     <blockquote>
@@ -418,7 +406,7 @@ exA:TVServiceOptimisation skos:closeMatch exB:TVServiceOptimisation .
     </section>
     <section class="notoc"><h4>LegalBasis</h4>
     <figure>
-        <img src="../diagrams/overview_LegalBasis.png"/>
+        <img src="../media/overview_LegalBasis.png"/>
         <figcaption>Indicating applicable or relevant <code>LegalBasis</code></figcaption>
       </figure>
     <blockquote>
@@ -433,7 +421,7 @@ exA:TVServiceOptimisation skos:closeMatch exB:TVServiceOptimisation .
     </section>
     <section class="notoc"><h4>Entities</h4>
     <figure>
-        <img src="../diagrams/overview_Entities.png"/>
+        <img src="../media/overview_Entities.png"/>
         <figcaption>Indicating applicable or relevant <code>Entities</code></figcaption>
       </figure>
     <blockquote>
@@ -448,28 +436,28 @@ exA:TVServiceOptimisation skos:closeMatch exB:TVServiceOptimisation .
     </section>
     <section class="notoc"><h4>DataController</h4>
     <figure>
-        <img src="../diagrams/overview_DataController.png"/>
+        <img src="../media/overview_DataController.png"/>
         <figcaption>Indicating applicable or relevant <code>DataController</code></figcaption>
       </figure>
     <p>Representing the organisation(s) responsible for processing the personal data.</p>
     </section>
     <section class="notoc"><h4>DataSubject</h4>
     <figure>
-        <img src="../diagrams/overview_DataSubject.png"/>
+        <img src="../media/overview_DataSubject.png"/>
         <figcaption>Indicating applicable or relevant <code>DataSubject</code></figcaption>
       </figure>
     <p>Representing the categories or groups (e.g. Users of a Service), or instances (e.g. Jane Doe) of individual(s) whose personal data is being processed.</p>
     </section>
     <section class="notoc"><h4>Recipient</h4>
     <figure>
-        <img src="../diagrams/overview_Recipient.png"/>
+        <img src="../media/overview_Recipient.png"/>
         <figcaption>Indicating applicable or relevant <code>Recipient</code></figcaption>
       </figure>
     <p>Represents the entities that receive personal data, e.g. when it is shared.</p>
     </section>
     <section class="notoc"><h4>TechnicalOrganisationalMeasure</h4>
     <figure>
-        <img src="../diagrams/overview_TechnicalOrganisationalMeasure.png"/>
+        <img src="../media/overview_TechnicalOrganisationalMeasure.png"/>
         <figcaption>Indicating applicable or relevant <code>TechnicalOrganisationalMeasure</code></figcaption>
       </figure>
     <blockquote>
@@ -501,14 +489,14 @@ exA:TVServiceOptimisation skos:closeMatch exB:TVServiceOptimisation .
     </section>
     <section class="notoc"><h4>Rights Exercise</h4>
     <figure>
-        <img src="../diagrams/rights.png"/>
+        <img src="../media/rights.png"/>
         <figcaption>Indicating applicable or relevant <code>Right</code></figcaption>
       </figure>
       <p>The concept <code>Right</code> represents a normative concept for what is permissible or necessary in accordance with a system such as laws. To associate rights with concepts that are relevant or within which those rights occur, the relation <code>hasRight</code> is used. Rights can be <i>passive</i>, which means they are always applicable without requiring anything to be done, or <i>active</i> where they require some action to be taken to initiate or exercise them. To represent these concepts, DPV uses <code>PassiveRight</code> and <code>ActiveRight</code> respectively. Rights can be applicable to different contexts or entities. To differentiate rights applicable or afforded to data subjects, the concept <code>DataSubjectRight</code> is used. The information on exercising an active right is provided through a <code>RightExerciseNotice</code> which can be recorded through a <code>RightExerciseRecord</code> that can contain one or more <code>RightExerciseActivity</code>. This enables providing information about the existence of a right, how to exercise it, associate requirements for the exercising, and to keep detailed records of the interactions towards fulfilment of that right.</p>
     </section>
     <section class="notoc"><h4>Risk</h4>
     <figure>
-        <img src="../diagrams/overview_Risk.png"/>
+        <img src="../media/overview_Risk.png"/>
         <figcaption>Indicating applicable or relevant <code>Risk</code></figcaption>
       </figure>
     <blockquote>
@@ -523,7 +511,7 @@ exA:TVServiceOptimisation skos:closeMatch exB:TVServiceOptimisation .
   </section>
   <section class="notoc"><h4>Technology</h4>
     <figure>
-        <img src="../diagrams/overview_Technology.png"/>
+        <img src="../media/overview_Technology.png"/>
         <figcaption>Indicating applicable or relevant <code>Technology</code></figcaption>
       </figure>
     <p>Representing the technologies used to implement the processing, or associated with the processing. For example, such as specific software products, algorithms, or approaches. This also involves specifying who is doing the implementing i.e. a technology and its implementer.</p>
@@ -531,7 +519,7 @@ exA:TVServiceOptimisation skos:closeMatch exB:TVServiceOptimisation .
 
     <section class="notoc"><h4>Temporal and Geo-Spatial Information for Storage</h4>
     <figure>
-        <img src="../diagrams/overview_Storage.png"/>
+        <img src="../media/overview_Storage.png"/>
         <figcaption>Indicating applicable or relevant temporal and geo-spatial information</figcaption>
       </figure>
     <p>Indicating information about storage of personal data, such as its location, duration, deletion (e.g. erasure mechanisms), or restoration (e.g. backup availability). Storage information can be part of the <i>processing</i> information (e.g. logs) or <i>technical and organisational measure</i> (e.g. indicating policies or plans in place) depending on context.</p>
@@ -539,7 +527,7 @@ exA:TVServiceOptimisation skos:closeMatch exB:TVServiceOptimisation .
 
     <section class="notoc"><h4>Location and Jurisdiction</h4>
     <figure>
-        <img src="../diagrams/overview_Location.png"/>
+        <img src="../media/overview_Location.png"/>
         <figcaption>Indicating applicable or relevant <code>Jurisdiction</code></figcaption>
       </figure>
     <blockquote>
@@ -563,8 +551,8 @@ exA:TVServiceOptimisation skos:closeMatch exB:TVServiceOptimisation .
     <p>In legal terminology, it is common to refer to all information about how personal data is being processed using the colloquial term <i>processing</i>. This results in confusion between the use of <i>processing</i> as a concept referring to all information (i.e. purposes, personal data, collection, storage, etc.), and <code>processing</code> as a concept referring to (only) the specific actions or operations (e.g. collect, use).</p>
     <p>To avoid this ambiguity and enable clarity of information, DPV defines a new concept called <code>PersonalDataHandling</code> for representing how the <a href="#core-concepts">core concepts</a> are related or apply to each other for a particular use-case. The association of a concept to <code>PersonalDataHandling</code> is made using the relationships or properties provided for each concept. For example, to indicate a <code>PersonalDataHandling</code> includes personal data, the relationship <code>hasPersonalData</code> is used along with the concept <code>PersonalData</code>. The following figure provides an overview of how the <code>PersonalDataHandling</code> concept provides a way to associate relevant concepts with one another through it.</p>
     <figure>
-        <img src="../diagrams/PDH1.png"/>
-        <img src="../diagrams/PDH2.png"/>
+        <img src="../media/PDH1.png"/>
+        <img src="../media/PDH2.png"/>
         <figcaption><code>PersonalDataHandling</code> as a central concept</figcaption>
       </figure>
 <aside class="example" title="Example of how PersonalDataHandling provide a comprehensive view of relevant concepts">
@@ -615,7 +603,7 @@ ex:SendingNewsletters rdf:type dpv:PersonalDataHandling ;
     <p>An instance where one may not wish to utilise <code>PersonalDataHandling</code> is where the adopter or use-case wants to indicate a different method for relating concepts together. For example, instead of expressing the relationship between personal data and purpose through a <code>PersonalDataHandling</code> instance, an alternate model could be one where the purpose directly specifies what personal data it uses as: <code>&lt;SomePurpose hasPersonalData SomePersonalData&gt;</code>. Similarly, another instance for such alternate use of concepts is to associate a legal basis directly with the purpose by using the <code>hasLegalBasis</code> relationship. To support such uses, DPV does not explicitly declare restrictions on the properties in terms of what concepts they can be used with (e.g it does not provide domain assertions). In case an adopter needs such explicit declarations, they can utilise or import the separate file declaring them.</p>
     <p>The following figure indicates an alternate model which does not use <code>PersonalDataHandling</code> as a central concept, but instead uses the core concepts and relationships to structure information related to a <i>Service</i>.</p>
     <figure>
-      <img src="../diagrams/alt_model_PDH.png">
+      <img src="../media/alt_model_PDH.png">
       <figcaption>Alternate model to <code>PersonalDataHandling</code> using core concepts and relationships</figcaption>
     </figure>
     <div class="note" title="Consequences of using a different model than PersonalDataHandling">
@@ -642,7 +630,7 @@ ex:SendingNewsletters rdf:type dpv:PersonalDataHandling ;
     <section id="purpose">
       <h3>Purpose</h3>
       <figure>
-        <img src="../diagrams/purpose-2.png" style="width:100%;height:auto;" /></p>
+        <img src="../media/purpose-2.png" style="width:100%;height:auto;" /></p>
         <figcaption>Overview of top-level concepts in <code>Purpose</code> taxonomy</figcaption>
       </figure>
     <blockquote>
@@ -705,7 +693,7 @@ ex:PreventTransactionFraud a dpv:Purpose ;
   <section id="processing-categories">
     <h3>Processing Operations</h3>
     <figure>
-      <img src="../diagrams/processing.png">
+      <img src="../media/processing.png">
       <figcaption>Overview of top-concepts in <code>Processing</code> taxonomy</figcaption>
     </figure>
     <blockquote>
@@ -724,7 +712,7 @@ ex:PreventTransactionFraud a dpv:Purpose ;
     <section id="data-storage">
       <h4>Data Storage</h4>
       <figure>
-        <img src="../diagrams/Processing_Storage.png">
+        <img src="../media/Processing_Storage.png">
         <figcaption>Indicating Storage and Data Source for Processing</figcaption>
       </figure>
       <p>The processing taxonomy uses the concept <code>Store</code> to indicate data is being stored. To specify additional information such as its location, erasure or deletion, the generic concepts and relations associated with processing (i.e. <i>location</i> and <i>duration</i>) can be used. However, to emphasise that information about storage - such as policies, conditions, rules, or documentation - are critical on considerations of data protection and privacy as well as legal compliance, DPV provides specific concepts related to these.</p>
@@ -813,7 +801,7 @@ ex:PreventTransactionFraud a dpv:Purpose ;
   <section id="personal-data">
     <h3>Personal Data</h3>
     <figure>
-      <img src="../diagrams/PersonalData.png">
+      <img src="../media/PersonalData.png">
       <figcaption>Personal Data concepts within DPV and their extension in <code>dpv-pd</code></figcaption>
     </figure>
     <blockquote>
@@ -912,7 +900,7 @@ ex:PreventTransactionFraud a dpv:Purpose ;
   <section id="technical-and-organisational-measures">
     <h3>Technical and Organisational Measures</h3>
     <figure>
-      <img src="../diagrams/TechnicalOrganisationalMeasure.png">
+      <img src="../media/TechnicalOrganisationalMeasure.png">
       <figcaption>Overview of Technical and Organisational Measure concepts in DPV</figcaption>
     </figure>
     <blockquote>
@@ -928,7 +916,7 @@ ex:PreventTransactionFraud a dpv:Purpose ;
     <section>
       <h4>Technical Measures</h4>
       <figure>
-        <a href="../diagrams/TechnicalMeasure.png"><img src="../diagrams/TechnicalMeasure.png" style="width: auto; max-height: 500px;"></a>
+        <a href="../media/TechnicalMeasure.png"><img src="../media/TechnicalMeasure.png" style="width: auto; max-height: 500px;"></a>
         <figcaption>Overview of Technical Measures in DPV (click to open in new window)</figcaption>
       </figure>
       <p>Technical Measures are implemented through technological means, such as machine-processing or automation or tools and services that are primarily technological in nature. To distinguish these with organisational measures, consider whether the measure is for human organisation and management (which makes it <i>organisational</i>) or an implementation detail (which makes it <i>technical</i>).</p>
@@ -948,7 +936,7 @@ ex:RBACCredential rdf:type dpv:TechnicalMeasure ;
     <section>
       <h4>Organisational Measures</h4>
       <figure>
-        <a href="../diagrams/OrganisationalMeasure.png"><img src="../diagrams/OrganisationalMeasure.png"></a>
+        <a href="../media/OrganisationalMeasure.png"><img src="../media/OrganisationalMeasure.png"></a>
         <figcaption>Overview of Technical Measures in DPV (click to open in new window)</figcaption>
       </figure>
       <p>Organisational measures are a corresponding counterpart to technical measures, and are intended to be implemented or realised through <i>human action</i>, whether directly by an individual, teams, or through an organisation's management (hence the term <i>organisational</i>). Implementing such measures may include use of technology or a tool, for example - a security training exercise that is carried out using some software, or to use information systems such as dashboards to keep track of information. However, the concepts themselves are structured as organisational based on who or what has to <i>decide</i> or <i>implement</i> the action. If it is to be performed through a technological means, then it is a technical measure. If it is to be performed through human or organisation management, then it is an organisational measure.</p>
@@ -1158,7 +1146,7 @@ ex:TransferPolicy a dpv:ControllerProcessorAgreement,
     <section>
       <h4>Impact Assessments</h4>
       <figure>
-        <img src="../diagrams/ImpactAssessment.png">
+        <img src="../media/ImpactAssessment.png">
         <figcaption>Types of Impact Assessments in DPV</figcaption>
       </figure>
       <p>DPV provides the concept <code>Assessment</code> to represent various assessments and related procedures and processes that an organisation or entity may undertake. An important subtype of such assessments is the <code>ImpactAssessment</code> which refers to calculating or determining the likelihood of impact of an existing or proposed process and its involved risks or detriments. This could be inward facing - such as impact to the organisation, or outward facing - regarding impact to stakeholders such as individuals. </p>
@@ -1170,7 +1158,7 @@ ex:TransferPolicy a dpv:ControllerProcessorAgreement,
   <section id="legal-basis">
     <h3>Legal Basis</h3>
     <figure>
-        <img src="../diagrams/legal_bases.png">
+        <img src="../media/legal_bases.png">
         <figcaption>Overview of Legal Basis concepts in DPV</figcaption>
       </figure>
     <blockquote>
@@ -1221,7 +1209,7 @@ ex:UserConsent rdf:type dpv:LegalBasis ;
   <section id="consent">
     <h3>Consent</h3>
     <figure>
-        <img src="../diagrams/Consent.png">
+        <img src="../media/Consent.png">
         <figcaption>Denoting information using <code>Consent</code></figcaption>
       </figure>
     <blockquote>
@@ -1338,7 +1326,7 @@ ex:UserConsent a dpv:ExpressedConsent .
   <section id="legal-entities">
     <h3>Entities</h3>
     <figure>
-        <img src="../diagrams/Entities.png">
+        <img src="../media/Entities.png">
         <figcaption>Overview of Entities in DPV</figcaption>
     </figure>
     <blockquote>
@@ -1353,7 +1341,7 @@ ex:UserConsent a dpv:ExpressedConsent .
     <section>
         <h4>Entity Descriptions</h4>
         <figure>
-        <img src="../diagrams/Entities_description.png">
+        <img src="../media/Entities_description.png">
         <figcaption>Describing Entities in DPV</figcaption>
     </figure>
     <aside class="example" title="Indicating Entity Information, including DPO and Representatives">
@@ -1379,7 +1367,7 @@ ex:AcmeEUOrg rdf:type dpv:LegalEntity, dpv:DataProtectionOfficer ;
     <section>
       <h4>Legal Roles</h4>
       <figure>
-        <img src="../diagrams/legalentities.png" />
+        <img src="../media/legalentities.png" />
         <figcaption></figcaption>
       </figure>
       <p>To specify the <i>roles</i> organisations can take in the context of data processing, DPV defines the following concepts based on terminology from ISO 29100 and GDPR. In these, an entity can take on one or more roles as necessary or specified within an use-case.</p>
@@ -1398,7 +1386,7 @@ ex:AcmeEUOrg rdf:type dpv:LegalEntity, dpv:DataProtectionOfficer ;
     <section>
         <h4>Organisation Categories</h4>
         <figure>
-         <img src="../diagrams/Entities_organisations.png">
+         <img src="../media/Entities_organisations.png">
          <figcaption>Describing Entities in DPV</figcaption>
         </figure>
         <p><code>Organisation</code> is a specified type of entity, representing common concepts such as <i>Company</i> or <i>Business</i>, as well as non-commercial entities such as <i>NGO</i> or <i>University</i>. To assist with expressing such common types of organisations, DPV provides concepts covering Industry, Governmental bodies, NGOs, For and Not-For Profits, and Academic or Scientific Organisations.</p>
@@ -1432,7 +1420,7 @@ ex:AcmeEUOrg rdf:type dpv:LegalEntity, dpv:DataProtectionOfficer ;
   <section>
     <h3 id="context">Contextual Information</h3>
     <figure>
-      <img src="../diagrams/Context.png">
+      <img src="../media/Context.png">
       <figcaption></figcaption>
     </figure>
     <blockquote>
@@ -1540,7 +1528,7 @@ ex:AcmeEUOrg rdf:type dpv:LegalEntity, dpv:DataProtectionOfficer ;
       </p>
     </blockquote>
     <figure>
-      <img src="../diagrams/risk.png">
+      <img src="../media/risk.png">
       <figcaption></figcaption>
     </figure>
     <p>For risk management, DPV's provides a lightweight risk ontology based on commonly utilised concepts regarding risk mitigation and risk management. While these concepts permit rudimentary association of risks and mitigations within a use-case, it is important to note that DPV (currently)
@@ -1556,7 +1544,7 @@ ex:AcmeEUOrg rdf:type dpv:LegalEntity, dpv:DataProtectionOfficer ;
     <section>
       <h4>Consequences and Impacts</h4>
       <figure>
-        <img src="../diagrams/Consequences.png">
+        <img src="../media/Consequences.png">
         <figcaption></figcaption>
       </figure>
       <p>To represent the consequences and impacts of a risk event taking place, DPV provides the following concepts: <code>Consequence</code> arising from the context (e.g. data breach or unauthorised access to data) and the <code>Impact</code> caused  (e.g. identity theft).</p>
@@ -1597,7 +1585,7 @@ ex:AcmeEUOrg rdf:type dpv:LegalEntity, dpv:DataProtectionOfficer ;
   <section id="exercising-rights">
     <h4>Exercising Rights</h4>
     <figure>
-      <img src="../diagrams/rights.png">
+      <img src="../media/rights.png">
       <figcaption></figcaption>
     </figure>
     <p>The concept <code>Right</code> represents a normative concept for what is permissible or necessary in accordance with a system such as laws. To associate rights with concepts that are relevant or within which those rights occur, the relation <code>hasRight</code> is used. Rights can be <i>passive</i>, which means they are always applicable without requiring anything to be done, or <i>active</i> where they require some action to be taken to initiate or exercise them. To represent these concepts, DPV uses <code>PassiveRight</code> and <code>ActiveRight</code> respectively. Rights can be applicable to different contexts or entities. To differentiate rights applicable or afforded to data subjects, the concept <code>DataSubjectRight</code> is used.</p>
@@ -1775,6 +1763,6 @@ ex:Policy a dpv:Obligation, odrl:Policy ;
     <p>Thanks to Georg P Krog (Signatu), Piero Bonatti (Universita' di Napoli Federico II), and Beatriz Esteves (Universidad Politécnica de Madrid) for their comments on drafts of this document.</p>
   </section>
   <section class="appendix" id="issue-summary"></section>
+  <script type="text/javascript" src="../media/common.js" defer></script>
 </body>
-
 </html>

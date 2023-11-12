@@ -278,37 +278,7 @@
   }
 }  };
 </script>
-<style type="text/css">
-  /* Table styles, March 2016 */
-  table {
-    width:  auto;
-    margin-bottom: 10px;
-    border-collapse:collapse
-
-  }
-  th, td {
-    border:thin solid gray;
-    padding: 0.3em;
-  }
-  figure {
-    margin: 2px;
-    padding: 2px;
-    border: 1px solid black;
-  }
-  .term-contents {
-    box-shadow: 2px 2px 2px darkgray; 
-  }
-  .term-contents > p {
-    border-top: 1px solid lightgray;
-    border-left: 1px solid lightgray;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 2px;
-  }
-  .dfn-label {
-    font-family: monospace;
-  }
-</style>
+<link rel="stylesheet" type="text/css" href="../../media/common.css">
 </head>
 <body>
     <section id="abstract">
@@ -369,14 +339,15 @@
     <blockquote>This document assumes the reader is familiar with DPV through the [[[DPV-Primer]]], and thus focuses on providing a topically structured documentation of concepts defined by DPV.</blockquote>
 
     <figure>
-    <img src="../../diagrams/risk.png">
+    <img src="../../media/risk.png">
     <figcaption></figcaption>
   </figure>
   <p>For risk management, DPV's provides a lightweight risk ontology based on commonly utilised concepts regarding risk mitigation and risk management. While these concepts permit rudimentary association of risks and mitigations within a use-case, it is important to note that DPV (currently)
     does not provide comprehensive concepts for risk management.</p>
     <p>For more developed representations of risk assessment, mitigation, and management vocabularies, we suggest the adoption of relevant standards, such as the ISO/IEC 31000 series, and welcome contribution for their representation within DPV through [[[RISK]]].</p>
 
-    <ul class="concept-list">
+    <div class="list-hierarchy">
+<ul class="concept-list">
   <li>
     <strong>dpv:Consequence</strong>: The consequence(s) possible or arising from specified context 
       <small><a href="#Consequence">go to full definition</a></small>
@@ -467,6 +438,8 @@
 </ul>
   </li>
 </ul>
+</div>
+
 </section>
 
   <section>
@@ -929,6 +902,6 @@
 
   </section>
 </section>
-
+<script type="text/javascript" src="../../media/common.js" defer></script>
 </body>
 </html>

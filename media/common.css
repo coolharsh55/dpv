@@ -1,0 +1,59 @@
+table {
+  width:  auto;
+  margin-bottom: 10px;
+  border-collapse:collapse
+}
+th, td {
+  border:thin solid gray;
+  padding: 0.3em;
+}
+figure {
+  margin: 2px;
+  padding: 2px;
+  border: 1px solid black;
+}
+.term-contents {
+  box-shadow: 2px 2px 2px darkgray; 
+}
+.term-contents > p {
+  border-top: 1px solid lightgray;
+  border-left: 1px solid lightgray;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 2px;
+}
+.dfn-label {
+  font-family: monospace;
+}
+.concept-list li {
+  list-style-type: upper-alpha;
+}
+.concept-list li ul li {
+  list-style-type: decimal;
+}
+.concept-list li ul li ul li {
+  list-style-type: lower-latin;
+}
+.concept-list li ul li ul li ul li {
+  list-style-type: lower-roman;
+}
+.concept-list ul {
+  border-left: 3px solid lightgray;
+}
+.toggle {
+  cursor: pointer;
+}
+.toggle::before {
+  display: inline-block;
+  content: "+";
+}
+.toggle.show::before { content: "-"; }
+.concept-list ul li ul { display: none; }
+.toggle.show + ul { display: block; }
+.btn-expand, .btn-collapse {
+  margin-right: 2px;
+  background-color: white;
+  border: 1px solid black;
+  font-family: monospace;
+  font-size: 0.5rem;
+}

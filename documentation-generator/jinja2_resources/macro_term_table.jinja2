@@ -58,18 +58,21 @@
   {% endfor %}
 {% endmacro %}
 
-{% macro list_items(vocab) %}
-{% endmacro %}
-
-{% macro list_hierarchy(vocab, head=None) %}
+{% macro list_items(vocab, head=None) %}
 {% set concepts = vocab|organise_hierarchy(head) %}
 {% if concepts %}<ul class="concept-list">
 {% for term, data in concepts.items() %}
   <li>
     <strong>{{term}}</strong>: {{data['skos:definition']}} 
       <small><a href="#{{data['term']}}">go to full definition</a></small>
-      {{ list_hierarchy(vocab, head=term) }}
+      {{ list_items(vocab, head=term) }}
   </li>
 {% endfor %}
 </ul>{% endif %}
+{% endmacro %}
+
+{% macro list_hierarchy(vocab, head=None) %}
+<div class="list-hierarchy">
+{{ list_items(vocab, head) }}
+</div>
 {% endmacro %}

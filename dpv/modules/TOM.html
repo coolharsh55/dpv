@@ -278,52 +278,7 @@
   }
 }  };
 </script>
-<style type="text/css">
-  /* Table styles, March 2016 */
-  table {
-    width:  auto;
-    margin-bottom: 10px;
-    border-collapse:collapse
-
-  }
-  th, td {
-    border:thin solid gray;
-    padding: 0.3em;
-  }
-  figure {
-    margin: 2px;
-    padding: 2px;
-    border: 1px solid black;
-  }
-  .term-contents {
-    box-shadow: 2px 2px 2px darkgray; 
-  }
-  .term-contents > p {
-    border-top: 1px solid lightgray;
-    border-left: 1px solid lightgray;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 2px;
-  }
-  .dfn-label {
-    font-family: monospace;
-  }
-  .concept-list li {
-    list-style-type: upper-alpha;
-  }
-  .concept-list li ul li {
-    list-style-type: decimal;
-  }
-  .concept-list li ul li ul li {
-    list-style-type: lower-latin;
-  }
-  .concept-list li ul li ul li ul li {
-    list-style-type: lower-roman;
-  }
-  .concept-list ul {
-    border-left: 3px solid lightgray;
-  }
-</style>
+<link rel="stylesheet" type="text/css" href="../../media/common.css">
 </head>
 <body>
     <section id="abstract">
@@ -384,14 +339,15 @@
     <blockquote>This document assumes the reader is familiar with DPV through the [[[DPV-Primer]]], and thus focuses on providing a topically structured documentation of concepts defined by DPV.</blockquote>
 
   <figure>
-    <a href="../../diagrams/techorgmeasures-2.png" target="_blank">
-      <img title="Overview of Technical & Organisational Measures taxonomy in DPV" src="../../diagrams/techorgmeasures-2.png">
+    <a href="../../media/techorgmeasures-2.png" target="_blank">
+      <img title="Overview of Technical & Organisational Measures taxonomy in DPV" src="../../media/techorgmeasures-2.png">
     </a>
     <figcaption>Overview of Technical & Organisational Measures taxonomy in DPV (click to open in new window)</figcaption>
   </figure>
   <p>DPV's taxonomy of tech/org measures are structured into two groups representing and [=TechnicalMeasure=] and [=OrganisationalMeasure=] along with specific properties for each. Each term has a dedicated taxonomy that expands upon the core idea to provide a rich list of technial and organisational measures that are intended to protect personal data (and its associated entities and consequences).</p>
   <p>This taxonomy also includes relations that are associated with measures, such as [=hasNotice=] or [=hasPolicy=], which are generic and can be applied to other contexts (e.g. notice for consent, policy for data storage).</p>
-  <ul class="concept-list">
+  <div class="list-hierarchy">
+<ul class="concept-list">
   <li>
     <strong>dpv:TechnicalOrganisationalMeasure</strong>:  
       <small><a href="#TechnicalOrganisationalMeasure">go to full definition</a></small>
@@ -419,17 +375,20 @@
       
   </li>
 </ul>
+</div>
+
   </section>
 
   <section id="vocab-technical-measures">
     <h2>Technical Measures</h2>
     <figure>
-    <a href="../../diagrams/techmeasures-2.png" target="_blank">
-      <img title="Overview of Technical Measures taxonomy in DPV" src="../../diagrams/techmeasures-2.png" style="width: auto; max-height: 500px;">
+    <a href="../../media/techmeasures-2.png" target="_blank">
+      <img title="Overview of Technical Measures taxonomy in DPV" src="../../media/techmeasures-2.png" style="width: auto; max-height: 500px;">
     </a>
     <figcaption>Overview of Technical Measures taxonomy in DPV (click to open in new window)</figcaption>
   </figure>
-  <ul class="concept-list">
+  <div class="list-hierarchy">
+<ul class="concept-list">
   <li>
     <strong>dpv:TechnicalMeasure</strong>: Technical measures required/followed when processing data of the declared category 
       <small><a href="#TechnicalMeasure">go to full definition</a></small>
@@ -822,6 +781,8 @@
 </ul>
   </li>
 </ul>
+</div>
+
 
     <section>
       <h3>Access Control</h3>
@@ -855,12 +816,13 @@
   <section id="vocab-organisational-measures">
     <h2>Organisational Measures</h2>
     <figure>
-    <a href="../../diagrams/orgmeasures-2.png" target="_blank">
-      <img title="Overview of Organisational Measures taxonomy in DPV" src="../../diagrams/orgmeasures-2.png">
+    <a href="../../media/orgmeasures-2.png" target="_blank">
+      <img title="Overview of Organisational Measures taxonomy in DPV" src="../../media/orgmeasures-2.png">
     </a>
     <figcaption>Overview of Organisational Measures taxonomy in DPV (click to open in new window)</figcaption>
   </figure>
-  <ul class="concept-list">
+  <div class="list-hierarchy">
+<ul class="concept-list">
   <li>
     <strong>dpv:OrganisationalMeasure</strong>: Organisational measures required/followed when processing data of the declared category 
       <small><a href="#OrganisationalMeasure">go to full definition</a></small>
@@ -1249,6 +1211,8 @@
 </ul>
   </li>
 </ul>
+</div>
+
   </section>
 
   <section>
@@ -3234,6 +3198,6 @@
 
   </section>
 </section>
-
+<script type="text/javascript" src="../../media/common.js" defer></script>
 </body>
 </html>

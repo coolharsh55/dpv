@@ -118,52 +118,7 @@
   };
 </script>
 {% endblock RESPEC %}
-<style type="text/css">
-  /* Table styles, March 2016 */
-  table {
-    width:  auto;
-    margin-bottom: 10px;
-    border-collapse:collapse
-
-  }
-  th, td {
-    border:thin solid gray;
-    padding: 0.3em;
-  }
-  figure {
-    margin: 2px;
-    padding: 2px;
-    border: 1px solid black;
-  }
-  .term-contents {
-    box-shadow: 2px 2px 2px darkgray; 
-  }
-  .term-contents > p {
-    border-top: 1px solid lightgray;
-    border-left: 1px solid lightgray;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 2px;
-  }
-  .dfn-label {
-    font-family: monospace;
-  }
-  .concept-list li {
-    list-style-type: upper-alpha;
-  }
-  .concept-list li ul li {
-    list-style-type: decimal;
-  }
-  .concept-list li ul li ul li {
-    list-style-type: lower-latin;
-  }
-  .concept-list li ul li ul li ul li {
-    list-style-type: lower-roman;
-  }
-  .concept-list ul {
-    border-left: 3px solid lightgray;
-  }
-</style>
+  <link rel="stylesheet" type="text/css" href="../media/common.css">
 </head>
 <body>
 {% block ABSTRACT %}
@@ -203,7 +158,7 @@
     <section id="vocab-base">
       <h3>Core Vocabulary</h3>
       <figure>
-        <img title="DPV Core Vocabulary" alt="DPV core vocabulary" src="../diagrams/base.png">
+        <img title="DPV Core Vocabulary" alt="DPV core vocabulary" src="../media/base.png">
         <figcaption>Overview of concepts in DPV</figcaption>
       </figure>
 
@@ -298,7 +253,7 @@
 <section id="vocab-entities">
   <h2>Entities</h2>
   <figure>
-    <img src="../diagrams/Entities.png" />
+    <img src="../media/Entities.png" />
     <figcaption></figcaption>
   </figure>
   <p>DPV relies on existing well-founded interpretations for its concepts, which in this case relate to <i>Entity</i> as a generic universal concept and <i>LegalEntity</i> specifically referring to roles defined legally or within legal norms. Expanding on these, DPV provides a taxonomy of entities based on their application within laws and use-cases in the form of <a href="#vocab-entities-legalrole"><i>Legal roles</i></a>, such as [=DataController=], [=DataSubject=], and [=Authority=]. Later, these concepts are expanded into taxonomies for different kinds of entities categorised under a common concept. For example, <a href="#vocab-entities-datasubject">categories of <i>Data Subjects</i></a> such as [=Adult=], [=User=], or [=Employee=]; or <a href="#vocab-entities-authorities">kinds of <i>Authorities</i></a>, or <a href="#vocab-entities-organisation">categories of <i>Organisations</i></a>.</p>
@@ -334,8 +289,8 @@
 <section id="vocab-purpose">
   <h2>Purposes</h2>
   <figure>
-    <a href="../diagrams/purpose-2.png" target="_blank">
-      <img title="Overview of Purpose taxonomy in DPV" src="../diagrams/purpose-2.png">
+    <a href="../media/purpose-2.png" target="_blank">
+      <img title="Overview of Purpose taxonomy in DPV" src="../media/purpose-2.png">
     </a>
     <figcaption>Overview of Purpose taxonomy in DPV (click to open in new window)</figcaption>
   </figure>
@@ -350,7 +305,7 @@
 <section id="vocab-processing">
   <h2>Processing</h2>
   <figure>
-    <img src="../diagrams/processing.png" />
+    <img src="../media/processing.png" />
     <figcaption></figcaption>
   </figure>
   <p>DPV’s taxonomy of processing concepts reflects the variety of terms used to denote processing activities or operations involving personal data, such as those from [GDPR] Article.4-2 definition of processing. Real-world use of terms associated with processing rarely uses this same wording or terms, except in cases of specific domains and in legal documentation. On the other hand, common terms associated with processing are generally restricted to: collect, use, store, share, and delete.</p>
@@ -362,7 +317,7 @@
 <section id="vocab-personaldata">
   <h2>Personal Data</h2>
   <figure>
-    <img src="../diagrams/PersonalData.png" />
+    <img src="../media/PersonalData.png" />
     <figcaption></figcaption>
   </figure>
   <p>DPV provides the concept [=PersonalData=] and the relation [=hasPersonalData=] to indicate what categories or instances of personal data are being processed. The DPV specification only provides a structure for describing personal data, e.g. as being sensitive. For specific categories of personal data for use-cases, [[[DPV-PD]]] provides additional concepts that extend the DPV's personal data taxonomy. This separation is to enable adopters to decide whether the extension's concepts are useful to them, or to use other external vocabularies, or define their own.</p>
@@ -376,8 +331,8 @@
 <section id="vocab-technical_organisational_measures">
   <h2>Tech/Org Measures</h2>
   <figure>
-    <a href="../diagrams/techorgmeasures-2.png" target="_blank">
-      <img title="Overview of Technical & Organisational Measures taxonomy in DPV" src="../diagrams/techorgmeasures-2.png">
+    <a href="../media/techorgmeasures-2.png" target="_blank">
+      <img title="Overview of Technical & Organisational Measures taxonomy in DPV" src="../media/techorgmeasures-2.png">
     </a>
     <figcaption>Overview of Technical & Organisational Measures taxonomy in DPV (click to open in new window)</figcaption>
   </figure>
@@ -388,8 +343,8 @@
   <section id="vocab-technical-measures">
     <h3>Technical Measures</h3>
     <figure>
-    <a href="../diagrams/techmeasures-2.png" target="_blank">
-      <img title="Overview of Technical Measures taxonomy in DPV" src="../diagrams/techmeasures-2.png" style="width: auto; max-height: 500px;">
+    <a href="../media/techmeasures-2.png" target="_blank">
+      <img title="Overview of Technical Measures taxonomy in DPV" src="../media/techmeasures-2.png" style="width: auto; max-height: 500px;">
     </a>
     <figcaption>Overview of Technical Measures taxonomy in DPV (click to open in new window)</figcaption>
   </figure>
@@ -398,8 +353,8 @@
   <section id="vocab-organisational-measures">
     <h3>Organisational Measures</h3>
     <figure>
-    <a href="../diagrams/orgmeasures-2.png" target="_blank">
-      <img title="Overview of Organisational Measures taxonomy in DPV" src="../diagrams/orgmeasures-2.png">
+    <a href="../media/orgmeasures-2.png" target="_blank">
+      <img title="Overview of Organisational Measures taxonomy in DPV" src="../media/orgmeasures-2.png">
     </a>
     <figcaption>Overview of Organisational Measures taxonomy in DPV (click to open in new window)</figcaption>
   </figure>
@@ -410,7 +365,7 @@
 <section id="vocab-legal_basis">
   <h2>Legal Bases</h2>
   <figure>
-    <img src="../diagrams/legal_bases.png">
+    <img src="../media/legal_bases.png">
     <figcaption>Legal Bases in DPV</figcaption>
   </figure>
   <p>DPV provides the following categories of legal bases based on [[GDPR]] Article 6: consent of the data subject, contract, compliance with legal obligation, protecting vital interests of individuals, legitimate interests, public interest, and official authorities. Though derived from GDPR, these concepts can be applied for other jurisdictions and general use-cases. The legal bases are represented by the concept [=LegalBasis=] and associated using the relation [=hasLegalBasis=].</p>
@@ -424,7 +379,7 @@
   <section id="vocab-consent">
     <h3>Consent</h3>
     <figure>
-      <a href="../diagrams/Consent.png"><img src="../diagrams/Consent.png"></a>
+      <a href="../media/Consent.png"><img src="../media/Consent.png"></a>
       <figcaption></figcaption>
     </figure>
     <p>Consent in DPV is a specific legal basis representing <i>information associated with consent</i> rather than only <i>given consent</i>. Common information associated with consent includes tasks such as keeping track of whether "consent has been given/obtained", "issuing a consent request", and "withdrawing consent", as well as expressing requirements through terms such as "informed" and "explicit". To assist with representing these concepts as well as keeping records about how they are being applied, DPV provides the following consent concepts.</p>
@@ -457,7 +412,7 @@
 <section id="vocab-processing-context">
   <h2>Context of Processing</h2>
   <figure>
-    <img src="../diagrams/Processing_Context.png">
+    <img src="../media/Processing_Context.png">
     <figcaption></figcaption>
   </figure>
   <section>
@@ -484,7 +439,7 @@
 <section id="vocab-context">
   <h2>General Context</h2>
   <figure>
-    <img src="../diagrams/Context.png">
+    <img src="../media/Context.png">
     <figcaption></figcaption>
   </figure>
   <section>
@@ -535,7 +490,7 @@
 <section id="vocab-jurisdiction">
   <h2>Location &amp; Jurisdiction</h2>
   <figure>
-    <img src="../diagrams/location.png">
+    <img src="../media/location.png">
     <figcaption></figcaption>
   </figure>
   <p>To represent location, the concept [=Location=] along with relations [=hasLocation=] is provided. For geo-political locations, the concepts such as [=Country=] and [=SupraNationalUnion=] are subtyped, with [=hasCountry=] and [=ThirdCountry=] with [=hasThirdCountry=] provided for convenience in common uses (e.g. data storage, transfers).</p>
@@ -549,7 +504,7 @@
 <section id="vocab-risk">
   <h2>Risk and Impacts</h2>
   <figure>
-    <img src="../diagrams/risk.png">
+    <img src="../media/risk.png">
     <figcaption></figcaption>
   </figure>
   <p>For risk management, DPV's provides a lightweight risk ontology based on commonly utilised concepts regarding risk mitigation and risk management. While these concepts permit rudimentary association of risks and mitigations within a use-case, it is important to note that DPV (currently)
@@ -562,7 +517,7 @@
 <section id="vocab-rights">
   <h2>Rights</h2>
   <figure>
-    <img src="../diagrams/rights.png">
+    <img src="../media/rights.png">
     <figcaption></figcaption>
   </figure>
   <p>The concept [=Right=] represents a normative concept for what is permissible or necessary in accordance with a system such as laws. To associate rights with concepts that are relevant or within which those rights occur, the relation [=hasRight=] is used. Rights can be <i>passive</i>, which means they are always applicable without requiring anything to be done, or <i>active</i> where they require some action to be taken to initiate or exercise them. To represent these concepts, DPV uses [=PassiveRight=] and [=ActiveRight=] respectively. Rights can be applicable to different contexts or entities. To differentiate rights applicable or afforded to data subjects, the concept [=DataSubjectRight=] is used.</p>
@@ -710,5 +665,6 @@
   </ul>
 </section>
 {% endblock DEPRECATED %}
+<script type="text/javascript" src="../media/common.js" defer></script>
 </body>
 </html>

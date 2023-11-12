@@ -141,7 +141,7 @@
         <li>SKOS broader (transitive): these are instances of a 'top concept' where hierarchical relationships with other instances is defined using <code>skos:broader</code> instead of subclasses.</li>
       </ol>
       <figure>
-        <img src="../diagrams/skos-semantics-01.png">
+        <img src="../media/skos-semantics-01.png">
         <figcaption>SKOS semantics providing ability to express relationships between concepts so that they can be used as value of properties</figcaption>
       </figure>
       <p>As an example, consider the <code>Purpose</code> taxonomy, part of which is illustrated in the figure above. Here, <code>ServiceProvision</code> and <code>RequestedServiceProvision</code> are part of the purpose hierarchy, where <i>RequestedServiceProvision</i> is a more specialised type of <i>ServiceProvision</i>. While DPV suggests best practice as extending (via subclass or instantiation) its concepts to make them specific to the applied use-case, this may not always be desired or required. Such as when the use-case wants to indicate its purpose is <code>RequestedServiceProvision</code> without additional details (e.g. for planning what they would like to do).</p>
@@ -171,7 +171,7 @@ ex:PurposeXYZ rdfs:subClassOf dpvs:RequestedServiceProvision
       </pre>
       </aside>
       <figure>
-        <img src="../diagrams/skos-semantics-02.png">
+        <img src="../media/skos-semantics-02.png">
         <figcaption>SKOS semantics providing ability to express relationships between concepts so that they can be used as value of properties</figcaption>
       </figure>
       <p>Not all taxonomies make sense when expressed as an instance of a top concept. For example, consider the <i>Entities</i> taxonomy, where various entities are described as a hierarchy, as depicted in the figure above. In its case, it would not be accurate or correct to express relationships between instances such as <code>skos:broader dpvs:DataController</code>. For such cases, the expression of hierarchies continues to utilise the <code>rdfs:subClassOf</code> relationship to enforce the creation of specific instances representing that entity e.g. a specific data controller.</p>
@@ -185,7 +185,7 @@ ex:PurposeXYZ rdfs:subClassOf dpvs:RequestedServiceProvision
     <section id="vocab-base">
       <h3>Base Vocabulary</h3>
       <figure>
-        <img title="DPV Base Vocabulary" alt="DPV base vocabulary" src="../diagrams/base.png">
+        <img title="DPV Base Vocabulary" alt="DPV base vocabulary" src="../media/base.png">
         <figcaption>Base Vocabulary</figcaption>
       </figure>
 

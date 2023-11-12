@@ -278,52 +278,7 @@
   }
 }  };
 </script>
-<style type="text/css">
-  /* Table styles, March 2016 */
-  table {
-    width:  auto;
-    margin-bottom: 10px;
-    border-collapse:collapse
-
-  }
-  th, td {
-    border:thin solid gray;
-    padding: 0.3em;
-  }
-  figure {
-    margin: 2px;
-    padding: 2px;
-    border: 1px solid black;
-  }
-  .term-contents {
-    box-shadow: 2px 2px 2px darkgray; 
-  }
-  .term-contents > p {
-    border-top: 1px solid lightgray;
-    border-left: 1px solid lightgray;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 2px;
-  }
-  .dfn-label {
-    font-family: monospace;
-  }
-  .concept-list li {
-    list-style-type: upper-alpha;
-  }
-  .concept-list li ul li {
-    list-style-type: decimal;
-  }
-  .concept-list li ul li ul li {
-    list-style-type: lower-latin;
-  }
-  .concept-list li ul li ul li ul li {
-    list-style-type: lower-roman;
-  }
-  .concept-list ul {
-    border-left: 3px solid lightgray;
-  }
-</style>
+<link rel="stylesheet" type="text/css" href="../../media/common.css">
 </head>
 <body>
     <section id="abstract">
@@ -384,13 +339,14 @@
     <blockquote>This document assumes the reader is familiar with DPV through the [[[DPV-Primer]]], and thus focuses on providing a topically structured documentation of concepts defined by DPV.</blockquote>
 
     <figure>
-    <img src="../../diagrams/processing.png" />
+    <img src="../../media/processing.png" />
     <figcaption></figcaption>
   </figure>
   <p>DPV’s taxonomy of processing concepts reflects the variety of terms used to denote processing activities or operations involving personal data, such as those from [GDPR] Article.4-2 definition of processing. Real-world use of terms associated with processing rarely uses this same wording or terms, except in cases of specific domains and in legal documentation. On the other hand, common terms associated with processing are generally restricted to: collect, use, store, share, and delete.</p>
   <p>DPV provides a taxonomy that aligns both the legal terminologies such as those defined by GDPR with those commonly used. For this, concepts are organised based on whether they subsume other concepts, e.g. Use is a broad concept indicating data is used, which DPV extends to define specific processing concepts for Analyse, Consult, Profiling, and Retrieving. Through this mechanism, whenever an use-case indicates it consults some data, it can be inferred that it also uses that data.</p>
   <p>For concepts related to expressing contextual information associated with processing, such as storage conditions, automation, scale, see <a href="#vocab-processing-context">Processing Context</a> and <a href="#vocab-processing-scale">Processing Scale</a> sections.</p>
-  <ul class="concept-list">
+  <div class="list-hierarchy">
+<ul class="concept-list">
   <li>
     <strong>dpv:Processing</strong>: The processing performed on personal data 
       <small><a href="#Processing">go to full definition</a></small>
@@ -628,6 +584,8 @@
 </ul>
   </li>
 </ul>
+</div>
+
 </section>
 
 <section id="desc-processing-categories">
@@ -657,10 +615,11 @@
 <section id="vocab-processing-context">
   <h2>Context of Processing</h2>
   <figure>
-    <img src="../../diagrams/Processing_Context.png">
+    <img src="../../media/Processing_Context.png">
     <figcaption></figcaption>
   </figure>
-  <ul class="concept-list">
+  <div class="list-hierarchy">
+<ul class="concept-list">
   <li>
     <strong>dpv:Context</strong>: Contextually relevant information 
       <small><a href="#Context">go to full definition</a></small>
@@ -865,6 +824,8 @@
       
   </li>
 </ul>
+</div>
+
   <section>
     <h3>Storage Conditions</h3>
     <p>This taxonomy provides concepts for representing information about storage conditions, e.g. how long the data will be stored for, its erasure, or its restoration. It also enables representing the source(s) of data, the use of automation, and the extent of human involvement within the automation.</p>
@@ -892,7 +853,8 @@
     <h2>Scale of Processing</h2>
     <p>DPV provides (qualitative) scales for expressing <i>Data Volume</i>, <i>Data subjects</i>, and <i>Geographical Coverage</i> of processing. Along with these, DPV also provides a <i>Processing Scale</i> to express combinations of these. NOTE: The actual meaning or quantified amounts for each concept are not defined due to their interpretation based on contextual factors such as legislations, guidelines, domains, and variations across industries.</p>
 
-    <ul class="concept-list">
+    <div class="list-hierarchy">
+<ul class="concept-list">
   <li>
     <strong>dpv:ProcessingContext</strong>: Context or conditions within which processing takes place 
       <small><a href="#ProcessingContext">go to full definition</a></small>
@@ -1040,6 +1002,8 @@
 </ul>
   </li>
 </ul>
+</div>
+
 
     <section id="desc-data-volume">
       <h3>Data Volume</h3>
@@ -2628,6 +2592,6 @@
 
   </section>
 </section>
-
+<script type="text/javascript" src="../../media/common.js" defer></script>
 </body>
 </html>

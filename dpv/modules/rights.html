@@ -278,37 +278,7 @@
   }
 }  };
 </script>
-<style type="text/css">
-  /* Table styles, March 2016 */
-  table {
-    width:  auto;
-    margin-bottom: 10px;
-    border-collapse:collapse
-
-  }
-  th, td {
-    border:thin solid gray;
-    padding: 0.3em;
-  }
-  figure {
-    margin: 2px;
-    padding: 2px;
-    border: 1px solid black;
-  }
-  .term-contents {
-    box-shadow: 2px 2px 2px darkgray; 
-  }
-  .term-contents > p {
-    border-top: 1px solid lightgray;
-    border-left: 1px solid lightgray;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 2px;
-  }
-  .dfn-label {
-    font-family: monospace;
-  }
-</style>
+<link rel="stylesheet" type="text/css" href="../../media/common.css">
 </head>
 <body>
     <section id="abstract">
@@ -369,11 +339,12 @@
     <blockquote>This document assumes the reader is familiar with DPV through the [[[DPV-Primer]]], and thus focuses on providing a topically structured documentation of concepts defined by DPV.</blockquote>
 
   <figure>
-    <img src="../../diagrams/rights.png">
+    <img src="../../media/rights.png">
     <figcaption></figcaption>
   </figure>
   <p>The concept [=Right=] represents a normative concept for what is permissible or necessary in accordance with a system such as laws. To associate rights with concepts that are relevant or within which those rights occur, the relation [=hasRight=] is used. Rights can be <i>passive</i>, which means they are always applicable without requiring anything to be done, or <i>active</i> where they require some action to be taken to initiate or exercise them. To represent these concepts, DPV uses [=PassiveRight=] and [=ActiveRight=] respectively. Rights can be applicable to different contexts or entities. To differentiate rights applicable or afforded to data subjects, the concept [=DataSubjectRight=] is used.</p>
-  <ul class="concept-list">
+  <div class="list-hierarchy">
+<ul class="concept-list">
   <li>
     <strong>dpv:OrganisationalMeasure</strong>: Organisational measures required/followed when processing data of the declared category 
       <small><a href="#OrganisationalMeasure">go to full definition</a></small>
@@ -439,6 +410,8 @@
 </ul>
   </li>
 </ul>
+</div>
+
   </section>
 
   <section>
@@ -858,6 +831,6 @@
 
   </section>
 </section>
-
+<script type="text/javascript" src="../../media/common.js" defer></script>
 </body>
 </html>

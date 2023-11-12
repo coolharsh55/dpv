@@ -36,37 +36,7 @@
   };
 </script>
 {% endblock RESPEC %}
-<style type="text/css">
-  /* Table styles, March 2016 */
-  table {
-    width:  auto;
-    margin-bottom: 10px;
-    border-collapse:collapse
-
-  }
-  th, td {
-    border:thin solid gray;
-    padding: 0.3em;
-  }
-  figure {
-    margin: 2px;
-    padding: 2px;
-    border: 1px solid black;
-  }
-  .term-contents {
-    box-shadow: 2px 2px 2px darkgray; 
-  }
-  .term-contents > p {
-    border-top: 1px solid lightgray;
-    border-left: 1px solid lightgray;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 2px;
-  }
-  .dfn-label {
-    font-family: monospace;
-  }
-</style>
+<link rel="stylesheet" type="text/css" href="../../media/common.css">
 </head>
 <body>
 {% block ABSTRACT %}
@@ -82,7 +52,7 @@
     <blockquote>This document assumes the reader is familiar with DPV through the [[[DPV-Primer]]], and thus focuses on providing a topically structured documentation of concepts defined by DPV.</blockquote>
 
     <figure>
-    <img src="../../diagrams/Context.png">
+    <img src="../../media/Context.png">
     <figcaption></figcaption>
   </figure>
   </section>
@@ -134,7 +104,7 @@
 <section id="vocab-jurisdiction">
   <h2>Location &amp; Jurisdiction</h2>
   <figure>
-    <img src="../../diagrams/location.png">
+    <img src="../../media/location.png">
     <figcaption></figcaption>
   </figure>
   <p>To represent location, the concept [=Location=] along with relations [=hasLocation=] is provided. For geo-political locations, the concepts such as [=Country=] and [=SupraNationalUnion=] are subtyped, with [=hasCountry=] and [=ThirdCountry=] with [=hasThirdCountry=] provided for convenience in common uses (e.g. data storage, transfers).</p>
@@ -165,6 +135,6 @@
     {{ index_concepts(data['index'], filter="external") }}
   </section>
 </section>
-
+<script type="text/javascript" src="../../media/common.js" defer></script>
 </body>
 </html>
