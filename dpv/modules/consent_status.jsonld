@@ -1,6 +1,6 @@
 [
   {
-    "@id": "https://w3id.org/dpv#ConsentRevoked",
+    "@id": "https://w3id.org/dpv#ConsentUnknown",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
@@ -26,7 +26,7 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "The state where the consent is revoked by an entity other than the data subject and which prevents it from being further used as a valid state"
+        "@value": "State where information about consent is not available or is unknown"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -37,18 +37,24 @@
     "http://www.w3.org/2004/02/skos/core#note": [
       {
         "@language": "en",
-        "@value": "An example of this state is when a Data Controller stops utilising previously obtaining consent, such as when that service no longer exists"
+        "@value": "Consent states can be unknown, for example, when information is not available, or cannot be trusted, or is known to be inaccurate"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Consent Revoked"
+        "@value": "Consent Unknown"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#ConsentRequested",
+    "@id": "https://w3id.org/dpv#consent-status-classes",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#ConsentWithdrawn",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
@@ -74,7 +80,7 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "State where a request for consent has been made and is awaiting a decision"
+        "@value": "The state where the consent is withdrawn or revoked specifically by the data subject and which prevents it from being further used as a valid state"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -85,61 +91,13 @@
     "http://www.w3.org/2004/02/skos/core#note": [
       {
         "@language": "en",
-        "@value": "An example of this state is when a notice has been presented to the individual but they have not made a decision"
+        "@value": "This state can be considered a form of 'revocation' of consent, where the revocation can only be performed by the data subject. Therefore we suggest using ConsentRevoked when it is a non-data-subject entity, and ConsentWithdrawn when it is the data subject"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Consent Requested"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#ConsentGiven",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#ConsentStatus"
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@language": "en",
-        "@value": "(GConsent,https://w3id.org/GConsent)"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#ConsentStatusValidForProcessing"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The state where consent has been given"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#consent-status-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "An example of this state is when the individual clicks on a button, ticks a checkbox, verbally agrees - or any other form that communicates their decision agreeing to the processing of data"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Consent Given"
+        "@value": "Consent Withdrawn"
       }
     ]
   },
@@ -204,61 +162,7 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#RenewedConsentGiven",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#ConsentStatus"
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@language": "en",
-        "@value": "(GConsent,https://w3id.org/GConsent)"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#ConsentStatusValidForProcessing"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The state where a previously given consent has been 'renewed' or 'refreshed' or 'reaffirmed' to form a new instance of given consent"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#consent-status-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "An example of this state is when a previously given consent has expired, and the individual is presented a notice regarding continuing associated processing operations - to which they agree. This state can be useful to keep track of 'reconfirmed' or 'refreshed' consent within consent records, assist notices and contextual agents to create better consenting dialogues, and assist with specific legal obligations related to subsequent consenting"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Renewed Consent Given"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#consent-status-classes",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#ConsentUnknown",
+    "@id": "https://w3id.org/dpv#ConsentInvalidated",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
@@ -284,7 +188,7 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "State where information about consent is not available or is unknown"
+        "@value": "The state where consent has been deemed to be invalid"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -295,74 +199,13 @@
     "http://www.w3.org/2004/02/skos/core#note": [
       {
         "@language": "en",
-        "@value": "Consent states can be unknown, for example, when information is not available, or cannot be trusted, or is known to be inaccurate"
+        "@value": "An example of this state is where an investigating authority or a court finds the collected consent did not meet requirements, and 'invalidates' both prior and future uses of it to carry out processing"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Consent Unknown"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#ConsentWithdrawn",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#ConsentStatus"
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@language": "en",
-        "@value": "(GConsent,https://w3id.org/GConsent)"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#ConsentStatusInvalidForProcessing"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The state where the consent is withdrawn or revoked specifically by the data subject and which prevents it from being further used as a valid state"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#consent-status-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "This state can be considered a form of 'revocation' of consent, where the revocation can only be performed by the data subject. Therefore we suggest using ConsentRevoked when it is a non-data-subject entity, and ConsentWithdrawn when it is the data subject"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Consent Withdrawn"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#Status",
-    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#ConsentStatus"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv#ConsentStatus"
+        "@value": "Consent Invalidated"
       }
     ]
   },
@@ -415,7 +258,7 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#ConsentInvalidated",
+    "@id": "https://w3id.org/dpv#ConsentStatusValidForProcessing",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
@@ -435,13 +278,13 @@
     ],
     "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@id": "https://w3id.org/dpv#ConsentStatusInvalidForProcessing"
+        "@id": "https://w3id.org/dpv#ConsentStatus"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "The state where consent has been deemed to be invalid"
+        "@value": "States of consent that can be used as valid justifications for processing data"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -449,16 +292,24 @@
         "@id": "https://w3id.org/dpv#consent-status-classes"
       }
     ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv#ConsentGiven"
+      },
+      {
+        "@id": "https://w3id.org/dpv#RenewedConsentGiven"
+      }
+    ],
     "http://www.w3.org/2004/02/skos/core#note": [
       {
         "@language": "en",
-        "@value": "An example of this state is where an investigating authority or a court finds the collected consent did not meet requirements, and 'invalidates' both prior and future uses of it to carry out processing"
+        "@value": "Practically, given consent is the only valid state for processing"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Consent Invalidated"
+        "@value": "Consent Status Valid for Processing"
       }
     ]
   },
@@ -537,7 +388,7 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#ConsentStatusValidForProcessing",
+    "@id": "https://w3id.org/dpv#RenewedConsentGiven",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
@@ -557,13 +408,13 @@
     ],
     "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@id": "https://w3id.org/dpv#ConsentStatus"
+        "@id": "https://w3id.org/dpv#ConsentStatusValidForProcessing"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "States of consent that can be used as valid justifications for processing data"
+        "@value": "The state where a previously given consent has been 'renewed' or 'refreshed' or 'reaffirmed' to form a new instance of given consent"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -571,24 +422,16 @@
         "@id": "https://w3id.org/dpv#consent-status-classes"
       }
     ],
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv#ConsentGiven"
-      },
-      {
-        "@id": "https://w3id.org/dpv#RenewedConsentGiven"
-      }
-    ],
     "http://www.w3.org/2004/02/skos/core#note": [
       {
         "@language": "en",
-        "@value": "Practically, given consent is the only valid state for processing"
+        "@value": "An example of this state is when a previously given consent has expired, and the individual is presented a notice regarding continuing associated processing operations - to which they agree. This state can be useful to keep track of 'reconfirmed' or 'refreshed' consent within consent records, assist notices and contextual agents to create better consenting dialogues, and assist with specific legal obligations related to subsequent consenting"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Consent Status Valid for Processing"
+        "@value": "Renewed Consent Given"
       }
     ]
   },
@@ -685,6 +528,163 @@
       {
         "@language": "en",
         "@value": "Consent Refused"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#ConsentRequested",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#ConsentStatus"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@language": "en",
+        "@value": "(GConsent,https://w3id.org/GConsent)"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#ConsentStatusInvalidForProcessing"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "State where a request for consent has been made and is awaiting a decision"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#consent-status-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "An example of this state is when a notice has been presented to the individual but they have not made a decision"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Consent Requested"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#Status",
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#ConsentStatus"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv#ConsentStatus"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#ConsentGiven",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#ConsentStatus"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@language": "en",
+        "@value": "(GConsent,https://w3id.org/GConsent)"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#ConsentStatusValidForProcessing"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "The state where consent has been given"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#consent-status-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "An example of this state is when the individual clicks on a button, ticks a checkbox, verbally agrees - or any other form that communicates their decision agreeing to the processing of data"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Consent Given"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#ConsentRevoked",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#ConsentStatus"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@language": "en",
+        "@value": "(GConsent,https://w3id.org/GConsent)"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#ConsentStatusInvalidForProcessing"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "The state where the consent is revoked by an entity other than the data subject and which prevents it from being further used as a valid state"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#consent-status-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "An example of this state is when a Data Controller stops utilising previously obtaining consent, such as when that service no longer exists"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Consent Revoked"
       }
     ]
   }

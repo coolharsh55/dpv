@@ -6,6 +6,37 @@
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
    xmlns:sw="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
+  <rdf:Description rdf:about="https://w3id.org/dpv#ForProfitOrganisation">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:prefLabel xml:lang="en">For-Profit Organisation</skos:prefLabel>
+    <skos:definition xml:lang="en">An organisation that aims to achieve profit as its primary goal</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Organisation"/>
+    <skos:broader rdf:resource="https://w3id.org/dpv#Organisation"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-organisation-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#IndustryConsortium">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:prefLabel xml:lang="en">Industry Consortium</skos:prefLabel>
+    <skos:definition xml:lang="en">A consortium established and comprising on industry organisations</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Organisation"/>
+    <skos:broader rdf:resource="https://w3id.org/dpv#Organisation"/>
+    <dct:source xml:lang="en">(ADMS controlled vocabulary,http://purl.org/adms)</dct:source>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-organisation-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#GovernmentalOrganisation">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:prefLabel xml:lang="en">Governmental Organisation</skos:prefLabel>
+    <skos:definition xml:lang="en">An organisation managed or part of government</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Organisation"/>
+    <skos:broader rdf:resource="https://w3id.org/dpv#Organisation"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-organisation-classes"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#AcademicScientificOrganisation">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
@@ -16,6 +47,20 @@
     <dct:source xml:lang="en">(ADMS controlled vocabulary,http://purl.org/adms)</dct:source>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-organisation-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#NonProfitOrganisation">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:prefLabel xml:lang="en">Non-Profit Organisation</skos:prefLabel>
+    <skos:definition xml:lang="en">An organisation that does not aim to achieve profit as its primary goal</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Organisation"/>
+    <skos:broader rdf:resource="https://w3id.org/dpv#Organisation"/>
+    <dct:source xml:lang="en">(ADMS controlled vocabulary,http://purl.org/adms)</dct:source>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-organisation-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#entities-organisation-classes">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#Organisation">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -41,6 +86,10 @@
     <skos:narrower rdf:resource="https://w3id.org/dpv#InternationalOrganisation"/>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-organisation-classes"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#LegalEntity">
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#Organisation"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv#Organisation"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#NonGovernmentalOrganisation">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
@@ -49,45 +98,6 @@
     <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Organisation"/>
     <skos:broader rdf:resource="https://w3id.org/dpv#Organisation"/>
     <dct:source xml:lang="en">(ADMS controlled vocabulary,http://purl.org/adms)</dct:source>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-organisation-classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#IndustryConsortium">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <skos:prefLabel xml:lang="en">Industry Consortium</skos:prefLabel>
-    <skos:definition xml:lang="en">A consortium established and comprising on industry organisations</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Organisation"/>
-    <skos:broader rdf:resource="https://w3id.org/dpv#Organisation"/>
-    <dct:source xml:lang="en">(ADMS controlled vocabulary,http://purl.org/adms)</dct:source>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-organisation-classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#InternationalOrganisation">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <skos:prefLabel xml:lang="en">International Organisation</skos:prefLabel>
-    <skos:definition xml:lang="en">An organisation and its subordinate bodies governed by public international law, or any other body which is set up by, or on the basis of, an agreement between two or more countries</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Organisation"/>
-    <skos:broader rdf:resource="https://w3id.org/dpv#Organisation"/>
-    <dct:source xml:lang="en">(GDPR Art.4-26,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_26/oj)</dct:source>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-organisation-classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#LegalEntity">
-    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#Organisation"/>
-    <skos:narrower rdf:resource="https://w3id.org/dpv#Organisation"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#entities-organisation-classes">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#GovernmentalOrganisation">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <skos:prefLabel xml:lang="en">Governmental Organisation</skos:prefLabel>
-    <skos:definition xml:lang="en">An organisation managed or part of government</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Organisation"/>
-    <skos:broader rdf:resource="https://w3id.org/dpv#Organisation"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-organisation-classes"/>
   </rdf:Description>
@@ -101,24 +111,14 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-organisation-classes"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#NonProfitOrganisation">
+  <rdf:Description rdf:about="https://w3id.org/dpv#InternationalOrganisation">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <skos:prefLabel xml:lang="en">Non-Profit Organisation</skos:prefLabel>
-    <skos:definition xml:lang="en">An organisation that does not aim to achieve profit as its primary goal</skos:definition>
+    <skos:prefLabel xml:lang="en">International Organisation</skos:prefLabel>
+    <skos:definition xml:lang="en">An organisation and its subordinate bodies governed by public international law, or any other body which is set up by, or on the basis of, an agreement between two or more countries</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Organisation"/>
     <skos:broader rdf:resource="https://w3id.org/dpv#Organisation"/>
-    <dct:source xml:lang="en">(ADMS controlled vocabulary,http://purl.org/adms)</dct:source>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-organisation-classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#ForProfitOrganisation">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <skos:prefLabel xml:lang="en">For-Profit Organisation</skos:prefLabel>
-    <skos:definition xml:lang="en">An organisation that aims to achieve profit as its primary goal</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Organisation"/>
-    <skos:broader rdf:resource="https://w3id.org/dpv#Organisation"/>
+    <dct:source xml:lang="en">(GDPR Art.4-26,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_26/oj)</dct:source>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-organisation-classes"/>
   </rdf:Description>

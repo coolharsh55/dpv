@@ -1,6 +1,5 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix dpv: <https://w3id.org/dpv#> .
-@prefix dpv-gdpr: <https://w3id.org/dpv/dpv-gdpr#> .
 @prefix eu-gdpr: <https://w3id.org/dpv/legal/eu/gdpr#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
@@ -34,7 +33,7 @@ eu-gdpr:A46-2-b a rdfs:Class,
     dct:source "(GDPR Art.46-2b,https://eur-lex.europa.eu/eli/reg/2016/679/art_46/par_2/pnt_b/oj)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:DataTransferLegalBasis,
-        dpv-gdpr:BindingCorporateRules ;
+        eu-gdpr:BindingCorporateRules ;
     skos:definition "Binding corporate rules"@en ;
     skos:inScheme eu-gdpr:legal-basis-data-transfer-classes ;
     skos:note "Transfer from EU to a third country. Third country has no Adequacy Decision. Third country has appropriate safeguards. Transfer does not require specific authorisation from a Supervisor Authority."@en ;
@@ -46,7 +45,7 @@ eu-gdpr:A46-2-c a rdfs:Class,
     dct:source "(GDPR Art.46-2c,https://eur-lex.europa.eu/eli/reg/2016/679/art_46/par_2/pnt_c/oj)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:DataTransferLegalBasis,
-        dpv-gdpr:SCCByCommission ;
+        eu-gdpr:SCCByCommission ;
     skos:definition "Standard data protection clauses adopted by the Commission"@en ;
     skos:inScheme eu-gdpr:legal-basis-data-transfer-classes ;
     skos:note "Transfer from EU to a third country. Third country has no Adequacy Decision. Third country has appropriate safeguards. Transfer does not require specific authorisation from a Supervisor Authority."@en ;
@@ -58,7 +57,7 @@ eu-gdpr:A46-2-d a rdfs:Class,
     dct:source "(GDPR Art.46-2d,https://eur-lex.europa.eu/eli/reg/2016/679/art_46/par_2/pnt_d/oj)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:DataTransferLegalBasis,
-        dpv-gdpr:SCCBySupervisoryAuthority ;
+        eu-gdpr:SCCBySupervisoryAuthority ;
     skos:definition "Standard data protection clauses adopted by a Supervisory Authority"@en ;
     skos:inScheme eu-gdpr:legal-basis-data-transfer-classes ;
     skos:note "Transfer from EU to a third country. Third country has no Adequacy Decision. Third country has appropriate safeguards. Transfer does not require specific authorisation from a Supervisor Authority"@en ;
@@ -210,11 +209,11 @@ dpv:PublicInterest skos:narrower eu-gdpr:A49-1-d .
 
 dpv:VitalInterestOfNaturalPerson skos:narrower eu-gdpr:A49-1-f .
 
-dpv-gdpr:BindingCorporateRules skos:narrower eu-gdpr:A46-2-b .
+eu-gdpr:BindingCorporateRules skos:narrower eu-gdpr:A46-2-b .
 
-dpv-gdpr:SCCByCommission skos:narrower eu-gdpr:A46-2-c .
+eu-gdpr:SCCByCommission skos:narrower eu-gdpr:A46-2-c .
 
-dpv-gdpr:SCCBySupervisoryAuthority skos:narrower eu-gdpr:A46-2-d .
+eu-gdpr:SCCBySupervisoryAuthority skos:narrower eu-gdpr:A46-2-d .
 
 dpv:Contract skos:narrower eu-gdpr:A49-1-b,
         eu-gdpr:A49-1-c .

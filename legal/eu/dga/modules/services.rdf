@@ -17,6 +17,12 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv/legal/eu/dga#services-classes"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#Service">
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/legal/eu/dga#SingleInformationPoint"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/legal/eu/dga#DataIntermediationService"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv/legal/eu/dga#SingleInformationPoint"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv/legal/eu/dga#DataIntermediationService"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/legal/eu/dga#DataIntermediationServiceBetweenSubjectsUsers">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
@@ -25,6 +31,17 @@
     <rdfs:subClassOf rdf:resource="https://w3id.org/dpv/dpv-gda#DataIntermediationService"/>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-gda#DataIntermediationService"/>
     <dct:source xml:lang="en">DGA 10.b</dct:source>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv/legal/eu/dga#services-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/legal/eu/dga#DataIntermediationService">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:prefLabel xml:lang="en">Data Intermediation Service</skos:prefLabel>
+    <skos:definition xml:lang="en">Service of data intermediation which aims to facilitate the sharing of data between Data Subjects, Data Holders and Data Users</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Service"/>
+    <skos:broader rdf:resource="https://w3id.org/dpv#Service"/>
+    <dct:source xml:lang="en">DGA 2.11</dct:source>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv/legal/eu/dga#services-classes"/>
   </rdf:Description>
@@ -37,12 +54,6 @@
     <skos:broader rdf:resource="https://w3id.org/dpv#Service"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv/legal/eu/dga#services-classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#Service">
-    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/legal/eu/dga#SingleInformationPoint"/>
-    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/legal/eu/dga#DataIntermediationService"/>
-    <skos:narrower rdf:resource="https://w3id.org/dpv/legal/eu/dga#SingleInformationPoint"/>
-    <skos:narrower rdf:resource="https://w3id.org/dpv/legal/eu/dga#DataIntermediationService"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-gda#DataIntermediationService">
     <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/legal/eu/dga#DataCooperativeService"/>
@@ -64,16 +75,5 @@
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/legal/eu/dga#services-classes">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/legal/eu/dga#DataIntermediationService">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <skos:prefLabel xml:lang="en">Data Intermediation Service</skos:prefLabel>
-    <skos:definition xml:lang="en">Service of data intermediation which aims to facilitate the sharing of data between Data Subjects, Data Holders and Data Users</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Service"/>
-    <skos:broader rdf:resource="https://w3id.org/dpv#Service"/>
-    <dct:source xml:lang="en">DGA 2.11</dct:source>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv/legal/eu/dga#services-classes"/>
   </rdf:Description>
 </rdf:RDF>

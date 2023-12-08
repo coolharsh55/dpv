@@ -281,7 +281,7 @@ def get_concept_list(term):
 
 def organise_hierarchy(terms, top=None):
     '''organise the given list of terms into a hierarchy
-    returns { parent: { children: {} } }'''
+    returns { parent: { children: { children: { } } } }'''
     data = {}
     for term in terms:
         data[term] = { 'parents': [], 'children': [] }

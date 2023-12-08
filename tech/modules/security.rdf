@@ -4,16 +4,6 @@
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
    xmlns:sw="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
-  <rdf:Description rdf:about="https://w3id.org/dpv/tech#MonitoringSecurityTechnology">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#Technology"/>
-    <skos:prefLabel xml:lang="en">Monitoring Security Technology</skos:prefLabel>
-    <skos:definition xml:lang="en">Technology related to monitoring of vulnerabilities, threats, exploitations</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-tech#SecurityTechnology"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv/tech#security-classes"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-tech#SecurityTechnology">
     <skos:narrower rdf:resource="https://w3id.org/dpv/tech#PET"/>
     <skos:narrower rdf:resource="https://w3id.org/dpv/tech#DetectionSecurityTechnology"/>
@@ -21,6 +11,16 @@
     <skos:narrower rdf:resource="https://w3id.org/dpv/tech#MitigationSecurityTechnology"/>
     <skos:narrower rdf:resource="https://w3id.org/dpv/tech#MonitoringSecurityTechnology"/>
     <skos:narrower rdf:resource="https://w3id.org/dpv/tech#SecurityManagementTechnology"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/tech#PET">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#Technology"/>
+    <skos:prefLabel xml:lang="en">PET (Privacy Enhancing Technology)</skos:prefLabel>
+    <skos:definition xml:lang="en">Privacy Enhancing Technologies (PETs) that provide minimisation or security related to data and privacy</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv/dpv-tech#SecurityTechnology"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv/tech#security-classes"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/tech#PreventionSecurityTechnology">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -32,22 +32,22 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv/tech#security-classes"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/tech#DetectionSecurityTechnology">
+  <rdf:Description rdf:about="https://w3id.org/dpv/tech#MonitoringSecurityTechnology">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#Technology"/>
-    <skos:prefLabel xml:lang="en">Detection Security Technology</skos:prefLabel>
-    <skos:definition xml:lang="en">Technology related to detection of vulnerabilities, threats, and exploitations</skos:definition>
+    <skos:prefLabel xml:lang="en">Monitoring Security Technology</skos:prefLabel>
+    <skos:definition xml:lang="en">Technology related to monitoring of vulnerabilities, threats, exploitations</skos:definition>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-tech#SecurityTechnology"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv/tech#security-classes"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/tech#PET">
+  <rdf:Description rdf:about="https://w3id.org/dpv/tech#MitigationSecurityTechnology">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#Technology"/>
-    <skos:prefLabel xml:lang="en">PET (Privacy Enhancing Technology)</skos:prefLabel>
-    <skos:definition xml:lang="en">Privacy Enhancing Technologies (PETs) that provide minimisation or security related to data and privacy</skos:definition>
+    <skos:prefLabel xml:lang="en">Mitigation Security Technology</skos:prefLabel>
+    <skos:definition xml:lang="en">Technology related to mitigation of vulnerabilities, threats, exploitations</skos:definition>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-tech#SecurityTechnology"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv/tech#security-classes"/>
@@ -63,20 +63,20 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv/tech#security-classes"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/tech#MitigationSecurityTechnology">
+  <rdf:Description rdf:about="https://w3id.org/dpv/tech#DetectionSecurityTechnology">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#Technology"/>
-    <skos:prefLabel xml:lang="en">Mitigation Security Technology</skos:prefLabel>
-    <skos:definition xml:lang="en">Technology related to mitigation of vulnerabilities, threats, exploitations</skos:definition>
+    <skos:prefLabel xml:lang="en">Detection Security Technology</skos:prefLabel>
+    <skos:definition xml:lang="en">Technology related to detection of vulnerabilities, threats, and exploitations</skos:definition>
     <skos:broader rdf:resource="https://w3id.org/dpv/dpv-tech#SecurityTechnology"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv/tech#security-classes"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/tech#security-classes">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/dpv-tech#ManagementTechnology">
     <skos:narrower rdf:resource="https://w3id.org/dpv/tech#SecurityManagementTechnology"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/tech#security-classes">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
   </rdf:Description>
 </rdf:RDF>

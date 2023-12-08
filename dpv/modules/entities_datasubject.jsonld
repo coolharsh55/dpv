@@ -1,6 +1,6 @@
 [
   {
-    "@id": "https://w3id.org/dpv#Applicant",
+    "@id": "https://w3id.org/dpv#JobApplicant",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
@@ -20,7 +20,7 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Data subjects that are applicants in some context"
+        "@value": "Data subjects that apply for jobs or employments"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -31,12 +31,12 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Applicant"
+        "@value": "Job Applicant"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#User",
+    "@id": "https://w3id.org/dpv#Client",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
@@ -50,13 +50,13 @@
     ],
     "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@id": "https://w3id.org/dpv#DataSubject"
+        "@id": "https://w3id.org/dpv#Customer"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Data subjects that use service(s)"
+        "@value": "Data subjects that are clients or recipients of services"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -67,360 +67,7 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "User"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#Tourist",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#DataSubject"
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#DataSubject"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Data subjects that are tourists i.e. not citizens and not immigrants"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#entities-datasubject-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Tourist"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#VulnerableDataSubject",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#DataSubject"
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#DataSubject"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Data Subjects which should be considered 'vulnerable' and therefore would require additional measures and safeguards"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#entities-datasubject-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv#MentallyVulnerableDataSubject"
-      },
-      {
-        "@id": "https://w3id.org/dpv#AsylumSeeker"
-      },
-      {
-        "@id": "https://w3id.org/dpv#ElderlyDataSubject"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "This concept denotes a Data Subject or a group are vulnerable, but not what vulnerability they possess or its context. This information can be provided additionally as comments, or as separate concepts and relations. Proposals for this are welcome."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Vulnerable Data Subject"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#entities-datasubject-properties",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#Student",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#DataSubject"
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#DataSubject"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Data subjects that are students"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#entities-datasubject-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Student"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#GuardianOfDataSubject",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#DataSubject"
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#DataSubject"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Guardian(s) of data subjects such as children"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#entities-datasubject-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Guardian(s) of Data Subject"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#MentallyVulnerableDataSubject",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#DataSubject"
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#VulnerableDataSubject"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Data subjects that are considered mentally vulnerable"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#entities-datasubject-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Mentally Vulnerable Data Subject"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#Member",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#DataSubject"
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#DataSubject"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Data subjects that are members of a group, organisation, or other collectives"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#entities-datasubject-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Member"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#Subscriber",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#DataSubject"
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#DataSubject"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Data subjects that subscribe to service(s)"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#entities-datasubject-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "note: subscriber can be customer or consumer"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Subscriber"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#NonCitizen",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#DataSubject"
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#DataSubject"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Data subjects that are not citizens (for a jurisdiction)"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#entities-datasubject-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Non-Citizen"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#Citizen",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#DataSubject"
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#DataSubject"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Data subjects that are citizens (for a jurisdiction)"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#entities-datasubject-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Citizen"
+        "@value": "Client"
       }
     ]
   },
@@ -548,145 +195,6 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#Adult",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#DataSubject"
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#DataSubject"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A natural person that is not a child i.e. has attained some legally specified age of adulthood"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#entities-datasubject-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Adult"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#ParentOfDataSubject",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#DataSubject"
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#DataSubject"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Parent(s) of data subjects such as children"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#entities-datasubject-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Parent(s) of Data Subject"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#entities-datasubject-classes",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#Child",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#DataSubject"
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#DataSubject"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A 'child' is a natural legal person who is below a certain legal age depending on the legal jurisdiction."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#entities-datasubject-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#note": [
-      {
-        "@language": "en",
-        "@value": "The legality of age defining a child varies by jurisdiction. In addition, 'child' is distinct from a 'minor'. For example, the legal age for consumption of alcohol can be 21, which makes a person of age 20 a 'minor' in this context. In other cases, 'minor' and 'child' are used interchangeably to refer to a person below some legally defined age."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Child"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#hasEntity",
-    "http://www.w3.org/2000/01/rdf-schema#superPropertyOf": [
-      {
-        "@id": "https://w3id.org/dpv#hasDataSubject"
-      },
-      {
-        "@id": "https://w3id.org/dpv#hasRelationWithDataSubject"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv#hasDataSubject"
-      },
-      {
-        "@id": "https://w3id.org/dpv#hasRelationWithDataSubject"
-      }
-    ]
-  },
-  {
     "@id": "https://w3id.org/dpv#Patient",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
@@ -719,6 +227,420 @@
       {
         "@language": "en",
         "@value": "Patient"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#Student",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#DataSubject"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#DataSubject"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Data subjects that are students"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#entities-datasubject-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Student"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#LegalEntity",
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#DataSubject"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv#DataSubject"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#Applicant",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#DataSubject"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#DataSubject"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Data subjects that are applicants in some context"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#entities-datasubject-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Applicant"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#Participant",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#DataSubject"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#DataSubject"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Data subjects that participate in some context such as volunteers in a function"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#entities-datasubject-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Participant"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#NaturalPerson",
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#DataSubject"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv#DataSubject"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#hasRelationWithDataSubject",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/dcam/domainIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Entity"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/dpv#hasEntity"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#hasEntity"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Indicates the relation between specified Entity and Data Subject"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#entities-datasubject-properties"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "has relation with data subject"
+      }
+    ],
+    "https://schema.org/domainIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Entity"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#hasDataSubject",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/dcam/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#DataSubject"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/dpv#hasEntity"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#hasEntity"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Indicates association with Data Subject"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#entities-datasubject-properties"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "has data subject"
+      }
+    ],
+    "https://schema.org/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#DataSubject"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#Visitor",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#DataSubject"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#DataSubject"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Data subjects that are temporary visitors"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#entities-datasubject-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Visitor"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#MentallyVulnerableDataSubject",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#DataSubject"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#VulnerableDataSubject"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Data subjects that are considered mentally vulnerable"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#entities-datasubject-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Mentally Vulnerable Data Subject"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#Immigrant",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#DataSubject"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#DataSubject"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Data subjects that are immigrants (for a jurisdiction)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#entities-datasubject-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Immigrant"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#Member",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#DataSubject"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#DataSubject"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Data subjects that are members of a group, organisation, or other collectives"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#entities-datasubject-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Member"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#Consumer",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#DataSubject"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#DataSubject"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Data subjects that consume goods or services for direct use"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#entities-datasubject-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Consumer"
       }
     ]
   },
@@ -795,69 +717,13 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#LegalEntity",
-    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#DataSubject"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv#DataSubject"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#NaturalPerson",
-    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#DataSubject"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv#DataSubject"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#Client",
+    "@id": "https://w3id.org/dpv#entities-datasubject-properties",
     "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#DataSubject"
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#Customer"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Data subjects that are clients or recipients of services"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#entities-datasubject-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Client"
-      }
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#Participant",
+    "@id": "https://w3id.org/dpv#ParentOfDataSubject",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
@@ -877,7 +743,7 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Data subjects that participate in some context such as volunteers in a function"
+        "@value": "Parent(s) of data subjects such as children"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -888,12 +754,12 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Participant"
+        "@value": "Parent(s) of Data Subject"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#Consumer",
+    "@id": "https://w3id.org/dpv#Subscriber",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
@@ -913,7 +779,91 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Data subjects that consume goods or services for direct use"
+        "@value": "Data subjects that subscribe to service(s)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#entities-datasubject-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "note: subscriber can be customer or consumer"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Subscriber"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#Child",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#DataSubject"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#DataSubject"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A 'child' is a natural legal person who is below a certain legal age depending on the legal jurisdiction."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#entities-datasubject-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "The legality of age defining a child varies by jurisdiction. In addition, 'child' is distinct from a 'minor'. For example, the legal age for consumption of alcohol can be 21, which makes a person of age 20 a 'minor' in this context. In other cases, 'minor' and 'child' are used interchangeably to refer to a person below some legally defined age."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Child"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#NonCitizen",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#DataSubject"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#DataSubject"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Data subjects that are not citizens (for a jurisdiction)"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -924,57 +874,7 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Consumer"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#hasRelationWithDataSubject",
-    "@type": [
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://purl.org/dc/dcam/domainIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Entity"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/dpv#hasEntity"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#hasEntity"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Indicates the relation between specified Entity and Data Subject"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#entities-datasubject-properties"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "has relation with data subject"
-      }
-    ],
-    "https://schema.org/domainIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Entity"
+        "@value": "Non-Citizen"
       }
     ]
   },
@@ -1026,7 +926,7 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#Immigrant",
+    "@id": "https://w3id.org/dpv#User",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
@@ -1046,7 +946,7 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Data subjects that are immigrants (for a jurisdiction)"
+        "@value": "Data subjects that use service(s)"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -1057,12 +957,12 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Immigrant"
+        "@value": "User"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#Visitor",
+    "@id": "https://w3id.org/dpv#VulnerableDataSubject",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
@@ -1082,7 +982,7 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Data subjects that are temporary visitors"
+        "@value": "Data Subjects which should be considered 'vulnerable' and therefore would require additional measures and safeguards"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -1090,15 +990,38 @@
         "@id": "https://w3id.org/dpv#entities-datasubject-classes"
       }
     ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv#MentallyVulnerableDataSubject"
+      },
+      {
+        "@id": "https://w3id.org/dpv#AsylumSeeker"
+      },
+      {
+        "@id": "https://w3id.org/dpv#ElderlyDataSubject"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#note": [
+      {
+        "@language": "en",
+        "@value": "This concept denotes a Data Subject or a group are vulnerable, but not what vulnerability they possess or its context. This information can be provided additionally as comments, or as separate concepts and relations. Proposals for this are welcome."
+      }
+    ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Visitor"
+        "@value": "Vulnerable Data Subject"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#JobApplicant",
+    "@id": "https://w3id.org/dpv#entities-datasubject-classes",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#GuardianOfDataSubject",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
@@ -1118,7 +1041,7 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Data subjects that apply for jobs or employments"
+        "@value": "Guardian(s) of data subjects such as children"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -1129,57 +1052,7 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Job Applicant"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#hasDataSubject",
-    "@type": [
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://purl.org/dc/dcam/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#DataSubject"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/dpv#hasEntity"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#hasEntity"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Indicates association with Data Subject"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#entities-datasubject-properties"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "has data subject"
-      }
-    ],
-    "https://schema.org/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#DataSubject"
+        "@value": "Guardian(s) of Data Subject"
       }
     ]
   },
@@ -1216,6 +1089,133 @@
       {
         "@language": "en",
         "@value": "Employee"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#Adult",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#DataSubject"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#DataSubject"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A natural person that is not a child i.e. has attained some legally specified age of adulthood"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#entities-datasubject-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Adult"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#hasEntity",
+    "http://www.w3.org/2000/01/rdf-schema#superPropertyOf": [
+      {
+        "@id": "https://w3id.org/dpv#hasDataSubject"
+      },
+      {
+        "@id": "https://w3id.org/dpv#hasRelationWithDataSubject"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv#hasDataSubject"
+      },
+      {
+        "@id": "https://w3id.org/dpv#hasRelationWithDataSubject"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#Tourist",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#DataSubject"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#DataSubject"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Data subjects that are tourists i.e. not citizens and not immigrants"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#entities-datasubject-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Tourist"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#Citizen",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#DataSubject"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#DataSubject"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Data subjects that are citizens (for a jurisdiction)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#entities-datasubject-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Citizen"
       }
     ]
   }

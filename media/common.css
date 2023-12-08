@@ -26,19 +26,22 @@ figure {
   font-family: monospace;
 }
 .concept-list li {
-  list-style-type: upper-alpha;
-}
-.concept-list li ul li {
   list-style-type: decimal;
 }
-.concept-list li ul li ul li {
+.concept-list li ul li {
   list-style-type: lower-latin;
 }
+.concept-list li ul li ul li {
+  list-style-type: decimal;
+}
 .concept-list li ul li ul li ul li {
-  list-style-type: lower-roman;
+  list-style-type: upper-latin;
 }
 .concept-list ul {
   border-left: 3px solid lightgray;
+}
+.list-hierarchy {
+  border: 1px solid lightgray;
 }
 .toggle {
   cursor: pointer;
@@ -47,13 +50,22 @@ figure {
   display: inline-block;
   content: "+";
 }
+.btn-hierarchy {
+  padding-left: 5px;
+  padding-top: 2px;
+  font-family: monospace;
+  font-size: 0.5rem;
+  
+}
 .toggle.show::before { content: "-"; }
 .concept-list ul li ul { display: none; }
 .toggle.show + ul { display: block; }
 .btn-expand, .btn-collapse {
-  margin-right: 2px;
   background-color: white;
-  border: 1px solid black;
-  font-family: monospace;
-  font-size: 0.5rem;
+  border: 1px solid darkgray;
+  margin-right: 5px;
+}
+.btn-expand:focus, .btn-collapse:focus {
+  background-color: darkgray;
+  border: 1px solid lightgray;
 }

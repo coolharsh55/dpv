@@ -1,6 +1,5 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix dpv: <https://w3id.org/dpv#> .
-@prefix dpv-gdpr: <https://w3id.org/dpv/dpv-gdpr#> .
 @prefix eu-gdpr: <https://w3id.org/dpv/legal/eu/gdpr#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -9,9 +8,9 @@
 
 eu-gdpr:DPIAConformant a rdfs:Class,
         skos:Concept,
-        dpv-gdpr:DPIAConformity ;
+        eu-gdpr:DPIAConformity ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-gdpr:DPIAConformity ;
+    skos:broader eu-gdpr:DPIAConformity ;
     skos:definition "Expressing the specified process is conformant with a DPIA"@en ;
     skos:inScheme eu-gdpr:dpia-classes ;
     skos:prefLabel "DPIA Conformant"@en .
@@ -23,31 +22,33 @@ eu-gdpr:DPIAConformity a rdfs:Class,
     skos:broader dpv:ConformanceStatus ;
     skos:definition "Conformity of a process with a DPIA"@en ;
     skos:inScheme eu-gdpr:dpia-classes ;
+    skos:narrower eu-gdpr:DPIAConformant,
+        eu-gdpr:DPIANonConformant ;
     skos:prefLabel "DPIA Conformity"@en .
 
 eu-gdpr:DPIAIndicatesHighRisk a rdfs:Class,
         skos:Concept,
-        dpv-gdpr:DPIARiskStatus ;
+        eu-gdpr:DPIARiskStatus ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-gdpr:DPIARiskStatus ;
+    skos:broader eu-gdpr:DPIARiskStatus ;
     skos:definition "DPIA identifying high risk levels"@en ;
     skos:inScheme eu-gdpr:dpia-classes ;
     skos:prefLabel "DPIA Indicates High Risk"@en .
 
 eu-gdpr:DPIAIndicatesLowRisk a rdfs:Class,
         skos:Concept,
-        dpv-gdpr:DPIARiskStatus ;
+        eu-gdpr:DPIARiskStatus ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-gdpr:DPIARiskStatus ;
+    skos:broader eu-gdpr:DPIARiskStatus ;
     skos:definition "DPIA identifying low risk levels"@en ;
     skos:inScheme eu-gdpr:dpia-classes ;
     skos:prefLabel "DPIA Indicates Low Risk"@en .
 
 eu-gdpr:DPIAIndicatesNoRisk a rdfs:Class,
         skos:Concept,
-        dpv-gdpr:DPIARiskStatus ;
+        eu-gdpr:DPIARiskStatus ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-gdpr:DPIARiskStatus ;
+    skos:broader eu-gdpr:DPIARiskStatus ;
     skos:definition "DPIA identifying no risk is present"@en ;
     skos:inScheme eu-gdpr:dpia-classes ;
     skos:prefLabel "DPIA Indicates No Risk"@en .
@@ -68,22 +69,24 @@ eu-gdpr:DPIANecessityStatus a rdfs:Class,
     skos:broader dpv:AuditStatus ;
     skos:definition "Status reflecting whether a DPIA is necessary"@en ;
     skos:inScheme eu-gdpr:dpia-classes ;
+    skos:narrower eu-gdpr:DPIANotRequired,
+        eu-gdpr:DPIARequired ;
     skos:prefLabel "DPIA Necessity Status"@en .
 
 eu-gdpr:DPIANonConformant a rdfs:Class,
         skos:Concept,
-        dpv-gdpr:DPIAConformity ;
+        eu-gdpr:DPIAConformity ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-gdpr:DPIAConformity ;
+    skos:broader eu-gdpr:DPIAConformity ;
     skos:definition "Expressing the specified process is not conformant with a DPIA"@en ;
     skos:inScheme eu-gdpr:dpia-classes ;
     skos:prefLabel "DPIA Non-Conformant"@en .
 
 eu-gdpr:DPIANotRequired a rdfs:Class,
         skos:Concept,
-        dpv-gdpr:DPIANecessityStatus ;
+        eu-gdpr:DPIANecessityStatus ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-gdpr:DPIANecessityStatus ;
+    skos:broader eu-gdpr:DPIANecessityStatus ;
     skos:definition "Condition where a DPIA is not required"@en ;
     skos:inScheme eu-gdpr:dpia-classes ;
     skos:prefLabel "DPIA Not Required"@en .
@@ -99,27 +102,27 @@ eu-gdpr:DPIAOutcome a rdfs:Class,
 
 eu-gdpr:DPIAOutcomeDPAConsultation a rdfs:Class,
         skos:Concept,
-        dpv-gdpr:DPIAOutcomeStatus ;
+        eu-gdpr:DPIAOutcomeStatus ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-gdpr:DPIAOutcomeStatus ;
+    skos:broader eu-gdpr:DPIAOutcomeStatus ;
     skos:definition "DPIA outcome status indicating a DPA consultation is required"@en ;
     skos:inScheme eu-gdpr:dpia-classes ;
     skos:prefLabel "DPIA Outcome DPA Consultation"@en .
 
 eu-gdpr:DPIAOutcomeHighResidualRisk a rdfs:Class,
         skos:Concept,
-        dpv-gdpr:DPIAOutcomeStatus ;
+        eu-gdpr:DPIAOutcomeStatus ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-gdpr:DPIAOutcomeStatus ;
+    skos:broader eu-gdpr:DPIAOutcomeStatus ;
     skos:definition "DPIA outcome status indicating high residual risk which are not acceptable for continuation"@en ;
     skos:inScheme eu-gdpr:dpia-classes ;
     skos:prefLabel "DPIA Outcome High Residual Risk"@en .
 
 eu-gdpr:DPIAOutcomeRisksMitigated a rdfs:Class,
         skos:Concept,
-        dpv-gdpr:DPIAOutcomeStatus ;
+        eu-gdpr:DPIAOutcomeStatus ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-gdpr:DPIAOutcomeStatus ;
+    skos:broader eu-gdpr:DPIAOutcomeStatus ;
     skos:definition "DPIA outcome status indicating (all) risks have been mitigated"@en ;
     skos:inScheme eu-gdpr:dpia-classes ;
     skos:prefLabel "DPIA Outcome Risks Mitigated"@en .
@@ -131,6 +134,9 @@ eu-gdpr:DPIAOutcomeStatus a rdfs:Class,
     skos:broader dpv:AuditStatus ;
     skos:definition "Status reflecting the outcomes of a DPIA"@en ;
     skos:inScheme eu-gdpr:dpia-classes ;
+    skos:narrower eu-gdpr:DPIAOutcomeDPAConsultation,
+        eu-gdpr:DPIAOutcomeHighResidualRisk,
+        eu-gdpr:DPIAOutcomeRisksMitigated ;
     skos:prefLabel "DPIA Outcome Status"@en .
 
 eu-gdpr:DPIAProcedure a rdfs:Class,
@@ -149,31 +155,33 @@ eu-gdpr:DPIAProcessingRecommendation a rdfs:Class,
     skos:broader dpv:AuditStatus ;
     skos:definition "Recommendation from the DPIA regarding processing"@en ;
     skos:inScheme eu-gdpr:dpia-classes ;
+    skos:narrower eu-gdpr:DPIARecommendsProcessingContinue,
+        eu-gdpr:DPIARecommendsProcessingNotContinue ;
     skos:prefLabel "DPIA Processing Recommendation"@en .
 
 eu-gdpr:DPIARecommendsProcessingContinue a rdfs:Class,
         skos:Concept,
-        dpv-gdpr:DPIAProcessingRecommendation ;
+        eu-gdpr:DPIAProcessingRecommendation ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-gdpr:DPIAProcessingRecommendation ;
+    skos:broader eu-gdpr:DPIAProcessingRecommendation ;
     skos:definition "Recommendation from a DPIA that the processing may continue"@en ;
     skos:inScheme eu-gdpr:dpia-classes ;
     skos:prefLabel "DPIA Recommends Processing Continue"@en .
 
 eu-gdpr:DPIARecommendsProcessingNotContinue a rdfs:Class,
         skos:Concept,
-        dpv-gdpr:DPIAProcessingRecommendation ;
+        eu-gdpr:DPIAProcessingRecommendation ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-gdpr:DPIAProcessingRecommendation ;
+    skos:broader eu-gdpr:DPIAProcessingRecommendation ;
     skos:definition "Recommendation from a DPIA that the processing should not continue"@en ;
     skos:inScheme eu-gdpr:dpia-classes ;
     skos:prefLabel "DPIA Recommends Processing Not Continue"@en .
 
 eu-gdpr:DPIARequired a rdfs:Class,
         skos:Concept,
-        dpv-gdpr:DPIANecessityStatus ;
+        eu-gdpr:DPIANecessityStatus ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-gdpr:DPIANecessityStatus ;
+    skos:broader eu-gdpr:DPIANecessityStatus ;
     skos:definition "Condition where a DPIA is required"@en ;
     skos:inScheme eu-gdpr:dpia-classes ;
     skos:prefLabel "DPIA Required"@en .
@@ -185,6 +193,9 @@ eu-gdpr:DPIARiskStatus a rdfs:Class,
     skos:broader dpv:AuditStatus ;
     skos:definition "Status reflecting the status of risk associated with a DPIA"@en ;
     skos:inScheme eu-gdpr:dpia-classes ;
+    skos:narrower eu-gdpr:DPIAIndicatesHighRisk,
+        eu-gdpr:DPIAIndicatesLowRisk,
+        eu-gdpr:DPIAIndicatesNoRisk ;
     skos:prefLabel "DPIA Risk Status"@en .
 
 dct:conformsTo a rdf:Property,
@@ -288,23 +299,6 @@ dpv:ConformanceStatus rdfs:superClassOf eu-gdpr:DPIAConformity ;
 dpv:DPIA skos:narrower eu-gdpr:DPIANecessityAssessment,
         eu-gdpr:DPIAOutcome,
         eu-gdpr:DPIAProcedure .
-
-dpv-gdpr:DPIAConformity skos:narrower eu-gdpr:DPIAConformant,
-        eu-gdpr:DPIANonConformant .
-
-dpv-gdpr:DPIANecessityStatus skos:narrower eu-gdpr:DPIANotRequired,
-        eu-gdpr:DPIARequired .
-
-dpv-gdpr:DPIAProcessingRecommendation skos:narrower eu-gdpr:DPIARecommendsProcessingContinue,
-        eu-gdpr:DPIARecommendsProcessingNotContinue .
-
-dpv-gdpr:DPIAOutcomeStatus skos:narrower eu-gdpr:DPIAOutcomeDPAConsultation,
-        eu-gdpr:DPIAOutcomeHighResidualRisk,
-        eu-gdpr:DPIAOutcomeRisksMitigated .
-
-dpv-gdpr:DPIARiskStatus skos:narrower eu-gdpr:DPIAIndicatesHighRisk,
-        eu-gdpr:DPIAIndicatesLowRisk,
-        eu-gdpr:DPIAIndicatesNoRisk .
 
 dpv:AuditStatus rdfs:superClassOf eu-gdpr:DPIANecessityStatus,
         eu-gdpr:DPIAOutcomeStatus,

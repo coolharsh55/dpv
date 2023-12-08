@@ -1,6 +1,5 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix dpv: <https://w3id.org/dpv#> .
-@prefix dpv-gdpr: <https://w3id.org/dpv/dpv-gdpr#> .
 @prefix eu-gdpr: <https://w3id.org/dpv/legal/eu/gdpr#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
@@ -12,7 +11,7 @@ eu-gdpr:AdHocContractualClauses a rdfs:Class,
     dct:source "(EDPB Recommendations 01/2020 on Supplementary Measures and Transfer Tools,https://edpb.europa.eu/system/files/2021-06/edpb_recommendations_202001vo.2.0_supplementarymeasurestransferstools_en.pdf)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Contract,
-        dpv-gdpr:DataTransferTool ;
+        eu-gdpr:DataTransferTool ;
     skos:definition "Contractual Clauses not drafted by the EU Commission, e.g. by the Controller"@en ;
     skos:inScheme eu-gdpr:data-transfers-classes ;
     skos:prefLabel "AdHoc Contractual Clauses"@en .
@@ -22,7 +21,7 @@ eu-gdpr:BindingCorporateRules a rdfs:Class,
         dpv:OrganisationalMeasure ;
     dct:source "(GDPR Art.4-20,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_20/oj)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-gdpr:DataTransferTool ;
+    skos:broader eu-gdpr:DataTransferTool ;
     skos:definition "Binding corporate rules (BCR) are data protection policies adhered to by companies established in the EU for transfers of personal data outside the EU within a group of undertakings or enterprises."@en ;
     skos:inScheme eu-gdpr:data-transfers-classes ;
     skos:prefLabel "Binding Corporate Rules (BCR)"@en .
@@ -32,7 +31,7 @@ eu-gdpr:CertificationMechanismsForDataTransfers a rdfs:Class,
         dpv:OrganisationalMeasure ;
     dct:source "(EDPB Recommendations 01/2020 on Supplementary Measures and Transfer Tools,https://edpb.europa.eu/system/files/2021-06/edpb_recommendations_202001vo.2.0_supplementarymeasurestransferstools_en.pdf)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-gdpr:DataTransferTool ;
+    skos:broader eu-gdpr:DataTransferTool ;
     skos:definition "Certification and its binding or specified mechanisms intended to provide sufficient safeguards for data transfers"@en ;
     skos:inScheme eu-gdpr:data-transfers-classes ;
     skos:prefLabel "Certification Mechanisms for Data Transfers"@en .
@@ -42,7 +41,7 @@ eu-gdpr:CodesOfConductForDataTransfers a rdfs:Class,
         dpv:OrganisationalMeasure ;
     dct:source "(EDPB Recommendations 01/2020 on Supplementary Measures and Transfer Tools,https://edpb.europa.eu/system/files/2021-06/edpb_recommendations_202001vo.2.0_supplementarymeasurestransferstools_en.pdf)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-gdpr:DataTransferTool ;
+    skos:broader eu-gdpr:DataTransferTool ;
     skos:definition "Codes of Conduct that outline sufficient safeguards for carrying out data transfers"@en ;
     skos:inScheme eu-gdpr:data-transfers-classes ;
     skos:prefLabel "Codes of Conduct for Data Transfers"@en .
@@ -55,6 +54,14 @@ eu-gdpr:DataTransferTool a rdfs:Class,
     skos:broader dpv:OrganisationalMeasure ;
     skos:definition "A legal instrument or tool intended to assist or justify data transfers"@en ;
     skos:inScheme eu-gdpr:data-transfers-classes ;
+    skos:narrower eu-gdpr:AdHocContractualClauses,
+        eu-gdpr:BindingCorporateRules,
+        eu-gdpr:CertificationMechanismsForDataTransfers,
+        eu-gdpr:CodesOfConductForDataTransfers,
+        eu-gdpr:SCCByCommission,
+        eu-gdpr:SCCBySupervisoryAuthority,
+        eu-gdpr:StandardContractualClauses,
+        eu-gdpr:SupplementaryMeasure ;
     skos:prefLabel "Data Transfer Tool"@en .
 
 eu-gdpr:SCCByCommission a rdfs:Class,
@@ -62,8 +69,8 @@ eu-gdpr:SCCByCommission a rdfs:Class,
         dpv:OrganisationalMeasure ;
     dct:source "(GDPR Art.46-2c,https://eur-lex.europa.eu/eli/reg/2016/679/art_46/par_2/pnt_c/oj)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-gdpr:DataTransferTool,
-        dpv-gdpr:StandardContractualClauses ;
+    skos:broader eu-gdpr:DataTransferTool,
+        eu-gdpr:StandardContractualClauses ;
     skos:definition "Standard contractual clauses adopted by the Commission in accordance with the examination procedure referred to in GDPR Article 93(2)"@en ;
     skos:inScheme eu-gdpr:data-transfers-classes ;
     skos:prefLabel "SCCs adopted by Commission"@en .
@@ -73,8 +80,8 @@ eu-gdpr:SCCBySupervisoryAuthority a rdfs:Class,
         dpv:OrganisationalMeasure ;
     dct:source "(GDPR Art.46-2d,https://eur-lex.europa.eu/eli/reg/2016/679/art_46/par_2/pnt_d/oj)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-gdpr:DataTransferTool,
-        dpv-gdpr:StandardContractualClauses ;
+    skos:broader eu-gdpr:DataTransferTool,
+        eu-gdpr:StandardContractualClauses ;
     skos:definition "Standard data protection clauses adopted by a supervisory authority and approved by the Commission pursuant to the examination procedure referred to in GDPR Article 93(2)"@en ;
     skos:inScheme eu-gdpr:data-transfers-classes ;
     skos:prefLabel "SCCs adopted by Supervisory Authority"@en .
@@ -85,9 +92,11 @@ eu-gdpr:StandardContractualClauses a rdfs:Class,
     dct:source "(Implementing Decision on SCC for Data Transfers,https://eur-lex.europa.eu/eli/dec_impl/2021/914/oj)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Contract,
-        dpv-gdpr:DataTransferTool ;
+        eu-gdpr:DataTransferTool ;
     skos:definition "Standard Contractual Clauses (SCCs) are pre-approved clauses by the EU for ensuring appropriate data protection safeguards intended for data transfers from the EU to third countries"@en ;
     skos:inScheme eu-gdpr:data-transfers-classes ;
+    skos:narrower eu-gdpr:SCCByCommission,
+        eu-gdpr:SCCBySupervisoryAuthority ;
     skos:prefLabel "Standard Contractual Clauses (SCC)"@en .
 
 eu-gdpr:SupplementaryMeasure a rdfs:Class,
@@ -95,25 +104,13 @@ eu-gdpr:SupplementaryMeasure a rdfs:Class,
         dpv:OrganisationalMeasure ;
     dct:source "(EDPB Recommendations 01/2020 on Supplementary Measures and Transfer Tools,https://edpb.europa.eu/system/files/2021-06/edpb_recommendations_202001vo.2.0_supplementarymeasurestransferstools_en.pdf)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-gdpr:DataTransferTool ;
+    skos:broader eu-gdpr:DataTransferTool ;
     skos:definition "Supplementary measures are intended to additionally provide safeguards or guarentees to bring the resulting protection in line with EU requirements"@en ;
     skos:inScheme eu-gdpr:data-transfers-classes ;
     skos:prefLabel "Supplementary Measure"@en .
 
 dpv:Contract skos:narrower eu-gdpr:AdHocContractualClauses,
         eu-gdpr:StandardContractualClauses .
-
-dpv-gdpr:StandardContractualClauses skos:narrower eu-gdpr:SCCByCommission,
-        eu-gdpr:SCCBySupervisoryAuthority .
-
-dpv-gdpr:DataTransferTool skos:narrower eu-gdpr:AdHocContractualClauses,
-        eu-gdpr:BindingCorporateRules,
-        eu-gdpr:CertificationMechanismsForDataTransfers,
-        eu-gdpr:CodesOfConductForDataTransfers,
-        eu-gdpr:SCCByCommission,
-        eu-gdpr:SCCBySupervisoryAuthority,
-        eu-gdpr:StandardContractualClauses,
-        eu-gdpr:SupplementaryMeasure .
 
 eu-gdpr:data-transfers-classes a skos:ConceptScheme .
 

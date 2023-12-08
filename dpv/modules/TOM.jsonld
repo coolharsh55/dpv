@@ -1,5 +1,11 @@
 [
   {
+    "@id": "https://w3id.org/dpv#TOM-properties",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    ]
+  },
+  {
     "@id": "https://w3id.org/dpv#TechnicalMeasure",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
@@ -36,146 +42,6 @@
       {
         "@language": "en",
         "@value": "Technical Measure"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#hasTechnicalMeasure",
-    "@type": [
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://purl.org/dc/dcam/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#TechnicalMeasure"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/dpv#hasTechnicalOrganisationalMeasure"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#hasTechnicalOrganisationalMeasure"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Indicates use or applicability of Technical measure"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#TOM-properties"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "has technical measure"
-      }
-    ],
-    "https://schema.org/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#TechnicalMeasure"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#TOM-properties",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#hasPolicy",
-    "@type": [
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://purl.org/dc/dcam/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Policy"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/dpv#hasTechnicalOrganisationalMeasure"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#hasTechnicalOrganisationalMeasure"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Indicates policy applicable or used"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#TOM-properties"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "has policy"
-      }
-    ],
-    "https://schema.org/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Policy"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#TechnicalOrganisationalMeasure",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#TechnicalMeasure"
-      },
-      {
-        "@id": "https://w3id.org/dpv#OrganisationalMeasure"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#TOM-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv#TechnicalMeasure"
-      },
-      {
-        "@id": "https://w3id.org/dpv#OrganisationalMeasure"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "The Technical and Organisational measures used."
       }
     ]
   },
@@ -336,6 +202,146 @@
     ]
   },
   {
+    "@id": "https://w3id.org/dpv#OrganisationalMeasure",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#TechnicalOrganisationalMeasure"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#TechnicalOrganisationalMeasure"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Organisational measures required/followed when processing data of the declared category"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#TOM-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Organisational Measure"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#hasPolicy",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/dcam/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Policy"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/dpv#hasTechnicalOrganisationalMeasure"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#hasTechnicalOrganisationalMeasure"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Indicates policy applicable or used"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#TOM-properties"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "has policy"
+      }
+    ],
+    "https://schema.org/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Policy"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#hasTechnicalMeasure",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/dcam/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#TechnicalMeasure"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/dpv#hasTechnicalOrganisationalMeasure"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#hasTechnicalOrganisationalMeasure"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Indicates use or applicability of Technical measure"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#TOM-properties"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "has technical measure"
+      }
+    ],
+    "https://schema.org/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#TechnicalMeasure"
+      }
+    ]
+  },
+  {
     "@id": "https://w3id.org/dpv#hasTechnicalOrganisationalMeasure",
     "@type": [
       "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
@@ -398,31 +404,17 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#OrganisationalMeasure",
+    "@id": "https://w3id.org/dpv#TechnicalOrganisationalMeasure",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
       {
-        "@id": "https://w3id.org/dpv#TechnicalOrganisationalMeasure"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+        "@id": "https://w3id.org/dpv#TechnicalMeasure"
+      },
       {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#TechnicalOrganisationalMeasure"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Organisational measures required/followed when processing data of the declared category"
+        "@id": "https://w3id.org/dpv#OrganisationalMeasure"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -430,10 +422,18 @@
         "@id": "https://w3id.org/dpv#TOM-classes"
       }
     ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv#TechnicalMeasure"
+      },
+      {
+        "@id": "https://w3id.org/dpv#OrganisationalMeasure"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
       {
         "@language": "en",
-        "@value": "Organisational Measure"
+        "@value": "The Technical and Organisational measures used."
       }
     ]
   }

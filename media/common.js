@@ -9,6 +9,11 @@ window.addEventListener("load", () => {
   }
 
   for (let list of document.querySelectorAll(".list-hierarchy")) {
+
+    // do not place btn controls for lists that aren't nested
+    // more than 3 levels deep
+    if(list.querySelector("li ul li ul") == null) { continue; }
+
     let btn_expand = document.createElement("button");
     btn_expand.innerHTML = "expand all";
     btn_expand.className = "btn-expand";
@@ -28,7 +33,10 @@ window.addEventListener("load", () => {
         else { }
       }
     };
-    list.insertBefore(btn_collapse, list.firstChild);
-    list.insertBefore(btn_expand, btn_collapse);
+    let btn_div = document.createElement("div");
+    btn_div.className = "btn-hierarchy";
+    btn_div.appendChild(btn_expand);
+    btn_div.appendChild(btn_collapse);
+    list.insertBefore(btn_div, list.firstChild);
   }
 });

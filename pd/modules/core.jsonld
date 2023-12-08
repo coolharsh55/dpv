@@ -1,30 +1,85 @@
 [
   {
-    "@id": "https://w3id.org/dpv#PersonalData",
-    "http://www.w3.org/2004/02/skos/core#narrower": [
+    "@id": "https://w3id.org/dpv/pd#core-classes",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/pd#Historical",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#PersonalData"
+    ],
+    "http://purl.org/dc/terms/source": [
       {
-        "@id": "https://w3id.org/dpv/pd#External"
-      },
+        "@language": "en",
+        "@value": "(EnterPrivacy Categories of Personal Information, https://enterprivacy.com/wp-content/uploads/2018/09/Categories-of-Personal-Information.pdf)"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
-        "@id": "https://w3id.org/dpv/pd#Financial"
-      },
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@id": "https://w3id.org/dpv/pd#Historical"
-      },
+        "@id": "https://w3id.org/dpv#PersonalData"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
       {
-        "@id": "https://w3id.org/dpv/pd#Household"
-      },
+        "@language": "en",
+        "@value": "Information about historical data related to or relevant regarding history or past events"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
       {
-        "@id": "https://w3id.org/dpv/pd#Internal"
-      },
+        "@id": "https://w3id.org/dpv/pd#core-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
-        "@id": "https://w3id.org/dpv/pd#Profile"
-      },
+        "@language": "en",
+        "@value": "Historical"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/pd#Profile",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#PersonalData"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
-        "@id": "https://w3id.org/dpv/pd#Social"
-      },
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@id": "https://w3id.org/dpv/pd#Tracking"
+        "@id": "https://w3id.org/dpv#PersonalData"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Profile or user profile is information and representation of characteristics associated with person(s) or group(s)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv/pd#core-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Profile"
       }
     ]
   },
@@ -71,7 +126,7 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/pd#Internal",
+    "@id": "https://w3id.org/dpv/pd#External",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
@@ -97,7 +152,7 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Informatoin about internal characteristics that cannot be seen or observed"
+        "@value": "Information about external characteristics that can be observed"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -108,85 +163,7 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Internal"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/pd#Historical",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#PersonalData"
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@language": "en",
-        "@value": "(EnterPrivacy Categories of Personal Information, https://enterprivacy.com/wp-content/uploads/2018/09/Categories-of-Personal-Information.pdf)"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#PersonalData"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Information about historical data related to or relevant regarding history or past events"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv/pd#core-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Historical"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/pd#Household",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#PersonalData"
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#PersonalData"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Information about personal or household activities"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv/pd#core-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Household"
+        "@value": "External"
       }
     ]
   },
@@ -281,49 +258,36 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/pd#core-classes",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/pd#Profile",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#PersonalData"
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+    "@id": "https://w3id.org/dpv#PersonalData",
+    "http://www.w3.org/2004/02/skos/core#narrower": [
       {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
+        "@id": "https://w3id.org/dpv/pd#External"
+      },
       {
-        "@id": "https://w3id.org/dpv#PersonalData"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
+        "@id": "https://w3id.org/dpv/pd#Financial"
+      },
       {
-        "@language": "en",
-        "@value": "Profile or user profile is information and representation of characteristics associated with person(s) or group(s)"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
+        "@id": "https://w3id.org/dpv/pd#Historical"
+      },
       {
-        "@id": "https://w3id.org/dpv/pd#core-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+        "@id": "https://w3id.org/dpv/pd#Household"
+      },
       {
-        "@language": "en",
-        "@value": "Profile"
+        "@id": "https://w3id.org/dpv/pd#Internal"
+      },
+      {
+        "@id": "https://w3id.org/dpv/pd#Profile"
+      },
+      {
+        "@id": "https://w3id.org/dpv/pd#Social"
+      },
+      {
+        "@id": "https://w3id.org/dpv/pd#Tracking"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/pd#External",
+    "@id": "https://w3id.org/dpv/pd#Internal",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
@@ -349,7 +313,7 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Information about external characteristics that can be observed"
+        "@value": "Informatoin about internal characteristics that cannot be seen or observed"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -360,7 +324,43 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "External"
+        "@value": "Internal"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/pd#Household",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#PersonalData"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#PersonalData"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Information about personal or household activities"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv/pd#core-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Household"
       }
     ]
   }
