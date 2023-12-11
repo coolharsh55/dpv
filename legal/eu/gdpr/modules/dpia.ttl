@@ -57,7 +57,8 @@ eu-gdpr:DPIANecessityAssessment a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:DPIA ;
+    skos:broader dpv:DPIA,
+        dpv:OrganisationalMeasure ;
     skos:definition "Process that determines whether a DPIA is necessary"@en ;
     skos:inScheme eu-gdpr:dpia-classes ;
     skos:prefLabel "DPIA Necessity Assessment"@en .
@@ -95,7 +96,8 @@ eu-gdpr:DPIAOutcome a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:DPIA ;
+    skos:broader dpv:DPIA,
+        dpv:OrganisationalMeasure ;
     skos:definition "Process representing determining outcome of a DPIA"@en ;
     skos:inScheme eu-gdpr:dpia-classes ;
     skos:prefLabel "DPIA Outcome"@en .
@@ -143,7 +145,8 @@ eu-gdpr:DPIAProcedure a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:DPIA ;
+    skos:broader dpv:DPIA,
+        dpv:OrganisationalMeasure ;
     skos:definition "Process representing carrying out a DPIA"@en ;
     skos:inScheme eu-gdpr:dpia-classes ;
     skos:prefLabel "DPIA Procedure"@en .
@@ -297,6 +300,10 @@ dpv:ConformanceStatus rdfs:superClassOf eu-gdpr:DPIAConformity ;
     skos:narrower eu-gdpr:DPIAConformity .
 
 dpv:DPIA skos:narrower eu-gdpr:DPIANecessityAssessment,
+        eu-gdpr:DPIAOutcome,
+        eu-gdpr:DPIAProcedure .
+
+dpv:OrganisationalMeasure skos:narrower eu-gdpr:DPIANecessityAssessment,
         eu-gdpr:DPIAOutcome,
         eu-gdpr:DPIAProcedure .
 

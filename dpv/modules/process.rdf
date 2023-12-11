@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:dcam="http://purl.org/dc/dcam/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:schema="https://schema.org/"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xmlns:sw="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+>
+  <rdf:Description rdf:about="https://w3id.org/dpv#NonPersonalDataProcess">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:scopeNote xml:lang="en">An action, activity, or method involving non-personal data, and asserting that no personal data is involved</skos:scopeNote>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Process"/>
+    <skos:broader rdf:resource="https://w3id.org/dpv#Process"/>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#process-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#PersonalDataHandling">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:scopeNote xml:lang="en">An abstract concept describing 'personal data handling'</skos:scopeNote>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Process"/>
+    <skos:broader rdf:resource="https://w3id.org/dpv#Process"/>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#process-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasPersonalDataHandling">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="en">has personal data handling</skos:prefLabel>
+    <skos:definition xml:lang="en">Indicates association with Personal Data Handling</skos:definition>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#PersonalDataHandling"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#PersonalDataHandling"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#process-properties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasProcess">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="en">has process</skos:prefLabel>
+    <skos:definition xml:lang="en">Indicates association with a Process</skos:definition>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#Process"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#Process"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#process-properties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasNonPersonalDataProcess">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="en">has non-personal data process</skos:prefLabel>
+    <skos:definition xml:lang="en">Indicates association with a Non-Personal Data Process</skos:definition>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#NonPersonalDataProcess"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#NonPersonalDataProcess"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#process-properties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#Process">
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#PersonalDataHandling"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#PersonalDataProcess"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#NonPersonalDataProcess"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv#PersonalDataHandling"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv#PersonalDataProcess"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv#NonPersonalDataProcess"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:scopeNote xml:lang="en">An action, activity, or method</skos:scopeNote>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#process-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#dpv:PersonalDataHandling">
+    <skos:note xml:lang="en">This concept will be deprecated in future updates. It is recommended to use dpv:PersonalDataProcess as the equivalent alternative which is better aligned with legal and operational terminology.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#PersonalDataProcess">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:scopeNote xml:lang="en">An action, activity, or method involving personal data</skos:scopeNote>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Process"/>
+    <skos:broader rdf:resource="https://w3id.org/dpv#Process"/>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#process-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasPersonalDataProcess">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="en">has personal data process</skos:prefLabel>
+    <skos:definition xml:lang="en">Indicates association with a Personal Data Process</skos:definition>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#PersonalDataProcess"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#PersonalDataProcess"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#process-properties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#dpv:NonPersonalDataProcess">
+    <skos:note xml:lang="en">Use of personal data within NonPersonalDataProcess should be considered a violation of the explicit constraint that no personal data is involved.</skos:note>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#process-classes">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#process-properties">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+  </rdf:Description>
+</rdf:RDF>

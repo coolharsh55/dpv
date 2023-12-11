@@ -249,8 +249,8 @@ class DATA(object):
             term = s.n3(graph.namespace_manager)
             module_data_temp[term] = DATA.data[vocab][term]
         module_data = {
-            'classes': {},
-            'schemes': {}
+            'classes': {'prefix': vocab},
+            'schemes': {'prefix': vocab}
         }
         for k, v in module_data_temp.items():
             if v['term'][0].islower(): pass
@@ -291,6 +291,7 @@ def organise_hierarchy(terms, top=None):
             parents = term['skos:broader'] # get parents
             if type(parents) is not list: # single parent
                 parents = [parents]
+            # DEBUG(f'{key} -> {parents}')
             for parent in parents: # check parents are not present in terms
                 if prefix_from_iri(parent) in terms:
                     data[key]['parents'].append(prefix_from_iri(parent))
@@ -337,6 +338,7 @@ if __name__ == '__main__':
                 module_data[module_name] = {}
                 module_data[module_name]['index'] = {}
             module_data[module_name][module] = DATA.modules[vocab][module]
+            module_data[module_name]['prefix'] = vocab
             for data in DATA.modules[vocab][module].values():
                 for k, v in data.items():
                     module_data[module_name]['index'][k] = v

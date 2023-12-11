@@ -9,7 +9,8 @@ tech:Application a rdfs:Class,
         skos:Concept,
         dpv:Technology ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-tech:OperationalTechnology ;
+    skos:broader dpv:Technology,
+        dpv-tech:OperationalTechnology ;
     skos:definition "A computing or digital program"@en ;
     skos:inScheme tech:ops-classes ;
     skos:prefLabel "Application"@en .
@@ -18,7 +19,8 @@ tech:OperationDevice a rdfs:Class,
         skos:Concept,
         dpv:Technology ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-tech:OperationalTechnology ;
+    skos:broader dpv:Technology,
+        dpv-tech:OperationalTechnology ;
     skos:definition "Technology that acts as an equipment or mechanism for operations"@en ;
     skos:inScheme tech:ops-classes ;
     skos:prefLabel "Operation Device"@en .
@@ -27,7 +29,8 @@ tech:OperationEnvironment a rdfs:Class,
         skos:Concept,
         dpv:Technology ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-tech:OperationalTechnology ;
+    skos:broader dpv:Technology,
+        dpv-tech:OperationalTechnology ;
     skos:definition "Technology that provides an environment for operations to be executed"@en ;
     skos:inScheme tech:ops-classes ;
     skos:prefLabel "Operation Environment"@en .
@@ -36,7 +39,8 @@ tech:OperationManagement a rdfs:Class,
         skos:Concept,
         dpv:Technology ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-tech:OperationalTechnology ;
+    skos:broader dpv:Technology,
+        dpv-tech:OperationalTechnology ;
     skos:definition "Technology that manages operations"@en ;
     skos:inScheme tech:ops-classes ;
     skos:prefLabel "Operation Management"@en .
@@ -47,4 +51,9 @@ dpv-tech:OperationalTechnology skos:narrower tech:Application,
         tech:OperationManagement .
 
 tech:ops-classes a skos:ConceptScheme .
+
+dpv:Technology skos:narrower tech:Application,
+        tech:OperationDevice,
+        tech:OperationEnvironment,
+        tech:OperationManagement .
 

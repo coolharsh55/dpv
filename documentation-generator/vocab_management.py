@@ -63,10 +63,10 @@ def prefix_from_iri(iri):
 IMPORT_CSV_PATH = './vocab_csv'
 CSVFILES = {
     'dpv': {
-        # 'core': {
-        #     'classes': f'{IMPORT_CSV_PATH}/BaseOntology.csv',
-        #     'properties': f'{IMPORT_CSV_PATH}/BaseOntology_properties.csv',
-        # },
+        'process': {
+            'classes': f'{IMPORT_CSV_PATH}/Process.csv',
+            'properties': f'{IMPORT_CSV_PATH}/Process_properties.csv',
+        },
         'personal_data': {
             'classes': f'{IMPORT_CSV_PATH}/PersonalData.csv',
             'properties': f'{IMPORT_CSV_PATH}/PersonalData_properties.csv',

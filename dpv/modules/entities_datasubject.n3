@@ -29,7 +29,8 @@ dpv:AsylumSeeker a rdfs:Class,
         skos:Concept,
         dpv:DataSubject ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:VulnerableDataSubject ;
+    skos:broader dpv:DataSubject,
+        dpv:VulnerableDataSubject ;
     skos:definition "Data subjects that are asylum seekers"@en ;
     skos:inScheme dpv:entities-datasubject-classes ;
     skos:prefLabel "Asylum Seeker"@en .
@@ -57,7 +58,8 @@ dpv:Client a rdfs:Class,
         skos:Concept,
         dpv:DataSubject ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Customer ;
+    skos:broader dpv:Customer,
+        dpv:DataSubject ;
     skos:definition "Data subjects that are clients or recipients of services"@en ;
     skos:inScheme dpv:entities-datasubject-classes ;
     skos:prefLabel "Client"@en .
@@ -85,24 +87,26 @@ dpv:Customer a rdfs:Class,
 dpv:DataSubject a rdfs:Class,
         skos:Concept ;
     dct:source "(GDPR Art.4-1g,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_1/oj)"@en ;
-    rdfs:subClassOf dpv:LegalEntity,
-        dpv:NaturalPerson ;
+    rdfs:subClassOf dpv:LegalEntity ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:LegalEntity,
-        dpv:NaturalPerson ;
+    skos:broader dpv:LegalEntity ;
     skos:definition "The individual (or category of individuals) whose personal data is being processed"@en ;
     skos:inScheme dpv:entities-datasubject-classes ;
     skos:narrower dpv:Adult,
         dpv:Applicant,
+        dpv:AsylumSeeker,
         dpv:Child,
         dpv:Citizen,
+        dpv:Client,
         dpv:Consumer,
         dpv:Customer,
+        dpv:ElderlyDataSubject,
         dpv:Employee,
         dpv:GuardianOfDataSubject,
         dpv:Immigrant,
         dpv:JobApplicant,
         dpv:Member,
+        dpv:MentallyVulnerableDataSubject,
         dpv:NonCitizen,
         dpv:ParentOfDataSubject,
         dpv:Participant,
@@ -113,14 +117,15 @@ dpv:DataSubject a rdfs:Class,
         dpv:User,
         dpv:Visitor,
         dpv:VulnerableDataSubject ;
-    skos:note "The term 'data subject' is specific to the GDPR, but is functionally equivalent to the term 'individual' and the ISO/IEC term 'PII Principle'."@en ;
+    skos:note "The term 'data subject' is specific to the GDPR, but is functionally equivalent to the term 'individual associated with data' and the ISO/IEC term 'PII Principle'"@en ;
     skos:prefLabel "Data Subject"@en .
 
 dpv:ElderlyDataSubject a rdfs:Class,
         skos:Concept,
         dpv:DataSubject ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:VulnerableDataSubject ;
+    skos:broader dpv:DataSubject,
+        dpv:VulnerableDataSubject ;
     skos:definition "Data subjects that are considered elderly (i.e. based on age)"@en ;
     skos:inScheme dpv:entities-datasubject-classes ;
     skos:prefLabel "Elderly Data Subject"@en .
@@ -174,7 +179,8 @@ dpv:MentallyVulnerableDataSubject a rdfs:Class,
         skos:Concept,
         dpv:DataSubject ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:VulnerableDataSubject ;
+    skos:broader dpv:DataSubject,
+        dpv:VulnerableDataSubject ;
     skos:definition "Data subjects that are considered mentally vulnerable"@en ;
     skos:inScheme dpv:entities-datasubject-classes ;
     skos:prefLabel "Mentally Vulnerable Data Subject"@en .
@@ -275,9 +281,6 @@ dpv:VulnerableDataSubject a rdfs:Class,
     skos:prefLabel "Vulnerable Data Subject"@en .
 
 dpv:LegalEntity rdfs:superClassOf dpv:DataSubject ;
-    skos:narrower dpv:DataSubject .
-
-dpv:NaturalPerson rdfs:superClassOf dpv:DataSubject ;
     skos:narrower dpv:DataSubject .
 
 dpv:entities-datasubject-properties a skos:ConceptScheme .

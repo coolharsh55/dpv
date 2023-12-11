@@ -13,7 +13,7 @@ dcat:Resource a rdfs:Class,
         skos:Concept ;
     skos:inScheme dpv:rights-classes ;
     skos:prefLabel "dcat:Resource"@en ;
-    skos:scopeNote "A dataset, data service, or any other resource associated with Right Exercise - such as for providing a copy of personal data"@en .
+    skos:scopeNote "A dataset, data service, or any other resource associated with Right Exercise - such as for providing a copy of data"@en .
 
 dpv:ActiveRight a rdfs:Class,
         skos:Concept,
@@ -53,7 +53,7 @@ dpv:Right a rdfs:Class,
     skos:narrower dpv:ActiveRight,
         dpv:DataSubjectRight,
         dpv:PassiveRight ;
-    skos:note "A 'right' is a legal, social, or ethical principle of freedom or entitlement which dictate the norms regarding what is allowed or owed.. Rights as a concept encompass a broad area of norms and entities, and are not specific to Individuals or Data Protection / Privacy. For individual specific rights, see dpv:DataSubjectRight"@en ;
+    skos:note "A 'right' is a legal, social, or ethical principle of freedom or entitlement which dictate the norms regarding what is allowed or owed. Rights as a concept encompass a broad area of norms and entities, and are not specific to Individuals or Data Protection / Privacy. For individual specific rights, see dpv:DataSubjectRight"@en ;
     skos:prefLabel "Right"@en .
 
 dpv:RightExerciseActivity a rdfs:Class,
@@ -80,7 +80,8 @@ dpv:RightExerciseRecord a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Record ;
+    skos:broader dpv:OrganisationalMeasure,
+        dpv:Record ;
     skos:definition "Record of a Right being exercised"@en ;
     skos:inScheme dpv:rights-classes ;
     skos:note "This concept represents a record of one or more right exercise activities, such as those associated with a single data subject or service or entity"@en ;
@@ -90,7 +91,8 @@ dpv:RightFulfilmentNotice a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Notice ;
+    skos:broader dpv:Notice,
+        dpv:OrganisationalMeasure ;
     skos:definition "Notice provided regarding fulfilment of a right"@en ;
     skos:inScheme dpv:rights-classes ;
     skos:note "This notice is associated with situations where information is provided with the intention of progressing the fulfilment of a right. For example, a notice asking for more information regarding the scope of the right, or providing information on where to access the data provided under a right."@en ;
@@ -100,7 +102,8 @@ dpv:RightNonFulfilmentNotice a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Notice ;
+    skos:broader dpv:Notice,
+        dpv:OrganisationalMeasure ;
     skos:definition "Notice provided regarding non-fulfilment of a right"@en ;
     skos:inScheme dpv:rights-classes ;
     skos:note "This notice is associated with situations where information is provided with the intention of communicating non-fulfilment of a right. For example, to provide justifications on why a right could not be fulfilled or providing information about another entity  who should be approached for exercising this right."@en ;
@@ -232,7 +235,10 @@ dpv:Notice skos:narrower dpv:RightFulfilmentNotice,
         dpv:RightNonFulfilmentNotice .
 
 dpv:OrganisationalMeasure skos:narrower dpv:RightExerciseActivity,
-        dpv:RightExerciseNotice .
+        dpv:RightExerciseNotice,
+        dpv:RightExerciseRecord,
+        dpv:RightFulfilmentNotice,
+        dpv:RightNonFulfilmentNotice .
 
 dpv:rights-classes a skos:ConceptScheme .
 

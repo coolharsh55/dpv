@@ -24,7 +24,8 @@ eu-dga:A2-6-Permission a rdfs:Class,
         dpv:LegalBasis ;
     dct:source "(DGA 2.6,https://eur-lex.europa.eu/eli/reg/2022/868/art_2/par_6/oj)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:NonPersonalDataLegalBasis ;
+    skos:broader dpv:LegalBasis,
+        dpv:NonPersonalDataLegalBasis ;
     skos:definition "The legal basis justfiying processing of non-personal data based on the permission of an entity"@en ;
     skos:inScheme eu-dga:legal-basis-classes ;
     skos:note "dpv:LegalBasis needs to be divided into dpv:PersonalDataLegalBasis and dpv:NonPersonalDataLegalBasis"@en ;
@@ -35,7 +36,8 @@ eu-dga:A31-2-Transfer-Agreement a rdfs:Class,
         dpv:LegalBasis ;
     dct:source "(DGA 31.2,https://eur-lex.europa.eu/eli/reg/2022/868/art_31/par_2/oj)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:DataTransferLegalBasis ;
+    skos:broader dpv:DataTransferLegalBasis,
+        dpv:LegalBasis ;
     skos:definition "Data Transfer International Agreement"@en ;
     skos:inScheme eu-dga:legal-basis-classes ;
     skos:prefLabel "Art 31(2) Data Transfer International Agreement"@en .
@@ -45,7 +47,8 @@ eu-dga:A31-3-Third-Country-Judgement a rdfs:Class,
         dpv:LegalBasis ;
     dct:source "(DGA 31.3,https://eur-lex.europa.eu/eli/reg/2022/868/art_31/par_3/oj)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:DataTransferLegalBasis ;
+    skos:broader dpv:DataTransferLegalBasis,
+        dpv:LegalBasis ;
     skos:definition "Data Transfer Third Country Judgement"@en ;
     skos:inScheme eu-dga:legal-basis-classes ;
     skos:prefLabel "Art 31(3) Data Transfer Third Country Judgement"@en .
@@ -55,7 +58,8 @@ eu-dga:A5-11-MCC a rdfs:Class,
         dpv:LegalBasis ;
     dct:source "(DGA 5.11,https://eur-lex.europa.eu/eli/reg/2022/868/art_5/par_11/oj)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:DataTransferLegalBasis ;
+    skos:broader dpv:DataTransferLegalBasis,
+        dpv:LegalBasis ;
     skos:definition "Model Contractual Clauses"@en ;
     skos:inScheme eu-dga:legal-basis-classes ;
     skos:prefLabel "Art 5(11) Model Contractual Clauses"@en .
@@ -65,7 +69,8 @@ eu-dga:A5-12-Adequacy-Decision a rdfs:Class,
         dpv:LegalBasis ;
     dct:source "(DGA 5.12,https://eur-lex.europa.eu/eli/reg/2022/868/art_5/par_12/oj)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:DataTransferLegalBasis ;
+    skos:broader dpv:DataTransferLegalBasis,
+        dpv:LegalBasis ;
     skos:definition "Adequacy Decision permitting the transfer of data"@en ;
     skos:inScheme eu-dga:legal-basis-classes ;
     skos:prefLabel "Art 5(12) Adequacy Decision"@en .
@@ -75,7 +80,8 @@ eu-dga:A5-9-Transfer-Permission a rdfs:Class,
         dpv:LegalBasis ;
     dct:source "(DGA 5.9,https://eur-lex.europa.eu/eli/reg/2022/868/art_5/par_9/oj)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:DataTransferLegalBasis ;
+    skos:broader dpv:DataTransferLegalBasis,
+        dpv:LegalBasis ;
     skos:definition "The legal basis justfiying processing of non-personal data based on the permission of an entity to transfer data"@en ;
     skos:inScheme eu-dga:legal-basis-classes ;
     skos:prefLabel "Art 5(9) Permission for Transfer"@en .
@@ -124,7 +130,8 @@ eu-dga:DISPEUApproval a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:CertificationSeal ;
+    skos:broader dpv:CertificationSeal,
+        dpv:OrganisationalMeasure ;
     skos:definition "Confirmation and approval by a competent authority for the Data Intermediation Service Provider's compliance with Article 11 and Article 12 of the DGA"@en ;
     skos:inScheme eu-dga:toms-classes ;
     skos:note "DGA 11.9"@en ;
@@ -154,7 +161,8 @@ eu-dga:DISPNotice a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Notice ;
+    skos:broader dpv:Notice,
+        dpv:OrganisationalMeasure ;
     skos:definition "Notification by a Data Intermediation Service Provider to a competent authority concerning changes to details regarding its Data Intermediation Service"@en ;
     skos:inScheme eu-dga:toms-classes ;
     skos:note "DGA 11.1, DGA 11.9, DGA 11.12, DGA 11.13"@en ;
@@ -174,7 +182,8 @@ eu-dga:DataAltruismAnnualReport a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:RecordsOfActivities ;
+    skos:broader dpv:OrganisationalMeasure,
+        dpv:RecordsOfActivities ;
     skos:definition "Document containing the annual activities reported by a Data Altruism organisation"@en ;
     skos:inScheme eu-dga:toms-classes ;
     skos:note "DGA 20.2"@en ;
@@ -194,7 +203,8 @@ eu-dga:DataAltruismNotice a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Notice ;
+    skos:broader dpv:Notice,
+        dpv:OrganisationalMeasure ;
     skos:definition "Notice providing information regarding the processing of data for data altruistic purposes"@en ;
     skos:inScheme eu-dga:toms-classes ;
     skos:note "DGA 21.1"@en ;
@@ -214,7 +224,8 @@ eu-dga:DataAltruismRecord a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:RecordsOfActivities ;
+    skos:broader dpv:OrganisationalMeasure,
+        dpv:RecordsOfActivities ;
     skos:definition "Document that logs the activity of the data altruism organisation"@en ;
     skos:inScheme eu-dga:toms-classes ;
     skos:note "DGA 20"@en ;
@@ -273,7 +284,8 @@ eu-dga:DataIntermediationRecord a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:RecordsOfActivities ;
+    skos:broader dpv:OrganisationalMeasure,
+        dpv:RecordsOfActivities ;
     skos:definition "Document that logs the activity of the data intermediation service provider"@en ;
     skos:inScheme eu-dga:toms-classes ;
     skos:note "DGA 12.o"@en ;
@@ -343,7 +355,8 @@ eu-dga:EUDataAltruismConsentForm a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:ConsentManagement ;
+    skos:broader dpv:ConsentManagement,
+        dpv:OrganisationalMeasure ;
     skos:definition "A form provided by the European Commission for collecting consent"@en ;
     skos:inScheme eu-dga:toms-classes ;
     skos:note "DGA 25.1"@en ;
@@ -382,7 +395,8 @@ eu-dga:NationalDataAltruismPolicy a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Policy ;
+    skos:broader dpv:OrganisationalMeasure,
+        dpv:Policy ;
     skos:definition "A Policy established at National level regarding Data Altruism"@en ;
     skos:inScheme eu-dga:toms-classes ;
     skos:note "DGA 16"@en ;
@@ -401,7 +415,8 @@ eu-dga:PersonalDataReuseNotice a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:ConsentNotice ;
+    skos:broader dpv:ConsentNotice,
+        dpv:OrganisationalMeasure ;
     skos:definition "Notice for data subjects to provide consent based on information and advise regarding intended use of data, exercise of rights, and applicable terms and conditions"@en ;
     skos:inScheme eu-dga:toms-classes ;
     skos:note "DGA 12.m"@en ;
@@ -469,7 +484,8 @@ eu-dga:SecureProcessingEnvironment a rdfs:Class,
         skos:Concept,
         dpv:TechnicalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:SecureProcessingEnvironment ;
+    skos:broader dpv:SecureProcessingEnvironment,
+        dpv:TechnicalMeasure ;
     skos:definition "Physical or virtual environment to ensure compliance with EU law and allow the entity providing the secure processing environment to determine and supervise all data processing actions"@en ;
     skos:inScheme eu-dga:toms-classes ;
     skos:note "DGA 2.20"@en ;
@@ -488,7 +504,8 @@ eu-dga:ThirdCountryDataRequestNotice a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:ThirdCountryTransferNotice ;
+    skos:broader dpv:OrganisationalMeasure,
+        dpv:ThirdCountryTransferNotice ;
     skos:definition "Notice regarding a request of a third-country administrative authority to access data"@en ;
     skos:inScheme eu-dga:toms-classes ;
     skos:note "DGA 31.5"@en ;
@@ -519,6 +536,8 @@ dpv:Notice skos:narrower eu-dga:DISPNotice,
 
 dpv:SupraNationalAuthority rdfs:superClassOf eu-dga:EuropeanDataInnovationBoard ;
     skos:narrower eu-dga:EuropeanDataInnovationBoard .
+
+dpv:TechnicalMeasure skos:narrower eu-dga:SecureProcessingEnvironment .
 
 eu-dga:hasDAO a rdf:Property,
         skos:Concept ;
@@ -617,8 +636,6 @@ dpv-dga:DataIntermediationService rdfs:superClassOf eu-dga:DataCooperativeServic
 
 eu-dga:legal-basis-classes a skos:ConceptScheme .
 
-dpv:LegalBasis skos:narrower eu-dga:A12-e-Exchange-Approval .
-
 dpv:LegalEntity rdfs:superClassOf eu-dga:DISP,
         eu-dga:DataHolder,
         eu-dga:DataUser,
@@ -664,8 +681,26 @@ dpv-dga:SIP rdfs:superClassOf eu-dga:EUSIPProvider,
 
 eu-dga:toms-classes a skos:ConceptScheme .
 
-dpv:OrganisationalMeasure skos:narrower eu-dga:DataAssetList,
-        eu-dga:DataReuseRequest .
+dpv:LegalBasis skos:narrower eu-dga:A12-e-Exchange-Approval,
+        eu-dga:A2-6-Permission,
+        eu-dga:A31-2-Transfer-Agreement,
+        eu-dga:A31-3-Third-Country-Judgement,
+        eu-dga:A5-11-MCC,
+        eu-dga:A5-12-Adequacy-Decision,
+        eu-dga:A5-9-Transfer-Permission .
 
 eu-dga:entities-classes a skos:ConceptScheme .
+
+dpv:OrganisationalMeasure skos:narrower eu-dga:DISPEUApproval,
+        eu-dga:DISPNotice,
+        eu-dga:DataAltruismAnnualReport,
+        eu-dga:DataAltruismNotice,
+        eu-dga:DataAltruismRecord,
+        eu-dga:DataAssetList,
+        eu-dga:DataIntermediationRecord,
+        eu-dga:DataReuseRequest,
+        eu-dga:EUDataAltruismConsentForm,
+        eu-dga:NationalDataAltruismPolicy,
+        eu-dga:PersonalDataReuseNotice,
+        eu-dga:ThirdCountryDataRequestNotice .
 

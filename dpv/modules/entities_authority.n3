@@ -9,15 +9,13 @@
 
 dpv:Authority a rdfs:Class,
         skos:Concept ;
-    rdfs:subClassOf dpv:GovernmentalOrganisation,
-        dpv:LegalEntity ;
+    rdfs:subClassOf dpv:GovernmentalOrganisation ;
     rdfs:superClassOf dpv:DataProtectionAuthority,
         dpv:NationalAuthority,
         dpv:RegionalAuthority,
         dpv:SupraNationalAuthority ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:GovernmentalOrganisation,
-        dpv:LegalEntity ;
+    skos:broader dpv:GovernmentalOrganisation ;
     skos:definition "An authority with the power to create or enforce laws, or determine their compliance."@en ;
     skos:inScheme dpv:entities-authority-classes ;
     skos:narrower dpv:DataProtectionAuthority,
@@ -84,9 +82,6 @@ dpv:isAuthorityFor a rdf:Property,
     schema:domainIncludes dpv:Authority .
 
 dpv:GovernmentalOrganisation rdfs:superClassOf dpv:Authority ;
-    skos:narrower dpv:Authority .
-
-dpv:LegalEntity rdfs:superClassOf dpv:Authority ;
     skos:narrower dpv:Authority .
 
 dpv:entities-authority-properties a skos:ConceptScheme .

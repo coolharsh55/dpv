@@ -114,15 +114,14 @@ def construct_parent_taxonomy(item, data, namespace):
     prefix_top, topconcept = data['ParentType'].split(':')
     topconcept = NAMESPACES[prefix_top][topconcept]
     triples.append((namespace[term], RDF.type, topconcept))
-    if not parents:
-        # empty parents means this is a topconcept
-        triples.append((namespace[term], SKOS.broader, topconcept))
-        triples.append((topconcept, SKOS.narrower, namespace[term]))
-    else:
-        # parent non-empty means not a top concept, state relation
-        for parent in parents:
-            triples.append((namespace[term], SKOS.broader, parent))
-            triples.append((parent, SKOS.narrower, namespace[term]))
+    # if not parents:
+    #     # empty parents means this is a topconcept
+    triples.append((namespace[term], SKOS.broader, topconcept))
+    triples.append((topconcept, SKOS.narrower, namespace[term]))
+    # parent non-empty means not a top concept, state relation
+    for parent in parents:
+        triples.append((namespace[term], SKOS.broader, parent))
+        triples.append((parent, SKOS.narrower, namespace[term]))
     return triples
 
 

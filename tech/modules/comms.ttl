@@ -8,7 +8,8 @@ tech:BluetoothCommunication a rdfs:Class,
         skos:Concept,
         dpv-tech:CommunicationMechanism ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-tech:Networking ;
+    skos:broader dpv-tech:CommunicationMechanism,
+        dpv-tech:Networking ;
     skos:definition "Technology utilising bluetooth communication"@en ;
     skos:inScheme tech:comms-classes ;
     skos:prefLabel "Bluetooth Communication"@en .
@@ -17,7 +18,8 @@ tech:CellularNetworkCommunication a rdfs:Class,
         skos:Concept,
         dpv-tech:CommunicationMechanism ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-tech:Networking ;
+    skos:broader dpv-tech:CommunicationMechanism,
+        dpv-tech:Networking ;
     skos:definition "Technology utilising cellular networking communication"@en ;
     skos:inScheme tech:comms-classes ;
     skos:prefLabel "Cellular Network Communication"@en .
@@ -35,7 +37,8 @@ tech:InternetCommunication a rdfs:Class,
         skos:Concept,
         dpv-tech:CommunicationMechanism ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-tech:Networking ;
+    skos:broader dpv-tech:CommunicationMechanism,
+        dpv-tech:Networking ;
     skos:definition "Technology utilising internet communication"@en ;
     skos:inScheme tech:comms-classes ;
     skos:prefLabel "Internet Communication"@en .
@@ -44,7 +47,8 @@ tech:LocalNetworkCommunication a rdfs:Class,
         skos:Concept,
         dpv-tech:CommunicationMechanism ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-tech:Networking ;
+    skos:broader dpv-tech:CommunicationMechanism,
+        dpv-tech:Networking ;
     skos:definition "Technology utilising local networking communication"@en ;
     skos:inScheme tech:comms-classes ;
     skos:prefLabel "Local Network Communication"@en .
@@ -62,7 +66,8 @@ tech:WiFiCommunication a rdfs:Class,
         skos:Concept,
         dpv-tech:CommunicationMechanism ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-tech:Networking ;
+    skos:broader dpv-tech:CommunicationMechanism,
+        dpv-tech:Networking ;
     skos:definition "Technology utilising wifi wireless networking communication"@en ;
     skos:inScheme tech:comms-classes ;
     skos:prefLabel "WiFi Communication"@en .
@@ -75,6 +80,11 @@ dpv-tech:Networking skos:narrower tech:BluetoothCommunication,
 
 tech:comms-classes a skos:ConceptScheme .
 
-dpv-tech:CommunicationMechanism skos:narrower tech:GPSCommunication,
-        tech:NetworkingCommunication .
+dpv-tech:CommunicationMechanism skos:narrower tech:BluetoothCommunication,
+        tech:CellularNetworkCommunication,
+        tech:GPSCommunication,
+        tech:InternetCommunication,
+        tech:LocalNetworkCommunication,
+        tech:NetworkingCommunication,
+        tech:WiFiCommunication .
 

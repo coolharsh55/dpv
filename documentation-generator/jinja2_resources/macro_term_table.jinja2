@@ -43,11 +43,10 @@
 {% endmacro %}
 
 {% macro list_item_single(topconcepts, concepts, data) %}
-  {{ topconcepts }}
   {% for term in topconcepts %}
   <li>
     <strong>{{term}}</strong>: {{data[term]['skos:definition']}} 
-      <small><a href="#{{data[term]['term']}}">go to full definition</a></small><br/>
+      <small><a href="{{data[term]['iri']}}">go to full definition</a></small><br/>
       data: {{ topconcepts[term] }}
     {% if concepts[term]['children'] %}
       <ul>
@@ -64,7 +63,7 @@
 {% for term, data in concepts.items() %}
   <li>
     <strong>{{term}}</strong>: {{data['skos:definition']}} 
-      <small><a href="#{{data['term']}}">go to full definition</a></small>
+      <small><a href="{% if term.split(':')[0] == vocab['prefix'] %}#{{data['term']}}{% else %}{{data['iri']}}{% endif %}">go to full definition</a></small>
       {{ list_items(vocab, head=term) }}
   </li>
 {% endfor %}

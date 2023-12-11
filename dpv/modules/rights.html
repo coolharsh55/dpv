@@ -346,7 +346,7 @@
   <div class="list-hierarchy">
 <ul class="concept-list">
   <li>
-    <strong>dpv:OrganisationalMeasure</strong>: Organisational measures required/followed when processing data of the declared category 
+    <strong>dpv:OrganisationalMeasure</strong>: Organisational measures used to safeguard and ensure good practices in connection with data and technologies 
       <small><a href="#OrganisationalMeasure">go to full definition</a></small>
       <ul class="concept-list">
   <li>
@@ -373,6 +373,21 @@
   <li>
     <strong>dpv:RightExerciseNotice</strong>: Information associated with exercising of an active right 
       <small><a href="#RightExerciseNotice">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:RightExerciseRecord</strong>: Record of a Right being exercised 
+      <small><a href="#RightExerciseRecord">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:RightFulfilmentNotice</strong>: Notice provided regarding fulfilment of a right 
+      <small><a href="#RightFulfilmentNotice">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>dpv:RightNonFulfilmentNotice</strong>: Notice provided regarding non-fulfilment of a right 
+      <small><a href="#RightNonFulfilmentNotice">go to full definition</a></small>
       
   </li>
 </ul>
@@ -408,6 +423,11 @@
       
   </li>
 </ul>
+  </li>
+  <li>
+    <strong>prefix</strong>:  
+      <small><a href="">go to full definition</a></small>
+      
   </li>
 </ul>
 </div>
@@ -482,7 +502,7 @@
         <span class="dfn-label">IRI:</span> <a href="https://w3id.org/dpv#OrganisationalMeasure">https://w3id.org/dpv#OrganisationalMeasure</a><br/>
         <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#OrganisationalMeasure">dpv:OrganisationalMeasure</a>
         <span class="dfn-label">Label:</span> <i>Organisational Measure</i><br/>
-        <span class="dfn-label">Description:</span> <i>Organisational measures required/followed when processing data of the declared category</i><br/>
+        <span class="dfn-label">Description:</span> <i>Organisational measures used to safeguard and ensure good practices in connection with data and technologies</i><br/>
         <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
 <span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#TechnicalOrganisationalMeasure">dpv:TechnicalOrganisationalMeasure</a></i><br/>      </p>
       </div>
@@ -510,7 +530,7 @@
         <span class="dfn-label">Label:</span> <i>Record</i><br/>
         <span class="dfn-label">Description:</span> <i>to make a record (especially media)</i><br/>
         <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#Processing">dpv:Processing</a></i><br/>
-<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Obtain">dpv:Obtain</a></i><br/><span class="dfn-label">Source:</span> <i>(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)</i><br/>      </p>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Obtain">dpv:Obtain</a>, <a href="https://w3id.org/dpv#Processing">dpv:Processing</a></i><br/><span class="dfn-label">Source:</span> <i>(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)</i><br/>      </p>
       </div>
     </section>
     <section class="term-def" id="Right">
@@ -522,7 +542,7 @@
         <span class="dfn-label">Prefixed:</span> <a href="https://w3id.org/dpv#Right">dpv:Right</a>
         <span class="dfn-label">Label:</span> <i>Right</i><br/>
         <span class="dfn-label">Description:</span> <i>The right(s) applicable, provided, or expected</i><br/>
-<span class="dfn-label">Usage Note:</span> <i>A &#39;right&#39; is a legal, social, or ethical principle of freedom or entitlement which dictate the norms regarding what is allowed or owed.. Rights as a concept encompass a broad area of norms and entities, and are not specific to Individuals or Data Protection / Privacy. For individual specific rights, see dpv:DataSubjectRight</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
+<span class="dfn-label">Usage Note:</span> <i>A &#39;right&#39; is a legal, social, or ethical principle of freedom or entitlement which dictate the norms regarding what is allowed or owed. Rights as a concept encompass a broad area of norms and entities, and are not specific to Individuals or Data Protection / Privacy. For individual specific rights, see dpv:DataSubjectRight</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></i><br/>
       </p>
       </div>
     </section>
@@ -562,7 +582,7 @@
         <span class="dfn-label">Label:</span> <i>Right Exercise Record</i><br/>
         <span class="dfn-label">Description:</span> <i>Record of a Right being exercised</i><br/>
 <span class="dfn-label">Usage Note:</span> <i>This concept represents a record of one or more right exercise activities, such as those associated with a single data subject or service or entity</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#OrganisationalMeasure">dpv:OrganisationalMeasure</a></i><br/>
-<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Record">dpv:Record</a></i><br/>      </p>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#OrganisationalMeasure">dpv:OrganisationalMeasure</a>, <a href="https://w3id.org/dpv#Record">dpv:Record</a></i><br/>      </p>
       </div>
     </section>
     <section class="term-def" id="RightFulfilmentNotice">
@@ -575,7 +595,7 @@
         <span class="dfn-label">Label:</span> <i>Right Fulfilment Notice</i><br/>
         <span class="dfn-label">Description:</span> <i>Notice provided regarding fulfilment of a right</i><br/>
 <span class="dfn-label">Usage Note:</span> <i>This notice is associated with situations where information is provided with the intention of progressing the fulfilment of a right. For example, a notice asking for more information regarding the scope of the right, or providing information on where to access the data provided under a right.</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#OrganisationalMeasure">dpv:OrganisationalMeasure</a></i><br/>
-<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Notice">dpv:Notice</a></i><br/>      </p>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Notice">dpv:Notice</a>, <a href="https://w3id.org/dpv#OrganisationalMeasure">dpv:OrganisationalMeasure</a></i><br/>      </p>
       </div>
     </section>
     <section class="term-def" id="RightNonFulfilmentNotice">
@@ -588,7 +608,7 @@
         <span class="dfn-label">Label:</span> <i>Right Non-Fulfilment Notice</i><br/>
         <span class="dfn-label">Description:</span> <i>Notice provided regarding non-fulfilment of a right</i><br/>
 <span class="dfn-label">Usage Note:</span> <i>This notice is associated with situations where information is provided with the intention of communicating non-fulfilment of a right. For example, to provide justifications on why a right could not be fulfilled or providing information about another entity  who should be approached for exercising this right.</i><br/>        <span class="dfn-label">Type:</span> <i><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a>, <a href="https://w3id.org/dpv#OrganisationalMeasure">dpv:OrganisationalMeasure</a></i><br/>
-<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Notice">dpv:Notice</a></i><br/>      </p>
+<span class="dfn-label">Narrower than:</span> <i><a href="https://w3id.org/dpv#Notice">dpv:Notice</a>, <a href="https://w3id.org/dpv#OrganisationalMeasure">dpv:OrganisationalMeasure</a></i><br/>      </p>
       </div>
     </section>
 
@@ -607,6 +627,19 @@
       </ul>
     <p>The following external concepts are re-used within DPV:</p>
     <h3>External</h3>
+    <section class="term-def" id="">
+      <h4></h4>
+      <div class="term-contents">
+      <p>
+        <span class="dfn-label">Term:</span> <dfn></dfn><br/>
+        <span class="dfn-label">IRI:</span> <a href=""></a><br/>
+        <span class="dfn-label">Prefixed:</span> <a href=""></a>
+        <span class="dfn-label">Label:</span> <i></i><br/>
+        <span class="dfn-label">Description:</span> <i></i><br/>
+        <span class="dfn-label">Type:</span> <i></i><br/>
+      </p>
+      </div>
+    </section>
     <section class="term-def" id="">
       <h4></h4>
       <div class="term-contents">

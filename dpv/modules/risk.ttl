@@ -17,7 +17,10 @@ dpv:Benefit a rdfs:Class,
 
 dpv:Consequence a rdfs:Class,
         skos:Concept ;
-    rdfs:superClassOf dpv:Impact ;
+    rdfs:superClassOf dpv:ConsequenceAsSideEffect,
+        dpv:ConsequenceOfFailure,
+        dpv:ConsequenceOfSuccess,
+        dpv:Impact ;
     sw:term_status "accepted"@en ;
     skos:definition "The consequence(s) possible or arising from specified context"@en ;
     skos:inScheme dpv:risk-classes ;
@@ -28,8 +31,8 @@ dpv:Consequence a rdfs:Class,
     skos:prefLabel "Consequence"@en .
 
 dpv:ConsequenceAsSideEffect a rdfs:Class,
-        skos:Concept,
-        dpv:Consequence ;
+        skos:Concept ;
+    rdfs:subClassOf dpv:Consequence ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Consequence ;
     skos:definition "The consequence(s) possible or arising as a side-effect of specified context"@en ;
@@ -37,8 +40,8 @@ dpv:ConsequenceAsSideEffect a rdfs:Class,
     skos:prefLabel "Consequence as Side-Effect"@en .
 
 dpv:ConsequenceOfFailure a rdfs:Class,
-        skos:Concept,
-        dpv:Consequence ;
+        skos:Concept ;
+    rdfs:subClassOf dpv:Consequence ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Consequence ;
     skos:definition "The consequence(s) possible or arising from failure of specified context"@en ;
@@ -46,8 +49,8 @@ dpv:ConsequenceOfFailure a rdfs:Class,
     skos:prefLabel "Consequence of Failure"@en .
 
 dpv:ConsequenceOfSuccess a rdfs:Class,
-        skos:Concept,
-        dpv:Consequence ;
+        skos:Concept ;
+    rdfs:subClassOf dpv:Consequence ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Consequence ;
     skos:definition "The consequence(s) possible or arising from success of specified context"@en ;
@@ -79,7 +82,8 @@ dpv:Harm a rdfs:Class,
         skos:Concept,
         dpv:Impact ;
     sw:term_status "changed"@en ;
-    skos:broader dpv:Damage ;
+    skos:broader dpv:Damage,
+        dpv:Impact ;
     skos:definition "Impact that acts as or causes harms"@en ;
     skos:inScheme dpv:risk-classes ;
     skos:prefLabel "Harm"@en .
@@ -93,7 +97,10 @@ dpv:Impact a rdfs:Class,
     skos:inScheme dpv:risk-classes ;
     skos:narrower dpv:Benefit,
         dpv:Damage,
-        dpv:Detriment ;
+        dpv:Detriment,
+        dpv:Harm,
+        dpv:MaterialDamage,
+        dpv:NonMaterialDamage ;
     skos:note "Impact is a stronger notion of consequence in terms of influence, change, or effect on something e.g. for impact assessments"@en ;
     skos:prefLabel "Impact"@en .
 
@@ -109,7 +116,8 @@ dpv:MaterialDamage a rdfs:Class,
         skos:Concept,
         dpv:Impact ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Damage ;
+    skos:broader dpv:Damage,
+        dpv:Impact ;
     skos:definition "Impact that acts as or causes material damages"@en ;
     skos:inScheme dpv:risk-classes ;
     skos:prefLabel "Material Damage"@en .
@@ -118,7 +126,8 @@ dpv:NonMaterialDamage a rdfs:Class,
         skos:Concept,
         dpv:Impact ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Damage ;
+    skos:broader dpv:Damage,
+        dpv:Impact ;
     skos:definition "Impact that acts as or causes non-material damages"@en ;
     skos:inScheme dpv:risk-classes ;
     skos:prefLabel "Non-Material Damage"@en .
@@ -126,9 +135,9 @@ dpv:NonMaterialDamage a rdfs:Class,
 dpv:Risk a rdfs:Class,
         skos:Concept ;
     sw:term_status "accepted"@en ;
-    skos:definition "A risk or possibility or uncertainty of negative effects, impacts, or consequences."@en ;
+    skos:definition "A risk or possibility or uncertainty of negative effects, impacts, or consequences"@en ;
     skos:inScheme dpv:risk-classes ;
-    skos:note "Risks can be associated with one or more different concepts such as purpose, processing, personal data, technical or organisational measure."@en ;
+    skos:note "Risks can be associated with one or more different concepts such as purpose, processing, personal data, technical or organisational measure"@en ;
     skos:prefLabel "Risk"@en .
 
 dpv:RiskLevel a rdfs:Class,

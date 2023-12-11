@@ -23,7 +23,8 @@ dpv:AssetManagementProcedures a rdfs:Class,
         dpv:OrganisationalMeasure ;
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:GovernanceProcedures ;
+    skos:broader dpv:GovernanceProcedures,
+        dpv:OrganisationalMeasure ;
     skos:definition "Procedures related to management of assets"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:prefLabel "Asset Management Procedures"@en .
@@ -45,7 +46,8 @@ dpv:BackgroundChecks a rdfs:Class,
         dpv:OrganisationalMeasure ;
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:SecurityProcedure ;
+    skos:broader dpv:OrganisationalMeasure,
+        dpv:SecurityProcedure ;
     skos:definition "Procedure where the background of an entity is assessed to identity vulnerabilities and threats due to their current or intended role"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:prefLabel "Background Checks"@en .
@@ -54,7 +56,8 @@ dpv:Certification a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:CertificationSeal ;
+    skos:broader dpv:CertificationSeal,
+        dpv:OrganisationalMeasure ;
     skos:definition "Certification mechanisms, seals, and marks for the purpose of demonstrating compliance"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:prefLabel "Certification"@en .
@@ -74,7 +77,8 @@ dpv:CodeOfConduct a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:GuidelinesPrinciple ;
+    skos:broader dpv:GuidelinesPrinciple,
+        dpv:OrganisationalMeasure ;
     skos:definition "A set of rules or procedures outlining the norms and practices for conducting activities"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:prefLabel "Code of Conduct"@en .
@@ -84,7 +88,8 @@ dpv:ComplianceMonitoring a rdfs:Class,
         dpv:OrganisationalMeasure ;
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:GovernanceProcedures ;
+    skos:broader dpv:GovernanceProcedures,
+        dpv:OrganisationalMeasure ;
     skos:definition "Monitoring of compliance (e.g. internal policy, regulations)"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:prefLabel "Compliance Monitoring"@en .
@@ -93,7 +98,8 @@ dpv:ConsentNotice a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:PrivacyNotice ;
+    skos:broader dpv:OrganisationalMeasure,
+        dpv:PrivacyNotice ;
     skos:definition "A Notice for information provision associated with Consent"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:prefLabel "Consent Notice"@en .
@@ -102,7 +108,8 @@ dpv:ConsentRecord a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:DataProcessingRecord ;
+    skos:broader dpv:DataProcessingRecord,
+        dpv:OrganisationalMeasure ;
     skos:definition "A Record of Consent or Consent related activities"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:prefLabel "Consent Record"@en .
@@ -123,7 +130,8 @@ dpv:ConsultationWithAuthority a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Consultation ;
+    skos:broader dpv:Consultation,
+        dpv:OrganisationalMeasure ;
     skos:definition "Consultation with an authority or authoritative entity"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:prefLabel "Consultation with Authority"@en .
@@ -132,7 +140,8 @@ dpv:ConsultationWithDPO a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Consultation ;
+    skos:broader dpv:Consultation,
+        dpv:OrganisationalMeasure ;
     skos:definition "Consultation with Data Protection Officer(s)"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:prefLabel "Consultation with DPO"@en .
@@ -141,7 +150,8 @@ dpv:ConsultationWithDataSubject a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Consultation ;
+    skos:broader dpv:Consultation,
+        dpv:OrganisationalMeasure ;
     skos:definition "Consultation with data subject(s) or their representative(s)"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:narrower dpv:ConsultationWithDataSubjectRepresentative ;
@@ -151,7 +161,8 @@ dpv:ConsultationWithDataSubjectRepresentative a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:ConsultationWithDataSubject ;
+    skos:broader dpv:ConsultationWithDataSubject,
+        dpv:OrganisationalMeasure ;
     skos:definition "Consultation with representative of data subject(s)"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:prefLabel "Consultation with Data Subject Representative"@en .
@@ -160,7 +171,8 @@ dpv:ContractualTerms a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:LegalAgreement ;
+    skos:broader dpv:LegalAgreement,
+        dpv:OrganisationalMeasure ;
     skos:definition "Contractual terms governing data handling within or with an entity"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:prefLabel "Contractual Terms"@en .
@@ -169,7 +181,8 @@ dpv:ControllerProcessorAgreement a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:DataProcessingAgreement ;
+    skos:broader dpv:DataProcessingAgreement,
+        dpv:OrganisationalMeasure ;
     skos:definition "An agreement outlining conditions, criteria, obligations, responsibilities, and specifics for carrying out processing of personal data between a Data Controller and a Data Processor"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:prefLabel "Controller-Processor Agreement"@en .
@@ -178,7 +191,8 @@ dpv:CredentialManagement a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:AuthorisationProcedure ;
+    skos:broader dpv:AuthorisationProcedure,
+        dpv:OrganisationalMeasure ;
     skos:definition "Management of credentials and their use in authorisations"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:prefLabel "Credential Management"@en .
@@ -189,6 +203,7 @@ dpv:CybersecurityAssessment a rdfs:Class,
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Assessment,
+        dpv:OrganisationalMeasure,
         dpv:SecurityAssessment ;
     skos:definition "Assessment of cybersecurity capabilities in terms of vulnerabilities and effectiveness of controls"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
@@ -199,7 +214,8 @@ dpv:CybersecurityTraining a rdfs:Class,
         dpv:OrganisationalMeasure ;
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:StaffTraining ;
+    skos:broader dpv:OrganisationalMeasure,
+        dpv:StaffTraining ;
     skos:definition "Training methods related to cybersecurity"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:prefLabel "Cybersecurity Training"@en .
@@ -208,7 +224,8 @@ dpv:DPIA a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:ImpactAssessment ;
+    skos:broader dpv:ImpactAssessment,
+        dpv:OrganisationalMeasure ;
     skos:definition "A DPIA involves determining the potential and actual impact of processing activities on individuals or groups of individuals"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:note "Top class: Impact Assessment, and DPIA is sub-class"@en ;
@@ -218,8 +235,9 @@ dpv:DataProcessingAgreement a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:LegalAgreement ;
-    skos:definition "An agreement outlining conditions, criteria, obligations, responsibilities, and specifics for carrying out processing of personal data"@en ;
+    skos:broader dpv:LegalAgreement,
+        dpv:OrganisationalMeasure ;
+    skos:definition "An agreement outlining conditions, criteria, obligations, responsibilities, and specifics for carrying out processing of data"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:narrower dpv:ControllerProcessorAgreement,
         dpv:JointDataControllersAgreement,
@@ -232,8 +250,9 @@ dpv:DataProcessingRecord a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:RecordsOfActivities ;
-    skos:definition "Record of personal data processing, whether ex-ante or ex-post"@en ;
+    skos:broader dpv:OrganisationalMeasure,
+        dpv:RecordsOfActivities ;
+    skos:definition "Record of data processing, whether ex-ante or ex-post"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:narrower dpv:ConsentRecord ;
     skos:prefLabel "Data Processing Record"@en .
@@ -243,7 +262,8 @@ dpv:DataProtectionTraining a rdfs:Class,
         dpv:OrganisationalMeasure ;
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:StaffTraining ;
+    skos:broader dpv:OrganisationalMeasure,
+        dpv:StaffTraining ;
     skos:definition "Training intended to increase knowledge regarding data protection"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:prefLabel "Data Protection Training"@en .
@@ -252,7 +272,8 @@ dpv:DataTransferImpactAssessment a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:ImpactAssessment ;
+    skos:broader dpv:ImpactAssessment,
+        dpv:OrganisationalMeasure ;
     skos:definition "Impact Assessment for conducting data transfers"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:prefLabel "Data Transfer Impact Assessment"@en .
@@ -261,7 +282,8 @@ dpv:DesignStandard a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:GuidelinesPrinciple ;
+    skos:broader dpv:GuidelinesPrinciple,
+        dpv:OrganisationalMeasure ;
     skos:definition "A set of rules or guidelines outlining criterias for design"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:prefLabel "Design Standard"@en .
@@ -271,7 +293,8 @@ dpv:DisasterRecoveryProcedures a rdfs:Class,
         dpv:OrganisationalMeasure ;
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:GovernanceProcedures ;
+    skos:broader dpv:GovernanceProcedures,
+        dpv:OrganisationalMeasure ;
     skos:definition "Procedures related to management of disasters and recovery"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:prefLabel "Disaster Recovery Procedures"@en .
@@ -281,7 +304,8 @@ dpv:EducationalTraining a rdfs:Class,
         dpv:OrganisationalMeasure ;
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:StaffTraining ;
+    skos:broader dpv:OrganisationalMeasure,
+        dpv:StaffTraining ;
     skos:definition "Training methods that are intended to provide education on topic(s)"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:prefLabel "Educational Training"@en .
@@ -291,7 +315,8 @@ dpv:EffectivenessDeterminationProcedures a rdfs:Class,
         dpv:OrganisationalMeasure ;
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Assessment ;
+    skos:broader dpv:Assessment,
+        dpv:OrganisationalMeasure ;
     skos:definition "Procedures intended to determine effectiveness of other measures"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:prefLabel "Effectiveness Determination Procedures"@en .
@@ -330,7 +355,8 @@ dpv:IdentityManagementMethod a rdfs:Class,
         dpv:OrganisationalMeasure ;
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:AuthorisationProcedure ;
+    skos:broader dpv:AuthorisationProcedure,
+        dpv:OrganisationalMeasure ;
     skos:definition "Management of identity and identity-based processes"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:prefLabel "Identity Management Method"@en .
@@ -339,7 +365,8 @@ dpv:ImpactAssessment a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Assessment ;
+    skos:broader dpv:Assessment,
+        dpv:OrganisationalMeasure ;
     skos:definition "Calculating or determining the likelihood of impact of an existing or proposed process, which can involve risks or detriments."@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:narrower dpv:DPIA,
@@ -353,7 +380,8 @@ dpv:IncidentManagementProcedures a rdfs:Class,
         dpv:OrganisationalMeasure ;
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:GovernanceProcedures ;
+    skos:broader dpv:GovernanceProcedures,
+        dpv:OrganisationalMeasure ;
     skos:definition "Procedures related to management of incidents"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:prefLabel "Incident Management Procedures"@en .
@@ -363,7 +391,8 @@ dpv:IncidentReportingCommunication a rdfs:Class,
         dpv:OrganisationalMeasure ;
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:GovernanceProcedures ;
+    skos:broader dpv:GovernanceProcedures,
+        dpv:OrganisationalMeasure ;
     skos:definition "Procedures related to management of incident reporting"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:prefLabel "Incident Reporting Communication"@en .
@@ -373,7 +402,8 @@ dpv:InformationSecurityPolicy a rdfs:Class,
         dpv:OrganisationalMeasure ;
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Policy ;
+    skos:broader dpv:OrganisationalMeasure,
+        dpv:Policy ;
     skos:definition "Policy regarding security of information"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:prefLabel "Information Security Policy"@en .
@@ -382,7 +412,8 @@ dpv:JointDataControllersAgreement a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:DataProcessingAgreement ;
+    skos:broader dpv:DataProcessingAgreement,
+        dpv:OrganisationalMeasure ;
     skos:definition "An agreement outlining conditions, criteria, obligations, responsibilities, and specifics for carrying out processing of personal data between Controllers within a Joint Controllers relationship"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:prefLabel "Joint Data Controllers Agreement"@en .
@@ -403,7 +434,8 @@ dpv:LegitimateInterestAssessment a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Assessment ;
+    skos:broader dpv:Assessment,
+        dpv:OrganisationalMeasure ;
     skos:definition "Indicates an assessment regarding the use of legitimate interest as a lawful basis by the data controller"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:prefLabel "Legitimate Interest Assessment"@en .
@@ -413,7 +445,8 @@ dpv:LoggingPolicies a rdfs:Class,
         dpv:OrganisationalMeasure ;
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:GovernanceProcedures ;
+    skos:broader dpv:GovernanceProcedures,
+        dpv:OrganisationalMeasure ;
     skos:definition "Policy for logging of information"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:prefLabel "Logging Policies"@en .
@@ -423,7 +456,8 @@ dpv:MonitoringPolicies a rdfs:Class,
         dpv:OrganisationalMeasure ;
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:GovernanceProcedures ;
+    skos:broader dpv:GovernanceProcedures,
+        dpv:OrganisationalMeasure ;
     skos:definition "Policy for monitoring (e.g. progress, performance)"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:prefLabel "Monitoring Policies"@en .
@@ -432,7 +466,8 @@ dpv:NDA a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:LegalAgreement ;
+    skos:broader dpv:LegalAgreement,
+        dpv:OrganisationalMeasure ;
     skos:definition "Non-disclosure Agreements e.g. preserving confidentiality of information"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:prefLabel "Non-Disclosure Agreement (NDA)"@en .
@@ -451,7 +486,8 @@ dpv:PIA a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:ImpactAssessment ;
+    skos:broader dpv:ImpactAssessment,
+        dpv:OrganisationalMeasure ;
     skos:definition "Carrying out an impact assessment regarding privacy risks"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:prefLabel "Privacy Impact Assessment"@en .
@@ -471,7 +507,8 @@ dpv:PrivacyByDefault a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:GuidelinesPrinciple ;
+    skos:broader dpv:GuidelinesPrinciple,
+        dpv:OrganisationalMeasure ;
     skos:definition "Practices regarding selecting appropriate data protection and privacy measures as the 'default' in an activity or service"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:prefLabel "Privacy by Default"@en .
@@ -489,7 +526,8 @@ dpv:PrivacyNotice a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Notice ;
+    skos:broader dpv:Notice,
+        dpv:OrganisationalMeasure ;
     skos:definition "Represents a notice or document outlining information regarding privacy"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:narrower dpv:ConsentNotice ;
@@ -500,7 +538,8 @@ dpv:ProfessionalTraining a rdfs:Class,
         dpv:OrganisationalMeasure ;
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:StaffTraining ;
+    skos:broader dpv:OrganisationalMeasure,
+        dpv:StaffTraining ;
     skos:definition "Training methods that are intended to provide professional knowledge and expertise"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:prefLabel "Professional Training"@en .
@@ -529,6 +568,7 @@ dpv:ReviewImpactAssessment a rdfs:Class,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:ImpactAssessment,
+        dpv:OrganisationalMeasure,
         dpv:ReviewProcedure ;
     skos:definition "Procedures to review impact assessments in terms of continued validity, adequacy for intended purposes, and conformance of processes with findings"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
@@ -549,7 +589,8 @@ dpv:RiskManagementPlan a rdfs:Class,
         dpv:OrganisationalMeasure ;
     dct:source "(ISO 31073:2022,https://www.iso.org/standard/79637.html)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:SecurityProcedure ;
+    skos:broader dpv:OrganisationalMeasure,
+        dpv:SecurityProcedure ;
     skos:definition "A scheme within the risk management framework specifying the approach, the management components, and resources to be applied to the management of risk"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:prefLabel "Risk Management Plan"@en .
@@ -559,7 +600,8 @@ dpv:RiskManagementPolicy a rdfs:Class,
         dpv:OrganisationalMeasure ;
     dct:source "(ISO 31073:2022,https://www.iso.org/standard/79637.html)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Policy,
+    skos:broader dpv:OrganisationalMeasure,
+        dpv:Policy,
         dpv:SecurityProcedure ;
     skos:definition "A policy or statement of the overall intentions and direction of an organisation related to risk management"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
@@ -580,7 +622,8 @@ dpv:SafeguardForDataTransfer a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Safeguard ;
+    skos:broader dpv:OrganisationalMeasure,
+        dpv:Safeguard ;
     skos:definition "Represents a safeguard used for data transfer. Can include technical or organisational measures."@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:prefLabel "Safeguard for Data Transfer"@en .
@@ -589,7 +632,8 @@ dpv:Seal a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:CertificationSeal ;
+    skos:broader dpv:CertificationSeal,
+        dpv:OrganisationalMeasure ;
     skos:definition "A seal or a mark indicating proof of certification to some certification or standard"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:prefLabel "Seal"@en .
@@ -600,6 +644,7 @@ dpv:SecurityAssessment a rdfs:Class,
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Assessment,
+        dpv:OrganisationalMeasure,
         dpv:SecurityProcedure ;
     skos:definition "Assessment of security intended to identity gaps, vulnerabilities, risks, and effectiveness of controls"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
@@ -611,7 +656,8 @@ dpv:SecurityKnowledgeTraining a rdfs:Class,
         dpv:OrganisationalMeasure ;
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:StaffTraining ;
+    skos:broader dpv:OrganisationalMeasure,
+        dpv:StaffTraining ;
     skos:definition "Training intended to increase knowledge regarding security"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:prefLabel "Security Knowledge Training"@en .
@@ -637,7 +683,8 @@ dpv:SecurityRoleProcedures a rdfs:Class,
         dpv:OrganisationalMeasure ;
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:SecurityProcedure ;
+    skos:broader dpv:OrganisationalMeasure,
+        dpv:SecurityProcedure ;
     skos:definition "Procedures related to security roles"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:prefLabel "Security Role Procedures"@en .
@@ -660,7 +707,8 @@ dpv:SubProcessorAgreement a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:DataProcessingAgreement ;
+    skos:broader dpv:DataProcessingAgreement,
+        dpv:OrganisationalMeasure ;
     skos:definition "An agreement outlining conditions, criteria, obligations, responsibilities, and specifics for carrying out processing of personal data between a Data Processor and a Data (Sub-)Processor"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:prefLabel "Sub-Processor Agreement"@en .
@@ -669,7 +717,8 @@ dpv:ThirdPartyAgreement a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:DataProcessingAgreement ;
+    skos:broader dpv:DataProcessingAgreement,
+        dpv:OrganisationalMeasure ;
     skos:definition "An agreement outlining conditions, criteria, obligations, responsibilities, and specifics for carrying out processing of personal data between a Data Controller or Processor and a Third Party"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:prefLabel "Third-Party Agreement"@en .
@@ -679,7 +728,8 @@ dpv:ThirdPartySecurityProcedures a rdfs:Class,
         dpv:OrganisationalMeasure ;
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:SecurityProcedure ;
+    skos:broader dpv:OrganisationalMeasure,
+        dpv:SecurityProcedure ;
     skos:definition "Procedures related to security associated with Third Parties"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:prefLabel "Third Party Security Procedures"@en .
@@ -689,7 +739,8 @@ dpv:TrustedThirdPartyUtilisation a rdfs:Class,
         dpv:OrganisationalMeasure ;
     dct:source "(ENISA Data Pseudonymisation: Advanced Techniques and Use Cases,https://www.enisa.europa.eu/publications/data-pseudonymisation-advanced-techniques-and-use-cases)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:SecurityProcedure ;
+    skos:broader dpv:OrganisationalMeasure,
+        dpv:SecurityProcedure ;
     skos:definition "Utilisation of a trusted third party to provide or carry out a measure"@en ;
     skos:inScheme dpv:organisational-measures-classes ;
     skos:prefLabel "Trusted Third Party Utilisation"@en .
@@ -697,19 +748,70 @@ dpv:TrustedThirdPartyUtilisation a rdfs:Class,
 dpv:organisational-measures-classes a skos:ConceptScheme .
 
 dpv:OrganisationalMeasure skos:narrower dpv:Assessment,
+        dpv:AssetManagementProcedures,
         dpv:AuthorisationProcedure,
+        dpv:BackgroundChecks,
+        dpv:Certification,
         dpv:CertificationSeal,
+        dpv:CodeOfConduct,
+        dpv:ComplianceMonitoring,
+        dpv:ConsentNotice,
+        dpv:ConsentRecord,
         dpv:Consultation,
+        dpv:ConsultationWithAuthority,
+        dpv:ConsultationWithDPO,
+        dpv:ConsultationWithDataSubject,
+        dpv:ConsultationWithDataSubjectRepresentative,
+        dpv:ContractualTerms,
+        dpv:ControllerProcessorAgreement,
+        dpv:CredentialManagement,
+        dpv:CybersecurityAssessment,
+        dpv:CybersecurityTraining,
+        dpv:DPIA,
+        dpv:DataProcessingAgreement,
+        dpv:DataProcessingRecord,
+        dpv:DataProtectionTraining,
+        dpv:DataTransferImpactAssessment,
+        dpv:DesignStandard,
+        dpv:DisasterRecoveryProcedures,
+        dpv:EducationalTraining,
+        dpv:EffectivenessDeterminationProcedures,
         dpv:GovernanceProcedures,
         dpv:GuidelinesPrinciple,
+        dpv:IdentityManagementMethod,
+        dpv:ImpactAssessment,
+        dpv:IncidentManagementProcedures,
+        dpv:IncidentReportingCommunication,
+        dpv:InformationSecurityPolicy,
+        dpv:JointDataControllersAgreement,
         dpv:LegalAgreement,
+        dpv:LegitimateInterestAssessment,
+        dpv:LoggingPolicies,
+        dpv:MonitoringPolicies,
+        dpv:NDA,
         dpv:Notice,
+        dpv:PIA,
         dpv:Policy,
+        dpv:PrivacyByDefault,
         dpv:PrivacyByDesign,
+        dpv:PrivacyNotice,
+        dpv:ProfessionalTraining,
         dpv:RecordsOfActivities,
         dpv:RegularityOfRecertification,
+        dpv:ReviewImpactAssessment,
         dpv:ReviewProcedure,
+        dpv:RiskManagementPlan,
+        dpv:RiskManagementPolicy,
         dpv:Safeguard,
+        dpv:SafeguardForDataTransfer,
+        dpv:Seal,
+        dpv:SecurityAssessment,
+        dpv:SecurityKnowledgeTraining,
         dpv:SecurityProcedure,
-        dpv:StaffTraining .
+        dpv:SecurityRoleProcedures,
+        dpv:StaffTraining,
+        dpv:SubProcessorAgreement,
+        dpv:ThirdPartyAgreement,
+        dpv:ThirdPartySecurityProcedures,
+        dpv:TrustedThirdPartyUtilisation .
 

@@ -49,7 +49,7 @@ dpv:DataProcessor a rdfs:Class,
     rdfs:superClassOf dpv:DataSubProcessor ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Recipient ;
-    skos:definition "A ‘processor’ means a natural or legal person, public authority, agency or other body which processes personal data on behalf of the controller."@en ;
+    skos:definition "A ‘processor’ means a natural or legal person, public authority, agency or other body which processes data on behalf of the controller."@en ;
     skos:inScheme dpv:entities-legalrole-classes ;
     skos:narrower dpv:DataSubProcessor ;
     skos:prefLabel "Data Processor"@en .
@@ -93,12 +93,12 @@ dpv:Recipient a rdfs:Class,
         dpv:ThirdParty ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:LegalEntity ;
-    skos:definition "Entities that receive personal data"@en ;
+    skos:definition "Entities that receive data"@en ;
     skos:inScheme dpv:entities-legalrole-classes ;
     skos:narrower dpv:DataImporter,
         dpv:DataProcessor,
         dpv:ThirdParty ;
-    skos:note "A recipient of personal data can be used to indicate any entity that receives personal data. This can be a Third Party, Processor (GDPR), or even a Controller."@en ;
+    skos:note "Recipients indicate entities that receives data, for example personal data recipients can be a Third Party, Data Controller, or Data Processor."@en ;
     skos:prefLabel "Recipient"@en ;
     skos:related "spl:AnyRecipient"@en .
 
@@ -237,7 +237,7 @@ dpv:hasRecipient a rdf:Property,
         dpv:hasRecipientThirdParty ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasEntity ;
-    skos:definition "Indicates Recipient of Personal Data"@en ;
+    skos:definition "Indicates Recipient of Data"@en ;
     skos:inScheme dpv:entities-legalrole-properties ;
     skos:narrower dpv:hasDataImporter,
         dpv:hasDataProcessor,

@@ -17,44 +17,106 @@ dpv:AnonymisedData a rdfs:Class,
     skos:note "It is advised to carefully consider indicating data is fully or completely anonymised by determining whether the data by itself or in combination with other data can identify a person. Failing this condition, the data should be denoted as PseudonymisedData. To indicate data is anonymised only for a specified entity (e.g. within an organisation), the concept ContextuallyAnonymisedData (as subclass of PseudonymisedData) should be used instead of AnonymisedData."@en ;
     skos:prefLabel "Anonymised Data"@en .
 
+dpv:CollectedData a rdfs:Class,
+        skos:Concept ;
+    rdfs:subClassOf dpv:Data ;
+    rdfs:superClassOf dpv:CollectedPersonalData ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:Data ;
+    skos:definition "Data that has been obtained by collecting it from a source"@en ;
+    skos:inScheme dpv:personal-data-classes ;
+    skos:narrower dpv:CollectedPersonalData ;
+    skos:prefLabel "Collected Data"@en .
+
 dpv:CollectedPersonalData a rdfs:Class,
         skos:Concept ;
-    rdfs:subClassOf dpv:PersonalData ;
-    rdfs:superClassOf dpv:ObservedPersonalData ;
+    rdfs:subClassOf dpv:CollectedData,
+        dpv:PersonalData ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:PersonalData ;
+    skos:broader dpv:CollectedData,
+        dpv:PersonalData ;
     skos:definition "Personal Data that has been collected from another source such as the Data Subject"@en ;
     skos:inScheme dpv:personal-data-classes ;
-    skos:narrower dpv:ObservedPersonalData ;
     skos:note "To indicate the source of data, use the DataSource concept with the hasDataSource relation"@en ;
     skos:prefLabel "Collected Personal Data"@en .
 
+dpv:CommerciallyConfidentialData a rdfs:Class,
+        skos:Concept ;
+    dct:source "DGA 6.5(c)"@en ;
+    rdfs:subClassOf dpv:Data ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:Data ;
+    skos:definition "Data protected through Commercial Confidentiality Agreements"@en ;
+    skos:inScheme dpv:personal-data-classes ;
+    skos:prefLabel "CommerciallyConfidentialData"@en .
+
+dpv:ConfidentialData a rdfs:Class,
+        skos:Concept ;
+    dct:source "DGA 5.10"@en ;
+    rdfs:subClassOf dpv:Data ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:Data ;
+    skos:definition "Data deemed confidential"@en ;
+    skos:inScheme dpv:personal-data-classes ;
+    skos:prefLabel "ConfidentialData"@en .
+
 dpv:Data a rdfs:Class,
         skos:Concept ;
-    rdfs:superClassOf dpv:IncorrectData,
+    rdfs:superClassOf dpv:CollectedData,
+        dpv:CommerciallyConfidentialData,
+        dpv:ConfidentialData,
+        dpv:DerivedData,
+        dpv:GeneratedData,
+        dpv:IncorrectData,
+        dpv:InferredData,
+        dpv:IntellectualPropertyData,
         dpv:NonPersonalData,
+        dpv:ObservedData,
         dpv:PersonalData,
-        dpv:SyntheticData,
+        dpv:SensitiveData,
+        dpv:StatisticallyConfidentialData,
         dpv:UnverifiedData,
         dpv:VerifiedData ;
     sw:term_status "accepted"@en ;
     skos:definition "A broad concept representing  'data' or 'information'"@en ;
     skos:inScheme dpv:personal-data-classes ;
-    skos:narrower dpv:IncorrectData,
+    skos:narrower dpv:CollectedData,
+        dpv:CommerciallyConfidentialData,
+        dpv:ConfidentialData,
+        dpv:DerivedData,
+        dpv:GeneratedData,
+        dpv:IncorrectData,
+        dpv:InferredData,
+        dpv:IntellectualPropertyData,
         dpv:NonPersonalData,
+        dpv:ObservedData,
         dpv:PersonalData,
-        dpv:SyntheticData,
+        dpv:SensitiveData,
+        dpv:StatisticallyConfidentialData,
         dpv:UnverifiedData,
         dpv:VerifiedData ;
     skos:prefLabel "Data"@en .
 
+dpv:DerivedData a rdfs:Class,
+        skos:Concept ;
+    rdfs:subClassOf dpv:Data ;
+    rdfs:superClassOf dpv:DerivedPersonalData ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:Data ;
+    skos:definition "Data that has been obtained through derivations of other data"@en ;
+    skos:inScheme dpv:personal-data-classes ;
+    skos:narrower dpv:DerivedPersonalData ;
+    skos:prefLabel "Derived Data"@en .
+
 dpv:DerivedPersonalData a rdfs:Class,
         skos:Concept ;
     dct:source "(DPVCG, https://www.w3.org/community/dpvcg/)"@en ;
-    rdfs:subClassOf dpv:PersonalData ;
+    rdfs:subClassOf dpv:DerivedData,
+        dpv:PersonalData ;
     rdfs:superClassOf dpv:InferredPersonalData ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:PersonalData ;
+    skos:broader dpv:DerivedData,
+        dpv:PersonalData ;
     skos:definition "Personal Data that is obtained or derived from other data"@en ;
     skos:inScheme dpv:personal-data-classes ;
     skos:narrower dpv:InferredPersonalData ;
@@ -62,26 +124,60 @@ dpv:DerivedPersonalData a rdfs:Class,
     skos:prefLabel "Derived Personal Data"@en ;
     skos:related "svd:Derived"@en .
 
+dpv:GeneratedData a rdfs:Class,
+        skos:Concept ;
+    rdfs:subClassOf dpv:Data ;
+    rdfs:superClassOf dpv:SyntheticData ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:Data ;
+    skos:definition "Data that has been obtained through generation or creation as a source"@en ;
+    skos:inScheme dpv:personal-data-classes ;
+    skos:narrower dpv:SyntheticData ;
+    skos:prefLabel "Generated Data"@en .
+
 dpv:GeneratedPersonalData a rdfs:Class,
         skos:Concept ;
-    rdfs:subClassOf dpv:PersonalData ;
+    rdfs:subClassOf dpv:InferredData,
+        dpv:PersonalData ;
     rdfs:superClassOf dpv:InferredPersonalData ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:PersonalData ;
+    skos:broader dpv:InferredData,
+        dpv:PersonalData ;
     skos:definition "Personal Data that is generated or brought into existence without relation to existing data i.e. it is not derived or inferred from other data"@en ;
     skos:inScheme dpv:personal-data-classes ;
     skos:narrower dpv:InferredPersonalData ;
     skos:note "Generated Data is used to indicate data that is produced and is not derived or inferred from other data"@en ;
     skos:prefLabel "Generated Personal Data"@en .
 
+dpv:IdentifyingPersonalData a rdfs:Class,
+        skos:Concept ;
+    rdfs:subClassOf dpv:PersonalData ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:PersonalData ;
+    skos:definition "Personal Data that explicitly and by itself is sufficient to identify a person"@en ;
+    skos:inScheme dpv:personal-data-classes ;
+    skos:note "DPV does not use PII ('Personally Identifiable Information') as it has varying and conflicting definitions across sources. Instead the concept 'identifying personal data' is intended to provide a clear categorisation of its interpretation. Where multiple data categories can be combined to create an 'identifying' category e.g. fingerprinting, this concept represents the combined category."@en ;
+    skos:prefLabel "Identifying Personal Data"@en .
+
 dpv:IncorrectData a rdfs:Class,
         skos:Concept ;
     rdfs:subClassOf dpv:Data ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Data ;
-    skos:definition "Data that is known to be incorrect or inconsistent with some quality requirements"@en ;
+    skos:definition "Data that is known to be incorrect or inconsistent with some requirements"@en ;
     skos:inScheme dpv:personal-data-classes ;
     skos:prefLabel "Incorrect Data"@en .
+
+dpv:InferredData a rdfs:Class,
+        skos:Concept ;
+    rdfs:subClassOf dpv:Data ;
+    rdfs:superClassOf dpv:GeneratedPersonalData ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:Data ;
+    skos:definition "Data that has been obtained through inferences of other data"@en ;
+    skos:inScheme dpv:personal-data-classes ;
+    skos:narrower dpv:GeneratedPersonalData ;
+    skos:prefLabel "Inferred Data"@en .
 
 dpv:InferredPersonalData a rdfs:Class,
         skos:Concept ;
@@ -95,6 +191,16 @@ dpv:InferredPersonalData a rdfs:Class,
     skos:note "Inferred Data is derived data generated from existing data, but which did not originally exist within it, e.g. inferring demographics from browsing history."@en ;
     skos:prefLabel "Inferred Personal Data"@en .
 
+dpv:IntellectualPropertyData a rdfs:Class,
+        skos:Concept ;
+    dct:source "DGA 5.10"@en ;
+    rdfs:subClassOf dpv:Data ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:Data ;
+    skos:definition "Data protected by Intellectual Property rights and regulations"@en ;
+    skos:inScheme dpv:personal-data-classes ;
+    skos:prefLabel "IntellectualPropertyData"@en .
+
 dpv:NonPersonalData a rdfs:Class,
         skos:Concept ;
     rdfs:subClassOf dpv:Data ;
@@ -104,14 +210,27 @@ dpv:NonPersonalData a rdfs:Class,
     skos:definition "Data that is not Personal Data"@en ;
     skos:inScheme dpv:personal-data-classes ;
     skos:narrower dpv:AnonymisedData ;
-    skos:note "The term NonPersonalData is provided to distinguish between PersonalData and other data, e.g. for indicating which data is regulated by privacy laws. To specify personal data that has been anonymised, the concept AnonymisedData should be used."@en ;
+    skos:note "The term NonPersonalData is provided to distinguish between PersonalData and other data, e.g. for indicating which data is regulated by privacy laws. To specify personal data that has been anonymised, the concept AnonymisedData should be used as the anonymisation process has a risk of not being fully effective and such anonymous data may be found to be personal data depending on circumstances."@en ;
     skos:prefLabel "Non-Personal Data"@en .
+
+dpv:ObservedData a rdfs:Class,
+        skos:Concept ;
+    rdfs:subClassOf dpv:Data ;
+    rdfs:superClassOf dpv:ObservedPersonalData ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:Data ;
+    skos:definition "Data that has been obtained through observations of a source"@en ;
+    skos:inScheme dpv:personal-data-classes ;
+    skos:narrower dpv:ObservedPersonalData ;
+    skos:prefLabel "Observed Data"@en .
 
 dpv:ObservedPersonalData a rdfs:Class,
         skos:Concept ;
-    rdfs:subClassOf dpv:CollectedPersonalData ;
+    rdfs:subClassOf dpv:ObservedData,
+        dpv:PersonalData ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:CollectedPersonalData ;
+    skos:broader dpv:ObservedData,
+        dpv:PersonalData ;
     skos:definition "Personal Data that has been collected through observation of the Data Subject(s)"@en ;
     skos:inScheme dpv:personal-data-classes ;
     skos:prefLabel "Observed Personal Data"@en .
@@ -123,6 +242,8 @@ dpv:PersonalData a rdfs:Class,
     rdfs:superClassOf dpv:CollectedPersonalData,
         dpv:DerivedPersonalData,
         dpv:GeneratedPersonalData,
+        dpv:IdentifyingPersonalData,
+        dpv:ObservedPersonalData,
         dpv:PseudonymisedData,
         dpv:SensitivePersonalData ;
     sw:term_status "accepted"@en ;
@@ -132,6 +253,8 @@ dpv:PersonalData a rdfs:Class,
     skos:narrower dpv:CollectedPersonalData,
         dpv:DerivedPersonalData,
         dpv:GeneratedPersonalData,
+        dpv:IdentifyingPersonalData,
+        dpv:ObservedPersonalData,
         dpv:PseudonymisedData,
         dpv:SensitivePersonalData ;
     skos:note "This definition of personal data encompasses the concepts used in GDPR Art.4-1 for 'personal data' and ISO/IEC 2700 for 'personally identifiable information (PII)'."@en ;
@@ -146,6 +269,27 @@ dpv:PseudonymisedData a rdfs:Class,
     skos:definition "Personal Data that has undergone a pseudonymisation process or a partial (incomplete) anonymisation process such that it is still considered Personal Data"@en ;
     skos:inScheme dpv:personal-data-classes ;
     skos:prefLabel "Pseudonymised Data"@en .
+
+dpv:SensitiveData a rdfs:Class,
+        skos:Concept ;
+    rdfs:subClassOf dpv:Data ;
+    rdfs:superClassOf dpv:SensitiveNonPersonalData ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:Data ;
+    skos:definition "Data deemed sensitive"@en ;
+    skos:inScheme dpv:personal-data-classes ;
+    skos:narrower dpv:SensitiveNonPersonalData ;
+    skos:prefLabel "SensitiveData"@en .
+
+dpv:SensitiveNonPersonalData a rdfs:Class,
+        skos:Concept ;
+    dct:source "DGA 30(a)"@en ;
+    rdfs:subClassOf dpv:SensitiveData ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:SensitiveData ;
+    skos:definition "Non-personal data deemed sensitive"@en ;
+    skos:inScheme dpv:personal-data-classes ;
+    skos:prefLabel "SensitiveNonPersonalData"@en .
 
 dpv:SensitivePersonalData a rdfs:Class,
         skos:Concept ;
@@ -165,17 +309,27 @@ dpv:SpecialCategoryPersonalData a rdfs:Class,
     rdfs:subClassOf dpv:SensitivePersonalData ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:SensitivePersonalData ;
-    skos:definition "Sensitive Personal Data whose use requires specific legal permission or justification"@en ;
+    skos:definition "Sensitive Personal Data whose use requires specific additional legal permission or justification"@en ;
     skos:inScheme dpv:personal-data-classes ;
-    skos:note "The term 'special category' is based on GDPR Art.9, but should not be considered as exlusive to it. DPV considers all Special Categories to also be Sensitive, but whose use is either prohibited or regulated and therefore requires additional legal basis for justification."@en ;
+    skos:note "The term 'special category' is based on GDPR Art.9, but should not be considered as exlusive to it. DPV considers all Special Categories to also be Sensitive, but whose use is either prohibited or regulated and therefore requires additional legal basis for justification that is separate from that for general personal data."@en ;
     skos:prefLabel "Special Category Personal Data"@en .
+
+dpv:StatisticallyConfidentialData a rdfs:Class,
+        skos:Concept ;
+    dct:source "DGA 2(20)"@en ;
+    rdfs:subClassOf dpv:Data ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:Data ;
+    skos:definition "Data protected through Statistical Confidentiality regulations and agreements"@en ;
+    skos:inScheme dpv:personal-data-classes ;
+    skos:prefLabel "StatisticallyConfidentialData"@en .
 
 dpv:SyntheticData a rdfs:Class,
         skos:Concept ;
     dct:source "(ENISA Data Protection Engineering,https://www.enisa.europa.eu/publications/data-protection-engineering)"@en ;
-    rdfs:subClassOf dpv:Data ;
+    rdfs:subClassOf dpv:GeneratedData ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Data ;
+    skos:broader dpv:GeneratedData ;
     skos:definition "Synthetic data reffers to artificially created data such that it is intended to resemble real data (personal or non-personal), but does not refer to any specific identified or identifiable individual, or to the real measure of an observable parameter in the case of non-personal data"@en ;
     skos:inScheme dpv:personal-data-classes ;
     skos:prefLabel "Synthetic Data"@en .

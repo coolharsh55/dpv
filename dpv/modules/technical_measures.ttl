@@ -30,7 +30,8 @@ dpv:Anonymisation a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ISO 29100:2011,https://www.iso.org/standard/45123.html)"@en ;
     sw:term_status "modified"@en ;
-    skos:broader dpv:Deidentification ;
+    skos:broader dpv:Deidentification,
+        dpv:TechnicalMeasure ;
     skos:definition "Anonymisation is the process by which data is irreversibly altered in such a way that a data subject can no longer be identified directly or indirectly, either by the entity holding the data alone or in collaboration with other entities and information sources"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Anonymisation"@en .
@@ -40,7 +41,8 @@ dpv:AsymmetricCryptography a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:CryptographicMethods ;
+    skos:broader dpv:CryptographicMethods,
+        dpv:TechnicalMeasure ;
     skos:definition "Use of public-key cryptography or asymmetric cryptography involving a public and private pair of keys"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Asymmetric Cryptography"@en .
@@ -50,7 +52,8 @@ dpv:AsymmetricEncryption a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Data Pseudonymisation: Advanced Techniques and Use Cases,https://www.enisa.europa.eu/publications/data-pseudonymisation-advanced-techniques-and-use-cases)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Encryption ;
+    skos:broader dpv:Encryption,
+        dpv:TechnicalMeasure ;
     skos:definition "Use of asymmetric cryptography to encrypt data"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Asymmetric Encryption"@en .
@@ -60,7 +63,8 @@ dpv:Authentication-ABC a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Data Protection Engineering,https://www.enisa.europa.eu/publications/data-protection-engineering)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:CryptographicAuthentication ;
+    skos:broader dpv:CryptographicAuthentication,
+        dpv:TechnicalMeasure ;
     skos:definition "Use of Attribute Based Credentials (ABC) to perform and manage authentication"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Authentication using ABC"@en .
@@ -70,8 +74,9 @@ dpv:Authentication-PABC a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Data Protection Engineering,https://www.enisa.europa.eu/publications/data-protection-engineering)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:CryptographicAuthentication ;
-    skos:definition "Use of Privacy-enhacing Attribute Based Credentials (ABC) to perform and manage authentication"@en ;
+    skos:broader dpv:CryptographicAuthentication,
+        dpv:TechnicalMeasure ;
+    skos:definition "Use of Privacy-enhancing Attribute Based Credentials (ABC) to perform and manage authentication"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Authentication using PABC"@en .
 
@@ -105,7 +110,8 @@ dpv:BiometricAuthentication a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:AuthenticationProtocols ;
+    skos:broader dpv:AuthenticationProtocols,
+        dpv:TechnicalMeasure ;
     skos:definition "Use of biometric data for authentication"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Biometric Authentication"@en .
@@ -116,7 +122,8 @@ dpv:CryptographicAuthentication a rdfs:Class,
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:AuthenticationProtocols,
-        dpv:CryptographicMethods ;
+        dpv:CryptographicMethods,
+        dpv:TechnicalMeasure ;
     skos:definition "Use of cryptography for authentication"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:narrower dpv:Authentication-ABC,
@@ -130,7 +137,8 @@ dpv:CryptographicKeyManagement a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:CryptographicMethods ;
+    skos:broader dpv:CryptographicMethods,
+        dpv:TechnicalMeasure ;
     skos:definition "Management of cryptographic keys, including their generation, storage, assessment, and safekeeping"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Cryptographic Key Management"@en .
@@ -175,7 +183,8 @@ dpv:DataRedaction a rdfs:Class,
         skos:Concept,
         dpv:TechnicalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:DataSanitisationTechnique ;
+    skos:broader dpv:DataSanitisationTechnique,
+        dpv:TechnicalMeasure ;
     skos:definition "Removal of sensitive information from a data or document"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Data Redaction"@en .
@@ -197,7 +206,8 @@ dpv:Deidentification a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(NISTIR 8053,https://nvlpubs.nist.gov/nistpubs/ir/2015/NIST.IR.8053.pdf)"@en ;
     sw:term_status "modified"@en ;
-    skos:broader dpv:DataSanitisationTechnique ;
+    skos:broader dpv:DataSanitisationTechnique,
+        dpv:TechnicalMeasure ;
     skos:definition "Removal of identity or information to reduce identifiability"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:narrower dpv:Anonymisation,
@@ -209,7 +219,8 @@ dpv:DeterministicPseudonymisation a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Data Pseudonymisation: Advanced Techniques and Use Cases,https://www.enisa.europa.eu/publications/data-pseudonymisation-advanced-techniques-and-use-cases)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Pseudonymisation ;
+    skos:broader dpv:Pseudonymisation,
+        dpv:TechnicalMeasure ;
     skos:definition "Pseudonymisation achieved through a deterministic function"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Deterministic Pseudonymisation"@en .
@@ -219,8 +230,9 @@ dpv:DifferentialPrivacy a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Data Protection Engineering,https://www.enisa.europa.eu/publications/data-protection-engineering)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:CryptographicMethods ;
-    skos:definition "Utilisation of differential privacy where information is shared as patterns or groups to withold individual elements"@en ;
+    skos:broader dpv:CryptographicMethods,
+        dpv:TechnicalMeasure ;
+    skos:definition "Utilisation of differential privacy where information is shared as patterns or groups to withhold individual elements"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Differential Privacy"@en .
 
@@ -239,7 +251,8 @@ dpv:DigitalSignatures a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:CryptographicMethods ;
+    skos:broader dpv:CryptographicMethods,
+        dpv:TechnicalMeasure ;
     skos:definition "Expression and authentication of identity through digital information containing cryptographic signatures"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Digital Signatures"@en .
@@ -249,7 +262,8 @@ dpv:DistributedSystemSecurity a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:SecurityMethod ;
+    skos:broader dpv:SecurityMethod,
+        dpv:TechnicalMeasure ;
     skos:definition "Security implementations provided using or over a distributed system"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Distributed System Security"@en .
@@ -259,7 +273,8 @@ dpv:DocumentRandomisedPseudonymisation a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Data Pseudonymisation: Advanced Techniques and Use Cases,https://www.enisa.europa.eu/publications/data-pseudonymisation-advanced-techniques-and-use-cases)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Pseudonymisation ;
+    skos:broader dpv:Pseudonymisation,
+        dpv:TechnicalMeasure ;
     skos:definition "Use of randomised pseudonymisation where the same elements are assigned different values in the same document or database"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Document Randomised Pseudonymisation"@en .
@@ -269,7 +284,8 @@ dpv:DocumentSecurity a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:SecurityMethod ;
+    skos:broader dpv:SecurityMethod,
+        dpv:TechnicalMeasure ;
     skos:definition "Security measures enacted over documents to protect against tampering or restrict access"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Document Security"@en .
@@ -293,7 +309,8 @@ dpv:EncryptionAtRest a rdfs:Class,
         skos:Concept,
         dpv:TechnicalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Encryption ;
+    skos:broader dpv:Encryption,
+        dpv:TechnicalMeasure ;
     skos:definition "Encryption of data when being stored (persistent encryption)"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Encryption at Rest"@en .
@@ -302,7 +319,8 @@ dpv:EncryptionInTransfer a rdfs:Class,
         skos:Concept,
         dpv:TechnicalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Encryption ;
+    skos:broader dpv:Encryption,
+        dpv:TechnicalMeasure ;
     skos:definition "Encryption of data in transit e.g. when being transferred from one location to another, including sharing"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Encryption in Transfer"@en .
@@ -311,7 +329,8 @@ dpv:EncryptionInUse a rdfs:Class,
         skos:Concept,
         dpv:TechnicalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Encryption ;
+    skos:broader dpv:Encryption,
+        dpv:TechnicalMeasure ;
     skos:definition "Encryption of data when it is being used"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Encryption in Use"@en .
@@ -321,7 +340,8 @@ dpv:EndToEndEncryption a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Data Protection Engineering,https://www.enisa.europa.eu/publications/data-protection-engineering)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Encryption ;
+    skos:broader dpv:Encryption,
+        dpv:TechnicalMeasure ;
     skos:definition "Encrypted communications where data is encrypted by the sender and decrypted by the intended receiver to prevent access to any third party"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "End-to-End Encryption (E2EE)"@en .
@@ -331,7 +351,8 @@ dpv:FileSystemSecurity a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:SecurityMethod ;
+    skos:broader dpv:SecurityMethod,
+        dpv:TechnicalMeasure ;
     skos:definition "Security implemented over a file system"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "File System Security"@en .
@@ -341,7 +362,8 @@ dpv:FullyRandomisedPseudonymisation a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Data Pseudonymisation: Advanced Techniques and Use Cases,https://www.enisa.europa.eu/publications/data-pseudonymisation-advanced-techniques-and-use-cases)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Pseudonymisation ;
+    skos:broader dpv:Pseudonymisation,
+        dpv:TechnicalMeasure ;
     skos:definition "Use of randomised pseudonymisation where the same elements are assigned different values each time they occur"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Fully Randomised Pseudonymisation"@en .
@@ -351,7 +373,8 @@ dpv:HardwareSecurityProtocols a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:SecurityMethod ;
+    skos:broader dpv:SecurityMethod,
+        dpv:TechnicalMeasure ;
     skos:definition "Security protocols implemented at or within hardware"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Hardware Security Protocols"@en .
@@ -361,7 +384,8 @@ dpv:HashFunctions a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:CryptographicMethods ;
+    skos:broader dpv:CryptographicMethods,
+        dpv:TechnicalMeasure ;
     skos:definition "Use of hash functions to map information or to retrieve a prior categorisation"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Hash Functions"@en .
@@ -371,7 +395,8 @@ dpv:HashMessageAuthenticationCode a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:CryptographicAuthentication ;
+    skos:broader dpv:CryptographicAuthentication,
+        dpv:TechnicalMeasure ;
     skos:definition "Use of HMAC where message authentication code (MAC) utilise a cryptographic hash function and a secret cryptographic key"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Hash-based Message Authentication Code (HMAC)"@en .
@@ -381,7 +406,8 @@ dpv:HomomorphicEncryption a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:CryptographicMethods ;
+    skos:broader dpv:CryptographicMethods,
+        dpv:TechnicalMeasure ;
     skos:definition "Use of Homomorphic encryption that permits computations on encrypted data without decrypting it"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Homomorphic Encryption"@en .
@@ -401,7 +427,8 @@ dpv:IntrusionDetectionSystem a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:SecurityMethod ;
+    skos:broader dpv:SecurityMethod,
+        dpv:TechnicalMeasure ;
     skos:definition "Use of measures to detect intrusions and other unauthorised attempts to gain access to a system"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Intrusion Detection System"@en .
@@ -411,7 +438,8 @@ dpv:MessageAuthenticationCodes a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:CryptographicAuthentication ;
+    skos:broader dpv:CryptographicAuthentication,
+        dpv:TechnicalMeasure ;
     skos:definition "Use of cryptographic methods to authenticate messages"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Message Authentication Codes (MAC)"@en .
@@ -421,7 +449,8 @@ dpv:MobilePlatformSecurity a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:SecurityMethod ;
+    skos:broader dpv:SecurityMethod,
+        dpv:TechnicalMeasure ;
     skos:definition "Security implemented over a mobile platform"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Mobile Platform Security"@en .
@@ -431,7 +460,8 @@ dpv:MonotonicCounterPseudonymisation a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Data Pseudonymisation: Advanced Techniques and Use Cases,https://www.enisa.europa.eu/publications/data-pseudonymisation-advanced-techniques-and-use-cases)"@en ;
     sw:term_status "modified"@en ;
-    skos:broader dpv:Pseudonymisation ;
+    skos:broader dpv:Pseudonymisation,
+        dpv:TechnicalMeasure ;
     skos:definition "A simple pseudonymisation method where identifiers are substituted by a number chosen by a monotonic counter"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Monotonic Counter Pseudonymisation"@en .
@@ -441,7 +471,8 @@ dpv:MultiFactorAuthentication a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:AuthenticationProtocols ;
+    skos:broader dpv:AuthenticationProtocols,
+        dpv:TechnicalMeasure ;
     skos:definition "An authentication system that uses two or more methods to authenticate"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Multi-Factor Authentication (MFA)"@en .
@@ -451,7 +482,8 @@ dpv:NetworkProxyRouting a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Data Protection Engineering,https://www.enisa.europa.eu/publications/data-protection-engineering)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:SecurityMethod ;
+    skos:broader dpv:SecurityMethod,
+        dpv:TechnicalMeasure ;
     skos:definition "Use of network routing using proxy"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Network Proxy Routing"@en .
@@ -461,7 +493,8 @@ dpv:NetworkSecurityProtocols a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:SecurityMethod ;
+    skos:broader dpv:SecurityMethod,
+        dpv:TechnicalMeasure ;
     skos:definition "Security implemented at or over networks protocols"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Network Security Protocols"@en .
@@ -471,7 +504,8 @@ dpv:OperatingSystemSecurity a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:SecurityMethod ;
+    skos:broader dpv:SecurityMethod,
+        dpv:TechnicalMeasure ;
     skos:definition "Security implemented at or through operating systems"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Operating System Security"@en .
@@ -481,7 +515,8 @@ dpv:PasswordAuthentication a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:AuthenticationProtocols ;
+    skos:broader dpv:AuthenticationProtocols,
+        dpv:TechnicalMeasure ;
     skos:definition "Use of passwords to perform authentication"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Password Authentication"@en .
@@ -491,8 +526,9 @@ dpv:PenetrationTestingMethods a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:SecurityMethod ;
-    skos:definition "Use of penetration testing to identity weaknessess and vulnerabilities through simulations"@en ;
+    skos:broader dpv:SecurityMethod,
+        dpv:TechnicalMeasure ;
+    skos:definition "Use of penetration testing to identify weaknesses and vulnerabilities through simulations"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Penetration Testing Methods"@en .
 
@@ -500,8 +536,9 @@ dpv:PhysicalAccessControlMethod a rdfs:Class,
         skos:Concept,
         dpv:TechnicalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:AccessControlMethod ;
-    skos:definition "Access control applied for physical access e.g. premises or equipement"@en ;
+    skos:broader dpv:AccessControlMethod,
+        dpv:TechnicalMeasure ;
+    skos:definition "Access control applied for physical access e.g. premises or equipment"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Physical Access Control Method"@en .
 
@@ -510,7 +547,8 @@ dpv:PostQuantumCryptography a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:CryptographicMethods ;
+    skos:broader dpv:CryptographicMethods,
+        dpv:TechnicalMeasure ;
     skos:definition "Use of algorithms that are intended to be secure against cryptanalytic attack by a quantum computer"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Post-Quantum Cryptography"@en .
@@ -520,8 +558,9 @@ dpv:PrivacyPreservingProtocol a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:CryptographicMethods ;
-    skos:definition "Use of protocols designed with the intention of provided additional guarentees regarding privacy"@en ;
+    skos:broader dpv:CryptographicMethods,
+        dpv:TechnicalMeasure ;
+    skos:definition "Use of protocols designed with the intention of provided additional guarantees regarding privacy"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Privacy Preserving Protocol"@en .
 
@@ -530,7 +569,8 @@ dpv:PrivateInformationRetrieval a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Data Protection Engineering,https://www.enisa.europa.eu/publications/data-protection-engineering)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:CryptographicMethods ;
+    skos:broader dpv:CryptographicMethods,
+        dpv:TechnicalMeasure ;
     skos:definition "Use of cryptographic methods to retrieve a record from a system without revealing which record is retrieved"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Private Information Retrieval"@en .
@@ -540,7 +580,8 @@ dpv:Pseudonymisation a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(GDPR Art.4-5,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_5/oj)"@en ;
     sw:term_status "modified"@en ;
-    skos:broader dpv:Deidentification ;
+    skos:broader dpv:Deidentification,
+        dpv:TechnicalMeasure ;
     skos:definition "Pseudonymisation means the processing of personal data in such a manner that the personal data can no longer be attributed to a specific data subject without the use of additional information, provided that such additional information is kept separately and is subject to technical and organisational measures to ensure that the personal data are not attributed to an identified or identifiable natural person;"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:narrower dpv:DeterministicPseudonymisation,
@@ -555,7 +596,8 @@ dpv:QuantumCryptography a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:CryptographicMethods ;
+    skos:broader dpv:CryptographicMethods,
+        dpv:TechnicalMeasure ;
     skos:definition "Cryptographic methods that utilise quantum mechanical properties to perform cryptographic tasks"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Quantum Cryptography"@en .
@@ -565,7 +607,8 @@ dpv:RNGPseudonymisation a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Data Pseudonymisation: Advanced Techniques and Use Cases,https://www.enisa.europa.eu/publications/data-pseudonymisation-advanced-techniques-and-use-cases)"@en ;
     sw:term_status "modified"@en ;
-    skos:broader dpv:Pseudonymisation ;
+    skos:broader dpv:Pseudonymisation,
+        dpv:TechnicalMeasure ;
     skos:definition "A pseudonymisation method where identifiers are substituted by a number chosen by a Random Number Generator (RNG)"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "RNG Pseudonymisation"@en .
@@ -575,7 +618,8 @@ dpv:SecretSharingSchemes a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Data Pseudonymisation: Advanced Techniques and Use Cases,https://www.enisa.europa.eu/publications/data-pseudonymisation-advanced-techniques-and-use-cases)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:CryptographicMethods ;
+    skos:broader dpv:CryptographicMethods,
+        dpv:TechnicalMeasure ;
     skos:definition "Use of secret sharing schemes where the secret can only be reconstructed through combination of sufficient number of individuals"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Secret Sharing Schemes"@en .
@@ -585,7 +629,8 @@ dpv:SecureMultiPartyComputation a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:CryptographicMethods ;
+    skos:broader dpv:CryptographicMethods,
+        dpv:TechnicalMeasure ;
     skos:definition "Use of cryptographic methods for entities to jointly compute functions without revealing inputs"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Secure Multi-Party Computation"@en .
@@ -619,7 +664,8 @@ dpv:SingleSignOn a rdfs:Class,
         skos:Concept,
         dpv:TechnicalMeasure ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:AuthenticationProtocols ;
+    skos:broader dpv:AuthenticationProtocols,
+        dpv:TechnicalMeasure ;
     skos:definition "Use of credentials or processes that enable using one set of credentials to authenticate multiple contexts."@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Single Sign On"@en .
@@ -629,8 +675,9 @@ dpv:SymmetricCryptography a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:CryptographicMethods ;
-    skos:definition "Use of cryptography where the same keys are utilised for encryption and descryption of information"@en ;
+    skos:broader dpv:CryptographicMethods,
+        dpv:TechnicalMeasure ;
+    skos:definition "Use of cryptography where the same keys are utilised for encryption and decryption of information"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Symmetric Cryptography"@en .
 
@@ -639,7 +686,8 @@ dpv:SymmetricEncryption a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Data Pseudonymisation: Advanced Techniques and Use Cases,https://www.enisa.europa.eu/publications/data-pseudonymisation-advanced-techniques-and-use-cases)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Encryption ;
+    skos:broader dpv:Encryption,
+        dpv:TechnicalMeasure ;
     skos:definition "Use of symmetric cryptography to encrypt data"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Symmetric Encryption"@en .
@@ -649,7 +697,8 @@ dpv:TrustedComputing a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:CryptographicMethods ;
+    skos:broader dpv:CryptographicMethods,
+        dpv:TechnicalMeasure ;
     skos:definition "Use of cryptographic methods to restrict access and execution to trusted parties and code"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Trusted Computing"@en .
@@ -659,7 +708,8 @@ dpv:TrustedExecutionEnvironments a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Data Protection Engineering,https://www.enisa.europa.eu/publications/data-protection-engineering)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:CryptographicMethods ;
+    skos:broader dpv:CryptographicMethods,
+        dpv:TechnicalMeasure ;
     skos:definition "Use of cryptographic methods to restrict access and execution to trusted parties and code within a dedicated execution environment"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Trusted Execution Environments"@en .
@@ -669,7 +719,8 @@ dpv:UsageControl a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:AccessControlMethod ;
+    skos:broader dpv:AccessControlMethod,
+        dpv:TechnicalMeasure ;
     skos:definition "Management of usage, which is intended to be broader than access control and may cover trust, digital rights, or other relevant controls"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Usage Control"@en .
@@ -679,7 +730,8 @@ dpv:UseSyntheticData a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Data Protection Engineering,https://www.enisa.europa.eu/publications/data-protection-engineering)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:SecurityMethod ;
+    skos:broader dpv:SecurityMethod,
+        dpv:TechnicalMeasure ;
     skos:definition "Use of synthetic data to preserve privacy, security, or other effects and side-effects"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Use of Synthetic Data"@en .
@@ -689,7 +741,8 @@ dpv:VirtualisationSecurity a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:SecurityMethod ;
+    skos:broader dpv:SecurityMethod,
+        dpv:TechnicalMeasure ;
     skos:definition "Security implemented at or through virtualised environments"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Virtualisation Security"@en .
@@ -699,7 +752,8 @@ dpv:VulnerabilityTestingMethods a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:SecurityMethod ;
+    skos:broader dpv:SecurityMethod,
+        dpv:TechnicalMeasure ;
     skos:definition "Methods that assess or discover vulnerabilities in a system"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Vulnerability Testing Methods"@en .
@@ -709,7 +763,8 @@ dpv:WebBrowserSecurity a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:SecurityMethod ;
+    skos:broader dpv:SecurityMethod,
+        dpv:TechnicalMeasure ;
     skos:definition "Security implemented at or over web browsers"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "WebBrowser Security"@en .
@@ -719,7 +774,8 @@ dpv:WebSecurityProtocols a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:SecurityMethod ;
+    skos:broader dpv:SecurityMethod,
+        dpv:TechnicalMeasure ;
     skos:definition "Security implemented at or over web-based protocols"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Web Security Protocols"@en .
@@ -729,7 +785,8 @@ dpv:WirelessSecurityProtocols a rdfs:Class,
         dpv:TechnicalMeasure ;
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:SecurityMethod ;
+    skos:broader dpv:SecurityMethod,
+        dpv:TechnicalMeasure ;
     skos:definition "Security implemented at or over wireless communication protocols"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Wireless Security Protocols"@en .
@@ -740,7 +797,8 @@ dpv:ZeroKnowledgeAuthentication a rdfs:Class,
     dct:source "(ENISA Data Protection Engineering,https://www.enisa.europa.eu/publications/data-protection-engineering)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:AuthenticationProtocols,
-        dpv:CryptographicMethods ;
+        dpv:CryptographicMethods,
+        dpv:TechnicalMeasure ;
     skos:definition "Authentication using Zero-Knowledge proofs"@en ;
     skos:inScheme dpv:technical-measures-classes ;
     skos:prefLabel "Zero Knowledge Authentication"@en .
@@ -749,13 +807,71 @@ dpv:technical-measures-classes a skos:ConceptScheme .
 
 dpv:TechnicalMeasure skos:narrower dpv:AccessControlMethod,
         dpv:ActivityMonitoring,
+        dpv:Anonymisation,
+        dpv:AsymmetricCryptography,
+        dpv:AsymmetricEncryption,
+        dpv:Authentication-ABC,
+        dpv:Authentication-PABC,
         dpv:AuthenticationProtocols,
         dpv:AuthorisationProtocols,
+        dpv:BiometricAuthentication,
+        dpv:CryptographicAuthentication,
+        dpv:CryptographicKeyManagement,
         dpv:CryptographicMethods,
         dpv:DataBackupProtocols,
+        dpv:DataRedaction,
         dpv:DataSanitisationTechnique,
+        dpv:Deidentification,
+        dpv:DeterministicPseudonymisation,
+        dpv:DifferentialPrivacy,
         dpv:DigitalRightsManagement,
+        dpv:DigitalSignatures,
+        dpv:DistributedSystemSecurity,
+        dpv:DocumentRandomisedPseudonymisation,
+        dpv:DocumentSecurity,
         dpv:Encryption,
+        dpv:EncryptionAtRest,
+        dpv:EncryptionInTransfer,
+        dpv:EncryptionInUse,
+        dpv:EndToEndEncryption,
+        dpv:FileSystemSecurity,
+        dpv:FullyRandomisedPseudonymisation,
+        dpv:HardwareSecurityProtocols,
+        dpv:HashFunctions,
+        dpv:HashMessageAuthenticationCode,
+        dpv:HomomorphicEncryption,
         dpv:InformationFlowControl,
-        dpv:SecurityMethod .
+        dpv:IntrusionDetectionSystem,
+        dpv:MessageAuthenticationCodes,
+        dpv:MobilePlatformSecurity,
+        dpv:MonotonicCounterPseudonymisation,
+        dpv:MultiFactorAuthentication,
+        dpv:NetworkProxyRouting,
+        dpv:NetworkSecurityProtocols,
+        dpv:OperatingSystemSecurity,
+        dpv:PasswordAuthentication,
+        dpv:PenetrationTestingMethods,
+        dpv:PhysicalAccessControlMethod,
+        dpv:PostQuantumCryptography,
+        dpv:PrivacyPreservingProtocol,
+        dpv:PrivateInformationRetrieval,
+        dpv:Pseudonymisation,
+        dpv:QuantumCryptography,
+        dpv:RNGPseudonymisation,
+        dpv:SecretSharingSchemes,
+        dpv:SecureMultiPartyComputation,
+        dpv:SecurityMethod,
+        dpv:SingleSignOn,
+        dpv:SymmetricCryptography,
+        dpv:SymmetricEncryption,
+        dpv:TrustedComputing,
+        dpv:TrustedExecutionEnvironments,
+        dpv:UsageControl,
+        dpv:UseSyntheticData,
+        dpv:VirtualisationSecurity,
+        dpv:VulnerabilityTestingMethods,
+        dpv:WebBrowserSecurity,
+        dpv:WebSecurityProtocols,
+        dpv:WirelessSecurityProtocols,
+        dpv:ZeroKnowledgeAuthentication .
 
