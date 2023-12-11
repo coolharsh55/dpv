@@ -20,20 +20,18 @@ eu-dga:A2-6-Permission a rdfs:Class,
         dpv:LegalBasis ;
     dct:source "(DGA 2.6,https://eur-lex.europa.eu/eli/reg/2022/868/art_2/par_6/oj)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:LegalBasis,
-        dpv:NonPersonalDataLegalBasis ;
+    skos:broader dpv:NonPersonalDataLegalBasis ;
     skos:definition "The legal basis justfiying processing of non-personal data based on the permission of an entity"@en ;
     skos:inScheme eu-dga:legal-basis-classes ;
-    skos:note "dpv:LegalBasis needs to be divided into dpv:PersonalDataLegalBasis and dpv:NonPersonalDataLegalBasis"@en ;
-    skos:prefLabel "Art 2(6) Permission"@en .
+    skos:prefLabel "Art 2(6) Permission"@en ;
+    skos:scopeNote "dpv:LegalBasis needs to be divided into dpv:PersonalDataLegalBasis and dpv:NonPersonalDataLegalBasis"@en .
 
 eu-dga:A31-2-Transfer-Agreement a rdfs:Class,
         skos:Concept,
         dpv:LegalBasis ;
     dct:source "(DGA 31.2,https://eur-lex.europa.eu/eli/reg/2022/868/art_31/par_2/oj)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:DataTransferLegalBasis,
-        dpv:LegalBasis ;
+    skos:broader dpv:DataTransferLegalBasis ;
     skos:definition "Data Transfer International Agreement"@en ;
     skos:inScheme eu-dga:legal-basis-classes ;
     skos:prefLabel "Art 31(2) Data Transfer International Agreement"@en .
@@ -43,8 +41,7 @@ eu-dga:A31-3-Third-Country-Judgement a rdfs:Class,
         dpv:LegalBasis ;
     dct:source "(DGA 31.3,https://eur-lex.europa.eu/eli/reg/2022/868/art_31/par_3/oj)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:DataTransferLegalBasis,
-        dpv:LegalBasis ;
+    skos:broader dpv:DataTransferLegalBasis ;
     skos:definition "Data Transfer Third Country Judgement"@en ;
     skos:inScheme eu-dga:legal-basis-classes ;
     skos:prefLabel "Art 31(3) Data Transfer Third Country Judgement"@en .
@@ -54,8 +51,7 @@ eu-dga:A5-11-MCC a rdfs:Class,
         dpv:LegalBasis ;
     dct:source "(DGA 5.11,https://eur-lex.europa.eu/eli/reg/2022/868/art_5/par_11/oj)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:DataTransferLegalBasis,
-        dpv:LegalBasis ;
+    skos:broader dpv:DataTransferLegalBasis ;
     skos:definition "Model Contractual Clauses"@en ;
     skos:inScheme eu-dga:legal-basis-classes ;
     skos:prefLabel "Art 5(11) Model Contractual Clauses"@en .
@@ -65,8 +61,7 @@ eu-dga:A5-12-Adequacy-Decision a rdfs:Class,
         dpv:LegalBasis ;
     dct:source "(DGA 5.12,https://eur-lex.europa.eu/eli/reg/2022/868/art_5/par_12/oj)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:DataTransferLegalBasis,
-        dpv:LegalBasis ;
+    skos:broader dpv:DataTransferLegalBasis ;
     skos:definition "Adequacy Decision permitting the transfer of data"@en ;
     skos:inScheme eu-dga:legal-basis-classes ;
     skos:prefLabel "Art 5(12) Adequacy Decision"@en .
@@ -76,8 +71,7 @@ eu-dga:A5-9-Transfer-Permission a rdfs:Class,
         dpv:LegalBasis ;
     dct:source "(DGA 5.9,https://eur-lex.europa.eu/eli/reg/2022/868/art_5/par_9/oj)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:DataTransferLegalBasis,
-        dpv:LegalBasis ;
+    skos:broader dpv:DataTransferLegalBasis ;
     skos:definition "The legal basis justfiying processing of non-personal data based on the permission of an entity to transfer data"@en ;
     skos:inScheme eu-dga:legal-basis-classes ;
     skos:prefLabel "Art 5(9) Permission for Transfer"@en .
@@ -92,11 +86,5 @@ dpv:DataTransferLegalBasis skos:narrower eu-dga:A31-2-Transfer-Agreement,
 
 eu-dga:legal-basis-classes a skos:ConceptScheme .
 
-dpv:LegalBasis skos:narrower eu-dga:A12-e-Exchange-Approval,
-        eu-dga:A2-6-Permission,
-        eu-dga:A31-2-Transfer-Agreement,
-        eu-dga:A31-3-Third-Country-Judgement,
-        eu-dga:A5-11-MCC,
-        eu-dga:A5-12-Adequacy-Decision,
-        eu-dga:A5-9-Transfer-Permission .
+dpv:LegalBasis skos:narrower eu-dga:A12-e-Exchange-Approval .
 

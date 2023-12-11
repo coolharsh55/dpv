@@ -17,8 +17,8 @@ dpv:DataController a rdfs:Class,
     skos:definition "The individual or organisation that decides (or controls) the purpose(s) of processing personal data."@en ;
     skos:inScheme dpv:entities-legalrole-classes ;
     skos:narrower dpv:JointDataControllers ;
-    skos:note "The terms 'Controller', 'Data Controller', and 'PII Controller' refer to the same concept"@en ;
-    skos:prefLabel "Data Controller"@en .
+    skos:prefLabel "Data Controller"@en ;
+    skos:scopeNote "The terms 'Controller', 'Data Controller', and 'PII Controller' refer to the same concept"@en .
 
 dpv:DataExporter a rdfs:Class,
         skos:Concept ;
@@ -28,8 +28,8 @@ dpv:DataExporter a rdfs:Class,
     skos:broader dpv:LegalEntity ;
     skos:definition "An entity that 'exports' data where exporting is considered a form of data transfer"@en ;
     skos:inScheme dpv:entities-legalrole-classes ;
-    skos:note "The term 'Data Exporter' is used by the EU-EDPB as the entity that transfer data across borders. While the EDPB refers to the jurisdictional border of EU, the term within DPV can be used to denote any 'export' or transfer or transmission of data and is thus a broader concept than the EDPB's definition."@en ;
-    skos:prefLabel "Data Exporter"@en .
+    skos:prefLabel "Data Exporter"@en ;
+    skos:scopeNote "The term 'Data Exporter' is used by the EU-EDPB as the entity that transfer data across borders. While the EDPB refers to the jurisdictional border of EU, the term within DPV can be used to denote any 'export' or transfer or transmission of data and is thus a broader concept than the EDPB's definition."@en .
 
 dpv:DataImporter a rdfs:Class,
         skos:Concept ;
@@ -39,8 +39,8 @@ dpv:DataImporter a rdfs:Class,
     skos:broader dpv:Recipient ;
     skos:definition "An entity that 'imports' data where importing is considered a form of data transfer"@en ;
     skos:inScheme dpv:entities-legalrole-classes ;
-    skos:note "The term 'Data Importer' is used by the EU-EDPB as the entity that receives transferred data across borders. While the EDPB refers to the jurisdictional border of EU, the term within DPV can be used to denote any 'import' or reception of transfer or transmission of data and is thus a broader concept than the EDPB's definition."@en ;
-    skos:prefLabel "Data Importer"@en .
+    skos:prefLabel "Data Importer"@en ;
+    skos:scopeNote "The term 'Data Importer' is used by the EU-EDPB as the entity that receives transferred data across borders. While the EDPB refers to the jurisdictional border of EU, the term within DPV can be used to denote any 'import' or reception of transfer or transmission of data and is thus a broader concept than the EDPB's definition."@en .
 
 dpv:DataProcessor a rdfs:Class,
         skos:Concept ;
@@ -71,8 +71,8 @@ dpv:DataSubProcessor a rdfs:Class,
     skos:broader dpv:DataProcessor ;
     skos:definition "A 'sub-processor' is a processor engaged by another processor"@en ;
     skos:inScheme dpv:entities-legalrole-classes ;
-    skos:note "A 'Sub-Processor' is always a 'Processor' with the distinction of not directly being appointed by the 'Controller'"@en ;
-    skos:prefLabel "Data Sub-Processor"@en .
+    skos:prefLabel "Data Sub-Processor"@en ;
+    skos:scopeNote "A 'Sub-Processor' is always a 'Processor' with the distinction of not directly being appointed by the 'Controller'"@en .
 
 dpv:JointDataControllers a rdfs:Class,
         skos:Concept ;
@@ -81,8 +81,8 @@ dpv:JointDataControllers a rdfs:Class,
     skos:broader dpv:DataController ;
     skos:definition "A group of Data Controllers that jointly determine the purposes and means of processing"@en ;
     skos:inScheme dpv:entities-legalrole-classes ;
-    skos:note "While Joint Data Controllers operate together, they are made up of individually distinct legal entities. To indicate the membership of this group, hasDataController should be used to denote each Data Controller. The concept of Joint Data Controllers also allows specifying a single group as the 'Controller' and to specify role and responsibilities within that group for each entity using DPV's concepts (e.g. isImplementedByEntity)"@en ;
-    skos:prefLabel "Joint Data Controllers"@en .
+    skos:prefLabel "Joint Data Controllers"@en ;
+    skos:scopeNote "While Joint Data Controllers operate together, they are made up of individually distinct legal entities. To indicate the membership of this group, hasDataController should be used to denote each Data Controller. The concept of Joint Data Controllers also allows specifying a single group as the 'Controller' and to specify role and responsibilities within that group for each entity using DPV's concepts (e.g. isImplementedByEntity)"@en .
 
 dpv:Recipient a rdfs:Class,
         skos:Concept ;
@@ -98,9 +98,9 @@ dpv:Recipient a rdfs:Class,
     skos:narrower dpv:DataImporter,
         dpv:DataProcessor,
         dpv:ThirdParty ;
-    skos:note "Recipients indicate entities that receives data, for example personal data recipients can be a Third Party, Data Controller, or Data Processor."@en ;
     skos:prefLabel "Recipient"@en ;
-    skos:related "spl:AnyRecipient"@en .
+    skos:related "spl:AnyRecipient"@en ;
+    skos:scopeNote "Recipients indicate entities that receives data, for example personal data recipients can be a Third Party, Data Controller, or Data Processor."@en .
 
 dpv:ThirdParty a rdfs:Class,
         skos:Concept ;

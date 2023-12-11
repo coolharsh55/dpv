@@ -17,26 +17,108 @@
     {% if inscope %}
     <section class="term-def" id="{{term}}">
       <h4>{{ concept['skos:prefLabel'] }}</h4>
-      <div class="term-contents">
-      <p>
-        <span class="dfn-label">Term:</span> <dfn>{{ concept['term'] }}</dfn><br/>
-        <span class="dfn-label">IRI:</span> <a href="{{ concept['iri'] }}">{{ concept['iri'] }}</a><br/>
-        <span class="dfn-label">Prefixed:</span> <a href="{{ concept['iri'] }}">{{ concept['prefixed'] }}</a>
-        <span class="dfn-label">Label:</span> <i>{{ concept['skos:prefLabel'] }}</i><br/>
-        <span class="dfn-label">Description:</span> <i>{{ concept['skos:definition'] }}</i><br/>
-        {% if concept['skos:note'] %}<span class="dfn-label">Usage Note:</span> <i>{{ concept['skos:note'] }}</i><br/>{% endif %}
-        <span class="dfn-label">Type:</span> <i>{% for parent in concept['rdf:type']|get_concept_list %}<a href="{{parent['iri']}}">{{parent['prefixed']}}</a>{{", " if not loop.last }}{% endfor %}</i><br/>
-        {% if concept['skos:broader'] %}<span class="dfn-label">Narrower than:</span> <i>{% for parent in concept['skos:broader']|get_concept_list %}<a href="{{parent['iri']}}">{{parent['prefixed']}}</a>{{", " if not loop.last }}{% endfor %}</i><br/>{% endif %}
-        {% if concept['rdfs:subPropertyOf'] %}<span class="dfn-label">Sub-property of:</span> <i>{% for parent in concept['rdfs:subPropertyOf']|get_concept_list %}<a href="{{parent['iri']}}">{{parent['prefixed']}}</a>{{", " if not loop.last }}{% endfor %}</i><br/>{% endif %}
-        {% if concept['dcam:domainIncludes'] %}<span class="dfn-label">Domain includes:</span> <i>{% for parent in concept['dcam:domainIncludes']|get_concept_list %}<a href="{{parent['iri']}}">{{parent['prefixed']}}</a>{{", " if not loop.last }}{% endfor %}</i><br/>{% endif %}
-        {% if concept['dcam:rangeIncludes'] %}<span class="dfn-label">Range includes:</span> <i>{% for parent in concept['dcam:rangeIncludes']|get_concept_list %}<a href="{{parent['iri']}}">{{parent['prefixed']}}</a>{{", " if not loop.last }}{% endfor %}</i><br/>{% endif %}
-        {% if concept['dct:source'] %}<span class="dfn-label">Source:</span> <i>{{ concept['dct:source'] }}</i><br/>{% endif %}
-        {% if concept['dct:created'] %}<span class="dfn-label">Date Created:</span> <i>{{ concept['dct:created'] }}</i><br/>{% endif %}
-        {% if concept['dct:modified'] %}<span class="dfn-label">Date Modified:</span> <i>{{ concept['dct:modified'] }}</i><br/>{% endif %}
-        {% if concept['dct:contributor'] %}<span class="dfn-label">Contributors:</span> <i>{{ concept['dct:contributor'] }}</i><br/>{% endif %}
-        {% if concept['skos:related'] %}<span class="dfn-label">Related:</span> <i>{{ concept['skos:related'] }}</i><br/>{% endif %}
-      </p>
-      </div>
+      <table class="term-contents">
+      <tbody>
+        <tr>
+          <th>Term</th>
+          <td><dfn>{{ concept['term'] }}</dfn></td>
+          <th>Prefix</th>
+          <td>{{ concept['prefix'] }}</td>
+        </tr>
+        <tr>
+          <th>Label</th>
+          <td><i>{{ concept['skos:prefLabel'] }}</i></td>
+        </tr>
+        <tr class="technical-detail">
+          <th>IRI</th>
+          <td><a href="{{ concept['iri'] }}">{{ concept['iri'] }}</a></td>
+        </tr>
+        <tr class="technical-detail">
+          
+        </tr>
+        <tr class="table-separator"></tr>
+        <tr class="technical-detail">
+          <th>Type</th>
+          <td>{% for parent in concept['rdf:type']|get_concept_list %}<a href="{{parent['iri']}}">{{parent['prefixed']}}</a>{{", " if not loop.last }}{% endfor %}</td>
+        </tr>
+        {# Parents #}
+        {% if concept['skos:broader'] %}
+        {% for parentlist in concept|get_parent_hierarchy %}<tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>{% for parent in parentlist %}
+             <a href="{% if parent['prefixed'].split(':')[0] == parent['vocab'] %}#{{parent['term']}}{% else %}{{parent['iri']}}{% endif %}">{{ parent['prefixed'] }}</a>{{ " → " if not loop.last }}
+            {% endfor %}</td>
+        {% endfor %}</tr>{% endif %}
+        {# Children #}
+        {% if concept['skos:narrower'] %}
+        <tr class="technical-detail">
+          <th>Narrower/Specialised types</th>
+          <td>{% for child in concept['skos:narrower']|sort %}<a href="{{child}}">{{ child|prefix_this }}</a>{{", " if not loop.last}}{% endfor %}</td>
+        </tr>{% endif %}
+        {# sub-property #}
+        {% if concept['rdfs:subPropertyOf'] %}<tr class="technical-detail">
+          <th>Sub-property of</th>
+          <td><i>{% for parent in concept['rdfs:subPropertyOf']|get_concept_list %}<a href="{{parent['iri']}}">{{parent['prefixed']}}</a>{{", " if not loop.last }}{% endfor %}</i></td>
+        </tr>{% endif %}
+        {# domain includes #}
+        {% if concept['dcam:domainIncludes'] %}<tr class="technical-detail">
+          <th>Domain includes</th>
+          <td><i>{% for parent in concept['dcam:domainIncludes']|get_concept_list %}<a href="{{parent['iri']}}">{{parent['prefixed']}}</a>{{", " if not loop.last }}{% endfor %}</i></td>
+        </tr>{% endif %}
+        {# range includes #}
+        {% if concept['dcam:rangeIncludes'] %}<tr class="technical-detail">
+          <th>Range includes</th>
+          <td><i>{% for parent in concept['dcam:rangeIncludes']|get_concept_list %}<a href="{{parent['iri']}}">{{parent['prefixed']}}</a>{{", " if not loop.last }}{% endfor %}</i></td>
+        </tr>{% endif %}
+        <tr class="table-separator"></tr>
+        {# Description #}
+        {% if concept['skos:definition'] %}<tr>
+          <th>Definition</th>
+          <td><i>{{ concept['skos:definition'] }}</i></td>
+        </tr>{% endif %}
+        {# Usage Note #}
+        {% if concept['skos:scopeNote'] %}{% for note in concept['skos:scopeNote']|ensure_list %}<tr>
+          <th>Usage Note</th>
+          <td><i>{{note}}</i></td>
+        </tr>{% endfor %}{% endif %}
+        {# Comment #}
+        {% if concept['skos:note'] %}<tr>
+          <th>Comment</th>
+          <td><i>{{ concept['skos:note'] }}</i></td>
+        </tr>{% endif %}
+        <tr class="table-separator"></tr>
+        {# Source #}
+        {% if concept['dct:source'] %}<tr>
+          <th>Source</th>
+          <td><i>{% for x,y in concept['dct:source']|get_sources %}<a href="{{x}}">{{ y}}</a>{{ "," if not loop.last }}{% endfor %}</i></td>
+        </tr>{% endif %}
+        {# related #}
+        {% if concept['skos:related'] %}<tr>
+          <th>Related</th>
+          <td><i>{{ concept['skos:related'] }}</i></td>
+        </tr>{% endif %}
+        <tr class="table-separator"></tr>
+        {# created #}
+        {% if concept['dct:created'] %}<tr>
+          <th>Date Created</th>
+          <td><i>{{ concept['dct:created'] }}</i></td>
+        </tr>{% endif %}
+        {# modified #}
+        {% if concept['dct:modified'] %}<tr>
+          <th>Date Modified</th>
+          <td><i>{{ concept['dct:modified'] }}</i></td>
+        </tr>{% endif %}
+        {# contributor #}
+        {% if concept['dct:contributor'] %}<tr>
+          <th>Contributors</th>
+          <td><i>{{ concept['dct:contributor'] }}</i></td>
+        </tr>{% endif %}
+        <tr>
+          <th>Documented in</th>
+          <td>{% for m in concept['module'] %}<a href="{{concept['namespace']}}vocab-{{m|replace('_','-')}}">{{concept['vocab']|capitalize}} {{m|title|replace('_','-')}}</a>{{", " if not loop.last}}{% endfor %}</td>
+        </tr>
+        </tbody>
+      </table>
     </section>
     {% endif %}
 {% endfor %}

@@ -29,8 +29,7 @@ dpv:AsylumSeeker a rdfs:Class,
         skos:Concept,
         dpv:DataSubject ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:DataSubject,
-        dpv:VulnerableDataSubject ;
+    skos:broader dpv:VulnerableDataSubject ;
     skos:definition "Data subjects that are asylum seekers"@en ;
     skos:inScheme dpv:entities-datasubject-classes ;
     skos:prefLabel "Asylum Seeker"@en .
@@ -42,8 +41,8 @@ dpv:Child a rdfs:Class,
     skos:broader dpv:DataSubject ;
     skos:definition "A 'child' is a natural legal person who is below a certain legal age depending on the legal jurisdiction."@en ;
     skos:inScheme dpv:entities-datasubject-classes ;
-    skos:note "The legality of age defining a child varies by jurisdiction. In addition, 'child' is distinct from a 'minor'. For example, the legal age for consumption of alcohol can be 21, which makes a person of age 20 a 'minor' in this context. In other cases, 'minor' and 'child' are used interchangeably to refer to a person below some legally defined age."@en ;
-    skos:prefLabel "Child"@en .
+    skos:prefLabel "Child"@en ;
+    skos:scopeNote "The legality of age defining a child varies by jurisdiction. In addition, 'child' is distinct from a 'minor'. For example, the legal age for consumption of alcohol can be 21, which makes a person of age 20 a 'minor' in this context. In other cases, 'minor' and 'child' are used interchangeably to refer to a person below some legally defined age."@en .
 
 dpv:Citizen a rdfs:Class,
         skos:Concept,
@@ -58,8 +57,7 @@ dpv:Client a rdfs:Class,
         skos:Concept,
         dpv:DataSubject ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Customer,
-        dpv:DataSubject ;
+    skos:broader dpv:Customer ;
     skos:definition "Data subjects that are clients or recipients of services"@en ;
     skos:inScheme dpv:entities-datasubject-classes ;
     skos:prefLabel "Client"@en .
@@ -81,8 +79,8 @@ dpv:Customer a rdfs:Class,
     skos:definition "Data subjects that purchase goods or services"@en ;
     skos:inScheme dpv:entities-datasubject-classes ;
     skos:narrower dpv:Client ;
-    skos:note "note: for B2B relations where customers are organisations, this concept only applies for data subjects"@en ;
-    skos:prefLabel "Customer"@en .
+    skos:prefLabel "Customer"@en ;
+    skos:scopeNote "note: for B2B relations where customers are organisations, this concept only applies for data subjects"@en .
 
 dpv:DataSubject a rdfs:Class,
         skos:Concept ;
@@ -94,19 +92,15 @@ dpv:DataSubject a rdfs:Class,
     skos:inScheme dpv:entities-datasubject-classes ;
     skos:narrower dpv:Adult,
         dpv:Applicant,
-        dpv:AsylumSeeker,
         dpv:Child,
         dpv:Citizen,
-        dpv:Client,
         dpv:Consumer,
         dpv:Customer,
-        dpv:ElderlyDataSubject,
         dpv:Employee,
         dpv:GuardianOfDataSubject,
         dpv:Immigrant,
         dpv:JobApplicant,
         dpv:Member,
-        dpv:MentallyVulnerableDataSubject,
         dpv:NonCitizen,
         dpv:ParentOfDataSubject,
         dpv:Participant,
@@ -117,15 +111,14 @@ dpv:DataSubject a rdfs:Class,
         dpv:User,
         dpv:Visitor,
         dpv:VulnerableDataSubject ;
-    skos:note "The term 'data subject' is specific to the GDPR, but is functionally equivalent to the term 'individual associated with data' and the ISO/IEC term 'PII Principle'"@en ;
-    skos:prefLabel "Data Subject"@en .
+    skos:prefLabel "Data Subject"@en ;
+    skos:scopeNote "The term 'data subject' is specific to the GDPR, but is functionally equivalent to the term 'individual associated with data' and the ISO/IEC term 'PII Principle'"@en .
 
 dpv:ElderlyDataSubject a rdfs:Class,
         skos:Concept,
         dpv:DataSubject ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:DataSubject,
-        dpv:VulnerableDataSubject ;
+    skos:broader dpv:VulnerableDataSubject ;
     skos:definition "Data subjects that are considered elderly (i.e. based on age)"@en ;
     skos:inScheme dpv:entities-datasubject-classes ;
     skos:prefLabel "Elderly Data Subject"@en .
@@ -179,8 +172,7 @@ dpv:MentallyVulnerableDataSubject a rdfs:Class,
         skos:Concept,
         dpv:DataSubject ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:DataSubject,
-        dpv:VulnerableDataSubject ;
+    skos:broader dpv:VulnerableDataSubject ;
     skos:definition "Data subjects that are considered mentally vulnerable"@en ;
     skos:inScheme dpv:entities-datasubject-classes ;
     skos:prefLabel "Mentally Vulnerable Data Subject"@en .
@@ -237,8 +229,8 @@ dpv:Subscriber a rdfs:Class,
     skos:broader dpv:DataSubject ;
     skos:definition "Data subjects that subscribe to service(s)"@en ;
     skos:inScheme dpv:entities-datasubject-classes ;
-    skos:note "note: subscriber can be customer or consumer"@en ;
-    skos:prefLabel "Subscriber"@en .
+    skos:prefLabel "Subscriber"@en ;
+    skos:scopeNote "note: subscriber can be customer or consumer"@en .
 
 dpv:Tourist a rdfs:Class,
         skos:Concept,
@@ -277,8 +269,8 @@ dpv:VulnerableDataSubject a rdfs:Class,
     skos:narrower dpv:AsylumSeeker,
         dpv:ElderlyDataSubject,
         dpv:MentallyVulnerableDataSubject ;
-    skos:note "This concept denotes a Data Subject or a group are vulnerable, but not what vulnerability they possess or its context. This information can be provided additionally as comments, or as separate concepts and relations. Proposals for this are welcome."@en ;
-    skos:prefLabel "Vulnerable Data Subject"@en .
+    skos:prefLabel "Vulnerable Data Subject"@en ;
+    skos:scopeNote "This concept denotes a Data Subject or a group are vulnerable, but not what vulnerability they possess or its context. This information can be provided additionally as comments, or as separate concepts and relations. Proposals for this are welcome."@en .
 
 dpv:LegalEntity rdfs:superClassOf dpv:DataSubject ;
     skos:narrower dpv:DataSubject .

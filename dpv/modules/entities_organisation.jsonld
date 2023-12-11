@@ -1,6 +1,6 @@
 [
   {
-    "@id": "https://w3id.org/dpv#GovernmentalOrganisation",
+    "@id": "https://w3id.org/dpv#ForProfitOrganisation",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class"
@@ -24,7 +24,7 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "An organisation managed or part of government"
+        "@value": "An organisation that aims to achieve profit as its primary goal"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -35,19 +35,25 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Governmental Organisation"
+        "@value": "For-Profit Organisation"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#OrganisationalUnit",
+    "@id": "https://w3id.org/dpv#AcademicScientificOrganisation",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@language": "en",
+        "@value": "(ADMS controlled vocabulary,http://purl.org/adms)"
+      }
+    ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/dpv#Entity"
+        "@id": "https://w3id.org/dpv#Organisation"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -58,13 +64,13 @@
     ],
     "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@id": "https://w3id.org/dpv#Entity"
+        "@id": "https://w3id.org/dpv#Organisation"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Entity within an organisation that does not constitute as a separate legal entity"
+        "@value": "Organisations related to academia or scientific pursuits e.g. Universities, Schools, Research Bodies"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -75,7 +81,7 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Organisational Unit"
+        "@value": "Academic or Scientific Organisation"
       }
     ]
   },
@@ -172,20 +178,14 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#IndustryConsortium",
+    "@id": "https://w3id.org/dpv#OrganisationalUnit",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@language": "en",
-        "@value": "(ADMS controlled vocabulary,http://purl.org/adms)"
-      }
-    ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/dpv#Organisation"
+        "@id": "https://w3id.org/dpv#Entity"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -196,13 +196,13 @@
     ],
     "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@id": "https://w3id.org/dpv#Organisation"
+        "@id": "https://w3id.org/dpv#Entity"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "A consortium established and comprising on industry organisations"
+        "@value": "Entity within an organisation that does not constitute as a separate legal entity"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -213,21 +213,28 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Industry Consortium"
+        "@value": "Organisational Unit"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#AcademicScientificOrganisation",
+    "@id": "https://w3id.org/dpv#LegalEntity",
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#Organisation"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv#Organisation"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#GovernmentalOrganisation",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@language": "en",
-        "@value": "(ADMS controlled vocabulary,http://purl.org/adms)"
-      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
@@ -248,7 +255,7 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Organisations related to academia or scientific pursuits e.g. Universities, Schools, Research Bodies"
+        "@value": "An organisation managed or part of government"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -259,8 +266,14 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Academic or Scientific Organisation"
+        "@value": "Governmental Organisation"
       }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#entities-organisation-classes",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
     ]
   },
   {
@@ -310,23 +323,16 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#Entity",
-    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#OrganisationalUnit"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv#OrganisationalUnit"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#ForProfitOrganisation",
+    "@id": "https://w3id.org/dpv#IndustryConsortium",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@language": "en",
+        "@value": "(ADMS controlled vocabulary,http://purl.org/adms)"
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
@@ -347,7 +353,7 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "An organisation that aims to achieve profit as its primary goal"
+        "@value": "A consortium established and comprising on industry organisations"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -358,14 +364,8 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "For-Profit Organisation"
+        "@value": "Industry Consortium"
       }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#entities-organisation-classes",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
     ]
   },
   {
@@ -455,15 +455,15 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#LegalEntity",
+    "@id": "https://w3id.org/dpv#Entity",
     "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
       {
-        "@id": "https://w3id.org/dpv#Organisation"
+        "@id": "https://w3id.org/dpv#OrganisationalUnit"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#narrower": [
       {
-        "@id": "https://w3id.org/dpv#Organisation"
+        "@id": "https://w3id.org/dpv#OrganisationalUnit"
       }
     ]
   }

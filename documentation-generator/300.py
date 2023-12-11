@@ -38,6 +38,7 @@ VOCABS = {
         'export': f'{EXPORT_PATH}/dpv',
         'modules': {
             # 'core': f'{IMPORT_PATH}/dpv/modules/core.ttl',
+            'process': f'{IMPORT_PATH}/dpv/modules/process.ttl',
             'personal_data': f'{IMPORT_PATH}/dpv/modules/personal_data.ttl',
             'purposes': f'{IMPORT_PATH}/dpv/modules/purposes.ttl',
             'processing': f'{IMPORT_PATH}/dpv/modules/processing.ttl',
@@ -188,7 +189,10 @@ class DATA(object):
                 vocab_data[term] = {
                     'iri': s,
                     'prefixed': term,
+                    'prefix': term.split(':')[0],
                     'term': term.split(':')[1],
+                    'vocab': vocab,
+                    'namespace': s.replace(term.split(':')[1], ''),
                     '_dpvterm': s.startswith('https://w3id.org/dpv'),
                 }
                 if not vocab_data[term]['_dpvterm']:
@@ -248,6 +252,10 @@ class DATA(object):
         for s, _, _ in graph:
             term = s.n3(graph.namespace_manager)
             module_data_temp[term] = DATA.data[vocab][term]
+            if 'module' not in DATA.data[vocab][term]:
+                DATA.data[vocab][term]['module'] = []
+            if module not in DATA.data[vocab][term]['module']:
+                DATA.data[vocab][term]['module'].append(module)
         module_data = {
             'classes': {'prefix': vocab},
             'schemes': {'prefix': vocab}
@@ -279,13 +287,97 @@ def get_concept_list(term):
         key=lambda x: x['iri'])
 
 
+def get_parent_hierarchy(term):
+    # DEBUG(f'getting parents for {term["prefixed"]}')
+    if 'skos:broader' not in term: return []
+    terms = term['skos:broader']
+    if type(terms) is not list: terms = [terms]
+    # DEBUG(f'parentlist: {terms}')
+
+    ancestor_set = set()
+    ancestory = []
+    
+    def _get_ancestor(term, ancestorlist):
+        # if there are no parents, this is the ancestor
+        # DEBUG(f'{term} :: {ancestorlist}')
+        if 'skos:broader' not in DATA.concepts[term]:
+            # DEBUG('path complete')
+            ancestory.append(ancestorlist)
+            return
+        # there are parents, so find grandparents
+        parents = DATA.concepts[term]['skos:broader']
+        if type(parents) is list:
+            for parent in parents:
+                ancestor_set.add(parent)
+                parentlist = ancestorlist.copy()
+                parentlist.append(parent)
+                _get_ancestor(parent, parentlist)
+        else:
+            ancestorlist.append(parents)
+            ancestor_set.add(parents)
+            _get_ancestor(parents, ancestorlist)
+        return
+
+    for parent in terms:
+        _get_ancestor(parent, [parent])
+    ancestorlist = [
+        parentlist for parentlist in ancestory
+        if parentlist[0] not in ancestor_set]    
+    ancestory = []
+    for parentlist in ancestorlist:
+        ancestory.append([DATA.concepts[parent] for parent in parentlist])
+    return ancestory
+
+
+def get_children_hierarchy(term):
+    # DEBUG(f'getting parents for {term["prefixed"]}')
+    if 'skos:narrower' not in term: return []
+    terms = term['skos:narrower']
+    if type(terms) is not list: terms = [terms]
+    # DEBUG(f'parentlist: {terms}')
+
+    ancestor_set = set()
+    ancestory = []
+    
+    def _get_ancestor(term, ancestorlist):
+        # if there are no parents, this is the ancestor
+        # DEBUG(f'{term} :: {ancestorlist}')
+        if 'skos:narrower' not in DATA.concepts[term]:
+            # DEBUG('path complete')
+            ancestory.append(ancestorlist)
+            return
+        # there are parents, so find grandparents
+        parents = DATA.concepts[term]['skos:narrower']
+        if type(parents) is list:
+            for parent in parents:
+                ancestor_set.add(parent)
+                parentlist = ancestorlist.copy()
+                parentlist.append(parent)
+                _get_ancestor(parent, parentlist)
+        else:
+            ancestorlist.append(parents)
+            ancestor_set.add(parents)
+            _get_ancestor(parents, ancestorlist)
+        return
+
+    for parent in terms:
+        _get_ancestor(parent, [parent])
+    ancestorlist = [
+        parentlist for parentlist in ancestory
+        if parentlist[0] not in ancestor_set]    
+    ancestory = []
+    for parentlist in ancestorlist:
+        ancestory.append([DATA.concepts[parent] for parent in parentlist])
+    return ancestory
+
 def organise_hierarchy(terms, top=None):
     '''organise the given list of terms into a hierarchy
     returns { parent: { children: { children: { } } } }'''
     data = {}
     for term in terms:
         data[term] = { 'parents': [], 'children': [] }
-
+    if 'prefix' in data:
+        del data['prefix'] # this isn't a term
     for key, term in terms.items():
         if 'skos:broader' in term: # has parents
             parents = term['skos:broader'] # get parents
@@ -304,6 +396,20 @@ def organise_hierarchy(terms, top=None):
     return {k:results[k] for k in sorted(results.keys(), key=str.casefold)}
 
 
+def get_sources(sourcestring):
+    sourcestring = sourcestring.replace('(', '').replace(')', '').split(',')
+    sources = []
+    for i in range(1, len(sourcestring), 2):
+        sources.append((sourcestring[i], sourcestring[i-1]))
+    return sources
+
+
+def ensure_list(item):
+    if type(item) is not list:
+        item = [item]
+    return item
+
+
 from jinja2 import FileSystemLoader, Environment
 template_loader = FileSystemLoader(searchpath=f'{TEMPLATE_PATH}')
 template_env = Environment(
@@ -319,7 +425,11 @@ JINJA2_FILTERS = {
     'get_example_title': lambda x: x,
     'get_namespace_reference': lambda x: x,
     'get_concept_list': get_concept_list,
+    'get_parent_hierarchy': get_parent_hierarchy,
+    'get_children_hierarchy': get_children_hierarchy,
     'organise_hierarchy': organise_hierarchy,
+    'get_sources': get_sources,
+    'ensure_list': ensure_list,
 }
 template_env.filters.update(JINJA2_FILTERS)
 

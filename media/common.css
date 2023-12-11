@@ -14,16 +14,30 @@ figure {
 }
 .term-contents {
   box-shadow: 2px 2px 2px darkgray; 
-}
-.term-contents > p {
   border-top: 1px solid lightgray;
   border-left: 1px solid lightgray;
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 2px;
 }
-.dfn-label {
+table.term-contents tr {
+  border-bottom: 1px ridge lightgray;
+}
+tr.table-separator {
+  height: 2px;
+  border-bottom: dashed 2px lightgray;
+}
+table.term-contents tbody tr th {
+  color: #333;
+  border: none;
   font-family: monospace;
+  font-size: 0.7rem;
+}
+table.term-contents tbody tr td {
+  border: none;
+}
+tr.technical-detail {
+  /*font-family: monospace;*/
 }
 .concept-list li {
   list-style-type: decimal;

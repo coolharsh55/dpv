@@ -79,6 +79,7 @@ def construct_parent_taxonomy(item, data, namespace):
     # parent will be of the form prefix:term
     triples = []
     term, namespace = _get_term_from_prefix_notation(data['Term'], namespace)
+    # DEBUG(f'{term} parent taxonomy')
     # TODO: remove dpv:Concept as a concept
     
     # turn parents (if non-empty) into IRIs
@@ -95,6 +96,7 @@ def construct_parent_taxonomy(item, data, namespace):
         else:
             parent = RDFS.Class
         parents.append(parent)
+    # DEBUG(f'parents: {parents}')
     # check type of parent to handle
     if item in ('a', 'sc'):
         for parent in parents:
@@ -114,14 +116,16 @@ def construct_parent_taxonomy(item, data, namespace):
     prefix_top, topconcept = data['ParentType'].split(':')
     topconcept = NAMESPACES[prefix_top][topconcept]
     triples.append((namespace[term], RDF.type, topconcept))
-    # if not parents:
-    #     # empty parents means this is a topconcept
-    triples.append((namespace[term], SKOS.broader, topconcept))
-    triples.append((topconcept, SKOS.narrower, namespace[term]))
     # parent non-empty means not a top concept, state relation
+    if not parents:
+        triples.append((namespace[term], SKOS.broader, topconcept))
+        triples.append((topconcept, SKOS.narrower, namespace[term]))
+        # DEBUG(f'skos {term} <-> {topconcept} topconcept')
+        return triples
     for parent in parents:
         triples.append((namespace[term], SKOS.broader, parent))
         triples.append((parent, SKOS.narrower, namespace[term]))
+        # DEBUG(f'skos {term} <-> {parent} parent')
     return triples
 
 
@@ -193,10 +197,10 @@ def construct_related_terms(item, data, namespace):
     return triples
 
 
-def construct_comment(item, data, namespace):
+def construct_scope_note(item, data, namespace):
     triples = []
     term = namespace[data['Term']]
-    triples.append((term, SKOS.note, Literal(item, lang='en')))
+    triples.append((term, SKOS.scopeNote, Literal(item, lang='en')))
     return triples
 
 

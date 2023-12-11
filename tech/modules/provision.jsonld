@@ -1,5 +1,47 @@
 [
   {
+    "@id": "https://w3id.org/dpv/tech#Service",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Technology provided or used as service(s)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv/tech#provision-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Service"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "Removed plural suffix for consistency in terms"
+      }
+    ]
+  },
+  {
     "@id": "https://w3id.org/dpv/tech#Component",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
@@ -36,7 +78,7 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#Goods",
+    "@id": "https://w3id.org/dpv/tech#Product",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
@@ -56,7 +98,7 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Technology provided or used as goods"
+        "@value": "Technology that is provided as a product"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -67,43 +109,7 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Goods"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#System",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Technology provided as a system"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv/tech#provision-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "System"
+        "@value": "Product"
       }
     ]
   },
@@ -141,6 +147,12 @@
         "@language": "en",
         "@value": "Subscription"
       }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#provision-properties",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
     ]
   },
   {
@@ -194,81 +206,32 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#Product",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+    "@id": "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod",
+    "http://www.w3.org/2004/02/skos/core#narrower": [
       {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
+        "@id": "https://w3id.org/dpv/tech#FixedUse"
+      },
       {
-        "@id": "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
+        "@id": "https://w3id.org/dpv/tech#Subscription"
+      },
       {
-        "@language": "en",
-        "@value": "Technology that is provided as a product"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
+        "@id": "https://w3id.org/dpv/tech#Product"
+      },
       {
-        "@id": "https://w3id.org/dpv/tech#provision-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+        "@id": "https://w3id.org/dpv/tech#Goods"
+      },
       {
-        "@language": "en",
-        "@value": "Product"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#Algorithmic",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+        "@id": "https://w3id.org/dpv/tech#Service"
+      },
       {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
+        "@id": "https://w3id.org/dpv/tech#Algorithmic"
+      },
       {
-        "@id": "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
+        "@id": "https://w3id.org/dpv/tech#System"
+      },
       {
-        "@language": "en",
-        "@value": "Technology provided as an algorithm or method"
+        "@id": "https://w3id.org/dpv/tech#Component"
       }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv/tech#provision-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Algorithmic"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#provision-properties",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
     ]
   },
   {
@@ -308,7 +271,13 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#Service",
+    "@id": "https://w3id.org/dpv/tech#provision-classes",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#Algorithmic",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
@@ -328,7 +297,7 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Technology provided or used as service(s)"
+        "@value": "Technology provided as an algorithm or method"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -336,51 +305,82 @@
         "@id": "https://w3id.org/dpv/tech#provision-classes"
       }
     ],
-    "http://www.w3.org/2004/02/skos/core#note": [
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Removed plural suffix for consistency in terms"
+        "@value": "Algorithmic"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#System",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Technology provided as a system"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv/tech#provision-classes"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Service"
+        "@value": "System"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#provision-classes",
+    "@id": "https://w3id.org/dpv/tech#Goods",
     "@type": [
-      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod",
-    "http://www.w3.org/2004/02/skos/core#narrower": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
-        "@id": "https://w3id.org/dpv/tech#FixedUse"
-      },
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@id": "https://w3id.org/dpv/tech#Subscription"
-      },
+        "@id": "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
       {
-        "@id": "https://w3id.org/dpv/tech#Product"
-      },
+        "@language": "en",
+        "@value": "Technology provided or used as goods"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
       {
-        "@id": "https://w3id.org/dpv/tech#Goods"
-      },
+        "@id": "https://w3id.org/dpv/tech#provision-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
-        "@id": "https://w3id.org/dpv/tech#Service"
-      },
-      {
-        "@id": "https://w3id.org/dpv/tech#Algorithmic"
-      },
-      {
-        "@id": "https://w3id.org/dpv/tech#System"
-      },
-      {
-        "@id": "https://w3id.org/dpv/tech#Component"
+        "@language": "en",
+        "@value": "Goods"
       }
     ]
   }

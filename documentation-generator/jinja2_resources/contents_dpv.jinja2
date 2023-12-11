@@ -218,6 +218,8 @@
   </table>
       <p>DPV provides taxonomies for all core concepts except for <dfn>PersonalDataHandling</dfn> which represents an abstract concept to aid in 'grouping' the concepts with one another. The relation <span data-dfn-for="hasPersonalDataHandling"><dfn>hasPersonalDataHandling</dfn> associates a [=PersonalDataHandling=] with other concepts including itself.</span></li>
       </ul>
+      <p><strong>Concepts</strong></p>
+      {{ list_hierarchy(modules['process']['classes'], head='dpv:Process') }}
   </section>
 
   <section>
@@ -268,7 +270,7 @@
     {{ list_hierarchy(modules['entities-legalrole']['classes'], head='dpv:LegalEntity') }}
   </section>
 
-  <section id="vocab-entities-authorities">
+  <section id="vocab-entities-authority">
     <h3>Authorities</h3>
     <p>The concept [=Authority=] is a specific Governmental Organisation authorised to enforce a law or regulation. Authorities can be associated with a specific domain, topic, or jurisdiction. DPV currently defines regional authorities for [=NationalAuthority=], [=RegionalAuthority=], and [=SupraNationalAuthority=], and [=DataProtectionAuthority=] represents authorities associated with data protection and privacy. To associate authorities with concepts, the relations [=hasAuthority=] and [=isAuthorityFor=] are provided.</p>
     {{ list_hierarchy(modules['entities-authority']['classes'], head='dpv:Authority') }}
@@ -286,7 +288,7 @@
   </section>
 </section>
 
-<section id="vocab-purpose">
+<section id="vocab-purposes">
   <h2>Purposes</h2>
   <figure>
     <a href="../media/purpose-2.png" target="_blank">
@@ -314,7 +316,7 @@
   {{ list_hierarchy(modules['processing']['classes'], head='dpv:Processing') }}
 </section>
 
-<section id="vocab-personaldata">
+<section id="vocab-personal-data">
   <h2>Personal Data</h2>
   <figure>
     <img src="../media/PersonalData.png" />
@@ -328,7 +330,7 @@
   <p>DPV defines the following concepts for expressing information about data:</p>
   {{ list_hierarchy(modules['personal_data']['classes'], head='dpv:Data') }}
 </section>
-<section id="vocab-technical_organisational_measures">
+<section id="vocab-TOM">
   <h2>Tech/Org Measures</h2>
   <figure>
     <a href="../media/techorgmeasures-2.png" target="_blank">
@@ -340,7 +342,7 @@
   <p>This taxonomy also includes relations that are associated with measures, such as [=hasNotice=] or [=hasPolicy=], which are generic and can be applied to other contexts (e.g. notice for consent, policy for data storage).</p>
   {{ list_hierarchy(modules['TOM']['classes'], head='dpv:TechnicalOrganisationalMeasure') }}
   
-  <section id="vocab-technical-measures">
+  <section id="vocab-TOM-technical">
     <h3>Technical Measures</h3>
     <figure>
     <a href="../media/techmeasures-2.png" target="_blank">
@@ -350,7 +352,7 @@
   </figure>
   {{ list_hierarchy(modules['TOM-technical']['classes'], head='dpv:TechnicalMeasure') }}
     </section>
-  <section id="vocab-organisational-measures">
+  <section id="vocab-TOM-organisational">
     <h3>Organisational Measures</h3>
     <figure>
     <a href="../media/orgmeasures-2.png" target="_blank">
@@ -362,7 +364,7 @@
   </section>
 </section>
 
-<section id="vocab-legal_basis">
+<section id="vocab-legal-basis">
   <h2>Legal Bases</h2>
   <figure>
     <img src="../media/legal_bases.png">
@@ -374,11 +376,9 @@
 
   <p>For GDPR, DPVCG provides the [[[DPV-GDPR]]] which defines the legal bases within [[GDPR]] by extending them from relevant concepts within the DPV. We welcome similar contributions for extending the GDPR extension as well as creating extensions for other laws and domains.</p>
 
-  <pre>{{ modules['legal_basis']['classes'] }}</pre>
-  
   {{ list_hierarchy(modules['legal_basis']['classes'], head='dpv:LegalBasis') }}
 
-  <section id="vocab-consent">
+  <section id="vocab-legal-basis-consent">
     <h3>Consent</h3>
     <figure>
       <a href="../media/Consent.png"><img src="../media/Consent.png"></a>
@@ -397,12 +397,12 @@
         <p>The concepts/relations for consent added in DPV v0.1 and later have been <i>deprecated</i> or removed from the DPV in favour of the newer set of concepts based on advances in legislative requirements as well as standardisation efforts such as [[[ISO-27560]]]. The list of deprecated concepts is provided in <a href="#appendix-deprecated">Appendix</a> and a note on converting existing implementations to use newer concepts is provided in [[DPV-GUIDE-Consent]].</p>
      </div>
 
-    <section id="vocab-consent-types">
+    <section id="vocab-legal-basis-consent-types">
       <h4>Consent Types</h4>
       {{ list_hierarchy(modules['legal_basis-consent-types']['classes'], head='dpv:Consent') }}
     </section>
 
-    <section id="vocab-consent-status">
+    <section id="vocab-legal-basis-consent-status">
       <h4>Consent Status</h4>
       {{ list_hierarchy(modules['legal_basis-consent-status']['classes'], head="dpv:ConsentStatus") }}
     </section>
@@ -468,7 +468,7 @@
     {{ list_hierarchy(modules['context']['classes'], head='dpv:Context') }}
   </section>
 
-  <section id="vocab-status">
+  <section id="vocab-context-status">
     <h3>Status</h3>
     <p>To assist with expressing the state or status associated with various activities, DPV provides the [=Status=] concept that can be associated contextually using the [=hasStatus=] relation. Specific subtypes are provided as [=ActivityStatus=], [=ComplianceStatus=] including [=Lawfulness=], [=AuditStatus=], [=ConformanceStatus=], and [=RequestStatus=].</p>
 
@@ -488,7 +488,7 @@
   </section>
 </section>
 
-<section id="vocab-jurisdiction">
+<section id="vocab-context-jurisdiction">
   <h2>Location &amp; Jurisdiction</h2>
   <figure>
     <img src="../media/location.png">

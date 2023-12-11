@@ -82,8 +82,7 @@ dpv:Harm a rdfs:Class,
         skos:Concept,
         dpv:Impact ;
     sw:term_status "changed"@en ;
-    skos:broader dpv:Damage,
-        dpv:Impact ;
+    skos:broader dpv:Damage ;
     skos:definition "Impact that acts as or causes harms"@en ;
     skos:inScheme dpv:risk-classes ;
     skos:prefLabel "Harm"@en .
@@ -97,27 +96,23 @@ dpv:Impact a rdfs:Class,
     skos:inScheme dpv:risk-classes ;
     skos:narrower dpv:Benefit,
         dpv:Damage,
-        dpv:Detriment,
-        dpv:Harm,
-        dpv:MaterialDamage,
-        dpv:NonMaterialDamage ;
-    skos:note "Impact is a stronger notion of consequence in terms of influence, change, or effect on something e.g. for impact assessments"@en ;
-    skos:prefLabel "Impact"@en .
+        dpv:Detriment ;
+    skos:prefLabel "Impact"@en ;
+    skos:scopeNote "Impact is a stronger notion of consequence in terms of influence, change, or effect on something e.g. for impact assessments"@en .
 
 dpv:Likelihood a rdfs:Class,
         skos:Concept ;
     sw:term_status "accepted"@en ;
     skos:definition "The likelihood or probability or chance of something taking place or occuring"@en ;
     skos:inScheme dpv:risk-classes ;
-    skos:note "Likelihood can be expressed in a subjective manner, such as 'Unlikely', or in a quantitative manner such as \"Twice in a Day\" (frequency per period). The suggestion is to use quantitative values, or to associate them with subjective terms used so as to enable accurate interpretations and interoperability. See the concepts related to Frequency and Duration for possible uses as a combination to express Likelihood."@en ;
-    skos:prefLabel "Likelihood"@en .
+    skos:prefLabel "Likelihood"@en ;
+    skos:scopeNote "Likelihood can be expressed in a subjective manner, such as 'Unlikely', or in a quantitative manner such as \"Twice in a Day\" (frequency per period). The suggestion is to use quantitative values, or to associate them with subjective terms used so as to enable accurate interpretations and interoperability. See the concepts related to Frequency and Duration for possible uses as a combination to express Likelihood."@en .
 
 dpv:MaterialDamage a rdfs:Class,
         skos:Concept,
         dpv:Impact ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Damage,
-        dpv:Impact ;
+    skos:broader dpv:Damage ;
     skos:definition "Impact that acts as or causes material damages"@en ;
     skos:inScheme dpv:risk-classes ;
     skos:prefLabel "Material Damage"@en .
@@ -126,8 +121,7 @@ dpv:NonMaterialDamage a rdfs:Class,
         skos:Concept,
         dpv:Impact ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Damage,
-        dpv:Impact ;
+    skos:broader dpv:Damage ;
     skos:definition "Impact that acts as or causes non-material damages"@en ;
     skos:inScheme dpv:risk-classes ;
     skos:prefLabel "Non-Material Damage"@en .
@@ -137,16 +131,16 @@ dpv:Risk a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:definition "A risk or possibility or uncertainty of negative effects, impacts, or consequences"@en ;
     skos:inScheme dpv:risk-classes ;
-    skos:note "Risks can be associated with one or more different concepts such as purpose, processing, personal data, technical or organisational measure"@en ;
-    skos:prefLabel "Risk"@en .
+    skos:prefLabel "Risk"@en ;
+    skos:scopeNote "Risks can be associated with one or more different concepts such as purpose, processing, personal data, technical or organisational measure"@en .
 
 dpv:RiskLevel a rdfs:Class,
         skos:Concept ;
     sw:term_status "accepted"@en ;
     skos:definition "The magnitude of a risk expressed as an indication to aid in its management"@en ;
     skos:inScheme dpv:risk-classes ;
-    skos:note "Risk Levels can be defined as a combination of different characteristics. For example, ISO 31073:2022 defines it as a combination of consequences and their likelihood. Another example would be the Risk Matrix where Risk Level is defined as a combination of Likelihood and Severity associated with the Risk."@en ;
-    skos:prefLabel "Risk Level"@en .
+    skos:prefLabel "Risk Level"@en ;
+    skos:scopeNote "Risk Levels can be defined as a combination of different characteristics. For example, ISO 31073:2022 defines it as a combination of consequences and their likelihood. Another example would be the Risk Matrix where Risk Level is defined as a combination of Likelihood and Severity associated with the Risk."@en .
 
 dpv:RiskMitigationMeasure a rdfs:Class,
         skos:Concept ;
@@ -162,8 +156,8 @@ dpv:Severity a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:definition "The magnitude of being unwanted or having negative effects such as harmful impacts"@en ;
     skos:inScheme dpv:risk-classes ;
-    skos:note "Severity can be associated with Risk, or its Consequences and Impacts"@en ;
-    skos:prefLabel "Severity"@en .
+    skos:prefLabel "Severity"@en ;
+    skos:scopeNote "Severity can be associated with Risk, or its Consequences and Impacts"@en .
 
 dpv:hasLikelihood a rdf:Property,
         skos:Concept ;
@@ -247,8 +241,8 @@ dpv:hasConsequence a rdf:Property,
     skos:definition "Indicates consenquence(s) possible or arising from specified concept"@en ;
     skos:inScheme dpv:risk-properties ;
     skos:narrower dpv:hasImpact ;
-    skos:note "Removed plural suffix for consistency"@en ;
     skos:prefLabel "has consequence"@en ;
+    skos:scopeNote "Removed plural suffix for consistency"@en ;
     schema:rangeIncludes dpv:Consequence .
 
 dpv:hasConsequenceOn a rdf:Property,

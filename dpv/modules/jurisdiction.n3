@@ -20,8 +20,7 @@ dpv:CloudLocation a rdfs:Class,
         skos:Concept,
         dpv:Location ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Location,
-        dpv:RemoteLocation ;
+    skos:broader dpv:RemoteLocation ;
     skos:definition "Location that is in the 'cloud' i.e. a logical location operated over the internet"@en ;
     skos:inScheme dpv:jurisdiction-classes ;
     skos:prefLabel "Cloud Location"@en .
@@ -37,8 +36,8 @@ dpv:Country a rdfs:Class,
     skos:inScheme dpv:jurisdiction-classes ;
     skos:narrower dpv:Region,
         dpv:ThirdCountry ;
-    skos:note "The definition of country is not intended for political interpretation. DPVCG welcomes alternate definitions based in existing sources with global scope, such as UN or ISO."@en ;
-    skos:prefLabel "Country"@en .
+    skos:prefLabel "Country"@en ;
+    skos:scopeNote "The definition of country is not intended for political interpretation. DPVCG welcomes alternate definitions based in existing sources with global scope, such as UN or ISO."@en .
 
 dpv:DecentralisedLocations a rdfs:Class,
         skos:Concept,
@@ -82,8 +81,7 @@ dpv:FixedMultipleLocations a rdfs:Class,
         skos:Concept,
         dpv:LocationFixture ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:FixedLocation,
-        dpv:LocationFixture ;
+    skos:broader dpv:FixedLocation ;
     skos:definition "Location that is fixed with multiple places e.g. multiple cities"@en ;
     skos:inScheme dpv:jurisdiction-classes ;
     skos:prefLabel "Fixed Multiple Locations"@en .
@@ -92,8 +90,7 @@ dpv:FixedSingularLocation a rdfs:Class,
         skos:Concept,
         dpv:LocationFixture ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:FixedLocation,
-        dpv:LocationFixture ;
+    skos:broader dpv:FixedLocation ;
     skos:definition "Location that is fixed at a specific place e.g. a city"@en ;
     skos:inScheme dpv:jurisdiction-classes ;
     skos:prefLabel "Fixed Singular Location"@en .
@@ -110,8 +107,7 @@ dpv:LocalLocation a rdfs:Class,
         skos:Concept,
         dpv:Location ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Location,
-        dpv:LocationLocality ;
+    skos:broader dpv:LocationLocality ;
     skos:definition "Location is local"@en ;
     skos:inScheme dpv:jurisdiction-classes ;
     skos:narrower dpv:PrivateLocation,
@@ -130,20 +126,12 @@ dpv:Location a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:definition "A location is a position, site, or area where something is located"@en ;
     skos:inScheme dpv:jurisdiction-classes ;
-    skos:narrower dpv:CloudLocation,
-        dpv:Country,
+    skos:narrower dpv:Country,
         dpv:EconomicUnion,
-        dpv:LocalLocation,
         dpv:LocationLocality,
-        dpv:PrivateLocation,
-        dpv:PublicLocation,
-        dpv:RemoteLocation,
-        dpv:SupraNationalUnion,
-        dpv:WithinDevice,
-        dpv:WithinPhysicalEnvironment,
-        dpv:WithinVirtualEnvironment ;
-    skos:note "Location may be geographic, physical, or virtual."@en ;
-    skos:prefLabel "Location"@en .
+        dpv:SupraNationalUnion ;
+    skos:prefLabel "Location"@en ;
+    skos:scopeNote "Location may be geographic, physical, or virtual."@en .
 
 dpv:LocationFixture a rdfs:Class,
         skos:Concept ;
@@ -154,8 +142,6 @@ dpv:LocationFixture a rdfs:Class,
     skos:narrower dpv:DecentralisedLocations,
         dpv:FederatedLocations,
         dpv:FixedLocation,
-        dpv:FixedMultipleLocations,
-        dpv:FixedSingularLocation,
         dpv:RandomLocation,
         dpv:VariableLocation ;
     skos:prefLabel "Location Fixture"@en .
@@ -175,8 +161,7 @@ dpv:PrivateLocation a rdfs:Class,
         skos:Concept,
         dpv:Location ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:LocalLocation,
-        dpv:Location ;
+    skos:broader dpv:LocalLocation ;
     skos:definition "Location that is not or cannot be accessed by the public and is controlled as a private space"@en ;
     skos:inScheme dpv:jurisdiction-classes ;
     skos:prefLabel "Private Location"@en .
@@ -185,8 +170,7 @@ dpv:PublicLocation a rdfs:Class,
         skos:Concept,
         dpv:Location ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:LocalLocation,
-        dpv:Location ;
+    skos:broader dpv:LocalLocation ;
     skos:definition "Location that is or can be accessed by the public"@en ;
     skos:inScheme dpv:jurisdiction-classes ;
     skos:prefLabel "Public Location"@en .
@@ -215,8 +199,7 @@ dpv:RemoteLocation a rdfs:Class,
         skos:Concept,
         dpv:Location ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Location,
-        dpv:LocationLocality ;
+    skos:broader dpv:LocationLocality ;
     skos:definition "Location is remote i.e. not local"@en ;
     skos:inScheme dpv:jurisdiction-classes ;
     skos:narrower dpv:CloudLocation ;
@@ -253,8 +236,7 @@ dpv:WithinDevice a rdfs:Class,
         skos:Concept,
         dpv:Location ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:LocalLocation,
-        dpv:Location ;
+    skos:broader dpv:LocalLocation ;
     skos:definition "Location is local and entirely within a device, such as a smartphone"@en ;
     skos:inScheme dpv:jurisdiction-classes ;
     skos:prefLabel "Within Device"@en .
@@ -263,8 +245,7 @@ dpv:WithinPhysicalEnvironment a rdfs:Class,
         skos:Concept,
         dpv:Location ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:LocalLocation,
-        dpv:Location ;
+    skos:broader dpv:LocalLocation ;
     skos:definition "Location is local and entirely within a physical environment, such as a room"@en ;
     skos:inScheme dpv:jurisdiction-classes ;
     skos:prefLabel "Within Physical Environment"@en .
@@ -273,8 +254,7 @@ dpv:WithinVirtualEnvironment a rdfs:Class,
         skos:Concept,
         dpv:Location ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:LocalLocation,
-        dpv:Location ;
+    skos:broader dpv:LocalLocation ;
     skos:definition "Location is local and entirely within a virtual environment, such as a shared network directory"@en ;
     skos:inScheme dpv:jurisdiction-classes ;
     skos:prefLabel "Within Virtual Environment"@en .

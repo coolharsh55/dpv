@@ -10,8 +10,7 @@ eu-gdpr:A9-2-a a rdfs:Class,
         dpv:LegalBasis ;
     dct:source "(GDPR Art.9-2a,https://eur-lex.europa.eu/eli/reg/2016/679/art_9/par_2/pnt_a/oj)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:ExplicitlyExpressedConsent,
-        dpv:LegalBasis ;
+    skos:broader dpv:ExplicitlyExpressedConsent ;
     skos:definition "explicit consent with special categories of data"@en ;
     skos:inScheme eu-gdpr:legal-basis-special-classes ;
     skos:prefLabel "Art 9(2-a) explicit consent"@en .
@@ -31,8 +30,7 @@ eu-gdpr:A9-2-c a rdfs:Class,
         dpv:LegalBasis ;
     dct:source "(GDPR Art.9-2c,https://eur-lex.europa.eu/eli/reg/2016/679/art_9/par_2/pnt_c/oj)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:LegalBasis,
-        dpv:VitalInterest ;
+    skos:broader dpv:VitalInterest ;
     skos:definition "protection of the vital interests"@en ;
     skos:inScheme eu-gdpr:legal-basis-special-classes ;
     skos:prefLabel "Art 9(2-c) protect vital interest"@en .
@@ -42,8 +40,7 @@ eu-gdpr:A9-2-d a rdfs:Class,
         dpv:LegalBasis ;
     dct:source "(GDPR Art.9-2d,https://eur-lex.europa.eu/eli/reg/2016/679/art_9/par_2/pnt_d/oj)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:LegalBasis,
-        dpv:LegitimateInterest ;
+    skos:broader dpv:LegitimateInterest ;
     skos:definition "legitimate activities with appropriate safeguards by a foundation, association or any other not-for-profit body with a political, philosophical, religious or trade union aim and on condition that the processing relates solely to the members or to former members of the body or to persons who have regular contact with it in connection with its purposes and that the personal data are not disclosed outside that body without the consent of the data subjects;"@en ;
     skos:inScheme eu-gdpr:legal-basis-special-classes ;
     skos:prefLabel "Art 9(2-d) legitimate activities"@en .
@@ -73,8 +70,7 @@ eu-gdpr:A9-2-g a rdfs:Class,
         dpv:LegalBasis ;
     dct:source "(GDPR Art.9-2g,https://eur-lex.europa.eu/eli/reg/2016/679/art_9/par_2/pnt_g/oj)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:LegalBasis,
-        dpv:PublicInterest ;
+    skos:broader dpv:PublicInterest ;
     skos:definition "substantial public interest, on the basis of Union or Member State law"@en ;
     skos:inScheme eu-gdpr:legal-basis-special-classes ;
     skos:prefLabel "Art 9(2-g) public interest"@en .
@@ -94,8 +90,7 @@ eu-gdpr:A9-2-i a rdfs:Class,
         dpv:LegalBasis ;
     dct:source "(GDPR Art.9-2i,https://eur-lex.europa.eu/eli/reg/2016/679/art_9/par_2/pnt_i/oj)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:LegalBasis,
-        dpv:PublicInterest ;
+    skos:broader dpv:PublicInterest ;
     skos:definition "public interest in public health"@en ;
     skos:inScheme eu-gdpr:legal-basis-special-classes ;
     skos:prefLabel "Art 9(2-i) public interest in public health"@en .
@@ -105,8 +100,7 @@ eu-gdpr:A9-2-j a rdfs:Class,
         dpv:LegalBasis ;
     dct:source "(GDPR Art.9-2j,https://eur-lex.europa.eu/eli/reg/2016/679/art_9/par_2/pnt_j/oj)"@en ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:LegalBasis,
-        dpv:PublicInterest ;
+    skos:broader dpv:PublicInterest ;
     skos:definition "public interest, scientific or historical research purposes or statistical purposes based on Union or Member State law"@en ;
     skos:inScheme eu-gdpr:legal-basis-special-classes ;
     skos:prefLabel "Art 9(2-j) public interest, scientific research, statistical purpose"@en .
@@ -123,14 +117,8 @@ dpv:PublicInterest skos:narrower eu-gdpr:A9-2-g,
 
 eu-gdpr:legal-basis-special-classes a skos:ConceptScheme .
 
-dpv:LegalBasis skos:narrower eu-gdpr:A9-2-a,
-        eu-gdpr:A9-2-b,
-        eu-gdpr:A9-2-c,
-        eu-gdpr:A9-2-d,
+dpv:LegalBasis skos:narrower eu-gdpr:A9-2-b,
         eu-gdpr:A9-2-e,
         eu-gdpr:A9-2-f,
-        eu-gdpr:A9-2-g,
-        eu-gdpr:A9-2-h,
-        eu-gdpr:A9-2-i,
-        eu-gdpr:A9-2-j .
+        eu-gdpr:A9-2-h .
 

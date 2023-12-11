@@ -31,8 +31,8 @@ dpv:ActivityNotCompleted a rdfs:Class,
     skos:broader dpv:ActivityStatus ;
     skos:definition "State of an activity that could not be completed, but has reached some end state"@en ;
     skos:inScheme dpv:status-classes ;
-    skos:note "This relates to a 'Stop' state as distinct from a 'Halt' state. It makes no comments on whether the Acitivity can be resumed or continued towards completion."@en ;
-    skos:prefLabel "Acitivity Not Completed"@en .
+    skos:prefLabel "Acitivity Not Completed"@en ;
+    skos:scopeNote "This relates to a 'Stop' state as distinct from a 'Halt' state. It makes no comments on whether the Acitivity can be resumed or continued towards completion."@en .
 
 dpv:ActivityOngoing a rdfs:Class,
         skos:Concept,
@@ -82,8 +82,8 @@ dpv:AuditConditionallyApproved a rdfs:Class,
     skos:broader dpv:AuditStatus ;
     skos:definition "State of being conditionally approved through the audit"@en ;
     skos:inScheme dpv:status-classes ;
-    skos:note "A \"conditional approval\" is intended to reflect states where the audit has identified further changes which must be implemented before considering the audit has been 'passed', without requiring another audit to validate them. This is distinct from the case where an audit has state 'rejected', which means changes must be made and submitted for review. The requirements of a 'conditional acceptance' are expected to be minor or not significant enough to warrant another audit to review them."@en ;
-    skos:prefLabel "Audit Conditionally Approved"@en .
+    skos:prefLabel "Audit Conditionally Approved"@en ;
+    skos:scopeNote "A \"conditional approval\" is intended to reflect states where the audit has identified further changes which must be implemented before considering the audit has been 'passed', without requiring another audit to validate them. This is distinct from the case where an audit has state 'rejected', which means changes must be made and submitted for review. The requirements of a 'conditional acceptance' are expected to be minor or not significant enough to warrant another audit to review them."@en .
 
 dpv:AuditNotRequired a rdfs:Class,
         skos:Concept,
@@ -178,8 +178,8 @@ dpv:ComplianceViolation a rdfs:Class,
     skos:broader dpv:ComplianceStatus ;
     skos:definition "State where compliance cannot be achieved due to requirements being violated"@en ;
     skos:inScheme dpv:status-classes ;
-    skos:note "Changed from \"violation of compliance\" for consistency with other terms"@en ;
-    skos:prefLabel "Compliance Violation"@en .
+    skos:prefLabel "Compliance Violation"@en ;
+    skos:scopeNote "Changed from \"violation of compliance\" for consistency with other terms"@en .
 
 dpv:Compliant a rdfs:Class,
         skos:Concept,
@@ -247,8 +247,8 @@ dpv:NonCompliant a rdfs:Class,
     skos:broader dpv:ComplianceStatus ;
     skos:definition "State of non-compliance where objectives have not been met, but have not been violated"@en ;
     skos:inScheme dpv:status-classes ;
-    skos:note "Changed from not compliant for consistency in commonly used terms"@en ;
-    skos:prefLabel "Non Compliant"@en .
+    skos:prefLabel "Non Compliant"@en ;
+    skos:scopeNote "Changed from not compliant for consistency in commonly used terms"@en .
 
 dpv:NonConformant a rdfs:Class,
         skos:Concept,

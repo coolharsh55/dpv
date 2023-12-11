@@ -8,40 +8,6 @@
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
    xmlns:sw="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
-  <rdf:Description rdf:about="https://w3id.org/dpv#NaturalPerson">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <skos:prefLabel xml:lang="en">Natural Person</skos:prefLabel>
-    <skos:definition xml:lang="en">A human</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Entity"/>
-    <skos:broader rdf:resource="https://w3id.org/dpv#Entity"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#Entity">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <skos:prefLabel xml:lang="en">Entity</skos:prefLabel>
-    <skos:definition xml:lang="en">A human or non-human 'thing' that constitutes as an entity</skos:definition>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#LegalEntity"/>
-    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#NaturalPerson"/>
-    <skos:narrower rdf:resource="https://w3id.org/dpv#LegalEntity"/>
-    <skos:narrower rdf:resource="https://w3id.org/dpv#NaturalPerson"/>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#LegalEntity">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <skos:prefLabel xml:lang="en">Legal Entity</skos:prefLabel>
-    <skos:definition xml:lang="en">A human or non-human 'thing' that constitutes as an entity and which is recognised and defined in law</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Entity"/>
-    <skos:broader rdf:resource="https://w3id.org/dpv#Entity"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#Representative"/>
-    <skos:narrower rdf:resource="https://w3id.org/dpv#Representative"/>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-classes"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#isRepresentativeFor">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -56,21 +22,11 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-properties"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#hasAddress">
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasName">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">has address</skos:prefLabel>
-    <skos:definition xml:lang="en">Specifies address of a legal entity such as street address or pin code</skos:definition>
-    <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#Entity"/>
-    <schema:domainIncludes rdf:resource="https://w3id.org/dpv#Entity"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-properties"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#hasContact">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">has contact</skos:prefLabel>
-    <skos:definition xml:lang="en">Specifies contact details of a legal entity such as phone  or email</skos:definition>
+    <skos:prefLabel xml:lang="en">has name</skos:prefLabel>
+    <skos:definition xml:lang="en">Specifies name of a legal entity</skos:definition>
     <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#Entity"/>
     <schema:domainIncludes rdf:resource="https://w3id.org/dpv#Entity"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
@@ -90,23 +46,11 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-properties"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#hasResponsibleEntity">
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasContact">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">has responsible entity</skos:prefLabel>
-    <skos:definition xml:lang="en">Specifies the indicated entity is responsible within some context</skos:definition>
-    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#Entity"/>
-    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#Entity"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/dpv#hasEntity"/>
-    <skos:broader rdf:resource="https://w3id.org/dpv#hasEntity"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-properties"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#hasName">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">has name</skos:prefLabel>
-    <skos:definition xml:lang="en">Specifies name of a legal entity</skos:definition>
+    <skos:prefLabel xml:lang="en">has contact</skos:prefLabel>
+    <skos:definition xml:lang="en">Specifies contact details of a legal entity such as phone  or email</skos:definition>
     <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#Entity"/>
     <schema:domainIncludes rdf:resource="https://w3id.org/dpv#Entity"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
@@ -119,7 +63,7 @@
     <skos:definition xml:lang="en">Indicates inclusion or applicability of an entity to some concept</skos:definition>
     <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#Entity"/>
     <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#Entity"/>
-    <skos:note xml:lang="en">parent property for controller, processor, data subject, authority, etc.?</skos:note>
+    <skos:scopeNote xml:lang="en">parent property for controller, processor, data subject, authority, etc.?</skos:scopeNote>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <rdfs:superPropertyOf rdf:resource="https://w3id.org/dpv#hasRepresentative"/>
     <rdfs:superPropertyOf rdf:resource="https://w3id.org/dpv#hasResponsibleEntity"/>
@@ -127,6 +71,30 @@
     <skos:narrower rdf:resource="https://w3id.org/dpv#hasRepresentative"/>
     <skos:narrower rdf:resource="https://w3id.org/dpv#hasResponsibleEntity"/>
     <skos:narrower rdf:resource="https://w3id.org/dpv#isRepresentativeFor"/>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-properties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#Entity">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:prefLabel xml:lang="en">Entity</skos:prefLabel>
+    <skos:definition xml:lang="en">A human or non-human 'thing' that constitutes as an entity</skos:definition>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#LegalEntity"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#NaturalPerson"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv#LegalEntity"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv#NaturalPerson"/>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasResponsibleEntity">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="en">has responsible entity</skos:prefLabel>
+    <skos:definition xml:lang="en">Specifies the indicated entity is responsible within some context</skos:definition>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#Entity"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#Entity"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/dpv#hasEntity"/>
+    <skos:broader rdf:resource="https://w3id.org/dpv#hasEntity"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-properties"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#Representative">
@@ -140,10 +108,42 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-classes"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#entities-properties">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasAddress">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="en">has address</skos:prefLabel>
+    <skos:definition xml:lang="en">Specifies address of a legal entity such as street address or pin code</skos:definition>
+    <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#Entity"/>
+    <schema:domainIncludes rdf:resource="https://w3id.org/dpv#Entity"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-properties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#LegalEntity">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:prefLabel xml:lang="en">Legal Entity</skos:prefLabel>
+    <skos:definition xml:lang="en">A human or non-human 'thing' that constitutes as an entity and which is recognised and defined in law</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Entity"/>
+    <skos:broader rdf:resource="https://w3id.org/dpv#Entity"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#Representative"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv#Representative"/>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#NaturalPerson">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:prefLabel xml:lang="en">Natural Person</skos:prefLabel>
+    <skos:definition xml:lang="en">A human</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Entity"/>
+    <skos:broader rdf:resource="https://w3id.org/dpv#Entity"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-classes"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#entities-classes">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#entities-properties">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
   </rdf:Description>
 </rdf:RDF>
