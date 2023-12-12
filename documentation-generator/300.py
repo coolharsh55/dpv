@@ -76,45 +76,45 @@ VOCABS = {
         },
     },
     # EXTENSIONS
-    'pd': {
-        'vocab': f'{IMPORT_PATH}/pd/pd.ttl',
-        'template': 'template_pd.jinja2',
-        'export': f'{EXPORT_PATH}/pd',
-        'modules': {
-            'core': f'{IMPORT_PATH}/pd/modules/core.ttl',
-            'extended': f'{IMPORT_PATH}/pd/modules/extended.ttl',
-        },
-    },
-    'tech': {
-        'vocab': f'{IMPORT_PATH}/tech/tech.ttl',
-        'template': 'template_tech.jinja2',
-        'export': f'{EXPORT_PATH}/tech',
-        'modules': {
-            'core': f'{IMPORT_PATH}/tech/modules/core.ttl',
-            'data': f'{IMPORT_PATH}/tech/modules/data.ttl',
-            'ops': f'{IMPORT_PATH}/tech/modules/ops.ttl',
-            'security': f'{IMPORT_PATH}/tech/modules/security.ttl',
-            'surveillance': f'{IMPORT_PATH}/tech/modules/surveillance.ttl',
-            'provision': f'{IMPORT_PATH}/tech/modules/provision.ttl',
-            'actors': f'{IMPORT_PATH}/tech/modules/actors.ttl',
-            'comms': f'{IMPORT_PATH}/tech/modules/comms.ttl',
-            'provision': f'{IMPORT_PATH}/tech/modules/provision.ttl',
-            'tools': f'{IMPORT_PATH}/tech/modules/tools.ttl',
-        },
-    },
-    'risk': {
-        'vocab': f'{IMPORT_PATH}/risk/risk.ttl',
-        'template': 'template_risk.jinja2',
-        'export': f'{EXPORT_PATH}/risk',
-        'modules': {
-            'risk_consequences': f'{IMPORT_PATH}/risk/modules/risk_consequences.ttl',
-            'risk_levels': f'{IMPORT_PATH}/risk/modules/risk_levels.ttl',
-            'risk_matrix': f'{IMPORT_PATH}/risk/modules/risk_matrix.ttl',
-            'risk_controls': f'{IMPORT_PATH}/risk/modules/risk_controls.ttl',
-            'risk_assessment': f'{IMPORT_PATH}/risk/modules/risk_assessment.ttl',
-            'risk_methodology': f'{IMPORT_PATH}/risk/modules/risk_methodology.ttl',
-        }
-    },
+    # 'pd': {
+    #     'vocab': f'{IMPORT_PATH}/pd/pd.ttl',
+    #     'template': 'template_pd.jinja2',
+    #     'export': f'{EXPORT_PATH}/pd',
+    #     'modules': {
+    #         'core': f'{IMPORT_PATH}/pd/modules/core.ttl',
+    #         'extended': f'{IMPORT_PATH}/pd/modules/extended.ttl',
+    #     },
+    # },
+    # 'tech': {
+    #     'vocab': f'{IMPORT_PATH}/tech/tech.ttl',
+    #     'template': 'template_tech.jinja2',
+    #     'export': f'{EXPORT_PATH}/tech',
+    #     'modules': {
+    #         'core': f'{IMPORT_PATH}/tech/modules/core.ttl',
+    #         'data': f'{IMPORT_PATH}/tech/modules/data.ttl',
+    #         'ops': f'{IMPORT_PATH}/tech/modules/ops.ttl',
+    #         'security': f'{IMPORT_PATH}/tech/modules/security.ttl',
+    #         'surveillance': f'{IMPORT_PATH}/tech/modules/surveillance.ttl',
+    #         'provision': f'{IMPORT_PATH}/tech/modules/provision.ttl',
+    #         'actors': f'{IMPORT_PATH}/tech/modules/actors.ttl',
+    #         'comms': f'{IMPORT_PATH}/tech/modules/comms.ttl',
+    #         'provision': f'{IMPORT_PATH}/tech/modules/provision.ttl',
+    #         'tools': f'{IMPORT_PATH}/tech/modules/tools.ttl',
+    #     },
+    # },
+    # 'risk': {
+    #     'vocab': f'{IMPORT_PATH}/risk/risk.ttl',
+    #     'template': 'template_risk.jinja2',
+    #     'export': f'{EXPORT_PATH}/risk',
+    #     'modules': {
+    #         'risk_consequences': f'{IMPORT_PATH}/risk/modules/risk_consequences.ttl',
+    #         'risk_levels': f'{IMPORT_PATH}/risk/modules/risk_levels.ttl',
+    #         'risk_matrix': f'{IMPORT_PATH}/risk/modules/risk_matrix.ttl',
+    #         'risk_controls': f'{IMPORT_PATH}/risk/modules/risk_controls.ttl',
+    #         'risk_assessment': f'{IMPORT_PATH}/risk/modules/risk_assessment.ttl',
+    #         'risk_methodology': f'{IMPORT_PATH}/risk/modules/risk_methodology.ttl',
+    #     }
+    # },
     # LEGAL VOCABS
     'eu-gdpr': {
         'vocab': f'{IMPORT_PATH}/legal/eu/gdpr/eu-gdpr.ttl',
@@ -128,27 +128,28 @@ VOCABS = {
             'data_transfers': f'{IMPORT_PATH}/legal/eu/gdpr/modules/data_transfers.ttl',
             'dpia': f'{IMPORT_PATH}/legal/eu/gdpr/modules/dpia.ttl',
             'compliance': f'{IMPORT_PATH}/legal/eu/gdpr/modules/compliance.ttl',
+            'legal_basis-rights_mapping': f'{IMPORT_PATH}/legal/eu/gdpr/modules/legal_basis_rights_mapping.ttl',
         },
     },
-    'eu-dga': {
-        'vocab': f'{IMPORT_PATH}/legal/eu/dga/eu-dga.ttl',
-        'template': 'template_legal_eu_dga.jinja2',
-        'export': f'{EXPORT_PATH}/legal/eu/dga',
-        'modules': {
-            'entities': f'{IMPORT_PATH}/legal/eu/dga/modules/entities.ttl',
-            'legal_basis': f'{IMPORT_PATH}/legal/eu/dga/modules/legal_basis.ttl',
-            'legal_rights': f'{IMPORT_PATH}/legal/eu/dga/modules/legal_rights.ttl',
-            'registers': f'{IMPORT_PATH}/legal/eu/dga/modules/registers.ttl',
-            'services': f'{IMPORT_PATH}/legal/eu/dga/modules/services.ttl',
-            'toms': f'{IMPORT_PATH}/legal/eu/dga/modules/toms.ttl',
-        },
-    },
-    'eu-rights': {
-        'vocab': f'{IMPORT_PATH}/legal/eu/rights/eu-rights.ttl',
-        'template': 'template_legal_eu_rights.jinja2',
-        'export': f'{EXPORT_PATH}/legal/eu/rights',
-        'modules': {},
-    },
+    # 'eu-dga': {
+    #     'vocab': f'{IMPORT_PATH}/legal/eu/dga/eu-dga.ttl',
+    #     'template': 'template_legal_eu_dga.jinja2',
+    #     'export': f'{EXPORT_PATH}/legal/eu/dga',
+    #     'modules': {
+    #         'entities': f'{IMPORT_PATH}/legal/eu/dga/modules/entities.ttl',
+    #         'legal_basis': f'{IMPORT_PATH}/legal/eu/dga/modules/legal_basis.ttl',
+    #         'legal_rights': f'{IMPORT_PATH}/legal/eu/dga/modules/legal_rights.ttl',
+    #         'registers': f'{IMPORT_PATH}/legal/eu/dga/modules/registers.ttl',
+    #         'services': f'{IMPORT_PATH}/legal/eu/dga/modules/services.ttl',
+    #         'toms': f'{IMPORT_PATH}/legal/eu/dga/modules/toms.ttl',
+    #     },
+    # },
+    # 'eu-rights': {
+    #     'vocab': f'{IMPORT_PATH}/legal/eu/rights/eu-rights.ttl',
+    #     'template': 'template_legal_eu_rights.jinja2',
+    #     'export': f'{EXPORT_PATH}/legal/eu/rights',
+    #     'modules': {},
+    # },
 }
 
 class DATA(object):
@@ -162,6 +163,7 @@ class DATA(object):
     modules = {}
     schemes = {}
     concepts = {}
+    concepts_prefixed = {}
     
 
     @staticmethod
@@ -217,6 +219,7 @@ class DATA(object):
                     'prefixed': obj,
                     'term': obj.split(':')[1]
                 }
+                DATA.concepts_prefixed[obj] = DATA.concepts[o]
                 if p == RDF.type and o == RDFS.Class:
                     term['_type'] = "class"
                 elif p == RDF.type and o == RDF.Property:
@@ -257,8 +260,9 @@ class DATA(object):
             if module not in DATA.data[vocab][term]['module']:
                 DATA.data[vocab][term]['module'].append(module)
         module_data = {
-            'classes': {'prefix': vocab},
-            'schemes': {'prefix': vocab}
+            'metadata': {'prefix': vocab, 'name': {module}},
+            'classes': {},
+            'schemes': {},
         }
         for k, v in module_data_temp.items():
             if v['term'][0].islower(): pass
@@ -410,6 +414,24 @@ def ensure_list(item):
     return item
 
 
+def filter_type(itemlist, itemtype, vocab=None):
+    results = []
+    # DEBUG(itemtype)
+    # DEBUG(itemlist)
+    for item in itemlist:
+        itemvocab = item.split(':')[0]
+        if not vocab or vocab != itemvocab:
+            continue
+        parents = DATA.data[itemvocab][item]['rdf:type']
+        if type(parents) is not list:
+            parents = [parents]
+        for p in parents:
+            prefixed = prefix_from_iri(p)
+            if prefixed == itemtype:
+                results.append(DATA.data[itemvocab][item])
+    return results
+
+
 from jinja2 import FileSystemLoader, Environment
 template_loader = FileSystemLoader(searchpath=f'{TEMPLATE_PATH}')
 template_env = Environment(
@@ -430,6 +452,7 @@ JINJA2_FILTERS = {
     'organise_hierarchy': organise_hierarchy,
     'get_sources': get_sources,
     'ensure_list': ensure_list,
+    'filter_type': filter_type,
 }
 template_env.filters.update(JINJA2_FILTERS)
 

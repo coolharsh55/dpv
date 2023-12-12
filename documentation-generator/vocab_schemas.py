@@ -69,3 +69,18 @@ SCHEMA['properties'] = {
     'Resolution': vocab_funcs.construct_resolution, 
 }
 
+SCHEMA['legal_basis_rights_mapping'] = {
+    "Term": None,
+    "A13": vocab_funcs.construct_legal_basis_rights_mapping,
+    "A14": vocab_funcs.construct_legal_basis_rights_mapping,
+    "A15": vocab_funcs.construct_legal_basis_rights_mapping,
+    "A16": vocab_funcs.construct_legal_basis_rights_mapping,
+    "A17": vocab_funcs.construct_legal_basis_rights_mapping,
+    "A18": vocab_funcs.construct_legal_basis_rights_mapping,
+    "A20": vocab_funcs.construct_legal_basis_rights_mapping,
+    "A21": vocab_funcs.construct_legal_basis_rights_mapping,
+    "A22": vocab_funcs.construct_legal_basis_rights_mapping,
+    "A7-3": vocab_funcs.construct_legal_basis_rights_mapping,
+    "A77": vocab_funcs.construct_legal_basis_rights_mapping,
+    'Status': None,
+}

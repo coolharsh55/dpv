@@ -176,15 +176,27 @@
 
   <section id="vocab-legal-basis-rights-mappings">
     <h2>Legal Basis - Rights Mappings</h2>
-    ## {% for legalbasis, rights in legal_basis_rights_mapping %}
-    ##   <section id="legalbasis-{{legalbasis.iri|fragment_this}}-rights">
-    ##     <h3>{{legalbasis}}</h3>
-    ##     <p>The following rights are applicable under this legal basis:</p>
-    ##     <ul>{% for iri, label in rights %}
-    ##       <li><a href="{{iri}}">{{ label }}</a></li>
-    ##     {% endfor %}</ul>
-    ##   </section>
-    ## {% endfor %}
+    <table>
+      <thead>
+      <th>Legal Basis (rows), Right (columns)</th>
+      {% for row_legalbasis in modules['rights']['classes'].keys()|sort|filter_type('dpv:Right', vocab='eu-gdpr') %}
+        <th>{{ row_legalbasis['skos:prefLabel'] }}</th>
+      {% endfor %}
+    </thead>
+    <tbody>
+      {% for item in modules['legal_basis-rights_mapping']['classes']|sort %}
+      {% if item != "prefix" %}
+      <tr>
+      {% set item = vocab[item] %}
+        <td><a href="{{item['iri']}}">{{item['skos:prefLabel']}}</a></td>
+        {% for legalbasis in modules['rights']['classes'].keys()|sort|filter_type('dpv:Right', vocab='eu-gdpr') %}
+        {% if legalbasis['iri'] in item['dpv:hasRight'] %}<td style="color:green; background-color: rgba(0, 255, 0, 0.2);">☒{% else %}<td style="color: red; background-color: rgba(255, 0, 0, 0.1);">☐</span>{% endif %}</td>        
+        {% endfor %}
+      </tr>
+      {% endif %}     
+      {% endfor %}    
+    </tbody>
+    </table>    
   </section>
 
   <section id="vocab-data-transfers">

@@ -123,7 +123,7 @@ for vocab, vocab_data in CSVFILES.items():
                         continue
                     if not item:
                         continue
-                    module_triples += func(item, row, namespace)
+                    module_triples += func(item, row, namespace, header[index])
         classes = []
         properties = []
         for s, p, o in module_triples:

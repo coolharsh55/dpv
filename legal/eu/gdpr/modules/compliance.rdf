@@ -4,14 +4,17 @@
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
    xmlns:sw="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
-  <rdf:Description rdf:about="https://w3id.org/dpv/legal/eu/gdpr#GDPRComplianceUnknown">
+  <rdf:Description rdf:about="https://w3id.org/dpv/legal/eu/gdpr#GDPRLawfulness">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#Lawfulness"/>
-    <skos:prefLabel xml:lang="en">GDPR Compliance Unknown</skos:prefLabel>
-    <skos:definition xml:lang="en">State where lawfulness or compliance with GDPR is unknown</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv/legal/eu/gdpr#GDPRLawfulness"/>
+    <skos:prefLabel xml:lang="en">GDPR Lawfulness</skos:prefLabel>
+    <skos:definition xml:lang="en">Status or state associated with being lawful or legally compliant regarding GDPR</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#Lawfulness"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:narrower rdf:resource="https://w3id.org/dpv/legal/eu/gdpr#GDPRCompliant"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv/legal/eu/gdpr#GDPRNonCompliant"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv/legal/eu/gdpr#GDPRComplianceUnknown"/>
     <skos:inScheme rdf:resource="https://w3id.org/dpv/legal/eu/gdpr#compliance-classes"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/legal/eu/gdpr#GDPRCompliant">
@@ -37,20 +40,17 @@
   <rdf:Description rdf:about="https://w3id.org/dpv#Lawfulness">
     <skos:narrower rdf:resource="https://w3id.org/dpv/legal/eu/gdpr#GDPRLawfulness"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/legal/eu/gdpr#GDPRLawfulness">
+  <rdf:Description rdf:about="https://w3id.org/dpv/legal/eu/gdpr#compliance-classes">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/legal/eu/gdpr#GDPRComplianceUnknown">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#Lawfulness"/>
-    <skos:prefLabel xml:lang="en">GDPR Lawfulness</skos:prefLabel>
-    <skos:definition xml:lang="en">Status or state associated with being lawful or legally compliant regarding GDPR</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#Lawfulness"/>
+    <skos:prefLabel xml:lang="en">GDPR Compliance Unknown</skos:prefLabel>
+    <skos:definition xml:lang="en">State where lawfulness or compliance with GDPR is unknown</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv/legal/eu/gdpr#GDPRLawfulness"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:narrower rdf:resource="https://w3id.org/dpv/legal/eu/gdpr#GDPRCompliant"/>
-    <skos:narrower rdf:resource="https://w3id.org/dpv/legal/eu/gdpr#GDPRNonCompliant"/>
-    <skos:narrower rdf:resource="https://w3id.org/dpv/legal/eu/gdpr#GDPRComplianceUnknown"/>
     <skos:inScheme rdf:resource="https://w3id.org/dpv/legal/eu/gdpr#compliance-classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/legal/eu/gdpr#compliance-classes">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
   </rdf:Description>
 </rdf:RDF>

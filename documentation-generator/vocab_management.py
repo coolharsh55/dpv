@@ -35,7 +35,7 @@ NAMESPACE_CSV = (
 	)
 NAMESPACES = {}
 for csvfile in NAMESPACE_CSV:
-	DEBUG(f'Extracting namespaces from {csvfile}')
+	# DEBUG(f'Extracting namespaces from {csvfile}')
 	with open(csvfile, 'r') as fd:
 		csvreader = csv.reader(fd)
 		next(csvreader)
@@ -45,16 +45,18 @@ for csvfile in NAMESPACE_CSV:
 			namespace = Namespace(iri)
 			globals()[variable] = namespace
 			NAMESPACES[prefix] = namespace
-			# DEBUG(f'{variable} namespace with IRI {iri}')
+			# DEBUG(f'{prefix} namespace with IRI {iri}')
 
 from rdflib import Graph
 NS = Graph()
 NS.ns = { k:v for k,v in NAMESPACES.items() }
 
 def prefix_from_iri(iri):
+    # DEBUG(iri)
     for prefix, ns in NAMESPACES.items():
         if iri.startswith(ns):
             term = iri.replace(ns, '')
+            # DEBUG(f'prefix: {prefix} :: term {term}')
             return f'{prefix}:{term}'
     return None
 
@@ -184,6 +186,9 @@ CSVFILES = {
         },
         'compliance': {
             'taxonomy': f'{IMPORT_CSV_PATH}/GDPR_compliance.csv',
+        },
+        'legal_basis_rights_mapping': {
+            'legal_basis_rights_mapping': f'{IMPORT_CSV_PATH}/GDPR_LegalBasis_Rights_Mapping.csv',
         },
     },
     'eu-dga': {

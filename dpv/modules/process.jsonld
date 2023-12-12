@@ -1,5 +1,122 @@
 [
   {
+    "@id": "https://w3id.org/dpv#PersonalDataProcess",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#Process"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#Process"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#process-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "An action, activity, or method involving personal data"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#dpv:NonPersonalDataProcess",
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "Use of personal data within NonPersonalDataProcess should be considered a violation of the explicit constraint that no personal data is involved."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#process-classes",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#process-properties",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#PersonalDataHandling",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#Process"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#Process"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#process-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "An abstract concept describing 'personal data handling'"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#Process",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#PersonalDataHandling"
+      },
+      {
+        "@id": "https://w3id.org/dpv#PersonalDataProcess"
+      },
+      {
+        "@id": "https://w3id.org/dpv#NonPersonalDataProcess"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#process-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv#PersonalDataHandling"
+      },
+      {
+        "@id": "https://w3id.org/dpv#PersonalDataProcess"
+      },
+      {
+        "@id": "https://w3id.org/dpv#NonPersonalDataProcess"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "An action, activity, or method"
+      }
+    ]
+  },
+  {
     "@id": "https://w3id.org/dpv#hasPersonalDataHandling",
     "@type": [
       "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
@@ -40,74 +157,6 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#PersonalDataProcess",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#Process"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#Process"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#process-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "An action, activity, or method involving personal data"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#hasPersonalDataProcess",
-    "@type": [
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://purl.org/dc/dcam/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#PersonalDataProcess"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Indicates association with a Personal Data Process"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#process-properties"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "has personal data process"
-      }
-    ],
-    "https://schema.org/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#PersonalDataProcess"
-      }
-    ]
-  },
-  {
     "@id": "https://w3id.org/dpv#NonPersonalDataProcess",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
@@ -132,6 +181,46 @@
       {
         "@language": "en",
         "@value": "An action, activity, or method involving non-personal data, and asserting that no personal data is involved"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#hasNonPersonalDataProcess",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/dcam/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#NonPersonalDataProcess"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Indicates association with a Non-Personal Data Process"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#process-properties"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "has non-personal data process"
+      }
+    ],
+    "https://schema.org/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#NonPersonalDataProcess"
       }
     ]
   },
@@ -176,63 +265,14 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#PersonalDataHandling",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#Process"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#Process"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#process-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "An abstract concept describing 'personal data handling'"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#dpv:NonPersonalDataProcess",
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "Use of personal data within NonPersonalDataProcess should be considered a violation of the explicit constraint that no personal data is involved."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#process-properties",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#process-classes",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#hasNonPersonalDataProcess",
+    "@id": "https://w3id.org/dpv#hasPersonalDataProcess",
     "@type": [
       "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
       "http://www.w3.org/2004/02/skos/core#Concept"
     ],
     "http://purl.org/dc/dcam/rangeIncludes": [
       {
-        "@id": "https://w3id.org/dpv#NonPersonalDataProcess"
+        "@id": "https://w3id.org/dpv#PersonalDataProcess"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -244,7 +284,7 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Indicates association with a Non-Personal Data Process"
+        "@value": "Indicates association with a Personal Data Process"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -255,12 +295,12 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "has non-personal data process"
+        "@value": "has personal data process"
       }
     ],
     "https://schema.org/rangeIncludes": [
       {
-        "@id": "https://w3id.org/dpv#NonPersonalDataProcess"
+        "@id": "https://w3id.org/dpv#PersonalDataProcess"
       }
     ]
   },
@@ -270,46 +310,6 @@
       {
         "@language": "en",
         "@value": "This concept will be deprecated in future updates. It is recommended to use dpv:PersonalDataProcess as the equivalent alternative which is better aligned with legal and operational terminology."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#Process",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#PersonalDataHandling"
-      },
-      {
-        "@id": "https://w3id.org/dpv#PersonalDataProcess"
-      },
-      {
-        "@id": "https://w3id.org/dpv#NonPersonalDataProcess"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#process-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv#PersonalDataHandling"
-      },
-      {
-        "@id": "https://w3id.org/dpv#PersonalDataProcess"
-      },
-      {
-        "@id": "https://w3id.org/dpv#NonPersonalDataProcess"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "An action, activity, or method"
       }
     ]
   }

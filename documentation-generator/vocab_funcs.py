@@ -4,7 +4,7 @@ from rdflib.term import Literal, URIRef, BNode
 from vocab_management import *
 
 
-def construct_class(item, data, namespace):
+def construct_class(item, data, namespace, header):
     triples = []
     # TODO: check for external terms
     # external terms are of type 'prefix:term'
@@ -15,7 +15,7 @@ def construct_class(item, data, namespace):
     return triples
 
 
-def construct_property(item, data, namespace):
+def construct_property(item, data, namespace, header):
     triples = []
     # TODO: check for external terms
     # external terms are of type 'prefix:term'
@@ -26,7 +26,7 @@ def construct_property(item, data, namespace):
     return triples
 
 
-def construct_label(item, data, namespace):
+def construct_label(item, data, namespace, header):
     triples = []
     term, namespace = _get_term_from_prefix_notation(data['Term'], namespace)
     if ':' in data['Term'] and namespace.startswith('https://w3id.org/dpv'):
@@ -34,7 +34,7 @@ def construct_label(item, data, namespace):
     triples.append((namespace[term], SKOS.prefLabel, Literal(item, lang='en')))
     return triples
 
-def contruct_definition(item, data, namespace):
+def contruct_definition(item, data, namespace, header):
     triples = []
     term, namespace = _get_term_from_prefix_notation(data['Term'], namespace)
     annotation = SKOS.definition
@@ -44,7 +44,7 @@ def contruct_definition(item, data, namespace):
     return triples
 
 
-def construct_parent(item, data, namespace):
+def construct_parent(item, data, namespace, header):
     # parent will be of the form prefix:term
     triples = []
     term, namespace = _get_term_from_prefix_notation(data['Term'], namespace)
@@ -75,7 +75,7 @@ def construct_parent(item, data, namespace):
     return triples
 
 
-def construct_parent_taxonomy(item, data, namespace):
+def construct_parent_taxonomy(item, data, namespace, header):
     # parent will be of the form prefix:term
     triples = []
     term, namespace = _get_term_from_prefix_notation(data['Term'], namespace)
@@ -129,7 +129,7 @@ def construct_parent_taxonomy(item, data, namespace):
     return triples
 
 
-def construct_parent_property(item, data, namespace):
+def construct_parent_property(item, data, namespace, header):
     # parent will be of the form prefix:term
     triples = []
     term = namespace[data['Term']]
@@ -149,7 +149,7 @@ def construct_parent_property(item, data, namespace):
     return triples
 
 
-def construct_domain(item, data, namespace):
+def construct_domain(item, data, namespace, header):
     # domain and range are of type prefix:term
     triples = []
     domains = item.split(',')
@@ -165,7 +165,7 @@ def construct_domain(item, data, namespace):
     return triples
 
 
-def construct_range(item, data, namespace):
+def construct_range(item, data, namespace, header):
     # range and range are of type prefix:term
     triples = []
     ranges = item.split(',')
@@ -181,7 +181,7 @@ def construct_range(item, data, namespace):
     return triples
 
 
-def construct_value(item, data, namespace):
+def construct_value(item, data, namespace, header):
     triples = []
     if not item:
         return triples
@@ -189,7 +189,7 @@ def construct_value(item, data, namespace):
     return triples
 
 
-def construct_related_terms(item, data, namespace):
+def construct_related_terms(item, data, namespace, header):
     triples = []
     term = namespace[data['Term']]
     # TODO: make related be a URI
@@ -197,14 +197,14 @@ def construct_related_terms(item, data, namespace):
     return triples
 
 
-def construct_scope_note(item, data, namespace):
+def construct_scope_note(item, data, namespace, header):
     triples = []
     term = namespace[data['Term']]
     triples.append((term, SKOS.scopeNote, Literal(item, lang='en')))
     return triples
 
 
-def construct_source(item, data, namespace):
+def construct_source(item, data, namespace, header):
     triples = []
     term = namespace[data['Term']]
     # TODO: make source be a URI or a Literal (if startswith http)
@@ -212,7 +212,7 @@ def construct_source(item, data, namespace):
     return triples
 
 
-def construct_date_created(item, data, namespace):
+def construct_date_created(item, data, namespace, header):
     if ':' in data['Term']:
         return [] # external term
     if item not in VOCAB_TERM_ACCEPT:
@@ -223,7 +223,7 @@ def construct_date_created(item, data, namespace):
     return triples
 
 
-def construct_date_modified(item, data, namespace):
+def construct_date_modified(item, data, namespace, header):
     if ':' in data['Term']:
         return [] # external term
     if item not in VOCAB_TERM_ACCEPT:
@@ -236,7 +236,7 @@ def construct_date_modified(item, data, namespace):
     return triples
 
 
-def construct_contributors(item, data, namespace):
+def construct_contributors(item, data, namespace, header):
     if ':' in data['Term']:
         return [] # external term
     if item not in VOCAB_TERM_ACCEPT:
@@ -248,16 +248,28 @@ def construct_contributors(item, data, namespace):
     return triples
 
 
-def construct_resolution(item, data, namespace):
+def construct_resolution(item, data, namespace, header):
     return []
 
 
-def construct_status(item, data, namespace):
+def construct_status(item, data, namespace, header):
     if ':' in data['Term']:
         return [] # external term
     if item not in VOCAB_TERM_ACCEPT:
         return [] # status is not acceptable
     return [(namespace[data['Term']], SW.term_status, Literal(item, lang='en'))]
+
+
+def construct_legal_basis_rights_mapping(item, data, namespace, header):
+    clause = data['Term']
+    right = header
+    applicable = item.strip() == 'Y'
+    triples = []
+    if not applicable:
+        return triples
+    # DEBUG(f'{clause} has right {right}')
+    triples.append((namespace[clause], DPV.hasRight, namespace[right]))
+    return triples
 
 
 

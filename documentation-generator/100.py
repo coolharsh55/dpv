@@ -35,8 +35,8 @@ DPV_FILES = {
             'Process_properties',
             ),
     },
-    'dpv-pd': {
-        'name': 'dpv-pd',
+    'pd': {
+        'name': 'pd',
         'doc_id': '1SI6gZh9-dq1rf_etfrlYHj0QZwq9Vd25f_OHPX5hbSQ',
         'sheets': (
             'PersonalData', 
@@ -119,8 +119,8 @@ DPV_FILES = {
             'Consent_properties',
             ),
     },
-    'gdpr': {
-        'name': 'gdpr',
+    'eu-gdpr': {
+        'name': 'eu-gdpr',
         'doc_id': '1lDJZpl0UND8Bm_4iWKVQtgmMUz0YwP2R63CgP7Gro-U',
         'sheets': (
             'GDPR_LegalBasis', 
@@ -134,8 +134,8 @@ DPV_FILES = {
             'GDPR_compliance'
             ),
     },
-    'dga': {
-        'name': 'dga',
+    'eu-dga': {
+        'name': 'eu-dga',
         'doc_id':  '1wKsf0Vqr0Gg1C91MqshtI5tjGXmQvXu4p4xF0yK0KaA',
         'sheets': (
             'DGA_LegalBasis',
@@ -147,8 +147,8 @@ DPV_FILES = {
             'DGA_properties',
             ),
     },
-    'dpv-tech': {
-        'name': 'dpv-tech',
+    'tech': {
+        'name': 'tech',
         'doc_id': '1GVmF4c7b-9xMSs0TyT45kXoCLLUVs8bbW34tfcozbuA',
         'sheets': (
             'tech-core',
