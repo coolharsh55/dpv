@@ -76,45 +76,45 @@ VOCABS = {
         },
     },
     # EXTENSIONS
-    # 'pd': {
-    #     'vocab': f'{IMPORT_PATH}/pd/pd.ttl',
-    #     'template': 'template_pd.jinja2',
-    #     'export': f'{EXPORT_PATH}/pd',
-    #     'modules': {
-    #         'core': f'{IMPORT_PATH}/pd/modules/core.ttl',
-    #         'extended': f'{IMPORT_PATH}/pd/modules/extended.ttl',
-    #     },
-    # },
-    # 'tech': {
-    #     'vocab': f'{IMPORT_PATH}/tech/tech.ttl',
-    #     'template': 'template_tech.jinja2',
-    #     'export': f'{EXPORT_PATH}/tech',
-    #     'modules': {
-    #         'core': f'{IMPORT_PATH}/tech/modules/core.ttl',
-    #         'data': f'{IMPORT_PATH}/tech/modules/data.ttl',
-    #         'ops': f'{IMPORT_PATH}/tech/modules/ops.ttl',
-    #         'security': f'{IMPORT_PATH}/tech/modules/security.ttl',
-    #         'surveillance': f'{IMPORT_PATH}/tech/modules/surveillance.ttl',
-    #         'provision': f'{IMPORT_PATH}/tech/modules/provision.ttl',
-    #         'actors': f'{IMPORT_PATH}/tech/modules/actors.ttl',
-    #         'comms': f'{IMPORT_PATH}/tech/modules/comms.ttl',
-    #         'provision': f'{IMPORT_PATH}/tech/modules/provision.ttl',
-    #         'tools': f'{IMPORT_PATH}/tech/modules/tools.ttl',
-    #     },
-    # },
-    # 'risk': {
-    #     'vocab': f'{IMPORT_PATH}/risk/risk.ttl',
-    #     'template': 'template_risk.jinja2',
-    #     'export': f'{EXPORT_PATH}/risk',
-    #     'modules': {
-    #         'risk_consequences': f'{IMPORT_PATH}/risk/modules/risk_consequences.ttl',
-    #         'risk_levels': f'{IMPORT_PATH}/risk/modules/risk_levels.ttl',
-    #         'risk_matrix': f'{IMPORT_PATH}/risk/modules/risk_matrix.ttl',
-    #         'risk_controls': f'{IMPORT_PATH}/risk/modules/risk_controls.ttl',
-    #         'risk_assessment': f'{IMPORT_PATH}/risk/modules/risk_assessment.ttl',
-    #         'risk_methodology': f'{IMPORT_PATH}/risk/modules/risk_methodology.ttl',
-    #     }
-    # },
+    'pd': {
+        'vocab': f'{IMPORT_PATH}/pd/pd.ttl',
+        'template': 'template_pd.jinja2',
+        'export': f'{EXPORT_PATH}/pd',
+        'modules': {
+            'core': f'{IMPORT_PATH}/pd/modules/core.ttl',
+            'extended': f'{IMPORT_PATH}/pd/modules/extended.ttl',
+        },
+    },
+    'tech': {
+        'vocab': f'{IMPORT_PATH}/tech/tech.ttl',
+        'template': 'template_tech.jinja2',
+        'export': f'{EXPORT_PATH}/tech',
+        'modules': {
+            'core': f'{IMPORT_PATH}/tech/modules/core.ttl',
+            'data': f'{IMPORT_PATH}/tech/modules/data.ttl',
+            'ops': f'{IMPORT_PATH}/tech/modules/ops.ttl',
+            'security': f'{IMPORT_PATH}/tech/modules/security.ttl',
+            'surveillance': f'{IMPORT_PATH}/tech/modules/surveillance.ttl',
+            'provision': f'{IMPORT_PATH}/tech/modules/provision.ttl',
+            'actors': f'{IMPORT_PATH}/tech/modules/actors.ttl',
+            'comms': f'{IMPORT_PATH}/tech/modules/comms.ttl',
+            'provision': f'{IMPORT_PATH}/tech/modules/provision.ttl',
+            'tools': f'{IMPORT_PATH}/tech/modules/tools.ttl',
+        },
+    },
+    'risk': {
+        'vocab': f'{IMPORT_PATH}/risk/risk.ttl',
+        'template': 'template_risk.jinja2',
+        'export': f'{EXPORT_PATH}/risk',
+        'modules': {
+            'risk_consequences': f'{IMPORT_PATH}/risk/modules/risk_consequences.ttl',
+            'risk_levels': f'{IMPORT_PATH}/risk/modules/risk_levels.ttl',
+            'risk_matrix': f'{IMPORT_PATH}/risk/modules/risk_matrix.ttl',
+            'risk_controls': f'{IMPORT_PATH}/risk/modules/risk_controls.ttl',
+            'risk_assessment': f'{IMPORT_PATH}/risk/modules/risk_assessment.ttl',
+            'risk_methodology': f'{IMPORT_PATH}/risk/modules/risk_methodology.ttl',
+        }
+    },
     # LEGAL VOCABS
     'eu-gdpr': {
         'vocab': f'{IMPORT_PATH}/legal/eu/gdpr/eu-gdpr.ttl',
@@ -131,25 +131,25 @@ VOCABS = {
             'legal_basis-rights_mapping': f'{IMPORT_PATH}/legal/eu/gdpr/modules/legal_basis_rights_mapping.ttl',
         },
     },
-    # 'eu-dga': {
-    #     'vocab': f'{IMPORT_PATH}/legal/eu/dga/eu-dga.ttl',
-    #     'template': 'template_legal_eu_dga.jinja2',
-    #     'export': f'{EXPORT_PATH}/legal/eu/dga',
-    #     'modules': {
-    #         'entities': f'{IMPORT_PATH}/legal/eu/dga/modules/entities.ttl',
-    #         'legal_basis': f'{IMPORT_PATH}/legal/eu/dga/modules/legal_basis.ttl',
-    #         'legal_rights': f'{IMPORT_PATH}/legal/eu/dga/modules/legal_rights.ttl',
-    #         'registers': f'{IMPORT_PATH}/legal/eu/dga/modules/registers.ttl',
-    #         'services': f'{IMPORT_PATH}/legal/eu/dga/modules/services.ttl',
-    #         'toms': f'{IMPORT_PATH}/legal/eu/dga/modules/toms.ttl',
-    #     },
-    # },
-    # 'eu-rights': {
-    #     'vocab': f'{IMPORT_PATH}/legal/eu/rights/eu-rights.ttl',
-    #     'template': 'template_legal_eu_rights.jinja2',
-    #     'export': f'{EXPORT_PATH}/legal/eu/rights',
-    #     'modules': {},
-    # },
+    'eu-dga': {
+        'vocab': f'{IMPORT_PATH}/legal/eu/dga/eu-dga.ttl',
+        'template': 'template_legal_eu_dga.jinja2',
+        'export': f'{EXPORT_PATH}/legal/eu/dga',
+        'modules': {
+            'entities': f'{IMPORT_PATH}/legal/eu/dga/modules/entities.ttl',
+            'legal_basis': f'{IMPORT_PATH}/legal/eu/dga/modules/legal_basis.ttl',
+            'legal_rights': f'{IMPORT_PATH}/legal/eu/dga/modules/legal_rights.ttl',
+            'registers': f'{IMPORT_PATH}/legal/eu/dga/modules/registers.ttl',
+            'services': f'{IMPORT_PATH}/legal/eu/dga/modules/services.ttl',
+            'toms': f'{IMPORT_PATH}/legal/eu/dga/modules/toms.ttl',
+        },
+    },
+    'eu-rights': {
+        'vocab': f'{IMPORT_PATH}/legal/eu/rights/eu-rights.ttl',
+        'template': 'template_legal_eu_rights.jinja2',
+        'export': f'{EXPORT_PATH}/legal/eu/rights',
+        'modules': {},
+    },
 }
 
 class DATA(object):
@@ -233,6 +233,9 @@ class DATA(object):
         DATA.data[vocab] = vocab_data
         for concept in vocab_data.values():
             DATA.concepts[concept['iri']] = concept
+            if '_type' not in concept:
+                concept['_type'] = 'notcp'
+                # DEBUG(f"concept has no type {concept['prefixed']}")
 
         # for scheme in DATA.schemes:
         #     DEBUG(f'registered scheme {prefix_from_iri(scheme)}')
@@ -262,11 +265,19 @@ class DATA(object):
         module_data = {
             'metadata': {'prefix': vocab, 'name': {module}},
             'classes': {},
+            'properties': {},
             'schemes': {},
         }
         for k, v in module_data_temp.items():
-            if v['term'][0].islower(): pass
-            else: module_data['classes'][k] = v
+            # DEBUG(v['iri'])
+            # DEBUG(v.keys())
+            if '_type' not in v:
+                logging.warning(f"{v['iri']} has misconfigured information")
+                continue
+            if v['_type'] == 'class':
+                module_data['classes'][k] = v
+            elif v['_type'] == 'property':
+                module_data['properties'][k] = v
         if vocab not in DATA.modules:
             DATA.modules[vocab] = {}
         DATA.modules[vocab][module] = module_data
@@ -432,6 +443,54 @@ def filter_type(itemlist, itemtype, vocab=None):
     return results
 
 
+def get_prop_with_term_domain(term, vocab):
+    props = []
+    term_types = term['rdf:type']
+    term_types = [str(x) for x in term_types]
+    term_types.append(str(term['iri']))
+    # DEBUG(term_types)
+    for prop in DATA.concepts.values():
+        # DEBUG(prop['prefixed'])
+        if '_type' not in prop: continue
+        if prop['_type'] != 'property': continue
+        if 'dcam:domainIncludes' not in prop: continue
+        domains = prop['dcam:domainIncludes']
+        # DEBUG(f"{prop['prefixed']} - domains {domains}")
+        if type(domains) is not list: domains = [domains]
+        for domain in domains:
+            for t in term_types:
+                # DEBUG(type(domain))
+                # DEBUG(f"{domain} x {t} = {domain == t}")
+                if str(domain) == t:
+                    props.append(prop)
+                    # DEBUG(f"{term['prefixed']} range {prop['prefixed']}")
+    return props
+
+
+def get_prop_with_term_range(term, vocab):
+    props = []
+    term_types = term['rdf:type']
+    term_types = [str(x) for x in term_types]
+    term_types.append(str(term['iri']))
+    # DEBUG(term_types)
+    for prop in DATA.concepts.values():
+        # DEBUG(prop['prefixed'])
+        if '_type' not in prop: continue
+        if prop['_type'] != 'property': continue
+        if 'dcam:rangeIncludes' not in prop: continue
+        domains = prop['dcam:rangeIncludes']
+        # DEBUG(f"{prop['prefixed']} - domains {domains}")
+        if type(domains) is not list: domains = [domains]
+        for domain in domains:
+            for t in term_types:
+                # DEBUG(type(domain))
+                # DEBUG(f"{domain} x {t} = {domain == t}")
+                if str(domain) == t:
+                    props.append(prop)
+                    # DEBUG(f"{term['prefixed']} range {prop['prefixed']}")
+    return props
+
+
 from jinja2 import FileSystemLoader, Environment
 template_loader = FileSystemLoader(searchpath=f'{TEMPLATE_PATH}')
 template_env = Environment(
@@ -453,6 +512,8 @@ JINJA2_FILTERS = {
     'get_sources': get_sources,
     'ensure_list': ensure_list,
     'filter_type': filter_type,
+    'get_prop_with_term_domain': get_prop_with_term_domain,
+    'get_prop_with_term_range': get_prop_with_term_range,
 }
 template_env.filters.update(JINJA2_FILTERS)
 

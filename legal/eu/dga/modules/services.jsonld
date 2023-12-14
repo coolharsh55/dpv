@@ -1,5 +1,55 @@
 [
   {
+    "@id": "https://w3id.org/dpv#Service",
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#SingleInformationPoint"
+      },
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DataIntermediationService"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#SingleInformationPoint"
+      },
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DataIntermediationService"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/dpv-gda#DataIntermediationService",
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DataCooperativeService"
+      },
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DataIntermediationServiceBetweenHoldersUsers"
+      },
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DataIntermediationServiceBetweenSubjectsUsers"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DataCooperativeService"
+      },
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DataIntermediationServiceBetweenHoldersUsers"
+      },
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DataIntermediationServiceBetweenSubjectsUsers"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/legal/eu/dga#services-classes",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    ]
+  },
+  {
     "@id": "https://w3id.org/dpv/legal/eu/dga#DataIntermediationServiceBetweenHoldersUsers",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
@@ -42,71 +92,6 @@
       {
         "@language": "en",
         "@value": "Data Intermediation Service between Data Holders and Data Users"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#services-classes",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#Service",
-    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#SingleInformationPoint"
-      },
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#DataIntermediationService"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#SingleInformationPoint"
-      },
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#DataIntermediationService"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#SingleInformationPoint",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#Service"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#Service"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Service responsible for receiving and transmiting requests for the re-use of public data"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#services-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Single Information Point"
       }
     ]
   },
@@ -157,46 +142,6 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#DataCooperativeService",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-gda#DataIntermediationService"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-gda#DataIntermediationService"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Service provided by a data cooperative"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#services-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Data Cooperative Service"
-      }
-    ]
-  },
-  {
     "@id": "https://w3id.org/dpv/legal/eu/dga#DataIntermediationServiceBetweenSubjectsUsers",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
@@ -243,27 +188,82 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/dpv-gda#DataIntermediationService",
-    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+    "@id": "https://w3id.org/dpv/legal/eu/dga#SingleInformationPoint",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#DataCooperativeService"
-      },
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#DataIntermediationServiceBetweenHoldersUsers"
-      },
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#DataIntermediationServiceBetweenSubjectsUsers"
+        "@id": "https://w3id.org/dpv#Service"
       }
     ],
-    "http://www.w3.org/2004/02/skos/core#narrower": [
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#DataCooperativeService"
-      },
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#DataIntermediationServiceBetweenHoldersUsers"
-      },
+        "@id": "https://w3id.org/dpv#Service"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
       {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#DataIntermediationServiceBetweenSubjectsUsers"
+        "@language": "en",
+        "@value": "Service responsible for receiving and transmiting requests for the re-use of public data"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#services-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Single Information Point"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/legal/eu/dga#DataCooperativeService",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-gda#DataIntermediationService"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-gda#DataIntermediationService"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Service provided by a data cooperative"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#services-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Data Cooperative Service"
       }
     ]
   }

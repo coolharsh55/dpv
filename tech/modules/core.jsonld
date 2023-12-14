@@ -1,6 +1,6 @@
 [
   {
-    "@id": "https://w3id.org/dpv/tech#IdentityTechnology",
+    "@id": "https://w3id.org/dpv/tech#OperationalTechnology",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
@@ -20,7 +20,7 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Technology related to identity or identifiers"
+        "@value": "Technology that enables or performs or executes operations and processes"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -31,20 +31,7 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Identity Technology"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#Entity",
-    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/tech#TechnologyActor"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv/tech#TechnologyActor"
+        "@value": "Operational Technology"
       }
     ]
   },
@@ -84,84 +71,6 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#OperationalTechnology",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Technology"
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#Technology"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Technology that enables or performs or executes operations and processes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv/tech#core-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Operational Technology"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#TechnologyUsageLocation",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Location"
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#Location"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Location for where technology is provided or used"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv/tech#core-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Technology Usage Location"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#core-properties",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
-    ]
-  },
-  {
     "@id": "http://www.w3.org/2000/01/rdf-schema#Class",
     "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
       {
@@ -176,7 +85,7 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#SecurityTechnology",
+    "@id": "https://w3id.org/dpv/tech#SurveillanceTechnology",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
@@ -196,7 +105,7 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Technology that enables or provides security"
+        "@value": "Technology related to surveillance of individuals or people"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -207,7 +116,78 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Security Technology"
+        "@value": "Surveillance Technology"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#Entity",
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/tech#TechnologyActor"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv/tech#TechnologyActor"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#Technology",
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv/tech#DataTechnology"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#OperationalTechnology"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#SecurityTechnology"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#ManagementTechnology"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#IdentityTechnology"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#SurveillanceTechnology"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#CommunicationMechanism",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Class"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Communication mechanism used or provided by Technologoy"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv/tech#core-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Communication Mechanism"
       }
     ]
   },
@@ -262,6 +242,64 @@
     ]
   },
   {
+    "@id": "https://w3id.org/dpv/tech#hasTechnologyActor",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/dcam/domainIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Technology"
+      }
+    ],
+    "http://purl.org/dc/dcam/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#TechnologyActor"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Indicates an actor associated with technology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv/tech#core-properties"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "has technology actor"
+      }
+    ],
+    "https://schema.org/domainIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Technology"
+      }
+    ],
+    "https://schema.org/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#TechnologyActor"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#Location",
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv/tech#TechnologyUsageLocation"
+      }
+    ]
+  },
+  {
     "@id": "https://w3id.org/dpv/tech#TechnologyReadinessLevel",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
@@ -297,7 +335,7 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#SurveillanceTechnology",
+    "@id": "https://w3id.org/dpv/tech#DataTechnology",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
@@ -317,7 +355,7 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Technology related to surveillance of individuals or people"
+        "@value": "Technology that uses or interacts with data"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -328,8 +366,14 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Surveillance Technology"
+        "@value": "Data Technology"
       }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#core-classes",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
     ]
   },
   {
@@ -383,17 +427,45 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#Location",
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv/tech#TechnologyUsageLocation"
-      }
+    "@id": "https://w3id.org/dpv/tech#core-properties",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#core-classes",
+    "@id": "https://w3id.org/dpv/tech#SecurityTechnology",
     "@type": [
-      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Technology"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#Technology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Technology that enables or provides security"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv/tech#core-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Security Technology"
+      }
     ]
   },
   {
@@ -437,56 +509,6 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#hasTechnologyActor",
-    "@type": [
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://purl.org/dc/dcam/domainIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Technology"
-      }
-    ],
-    "http://purl.org/dc/dcam/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#TechnologyActor"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Indicates an actor associated with technology"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv/tech#core-properties"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "has technology actor"
-      }
-    ],
-    "https://schema.org/domainIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Technology"
-      }
-    ],
-    "https://schema.org/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#TechnologyActor"
-      }
-    ]
-  },
-  {
     "@id": "https://w3id.org/dpv/tech#ManagementTechnology",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
@@ -523,30 +545,7 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#Technology",
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv/tech#DataTechnology"
-      },
-      {
-        "@id": "https://w3id.org/dpv/tech#OperationalTechnology"
-      },
-      {
-        "@id": "https://w3id.org/dpv/tech#SecurityTechnology"
-      },
-      {
-        "@id": "https://w3id.org/dpv/tech#ManagementTechnology"
-      },
-      {
-        "@id": "https://w3id.org/dpv/tech#IdentityTechnology"
-      },
-      {
-        "@id": "https://w3id.org/dpv/tech#SurveillanceTechnology"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#DataTechnology",
+    "@id": "https://w3id.org/dpv/tech#IdentityTechnology",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
@@ -566,7 +565,7 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Technology that uses or interacts with data"
+        "@value": "Technology related to identity or identifiers"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -577,20 +576,16 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Data Technology"
+        "@value": "Identity Technology"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#CommunicationMechanism",
+    "@id": "https://w3id.org/dpv/tech#TechnologyUsageLocation",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.w3.org/2000/01/rdf-schema#Class"
-      }
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Location"
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
@@ -598,10 +593,15 @@
         "@value": "accepted"
       }
     ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#Location"
+      }
+    ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Communication mechanism used or provided by Technologoy"
+        "@value": "Location for where technology is provided or used"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -612,7 +612,7 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Communication Mechanism"
+        "@value": "Technology Usage Location"
       }
     ]
   }

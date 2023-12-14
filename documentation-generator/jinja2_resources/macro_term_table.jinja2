@@ -36,6 +36,7 @@
         <tr class="technical-detail">
           
         </tr>
+        
         <tr class="table-separator"></tr>
         <tr class="technical-detail">
           <th>Type</th>
@@ -55,6 +56,16 @@
           <th>Narrower/Specialised types</th>
           <td>{% for child in concept['skos:narrower']|sort %}<a href="{{child}}">{{ child|prefix_this }}</a>{{", " if not loop.last}}{% endfor %}</td>
         </tr>{% endif %}
+        {% if concept['_type'] == 'class' %}
+        {% for prop in concept|get_prop_with_term_domain(vocab) %}{% if loop.first %}<tr>
+          <th>Subject of relation</th>
+          <td>{% endif %}<a href="{{prop['iri']}}">{{ prop['prefixed'] }}{{ ", " if not loop.last }}{% if loop.last %}</td>
+        </tr>{% endif %}{% endfor %}
+        {% for prop in concept|get_prop_with_term_range(vocab) %}{% if loop.first %}<tr>
+          <th>Object of relation</th>
+          <td>{% endif %}<a href="{{prop['iri']}}">{{ prop['prefixed'] }}{{ ", " if not loop.last }}{% if loop.last %}</td>
+        </tr>{% endif %}{% endfor %}
+        {% endif %}
         {# sub-property #}
         {% if concept['rdfs:subPropertyOf'] %}<tr class="technical-detail">
           <th>Sub-property of</th>
@@ -70,6 +81,7 @@
           <th>Range includes</th>
           <td><i>{% for parent in concept['dcam:rangeIncludes']|get_concept_list %}<a href="{{parent['iri']}}">{{parent['prefixed']}}</a>{{", " if not loop.last }}{% endfor %}</i></td>
         </tr>{% endif %}
+        
         <tr class="table-separator"></tr>
         {# Description #}
         {% if concept['skos:definition'] %}<tr>
@@ -86,6 +98,7 @@
           <th>Comment</th>
           <td><i>{{ concept['skos:note'] }}</i></td>
         </tr>{% endif %}
+        
         <tr class="table-separator"></tr>
         {# Source #}
         {% if concept['dct:source'] %}<tr>
@@ -97,6 +110,7 @@
           <th>Related</th>
           <td><i>{{ concept['skos:related'] }}</i></td>
         </tr>{% endif %}
+        
         <tr class="table-separator"></tr>
         {# created #}
         {% if concept['dct:created'] %}<tr>
