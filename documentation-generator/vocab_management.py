@@ -227,16 +227,16 @@ CSVFILES = {
         },
     },
     # Laws-Authorities
-    # 'legal-eu': {
-    #     'eu': {
-    #         'law': f'{IMPORT_CSV_PATH}/legal-eu.csv',
-    #     },
-    # },
-    # 'legal-de': {
-    #     'de': {
-    #         'law': f'{IMPORT_CSV_PATH}/legal-de.csv',
-    #     },
-    # },
+    'legal-eu': {
+        'eu': {
+            'laws': f'{IMPORT_CSV_PATH}/legal-eu.csv',
+        },
+    },
+    'legal-de': {
+        'de': {
+            'laws': f'{IMPORT_CSV_PATH}/legal-de.csv',
+        },
+    },
     'eu-gdpr': {
         'legal_basis': {
             'taxonomy': f'{IMPORT_CSV_PATH}/GDPR_LegalBasis.csv',
@@ -326,9 +326,11 @@ RDF_STRUCTURE = {
     
     'legal-eu': {
         'main': f'{EXPORT_RDF_PATH}/legal/eu',
+        'modules': f'{EXPORT_RDF_PATH}/legal/eu/modules',
     },
     'legal-de': {
         'main': f'{EXPORT_RDF_PATH}/legal/de',
+        'modules': f'{EXPORT_RDF_PATH}/legal/de/modules',
     },
     'eu-gdpr': {
         'main': f'{EXPORT_RDF_PATH}/legal/eu/gdpr',

@@ -100,3 +100,19 @@ SCHEMA['locations'] = {
     'Contributors': vocab_funcs.construct_contributors,
     'Resolution': vocab_funcs.construct_resolution, 
 }
+
+SCHEMA['laws'] = {
+    'Term': None,
+    'Label': vocab_funcs.construct_label,
+    'Type': vocab_funcs.construct_instance,
+    'Jurisdictions': vocab_funcs.construct_jurisdiction,
+    'Webpage': vocab_funcs.construct_webpage,
+    'Laws': vocab_funcs.construct_law,
+    'Start': vocab_funcs.construct_temporal_duration,
+    'End': None,
+    'Created': vocab_funcs.construct_date_created,
+    'Modified': vocab_funcs.construct_date_modified,
+    'Status': vocab_funcs.construct_status,
+    'Contributors': vocab_funcs.construct_contributors,
+    'Resolution': vocab_funcs.construct_resolution, 
+}

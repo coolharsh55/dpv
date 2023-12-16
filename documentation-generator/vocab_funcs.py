@@ -294,3 +294,61 @@ def construct_iso_3166_numeric(term, data, namespace, header):
 
 def construct_un_m49(term, data, namespace, header):
     return [(namespace[data['Term']], DPV.un_m49, Literal(term))]
+
+
+def construct_instance(term, data, namespace, header):
+    term = NAMESPACES[term.split(':')[0]][term.split(':')[1]]
+    return [(namespace[data['Term']], RDF.type, term)]
+
+
+def construct_jurisdiction(term, data, namespace, header):
+    triples = []
+    for loc in term.split(','):
+        loc = NAMESPACES[loc.split(':')[0]][loc.split(':')[1]]
+        triples.append((namespace[data['Term']], DPV.hasJurisdiction, loc))
+    return triples
+
+
+def construct_webpage(term, data, namespace, header):
+    triples = []
+    for page in term.split(','):
+        triples.append((
+            namespace[data['Term']], FOAF.homepage, 
+            Literal(page, datatype=XSD.anyURI)))
+    return triples
+
+
+def construct_law(term, data, namespace, header):
+    triples = []
+    for law in term.split(','):
+        law = NAMESPACES[law.split(':')[0]][law.split(':')[1]]
+        triples.append((
+            namespace[data['Term']], DPV.hasLaw, law))
+    return triples
+
+
+def construct_temporal_duration(term, data, namespace, header):
+    '''adds temporal duration as
+    dct:temporal [ a time:ProperInterval ;
+            time:hasBeginning [ 
+                time:inXSDDate "YYYY-MM-DD"^^xsd:date ] ;
+            time:hasEnd [
+                time:inXSDDate "YYYY-MM-DD"^^xsd:date ] ; ]'''
+    if not term: # no start, so no end either
+        return []
+    triples = []
+    start = term
+    end = data['End']
+    interval = BNode()
+    triples.append((namespace[data['Term']], DCT.temporal, interval))
+    triples.append((interval, RDF.type, TIME.ProperInterval))
+    dct_date = BNode()
+    triples.append((interval, TIME.hasBeginning, dct_date))
+    triples.append((
+        dct_date, TIME.inXSDDate, Literal(term, datatype=XSD.date)))
+    if end:
+        dct_date = BNode()
+        triples.append((interval, TIME.hasEnd, dct_date))
+        triples.append((
+            dct_date, TIME.inXSDDate, Literal(end, datatype=XSD.date)))
+    return triples
