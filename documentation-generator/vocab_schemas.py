@@ -84,3 +84,19 @@ SCHEMA['legal_basis_rights_mapping'] = {
     "A77": vocab_funcs.construct_legal_basis_rights_mapping,
     'Status': None,
 }
+
+SCHEMA['locations'] = {
+    'Term': None,
+    'Label': vocab_funcs.construct_label,
+    'ParentTerm': None,
+    'ParentType': vocab_funcs.construct_parent_taxonomy,
+    'ISO-3166-Alpha2': vocab_funcs.construct_iso_3166_alpha2,
+    'ISO-3166-Alpha3': vocab_funcs.construct_iso_3166_alpha3,
+    'ISO-3166-Numeric': vocab_funcs.construct_iso_3166_numeric,
+    'UN-M49': vocab_funcs.construct_un_m49,
+    'Created': vocab_funcs.construct_date_created,
+    'Modified': vocab_funcs.construct_date_modified,
+    'Status': vocab_funcs.construct_status,
+    'Contributors': vocab_funcs.construct_contributors,
+    'Resolution': vocab_funcs.construct_resolution, 
+}

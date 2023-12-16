@@ -100,12 +100,8 @@ DPV_FILES = {
         'sheets': (
             'Jurisdiction', 
             'Jurisdiction_properties', 
-            'legal_properties', 
-            'legal_Locations', 
-            'legal_Laws', 
-            'legal_Authorities', 
-            'legal_EU_EEA', 
-            'legal_EU_Adequacy',
+            'location',
+            'location_properties',
             ),
     },
     'legal_basis': {
@@ -117,34 +113,6 @@ DPV_FILES = {
             'ConsentTypes', 
             'ConsentStatus', 
             'Consent_properties',
-            ),
-    },
-    'eu-gdpr': {
-        'name': 'eu-gdpr',
-        'doc_id': '1lDJZpl0UND8Bm_4iWKVQtgmMUz0YwP2R63CgP7Gro-U',
-        'sheets': (
-            'GDPR_LegalBasis', 
-            'GDPR_LegalBasis_SpecialCategory', 
-            'GDPR_LegalBasis_DataTransfer', 
-            'GDPR_LegalRights', 
-            'GDPR_LegalBasis_Rights_Mapping', 
-            'GDPR_DataTransfers', 
-            'GDPR_DPIA',
-            'GDPR_DPIA_properties',
-            'GDPR_compliance'
-            ),
-    },
-    'eu-dga': {
-        'name': 'eu-dga',
-        'doc_id':  '1wKsf0Vqr0Gg1C91MqshtI5tjGXmQvXu4p4xF0yK0KaA',
-        'sheets': (
-            'DGA_LegalBasis',
-            'DGA_LegalRights',
-            'DGA_Services',
-            'DGA_Registers',
-            'DGA_TOMs',
-            'DGA_entities',
-            'DGA_properties',
             ),
     },
     'tech': {
@@ -206,6 +174,44 @@ DPV_FILES = {
             'Standards_ISO',
             ),
     },
+    # Laws, Authorities
+    'laws-authorities': {
+        'name': 'legal-eu',
+        'doc_id': '1pqGE67I5kyoGrkhMItJbi18VLguVqE1jVecnfki1ujY',
+        'sheets': (
+            'legal-eu',
+            'legal-de',
+            )
+    },
+    'eu-gdpr': {
+        'name': 'eu-gdpr',
+        'doc_id': '1lDJZpl0UND8Bm_4iWKVQtgmMUz0YwP2R63CgP7Gro-U',
+        'sheets': (
+            'GDPR_LegalBasis', 
+            'GDPR_LegalBasis_SpecialCategory', 
+            'GDPR_LegalBasis_DataTransfer', 
+            'GDPR_LegalRights', 
+            'GDPR_LegalBasis_Rights_Mapping', 
+            'GDPR_DataTransfers', 
+            'GDPR_DPIA',
+            'GDPR_DPIA_properties',
+            'GDPR_compliance'
+            ),
+    },
+    'eu-dga': {
+        'name': 'eu-dga',
+        'doc_id':  '1wKsf0Vqr0Gg1C91MqshtI5tjGXmQvXu4p4xF0yK0KaA',
+        'sheets': (
+            'DGA_LegalBasis',
+            'DGA_LegalRights',
+            'DGA_Services',
+            'DGA_Registers',
+            'DGA_TOMs',
+            'DGA_entities',
+            'DGA_properties',
+            ),
+    },
+    # DPV Use-Cases / Examples
     'ucr': {
         'name': 'ucr',
         'doc_id': '1__STWvOEZRc1u2J-8teOYjLpnTPlZ80_ebTytrUlWgQ',

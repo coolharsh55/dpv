@@ -278,3 +278,19 @@ def _get_term_from_prefix_notation(term, namespace):
         prefix, term = term.split(':')
         namespace = NAMESPACES[prefix]
     return term, namespace
+
+
+def construct_iso_3166_alpha2(term, data, namespace, header):
+    return [(namespace[data['Term']], DPV.iso_alpha2, Literal(term))]
+
+
+def construct_iso_3166_alpha3(term, data, namespace, header):
+    return [(namespace[data['Term']], DPV.iso_alpha3, Literal(term))]
+
+
+def construct_iso_3166_numeric(term, data, namespace, header):
+    return [(namespace[data['Term']], DPV.iso_numeric, Literal(term))]
+
+
+def construct_un_m49(term, data, namespace, header):
+    return [(namespace[data['Term']], DPV.un_m49, Literal(term))]

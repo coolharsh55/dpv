@@ -164,54 +164,6 @@ CSVFILES = {
             'taxonomy': f'{IMPORT_CSV_PATH}/pd-extended.csv',
         },
     },
-    'eu-gdpr': {
-        'legal_basis': {
-            'taxonomy': f'{IMPORT_CSV_PATH}/GDPR_LegalBasis.csv',
-        },
-        'legal_basis_special': {
-            'taxonomy': f'{IMPORT_CSV_PATH}/GDPR_LegalBasis_SpecialCategory.csv',
-        },
-        'legal_basis_data_transfer': {
-            'taxonomy': f'{IMPORT_CSV_PATH}/GDPR_LegalBasis_DataTransfer.csv',
-        },
-        'rights': {
-            'taxonomy': f'{IMPORT_CSV_PATH}/GDPR_LegalRights.csv',
-        },
-        'data_transfers': {
-            'taxonomy': f'{IMPORT_CSV_PATH}/GDPR_DataTransfers.csv',
-        },
-        'dpia': {
-            'taxonomy': f'{IMPORT_CSV_PATH}/GDPR_DPIA.csv',
-            'properties': f'{IMPORT_CSV_PATH}/GDPR_DPIA_properties.csv',
-        },
-        'compliance': {
-            'taxonomy': f'{IMPORT_CSV_PATH}/GDPR_compliance.csv',
-        },
-        'legal_basis_rights_mapping': {
-            'legal_basis_rights_mapping': f'{IMPORT_CSV_PATH}/GDPR_LegalBasis_Rights_Mapping.csv',
-        },
-    },
-    'eu-dga': {
-        'legal_basis': {
-            'taxonomy': f'{IMPORT_CSV_PATH}/DGA_LegalBasis.csv',
-        },
-        'legal_rights': {
-            'taxonomy': f'{IMPORT_CSV_PATH}/DGA_LegalRights.csv',
-        },
-        'services': {
-            'taxonomy': f'{IMPORT_CSV_PATH}/DGA_Services.csv',
-        },
-        'registers': {
-            'taxonomy': f'{IMPORT_CSV_PATH}/DGA_Registers.csv',
-        },
-        'toms': {
-            'taxonomy': f'{IMPORT_CSV_PATH}/DGA_TOMs.csv',
-        },
-        'entities': {
-            'taxonomy': f'{IMPORT_CSV_PATH}/DGA_entities.csv',
-            'properties': f'{IMPORT_CSV_PATH}/DGA_properties.csv',
-        },
-    },
     'tech': {
         'core': {
             'taxonomy': f'{IMPORT_CSV_PATH}/tech-core.csv',
@@ -268,6 +220,71 @@ CSVFILES = {
             'taxonomy': f'{IMPORT_CSV_PATH}/RiskMethodology.csv',
         },
     },
+    'loc': {
+        'locations': {
+            'locations': f'{IMPORT_CSV_PATH}/location.csv',
+            'properties': f'{IMPORT_CSV_PATH}/location_properties.csv',
+        },
+    },
+    # Laws-Authorities
+    # 'legal-eu': {
+    #     'eu': {
+    #         'law': f'{IMPORT_CSV_PATH}/legal-eu.csv',
+    #     },
+    # },
+    # 'legal-de': {
+    #     'de': {
+    #         'law': f'{IMPORT_CSV_PATH}/legal-de.csv',
+    #     },
+    # },
+    'eu-gdpr': {
+        'legal_basis': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/GDPR_LegalBasis.csv',
+        },
+        'legal_basis_special': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/GDPR_LegalBasis_SpecialCategory.csv',
+        },
+        'legal_basis_data_transfer': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/GDPR_LegalBasis_DataTransfer.csv',
+        },
+        'rights': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/GDPR_LegalRights.csv',
+        },
+        'data_transfers': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/GDPR_DataTransfers.csv',
+        },
+        'dpia': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/GDPR_DPIA.csv',
+            'properties': f'{IMPORT_CSV_PATH}/GDPR_DPIA_properties.csv',
+        },
+        'compliance': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/GDPR_compliance.csv',
+        },
+        'legal_basis_rights_mapping': {
+            'legal_basis_rights_mapping': f'{IMPORT_CSV_PATH}/GDPR_LegalBasis_Rights_Mapping.csv',
+        },
+    },
+    'eu-dga': {
+        'legal_basis': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/DGA_LegalBasis.csv',
+        },
+        'legal_rights': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/DGA_LegalRights.csv',
+        },
+        'services': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/DGA_Services.csv',
+        },
+        'registers': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/DGA_Registers.csv',
+        },
+        'toms': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/DGA_TOMs.csv',
+        },
+        'entities': {
+            'taxonomy': f'{IMPORT_CSV_PATH}/DGA_entities.csv',
+            'properties': f'{IMPORT_CSV_PATH}/DGA_properties.csv',
+        },
+    },
     'eu-rights': {
         'fundamental': {
             'taxonomy': f'{IMPORT_CSV_PATH}/EUFundamentalRights.csv',
@@ -301,6 +318,17 @@ RDF_STRUCTURE = {
     'risk': {
         'main': f'{EXPORT_RDF_PATH}/risk',
         'modules': f'{EXPORT_RDF_PATH}/risk/modules',
+    },
+    'loc': {
+        'main': f'{EXPORT_RDF_PATH}/loc',
+        'modules': f'{EXPORT_RDF_PATH}/loc/modules',
+    },
+    
+    'legal-eu': {
+        'main': f'{EXPORT_RDF_PATH}/legal/eu',
+    },
+    'legal-de': {
+        'main': f'{EXPORT_RDF_PATH}/legal/de',
     },
     'eu-gdpr': {
         'main': f'{EXPORT_RDF_PATH}/legal/eu/gdpr',
