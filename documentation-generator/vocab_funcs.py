@@ -297,8 +297,11 @@ def construct_un_m49(term, data, namespace, header):
 
 
 def construct_instance(term, data, namespace, header):
+    triples = []
     term = NAMESPACES[term.split(':')[0]][term.split(':')[1]]
-    return [(namespace[data['Term']], RDF.type, term)]
+    triples.append((namespace[data['Term']], RDF.type, term))
+    triples.append((namespace[data['Term']], RDF.type, SKOS.concept))
+    return triples
 
 
 def construct_jurisdiction(term, data, namespace, header):

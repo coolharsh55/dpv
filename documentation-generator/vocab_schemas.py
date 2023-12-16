@@ -86,7 +86,7 @@ SCHEMA['legal_basis_rights_mapping'] = {
 }
 
 SCHEMA['locations'] = {
-    'Term': None,
+    'Term': vocab_funcs.construct_class,
     'Label': vocab_funcs.construct_label,
     'ParentTerm': None,
     'ParentType': vocab_funcs.construct_parent_taxonomy,
@@ -102,7 +102,7 @@ SCHEMA['locations'] = {
 }
 
 SCHEMA['laws'] = {
-    'Term': None,
+    'Term': vocab_funcs.construct_class,
     'Label': vocab_funcs.construct_label,
     'Type': vocab_funcs.construct_instance,
     'Jurisdictions': vocab_funcs.construct_jurisdiction,

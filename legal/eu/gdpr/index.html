@@ -1283,9 +1283,30 @@
   <section id="vocab-compliance">
     <h2>Compliance</h2>
     <p>The concepts in this section reflect the status of processing operations being in <i>compliance with GDPR</i>, by extending the <code>ComplianceStatus</code> from DPV for GDPR. It does not define the requirements for compliance itself.</p>
-
     <div class="list-hierarchy">
-
+<ul class="concept-list">
+  <li>
+    <strong>eu-gdpr:GDPRLawfulness</strong>: Status or state associated with being lawful or legally compliant regarding GDPR 
+      <small><a href="https://w3id.org/dpv/legal/eu/gdpr#GDPRLawfulness">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>eu-gdpr:GDPRComplianceUnknown</strong>: State where lawfulness or compliance with GDPR is unknown 
+      <small><a href="https://w3id.org/dpv/legal/eu/gdpr#GDPRComplianceUnknown">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>eu-gdpr:GDPRCompliant</strong>: State of being lawful or legally compliant for GDPR 
+      <small><a href="https://w3id.org/dpv/legal/eu/gdpr#GDPRCompliant">go to full definition</a></small>
+      
+  </li>
+  <li>
+    <strong>eu-gdpr:GDPRNonCompliant</strong>: State of being unlawful or legally non-compliant for GDPR 
+      <small><a href="https://w3id.org/dpv/legal/eu/gdpr#GDPRNonCompliant">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+</ul>
 </div>
 
   </section>
@@ -2028,12 +2049,6 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#SCCByCommission">eu-gdpr:SCCByCommission</a> → 
-             <a href="#DataTransferTool">eu-gdpr:DataTransferTool</a> → 
-             <a href="https://w3id.org/dpv#OrganisationalMeasure">dpv:OrganisationalMeasure</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
-          <td>             <a href="#SCCByCommission">eu-gdpr:SCCByCommission</a> → 
              <a href="#StandardContractualClauses">eu-gdpr:StandardContractualClauses</a> → 
              <a href="#DataTransferTool">eu-gdpr:DataTransferTool</a> → 
              <a href="https://w3id.org/dpv#OrganisationalMeasure">dpv:OrganisationalMeasure</a>
@@ -2043,6 +2058,12 @@
           <td>             <a href="#SCCByCommission">eu-gdpr:SCCByCommission</a> → 
              <a href="#StandardContractualClauses">eu-gdpr:StandardContractualClauses</a> → 
              <a href="https://w3id.org/dpv#Contract">dpv:Contract</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>             <a href="#SCCByCommission">eu-gdpr:SCCByCommission</a> → 
+             <a href="#DataTransferTool">eu-gdpr:DataTransferTool</a> → 
+             <a href="https://w3id.org/dpv#OrganisationalMeasure">dpv:OrganisationalMeasure</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
@@ -2102,16 +2123,6 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="https://w3id.org/dpv#DataTransferLegalBasis">dpv:DataTransferLegalBasis</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
-          <td>             <a href="#SCCBySupervisoryAuthority">eu-gdpr:SCCBySupervisoryAuthority</a> → 
-             <a href="#DataTransferTool">eu-gdpr:DataTransferTool</a> → 
-             <a href="https://w3id.org/dpv#OrganisationalMeasure">dpv:OrganisationalMeasure</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
           <td>             <a href="#SCCBySupervisoryAuthority">eu-gdpr:SCCBySupervisoryAuthority</a> → 
              <a href="#StandardContractualClauses">eu-gdpr:StandardContractualClauses</a> → 
              <a href="#DataTransferTool">eu-gdpr:DataTransferTool</a> → 
@@ -2122,6 +2133,16 @@
           <td>             <a href="#SCCBySupervisoryAuthority">eu-gdpr:SCCBySupervisoryAuthority</a> → 
              <a href="#StandardContractualClauses">eu-gdpr:StandardContractualClauses</a> → 
              <a href="https://w3id.org/dpv#Contract">dpv:Contract</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>             <a href="#SCCBySupervisoryAuthority">eu-gdpr:SCCBySupervisoryAuthority</a> → 
+             <a href="#DataTransferTool">eu-gdpr:DataTransferTool</a> → 
+             <a href="https://w3id.org/dpv#OrganisationalMeasure">dpv:OrganisationalMeasure</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>             <a href="https://w3id.org/dpv#DataTransferLegalBasis">dpv:DataTransferLegalBasis</a>
 </td>
 </tr><tr>
           <th>Object of relation</th>
@@ -2461,11 +2482,11 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="https://w3id.org/dpv#Contract">dpv:Contract</a>
+          <td>             <a href="https://w3id.org/dpv#DataTransferLegalBasis">dpv:DataTransferLegalBasis</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="https://w3id.org/dpv#DataTransferLegalBasis">dpv:DataTransferLegalBasis</a>
+          <td>             <a href="https://w3id.org/dpv#Contract">dpv:Contract</a>
 </td>
 </tr><tr>
           <th>Object of relation</th>
@@ -2521,11 +2542,11 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="https://w3id.org/dpv#Contract">dpv:Contract</a>
+          <td>             <a href="https://w3id.org/dpv#DataTransferLegalBasis">dpv:DataTransferLegalBasis</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="https://w3id.org/dpv#DataTransferLegalBasis">dpv:DataTransferLegalBasis</a>
+          <td>             <a href="https://w3id.org/dpv#Contract">dpv:Contract</a>
 </td>
 </tr><tr>
           <th>Object of relation</th>
@@ -2581,11 +2602,11 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="https://w3id.org/dpv#DataTransferLegalBasis">dpv:DataTransferLegalBasis</a>
+          <td>             <a href="https://w3id.org/dpv#PublicInterest">dpv:PublicInterest</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="https://w3id.org/dpv#PublicInterest">dpv:PublicInterest</a>
+          <td>             <a href="https://w3id.org/dpv#DataTransferLegalBasis">dpv:DataTransferLegalBasis</a>
 </td>
 </tr><tr>
           <th>Object of relation</th>
@@ -2697,11 +2718,11 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="https://w3id.org/dpv#DataTransferLegalBasis">dpv:DataTransferLegalBasis</a>
+          <td>             <a href="https://w3id.org/dpv#VitalInterestOfNaturalPerson">dpv:VitalInterestOfNaturalPerson</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="https://w3id.org/dpv#VitalInterestOfNaturalPerson">dpv:VitalInterestOfNaturalPerson</a>
+          <td>             <a href="https://w3id.org/dpv#DataTransferLegalBasis">dpv:DataTransferLegalBasis</a>
 </td>
 </tr><tr>
           <th>Object of relation</th>
@@ -2932,12 +2953,12 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="https://w3id.org/dpv#ExplicitlyExpressedConsent">dpv:ExplicitlyExpressedConsent</a>
+          <td>             <a href="#A6-1-a">eu-gdpr:A6-1-a</a> → 
+             <a href="https://w3id.org/dpv#ExpressedConsent">dpv:ExpressedConsent</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#A6-1-a">eu-gdpr:A6-1-a</a> → 
-             <a href="https://w3id.org/dpv#ExpressedConsent">dpv:ExpressedConsent</a>
+          <td>             <a href="https://w3id.org/dpv#ExplicitlyExpressedConsent">dpv:ExplicitlyExpressedConsent</a>
 </td>
 </tr><tr>
           <th>Object of relation</th>
@@ -3389,12 +3410,12 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="https://w3id.org/dpv#VitalInterestOfNaturalPerson">dpv:VitalInterestOfNaturalPerson</a>
+          <td>             <a href="#A6-1-d">eu-gdpr:A6-1-d</a> → 
+             <a href="https://w3id.org/dpv#VitalInterest">dpv:VitalInterest</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#A6-1-d">eu-gdpr:A6-1-d</a> → 
-             <a href="https://w3id.org/dpv#VitalInterest">dpv:VitalInterest</a>
+          <td>             <a href="https://w3id.org/dpv#VitalInterestOfNaturalPerson">dpv:VitalInterestOfNaturalPerson</a>
 </td>
 </tr><tr>
           <th>Object of relation</th>
@@ -3447,11 +3468,11 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="https://w3id.org/dpv#PublicInterest">dpv:PublicInterest</a>
+          <td>             <a href="https://w3id.org/dpv#OfficialAuthorityOfController">dpv:OfficialAuthorityOfController</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="https://w3id.org/dpv#OfficialAuthorityOfController">dpv:OfficialAuthorityOfController</a>
+          <td>             <a href="https://w3id.org/dpv#PublicInterest">dpv:PublicInterest</a>
 </td>
 </tr>        <tr class="technical-detail">
           <th>Narrower/Specialised types</th>
@@ -3508,12 +3529,12 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#A6-1-e">eu-gdpr:A6-1-e</a> → 
-             <a href="https://w3id.org/dpv#PublicInterest">dpv:PublicInterest</a>
+             <a href="https://w3id.org/dpv#OfficialAuthorityOfController">dpv:OfficialAuthorityOfController</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#A6-1-e">eu-gdpr:A6-1-e</a> → 
-             <a href="https://w3id.org/dpv#OfficialAuthorityOfController">dpv:OfficialAuthorityOfController</a>
+             <a href="https://w3id.org/dpv#PublicInterest">dpv:PublicInterest</a>
 </td>
 </tr><tr>
           <th>Object of relation</th>
@@ -3567,12 +3588,12 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#A6-1-e">eu-gdpr:A6-1-e</a> → 
-             <a href="https://w3id.org/dpv#PublicInterest">dpv:PublicInterest</a>
+             <a href="https://w3id.org/dpv#OfficialAuthorityOfController">dpv:OfficialAuthorityOfController</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#A6-1-e">eu-gdpr:A6-1-e</a> → 
-             <a href="https://w3id.org/dpv#OfficialAuthorityOfController">dpv:OfficialAuthorityOfController</a>
+             <a href="https://w3id.org/dpv#PublicInterest">dpv:PublicInterest</a>
 </td>
 </tr><tr>
           <th>Object of relation</th>
@@ -3681,12 +3702,12 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="https://w3id.org/dpv#LegitimateInterestOfController">dpv:LegitimateInterestOfController</a>
+          <td>             <a href="#A6-1-f">eu-gdpr:A6-1-f</a> → 
+             <a href="https://w3id.org/dpv#LegitimateInterest">dpv:LegitimateInterest</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#A6-1-f">eu-gdpr:A6-1-f</a> → 
-             <a href="https://w3id.org/dpv#LegitimateInterest">dpv:LegitimateInterest</a>
+          <td>             <a href="https://w3id.org/dpv#LegitimateInterestOfController">dpv:LegitimateInterestOfController</a>
 </td>
 </tr><tr>
           <th>Object of relation</th>
@@ -3739,12 +3760,12 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="https://w3id.org/dpv#LegitimateInterestOfThirdParty">dpv:LegitimateInterestOfThirdParty</a>
+          <td>             <a href="#A6-1-f">eu-gdpr:A6-1-f</a> → 
+             <a href="https://w3id.org/dpv#LegitimateInterest">dpv:LegitimateInterest</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#A6-1-f">eu-gdpr:A6-1-f</a> → 
-             <a href="https://w3id.org/dpv#LegitimateInterest">dpv:LegitimateInterest</a>
+          <td>             <a href="https://w3id.org/dpv#LegitimateInterestOfThirdParty">dpv:LegitimateInterestOfThirdParty</a>
 </td>
 </tr><tr>
           <th>Object of relation</th>
@@ -4496,7 +4517,7 @@
 </td>
 </tr>        <tr class="technical-detail">
           <th>Narrower/Specialised types</th>
-          <td><a href="#">:#</a>, <a href="-">:-</a>, <a href="-">:-</a>, <a href=".">:.</a>, <a href="/">:/</a>, <a href="/">:/</a>, <a href="/">:/</a>, <a href="/">:/</a>, <a href="/">:/</a>, <a href="/">:/</a>, <a href="2">:2</a>, <a href="3">:3</a>, <a href="4">:4</a>, <a href="6">:6</a>, <a href=":">::</a>, <a href="a">:a</a>, <a href="A">:A</a>, <a href="b">:b</a>, <a href="d">:d</a>, <a href="d">:d</a>, <a href="d">:d</a>, <a href="e">:e</a>, <a href="e">:e</a>, <a href="g">:g</a>, <a href="g">:g</a>, <a href="g">:g</a>, <a href="h">:h</a>, <a href="i">:i</a>, <a href="l">:l</a>, <a href="l">:l</a>, <a href="o">:o</a>, <a href="p">:p</a>, <a href="p">:p</a>, <a href="p">:p</a>, <a href="r">:r</a>, <a href="r">:r</a>, <a href="s">:s</a>, <a href="t">:t</a>, <a href="t">:t</a>, <a href="u">:u</a>, <a href="v">:v</a>, <a href="w">:w</a></td>
+          <td><a href="https://w3id.org/dpv/legal/eu/gdpr#A46-2-b">eu-gdpr:A46-2-b</a></td>
         </tr><tr>
           <th>Object of relation</th>
           <td><a href="https://w3id.org/dpv#hasOrganisationalMeasure">dpv:hasOrganisationalMeasure</td>
@@ -6105,7 +6126,7 @@
 </td>
 </tr>        <tr class="technical-detail">
           <th>Narrower/Specialised types</th>
-          <td><a href="#">:#</a>, <a href="-">:-</a>, <a href="-">:-</a>, <a href=".">:.</a>, <a href="/">:/</a>, <a href="/">:/</a>, <a href="/">:/</a>, <a href="/">:/</a>, <a href="/">:/</a>, <a href="/">:/</a>, <a href="2">:2</a>, <a href="3">:3</a>, <a href="4">:4</a>, <a href="6">:6</a>, <a href=":">::</a>, <a href="a">:a</a>, <a href="A">:A</a>, <a href="c">:c</a>, <a href="d">:d</a>, <a href="d">:d</a>, <a href="d">:d</a>, <a href="e">:e</a>, <a href="e">:e</a>, <a href="g">:g</a>, <a href="g">:g</a>, <a href="g">:g</a>, <a href="h">:h</a>, <a href="i">:i</a>, <a href="l">:l</a>, <a href="l">:l</a>, <a href="o">:o</a>, <a href="p">:p</a>, <a href="p">:p</a>, <a href="p">:p</a>, <a href="r">:r</a>, <a href="r">:r</a>, <a href="s">:s</a>, <a href="t">:t</a>, <a href="t">:t</a>, <a href="u">:u</a>, <a href="v">:v</a>, <a href="w">:w</a></td>
+          <td><a href="https://w3id.org/dpv/legal/eu/gdpr#A46-2-c">eu-gdpr:A46-2-c</a></td>
         </tr><tr>
           <th>Object of relation</th>
           <td><a href="https://w3id.org/dpv#hasOrganisationalMeasure">dpv:hasOrganisationalMeasure</td>
@@ -6168,7 +6189,7 @@
 </td>
 </tr>        <tr class="technical-detail">
           <th>Narrower/Specialised types</th>
-          <td><a href="#">:#</a>, <a href="-">:-</a>, <a href="-">:-</a>, <a href=".">:.</a>, <a href="/">:/</a>, <a href="/">:/</a>, <a href="/">:/</a>, <a href="/">:/</a>, <a href="/">:/</a>, <a href="/">:/</a>, <a href="2">:2</a>, <a href="3">:3</a>, <a href="4">:4</a>, <a href="6">:6</a>, <a href=":">::</a>, <a href="a">:a</a>, <a href="A">:A</a>, <a href="d">:d</a>, <a href="d">:d</a>, <a href="d">:d</a>, <a href="d">:d</a>, <a href="e">:e</a>, <a href="e">:e</a>, <a href="g">:g</a>, <a href="g">:g</a>, <a href="g">:g</a>, <a href="h">:h</a>, <a href="i">:i</a>, <a href="l">:l</a>, <a href="l">:l</a>, <a href="o">:o</a>, <a href="p">:p</a>, <a href="p">:p</a>, <a href="p">:p</a>, <a href="r">:r</a>, <a href="r">:r</a>, <a href="s">:s</a>, <a href="t">:t</a>, <a href="t">:t</a>, <a href="u">:u</a>, <a href="v">:v</a>, <a href="w">:w</a></td>
+          <td><a href="https://w3id.org/dpv/legal/eu/gdpr#A46-2-d">eu-gdpr:A46-2-d</a></td>
         </tr><tr>
           <th>Object of relation</th>
           <td><a href="https://w3id.org/dpv#hasOrganisationalMeasure">dpv:hasOrganisationalMeasure</td>

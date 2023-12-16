@@ -4,27 +4,82 @@
 @prefix legal-de: <https://w3id.org/dpv/legal/de#> .
 @prefix legal-eu: <https://w3id.org/dpv/legal/eu#> .
 @prefix loc: <https://w3id.org/dpv/loc#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-legal-de:BW-LDSG a dpv:Law ;
+legal-de:BDSG a rdfs:Class,
+        skos:Concept,
+        skos:concept,
+        dpv:Law ;
+    dct:temporal [ a time:ProperInterval ;
+            time:hasBeginning [ time:inXSDDate "2019-11-20"^^xsd:date ] ] ;
     sw:term_status "accepted"@en ;
+    skos:inScheme legal-de:de-classes ;
+    skos:prefLabel "Federal Data Protection Act (BDSG)"@en ;
+    foaf:homepage "https://www.gesetze-im-internet.de/bdsg_2018/"^^xsd:anyURI ;
+    dpv:hasJurisdiction loc:DE .
+
+legal-de:BE-BbgDSG a rdfs:Class,
+        skos:Concept,
+        skos:concept,
+        dpv:Law ;
+    sw:term_status "accepted"@en ;
+    skos:inScheme legal-de:de-classes ;
+    skos:prefLabel "Brandenburg Data Protection Act (BbgDSG)"@en ;
+    foaf:homepage "https://www.lda.brandenburg.de/sixcms/media.php/9/BbgDSG_2019.pdf"^^xsd:anyURI ;
+    dpv:hasJurisdiction loc:DE-BB .
+
+legal-de:BE-BlnDSG a rdfs:Class,
+        skos:Concept,
+        skos:concept,
+        dpv:Law ;
+    sw:term_status "accepted"@en ;
+    skos:inScheme legal-de:de-classes ;
+    skos:prefLabel "Berlin Data Protection Act (BlnDSG)"@en ;
+    foaf:homepage "https://www.datenschutz-berlin.de/fileadmin/user_upload/pdf/publikationen/informationsmaterialien/2018-BlnBDI_BlnDSG.pdf"^^xsd:anyURI ;
+    dpv:hasJurisdiction loc:DE-BE .
+
+legal-de:BW-LDSG a rdfs:Class,
+        skos:Concept,
+        skos:concept,
+        dpv:Law ;
+    sw:term_status "accepted"@en ;
+    skos:inScheme legal-de:de-classes ;
     skos:prefLabel "State Data Protection Act (LDSG) (BW)"@en ;
     foaf:homepage "https://www.baden-wuerttemberg.datenschutz.de/wp-content/uploads/2018/06/LDSG-neu-GBl-2018173.pdf"^^xsd:anyURI ;
     dpv:hasJurisdiction loc:DE-BW .
 
-legal-de:DPA-DE a dpv:DataProtectionAuthority ;
+legal-de:BY-BayDSG a rdfs:Class,
+        skos:Concept,
+        skos:concept,
+        dpv:Law ;
     sw:term_status "accepted"@en ;
+    skos:inScheme legal-de:de-classes ;
+    skos:prefLabel "Bavarian Data Protection Act (BayDSG)"@en ;
+    foaf:homepage "https://www.datenschutz-bayern.de/datenschutzreform2018/BayDSG.pdf"^^xsd:anyURI ;
+    dpv:hasJurisdiction loc:DE-BY .
+
+legal-de:DPA-DE a rdfs:Class,
+        skos:Concept,
+        skos:concept,
+        dpv:DataProtectionAuthority ;
+    sw:term_status "accepted"@en ;
+    skos:inScheme legal-de:de-classes ;
     skos:prefLabel "The Federal Commissioner for Data Protection and Freedom of Information"@en ;
     foaf:homepage "http://www.bfdi.bund.de/"^^xsd:anyURI ;
     dpv:hasJurisdiction loc:DE ;
     dpv:hasLaw legal-de:BDSG,
         legal-eu:GDPR .
 
-legal-de:DPA-DE-BB a dpv:DataProtectionAuthority ;
+legal-de:DPA-DE-BB a rdfs:Class,
+        skos:Concept,
+        skos:concept,
+        dpv:DataProtectionAuthority ;
     sw:term_status "accepted"@en ;
+    skos:inScheme legal-de:de-classes ;
     skos:prefLabel "The state representative for data protection and the right to inspect files in Brandenburg"@en ;
     foaf:homepage "https://www.lda.brandenburg.de/"^^xsd:anyURI ;
     dpv:hasJurisdiction loc:DE-BB ;
@@ -32,8 +87,12 @@ legal-de:DPA-DE-BB a dpv:DataProtectionAuthority ;
         legal-de:BE-BbgDSG,
         legal-eu:GDPR .
 
-legal-de:DPA-DE-BE a dpv:DataProtectionAuthority ;
+legal-de:DPA-DE-BE a rdfs:Class,
+        skos:Concept,
+        skos:concept,
+        dpv:DataProtectionAuthority ;
     sw:term_status "accepted"@en ;
+    skos:inScheme legal-de:de-classes ;
     skos:prefLabel "Berlin Commissioner for Data Protection and Freedom of Information"@en ;
     foaf:homepage "https://www.datenschutz-berlin.de/"^^xsd:anyURI ;
     dpv:hasJurisdiction loc:DE-BE ;
@@ -41,8 +100,12 @@ legal-de:DPA-DE-BE a dpv:DataProtectionAuthority ;
         legal-de:BE-BlnDSG,
         legal-eu:GDPR .
 
-legal-de:DPA-DE-BY-non-public a dpv:DataProtectionAuthority ;
+legal-de:DPA-DE-BY-non-public a rdfs:Class,
+        skos:Concept,
+        skos:concept,
+        dpv:DataProtectionAuthority ;
     sw:term_status "accepted"@en ;
+    skos:inScheme legal-de:de-classes ;
     skos:prefLabel "Bavarian State Office for Data Protection Supervision"@en ;
     foaf:homepage "https://www.lda.bayern.de/"^^xsd:anyURI ;
     dpv:hasJurisdiction loc:DE-BY ;
@@ -50,8 +113,12 @@ legal-de:DPA-DE-BY-non-public a dpv:DataProtectionAuthority ;
         legal-de:BY-BayDSG,
         legal-eu:GDPR .
 
-legal-de:DPA-DE-BY-public a dpv:DataProtectionAuthority ;
+legal-de:DPA-DE-BY-public a rdfs:Class,
+        skos:Concept,
+        skos:concept,
+        dpv:DataProtectionAuthority ;
     sw:term_status "accepted"@en ;
+    skos:inScheme legal-de:de-classes ;
     skos:prefLabel "The Bavarian State Commissioner for Data Protection"@en ;
     foaf:homepage "https://www.datenschutz-bayern.de/"^^xsd:anyURI ;
     dpv:hasJurisdiction loc:DE-BY ;
@@ -59,8 +126,12 @@ legal-de:DPA-DE-BY-public a dpv:DataProtectionAuthority ;
         legal-de:BY-BayDSG,
         legal-eu:GDPR .
 
-legal-de:DPA-DE-HB a dpv:DataProtectionAuthority ;
+legal-de:DPA-DE-HB a rdfs:Class,
+        skos:Concept,
+        skos:concept,
+        dpv:DataProtectionAuthority ;
     sw:term_status "accepted"@en ;
+    skos:inScheme legal-de:de-classes ;
     skos:prefLabel "The State Commissioner for Data Protection and Freedom of Information of the Free Hanseatic City of Bremen"@en ;
     foaf:homepage "https://www.datenschutz.bremen.de/"^^xsd:anyURI ;
     dpv:hasJurisdiction loc:DE-HB ;
@@ -68,8 +139,12 @@ legal-de:DPA-DE-HB a dpv:DataProtectionAuthority ;
         legal-de:HB-BremDSGVOAG,
         legal-eu:GDPR .
 
-legal-de:DPA-DE-HE a dpv:DataProtectionAuthority ;
+legal-de:DPA-DE-HE a rdfs:Class,
+        skos:Concept,
+        skos:concept,
+        dpv:DataProtectionAuthority ;
     sw:term_status "accepted"@en ;
+    skos:inScheme legal-de:de-classes ;
     skos:prefLabel "The Hessian Commissioner for Data Protection and Freedom of Information"@en ;
     foaf:homepage "https://www.datenschutz.hessen.de/"^^xsd:anyURI ;
     dpv:hasJurisdiction loc:DE-HE ;
@@ -77,8 +152,12 @@ legal-de:DPA-DE-HE a dpv:DataProtectionAuthority ;
         legal-de:HE-HDISG,
         legal-eu:GDPR .
 
-legal-de:DPA-DE-HH a dpv:DataProtectionAuthority ;
+legal-de:DPA-DE-HH a rdfs:Class,
+        skos:Concept,
+        skos:concept,
+        dpv:DataProtectionAuthority ;
     sw:term_status "accepted"@en ;
+    skos:inScheme legal-de:de-classes ;
     skos:prefLabel "The Hamburg Commissioner for Data Protection and Freedom of Information"@en ;
     foaf:homepage "https://www.datenschutz-hamburg.de/"^^xsd:anyURI ;
     dpv:hasJurisdiction loc:DE-HH ;
@@ -86,8 +165,12 @@ legal-de:DPA-DE-HH a dpv:DataProtectionAuthority ;
         legal-de:HH-HmbDSG,
         legal-eu:GDPR .
 
-legal-de:DPA-DE-MV a dpv:DataProtectionAuthority ;
+legal-de:DPA-DE-MV a rdfs:Class,
+        skos:Concept,
+        skos:concept,
+        dpv:DataProtectionAuthority ;
     sw:term_status "accepted"@en ;
+    skos:inScheme legal-de:de-classes ;
     skos:prefLabel "The State Commissioner for Data Protection and Freedom of Information Mecklenburg-West Pomerania"@en ;
     foaf:homepage "https://www.datenschutz-mv.de/"^^xsd:anyURI ;
     dpv:hasJurisdiction loc:DE-MV ;
@@ -95,8 +178,12 @@ legal-de:DPA-DE-MV a dpv:DataProtectionAuthority ;
         legal-de:MV-DSG,
         legal-eu:GDPR .
 
-legal-de:DPA-DE-NI a dpv:DataProtectionAuthority ;
+legal-de:DPA-DE-NI a rdfs:Class,
+        skos:Concept,
+        skos:concept,
+        dpv:DataProtectionAuthority ;
     sw:term_status "accepted"@en ;
+    skos:inScheme legal-de:de-classes ;
     skos:prefLabel "The State Commissioner for Data Protection Lower Saxony"@en ;
     foaf:homepage "https://www.lfd.niedersachsen.de/"^^xsd:anyURI ;
     dpv:hasJurisdiction loc:DE-NI ;
@@ -104,8 +191,12 @@ legal-de:DPA-DE-NI a dpv:DataProtectionAuthority ;
         legal-de:NI-NDSG,
         legal-eu:GDPR .
 
-legal-de:DPA-DE-NW a dpv:DataProtectionAuthority ;
+legal-de:DPA-DE-NW a rdfs:Class,
+        skos:Concept,
+        skos:concept,
+        dpv:DataProtectionAuthority ;
     sw:term_status "accepted"@en ;
+    skos:inScheme legal-de:de-classes ;
     skos:prefLabel "State Commissioner for Data Protection and Freedom of Information North Rhine-Westphalia"@en ;
     foaf:homepage "https://www.ldi.nrw.de/"^^xsd:anyURI ;
     dpv:hasJurisdiction loc:DE-NW ;
@@ -113,8 +204,12 @@ legal-de:DPA-DE-NW a dpv:DataProtectionAuthority ;
         legal-de:NW-DSG,
         legal-eu:GDPR .
 
-legal-de:DPA-DE-RP a dpv:DataProtectionAuthority ;
+legal-de:DPA-DE-RP a rdfs:Class,
+        skos:Concept,
+        skos:concept,
+        dpv:DataProtectionAuthority ;
     sw:term_status "accepted"@en ;
+    skos:inScheme legal-de:de-classes ;
     skos:prefLabel "The state commissioner for data protection and freedom of information in Rhineland-Palatinate"@en ;
     foaf:homepage "https://www.datenschutz.rlp.de/"^^xsd:anyURI ;
     dpv:hasJurisdiction loc:DE-RP ;
@@ -122,8 +217,12 @@ legal-de:DPA-DE-RP a dpv:DataProtectionAuthority ;
         legal-de:RP-LDSG,
         legal-eu:GDPR .
 
-legal-de:DPA-DE-SH a dpv:DataProtectionAuthority ;
+legal-de:DPA-DE-SH a rdfs:Class,
+        skos:Concept,
+        skos:concept,
+        dpv:DataProtectionAuthority ;
     sw:term_status "accepted"@en ;
+    skos:inScheme legal-de:de-classes ;
     skos:prefLabel "Independent State Center for Data Protection Schleswig-Holstein"@en ;
     foaf:homepage "https://www.datenschutzzentrum.de/"^^xsd:anyURI ;
     dpv:hasJurisdiction loc:DE-SH ;
@@ -131,8 +230,12 @@ legal-de:DPA-DE-SH a dpv:DataProtectionAuthority ;
         legal-de:SH-LDSG,
         legal-eu:GDPR .
 
-legal-de:DPA-DE-SL a dpv:DataProtectionAuthority ;
+legal-de:DPA-DE-SL a rdfs:Class,
+        skos:Concept,
+        skos:concept,
+        dpv:DataProtectionAuthority ;
     sw:term_status "accepted"@en ;
+    skos:inScheme legal-de:de-classes ;
     skos:prefLabel "Independent Data Protection Center Saarland - State Commissioner for Data Protection and Freedom of Information"@en ;
     foaf:homepage "https://www.datenschutz.saarland.de/"^^xsd:anyURI ;
     dpv:hasJurisdiction loc:DE-SL ;
@@ -140,8 +243,12 @@ legal-de:DPA-DE-SL a dpv:DataProtectionAuthority ;
         legal-de:SL-SDSG,
         legal-eu:GDPR .
 
-legal-de:DPA-DE-SN a dpv:DataProtectionAuthority ;
+legal-de:DPA-DE-SN a rdfs:Class,
+        skos:Concept,
+        skos:concept,
+        dpv:DataProtectionAuthority ;
     sw:term_status "accepted"@en ;
+    skos:inScheme legal-de:de-classes ;
     skos:prefLabel "The Saxon data protection officer"@en ;
     foaf:homepage "https://www.saechsdsb.de/"^^xsd:anyURI ;
     dpv:hasJurisdiction loc:DE-SN ;
@@ -149,8 +256,12 @@ legal-de:DPA-DE-SN a dpv:DataProtectionAuthority ;
         legal-de:SN-SächsDSG,
         legal-eu:GDPR .
 
-legal-de:DPA-DE-ST a dpv:DataProtectionAuthority ;
+legal-de:DPA-DE-ST a rdfs:Class,
+        skos:Concept,
+        skos:concept,
+        dpv:DataProtectionAuthority ;
     sw:term_status "accepted"@en ;
+    skos:inScheme legal-de:de-classes ;
     skos:prefLabel "State representative for data protection in Saxony-Anhalt"@en ;
     foaf:homepage "https://datenschutz.sachsen-anhalt.de/"^^xsd:anyURI ;
     dpv:hasJurisdiction loc:DE-ST ;
@@ -158,8 +269,12 @@ legal-de:DPA-DE-ST a dpv:DataProtectionAuthority ;
         legal-de:LSA-DSG,
         legal-eu:GDPR .
 
-legal-de:DPA-DE-TH a dpv:DataProtectionAuthority ;
+legal-de:DPA-DE-TH a rdfs:Class,
+        skos:Concept,
+        skos:concept,
+        dpv:DataProtectionAuthority ;
     sw:term_status "accepted"@en ;
+    skos:inScheme legal-de:de-classes ;
     skos:prefLabel "Thuringia state commissioner for data protection and freedom of information"@en ;
     foaf:homepage "https://www.tlfdi.de/"^^xsd:anyURI ;
     dpv:hasJurisdiction loc:DE-TH ;
@@ -167,101 +282,125 @@ legal-de:DPA-DE-TH a dpv:DataProtectionAuthority ;
         legal-de:TH-ThürDSG,
         legal-eu:GDPR .
 
-legal-de:BE-BbgDSG a dpv:Law ;
+legal-de:HB-BremDSGVOAG a rdfs:Class,
+        skos:Concept,
+        skos:concept,
+        dpv:Law ;
     sw:term_status "accepted"@en ;
-    skos:prefLabel "Brandenburg Data Protection Act (BbgDSG)"@en ;
-    foaf:homepage "https://www.lda.brandenburg.de/sixcms/media.php/9/BbgDSG_2019.pdf"^^xsd:anyURI ;
-    dpv:hasJurisdiction loc:DE-BB .
-
-legal-de:BE-BlnDSG a dpv:Law ;
-    sw:term_status "accepted"@en ;
-    skos:prefLabel "Berlin Data Protection Act (BlnDSG)"@en ;
-    foaf:homepage "https://www.datenschutz-berlin.de/fileadmin/user_upload/pdf/publikationen/informationsmaterialien/2018-BlnBDI_BlnDSG.pdf"^^xsd:anyURI ;
-    dpv:hasJurisdiction loc:DE-BE .
-
-legal-de:HB-BremDSGVOAG a dpv:Law ;
-    sw:term_status "accepted"@en ;
+    skos:inScheme legal-de:de-classes ;
     skos:prefLabel "Bremen Implementing Act for the EU General Data Protection Regulation (BremDSGVOAG)"@en ;
     foaf:homepage "https://www.transparenz.bremen.de/metainformationen/bremisches-ausfuehrungsgesetz-zur-eu-datenschutz-grundverordnung-bremdsgvoag-vom-8-mai-2018-116884?template=20_gp_ifg_meta_detail_d"^^xsd:anyURI ;
     dpv:hasJurisdiction loc:DE-HB .
 
-legal-de:HE-HDISG a dpv:Law ;
+legal-de:HE-HDISG a rdfs:Class,
+        skos:Concept,
+        skos:concept,
+        dpv:Law ;
     sw:term_status "accepted"@en ;
+    skos:inScheme legal-de:de-classes ;
     skos:prefLabel "Hessian Data Protection and Freedom of Information Act (HDSIG)"@en ;
     foaf:homepage "https://www.rv.hessenrecht.hessen.de/bshe/document/jlr-DSIFGHErahmen"^^xsd:anyURI ;
     dpv:hasJurisdiction loc:DE-HE .
 
-legal-de:HH-HmbDSG a dpv:Law ;
+legal-de:HH-HmbDSG a rdfs:Class,
+        skos:Concept,
+        skos:concept,
+        dpv:Law ;
     sw:term_status "accepted"@en ;
+    skos:inScheme legal-de:de-classes ;
     skos:prefLabel "Hamburg Data Protection Act (HmbDSG)"@en ;
     foaf:homepage "https://datenschutz-hamburg.de/assets/pdf/HmbDSG_neu.pdf"^^xsd:anyURI ;
     dpv:hasJurisdiction loc:DE-HH .
 
-legal-de:LSA-DSG a dpv:Law ;
+legal-de:LSA-DSG a rdfs:Class,
+        skos:Concept,
+        skos:concept,
+        dpv:Law ;
     sw:term_status "accepted"@en ;
+    skos:inScheme legal-de:de-classes ;
     skos:prefLabel "Law on the protection of personal data of citizens (Saxony-Anhalt Data Protection Act - DSG LSA)"@en ;
     foaf:homepage "https://www.landtag.sachsen-anhalt.de/fileadmin/Downloads/Rechtsgrundlagen/2018_Datenschutzgesetz-DSG-LSA.pdf"^^xsd:anyURI ;
     dpv:hasJurisdiction loc:DE-ST .
 
-legal-de:MV-DSG a dpv:Law ;
+legal-de:MV-DSG a rdfs:Class,
+        skos:Concept,
+        skos:concept,
+        dpv:Law ;
     sw:term_status "accepted"@en ;
+    skos:inScheme legal-de:de-classes ;
     skos:prefLabel "Act to adapt the State Data Protection Act and other data protection regulations in the area of ​​responsibility of the Ministry of the Interior and Europe Mecklenburg-West Pomerania to Regulation (EU) 2016/679 and to implement Directive (EU) 2016/680"@en ;
     foaf:homepage "https://www.datenschutz-mv.de/static/DS/Dateien/Rechtsgrundlagen/Landesdatenschutzgesetz.pdf"^^xsd:anyURI ;
     dpv:hasJurisdiction loc:DE-MV .
 
-legal-de:NI-NDSG a dpv:Law ;
+legal-de:NI-NDSG a rdfs:Class,
+        skos:Concept,
+        skos:concept,
+        dpv:Law ;
     sw:term_status "accepted"@en ;
+    skos:inScheme legal-de:de-classes ;
     skos:prefLabel "Lower Saxony Data Protection Act (NDSG)"@en ;
     foaf:homepage "https://lfd.niedersachsen.de/download/132258/Niedersaechsisches_Datenschutzgesetz_NDSG_vom_16._Mai_2018_Nds._GVBl._S._66_.pdf"^^xsd:anyURI ;
     dpv:hasJurisdiction loc:DE-NI .
 
-legal-de:NW-DSG a dpv:Law ;
+legal-de:NW-DSG a rdfs:Class,
+        skos:Concept,
+        skos:concept,
+        dpv:Law ;
     sw:term_status "accepted"@en ;
+    skos:inScheme legal-de:de-classes ;
     skos:prefLabel "North Rhine-Westphalia Data Protection Act (DSG NRW)"@en ;
     foaf:homepage "https://recht.nrw.de/lmi/owa/br_text_anzeigen?v_id=3520071121100436275"^^xsd:anyURI ;
     dpv:hasJurisdiction loc:DE-NW .
 
-legal-de:RP-LDSG a dpv:Law ;
+legal-de:RP-LDSG a rdfs:Class,
+        skos:Concept,
+        skos:concept,
+        dpv:Law ;
     sw:term_status "accepted"@en ;
+    skos:inScheme legal-de:de-classes ;
     skos:prefLabel "State Data Protection Act (LDSG)"@en ;
     foaf:homepage "https://landesrecht.rlp.de/bsrp/document/jlr-DSGRP2018pP18"^^xsd:anyURI ;
     dpv:hasJurisdiction loc:DE-RP .
 
-legal-de:SH-LDSG a dpv:Law ;
+legal-de:SH-LDSG a rdfs:Class,
+        skos:Concept,
+        skos:concept,
+        dpv:Law ;
     sw:term_status "accepted"@en ;
+    skos:inScheme legal-de:de-classes ;
     skos:prefLabel "Schleswig-Holstein law for the protection of personal data (state data protection law - LDSG)"@en ;
     foaf:homepage "https://www.gesetze-rechtsprechung.sh.juris.de/jportal/?quelle=jlink&query=DSG+SH&psml=bsshoprod.psml&max=true&aiz=true"^^xsd:anyURI ;
     dpv:hasJurisdiction loc:DE-SH .
 
-legal-de:SL-SDSG a dpv:Law ;
+legal-de:SL-SDSG a rdfs:Class,
+        skos:Concept,
+        skos:concept,
+        dpv:Law ;
     sw:term_status "accepted"@en ;
+    skos:inScheme legal-de:de-classes ;
     skos:prefLabel "Saarland Data Protection Act"@en ;
     foaf:homepage "https://recht.saarland.de/bssl/document/jlr-DSGSL2018rahmen"^^xsd:anyURI ;
     dpv:hasJurisdiction loc:DE-SL .
 
-legal-de:SN-SächsDSG a dpv:Law ;
+legal-de:SN-SächsDSG a rdfs:Class,
+        skos:Concept,
+        skos:concept,
+        dpv:Law ;
     sw:term_status "accepted"@en ;
+    skos:inScheme legal-de:de-classes ;
     skos:prefLabel "Law for the Protection of Informational Self-Determination in the Free State of Saxony (Saxon Data Protection Act - SächsDSG)"@en ;
     foaf:homepage "https://www.recht.sachsen.de/vorschrift_gesamt/1672/28005.pdf"^^xsd:anyURI ;
     dpv:hasJurisdiction loc:DE-SN .
 
-legal-de:TH-ThürDSG a dpv:Law ;
+legal-de:TH-ThürDSG a rdfs:Class,
+        skos:Concept,
+        skos:concept,
+        dpv:Law ;
     sw:term_status "accepted"@en ;
+    skos:inScheme legal-de:de-classes ;
     skos:prefLabel "Thuringian Data Protection Act (ThürDSG)"@en ;
     foaf:homepage "https://landesrecht.thueringen.de/bsth/document/jlr-DSGTH2018rahmen"^^xsd:anyURI ;
     dpv:hasJurisdiction loc:DE-TH .
 
-legal-de:BY-BayDSG a dpv:Law ;
-    sw:term_status "accepted"@en ;
-    skos:prefLabel "Bavarian Data Protection Act (BayDSG)"@en ;
-    foaf:homepage "https://www.datenschutz-bayern.de/datenschutzreform2018/BayDSG.pdf"^^xsd:anyURI ;
-    dpv:hasJurisdiction loc:DE-BY .
-
-legal-de:BDSG a dpv:Law ;
-    dct:temporal [ a time:ProperInterval ;
-            time:hasBeginning [ time:inXSDDate "2019-11-20"^^xsd:date ] ] ;
-    sw:term_status "accepted"@en ;
-    skos:prefLabel "Federal Data Protection Act (BDSG)"@en ;
-    foaf:homepage "https://www.gesetze-im-internet.de/bdsg_2018/"^^xsd:anyURI ;
-    dpv:hasJurisdiction loc:DE .
+legal-de:de-classes a skos:ConceptScheme .
 

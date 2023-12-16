@@ -115,7 +115,20 @@ VOCABS = {
             'risk_methodology': f'{IMPORT_PATH}/risk/modules/risk_methodology.ttl',
         }
     },
+    'loc': {
+        'vocab': f'{IMPORT_PATH}/loc/loc.ttl',
+        'template': 'template_locations.jinja2',
+        'export': f'{EXPORT_PATH}/loc',
+        'modules': {
+            'locations': f'{IMPORT_PATH}/loc/modules/locations.ttl',
+        },
+    },
     # LEGAL VOCABS
+    # 'legal-eu': {
+    #     'vocab': f'{IMPORT_PATH}/legal/eu/legal-eu.ttl',
+    #     'template': 'template_legal_jurisdiction.jinja2',
+    #     'export': f'{EXPORT_PATH}/legal/eu',
+    # },
     'eu-gdpr': {
         'vocab': f'{IMPORT_PATH}/legal/eu/gdpr/eu-gdpr.ttl',
         'template': 'template_legal_eu_gdpr.jinja2',
@@ -430,16 +443,23 @@ def filter_type(itemlist, itemtype, vocab=None):
     # DEBUG(itemtype)
     # DEBUG(itemlist)
     for item in itemlist:
-        itemvocab = item.split(':')[0]
-        if not vocab or vocab != itemvocab:
+        if type(item) is dict:
+            itemvocab = item['vocab']
+        else:
+            itemvocab = item.split(':')[0]
+            # DEBUG(item)
+            if itemvocab not in DATA.data:
+                continue
+            item = DATA.data[itemvocab][item]
+        if not vocab or vocab != itemvocab or 'rdf:type' not in item:
             continue
-        parents = DATA.data[itemvocab][item]['rdf:type']
+        parents = item['rdf:type']
         if type(parents) is not list:
             parents = [parents]
         for p in parents:
             prefixed = prefix_from_iri(p)
             if prefixed == itemtype:
-                results.append(DATA.data[itemvocab][item])
+                results.append(item)
     return results
 
 
