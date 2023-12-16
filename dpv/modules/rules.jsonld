@@ -1,6 +1,48 @@
 [
   {
-    "@id": "https://w3id.org/dpv#hasRule",
+    "@id": "https://w3id.org/dpv#Prohibition",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Rule"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#Rule"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A rule describing a prohibition to perform an activity"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#rules-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Prohibition"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#rules-properties",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#hasPermission",
     "@type": [
       "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
       "http://www.w3.org/2004/02/skos/core#Concept"
@@ -12,18 +54,12 @@
     ],
     "http://purl.org/dc/dcam/rangeIncludes": [
       {
-        "@id": "https://w3id.org/dpv#Rule"
+        "@id": "https://w3id.org/dpv#Permission"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#superPropertyOf": [
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "https://w3id.org/dpv#hasPermission"
-      },
-      {
-        "@id": "https://w3id.org/dpv#hasProhibition"
-      },
-      {
-        "@id": "https://w3id.org/dpv#hasObligation"
+        "@id": "https://w3id.org/dpv#hasRule"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -32,10 +68,15 @@
         "@value": "accepted"
       }
     ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#hasRule"
+      }
+    ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Specifying applicability or inclusion of a rule within specified context"
+        "@value": "Specifying applicability or inclusion of a permission rule within specified context"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -43,21 +84,10 @@
         "@id": "https://w3id.org/dpv#rules-properties"
       }
     ],
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv#hasPermission"
-      },
-      {
-        "@id": "https://w3id.org/dpv#hasProhibition"
-      },
-      {
-        "@id": "https://w3id.org/dpv#hasObligation"
-      }
-    ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "has rule"
+        "@value": "has permission"
       }
     ],
     "https://schema.org/domainIncludes": [
@@ -67,7 +97,109 @@
     ],
     "https://schema.org/rangeIncludes": [
       {
+        "@id": "https://w3id.org/dpv#Permission"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#hasObligation",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/dcam/domainIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Context"
+      }
+    ],
+    "http://purl.org/dc/dcam/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Obligation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/dpv#hasRule"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#hasRule"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Specifying applicability or inclusion of an obligation rule within specified context"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#rules-properties"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "has obligation"
+      }
+    ],
+    "https://schema.org/domainIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Context"
+      }
+    ],
+    "https://schema.org/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Obligation"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#rules-classes",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#Permission",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Rule"
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
         "@id": "https://w3id.org/dpv#Rule"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A rule describing a permission to perform an activity"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#rules-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Permission"
       }
     ]
   },
@@ -168,6 +300,78 @@
     ]
   },
   {
+    "@id": "https://w3id.org/dpv#hasRule",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/dcam/domainIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Context"
+      }
+    ],
+    "http://purl.org/dc/dcam/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Rule"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#superPropertyOf": [
+      {
+        "@id": "https://w3id.org/dpv#hasPermission"
+      },
+      {
+        "@id": "https://w3id.org/dpv#hasProhibition"
+      },
+      {
+        "@id": "https://w3id.org/dpv#hasObligation"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Specifying applicability or inclusion of a rule within specified context"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#rules-properties"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv#hasPermission"
+      },
+      {
+        "@id": "https://w3id.org/dpv#hasProhibition"
+      },
+      {
+        "@id": "https://w3id.org/dpv#hasObligation"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "has rule"
+      }
+    ],
+    "https://schema.org/domainIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Context"
+      }
+    ],
+    "https://schema.org/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Rule"
+      }
+    ]
+  },
+  {
     "@id": "https://w3id.org/dpv#Rule",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
@@ -205,210 +409,6 @@
       {
         "@language": "en",
         "@value": "Rule"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#rules-properties",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#hasPermission",
-    "@type": [
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://purl.org/dc/dcam/domainIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Context"
-      }
-    ],
-    "http://purl.org/dc/dcam/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Permission"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/dpv#hasRule"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#hasRule"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Specifying applicability or inclusion of a permission rule within specified context"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#rules-properties"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "has permission"
-      }
-    ],
-    "https://schema.org/domainIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Context"
-      }
-    ],
-    "https://schema.org/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Permission"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#Permission",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Rule"
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#Rule"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A rule describing a permission to perform an activity"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#rules-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Permission"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#rules-classes",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#hasObligation",
-    "@type": [
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://purl.org/dc/dcam/domainIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Context"
-      }
-    ],
-    "http://purl.org/dc/dcam/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Obligation"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/dpv#hasRule"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#hasRule"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Specifying applicability or inclusion of an obligation rule within specified context"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#rules-properties"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "has obligation"
-      }
-    ],
-    "https://schema.org/domainIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Context"
-      }
-    ],
-    "https://schema.org/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Obligation"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#Prohibition",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Rule"
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#Rule"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A rule describing a prohibition to perform an activity"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#rules-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Prohibition"
       }
     ]
   }

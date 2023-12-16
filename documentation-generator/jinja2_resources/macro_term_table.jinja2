@@ -54,7 +54,7 @@
         {% if concept['skos:narrower'] %}
         <tr class="technical-detail">
           <th>Narrower/Specialised types</th>
-          <td>{% for child in concept['skos:narrower']|sort %}<a href="{{child}}">{{ child|prefix_this }}</a>{{", " if not loop.last}}{% endfor %}</td>
+          <td>{% for child in concept['skos:narrower']|ensure_list|sort %}<a href="{{child}}">{{ child|prefix_this }}</a>{{", " if not loop.last}}{% endfor %}</td>
         </tr>{% endif %}
         {% if concept['_type'] == 'class' %}
         {% for prop in concept|get_prop_with_term_domain(vocab) %}{% if loop.first %}<tr>
@@ -170,4 +170,10 @@
 <div class="list-hierarchy">
 {{ list_items(vocab, head) }}
 </div>
+{% endmacro %}
+
+{% macro ref_dedicated_documentation(link, title) %}
+<div class="note">
+    <p>This document only provides a summary of the {{title}} concepts. <strong>Please refer to <a href="{{link}}">{{title}} page</a> for additional documentation, examples, references, and best practices</strong>.</p>
+  </div>
 {% endmacro %}

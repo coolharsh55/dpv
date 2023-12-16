@@ -16,15 +16,22 @@
     <skos:narrower rdf:resource="https://w3id.org/dpv#ExplicitlyExpressedConsent"/>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#consent-types-classes"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#UninformedConsent">
+  <rdf:Description rdf:about="https://w3id.org/dpv#InformedConsent">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
-    <skos:prefLabel xml:lang="en">Uninformed Consent</skos:prefLabel>
-    <skos:definition xml:lang="en">Consent that is uninformed i.e. without requirement to provide sufficient information to make a consenting decision</skos:definition>
+    <skos:prefLabel xml:lang="en">Informed Consent</skos:prefLabel>
+    <skos:definition xml:lang="en">Consent that is informed i.e. with the requirement to provide sufficient information to make a consenting decision</skos:definition>
     <skos:broader rdf:resource="https://w3id.org/dpv#Consent"/>
+    <skos:scopeNote xml:lang="en">The specifics for what information should be provided or made available will depend on the context, use-case, or relevant legal requirements</skos:scopeNote>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:narrower rdf:resource="https://w3id.org/dpv#ImpliedConsent"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv#ExpressedConsent"/>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#consent-types-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#Consent">
+    <skos:narrower rdf:resource="https://w3id.org/dpv#UninformedConsent"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv#InformedConsent"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#ImpliedConsent">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -37,21 +44,14 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#consent-types-classes"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#Consent">
-    <skos:narrower rdf:resource="https://w3id.org/dpv#UninformedConsent"/>
-    <skos:narrower rdf:resource="https://w3id.org/dpv#InformedConsent"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#InformedConsent">
+  <rdf:Description rdf:about="https://w3id.org/dpv#UninformedConsent">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
-    <skos:prefLabel xml:lang="en">Informed Consent</skos:prefLabel>
-    <skos:definition xml:lang="en">Consent that is informed i.e. with the requirement to provide sufficient information to make a consenting decision</skos:definition>
+    <skos:prefLabel xml:lang="en">Uninformed Consent</skos:prefLabel>
+    <skos:definition xml:lang="en">Consent that is uninformed i.e. without requirement to provide sufficient information to make a consenting decision</skos:definition>
     <skos:broader rdf:resource="https://w3id.org/dpv#Consent"/>
-    <skos:scopeNote xml:lang="en">The specifics for what information should be provided or made available will depend on the context, use-case, or relevant legal requirements</skos:scopeNote>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:narrower rdf:resource="https://w3id.org/dpv#ImpliedConsent"/>
-    <skos:narrower rdf:resource="https://w3id.org/dpv#ExpressedConsent"/>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#consent-types-classes"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#ExplicitlyExpressedConsent">

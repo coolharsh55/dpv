@@ -8,46 +8,13 @@
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
    xmlns:sw="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
-  <rdf:Description rdf:about="https://w3id.org/dpv#Optional">
+  <rdf:Description rdf:about="https://w3id.org/dpv#Justification">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#Necessity"/>
-    <skos:prefLabel xml:lang="en">Optional</skos:prefLabel>
-    <skos:definition xml:lang="en">Indication of 'optional' or 'voluntary'</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#Necessity"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#context-classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#Importance">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <skos:prefLabel xml:lang="en">Importance</skos:prefLabel>
-    <skos:definition xml:lang="en">An indication of 'importance' within a context</skos:definition>
+    <skos:prefLabel xml:lang="en">Justification</skos:prefLabel>
+    <skos:definition xml:lang="en">A form of documentation providing reaosns, explanations, or justifications</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Context"/>
     <skos:broader rdf:resource="https://w3id.org/dpv#Context"/>
-    <skos:scopeNote xml:lang="en">Importance can be used to express importance, desirability, relevance, or significance as a context.</skos:scopeNote>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:narrower rdf:resource="https://w3id.org/dpv#PrimaryImportance"/>
-    <skos:narrower rdf:resource="https://w3id.org/dpv#SecondaryImportance"/>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#context-classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#Scope">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <skos:prefLabel xml:lang="en">Scope</skos:prefLabel>
-    <skos:definition xml:lang="en">Indication of the extent or range or boundaries associated with(in) a context</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Context"/>
-    <skos:broader rdf:resource="https://w3id.org/dpv#Context"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#context-classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#UntilEventDuration">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <skos:prefLabel xml:lang="en">Until Event Duration</skos:prefLabel>
-    <skos:definition xml:lang="en">Duration that takes place until a specific event occurs e.g. Account Closure</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Duration"/>
-    <skos:broader rdf:resource="https://w3id.org/dpv#Duration"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#context-classes"/>
   </rdf:Description>
@@ -71,12 +38,74 @@
     <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#FixedOccurencesDuration"/>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#context-classes"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#TemporalDuration">
+  <rdf:Description rdf:about="https://w3id.org/dpv#SporadicFrequency">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <skos:prefLabel xml:lang="en">Temporal Duration</skos:prefLabel>
-    <skos:definition xml:lang="en">Duration that has a fixed temporal duration e.g. 6 months</skos:definition>
+    <rdf:type rdf:resource="https://w3id.org/dpv#Frequency"/>
+    <skos:prefLabel xml:lang="en">Sporadic Frequency</skos:prefLabel>
+    <skos:definition xml:lang="en">Frequency where occurences are sporadic or infrequent or sparse</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#Frequency"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#context-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#isAfter">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="en">is after</skos:prefLabel>
+    <skos:definition xml:lang="en">Indicates the specified concepts is 'after' this concept in some context</skos:definition>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#context-properties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#OftenFrequency">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#Frequency"/>
+    <skos:prefLabel xml:lang="en">Often Frequency</skos:prefLabel>
+    <skos:definition xml:lang="en">Frequency where occurences are often or frequent, but not continous</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#Frequency"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#context-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#Necessity">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:prefLabel xml:lang="en">Necessity</skos:prefLabel>
+    <skos:definition xml:lang="en">An indication of 'necessity' within a context</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Context"/>
+    <skos:broader rdf:resource="https://w3id.org/dpv#Context"/>
+    <skos:scopeNote xml:lang="en">Necessity can be used to express need, essentiality, requirement, or compulsion.</skos:scopeNote>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:narrower rdf:resource="https://w3id.org/dpv#Required"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv#Optional"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv#NotRequired"/>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#context-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#FixedOccurencesDuration">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:prefLabel xml:lang="en">Fixed Occurences Duration</skos:prefLabel>
+    <skos:definition xml:lang="en">Duration that takes place a fixed number of times e.g. 3 times</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Duration"/>
+    <skos:broader rdf:resource="https://w3id.org/dpv#Duration"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#context-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#UntilTimeDuration">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:prefLabel xml:lang="en">Until Time Duration</skos:prefLabel>
+    <skos:definition xml:lang="en">Duration that has a fixed end date e.g. 2022-12-31</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Duration"/>
+    <skos:broader rdf:resource="https://w3id.org/dpv#Duration"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#context-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#EndlessDuration">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#Duration"/>
+    <skos:prefLabel xml:lang="en">Endless Duration</skos:prefLabel>
+    <skos:definition xml:lang="en">Duration that is (known or intended to be) open ended or without an end</skos:definition>
     <skos:broader rdf:resource="https://w3id.org/dpv#Duration"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#context-classes"/>
@@ -102,38 +131,22 @@
     <skos:narrower rdf:resource="https://w3id.org/dpv#Duration"/>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#context-classes"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#Justification">
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasOutcome">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <skos:prefLabel xml:lang="en">Justification</skos:prefLabel>
-    <skos:definition xml:lang="en">A form of documentation providing reaosns, explanations, or justifications</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Context"/>
-    <skos:broader rdf:resource="https://w3id.org/dpv#Context"/>
+    <skos:prefLabel xml:lang="en">has outcome</skos:prefLabel>
+    <skos:definition xml:lang="en">Indicates an outcome of specified concept or context</skos:definition>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#context-classes"/>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#context-properties"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#NotRequired">
+  <rdf:Description rdf:about="https://w3id.org/dpv#ContinousFrequency">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#Necessity"/>
-    <skos:prefLabel xml:lang="en">Not Required</skos:prefLabel>
-    <skos:definition xml:lang="en">Indication of neither being required nor optional i.e. not relevant or needed</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#Necessity"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#Frequency"/>
+    <skos:prefLabel xml:lang="en">Continous Frequency</skos:prefLabel>
+    <skos:definition xml:lang="en">Frequency where occurences are continous</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#Frequency"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#context-classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#Necessity">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <skos:prefLabel xml:lang="en">Necessity</skos:prefLabel>
-    <skos:definition xml:lang="en">An indication of 'necessity' within a context</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Context"/>
-    <skos:broader rdf:resource="https://w3id.org/dpv#Context"/>
-    <skos:scopeNote xml:lang="en">Necessity can be used to express need, essentiality, requirement, or compulsion.</skos:scopeNote>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:narrower rdf:resource="https://w3id.org/dpv#Required"/>
-    <skos:narrower rdf:resource="https://w3id.org/dpv#Optional"/>
-    <skos:narrower rdf:resource="https://w3id.org/dpv#NotRequired"/>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#context-classes"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#PrimaryImportance">
@@ -142,6 +155,16 @@
     <rdf:type rdf:resource="https://w3id.org/dpv#Importance"/>
     <skos:prefLabel xml:lang="en">Primary Importance</skos:prefLabel>
     <skos:definition xml:lang="en">Indication of 'primary' or 'main' or 'core' importance</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#Importance"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#context-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#SecondaryImportance">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#Importance"/>
+    <skos:prefLabel xml:lang="en">Secondary Importance</skos:prefLabel>
+    <skos:definition xml:lang="en">Indication of 'secondary' or 'minor' or 'auxiliary' importance</skos:definition>
     <skos:broader rdf:resource="https://w3id.org/dpv#Importance"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#context-classes"/>
@@ -156,23 +179,33 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#context-classes"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#EndlessDuration">
+  <rdf:Description rdf:about="https://w3id.org/dpv#Scope">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#Duration"/>
-    <skos:prefLabel xml:lang="en">Endless Duration</skos:prefLabel>
-    <skos:definition xml:lang="en">Duration that is (known or intended to be) open ended or without an end</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#Duration"/>
+    <skos:prefLabel xml:lang="en">Scope</skos:prefLabel>
+    <skos:definition xml:lang="en">Indication of the extent or range or boundaries associated with(in) a context</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Context"/>
+    <skos:broader rdf:resource="https://w3id.org/dpv#Context"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#context-classes"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#SecondaryImportance">
+  <rdf:Description rdf:about="https://w3id.org/dpv#SingularFrequency">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#Importance"/>
-    <skos:prefLabel xml:lang="en">Secondary Importance</skos:prefLabel>
-    <skos:definition xml:lang="en">Indication of 'secondary' or 'minor' or 'auxiliary' importance</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#Importance"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#Frequency"/>
+    <skos:prefLabel xml:lang="en">Singular Frequency</skos:prefLabel>
+    <skos:definition xml:lang="en">Frequency where occurences are singular i.e. they take place only once</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#Frequency"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#context-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#TemporalDuration">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:prefLabel xml:lang="en">Temporal Duration</skos:prefLabel>
+    <skos:definition xml:lang="en">Duration that has a fixed temporal duration e.g. 6 months</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Duration"/>
+    <skos:broader rdf:resource="https://w3id.org/dpv#Duration"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#context-classes"/>
   </rdf:Description>
@@ -183,57 +216,6 @@
     <skos:definition xml:lang="en">Indicates the frequency with which something takes place</skos:definition>
     <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#Frequency"/>
     <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#Frequency"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#context-properties"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#hasContext">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">has context</skos:prefLabel>
-    <skos:definition xml:lang="en">Indicates a purpose is restricted to the specified context(s)</skos:definition>
-    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#Context"/>
-    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#Context"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#context-properties"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#OftenFrequency">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#Frequency"/>
-    <skos:prefLabel xml:lang="en">Often Frequency</skos:prefLabel>
-    <skos:definition xml:lang="en">Frequency where occurences are often or frequent, but not continous</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#Frequency"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#context-classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#UntilTimeDuration">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <skos:prefLabel xml:lang="en">Until Time Duration</skos:prefLabel>
-    <skos:definition xml:lang="en">Duration that has a fixed end date e.g. 2022-12-31</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Duration"/>
-    <skos:broader rdf:resource="https://w3id.org/dpv#Duration"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#context-classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#IndeterminateDuration">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#Duration"/>
-    <skos:prefLabel xml:lang="en">Indeterminate Duration</skos:prefLabel>
-    <skos:definition xml:lang="en">Duration that is indeterminate or cannot be determined</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#Duration"/>
-    <skos:scopeNote xml:lang="en">Indeterminate means (exact or otherwise) information about the duration cannot be determined, which is distinct from 'EndlessDuration' where it is known (or decided) that the duration is open-ended or without an end.</skos:scopeNote>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#context-classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#hasScope">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">has scope</skos:prefLabel>
-    <skos:definition xml:lang="en">Indicates the scope of specified concept or context</skos:definition>
-    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#Scope"/>
-    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#Scope"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#context-properties"/>
   </rdf:Description>
@@ -251,13 +233,13 @@
     <skos:narrower rdf:resource="https://w3id.org/dpv#SingularFrequency"/>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#context-classes"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#SporadicFrequency">
+  <rdf:Description rdf:about="https://w3id.org/dpv#NotRequired">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#Frequency"/>
-    <skos:prefLabel xml:lang="en">Sporadic Frequency</skos:prefLabel>
-    <skos:definition xml:lang="en">Frequency where occurences are sporadic or infrequent or sparse</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#Frequency"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#Necessity"/>
+    <skos:prefLabel xml:lang="en">Not Required</skos:prefLabel>
+    <skos:definition xml:lang="en">Indication of neither being required nor optional i.e. not relevant or needed</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#Necessity"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#context-classes"/>
   </rdf:Description>
@@ -272,6 +254,19 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#context-properties"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#Importance">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:prefLabel xml:lang="en">Importance</skos:prefLabel>
+    <skos:definition xml:lang="en">An indication of 'importance' within a context</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Context"/>
+    <skos:broader rdf:resource="https://w3id.org/dpv#Context"/>
+    <skos:scopeNote xml:lang="en">Importance can be used to express importance, desirability, relevance, or significance as a context.</skos:scopeNote>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:narrower rdf:resource="https://w3id.org/dpv#PrimaryImportance"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv#SecondaryImportance"/>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#context-classes"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#isBefore">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -280,15 +275,15 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#context-properties"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#FixedOccurencesDuration">
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasScope">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <skos:prefLabel xml:lang="en">Fixed Occurences Duration</skos:prefLabel>
-    <skos:definition xml:lang="en">Duration that takes place a fixed number of times e.g. 3 times</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Duration"/>
-    <skos:broader rdf:resource="https://w3id.org/dpv#Duration"/>
+    <skos:prefLabel xml:lang="en">has scope</skos:prefLabel>
+    <skos:definition xml:lang="en">Indicates the scope of specified concept or context</skos:definition>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#Scope"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#Scope"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#context-classes"/>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#context-properties"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#hasIdentifier">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
@@ -298,33 +293,35 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#context-properties"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#hasOutcome">
+  <rdf:Description rdf:about="https://w3id.org/dpv#UntilEventDuration">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:prefLabel xml:lang="en">Until Event Duration</skos:prefLabel>
+    <skos:definition xml:lang="en">Duration that takes place until a specific event occurs e.g. Account Closure</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Duration"/>
+    <skos:broader rdf:resource="https://w3id.org/dpv#Duration"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#context-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#Optional">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#Necessity"/>
+    <skos:prefLabel xml:lang="en">Optional</skos:prefLabel>
+    <skos:definition xml:lang="en">Indication of 'optional' or 'voluntary'</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#Necessity"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#context-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasContext">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">has outcome</skos:prefLabel>
-    <skos:definition xml:lang="en">Indicates an outcome of specified concept or context</skos:definition>
+    <skos:prefLabel xml:lang="en">has context</skos:prefLabel>
+    <skos:definition xml:lang="en">Indicates a purpose is restricted to the specified context(s)</skos:definition>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#Context"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#Context"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#context-properties"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#SingularFrequency">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#Frequency"/>
-    <skos:prefLabel xml:lang="en">Singular Frequency</skos:prefLabel>
-    <skos:definition xml:lang="en">Frequency where occurences are singular i.e. they take place only once</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#Frequency"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#context-classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#ContinousFrequency">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#Frequency"/>
-    <skos:prefLabel xml:lang="en">Continous Frequency</skos:prefLabel>
-    <skos:definition xml:lang="en">Frequency where occurences are continous</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#Frequency"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#context-classes"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#hasJustification">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
@@ -336,18 +333,21 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#context-properties"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#isAfter">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">is after</skos:prefLabel>
-    <skos:definition xml:lang="en">Indicates the specified concepts is 'after' this concept in some context</skos:definition>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#context-properties"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#context-properties">
+  <rdf:Description rdf:about="https://w3id.org/dpv#context-classes">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#context-classes">
+  <rdf:Description rdf:about="https://w3id.org/dpv#IndeterminateDuration">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#Duration"/>
+    <skos:prefLabel xml:lang="en">Indeterminate Duration</skos:prefLabel>
+    <skos:definition xml:lang="en">Duration that is indeterminate or cannot be determined</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#Duration"/>
+    <skos:scopeNote xml:lang="en">Indeterminate means (exact or otherwise) information about the duration cannot be determined, which is distinct from 'EndlessDuration' where it is known (or decided) that the duration is open-ended or without an end.</skos:scopeNote>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#context-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#context-properties">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
   </rdf:Description>
 </rdf:RDF>

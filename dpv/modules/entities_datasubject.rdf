@@ -8,6 +8,70 @@
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
    xmlns:sw="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
+  <rdf:Description rdf:about="https://w3id.org/dpv#Adult">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#DataSubject"/>
+    <skos:prefLabel xml:lang="en">Adult</skos:prefLabel>
+    <skos:definition xml:lang="en">A natural person that is not a child i.e. has attained some legally specified age of adulthood</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#DataSubject"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-datasubject-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#Tourist">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#DataSubject"/>
+    <skos:prefLabel xml:lang="en">Tourist</skos:prefLabel>
+    <skos:definition xml:lang="en">Data subjects that are tourists i.e. not citizens and not immigrants</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#DataSubject"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-datasubject-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#JobApplicant">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#DataSubject"/>
+    <skos:prefLabel xml:lang="en">Job Applicant</skos:prefLabel>
+    <skos:definition xml:lang="en">Data subjects that apply for jobs or employments</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#DataSubject"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-datasubject-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasRelationWithDataSubject">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="en">has relation with data subject</skos:prefLabel>
+    <skos:definition xml:lang="en">Indicates the relation between specified Entity and Data Subject</skos:definition>
+    <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#Entity"/>
+    <schema:domainIncludes rdf:resource="https://w3id.org/dpv#Entity"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/dpv#hasEntity"/>
+    <skos:broader rdf:resource="https://w3id.org/dpv#hasEntity"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-datasubject-properties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasDataSubject">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="en">has data subject</skos:prefLabel>
+    <skos:definition xml:lang="en">Indicates association with Data Subject</skos:definition>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#DataSubject"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#DataSubject"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/dpv#hasEntity"/>
+    <skos:broader rdf:resource="https://w3id.org/dpv#hasEntity"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-datasubject-properties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#ParentOfDataSubject">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#DataSubject"/>
+    <skos:prefLabel xml:lang="en">Parent(s) of Data Subject</skos:prefLabel>
+    <skos:definition xml:lang="en">Parent(s) of data subjects such as children</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#DataSubject"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-datasubject-classes"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#VulnerableDataSubject">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
@@ -55,58 +119,6 @@
     <skos:narrower rdf:resource="https://w3id.org/dpv#GuardianOfDataSubject"/>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-datasubject-classes"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#JobApplicant">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#DataSubject"/>
-    <skos:prefLabel xml:lang="en">Job Applicant</skos:prefLabel>
-    <skos:definition xml:lang="en">Data subjects that apply for jobs or employments</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#DataSubject"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-datasubject-classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#Customer">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#DataSubject"/>
-    <skos:prefLabel xml:lang="en">Customer</skos:prefLabel>
-    <skos:definition xml:lang="en">Data subjects that purchase goods or services</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#DataSubject"/>
-    <skos:scopeNote xml:lang="en">note: for B2B relations where customers are organisations, this concept only applies for data subjects</skos:scopeNote>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:narrower rdf:resource="https://w3id.org/dpv#Client"/>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-datasubject-classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#Applicant">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#DataSubject"/>
-    <skos:prefLabel xml:lang="en">Applicant</skos:prefLabel>
-    <skos:definition xml:lang="en">Data subjects that are applicants in some context</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#DataSubject"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-datasubject-classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#ElderlyDataSubject">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#DataSubject"/>
-    <skos:prefLabel xml:lang="en">Elderly Data Subject</skos:prefLabel>
-    <skos:definition xml:lang="en">Data subjects that are considered elderly (i.e. based on age)</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#VulnerableDataSubject"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-datasubject-classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#NonCitizen">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#DataSubject"/>
-    <skos:prefLabel xml:lang="en">Non-Citizen</skos:prefLabel>
-    <skos:definition xml:lang="en">Data subjects that are not citizens (for a jurisdiction)</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#DataSubject"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-datasubject-classes"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#Participant">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
@@ -137,6 +149,26 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-datasubject-classes"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#MentallyVulnerableDataSubject">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#DataSubject"/>
+    <skos:prefLabel xml:lang="en">Mentally Vulnerable Data Subject</skos:prefLabel>
+    <skos:definition xml:lang="en">Data subjects that are considered mentally vulnerable</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#VulnerableDataSubject"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-datasubject-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#Immigrant">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#DataSubject"/>
+    <skos:prefLabel xml:lang="en">Immigrant</skos:prefLabel>
+    <skos:definition xml:lang="en">Data subjects that are immigrants (for a jurisdiction)</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#DataSubject"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-datasubject-classes"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#Member">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
@@ -147,12 +179,18 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-datasubject-classes"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#Adult">
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasEntity">
+    <rdfs:superPropertyOf rdf:resource="https://w3id.org/dpv#hasDataSubject"/>
+    <rdfs:superPropertyOf rdf:resource="https://w3id.org/dpv#hasRelationWithDataSubject"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv#hasDataSubject"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv#hasRelationWithDataSubject"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#Visitor">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#DataSubject"/>
-    <skos:prefLabel xml:lang="en">Adult</skos:prefLabel>
-    <skos:definition xml:lang="en">A natural person that is not a child i.e. has attained some legally specified age of adulthood</skos:definition>
+    <skos:prefLabel xml:lang="en">Visitor</skos:prefLabel>
+    <skos:definition xml:lang="en">Data subjects that are temporary visitors</skos:definition>
     <skos:broader rdf:resource="https://w3id.org/dpv#DataSubject"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-datasubject-classes"/>
@@ -167,55 +205,35 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-datasubject-classes"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#hasRelationWithDataSubject">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">has relation with data subject</skos:prefLabel>
-    <skos:definition xml:lang="en">Indicates the relation between specified Entity and Data Subject</skos:definition>
-    <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#Entity"/>
-    <schema:domainIncludes rdf:resource="https://w3id.org/dpv#Entity"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/dpv#hasEntity"/>
-    <skos:broader rdf:resource="https://w3id.org/dpv#hasEntity"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-datasubject-properties"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#Child">
+  <rdf:Description rdf:about="https://w3id.org/dpv#Customer">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#DataSubject"/>
-    <skos:prefLabel xml:lang="en">Child</skos:prefLabel>
-    <skos:definition xml:lang="en">A 'child' is a natural legal person who is below a certain legal age depending on the legal jurisdiction.</skos:definition>
+    <skos:prefLabel xml:lang="en">Customer</skos:prefLabel>
+    <skos:definition xml:lang="en">Data subjects that purchase goods or services</skos:definition>
     <skos:broader rdf:resource="https://w3id.org/dpv#DataSubject"/>
-    <skos:scopeNote xml:lang="en">The legality of age defining a child varies by jurisdiction. In addition, 'child' is distinct from a 'minor'. For example, the legal age for consumption of alcohol can be 21, which makes a person of age 20 a 'minor' in this context. In other cases, 'minor' and 'child' are used interchangeably to refer to a person below some legally defined age.</skos:scopeNote>
+    <skos:scopeNote xml:lang="en">note: for B2B relations where customers are organisations, this concept only applies for data subjects</skos:scopeNote>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:narrower rdf:resource="https://w3id.org/dpv#Client"/>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-datasubject-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#Subscriber">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#DataSubject"/>
+    <skos:prefLabel xml:lang="en">Subscriber</skos:prefLabel>
+    <skos:definition xml:lang="en">Data subjects that subscribe to service(s)</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#DataSubject"/>
+    <skos:scopeNote xml:lang="en">note: subscriber can be customer or consumer</skos:scopeNote>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-datasubject-classes"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#Tourist">
+  <rdf:Description rdf:about="https://w3id.org/dpv#Citizen">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#DataSubject"/>
-    <skos:prefLabel xml:lang="en">Tourist</skos:prefLabel>
-    <skos:definition xml:lang="en">Data subjects that are tourists i.e. not citizens and not immigrants</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#DataSubject"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-datasubject-classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#ParentOfDataSubject">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#DataSubject"/>
-    <skos:prefLabel xml:lang="en">Parent(s) of Data Subject</skos:prefLabel>
-    <skos:definition xml:lang="en">Parent(s) of data subjects such as children</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#DataSubject"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-datasubject-classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#Patient">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#DataSubject"/>
-    <skos:prefLabel xml:lang="en">Patient</skos:prefLabel>
-    <skos:definition xml:lang="en">Data subjects that receive medican attention, treatment, care, advice, or other health related services</skos:definition>
+    <skos:prefLabel xml:lang="en">Citizen</skos:prefLabel>
+    <skos:definition xml:lang="en">Data subjects that are citizens (for a jurisdiction)</skos:definition>
     <skos:broader rdf:resource="https://w3id.org/dpv#DataSubject"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-datasubject-classes"/>
@@ -230,35 +248,13 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-datasubject-classes"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#hasDataSubject">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">has data subject</skos:prefLabel>
-    <skos:definition xml:lang="en">Indicates association with Data Subject</skos:definition>
-    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#DataSubject"/>
-    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#DataSubject"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/dpv#hasEntity"/>
-    <skos:broader rdf:resource="https://w3id.org/dpv#hasEntity"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-datasubject-properties"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#Citizen">
+  <rdf:Description rdf:about="https://w3id.org/dpv#Client">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#DataSubject"/>
-    <skos:prefLabel xml:lang="en">Citizen</skos:prefLabel>
-    <skos:definition xml:lang="en">Data subjects that are citizens (for a jurisdiction)</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#DataSubject"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-datasubject-classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#Student">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#DataSubject"/>
-    <skos:prefLabel xml:lang="en">Student</skos:prefLabel>
-    <skos:definition xml:lang="en">Data subjects that are students</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#DataSubject"/>
+    <skos:prefLabel xml:lang="en">Client</skos:prefLabel>
+    <skos:definition xml:lang="en">Data subjects that are clients or recipients of services</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#Customer"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-datasubject-classes"/>
   </rdf:Description>
@@ -272,71 +268,75 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-datasubject-classes"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#Immigrant">
+  <rdf:Description rdf:about="https://w3id.org/dpv#Patient">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#DataSubject"/>
-    <skos:prefLabel xml:lang="en">Immigrant</skos:prefLabel>
-    <skos:definition xml:lang="en">Data subjects that are immigrants (for a jurisdiction)</skos:definition>
+    <skos:prefLabel xml:lang="en">Patient</skos:prefLabel>
+    <skos:definition xml:lang="en">Data subjects that receive medican attention, treatment, care, advice, or other health related services</skos:definition>
     <skos:broader rdf:resource="https://w3id.org/dpv#DataSubject"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-datasubject-classes"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#MentallyVulnerableDataSubject">
+  <rdf:Description rdf:about="https://w3id.org/dpv#NonCitizen">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#DataSubject"/>
-    <skos:prefLabel xml:lang="en">Mentally Vulnerable Data Subject</skos:prefLabel>
-    <skos:definition xml:lang="en">Data subjects that are considered mentally vulnerable</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#VulnerableDataSubject"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-datasubject-classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#hasEntity">
-    <rdfs:superPropertyOf rdf:resource="https://w3id.org/dpv#hasDataSubject"/>
-    <rdfs:superPropertyOf rdf:resource="https://w3id.org/dpv#hasRelationWithDataSubject"/>
-    <skos:narrower rdf:resource="https://w3id.org/dpv#hasDataSubject"/>
-    <skos:narrower rdf:resource="https://w3id.org/dpv#hasRelationWithDataSubject"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#Subscriber">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#DataSubject"/>
-    <skos:prefLabel xml:lang="en">Subscriber</skos:prefLabel>
-    <skos:definition xml:lang="en">Data subjects that subscribe to service(s)</skos:definition>
+    <skos:prefLabel xml:lang="en">Non-Citizen</skos:prefLabel>
+    <skos:definition xml:lang="en">Data subjects that are not citizens (for a jurisdiction)</skos:definition>
     <skos:broader rdf:resource="https://w3id.org/dpv#DataSubject"/>
-    <skos:scopeNote xml:lang="en">note: subscriber can be customer or consumer</skos:scopeNote>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-datasubject-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#Applicant">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#DataSubject"/>
+    <skos:prefLabel xml:lang="en">Applicant</skos:prefLabel>
+    <skos:definition xml:lang="en">Data subjects that are applicants in some context</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#DataSubject"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-datasubject-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#Child">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#DataSubject"/>
+    <skos:prefLabel xml:lang="en">Child</skos:prefLabel>
+    <skos:definition xml:lang="en">A 'child' is a natural legal person who is below a certain legal age depending on the legal jurisdiction.</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#DataSubject"/>
+    <skos:scopeNote xml:lang="en">The legality of age defining a child varies by jurisdiction. In addition, 'child' is distinct from a 'minor'. For example, the legal age for consumption of alcohol can be 21, which makes a person of age 20 a 'minor' in this context. In other cases, 'minor' and 'child' are used interchangeably to refer to a person below some legally defined age.</skos:scopeNote>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-datasubject-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#Student">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#DataSubject"/>
+    <skos:prefLabel xml:lang="en">Student</skos:prefLabel>
+    <skos:definition xml:lang="en">Data subjects that are students</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#DataSubject"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-datasubject-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#entities-datasubject-properties">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#entities-datasubject-classes">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#Client">
+  <rdf:Description rdf:about="https://w3id.org/dpv#ElderlyDataSubject">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#DataSubject"/>
-    <skos:prefLabel xml:lang="en">Client</skos:prefLabel>
-    <skos:definition xml:lang="en">Data subjects that are clients or recipients of services</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#Customer"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-datasubject-classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#Visitor">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#DataSubject"/>
-    <skos:prefLabel xml:lang="en">Visitor</skos:prefLabel>
-    <skos:definition xml:lang="en">Data subjects that are temporary visitors</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#DataSubject"/>
+    <skos:prefLabel xml:lang="en">Elderly Data Subject</skos:prefLabel>
+    <skos:definition xml:lang="en">Data subjects that are considered elderly (i.e. based on age)</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#VulnerableDataSubject"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-datasubject-classes"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#LegalEntity">
     <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#DataSubject"/>
     <skos:narrower rdf:resource="https://w3id.org/dpv#DataSubject"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#entities-datasubject-properties">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
   </rdf:Description>
 </rdf:RDF>

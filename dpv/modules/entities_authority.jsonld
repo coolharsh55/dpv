@@ -1,85 +1,5 @@
 [
   {
-    "@id": "https://w3id.org/dpv#DataProtectionAuthority",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#Authority"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#Authority"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "An authority tasked with overseeing legal compliance regarding privacy and data protection laws."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#entities-authority-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Data Protection Authority"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#isAuthorityFor",
-    "@type": [
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://purl.org/dc/dcam/domainIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Authority"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Indicates area, scope, or applicability of an Authority"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#entities-authority-properties"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "is authority for"
-      }
-    ],
-    "https://schema.org/domainIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Authority"
-      }
-    ]
-  },
-  {
     "@id": "https://w3id.org/dpv#hasAuthority",
     "@type": [
       "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
@@ -120,24 +40,18 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#entities-authority-classes",
+    "@id": "https://w3id.org/dpv#entities-authority-properties",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#ConceptScheme"
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#NationalAuthority",
+    "@id": "https://w3id.org/dpv#isAuthorityFor",
     "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "http://www.w3.org/2004/02/skos/core#Concept"
     ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@language": "en",
-        "@value": "(ADMS controlled vocabulary,http://purl.org/adms)"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "http://purl.org/dc/dcam/domainIncludes": [
       {
         "@id": "https://w3id.org/dpv#Authority"
       }
@@ -148,37 +62,24 @@
         "@value": "accepted"
       }
     ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#Authority"
-      }
-    ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "An authority tasked with overseeing legal compliance for a nation"
+        "@value": "Indicates area, scope, or applicability of an Authority"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
       {
-        "@id": "https://w3id.org/dpv#entities-authority-classes"
+        "@id": "https://w3id.org/dpv#entities-authority-properties"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "National Authority"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#GovernmentalOrganisation",
-    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#Authority"
+        "@value": "is authority for"
       }
     ],
-    "http://www.w3.org/2004/02/skos/core#narrower": [
+    "https://schema.org/domainIncludes": [
       {
         "@id": "https://w3id.org/dpv#Authority"
       }
@@ -253,48 +154,15 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#SupraNationalAuthority",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@language": "en",
-        "@value": "(ADMS controlled vocabulary,http://purl.org/adms)"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "@id": "https://w3id.org/dpv#GovernmentalOrganisation",
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
       {
         "@id": "https://w3id.org/dpv#Authority"
       }
     ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
+    "http://www.w3.org/2004/02/skos/core#narrower": [
       {
         "@id": "https://w3id.org/dpv#Authority"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "An authority tasked with overseeing legal compliance for a supra-national union e.g. EU"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#entities-authority-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Supra-National Authority"
       }
     ]
   },
@@ -345,9 +213,141 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#entities-authority-properties",
+    "@id": "https://w3id.org/dpv#SupraNationalAuthority",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@language": "en",
+        "@value": "(ADMS controlled vocabulary,http://purl.org/adms)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#Authority"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#Authority"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "An authority tasked with overseeing legal compliance for a supra-national union e.g. EU"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#entities-authority-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Supra-National Authority"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#DataProtectionAuthority",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#Authority"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#Authority"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "An authority tasked with overseeing legal compliance regarding privacy and data protection laws."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#entities-authority-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Data Protection Authority"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#entities-authority-classes",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#NationalAuthority",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@language": "en",
+        "@value": "(ADMS controlled vocabulary,http://purl.org/adms)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#Authority"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#Authority"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "An authority tasked with overseeing legal compliance for a nation"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#entities-authority-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "National Authority"
+      }
     ]
   }
 ]

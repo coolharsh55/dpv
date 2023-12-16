@@ -621,11 +621,6 @@
   <div class="list-hierarchy">
 <ul class="concept-list">
   <li>
-    <strong>dpv:AlgorithmicLogic</strong>: The algorithmic logic applied or used 
-      <small><a href="https://w3id.org/dpv#AlgorithmicLogic">go to full definition</a></small>
-      
-  </li>
-  <li>
     <strong>dpv:Context</strong>: Contextually relevant information 
       <small><a href="https://w3id.org/dpv#Context">go to full definition</a></small>
       <ul class="concept-list">
@@ -644,6 +639,11 @@
     <strong>dpv:ProcessingContext</strong>: Context or conditions within which processing takes place 
       <small><a href="https://w3id.org/dpv#ProcessingContext">go to full definition</a></small>
       <ul class="concept-list">
+  <li>
+    <strong>dpv:AlgorithmicLogic</strong>: The algorithmic logic applied or used 
+      <small><a href="https://w3id.org/dpv#AlgorithmicLogic">go to full definition</a></small>
+      
+  </li>
   <li>
     <strong>dpv:Automation</strong>: Indication of degree or level of automation associated with specified context 
       <small><a href="https://w3id.org/dpv#Automation">go to full definition</a></small>
@@ -1269,7 +1269,8 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#AutomationOfProcessing">dpv:AutomationOfProcessing</a>
+          <td>             <a href="#ProcessingContext">dpv:ProcessingContext</a> → 
+             <a href="#Context">dpv:Context</a>
 </td>
 </tr><tr>
           <th>Object of relation</th>
@@ -1381,7 +1382,7 @@
 </td>
 </tr>        <tr class="technical-detail">
           <th>Narrower/Specialised types</th>
-          <td><a href="#">:#</a>, <a href=".">:.</a>, <a href="/">:/</a>, <a href="/">:/</a>, <a href="/">:/</a>, <a href="3">:3</a>, <a href=":">::</a>, <a href="d">:d</a>, <a href="d">:d</a>, <a href="d">:d</a>, <a href="f">:f</a>, <a href="g">:g</a>, <a href="h">:h</a>, <a href="i">:i</a>, <a href="i">:i</a>, <a href="M">:M</a>, <a href="o">:o</a>, <a href="o">:o</a>, <a href="p">:p</a>, <a href="p">:p</a>, <a href="r">:r</a>, <a href="s">:s</a>, <a href="t">:t</a>, <a href="t">:t</a>, <a href="v">:v</a>, <a href="w">:w</a>, <a href="y">:y</a></td>
+          <td><a href="https://w3id.org/dpv#Modify">dpv:Modify</a></td>
         </tr><tr>
           <th>Object of relation</th>
           <td><a href="https://w3id.org/dpv#hasProcessing">dpv:hasProcessing</td>
@@ -1653,10 +1654,6 @@
           <td>             <a href="#DecisionMaking">dpv:DecisionMaking</a> → 
              <a href="#ProcessingContext">dpv:ProcessingContext</a> → 
              <a href="#Context">dpv:Context</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
-          <td>             <a href="#AutomationOfProcessing">dpv:AutomationOfProcessing</a>
 </td>
 </tr>        
         <tr class="table-separator"></tr>
@@ -2044,7 +2041,7 @@
           <td><a href="https://w3id.org/dpv#Duration">dpv:Duration</a>, <a href="https://w3id.org/dpv#Frequency">dpv:Frequency</a>, <a href="https://w3id.org/dpv#Importance">dpv:Importance</a>, <a href="https://w3id.org/dpv#Justification">dpv:Justification</a>, <a href="https://w3id.org/dpv#Necessity">dpv:Necessity</a>, <a href="https://w3id.org/dpv#ProcessingContext">dpv:ProcessingContext</a>, <a href="https://w3id.org/dpv#Scope">dpv:Scope</a>, <a href="https://w3id.org/dpv#Status">dpv:Status</a></td>
         </tr><tr>
           <th>Subject of relation</th>
-          <td><a href="https://w3id.org/dpv#hasProhibition">dpv:hasProhibition, <a href="https://w3id.org/dpv#hasPermission">dpv:hasPermission, <a href="https://w3id.org/dpv#hasObligation">dpv:hasObligation, <a href="https://w3id.org/dpv#hasRule">dpv:hasRule</td>
+          <td><a href="https://w3id.org/dpv#hasRule">dpv:hasRule, <a href="https://w3id.org/dpv#hasProhibition">dpv:hasProhibition, <a href="https://w3id.org/dpv#hasObligation">dpv:hasObligation, <a href="https://w3id.org/dpv#hasPermission">dpv:hasPermission</td>
         </tr><tr>
           <th>Object of relation</th>
           <td><a href="https://w3id.org/dpv#hasContext">dpv:hasContext</td>
@@ -2320,7 +2317,7 @@
 </td>
 </tr>        <tr class="technical-detail">
           <th>Narrower/Specialised types</th>
-          <td><a href="#">:#</a>, <a href=".">:.</a>, <a href="/">:/</a>, <a href="/">:/</a>, <a href="/">:/</a>, <a href="3">:3</a>, <a href=":">::</a>, <a href="a">:a</a>, <a href="a">:a</a>, <a href="a">:a</a>, <a href="a">:a</a>, <a href="b">:b</a>, <a href="B">:B</a>, <a href="b">:b</a>, <a href="c">:c</a>, <a href="d">:d</a>, <a href="d">:d</a>, <a href="D">:D</a>, <a href="d">:d</a>, <a href="D">:D</a>, <a href="e">:e</a>, <a href="e">:e</a>, <a href="g">:g</a>, <a href="h">:h</a>, <a href="h">:h</a>, <a href="i">:i</a>, <a href="i">:i</a>, <a href="j">:j</a>, <a href="l">:l</a>, <a href="o">:o</a>, <a href="p">:p</a>, <a href="p">:p</a>, <a href="P">:P</a>, <a href="r">:r</a>, <a href="s">:s</a>, <a href="s">:s</a>, <a href="S">:S</a>, <a href="t">:t</a>, <a href="t">:t</a>, <a href="t">:t</a>, <a href="t">:t</a>, <a href="t">:t</a>, <a href="u">:u</a>, <a href="u">:u</a>, <a href="v">:v</a>, <a href="w">:w</a>, <a href="y">:y</a></td>
+          <td><a href="https://w3id.org/dpv#DataPublishedByDataSubject">dpv:DataPublishedByDataSubject</a></td>
         </tr><tr>
           <th>Object of relation</th>
           <td><a href="https://w3id.org/dpv#hasDataSource">dpv:hasDataSource</td>
@@ -2484,7 +2481,7 @@
 </td>
 </tr>        <tr class="technical-detail">
           <th>Narrower/Specialised types</th>
-          <td><a href="#">:#</a>, <a href=".">:.</a>, <a href="/">:/</a>, <a href="/">:/</a>, <a href="/">:/</a>, <a href="3">:3</a>, <a href=":">::</a>, <a href="A">:A</a>, <a href="a">:a</a>, <a href="a">:a</a>, <a href="c">:c</a>, <a href="d">:d</a>, <a href="d">:d</a>, <a href="d">:d</a>, <a href="D">:D</a>, <a href="e">:e</a>, <a href="e">:e</a>, <a href="g">:g</a>, <a href="g">:g</a>, <a href="h">:h</a>, <a href="i">:i</a>, <a href="i">:i</a>, <a href="i">:i</a>, <a href="i">:i</a>, <a href="k">:k</a>, <a href="m">:m</a>, <a href="M">:M</a>, <a href="n">:n</a>, <a href="n">:n</a>, <a href="o">:o</a>, <a href="o">:o</a>, <a href="o">:o</a>, <a href="p">:p</a>, <a href="p">:p</a>, <a href="r">:r</a>, <a href="s">:s</a>, <a href="s">:s</a>, <a href="t">:t</a>, <a href="t">:t</a>, <a href="t">:t</a>, <a href="t">:t</a>, <a href="u">:u</a>, <a href="v">:v</a>, <a href="w">:w</a></td>
+          <td><a href="https://w3id.org/dpv#AutomatedDecisionMaking">dpv:AutomatedDecisionMaking</a></td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -2535,7 +2532,7 @@
 </td>
 </tr>        <tr class="technical-detail">
           <th>Narrower/Specialised types</th>
-          <td><a href="#">:#</a>, <a href=".">:.</a>, <a href="/">:/</a>, <a href="/">:/</a>, <a href="/">:/</a>, <a href="3">:3</a>, <a href=":">::</a>, <a href="d">:d</a>, <a href="d">:d</a>, <a href="e">:e</a>, <a href="f">:f</a>, <a href="g">:g</a>, <a href="h">:h</a>, <a href="i">:i</a>, <a href="I">:I</a>, <a href="n">:n</a>, <a href="o">:o</a>, <a href="p">:p</a>, <a href="p">:p</a>, <a href="r">:r</a>, <a href="r">:r</a>, <a href="s">:s</a>, <a href="t">:t</a>, <a href="t">:t</a>, <a href="v">:v</a>, <a href="w">:w</a></td>
+          <td><a href="https://w3id.org/dpv#Infer">dpv:Infer</a></td>
         </tr><tr>
           <th>Object of relation</th>
           <td><a href="https://w3id.org/dpv#hasProcessing">dpv:hasProcessing</td>
@@ -5279,7 +5276,7 @@
 </td>
 </tr>        <tr class="technical-detail">
           <th>Narrower/Specialised types</th>
-          <td><a href="#">:#</a>, <a href=".">:.</a>, <a href="/">:/</a>, <a href="/">:/</a>, <a href="/">:/</a>, <a href="3">:3</a>, <a href=":">::</a>, <a href="c">:c</a>, <a href="d">:d</a>, <a href="d">:d</a>, <a href="e">:e</a>, <a href="g">:g</a>, <a href="h">:h</a>, <a href="i">:i</a>, <a href="o">:o</a>, <a href="p">:p</a>, <a href="p">:p</a>, <a href="r">:r</a>, <a href="r">:r</a>, <a href="r">:r</a>, <a href="s">:s</a>, <a href="S">:S</a>, <a href="t">:t</a>, <a href="t">:t</a>, <a href="t">:t</a>, <a href="t">:t</a>, <a href="u">:u</a>, <a href="u">:u</a>, <a href="v">:v</a>, <a href="w">:w</a></td>
+          <td><a href="https://w3id.org/dpv#Structure">dpv:Structure</a></td>
         </tr><tr>
           <th>Object of relation</th>
           <td><a href="https://w3id.org/dpv#hasProcessing">dpv:hasProcessing</td>
@@ -5493,7 +5490,7 @@
 </td>
 </tr>        <tr class="technical-detail">
           <th>Narrower/Specialised types</th>
-          <td><a href="https://w3id.org/dpv#Automation">dpv:Automation</a>, <a href="https://w3id.org/dpv#DataSource">dpv:DataSource</a>, <a href="https://w3id.org/dpv#DecisionMaking">dpv:DecisionMaking</a>, <a href="https://w3id.org/dpv#EvaluationScoring">dpv:EvaluationScoring</a>, <a href="https://w3id.org/dpv#HumanInvolvement">dpv:HumanInvolvement</a>, <a href="https://w3id.org/dpv#InnovativeUseOfTechnology">dpv:InnovativeUseOfTechnology</a>, <a href="https://w3id.org/dpv#ProcessingCondition">dpv:ProcessingCondition</a>, <a href="https://w3id.org/dpv#Scale">dpv:Scale</a>, <a href="https://w3id.org/dpv#SystematicMonitoring">dpv:SystematicMonitoring</a></td>
+          <td><a href="https://w3id.org/dpv#AlgorithmicLogic">dpv:AlgorithmicLogic</a>, <a href="https://w3id.org/dpv#Automation">dpv:Automation</a>, <a href="https://w3id.org/dpv#DataSource">dpv:DataSource</a>, <a href="https://w3id.org/dpv#DecisionMaking">dpv:DecisionMaking</a>, <a href="https://w3id.org/dpv#EvaluationScoring">dpv:EvaluationScoring</a>, <a href="https://w3id.org/dpv#HumanInvolvement">dpv:HumanInvolvement</a>, <a href="https://w3id.org/dpv#InnovativeUseOfTechnology">dpv:InnovativeUseOfTechnology</a>, <a href="https://w3id.org/dpv#ProcessingCondition">dpv:ProcessingCondition</a>, <a href="https://w3id.org/dpv#Scale">dpv:Scale</a>, <a href="https://w3id.org/dpv#SystematicMonitoring">dpv:SystematicMonitoring</a></td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -5912,7 +5909,7 @@
 </td>
 </tr>        <tr class="technical-detail">
           <th>Narrower/Specialised types</th>
-          <td><a href="#">:#</a>, <a href=".">:.</a>, <a href="/">:/</a>, <a href="/">:/</a>, <a href="/">:/</a>, <a href="3">:3</a>, <a href=":">::</a>, <a href="c">:c</a>, <a href="c">:c</a>, <a href="d">:d</a>, <a href="d">:d</a>, <a href="d">:d</a>, <a href="E">:E</a>, <a href="e">:e</a>, <a href="e">:e</a>, <a href="e">:e</a>, <a href="g">:g</a>, <a href="g">:g</a>, <a href="h">:h</a>, <a href="h">:h</a>, <a href="i">:i</a>, <a href="i">:i</a>, <a href="i">:i</a>, <a href="o">:o</a>, <a href="o">:o</a>, <a href="p">:p</a>, <a href="p">:p</a>, <a href="r">:r</a>, <a href="R">:R</a>, <a href="r">:r</a>, <a href="R">:R</a>, <a href="r">:r</a>, <a href="s">:s</a>, <a href="s">:s</a>, <a href="t">:t</a>, <a href="t">:t</a>, <a href="t">:t</a>, <a href="v">:v</a>, <a href="w">:w</a>, <a href="x">:x</a></td>
+          <td><a href="https://w3id.org/dpv#RightExerciseRecord">dpv:RightExerciseRecord</a></td>
         </tr><tr>
           <th>Object of relation</th>
           <td><a href="https://w3id.org/dpv#hasProcessing">dpv:hasProcessing</td>
@@ -6868,14 +6865,14 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#Duration">dpv:Duration</a> → 
+          <td>             <a href="#StorageCondition">dpv:StorageCondition</a> → 
+             <a href="#ProcessingCondition">dpv:ProcessingCondition</a> → 
+             <a href="#ProcessingContext">dpv:ProcessingContext</a> → 
              <a href="#Context">dpv:Context</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#StorageCondition">dpv:StorageCondition</a> → 
-             <a href="#ProcessingCondition">dpv:ProcessingCondition</a> → 
-             <a href="#ProcessingContext">dpv:ProcessingContext</a> → 
+          <td>             <a href="#Duration">dpv:Duration</a> → 
              <a href="#Context">dpv:Context</a>
 </td>
 </tr>        
@@ -7290,7 +7287,7 @@
 </td>
 </tr>        <tr class="technical-detail">
           <th>Narrower/Specialised types</th>
-          <td><a href="#">:#</a>, <a href=".">:.</a>, <a href="/">:/</a>, <a href="/">:/</a>, <a href="/">:/</a>, <a href="3">:3</a>, <a href=":">::</a>, <a href="d">:d</a>, <a href="d">:d</a>, <a href="e">:e</a>, <a href="g">:g</a>, <a href="h">:h</a>, <a href="i">:i</a>, <a href="M">:M</a>, <a href="o">:o</a>, <a href="o">:o</a>, <a href="p">:p</a>, <a href="p">:p</a>, <a href="r">:r</a>, <a href="s">:s</a>, <a href="t">:t</a>, <a href="t">:t</a>, <a href="v">:v</a>, <a href="v">:v</a>, <a href="w">:w</a></td>
+          <td><a href="https://w3id.org/dpv#Move">dpv:Move</a></td>
         </tr><tr>
           <th>Object of relation</th>
           <td><a href="https://w3id.org/dpv#hasProcessing">dpv:hasProcessing</td>
