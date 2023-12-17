@@ -124,11 +124,22 @@ VOCABS = {
         },
     },
     # LEGAL VOCABS
-    # 'legal-eu': {
-    #     'vocab': f'{IMPORT_PATH}/legal/eu/legal-eu.ttl',
-    #     'template': 'template_legal_jurisdiction.jinja2',
-    #     'export': f'{EXPORT_PATH}/legal/eu',
-    # },
+    'legal-eu': {
+        'vocab': f'{IMPORT_PATH}/legal/eu/legal-eu.ttl',
+        'template': 'template_legal_jurisdiction.jinja2',
+        'export': f'{EXPORT_PATH}/legal/eu',
+        'modules': {
+            'legal': f'{IMPORT_PATH}/legal/eu/legal-eu.ttl',
+        }
+    },
+    'legal-de': {
+        'vocab': f'{IMPORT_PATH}/legal/de/legal-de.ttl',
+        'template': 'template_legal_jurisdiction.jinja2',
+        'export': f'{EXPORT_PATH}/legal/de',
+        'modules': {
+            'legal': f'{IMPORT_PATH}/legal/de/legal-de.ttl',
+        }
+    },
     'eu-gdpr': {
         'vocab': f'{IMPORT_PATH}/legal/eu/gdpr/eu-gdpr.ttl',
         'template': 'template_legal_eu_gdpr.jinja2',
@@ -270,6 +281,8 @@ class DATA(object):
         module_data_temp = {}
         for s, _, _ in graph:
             term = s.n3(graph.namespace_manager)
+            if term.startswith('_'): # BNode
+                continue
             module_data_temp[term] = DATA.data[vocab][term]
             if 'module' not in DATA.data[vocab][term]:
                 DATA.data[vocab][term]['module'] = []
@@ -511,6 +524,25 @@ def get_prop_with_term_range(term, vocab):
     return props
 
 
+def expand_time_interval(term, prop):
+    if prop not in term:
+        return ''
+    interval = DATA.concepts[term[prop]]
+    returnval = ''
+    if 'time:hasBeginning' in interval:
+        start = DATA.concepts[interval['time:hasBeginning']]['time:inXSDDate']
+        returnval = str(start)
+    else:
+        returnval = 'N/A'
+    returnval += '/'
+    if 'time:hasEnd' in interval:
+        end = DATA.concepts[interval['time:hasEnd']]['time:inXSDDate']
+        returnval += str(end)
+    else:
+        returnval += 'ongoing'
+    return returnval
+
+
 from jinja2 import FileSystemLoader, Environment
 template_loader = FileSystemLoader(searchpath=f'{TEMPLATE_PATH}')
 template_env = Environment(
@@ -534,6 +566,7 @@ JINJA2_FILTERS = {
     'filter_type': filter_type,
     'get_prop_with_term_domain': get_prop_with_term_domain,
     'get_prop_with_term_range': get_prop_with_term_range,
+    'expand_time_interval': expand_time_interval,
 }
 template_env.filters.update(JINJA2_FILTERS)
 
@@ -563,14 +596,16 @@ if __name__ == '__main__':
             fd.write(template.render(
                 data=DATA.data,
                 vocab=DATA.data[vocab],
-                modules=DATA.modules[vocab]))
+                modules=DATA.modules[vocab],
+                vocab_name=vocab))
         DEBUG(f'wrote {vocab} spec at {vocab_data["export"]}/index.html')
         # TODO: replace duplicate code with filecopy
         with open(f'{vocab_data["export"]}/{vocab}.html', 'w+') as fd:
             fd.write(template.render(
                 data=DATA.data,
                 vocab=DATA.data[vocab],
-                modules=DATA.modules[vocab]))
+                modules=DATA.modules[vocab],
+                vocab_name=vocab))
         DEBUG(f'wrote {vocab} spec at {vocab_data["export"]}/{vocab}.html')
 
         if 'module-template' not in vocab_data:
@@ -586,5 +621,6 @@ if __name__ == '__main__':
                 fd.write(template.render(
                     data=data,
                     vocab=DATA.data[vocab],
-                    modules=DATA.modules[vocab]))
+                    modules=DATA.modules[vocab],
+                    vocab_name=vocab))
                 DEBUG(f'wrote {vocab}/{module} docs at {vocab_data["export"]}/modules/{module}.html')

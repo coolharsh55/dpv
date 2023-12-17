@@ -7,6 +7,7 @@
 @prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix time: <http://www.w3.org/2006/time#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 loc:AD a rdfs:Class,
@@ -145,7 +146,13 @@ loc:AT a rdfs:Class,
         skos:Concept,
         dpv:Country ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Country ;
+    skos:broader dpv:Country,
+        loc:EEA,
+        loc:EEA30,
+        loc:EEA31,
+        loc:EU,
+        loc:EU27-1,
+        loc:EU28 ;
     skos:inScheme loc:locations-classes ;
     skos:prefLabel "Austria"@en ;
     dpv:iso_alpha2 "AT" ;
@@ -241,7 +248,13 @@ loc:BE a rdfs:Class,
         skos:Concept,
         dpv:Country ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Country ;
+    skos:broader dpv:Country,
+        loc:EEA,
+        loc:EEA30,
+        loc:EEA31,
+        loc:EU,
+        loc:EU27-1,
+        loc:EU28 ;
     skos:inScheme loc:locations-classes ;
     skos:prefLabel "Belgium"@en ;
     dpv:iso_alpha2 "BE" ;
@@ -265,7 +278,13 @@ loc:BG a rdfs:Class,
         skos:Concept,
         dpv:Country ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Country ;
+    skos:broader dpv:Country,
+        loc:EEA,
+        loc:EEA30,
+        loc:EEA31,
+        loc:EU,
+        loc:EU27-1,
+        loc:EU28 ;
     skos:inScheme loc:locations-classes ;
     skos:prefLabel "Bulgaria"@en ;
     dpv:iso_alpha2 "BG" ;
@@ -661,7 +680,13 @@ loc:CY a rdfs:Class,
         skos:Concept,
         dpv:Country ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Country ;
+    skos:broader dpv:Country,
+        loc:EEA,
+        loc:EEA30,
+        loc:EEA31,
+        loc:EU,
+        loc:EU27-1,
+        loc:EU28 ;
     skos:inScheme loc:locations-classes ;
     skos:prefLabel "Cyprus"@en ;
     dpv:iso_alpha2 "CY" ;
@@ -673,7 +698,13 @@ loc:CZ a rdfs:Class,
         skos:Concept,
         dpv:Country ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Country ;
+    skos:broader dpv:Country,
+        loc:EEA,
+        loc:EEA30,
+        loc:EEA31,
+        loc:EU,
+        loc:EU27-1,
+        loc:EU28 ;
     skos:inScheme loc:locations-classes ;
     skos:prefLabel "Czechia"@en ;
     dpv:iso_alpha2 "CZ" ;
@@ -685,7 +716,13 @@ loc:DE a rdfs:Class,
         skos:Concept,
         dpv:Country ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Country ;
+    skos:broader dpv:Country,
+        loc:EEA,
+        loc:EEA30,
+        loc:EEA31,
+        loc:EU,
+        loc:EU27-1,
+        loc:EU28 ;
     skos:inScheme loc:locations-classes ;
     skos:narrower loc:DE-BB,
         loc:DE-BE,
@@ -869,7 +906,13 @@ loc:DK a rdfs:Class,
         skos:Concept,
         dpv:Country ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Country ;
+    skos:broader dpv:Country,
+        loc:EEA,
+        loc:EEA30,
+        loc:EEA31,
+        loc:EU,
+        loc:EU27-1,
+        loc:EU28 ;
     skos:inScheme loc:locations-classes ;
     skos:prefLabel "Denmark"@en ;
     dpv:iso_alpha2 "DK" ;
@@ -929,13 +972,143 @@ loc:EE a rdfs:Class,
         skos:Concept,
         dpv:Country ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Country ;
+    skos:broader dpv:Country,
+        loc:EEA,
+        loc:EEA30,
+        loc:EEA31,
+        loc:EU,
+        loc:EU27-1,
+        loc:EU28 ;
     skos:inScheme loc:locations-classes ;
     skos:prefLabel "Estonia"@en ;
     dpv:iso_alpha2 "EE" ;
     dpv:iso_alpha3 "EST" ;
     dpv:iso_numeric "233" ;
     dpv:un_m49 "233" .
+
+loc:EEA a rdfs:Class,
+        skos:Concept,
+        dpv:SupraNationalUnion ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:SupraNationalUnion ;
+    skos:inScheme loc:memberships-classes ;
+    skos:narrower loc:AT,
+        loc:BE,
+        loc:BG,
+        loc:CY,
+        loc:CZ,
+        loc:DE,
+        loc:DK,
+        loc:EE,
+        loc:EEA30,
+        loc:EEA31,
+        loc:ES,
+        loc:FI,
+        loc:FR,
+        loc:GR,
+        loc:HR,
+        loc:HU,
+        loc:IE,
+        loc:IS,
+        loc:IT,
+        loc:LI,
+        loc:LT,
+        loc:LU,
+        loc:LV,
+        loc:MT,
+        loc:NL,
+        loc:NO,
+        loc:PL,
+        loc:PT,
+        loc:RO,
+        loc:SE,
+        loc:SI,
+        loc:SK ;
+    skos:prefLabel "European Economic Area (EEA)"@en .
+
+loc:EEA30 a rdfs:Class,
+        skos:Concept,
+        dpv:SupraNationalUnion ;
+    dct:temporal [ a time:ProperInterval ;
+            time:hasBeginning [ time:inXSDDate "2020-02-01"^^xsd:date ] ] ;
+    sw:term_status "accepted"@en ;
+    skos:broader loc:EEA ;
+    skos:inScheme loc:memberships-classes ;
+    skos:narrower loc:AT,
+        loc:BE,
+        loc:BG,
+        loc:CY,
+        loc:CZ,
+        loc:DE,
+        loc:DK,
+        loc:EE,
+        loc:ES,
+        loc:FI,
+        loc:FR,
+        loc:GB,
+        loc:GR,
+        loc:HR,
+        loc:HU,
+        loc:IE,
+        loc:IS,
+        loc:IT,
+        loc:LI,
+        loc:LT,
+        loc:LU,
+        loc:LV,
+        loc:MT,
+        loc:NL,
+        loc:NO,
+        loc:PL,
+        loc:PT,
+        loc:RO,
+        loc:SE,
+        loc:SI,
+        loc:SK ;
+    skos:prefLabel "EEA 30 Member States"@en ;
+    skos:scopeNote "European Economic Area (EEA-31) with 30 Member States post Brexit"@en .
+
+loc:EEA31 a rdfs:Class,
+        skos:Concept,
+        dpv:SupraNationalUnion ;
+    dct:temporal [ a time:ProperInterval ;
+            time:hasBeginning [ time:inXSDDate "2014-04-12"^^xsd:date ] ;
+            time:hasEnd [ time:inXSDDate "2020-01-31"^^xsd:date ] ] ;
+    sw:term_status "accepted"@en ;
+    skos:broader loc:EEA ;
+    skos:inScheme loc:memberships-classes ;
+    skos:narrower loc:AT,
+        loc:BE,
+        loc:BG,
+        loc:CY,
+        loc:CZ,
+        loc:DE,
+        loc:DK,
+        loc:EE,
+        loc:ES,
+        loc:FI,
+        loc:FR,
+        loc:GR,
+        loc:HR,
+        loc:HU,
+        loc:IE,
+        loc:IS,
+        loc:IT,
+        loc:LI,
+        loc:LT,
+        loc:LU,
+        loc:LV,
+        loc:MT,
+        loc:NL,
+        loc:NO,
+        loc:PL,
+        loc:PT,
+        loc:RO,
+        loc:SE,
+        loc:SI,
+        loc:SK ;
+    skos:prefLabel "EEA 31 Member States"@en ;
+    skos:scopeNote "European Economic Area (EEA-31) with 30 Member States pre Brexit"@en .
 
 loc:EG a rdfs:Class,
         skos:Concept,
@@ -977,7 +1150,13 @@ loc:ES a rdfs:Class,
         skos:Concept,
         dpv:Country ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Country ;
+    skos:broader dpv:Country,
+        loc:EEA,
+        loc:EEA30,
+        loc:EEA31,
+        loc:EU,
+        loc:EU27-1,
+        loc:EU28 ;
     skos:inScheme loc:locations-classes ;
     skos:prefLabel "Spain"@en ;
     dpv:iso_alpha2 "ES" ;
@@ -997,11 +1176,132 @@ loc:ET a rdfs:Class,
     dpv:iso_numeric "231" ;
     dpv:un_m49 "231" .
 
+loc:EU a rdfs:Class,
+        skos:Concept,
+        dpv:SupraNationalUnion ;
+    sw:term_status "accepted"@en ;
+    skos:broader dpv:SupraNationalUnion ;
+    skos:inScheme loc:memberships-classes ;
+    skos:narrower loc:AT,
+        loc:BE,
+        loc:BG,
+        loc:CY,
+        loc:CZ,
+        loc:DE,
+        loc:DK,
+        loc:EE,
+        loc:ES,
+        loc:EU27-1,
+        loc:EU28,
+        loc:FI,
+        loc:FR,
+        loc:GR,
+        loc:HR,
+        loc:HU,
+        loc:IE,
+        loc:IT,
+        loc:LT,
+        loc:LU,
+        loc:LV,
+        loc:MT,
+        loc:NL,
+        loc:PL,
+        loc:PT,
+        loc:RO,
+        loc:SE,
+        loc:SI,
+        loc:SK ;
+    skos:prefLabel "European Union (EU)"@en .
+
+loc:EU27-1 a rdfs:Class,
+        skos:Concept,
+        dpv:SupraNationalUnion ;
+    dct:temporal [ a time:ProperInterval ;
+            time:hasBeginning [ time:inXSDDate "2020-02-01"^^xsd:date ] ] ;
+    sw:term_status "accepted"@en ;
+    skos:broader loc:EU ;
+    skos:inScheme loc:memberships-classes ;
+    skos:narrower loc:AT,
+        loc:BE,
+        loc:BG,
+        loc:CY,
+        loc:CZ,
+        loc:DE,
+        loc:DK,
+        loc:EE,
+        loc:ES,
+        loc:FI,
+        loc:FR,
+        loc:GR,
+        loc:HR,
+        loc:HU,
+        loc:IE,
+        loc:IT,
+        loc:LT,
+        loc:LU,
+        loc:LV,
+        loc:MT,
+        loc:NL,
+        loc:PL,
+        loc:PT,
+        loc:RO,
+        loc:SE,
+        loc:SI,
+        loc:SK ;
+    skos:prefLabel "EU 27 Member States"@en ;
+    skos:scopeNote "European Union (EU-27-1) with 27 Member States post Brexit"@en .
+
+loc:EU28 a rdfs:Class,
+        skos:Concept,
+        dpv:SupraNationalUnion ;
+    dct:temporal [ a time:ProperInterval ;
+            time:hasBeginning [ time:inXSDDate "2013-07-01"^^xsd:date ] ;
+            time:hasEnd [ time:inXSDDate "2020-01-31"^^xsd:date ] ] ;
+    sw:term_status "accepted"@en ;
+    skos:broader loc:EU ;
+    skos:inScheme loc:memberships-classes ;
+    skos:narrower loc:AT,
+        loc:BE,
+        loc:BG,
+        loc:CY,
+        loc:CZ,
+        loc:DE,
+        loc:DK,
+        loc:EE,
+        loc:ES,
+        loc:FI,
+        loc:FR,
+        loc:GB,
+        loc:GR,
+        loc:HR,
+        loc:HU,
+        loc:IE,
+        loc:IT,
+        loc:LT,
+        loc:LU,
+        loc:LV,
+        loc:MT,
+        loc:NL,
+        loc:PL,
+        loc:PT,
+        loc:RO,
+        loc:SE,
+        loc:SI,
+        loc:SK ;
+    skos:prefLabel "EU 28 Member States"@en ;
+    skos:scopeNote "European Union (EU-27-1) with 27 Member States pre Brexit"@en .
+
 loc:FI a rdfs:Class,
         skos:Concept,
         dpv:Country ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Country ;
+    skos:broader dpv:Country,
+        loc:EEA,
+        loc:EEA30,
+        loc:EEA31,
+        loc:EU,
+        loc:EU27-1,
+        loc:EU28 ;
     skos:inScheme loc:locations-classes ;
     skos:prefLabel "Finland"@en ;
     dpv:iso_alpha2 "FI" ;
@@ -1061,7 +1361,13 @@ loc:FR a rdfs:Class,
         skos:Concept,
         dpv:Country ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Country ;
+    skos:broader dpv:Country,
+        loc:EEA,
+        loc:EEA30,
+        loc:EEA31,
+        loc:EU,
+        loc:EU27-1,
+        loc:EU28 ;
     skos:inScheme loc:locations-classes ;
     skos:prefLabel "France"@en ;
     dpv:iso_alpha2 "FR" ;
@@ -1085,7 +1391,9 @@ loc:GB a rdfs:Class,
         skos:Concept,
         dpv:Country ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Country ;
+    skos:broader dpv:Country,
+        loc:EEA30,
+        loc:EU28 ;
     skos:inScheme loc:locations-classes ;
     skos:prefLabel "United Kingdom of Great Britain and Northern Ireland"@en ;
     dpv:iso_alpha2 "GB" ;
@@ -1229,7 +1537,13 @@ loc:GR a rdfs:Class,
         skos:Concept,
         dpv:Country ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Country ;
+    skos:broader dpv:Country,
+        loc:EEA,
+        loc:EEA30,
+        loc:EEA31,
+        loc:EU,
+        loc:EU27-1,
+        loc:EU28 ;
     skos:inScheme loc:locations-classes ;
     skos:prefLabel "Greece"@en ;
     dpv:iso_alpha2 "GR" ;
@@ -1337,7 +1651,13 @@ loc:HR a rdfs:Class,
         skos:Concept,
         dpv:Country ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Country ;
+    skos:broader dpv:Country,
+        loc:EEA,
+        loc:EEA30,
+        loc:EEA31,
+        loc:EU,
+        loc:EU27-1,
+        loc:EU28 ;
     skos:inScheme loc:locations-classes ;
     skos:prefLabel "Croatia"@en ;
     dpv:iso_alpha2 "HR" ;
@@ -1361,7 +1681,13 @@ loc:HU a rdfs:Class,
         skos:Concept,
         dpv:Country ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Country ;
+    skos:broader dpv:Country,
+        loc:EEA,
+        loc:EEA30,
+        loc:EEA31,
+        loc:EU,
+        loc:EU27-1,
+        loc:EU28 ;
     skos:inScheme loc:locations-classes ;
     skos:prefLabel "Hungary"@en ;
     dpv:iso_alpha2 "HU" ;
@@ -1385,7 +1711,13 @@ loc:IE a rdfs:Class,
         skos:Concept,
         dpv:Country ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Country ;
+    skos:broader dpv:Country,
+        loc:EEA,
+        loc:EEA30,
+        loc:EEA31,
+        loc:EU,
+        loc:EU27-1,
+        loc:EU28 ;
     skos:inScheme loc:locations-classes ;
     skos:prefLabel "Ireland"@en ;
     dpv:iso_alpha2 "IE" ;
@@ -1469,7 +1801,10 @@ loc:IS a rdfs:Class,
         skos:Concept,
         dpv:Country ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Country ;
+    skos:broader dpv:Country,
+        loc:EEA,
+        loc:EEA30,
+        loc:EEA31 ;
     skos:inScheme loc:locations-classes ;
     skos:prefLabel "Iceland"@en ;
     dpv:iso_alpha2 "IS" ;
@@ -1481,7 +1816,13 @@ loc:IT a rdfs:Class,
         skos:Concept,
         dpv:Country ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Country ;
+    skos:broader dpv:Country,
+        loc:EEA,
+        loc:EEA30,
+        loc:EEA31,
+        loc:EU,
+        loc:EU27-1,
+        loc:EU28 ;
     skos:inScheme loc:locations-classes ;
     skos:prefLabel "Italy"@en ;
     dpv:iso_alpha2 "IT" ;
@@ -1709,7 +2050,10 @@ loc:LI a rdfs:Class,
         skos:Concept,
         dpv:Country ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Country ;
+    skos:broader dpv:Country,
+        loc:EEA,
+        loc:EEA30,
+        loc:EEA31 ;
     skos:inScheme loc:locations-classes ;
     skos:prefLabel "Liechtenstein"@en ;
     dpv:iso_alpha2 "LI" ;
@@ -1757,7 +2101,13 @@ loc:LT a rdfs:Class,
         skos:Concept,
         dpv:Country ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Country ;
+    skos:broader dpv:Country,
+        loc:EEA,
+        loc:EEA30,
+        loc:EEA31,
+        loc:EU,
+        loc:EU27-1,
+        loc:EU28 ;
     skos:inScheme loc:locations-classes ;
     skos:prefLabel "Lithuania"@en ;
     dpv:iso_alpha2 "LT" ;
@@ -1769,7 +2119,13 @@ loc:LU a rdfs:Class,
         skos:Concept,
         dpv:Country ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Country ;
+    skos:broader dpv:Country,
+        loc:EEA,
+        loc:EEA30,
+        loc:EEA31,
+        loc:EU,
+        loc:EU27-1,
+        loc:EU28 ;
     skos:inScheme loc:locations-classes ;
     skos:prefLabel "Luxembourg"@en ;
     dpv:iso_alpha2 "LU" ;
@@ -1781,7 +2137,13 @@ loc:LV a rdfs:Class,
         skos:Concept,
         dpv:Country ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Country ;
+    skos:broader dpv:Country,
+        loc:EEA,
+        loc:EEA30,
+        loc:EEA31,
+        loc:EU,
+        loc:EU27-1,
+        loc:EU28 ;
     skos:inScheme loc:locations-classes ;
     skos:prefLabel "Latvia"@en ;
     dpv:iso_alpha2 "LV" ;
@@ -1997,7 +2359,13 @@ loc:MT a rdfs:Class,
         skos:Concept,
         dpv:Country ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Country ;
+    skos:broader dpv:Country,
+        loc:EEA,
+        loc:EEA30,
+        loc:EEA31,
+        loc:EU,
+        loc:EU27-1,
+        loc:EU28 ;
     skos:inScheme loc:locations-classes ;
     skos:prefLabel "Malta"@en ;
     dpv:iso_alpha2 "MT" ;
@@ -2153,7 +2521,13 @@ loc:NL a rdfs:Class,
         skos:Concept,
         dpv:Country ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Country ;
+    skos:broader dpv:Country,
+        loc:EEA,
+        loc:EEA30,
+        loc:EEA31,
+        loc:EU,
+        loc:EU27-1,
+        loc:EU28 ;
     skos:inScheme loc:locations-classes ;
     skos:prefLabel "Netherlands"@en ;
     dpv:iso_alpha2 "NL" ;
@@ -2165,7 +2539,10 @@ loc:NO a rdfs:Class,
         skos:Concept,
         dpv:Country ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Country ;
+    skos:broader dpv:Country,
+        loc:EEA,
+        loc:EEA30,
+        loc:EEA31 ;
     skos:inScheme loc:locations-classes ;
     skos:prefLabel "Norway"@en ;
     dpv:iso_alpha2 "NO" ;
@@ -2309,7 +2686,13 @@ loc:PL a rdfs:Class,
         skos:Concept,
         dpv:Country ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Country ;
+    skos:broader dpv:Country,
+        loc:EEA,
+        loc:EEA30,
+        loc:EEA31,
+        loc:EU,
+        loc:EU27-1,
+        loc:EU28 ;
     skos:inScheme loc:locations-classes ;
     skos:prefLabel "Poland"@en ;
     dpv:iso_alpha2 "PL" ;
@@ -2369,7 +2752,13 @@ loc:PT a rdfs:Class,
         skos:Concept,
         dpv:Country ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Country ;
+    skos:broader dpv:Country,
+        loc:EEA,
+        loc:EEA30,
+        loc:EEA31,
+        loc:EU,
+        loc:EU27-1,
+        loc:EU28 ;
     skos:inScheme loc:locations-classes ;
     skos:prefLabel "Portugal"@en ;
     dpv:iso_alpha2 "PT" ;
@@ -2429,7 +2818,13 @@ loc:RO a rdfs:Class,
         skos:Concept,
         dpv:Country ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Country ;
+    skos:broader dpv:Country,
+        loc:EEA,
+        loc:EEA30,
+        loc:EEA31,
+        loc:EU,
+        loc:EU27-1,
+        loc:EU28 ;
     skos:inScheme loc:locations-classes ;
     skos:prefLabel "Romania"@en ;
     dpv:iso_alpha2 "RO" ;
@@ -2525,7 +2920,13 @@ loc:SE a rdfs:Class,
         skos:Concept,
         dpv:Country ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Country ;
+    skos:broader dpv:Country,
+        loc:EEA,
+        loc:EEA30,
+        loc:EEA31,
+        loc:EU,
+        loc:EU27-1,
+        loc:EU28 ;
     skos:inScheme loc:locations-classes ;
     skos:prefLabel "Sweden"@en ;
     dpv:iso_alpha2 "SE" ;
@@ -2561,7 +2962,13 @@ loc:SI a rdfs:Class,
         skos:Concept,
         dpv:Country ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Country ;
+    skos:broader dpv:Country,
+        loc:EEA,
+        loc:EEA30,
+        loc:EEA31,
+        loc:EU,
+        loc:EU27-1,
+        loc:EU28 ;
     skos:inScheme loc:locations-classes ;
     skos:prefLabel "Slovenia"@en ;
     dpv:iso_alpha2 "SI" ;
@@ -2585,7 +2992,13 @@ loc:SK a rdfs:Class,
         skos:Concept,
         dpv:Country ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv:Country ;
+    skos:broader dpv:Country,
+        loc:EEA,
+        loc:EEA30,
+        loc:EEA31,
+        loc:EU,
+        loc:EU27-1,
+        loc:EU28 ;
     skos:inScheme loc:locations-classes ;
     skos:prefLabel "Slovakia"@en ;
     dpv:iso_alpha2 "SK" ;
@@ -3784,6 +4197,8 @@ loc:un_m49 a rdf:Property,
 
 loc:locations-properties a skos:ConceptScheme .
 
+loc:memberships-classes a skos:ConceptScheme .
+
 skos:altLabel rdfs:superPropertyOf loc:iso_alpha2,
         loc:iso_alpha3,
         loc:iso_numeric,
@@ -3792,6 +4207,9 @@ skos:altLabel rdfs:superPropertyOf loc:iso_alpha2,
         loc:iso_alpha3,
         loc:iso_numeric,
         loc:un_m49 .
+
+dpv:SupraNationalUnion skos:narrower loc:EEA,
+        loc:EU .
 
 loc:locations-classes a skos:ConceptScheme .
 

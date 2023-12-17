@@ -181,6 +181,7 @@ DPV_FILES = {
         'sheets': (
             'legal-eu',
             'legal-de',
+            'legal-memberships',
             )
     },
     'eu-gdpr': {

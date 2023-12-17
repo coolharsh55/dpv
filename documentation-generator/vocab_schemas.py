@@ -101,6 +101,22 @@ SCHEMA['locations'] = {
     'Resolution': vocab_funcs.construct_resolution, 
 }
 
+SCHEMA['memberships'] = {
+    'Term': vocab_funcs.construct_class,
+    'Label': vocab_funcs.construct_label,
+    'ParentTerm': None,
+    'ParentType': vocab_funcs.construct_parent_taxonomy,
+    'Members': vocab_funcs.construct_skos_narrower,
+    'Start': vocab_funcs.construct_temporal_duration,
+    'End': None,
+    'Usage': vocab_funcs.construct_scope_note,
+    'Created': vocab_funcs.construct_date_created,
+    'Modified': vocab_funcs.construct_date_modified,
+    'Status': vocab_funcs.construct_status,
+    'Contributors': vocab_funcs.construct_contributors,
+    'Resolution': vocab_funcs.construct_resolution, 
+}
+
 SCHEMA['laws'] = {
     'Term': vocab_funcs.construct_class,
     'Label': vocab_funcs.construct_label,

@@ -298,9 +298,19 @@ def construct_un_m49(term, data, namespace, header):
 
 def construct_instance(term, data, namespace, header):
     triples = []
-    term = NAMESPACES[term.split(':')[0]][term.split(':')[1]]
-    triples.append((namespace[data['Term']], RDF.type, term))
-    triples.append((namespace[data['Term']], RDF.type, SKOS.concept))
+    for parent in term.split(','):
+        parent = NAMESPACES[parent.split(':')[0]][parent.split(':')[1]]
+        triples.append((namespace[data['Term']], RDF.type, parent))
+        triples.append((namespace[data['Term']], RDF.type, SKOS.Concept))
+    return triples
+
+
+def construct_skos_narrower(term, data, namespace, header):
+    triples = []
+    for item in term.split(','):
+        item = NAMESPACES[item.split(':')[0]][item.split(':')[1]]
+        triples.append((namespace[data['Term']], SKOS.narrower, item))
+        triples.append((item, SKOS.broader, namespace[data['Term']]))
     return triples
 
 

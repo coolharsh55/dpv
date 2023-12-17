@@ -225,6 +225,9 @@ CSVFILES = {
             'locations': f'{IMPORT_CSV_PATH}/location.csv',
             'properties': f'{IMPORT_CSV_PATH}/location_properties.csv',
         },
+        'memberships': {
+            'memberships': f'{IMPORT_CSV_PATH}/legal-memberships.csv',
+        },
     },
     # Laws-Authorities
     'legal-eu': {

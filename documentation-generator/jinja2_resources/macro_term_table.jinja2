@@ -3,7 +3,7 @@
   {% endif %}
   {% for iri, concept in vocab.items()|sort(attribute=0) %}
     {% if filter == "external" %}
-      {% set inscope = not concept['_dpvterm'] %}
+      {% set inscope = not concept['_dpvterm'] and concept['prefix'] != '_' %}
       {% set term = concept['skos:prefLabel'] %}
     {% else %}
       {% set inscope = concept['_dpvterm'] %}
