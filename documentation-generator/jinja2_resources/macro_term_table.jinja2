@@ -1,4 +1,4 @@
-{% macro index_concepts(vocab, filter, skip_heading=False) %}
+{% macro index_concepts(vocab, vocab_name, filter, skip_heading=False) %}
   {% if not skip_heading %}<h3>{{filter|title}}</h3>
   {% endif %}
   {% for iri, concept in vocab.items()|sort(attribute=0) %}
@@ -21,7 +21,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>{{ concept['term'] }}</dfn></td>
+          <td><dfn>{% if concept['prefix'] != vocab_name and filter != "external" %}{{ concept['prefix']}}:{% endif %}{{ concept['term'] }}</dfn></td>
           <th>Prefix</th>
           <td>{{ concept['prefix'] }}</td>
         </tr>

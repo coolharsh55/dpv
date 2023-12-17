@@ -164,6 +164,14 @@ VOCABS = {
             'legal': f'{IMPORT_PATH}/legal/us/legal-us.ttl',
         }
     },
+    'legal': {
+        'vocab': f'{IMPORT_PATH}/legal/legal.ttl',
+        'template': 'template_legal_jurisdiction.jinja2',
+        'export': f'{EXPORT_PATH}/legal',
+        'modules': {
+            'legal': f'{IMPORT_PATH}/legal/legal.ttl',
+        }
+    },
     # EU Laws
     'eu-gdpr': {
         'vocab': f'{IMPORT_PATH}/legal/eu/gdpr/eu-gdpr.ttl',
@@ -285,7 +293,7 @@ class DATA(object):
             if '_type' not in concept:
                 concept['_type'] = 'notcp'
                 # DEBUG(f"concept has no type {concept['prefixed']}")
-
+        # vocab_data['_name'] = vocab
         # for scheme in DATA.schemes:
         #     DEBUG(f'registered scheme {prefix_from_iri(scheme)}')
         return
@@ -476,21 +484,25 @@ def ensure_list(item):
     return item
 
 
-def filter_type(itemlist, itemtype, vocab=None):
-    results = []
+def filter_type(itemlist, itemtype, vocab=None, debug=None):
+    # if debug:
+    #     DEBUG(debug)
     # DEBUG(itemtype)
     # DEBUG(itemlist)
+    results = []
     for item in itemlist:
         if type(item) is dict:
             itemvocab = item['vocab']
         else:
+            if type(item) != str:
+                item = prefix_from_iri(item)
             itemvocab = item.split(':')[0]
-            # DEBUG(item)
             if itemvocab not in DATA.data:
                 continue
             item = DATA.data[itemvocab][item]
-        if not vocab or vocab != itemvocab or 'rdf:type' not in item:
-            continue
+        if vocab != itemvocab or 'rdf:type' not in item:
+            if vocab is not None:
+                continue
         parents = item['rdf:type']
         if type(parents) is not list:
             parents = [parents]
@@ -498,6 +510,7 @@ def filter_type(itemlist, itemtype, vocab=None):
             prefixed = prefix_from_iri(p)
             if prefixed == itemtype:
                 results.append(item)
+    # DEBUG(results)
     return results
 
 
@@ -568,6 +581,11 @@ def expand_time_interval(term, prop):
     return returnval
 
 
+def sort_iris(items):
+    return sorted(items, key=str)
+
+
+
 from jinja2 import FileSystemLoader, Environment
 template_loader = FileSystemLoader(searchpath=f'{TEMPLATE_PATH}')
 template_env = Environment(
@@ -592,6 +610,7 @@ JINJA2_FILTERS = {
     'get_prop_with_term_domain': get_prop_with_term_domain,
     'get_prop_with_term_range': get_prop_with_term_range,
     'expand_time_interval': expand_time_interval,
+    'sort_iris': sort_iris,
 }
 template_env.filters.update(JINJA2_FILTERS)
 

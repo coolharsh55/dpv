@@ -342,7 +342,9 @@ RDF_STRUCTURE = {
         'main': f'{EXPORT_RDF_PATH}/loc',
         'modules': f'{EXPORT_RDF_PATH}/loc/modules',
     },
-    
+    'legal': {  # Consolidated graph of all legal data
+        'main': f'{EXPORT_RDF_PATH}/legal',
+    },
     'legal-eu': {
         'main': f'{EXPORT_RDF_PATH}/legal/eu',
         'modules': f'{EXPORT_RDF_PATH}/legal/eu/modules',

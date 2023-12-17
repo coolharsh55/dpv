@@ -154,3 +154,29 @@ for vocab, vocab_data in CSVFILES.items():
 INFO('-'*40)
 INFO(f'TOTAL triples: {len(global_triples)} accepted')
 INFO('-'*40)
+
+
+INFO('Creating collated collections')
+INFO('-'*40)
+
+collations = ({
+    'name': 'legal',
+    'input': (
+        f'{EXPORT_RDF_PATH}/legal/eu/legal-eu.ttl',
+        f'{EXPORT_RDF_PATH}/legal/de/legal-de.ttl',
+        f'{EXPORT_RDF_PATH}/legal/ie/legal-ie.ttl',
+        f'{EXPORT_RDF_PATH}/legal/gb/legal-gb.ttl',
+        f'{EXPORT_RDF_PATH}/legal/us/legal-us.ttl',
+        ),
+    'output': f'{EXPORT_RDF_PATH}/legal/legal',
+},)
+
+for collation in collations:
+    INFO(f"Collating {collation['name']}")
+    triples = Graph()
+    for filepath in collation['input']:
+        triples.parse(filepath)
+    serialize_graph(triples, collation['output'])
+    INFO(f"Collected {len(triples)} triples into {collation['output']}")
+
+INFO('-'*40)

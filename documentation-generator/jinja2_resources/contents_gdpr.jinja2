@@ -238,10 +238,10 @@
   <section id="vocabulary">
 <h2>Vocabulary Index</h2>
   <section id="dpv-classes">
-    {{ index_concepts(vocab, filter="classes") }}
+    {{ index_concepts(vocab, vocab_name, filter="classes") }}
   </section>
   <section id="dpv-properties">
-    {{ index_concepts(vocab, filter="properties") }}
+    {{ index_concepts(vocab, vocab_name, filter="properties") }}
   </section>
   <section id="external-concepts">
     <p>DPV uses the following terms from [[RDF]] and  [[RDFS]] with their defined meanings:</p>
@@ -252,7 +252,7 @@
       <li id="rdf:Property"><dfn>rdf:Property</dfn> to denote a concept is a property or a relation</li>
       </ul>
     <p>The following external concepts are re-used within DPV:</p>
-    {{ index_concepts(vocab, filter="external") }}
+    {{ index_concepts(vocab, vocab_name, filter="external") }}
   </section>
 </section>
 {% endblock VOCAB %}
