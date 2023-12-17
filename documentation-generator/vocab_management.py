@@ -226,7 +226,7 @@ CSVFILES = {
             'properties': f'{IMPORT_CSV_PATH}/location_properties.csv',
         },
         'memberships': {
-            'memberships': f'{IMPORT_CSV_PATH}/legal-memberships.csv',
+            'memberships': f'{IMPORT_CSV_PATH}/location_memberships.csv',
         },
     },
     # Laws-Authorities
@@ -240,6 +240,22 @@ CSVFILES = {
             'laws': f'{IMPORT_CSV_PATH}/legal-de.csv',
         },
     },
+    'legal-gb': {
+        'gb': {
+            'laws': f'{IMPORT_CSV_PATH}/legal-gb.csv',
+        },
+    },
+    'legal-ie': {
+        'ie': {
+            'laws': f'{IMPORT_CSV_PATH}/legal-ie.csv',
+        },
+    },
+    'legal-us': {
+        'us': {
+            'laws': f'{IMPORT_CSV_PATH}/legal-us.csv',
+        },
+    },
+    # EU Regulations
     'eu-gdpr': {
         'legal_basis': {
             'taxonomy': f'{IMPORT_CSV_PATH}/GDPR_LegalBasis.csv',
@@ -334,6 +350,18 @@ RDF_STRUCTURE = {
     'legal-de': {
         'main': f'{EXPORT_RDF_PATH}/legal/de',
         'modules': f'{EXPORT_RDF_PATH}/legal/de/modules',
+    },
+    'legal-gb': {
+        'main': f'{EXPORT_RDF_PATH}/legal/gb',
+        'modules': f'{EXPORT_RDF_PATH}/legal/gb/modules',
+    },
+    'legal-ie': {
+        'main': f'{EXPORT_RDF_PATH}/legal/ie',
+        'modules': f'{EXPORT_RDF_PATH}/legal/ie/modules',
+    },
+    'legal-us': {
+        'main': f'{EXPORT_RDF_PATH}/legal/us',
+        'modules': f'{EXPORT_RDF_PATH}/legal/us/modules',
     },
     'eu-gdpr': {
         'main': f'{EXPORT_RDF_PATH}/legal/eu/gdpr',

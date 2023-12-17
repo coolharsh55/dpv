@@ -10,15 +10,6 @@
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-legal-eu:AIAct a rdfs:Class,
-        skos:Concept,
-        dpv:Law ;
-    sw:term_status "accepted"@en ;
-    skos:inScheme legal-eu:eu-classes ;
-    skos:prefLabel "AI Act"@en ;
-    foaf:homepage "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021PC0206"^^xsd:anyURI ;
-    dpv:hasJurisdiction loc:EU .
-
 legal-eu:Adequacy-EU-AD a rdfs:Class,
         skos:Concept,
         eu-gdpr:AdequacyDecision ;
@@ -175,29 +166,7 @@ legal-eu:Adequacy-EU-UY a rdfs:Class,
     dpv:hasJurisdiction loc:EU,
         loc:UY .
 
-legal-eu:DGA a rdfs:Class,
-        skos:Concept,
-        dpv:Law ;
-    dct:temporal [ a time:ProperInterval ;
-            time:hasBeginning [ time:inXSDDate "2023-09-24"^^xsd:date ] ] ;
-    sw:term_status "accepted"@en ;
-    skos:inScheme legal-eu:eu-classes ;
-    skos:prefLabel "Data Governance Act (DGA)"@en ;
-    foaf:homepage "http://data.europa.eu/eli/reg/2022/868/oj"^^xsd:anyURI ;
-    dpv:hasJurisdiction loc:EU .
-
-legal-eu:DMA a rdfs:Class,
-        skos:Concept,
-        dpv:Law ;
-    dct:temporal [ a time:ProperInterval ;
-            time:hasBeginning [ time:inXSDDate "2022-11-01"^^xsd:date ] ] ;
-    sw:term_status "accepted"@en ;
-    skos:inScheme legal-eu:eu-classes ;
-    skos:prefLabel "Digital Markets Act (DMA)"@en ;
-    foaf:homepage "http://data.europa.eu/eli/reg/2022/1925/oj"^^xsd:anyURI ;
-    dpv:hasJurisdiction loc:EU .
-
-legal-eu:DPA-EU-EDPB a rdfs:Class,
+legal-eu:DPA-EDPB a rdfs:Class,
         skos:Concept,
         dpv:Authority,
         dpv:DataProtectionAuthority,
@@ -210,9 +179,9 @@ legal-eu:DPA-EU-EDPB a rdfs:Class,
         loc:IS,
         loc:LI,
         loc:NO ;
-    dpv:hasLaw legal-eu:GDPR .
+    dpv:hasLaw legal-eu:law-GDPR .
 
-legal-eu:DPA-EU-EDPS a rdfs:Class,
+legal-eu:DPA-EDPS a rdfs:Class,
         skos:Concept,
         dpv:Authority,
         dpv:DataProtectionAuthority,
@@ -222,9 +191,40 @@ legal-eu:DPA-EU-EDPS a rdfs:Class,
     skos:prefLabel "European Data Protection Supervisor"@en ;
     foaf:homepage "https://edps.europa.eu/"^^xsd:anyURI ;
     dpv:hasJurisdiction loc:EU ;
-    dpv:hasLaw legal-eu:GDPR .
+    dpv:hasLaw legal-eu:law-GDPR .
 
-legal-eu:DSA a rdfs:Class,
+legal-eu:law-AIAct a rdfs:Class,
+        skos:Concept,
+        dpv:Law ;
+    sw:term_status "accepted"@en ;
+    skos:inScheme legal-eu:eu-classes ;
+    skos:prefLabel "AI Act"@en ;
+    foaf:homepage "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52021PC0206"^^xsd:anyURI ;
+    dpv:hasJurisdiction loc:EU .
+
+legal-eu:law-DGA a rdfs:Class,
+        skos:Concept,
+        dpv:Law ;
+    dct:temporal [ a time:ProperInterval ;
+            time:hasBeginning [ time:inXSDDate "2023-09-24"^^xsd:date ] ] ;
+    sw:term_status "accepted"@en ;
+    skos:inScheme legal-eu:eu-classes ;
+    skos:prefLabel "Data Governance Act (DGA)"@en ;
+    foaf:homepage "http://data.europa.eu/eli/reg/2022/868/oj"^^xsd:anyURI ;
+    dpv:hasJurisdiction loc:EU .
+
+legal-eu:law-DMA a rdfs:Class,
+        skos:Concept,
+        dpv:Law ;
+    dct:temporal [ a time:ProperInterval ;
+            time:hasBeginning [ time:inXSDDate "2022-11-01"^^xsd:date ] ] ;
+    sw:term_status "accepted"@en ;
+    skos:inScheme legal-eu:eu-classes ;
+    skos:prefLabel "Digital Markets Act (DMA)"@en ;
+    foaf:homepage "http://data.europa.eu/eli/reg/2022/1925/oj"^^xsd:anyURI ;
+    dpv:hasJurisdiction loc:EU .
+
+legal-eu:law-DSA a rdfs:Class,
         skos:Concept,
         dpv:Law ;
     dct:temporal [ a time:ProperInterval ;
@@ -235,7 +235,7 @@ legal-eu:DSA a rdfs:Class,
     foaf:homepage "http://data.europa.eu/eli/reg/2022/2065/oj"^^xsd:anyURI ;
     dpv:hasJurisdiction loc:EU .
 
-legal-eu:DataAct a rdfs:Class,
+legal-eu:law-DataAct a rdfs:Class,
         skos:Concept,
         dpv:Law ;
     sw:term_status "accepted"@en ;
@@ -244,7 +244,7 @@ legal-eu:DataAct a rdfs:Class,
     foaf:homepage "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=COM%3A2022%3A68%3AFIN"^^xsd:anyURI ;
     dpv:hasJurisdiction loc:EU .
 
-legal-eu:GDPR a rdfs:Class,
+legal-eu:law-GDPR a rdfs:Class,
         skos:Concept,
         dpv:Law ;
     dct:temporal [ a time:ProperInterval ;

@@ -140,6 +140,31 @@ VOCABS = {
             'legal': f'{IMPORT_PATH}/legal/de/legal-de.ttl',
         }
     },
+    'legal-gb': {
+        'vocab': f'{IMPORT_PATH}/legal/gb/legal-gb.ttl',
+        'template': 'template_legal_jurisdiction.jinja2',
+        'export': f'{EXPORT_PATH}/legal/gb',
+        'modules': {
+            'legal': f'{IMPORT_PATH}/legal/gb/legal-gb.ttl',
+        }
+    },
+    'legal-ie': {
+        'vocab': f'{IMPORT_PATH}/legal/ie/legal-ie.ttl',
+        'template': 'template_legal_jurisdiction.jinja2',
+        'export': f'{EXPORT_PATH}/legal/ie',
+        'modules': {
+            'legal': f'{IMPORT_PATH}/legal/ie/legal-ie.ttl',
+        }
+    },
+    'legal-us': {
+        'vocab': f'{IMPORT_PATH}/legal/us/legal-us.ttl',
+        'template': 'template_legal_jurisdiction.jinja2',
+        'export': f'{EXPORT_PATH}/legal/us',
+        'modules': {
+            'legal': f'{IMPORT_PATH}/legal/us/legal-us.ttl',
+        }
+    },
+    # EU Laws
     'eu-gdpr': {
         'vocab': f'{IMPORT_PATH}/legal/eu/gdpr/eu-gdpr.ttl',
         'template': 'template_legal_eu_gdpr.jinja2',

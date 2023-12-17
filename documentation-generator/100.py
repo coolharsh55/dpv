@@ -102,6 +102,7 @@ DPV_FILES = {
             'Jurisdiction_properties', 
             'location',
             'location_properties',
+            'location_memberships',
             ),
     },
     'legal_basis': {
@@ -176,12 +177,14 @@ DPV_FILES = {
     },
     # Laws, Authorities
     'laws-authorities': {
-        'name': 'legal-eu',
+        'name': 'laws-authorities',
         'doc_id': '1pqGE67I5kyoGrkhMItJbi18VLguVqE1jVecnfki1ujY',
         'sheets': (
             'legal-eu',
             'legal-de',
-            'legal-memberships',
+            'legal-gb',
+            'legal-ie',
+            'legal-us',
             )
     },
     'eu-gdpr': {
