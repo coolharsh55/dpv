@@ -6,10 +6,13 @@
 @prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dpv:Adult a rdfs:Class,
         skos:Concept,
         dpv:DataSubject ;
+    dct:contributor "Georg Krog" ;
+    dct:created "2022-03-30"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:DataSubject ;
     skos:definition "A natural person that is not a child i.e. has attained some legally specified age of adulthood"@en ;
@@ -19,6 +22,8 @@ dpv:Adult a rdfs:Class,
 dpv:Applicant a rdfs:Class,
         skos:Concept,
         dpv:DataSubject ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P. Krog, Julian Flake, Paul Ryan, Beatriz Esteves" ;
+    dct:created "2022-04-06"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:DataSubject ;
     skos:definition "Data subjects that are applicants in some context"@en ;
@@ -28,6 +33,8 @@ dpv:Applicant a rdfs:Class,
 dpv:AsylumSeeker a rdfs:Class,
         skos:Concept,
         dpv:DataSubject ;
+    dct:contributor "Georg P Krog" ;
+    dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:VulnerableDataSubject ;
     skos:definition "Data subjects that are asylum seekers"@en ;
@@ -37,6 +44,9 @@ dpv:AsylumSeeker a rdfs:Class,
 dpv:Child a rdfs:Class,
         skos:Concept,
         dpv:DataSubject ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2020-11-25"^^xsd:date ;
+    dct:modified "2022-06-22"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:DataSubject ;
     skos:definition "A 'child' is a natural legal person who is below a certain legal age depending on the legal jurisdiction."@en ;
@@ -47,6 +57,8 @@ dpv:Child a rdfs:Class,
 dpv:Citizen a rdfs:Class,
         skos:Concept,
         dpv:DataSubject ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P. Krog, Julian Flake, Paul Ryan, Beatriz Esteves" ;
+    dct:created "2022-04-06"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:DataSubject ;
     skos:definition "Data subjects that are citizens (for a jurisdiction)"@en ;
@@ -56,6 +68,8 @@ dpv:Citizen a rdfs:Class,
 dpv:Client a rdfs:Class,
         skos:Concept,
         dpv:DataSubject ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P. Krog, Julian Flake, Paul Ryan, Beatriz Esteves" ;
+    dct:created "2022-04-06"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Customer ;
     skos:definition "Data subjects that are clients or recipients of services"@en ;
@@ -65,6 +79,8 @@ dpv:Client a rdfs:Class,
 dpv:Consumer a rdfs:Class,
         skos:Concept,
         dpv:DataSubject ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P. Krog, Julian Flake, Paul Ryan, Beatriz Esteves" ;
+    dct:created "2022-04-06"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:DataSubject ;
     skos:definition "Data subjects that consume goods or services for direct use"@en ;
@@ -74,6 +90,8 @@ dpv:Consumer a rdfs:Class,
 dpv:Customer a rdfs:Class,
         skos:Concept,
         dpv:DataSubject ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P. Krog, Julian Flake, Paul Ryan, Beatriz Esteves" ;
+    dct:created "2022-04-06"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:DataSubject ;
     skos:definition "Data subjects that purchase goods or services"@en ;
@@ -84,6 +102,9 @@ dpv:Customer a rdfs:Class,
 
 dpv:DataSubject a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Axel Polleres, Javier Fernández" ;
+    dct:created "2019-04-05"^^xsd:date ;
+    dct:modified "2020-11-04"^^xsd:date ;
     dct:source "(GDPR Art.4-1g,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_1/oj)"@en ;
     rdfs:subClassOf dpv:LegalEntity ;
     sw:term_status "accepted"@en ;
@@ -117,6 +138,8 @@ dpv:DataSubject a rdfs:Class,
 dpv:ElderlyDataSubject a rdfs:Class,
         skos:Concept,
         dpv:DataSubject ;
+    dct:contributor "Georg P Krog" ;
+    dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:VulnerableDataSubject ;
     skos:definition "Data subjects that are considered elderly (i.e. based on age)"@en ;
@@ -126,6 +149,8 @@ dpv:ElderlyDataSubject a rdfs:Class,
 dpv:Employee a rdfs:Class,
         skos:Concept,
         dpv:DataSubject ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P. Krog, Julian Flake, Paul Ryan, Beatriz Esteves" ;
+    dct:created "2022-04-06"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:DataSubject ;
     skos:definition "Data subjects that are employees"@en ;
@@ -135,6 +160,8 @@ dpv:Employee a rdfs:Class,
 dpv:GuardianOfDataSubject a rdfs:Class,
         skos:Concept,
         dpv:DataSubject ;
+    dct:contributor "Georg P Krog" ;
+    dct:created "2022-08-03"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:DataSubject ;
     skos:definition "Guardian(s) of data subjects such as children"@en ;
@@ -144,6 +171,8 @@ dpv:GuardianOfDataSubject a rdfs:Class,
 dpv:Immigrant a rdfs:Class,
         skos:Concept,
         dpv:DataSubject ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P. Krog, Julian Flake, Paul Ryan, Beatriz Esteves" ;
+    dct:created "2022-04-06"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:DataSubject ;
     skos:definition "Data subjects that are immigrants (for a jurisdiction)"@en ;
@@ -153,6 +182,8 @@ dpv:Immigrant a rdfs:Class,
 dpv:JobApplicant a rdfs:Class,
         skos:Concept,
         dpv:DataSubject ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P. Krog, Julian Flake, Paul Ryan, Beatriz Esteves" ;
+    dct:created "2022-04-06"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:DataSubject ;
     skos:definition "Data subjects that apply for jobs or employments"@en ;
@@ -162,6 +193,8 @@ dpv:JobApplicant a rdfs:Class,
 dpv:Member a rdfs:Class,
         skos:Concept,
         dpv:DataSubject ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P. Krog, Julian Flake, Paul Ryan, Beatriz Esteves" ;
+    dct:created "2022-04-06"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:DataSubject ;
     skos:definition "Data subjects that are members of a group, organisation, or other collectives"@en ;
@@ -171,6 +204,8 @@ dpv:Member a rdfs:Class,
 dpv:MentallyVulnerableDataSubject a rdfs:Class,
         skos:Concept,
         dpv:DataSubject ;
+    dct:contributor "Georg P Krog" ;
+    dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:VulnerableDataSubject ;
     skos:definition "Data subjects that are considered mentally vulnerable"@en ;
@@ -180,6 +215,8 @@ dpv:MentallyVulnerableDataSubject a rdfs:Class,
 dpv:NonCitizen a rdfs:Class,
         skos:Concept,
         dpv:DataSubject ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P. Krog, Julian Flake, Paul Ryan, Beatriz Esteves" ;
+    dct:created "2022-04-06"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:DataSubject ;
     skos:definition "Data subjects that are not citizens (for a jurisdiction)"@en ;
@@ -189,6 +226,8 @@ dpv:NonCitizen a rdfs:Class,
 dpv:ParentOfDataSubject a rdfs:Class,
         skos:Concept,
         dpv:DataSubject ;
+    dct:contributor "Georg P Krog" ;
+    dct:created "2022-08-03"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:DataSubject ;
     skos:definition "Parent(s) of data subjects such as children"@en ;
@@ -198,6 +237,8 @@ dpv:ParentOfDataSubject a rdfs:Class,
 dpv:Participant a rdfs:Class,
         skos:Concept,
         dpv:DataSubject ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P. Krog, Julian Flake, Paul Ryan, Beatriz Esteves" ;
+    dct:created "2022-04-06"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:DataSubject ;
     skos:definition "Data subjects that participate in some context such as volunteers in a function"@en ;
@@ -207,6 +248,8 @@ dpv:Participant a rdfs:Class,
 dpv:Patient a rdfs:Class,
         skos:Concept,
         dpv:DataSubject ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P. Krog, Julian Flake, Paul Ryan, Beatriz Esteves" ;
+    dct:created "2022-04-06"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:DataSubject ;
     skos:definition "Data subjects that receive medican attention, treatment, care, advice, or other health related services"@en ;
@@ -216,6 +259,8 @@ dpv:Patient a rdfs:Class,
 dpv:Student a rdfs:Class,
         skos:Concept,
         dpv:DataSubject ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P. Krog, Julian Flake, Paul Ryan, Beatriz Esteves" ;
+    dct:created "2022-04-06"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:DataSubject ;
     skos:definition "Data subjects that are students"@en ;
@@ -225,6 +270,8 @@ dpv:Student a rdfs:Class,
 dpv:Subscriber a rdfs:Class,
         skos:Concept,
         dpv:DataSubject ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P. Krog, Julian Flake, Paul Ryan, Beatriz Esteves" ;
+    dct:created "2022-04-06"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:DataSubject ;
     skos:definition "Data subjects that subscribe to service(s)"@en ;
@@ -235,6 +282,8 @@ dpv:Subscriber a rdfs:Class,
 dpv:Tourist a rdfs:Class,
         skos:Concept,
         dpv:DataSubject ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P. Krog, Julian Flake, Paul Ryan, Beatriz Esteves" ;
+    dct:created "2022-04-06"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:DataSubject ;
     skos:definition "Data subjects that are tourists i.e. not citizens and not immigrants"@en ;
@@ -244,6 +293,8 @@ dpv:Tourist a rdfs:Class,
 dpv:User a rdfs:Class,
         skos:Concept,
         dpv:DataSubject ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P. Krog, Julian Flake, Paul Ryan, Beatriz Esteves" ;
+    dct:created "2022-04-06"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:DataSubject ;
     skos:definition "Data subjects that use service(s)"@en ;
@@ -253,6 +304,8 @@ dpv:User a rdfs:Class,
 dpv:Visitor a rdfs:Class,
         skos:Concept,
         dpv:DataSubject ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P. Krog, Julian Flake, Paul Ryan, Beatriz Esteves" ;
+    dct:created "2022-04-06"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:DataSubject ;
     skos:definition "Data subjects that are temporary visitors"@en ;
@@ -262,6 +315,8 @@ dpv:Visitor a rdfs:Class,
 dpv:VulnerableDataSubject a rdfs:Class,
         skos:Concept,
         dpv:DataSubject ;
+    dct:contributor "Georg Krog, Paul Ryan, Harshvardhan Pandit" ;
+    dct:created "2020-11-04"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:DataSubject ;
     skos:definition "Data Subjects which should be considered 'vulnerable' and therefore would require additional measures and safeguards"@en ;
@@ -280,6 +335,9 @@ dpv:entities-datasubject-properties a skos:ConceptScheme .
 dpv:hasDataSubject a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv:DataSubject ;
+    dct:contributor "Axel Polleres, Javier Fernández, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:modified "2020-11-04"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasEntity ;
@@ -291,6 +349,8 @@ dpv:hasDataSubject a rdf:Property,
 dpv:hasRelationWithDataSubject a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:Entity ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake" ;
+    dct:created "2022-06-21"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasEntity ;

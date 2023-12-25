@@ -5,10 +5,13 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 eu-gdpr:DPIAConformant a rdfs:Class,
         skos:Concept,
         eu-gdpr:DPIAConformity ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog" ;
+    dct:created "2022-10-22"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader eu-gdpr:DPIAConformity ;
     skos:definition "Expressing the specified process is conformant with a DPIA"@en ;
@@ -17,6 +20,8 @@ eu-gdpr:DPIAConformant a rdfs:Class,
 
 eu-gdpr:DPIAConformity a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog" ;
+    dct:created "2022-10-22"^^xsd:date ;
     rdfs:subClassOf dpv:ConformanceStatus ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:ConformanceStatus ;
@@ -29,6 +34,8 @@ eu-gdpr:DPIAConformity a rdfs:Class,
 eu-gdpr:DPIAIndicatesHighRisk a rdfs:Class,
         skos:Concept,
         eu-gdpr:DPIARiskStatus ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-22"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader eu-gdpr:DPIARiskStatus ;
     skos:definition "DPIA identifying high risk levels"@en ;
@@ -38,6 +45,8 @@ eu-gdpr:DPIAIndicatesHighRisk a rdfs:Class,
 eu-gdpr:DPIAIndicatesLowRisk a rdfs:Class,
         skos:Concept,
         eu-gdpr:DPIARiskStatus ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-22"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader eu-gdpr:DPIARiskStatus ;
     skos:definition "DPIA identifying low risk levels"@en ;
@@ -47,6 +56,8 @@ eu-gdpr:DPIAIndicatesLowRisk a rdfs:Class,
 eu-gdpr:DPIAIndicatesNoRisk a rdfs:Class,
         skos:Concept,
         eu-gdpr:DPIARiskStatus ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-22"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader eu-gdpr:DPIARiskStatus ;
     skos:definition "DPIA identifying no risk is present"@en ;
@@ -56,6 +67,8 @@ eu-gdpr:DPIAIndicatesNoRisk a rdfs:Class,
 eu-gdpr:DPIANecessityAssessment a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-22"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:DPIA ;
     skos:definition "Process that determines whether a DPIA is necessary"@en ;
@@ -64,6 +77,8 @@ eu-gdpr:DPIANecessityAssessment a rdfs:Class,
 
 eu-gdpr:DPIANecessityStatus a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-22"^^xsd:date ;
     rdfs:subClassOf dpv:AuditStatus ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:AuditStatus ;
@@ -76,6 +91,8 @@ eu-gdpr:DPIANecessityStatus a rdfs:Class,
 eu-gdpr:DPIANonConformant a rdfs:Class,
         skos:Concept,
         eu-gdpr:DPIAConformity ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog" ;
+    dct:created "2022-10-22"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader eu-gdpr:DPIAConformity ;
     skos:definition "Expressing the specified process is not conformant with a DPIA"@en ;
@@ -85,6 +102,8 @@ eu-gdpr:DPIANonConformant a rdfs:Class,
 eu-gdpr:DPIANotRequired a rdfs:Class,
         skos:Concept,
         eu-gdpr:DPIANecessityStatus ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-22"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader eu-gdpr:DPIANecessityStatus ;
     skos:definition "Condition where a DPIA is not required"@en ;
@@ -94,6 +113,8 @@ eu-gdpr:DPIANotRequired a rdfs:Class,
 eu-gdpr:DPIAOutcome a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-22"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:DPIA ;
     skos:definition "Process representing determining outcome of a DPIA"@en ;
@@ -103,6 +124,8 @@ eu-gdpr:DPIAOutcome a rdfs:Class,
 eu-gdpr:DPIAOutcomeDPAConsultation a rdfs:Class,
         skos:Concept,
         eu-gdpr:DPIAOutcomeStatus ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-22"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader eu-gdpr:DPIAOutcomeStatus ;
     skos:definition "DPIA outcome status indicating a DPA consultation is required"@en ;
@@ -112,6 +135,8 @@ eu-gdpr:DPIAOutcomeDPAConsultation a rdfs:Class,
 eu-gdpr:DPIAOutcomeHighResidualRisk a rdfs:Class,
         skos:Concept,
         eu-gdpr:DPIAOutcomeStatus ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-22"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader eu-gdpr:DPIAOutcomeStatus ;
     skos:definition "DPIA outcome status indicating high residual risk which are not acceptable for continuation"@en ;
@@ -121,6 +146,8 @@ eu-gdpr:DPIAOutcomeHighResidualRisk a rdfs:Class,
 eu-gdpr:DPIAOutcomeRisksMitigated a rdfs:Class,
         skos:Concept,
         eu-gdpr:DPIAOutcomeStatus ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-22"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader eu-gdpr:DPIAOutcomeStatus ;
     skos:definition "DPIA outcome status indicating (all) risks have been mitigated"@en ;
@@ -129,6 +156,8 @@ eu-gdpr:DPIAOutcomeRisksMitigated a rdfs:Class,
 
 eu-gdpr:DPIAOutcomeStatus a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-22"^^xsd:date ;
     rdfs:subClassOf dpv:AuditStatus ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:AuditStatus ;
@@ -142,6 +171,8 @@ eu-gdpr:DPIAOutcomeStatus a rdfs:Class,
 eu-gdpr:DPIAProcedure a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-22"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:DPIA ;
     skos:definition "Process representing carrying out a DPIA"@en ;
@@ -150,6 +181,8 @@ eu-gdpr:DPIAProcedure a rdfs:Class,
 
 eu-gdpr:DPIAProcessingRecommendation a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog" ;
+    dct:created "2022-10-22"^^xsd:date ;
     rdfs:subClassOf dpv:AuditStatus ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:AuditStatus ;
@@ -162,6 +195,8 @@ eu-gdpr:DPIAProcessingRecommendation a rdfs:Class,
 eu-gdpr:DPIARecommendsProcessingContinue a rdfs:Class,
         skos:Concept,
         eu-gdpr:DPIAProcessingRecommendation ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog" ;
+    dct:created "2022-10-22"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader eu-gdpr:DPIAProcessingRecommendation ;
     skos:definition "Recommendation from a DPIA that the processing may continue"@en ;
@@ -171,6 +206,8 @@ eu-gdpr:DPIARecommendsProcessingContinue a rdfs:Class,
 eu-gdpr:DPIARecommendsProcessingNotContinue a rdfs:Class,
         skos:Concept,
         eu-gdpr:DPIAProcessingRecommendation ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog" ;
+    dct:created "2022-10-22"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader eu-gdpr:DPIAProcessingRecommendation ;
     skos:definition "Recommendation from a DPIA that the processing should not continue"@en ;
@@ -180,6 +217,8 @@ eu-gdpr:DPIARecommendsProcessingNotContinue a rdfs:Class,
 eu-gdpr:DPIARequired a rdfs:Class,
         skos:Concept,
         eu-gdpr:DPIANecessityStatus ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-22"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader eu-gdpr:DPIANecessityStatus ;
     skos:definition "Condition where a DPIA is required"@en ;
@@ -188,6 +227,8 @@ eu-gdpr:DPIARequired a rdfs:Class,
 
 eu-gdpr:DPIARiskStatus a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-22"^^xsd:date ;
     rdfs:subClassOf dpv:AuditStatus ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:AuditStatus ;

@@ -98,7 +98,13 @@
           <th>Comment</th>
           <td><i>{{ concept['skos:note'] }}</i></td>
         </tr>{% endif %}
-        
+        {% if 'vann:example' in concept %}
+        <tr class="table-separator"></tr>
+          <th>Examples</th>
+          <td>{% for ex in concept|retrieve_example_for_concept %}
+            <a href="{{ex['iri']}}">{{ ex['dct:title'] }} <small>({{ ex['term'] }})</small></a>{{ "; " if not loop.last }}
+        {% endfor %}</td>
+        {% endif %}
         <tr class="table-separator"></tr>
         {# Source #}
         {% if concept['dct:source'] %}<tr>

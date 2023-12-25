@@ -3,9 +3,13 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dpv:AcademicScientificOrganisation a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-02-02"^^xsd:date ;
+    dct:modified "2020-10-05"^^xsd:date ;
     dct:source "(ADMS controlled vocabulary,http://purl.org/adms)"@en ;
     rdfs:subClassOf dpv:Organisation ;
     sw:term_status "accepted"@en ;
@@ -16,6 +20,9 @@ dpv:AcademicScientificOrganisation a rdfs:Class,
 
 dpv:ForProfitOrganisation a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-02-02"^^xsd:date ;
+    dct:modified "2020-10-05"^^xsd:date ;
     rdfs:subClassOf dpv:Organisation ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Organisation ;
@@ -25,6 +32,9 @@ dpv:ForProfitOrganisation a rdfs:Class,
 
 dpv:GovernmentalOrganisation a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-02-02"^^xsd:date ;
+    dct:modified "2020-10-05"^^xsd:date ;
     rdfs:subClassOf dpv:Organisation ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Organisation ;
@@ -34,6 +44,9 @@ dpv:GovernmentalOrganisation a rdfs:Class,
 
 dpv:IndustryConsortium a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-02-02"^^xsd:date ;
+    dct:modified "2020-10-05"^^xsd:date ;
     dct:source "(ADMS controlled vocabulary,http://purl.org/adms)"@en ;
     rdfs:subClassOf dpv:Organisation ;
     sw:term_status "accepted"@en ;
@@ -44,6 +57,9 @@ dpv:IndustryConsortium a rdfs:Class,
 
 dpv:InternationalOrganisation a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Julian Flake, Georg P. Krog" ;
+    dct:created "2022-03-23"^^xsd:date ;
+    dct:modified "2020-10-05"^^xsd:date ;
     dct:source "(GDPR Art.4-26,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_26/oj)"@en ;
     rdfs:subClassOf dpv:Organisation ;
     sw:term_status "accepted"@en ;
@@ -54,6 +70,9 @@ dpv:InternationalOrganisation a rdfs:Class,
 
 dpv:NonGovernmentalOrganisation a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-02-02"^^xsd:date ;
+    dct:modified "2020-10-05"^^xsd:date ;
     dct:source "(ADMS controlled vocabulary,http://purl.org/adms)"@en ;
     rdfs:subClassOf dpv:Organisation ;
     sw:term_status "accepted"@en ;
@@ -64,6 +83,9 @@ dpv:NonGovernmentalOrganisation a rdfs:Class,
 
 dpv:NonProfitOrganisation a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-02-02"^^xsd:date ;
+    dct:modified "2020-10-05"^^xsd:date ;
     dct:source "(ADMS controlled vocabulary,http://purl.org/adms)"@en ;
     rdfs:subClassOf dpv:Organisation ;
     sw:term_status "accepted"@en ;
@@ -74,6 +96,8 @@ dpv:NonProfitOrganisation a rdfs:Class,
 
 dpv:Organisation a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-02-02"^^xsd:date ;
     rdfs:subClassOf dpv:LegalEntity ;
     rdfs:superClassOf dpv:AcademicScientificOrganisation,
         dpv:ForProfitOrganisation,
@@ -97,6 +121,8 @@ dpv:Organisation a rdfs:Class,
 
 dpv:OrganisationalUnit a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit, Paul Ryan" ;
+    dct:created "2022-03-23"^^xsd:date ;
     rdfs:subClassOf dpv:Entity ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Entity ;

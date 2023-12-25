@@ -1,12 +1,17 @@
 @prefix dct: <http://purl.org/dc/terms/> .
+@prefix dex: <https://w3id.org/dpv/examples#> .
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dpv:Assessment a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2021-09-08"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:OrganisationalMeasure ;
     skos:definition "The document, plan, or process for assessment or determination towards a purpose e.g. assessment of legality or impact assessments"@en ;
@@ -21,6 +26,8 @@ dpv:Assessment a rdfs:Class,
 dpv:AssetManagementProcedures a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-08-17"^^xsd:date ;
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:GovernanceProcedures ;
@@ -31,6 +38,8 @@ dpv:AssetManagementProcedures a rdfs:Class,
 dpv:AuthorisationProcedure a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar" ;
+    dct:created "2019-04-05"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:OrganisationalMeasure ;
     skos:definition "Procedures for determining authorisation through permission or authority"@en ;
@@ -43,6 +52,8 @@ dpv:AuthorisationProcedure a rdfs:Class,
 dpv:BackgroundChecks a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-08-17"^^xsd:date ;
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:SecurityProcedure ;
@@ -53,6 +64,8 @@ dpv:BackgroundChecks a rdfs:Class,
 dpv:Certification a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar" ;
+    dct:created "2019-04-05"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:CertificationSeal ;
     skos:definition "Certification mechanisms, seals, and marks for the purpose of demonstrating compliance"@en ;
@@ -62,6 +75,8 @@ dpv:Certification a rdfs:Class,
 dpv:CertificationSeal a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar" ;
+    dct:created "2019-04-05"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:OrganisationalMeasure ;
     skos:definition "Certifications, seals, and marks indicating compliance to regulations or practices"@en ;
@@ -73,6 +88,8 @@ dpv:CertificationSeal a rdfs:Class,
 dpv:CodeOfConduct a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar" ;
+    dct:created "2019-04-05"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:GuidelinesPrinciple ;
     skos:definition "A set of rules or procedures outlining the norms and practices for conducting activities"@en ;
@@ -82,6 +99,8 @@ dpv:CodeOfConduct a rdfs:Class,
 dpv:ComplianceMonitoring a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-08-17"^^xsd:date ;
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:GovernanceProcedures ;
@@ -92,6 +111,8 @@ dpv:ComplianceMonitoring a rdfs:Class,
 dpv:ConsentNotice a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake" ;
+    dct:created "2022-06-21"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:PrivacyNotice ;
     skos:definition "A Notice for information provision associated with Consent"@en ;
@@ -101,6 +122,9 @@ dpv:ConsentNotice a rdfs:Class,
 dpv:ConsentRecord a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake" ;
+    dct:created "2022-06-22"^^xsd:date ;
+    vann:example dex:E0019 ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:DataProcessingRecord ;
     skos:definition "A Record of Consent or Consent related activities"@en ;
@@ -110,6 +134,8 @@ dpv:ConsentRecord a rdfs:Class,
 dpv:Consultation a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan" ;
+    dct:created "2020-11-04"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:OrganisationalMeasure ;
     skos:definition "Consultation is a process of receiving feedback, advice, or opinion from an external agency"@en ;
@@ -122,6 +148,8 @@ dpv:Consultation a rdfs:Class,
 dpv:ConsultationWithAuthority a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan" ;
+    dct:created "2020-11-04"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Consultation ;
     skos:definition "Consultation with an authority or authoritative entity"@en ;
@@ -131,6 +159,8 @@ dpv:ConsultationWithAuthority a rdfs:Class,
 dpv:ConsultationWithDPO a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog" ;
+    dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Consultation ;
     skos:definition "Consultation with Data Protection Officer(s)"@en ;
@@ -140,6 +170,8 @@ dpv:ConsultationWithDPO a rdfs:Class,
 dpv:ConsultationWithDataSubject a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog" ;
+    dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Consultation ;
     skos:definition "Consultation with data subject(s) or their representative(s)"@en ;
@@ -150,6 +182,8 @@ dpv:ConsultationWithDataSubject a rdfs:Class,
 dpv:ConsultationWithDataSubjectRepresentative a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog" ;
+    dct:created "2022-10-22"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:ConsultationWithDataSubject ;
     skos:definition "Consultation with representative of data subject(s)"@en ;
@@ -159,6 +193,8 @@ dpv:ConsultationWithDataSubjectRepresentative a rdfs:Class,
 dpv:ContractualTerms a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar" ;
+    dct:created "2019-04-05"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:LegalAgreement ;
     skos:definition "Contractual terms governing data handling within or with an entity"@en ;
@@ -168,6 +204,10 @@ dpv:ContractualTerms a rdfs:Class,
 dpv:ControllerProcessorAgreement a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Beatriz Esteves, Paul Ryan, Julian Flake" ;
+    dct:created "2022-01-26"^^xsd:date ;
+    vann:example dex:E0020,
+        dex:E0021 ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:DataProcessingAgreement ;
     skos:definition "An agreement outlining conditions, criteria, obligations, responsibilities, and specifics for carrying out processing of personal data between a Data Controller and a Data Processor"@en ;
@@ -177,6 +217,8 @@ dpv:ControllerProcessorAgreement a rdfs:Class,
 dpv:CredentialManagement a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Georg P Krog" ;
+    dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:AuthorisationProcedure ;
     skos:definition "Management of credentials and their use in authorisations"@en ;
@@ -186,6 +228,8 @@ dpv:CredentialManagement a rdfs:Class,
 dpv:CybersecurityAssessment a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-08-17"^^xsd:date ;
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Assessment,
@@ -197,6 +241,8 @@ dpv:CybersecurityAssessment a rdfs:Class,
 dpv:CybersecurityTraining a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-08-17"^^xsd:date ;
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:StaffTraining ;
@@ -207,6 +253,8 @@ dpv:CybersecurityTraining a rdfs:Class,
 dpv:DPIA a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan" ;
+    dct:created "2020-11-04"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:ImpactAssessment ;
     skos:definition "A DPIA involves determining the potential and actual impact of processing activities on individuals or groups of individuals"@en ;
@@ -217,6 +265,8 @@ dpv:DPIA a rdfs:Class,
 dpv:DataProcessingAgreement a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Beatriz Esteves, Paul Ryan, Julian Flake" ;
+    dct:created "2022-01-26"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:LegalAgreement ;
     skos:definition "An agreement outlining conditions, criteria, obligations, responsibilities, and specifics for carrying out processing of data"@en ;
@@ -231,6 +281,8 @@ dpv:DataProcessingAgreement a rdfs:Class,
 dpv:DataProcessingRecord a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2021-09-08"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:RecordsOfActivities ;
     skos:definition "Record of data processing, whether ex-ante or ex-post"@en ;
@@ -241,6 +293,8 @@ dpv:DataProcessingRecord a rdfs:Class,
 dpv:DataProtectionTraining a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-08-17"^^xsd:date ;
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:StaffTraining ;
@@ -251,6 +305,8 @@ dpv:DataProtectionTraining a rdfs:Class,
 dpv:DataTransferImpactAssessment a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan" ;
+    dct:created "2021-09-08"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:ImpactAssessment ;
     skos:definition "Impact Assessment for conducting data transfers"@en ;
@@ -260,6 +316,8 @@ dpv:DataTransferImpactAssessment a rdfs:Class,
 dpv:DesignStandard a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar" ;
+    dct:created "2019-04-05"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:GuidelinesPrinciple ;
     skos:definition "A set of rules or guidelines outlining criterias for design"@en ;
@@ -269,6 +327,8 @@ dpv:DesignStandard a rdfs:Class,
 dpv:DisasterRecoveryProcedures a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-08-17"^^xsd:date ;
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:GovernanceProcedures ;
@@ -279,6 +339,8 @@ dpv:DisasterRecoveryProcedures a rdfs:Class,
 dpv:EducationalTraining a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-08-17"^^xsd:date ;
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:StaffTraining ;
@@ -289,6 +351,8 @@ dpv:EducationalTraining a rdfs:Class,
 dpv:EffectivenessDeterminationProcedures a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-08-17"^^xsd:date ;
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Assessment ;
@@ -299,6 +363,8 @@ dpv:EffectivenessDeterminationProcedures a rdfs:Class,
 dpv:GovernanceProcedures a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-08-17"^^xsd:date ;
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:OrganisationalMeasure ;
@@ -316,6 +382,8 @@ dpv:GovernanceProcedures a rdfs:Class,
 dpv:GuidelinesPrinciple a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar" ;
+    dct:created "2019-04-05"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:OrganisationalMeasure ;
     skos:definition "Guidelines or Principles regarding processing and operational measures"@en ;
@@ -328,6 +396,8 @@ dpv:GuidelinesPrinciple a rdfs:Class,
 dpv:IdentityManagementMethod a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-08-17"^^xsd:date ;
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:AuthorisationProcedure ;
@@ -338,6 +408,8 @@ dpv:IdentityManagementMethod a rdfs:Class,
 dpv:ImpactAssessment a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan" ;
+    dct:created "2020-11-04"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Assessment ;
     skos:definition "Calculating or determining the likelihood of impact of an existing or proposed process, which can involve risks or detriments."@en ;
@@ -351,6 +423,8 @@ dpv:ImpactAssessment a rdfs:Class,
 dpv:IncidentManagementProcedures a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-08-17"^^xsd:date ;
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:GovernanceProcedures ;
@@ -361,6 +435,8 @@ dpv:IncidentManagementProcedures a rdfs:Class,
 dpv:IncidentReportingCommunication a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-08-17"^^xsd:date ;
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:GovernanceProcedures ;
@@ -371,6 +447,8 @@ dpv:IncidentReportingCommunication a rdfs:Class,
 dpv:InformationSecurityPolicy a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-08-17"^^xsd:date ;
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Policy ;
@@ -381,6 +459,8 @@ dpv:InformationSecurityPolicy a rdfs:Class,
 dpv:JointDataControllersAgreement a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Beatriz Esteves, Paul Ryan, Julian Flake" ;
+    dct:created "2022-01-26"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:DataProcessingAgreement ;
     skos:definition "An agreement outlining conditions, criteria, obligations, responsibilities, and specifics for carrying out processing of personal data between Controllers within a Joint Controllers relationship"@en ;
@@ -390,6 +470,8 @@ dpv:JointDataControllersAgreement a rdfs:Class,
 dpv:LegalAgreement a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar" ;
+    dct:created "2019-04-05"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:OrganisationalMeasure ;
     skos:definition "A legally binding agreement"@en ;
@@ -402,6 +484,8 @@ dpv:LegalAgreement a rdfs:Class,
 dpv:LegitimateInterestAssessment a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan" ;
+    dct:created "2021-09-08"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Assessment ;
     skos:definition "Indicates an assessment regarding the use of legitimate interest as a lawful basis by the data controller"@en ;
@@ -411,6 +495,8 @@ dpv:LegitimateInterestAssessment a rdfs:Class,
 dpv:LoggingPolicies a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-08-17"^^xsd:date ;
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:GovernanceProcedures ;
@@ -421,6 +507,8 @@ dpv:LoggingPolicies a rdfs:Class,
 dpv:MonitoringPolicies a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-08-17"^^xsd:date ;
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:GovernanceProcedures ;
@@ -431,6 +519,8 @@ dpv:MonitoringPolicies a rdfs:Class,
 dpv:NDA a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar" ;
+    dct:created "2019-04-05"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:LegalAgreement ;
     skos:definition "Non-disclosure Agreements e.g. preserving confidentiality of information"@en ;
@@ -440,6 +530,9 @@ dpv:NDA a rdfs:Class,
 dpv:Notice a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Paul Ryan, David Hickey, Georg P Krog, Harshvardhan J. Pandit" ;
+    dct:created "2021-09-08"^^xsd:date ;
+    vann:example dex:E0025 ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:OrganisationalMeasure ;
     skos:definition "A notice is an artefact for providing information, choices, or controls"@en ;
@@ -450,6 +543,8 @@ dpv:Notice a rdfs:Class,
 dpv:PIA a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan" ;
+    dct:created "2020-11-04"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:ImpactAssessment ;
     skos:definition "Carrying out an impact assessment regarding privacy risks"@en ;
@@ -459,6 +554,9 @@ dpv:PIA a rdfs:Class,
 dpv:Policy a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Paul Ryan, David Hickey, Georg P Krog, Harshvardhan J. Pandit" ;
+    dct:created "2021-09-08"^^xsd:date ;
+    vann:example dex:E0017 ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:OrganisationalMeasure ;
     skos:definition "A guidance document outlining any of: procedures, plans, principles, decisions, intent, or protocols."@en ;
@@ -470,6 +568,8 @@ dpv:Policy a rdfs:Class,
 dpv:PrivacyByDefault a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar" ;
+    dct:created "2019-04-05"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:GuidelinesPrinciple ;
     skos:definition "Practices regarding selecting appropriate data protection and privacy measures as the 'default' in an activity or service"@en ;
@@ -479,6 +579,8 @@ dpv:PrivacyByDefault a rdfs:Class,
 dpv:PrivacyByDesign a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar" ;
+    dct:created "2019-04-05"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:OrganisationalMeasure ;
     skos:definition "Practices regarding incorporating data protection and privacy in the design of information and services"@en ;
@@ -488,6 +590,10 @@ dpv:PrivacyByDesign a rdfs:Class,
 dpv:PrivacyNotice a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Georg P Krog, Paul Ryan, David Hickey, Harshvardhan J. Pandit" ;
+    dct:created "2021-09-08"^^xsd:date ;
+    vann:example dex:E0018,
+        dex:E0025 ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Notice ;
     skos:definition "Represents a notice or document outlining information regarding privacy"@en ;
@@ -498,6 +604,8 @@ dpv:PrivacyNotice a rdfs:Class,
 dpv:ProfessionalTraining a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-08-17"^^xsd:date ;
     dct:source "(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:StaffTraining ;
@@ -508,6 +616,8 @@ dpv:ProfessionalTraining a rdfs:Class,
 dpv:RecordsOfActivities a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan" ;
+    dct:created "2021-09-08"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:OrganisationalMeasure ;
     skos:definition "Records of activities within some context such as maintainence tasks or governance functions"@en ;
@@ -518,6 +628,8 @@ dpv:RecordsOfActivities a rdfs:Class,
 dpv:RegularityOfRecertification a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar" ;
+    dct:created "2019-04-05"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:OrganisationalMeasure ;
     skos:definition "Policy regarding repetition or renewal of existing certification(s)"@en ;
@@ -527,6 +639,8 @@ dpv:RegularityOfRecertification a rdfs:Class,
 dpv:ReviewImpactAssessment a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog" ;
+    dct:created "2022-10-22"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:ImpactAssessment,
         dpv:ReviewProcedure ;
@@ -537,6 +651,8 @@ dpv:ReviewImpactAssessment a rdfs:Class,
 dpv:ReviewProcedure a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog" ;
+    dct:created "2022-10-22"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:OrganisationalMeasure ;
     skos:definition "A procedure or process that reviews the correctness and validity of other measures and processes"@en ;
@@ -547,6 +663,8 @@ dpv:ReviewProcedure a rdfs:Class,
 dpv:RiskManagementPlan a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-08-18"^^xsd:date ;
     dct:source "(ISO 31073:2022,https://www.iso.org/standard/79637.html)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:SecurityProcedure ;
@@ -557,6 +675,8 @@ dpv:RiskManagementPlan a rdfs:Class,
 dpv:RiskManagementPolicy a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-08-18"^^xsd:date ;
     dct:source "(ISO 31073:2022,https://www.iso.org/standard/79637.html)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Policy,
@@ -568,6 +688,8 @@ dpv:RiskManagementPolicy a rdfs:Class,
 dpv:Safeguard a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "David Hickey, Paul Ryan, Georg P Krog, Harshvardhan J. Pandit" ;
+    dct:created "2021-09-22"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:OrganisationalMeasure ;
     skos:definition "A safeguard is a precautionary measure for the protection against or mitigation of negative effects"@en ;
@@ -579,6 +701,8 @@ dpv:Safeguard a rdfs:Class,
 dpv:SafeguardForDataTransfer a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "David Hickey, Paul Ryan, Georg P Krog, Harshvardhan J. Pandit" ;
+    dct:created "2021-09-22"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Safeguard ;
     skos:definition "Represents a safeguard used for data transfer. Can include technical or organisational measures."@en ;
@@ -588,6 +712,8 @@ dpv:SafeguardForDataTransfer a rdfs:Class,
 dpv:Seal a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar" ;
+    dct:created "2019-04-05"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:CertificationSeal ;
     skos:definition "A seal or a mark indicating proof of certification to some certification or standard"@en ;
@@ -597,6 +723,8 @@ dpv:Seal a rdfs:Class,
 dpv:SecurityAssessment a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-08-17"^^xsd:date ;
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Assessment,
@@ -609,6 +737,8 @@ dpv:SecurityAssessment a rdfs:Class,
 dpv:SecurityKnowledgeTraining a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-08-17"^^xsd:date ;
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:StaffTraining ;
@@ -619,6 +749,8 @@ dpv:SecurityKnowledgeTraining a rdfs:Class,
 dpv:SecurityProcedure a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-08-24"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:OrganisationalMeasure ;
     skos:definition "Procedures associated with assessing, implementing, and evaluating security"@en ;
@@ -635,6 +767,8 @@ dpv:SecurityProcedure a rdfs:Class,
 dpv:SecurityRoleProcedures a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-08-17"^^xsd:date ;
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:SecurityProcedure ;
@@ -645,6 +779,9 @@ dpv:SecurityRoleProcedures a rdfs:Class,
 dpv:StaffTraining a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar" ;
+    dct:created "2019-04-05"^^xsd:date ;
+    vann:example dex:E0017 ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:OrganisationalMeasure ;
     skos:definition "Practices and policies regarding training of staff members"@en ;
@@ -659,6 +796,8 @@ dpv:StaffTraining a rdfs:Class,
 dpv:SubProcessorAgreement a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Beatriz Esteves, Paul Ryan, Julian Flake" ;
+    dct:created "2022-01-26"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:DataProcessingAgreement ;
     skos:definition "An agreement outlining conditions, criteria, obligations, responsibilities, and specifics for carrying out processing of personal data between a Data Processor and a Data (Sub-)Processor"@en ;
@@ -668,6 +807,8 @@ dpv:SubProcessorAgreement a rdfs:Class,
 dpv:ThirdPartyAgreement a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-02-09"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:DataProcessingAgreement ;
     skos:definition "An agreement outlining conditions, criteria, obligations, responsibilities, and specifics for carrying out processing of personal data between a Data Controller or Processor and a Third Party"@en ;
@@ -677,6 +818,8 @@ dpv:ThirdPartyAgreement a rdfs:Class,
 dpv:ThirdPartySecurityProcedures a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-08-17"^^xsd:date ;
     dct:source "(ENISA 5G Cybersecurity Standards,https://www.enisa.europa.eu/publications/5g-cybersecurity-standards)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:SecurityProcedure ;
@@ -687,6 +830,8 @@ dpv:ThirdPartySecurityProcedures a rdfs:Class,
 dpv:TrustedThirdPartyUtilisation a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-08-17"^^xsd:date ;
     dct:source "(ENISA Data Pseudonymisation: Advanced Techniques and Use Cases,https://www.enisa.europa.eu/publications/data-pseudonymisation-advanced-techniques-and-use-cases)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:SecurityProcedure ;

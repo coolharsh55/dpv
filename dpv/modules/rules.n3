@@ -1,14 +1,18 @@
 @prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dct: <http://purl.org/dc/terms/> .
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dpv:Obligation a rdfs:Class,
         skos:Concept,
         dpv:Rule ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog, Beatriz Esteves, Paul Ryan" ;
+    dct:created "2022-10-19"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Rule ;
     skos:definition "A rule describing an obligation for performing an activity"@en ;
@@ -18,6 +22,8 @@ dpv:Obligation a rdfs:Class,
 dpv:Permission a rdfs:Class,
         skos:Concept,
         dpv:Rule ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog, Beatriz Esteves, Paul Ryan" ;
+    dct:created "2022-10-19"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Rule ;
     skos:definition "A rule describing a permission to perform an activity"@en ;
@@ -27,6 +33,8 @@ dpv:Permission a rdfs:Class,
 dpv:Prohibition a rdfs:Class,
         skos:Concept,
         dpv:Rule ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog, Beatriz Esteves, Paul Ryan" ;
+    dct:created "2022-10-19"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Rule ;
     skos:definition "A rule describing a prohibition to perform an activity"@en ;
@@ -35,6 +43,8 @@ dpv:Prohibition a rdfs:Class,
 
 dpv:Rule a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog, Beatriz Esteves, Paul Ryan" ;
+    dct:created "2022-10-19"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "A rule describing a process or control that directs or determines if and how an activity should be conducted"@en ;
     skos:inScheme dpv:rules-classes ;
@@ -47,6 +57,8 @@ dpv:hasObligation a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:Context ;
     dcam:rangeIncludes dpv:Obligation ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog, Beatriz Esteves, Paul Ryan" ;
+    dct:created "2022-10-19"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasRule ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasRule ;
@@ -60,6 +72,8 @@ dpv:hasPermission a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:Context ;
     dcam:rangeIncludes dpv:Permission ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog, Beatriz Esteves, Paul Ryan" ;
+    dct:created "2022-10-19"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasRule ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasRule ;
@@ -73,6 +87,8 @@ dpv:hasProhibition a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:Context ;
     dcam:rangeIncludes dpv:Prohibition ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog, Beatriz Esteves, Paul Ryan" ;
+    dct:created "2022-10-19"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasRule ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasRule ;
@@ -90,6 +106,8 @@ dpv:hasRule a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:Context ;
     dcam:rangeIncludes dpv:Rule ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog, Beatriz Esteves, Paul Ryan" ;
+    dct:created "2022-10-19"^^xsd:date ;
     rdfs:superPropertyOf dpv:hasObligation,
         dpv:hasPermission,
         dpv:hasProhibition ;

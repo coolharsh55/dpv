@@ -8,6 +8,7 @@
 @prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dcat:Resource a rdfs:Class,
         skos:Concept ;
@@ -18,6 +19,8 @@ dcat:Resource a rdfs:Class,
 dpv:ActiveRight a rdfs:Class,
         skos:Concept,
         dpv:Right ;
+    dct:contributor "Harshvardhan J Pandit, Beatriz Esteves, Georg P Krog, Paul Ryan" ;
+    dct:created "2022-10-22"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Right ;
     skos:definition "The right(s) applicable, provided, or expected that need to be (actively) exercised"@en ;
@@ -28,6 +31,8 @@ dpv:ActiveRight a rdfs:Class,
 dpv:DataSubjectRight a rdfs:Class,
         skos:Concept,
         dpv:Right ;
+    dct:contributor "Beatriz Esteves, Georg P Krog, Harshvardhan Pandit" ;
+    dct:created "2020-11-18"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Right ;
     skos:definition "The rights applicable or provided to a Data Subject"@en ;
@@ -38,6 +43,8 @@ dpv:DataSubjectRight a rdfs:Class,
 dpv:PassiveRight a rdfs:Class,
         skos:Concept,
         dpv:Right ;
+    dct:contributor "Harshvardhan J Pandit, Beatriz Esteves, Georg P Krog, Paul Ryan" ;
+    dct:created "2022-10-22"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Right ;
     skos:definition "The right(s) applicable, provided, or expected that are always (passively) applicable"@en ;
@@ -47,6 +54,8 @@ dpv:PassiveRight a rdfs:Class,
 
 dpv:Right a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Harshvardhan J Pandit, Beatriz Esteves, Georg P Krog" ;
+    dct:created "2020-11-18"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "The right(s) applicable, provided, or expected"@en ;
     skos:inScheme dpv:rights-classes ;
@@ -59,6 +68,8 @@ dpv:Right a rdfs:Class,
 dpv:RightExerciseActivity a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Harshvardhan J Pandit, Beatriz Esteves, Georg P Krog, Paul Ryan" ;
+    dct:created "2022-11-02"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:OrganisationalMeasure ;
     skos:definition "An activity representing an exercising of an active right"@en ;
@@ -69,6 +80,8 @@ dpv:RightExerciseActivity a rdfs:Class,
 dpv:RightExerciseNotice a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Harshvardhan J Pandit, Beatriz Esteves, Georg P Krog, Paul Ryan" ;
+    dct:created "2022-10-22"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:OrganisationalMeasure ;
     skos:definition "Information associated with exercising of an active right"@en ;
@@ -79,6 +92,8 @@ dpv:RightExerciseNotice a rdfs:Class,
 dpv:RightExerciseRecord a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Harshvardhan J Pandit, Beatriz Esteves, Georg P Krog, Paul Ryan" ;
+    dct:created "2022-11-02"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Record ;
     skos:definition "Record of a Right being exercised"@en ;
@@ -89,6 +104,8 @@ dpv:RightExerciseRecord a rdfs:Class,
 dpv:RightFulfilmentNotice a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Harshvardhan J. Pandit, Beatriz Esteves" ;
+    dct:created "2022-11-02"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Notice ;
     skos:definition "Notice provided regarding fulfilment of a right"@en ;
@@ -99,6 +116,8 @@ dpv:RightFulfilmentNotice a rdfs:Class,
 dpv:RightNonFulfilmentNotice a rdfs:Class,
         skos:Concept,
         dpv:OrganisationalMeasure ;
+    dct:contributor "Harshvardhan J. Pandit, Beatriz Esteves" ;
+    dct:created "2022-11-02"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Notice ;
     skos:definition "Notice provided regarding non-fulfilment of a right"@en ;
@@ -152,6 +171,44 @@ foaf:page a rdf:Property,
     skos:scopeNote "Indicates a web page or document providing information or functionality associated with a Right Exercise"@en ;
     schema:domainIncludes dpv:RightExerciseActivity .
 
+<https://w3id.org/dpv#dcat:Resource> dct:created "2022-11-02"^^xsd:date .
+
+<https://w3id.org/dpv#dct:accessRights> dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-11-02"^^xsd:date .
+
+<https://w3id.org/dpv#dct:format> dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-11-02"^^xsd:date .
+
+<https://w3id.org/dpv#dct:hasPart> dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-11-02"^^xsd:date .
+
+<https://w3id.org/dpv#dct:isPartOf> dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-11-02"^^xsd:date .
+
+<https://w3id.org/dpv#dct:valid> dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-11-02"^^xsd:date .
+
+<https://w3id.org/dpv#dpv:hasJustification> dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-11-02"^^xsd:date .
+
+<https://w3id.org/dpv#dpv:hasRecipient> dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-11-02"^^xsd:date .
+
+<https://w3id.org/dpv#dpv:hasStatus> dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-11-02"^^xsd:date .
+
+<https://w3id.org/dpv#dpv:isAfter> dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-11-02"^^xsd:date .
+
+<https://w3id.org/dpv#dpv:isBefore> dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-11-02"^^xsd:date .
+
+<https://w3id.org/dpv#dpv:isImplementedByEntity> dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-11-02"^^xsd:date .
+
+<https://w3id.org/dpv#foaf:page> dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-11-02"^^xsd:date .
+
 dpv:hasJustification a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:RightExerciseActivity ;
@@ -173,6 +230,8 @@ dpv:hasRecipient a rdf:Property,
 dpv:hasRight a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv:Right ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2020-11-18"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates use or applicability of Right"@en ;
     skos:inScheme dpv:rights-properties ;
@@ -210,6 +269,8 @@ dpv:isExercisedAt a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:ActiveRight ;
     dcam:rangeIncludes dpv:RightExerciseNotice ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-10-22"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates context or information about exercising a right"@en ;
     skos:inScheme dpv:rights-properties ;

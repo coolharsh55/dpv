@@ -1,15 +1,20 @@
 @prefix dcam: <http://purl.org/dc/dcam/> .
 @prefix dct: <http://purl.org/dc/terms/> .
+@prefix dex: <https://w3id.org/dpv/examples#> .
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dpv:Access a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog" ;
+    dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Use ;
     skos:definition "to access data"@en ;
@@ -19,6 +24,7 @@ dpv:Access a rdfs:Class,
 dpv:Acquire a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:created "2019-05-07"^^xsd:date ;
     dct:source "(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Obtain ;
@@ -29,6 +35,7 @@ dpv:Acquire a rdfs:Class,
 dpv:Adapt a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:created "2019-05-07"^^xsd:date ;
     dct:source "(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Transform ;
@@ -39,6 +46,7 @@ dpv:Adapt a rdfs:Class,
 dpv:Align a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:created "2019-05-07"^^xsd:date ;
     dct:source "(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Transform ;
@@ -49,6 +57,7 @@ dpv:Align a rdfs:Class,
 dpv:Alter a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:created "2019-05-07"^^xsd:date ;
     dct:source "(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Transform ;
@@ -60,6 +69,7 @@ dpv:Alter a rdfs:Class,
 dpv:Analyse a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:created "2019-05-07"^^xsd:date ;
     dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/vocabs/processing)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Use ;
@@ -71,6 +81,7 @@ dpv:Analyse a rdfs:Class,
 dpv:Anonymise a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:created "2019-05-07"^^xsd:date ;
     dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/vocabs/processing)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Transform ;
@@ -82,6 +93,8 @@ dpv:Anonymise a rdfs:Class,
 dpv:Assess a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog" ;
+    dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Use ;
     skos:definition "to assess data for some criteria"@en ;
@@ -91,7 +104,9 @@ dpv:Assess a rdfs:Class,
 dpv:Collect a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:created "2019-05-07"^^xsd:date ;
     dct:source "(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj), (SPECIAL Project,https://specialprivacy.ercim.eu/vocabs/processing)"@en ;
+    vann:example dex:E0018 ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Obtain ;
     skos:definition "to gather data from someone"@en ;
@@ -102,6 +117,7 @@ dpv:Collect a rdfs:Class,
 dpv:Combine a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:created "2019-05-07"^^xsd:date ;
     dct:source "(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj), (SPECIAL Project,https://specialprivacy.ercim.eu/vocabs/processing)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Transform ;
@@ -113,6 +129,7 @@ dpv:Combine a rdfs:Class,
 dpv:Consult a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:created "2019-05-07"^^xsd:date ;
     dct:source "(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj), (SPECIAL Project,https://specialprivacy.ercim.eu/vocabs/processing)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Use ;
@@ -126,6 +143,7 @@ dpv:Consult a rdfs:Class,
 dpv:Copy a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:created "2019-05-07"^^xsd:date ;
     dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/vocabs/processing)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Processing ;
@@ -137,7 +155,9 @@ dpv:Copy a rdfs:Class,
 dpv:Derive a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:created "2019-05-07"^^xsd:date ;
     dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/vocabs/processing)"@en ;
+    vann:example dex:E0014 ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Obtain ;
     skos:definition "to create new derivative data from the original data"@en ;
@@ -150,6 +170,7 @@ dpv:Derive a rdfs:Class,
 dpv:Destruct a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:created "2019-05-07"^^xsd:date ;
     dct:source "(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Remove ;
@@ -160,6 +181,7 @@ dpv:Destruct a rdfs:Class,
 dpv:Disclose a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:created "2019-05-07"^^xsd:date ;
     dct:source "(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Processing ;
@@ -175,6 +197,7 @@ dpv:Disclose a rdfs:Class,
 dpv:DiscloseByTransmission a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:created "2019-05-07"^^xsd:date ;
     dct:source "(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Disclose ;
@@ -185,6 +208,7 @@ dpv:DiscloseByTransmission a rdfs:Class,
 dpv:Disseminate a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:created "2019-05-07"^^xsd:date ;
     dct:source "(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Disclose ;
@@ -195,6 +219,7 @@ dpv:Disseminate a rdfs:Class,
 dpv:Erase a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:created "2019-05-07"^^xsd:date ;
     dct:source "(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Remove ;
@@ -205,6 +230,8 @@ dpv:Erase a rdfs:Class,
 dpv:Filter a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog" ;
+    dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Transform ;
     skos:definition "to filter or keep data for some criteria"@en ;
@@ -214,6 +241,8 @@ dpv:Filter a rdfs:Class,
 dpv:Generate a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-04-20"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Obtain ;
     skos:definition "to generate or create data"@en ;
@@ -223,6 +252,10 @@ dpv:Generate a rdfs:Class,
 dpv:Infer a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-04-20"^^xsd:date ;
+    dct:modified "2022-10-14"^^xsd:date ;
+    vann:example dex:E0014 ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Derive ;
     skos:definition "to infer data from existing data"@en ;
@@ -233,6 +266,7 @@ dpv:Infer a rdfs:Class,
 dpv:MakeAvailable a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:created "2019-05-07"^^xsd:date ;
     dct:source "(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Disclose ;
@@ -243,6 +277,8 @@ dpv:MakeAvailable a rdfs:Class,
 dpv:Match a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-04-20"^^xsd:date ;
     dct:source "(A29WP WP 248 rev.01 Guideliens on DPIA,https://ec.europa.eu/newsroom/article29/items/611236)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Use ;
@@ -253,6 +289,8 @@ dpv:Match a rdfs:Class,
 dpv:Modify a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog" ;
+    dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Alter ;
     skos:definition "to modify or change data"@en ;
@@ -262,6 +300,8 @@ dpv:Modify a rdfs:Class,
 dpv:Monitor a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog" ;
+    dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Consult ;
     skos:definition "to monitor data for some criteria"@en ;
@@ -271,6 +311,7 @@ dpv:Monitor a rdfs:Class,
 dpv:Move a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:created "2019-05-07"^^xsd:date ;
     dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/vocabs/processing)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Transfer ;
@@ -282,6 +323,8 @@ dpv:Move a rdfs:Class,
 dpv:Observe a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog" ;
+    dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Obtain ;
     skos:definition "to obtain data through observation"@en ;
@@ -291,6 +334,7 @@ dpv:Observe a rdfs:Class,
 dpv:Obtain a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:created "2019-05-07"^^xsd:date ;
     dct:source "(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Processing ;
@@ -307,6 +351,7 @@ dpv:Obtain a rdfs:Class,
 dpv:Organise a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:created "2019-05-07"^^xsd:date ;
     dct:source "(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Processing ;
@@ -317,7 +362,13 @@ dpv:Organise a rdfs:Class,
 
 dpv:Processing a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Axel Polleres, Javier Fernández" ;
+    dct:created "2019-04-05"^^xsd:date ;
+    dct:modified "2020-11-04"^^xsd:date ;
     dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/)"@en ;
+    vann:example dex:E0005,
+        dex:E0011,
+        dex:E0014 ;
     sw:term_status "accepted"@en ;
     skos:definition "Operations or 'processing' performed on data"@en ;
     skos:inScheme dpv:processing-classes ;
@@ -336,6 +387,7 @@ dpv:Processing a rdfs:Class,
 dpv:Profiling a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:created "2019-05-07"^^xsd:date ;
     dct:source "(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Use ;
@@ -346,6 +398,8 @@ dpv:Profiling a rdfs:Class,
 dpv:Pseudonymise a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:contributor "2022-10-14" ;
+    dct:created "2019-05-07"^^xsd:date ;
     dct:source "(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Transform ;
@@ -356,6 +410,8 @@ dpv:Pseudonymise a rdfs:Class,
 dpv:Query a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Consult ;
     skos:definition "to query or make enquiries over data"@en ;
@@ -365,6 +421,7 @@ dpv:Query a rdfs:Class,
 dpv:Record a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:created "2019-05-07"^^xsd:date ;
     dct:source "(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Obtain ;
@@ -375,6 +432,7 @@ dpv:Record a rdfs:Class,
 dpv:Remove a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:created "2019-05-07"^^xsd:date ;
     dct:source "(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Processing ;
@@ -387,6 +445,7 @@ dpv:Remove a rdfs:Class,
 dpv:Restrict a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:created "2019-05-07"^^xsd:date ;
     dct:source "(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Transform ;
@@ -397,6 +456,7 @@ dpv:Restrict a rdfs:Class,
 dpv:Retrieve a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:created "2019-05-07"^^xsd:date ;
     dct:source "(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Use ;
@@ -407,6 +467,8 @@ dpv:Retrieve a rdfs:Class,
 dpv:Screen a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog" ;
+    dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Transform ;
     skos:definition "to remove data for some criteria"@en ;
@@ -416,6 +478,7 @@ dpv:Screen a rdfs:Class,
 dpv:Share a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:created "2019-05-07"^^xsd:date ;
     dct:source "(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Disclose ;
@@ -426,6 +489,7 @@ dpv:Share a rdfs:Class,
 dpv:Store a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:created "2019-05-07"^^xsd:date ;
     dct:source "(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Processing ;
@@ -436,6 +500,7 @@ dpv:Store a rdfs:Class,
 dpv:Structure a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:created "2019-05-07"^^xsd:date ;
     dct:source "(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Organise ;
@@ -446,7 +511,9 @@ dpv:Structure a rdfs:Class,
 dpv:Transfer a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:created "2019-05-07"^^xsd:date ;
     dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/vocabs/processing)"@en ;
+    vann:example dex:E0020 ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Processing ;
     skos:definition "to move data from one place to another"@en ;
@@ -458,6 +525,7 @@ dpv:Transfer a rdfs:Class,
 dpv:Transform a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:created "2019-05-07"^^xsd:date ;
     dct:source "(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Processing ;
@@ -477,6 +545,7 @@ dpv:Transform a rdfs:Class,
 dpv:Transmit a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:created "2019-05-07"^^xsd:date ;
     dct:source "(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Disclose ;
@@ -487,6 +556,7 @@ dpv:Transmit a rdfs:Class,
 dpv:Use a rdfs:Class,
         skos:Concept,
         dpv:Processing ;
+    dct:created "2019-05-07"^^xsd:date ;
     dct:source "(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)"@en ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Processing ;
@@ -504,6 +574,9 @@ dpv:Use a rdfs:Class,
 dpv:hasProcessing a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv:Processing ;
+    dct:contributor "Axel Polleres, Javier Fernández, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" ;
+    dct:created "2019-04-04"^^xsd:date ;
+    dct:modified "2020-11-04"^^xsd:date ;
     dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/)"@en ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with Processing"@en ;

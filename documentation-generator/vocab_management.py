@@ -64,6 +64,11 @@ def prefix_from_iri(iri):
 ###################### CSV files
 IMPORT_CSV_PATH = './vocab_csv'
 CSVFILES = {
+    'dex': {
+        'examples': {
+            'examples': f'{IMPORT_CSV_PATH}/Example.csv',
+        }
+    },
     'dpv': {
         'process': {
             'classes': f'{IMPORT_CSV_PATH}/Process.csv',
@@ -377,7 +382,14 @@ RDF_STRUCTURE = {
         'main': f'{EXPORT_RDF_PATH}/legal/eu/rights',
         'modules': f'{EXPORT_RDF_PATH}/legal/eu/rights/modules',
     },
+    'dex': {
+        'main': f'{EXPORT_RDF_PATH}/examples',
+        'modules': f'{EXPORT_RDF_PATH}/examples/modules',
+    }
 }
+
+### Examples 
+EXAMPLES = {}
 
 ###################### contributors
 

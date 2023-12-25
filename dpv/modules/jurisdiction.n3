@@ -1,14 +1,19 @@
 @prefix dcam: <http://purl.org/dc/dcam/> .
 @prefix dct: <http://purl.org/dc/terms/> .
+@prefix dex: <https://w3id.org/dpv/examples#> .
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dpv:City a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-10-22"^^xsd:date ;
     rdfs:subClassOf dpv:Region ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Region ;
@@ -19,6 +24,9 @@ dpv:City a rdfs:Class,
 dpv:CloudLocation a rdfs:Class,
         skos:Concept,
         dpv:Location ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-15"^^xsd:date ;
+    dct:modified "2020-10-05"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:RemoteLocation ;
     skos:definition "Location that is in the 'cloud' i.e. a logical location operated over the internet"@en ;
@@ -27,6 +35,8 @@ dpv:CloudLocation a rdfs:Class,
 
 dpv:Country a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog" ;
+    dct:created "2022-01-19"^^xsd:date ;
     rdfs:subClassOf dpv:Location ;
     rdfs:superClassOf dpv:Region,
         dpv:ThirdCountry ;
@@ -42,6 +52,9 @@ dpv:Country a rdfs:Class,
 dpv:DecentralisedLocations a rdfs:Class,
         skos:Concept,
         dpv:LocationFixture ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-15"^^xsd:date ;
+    dct:modified "2020-10-05"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:LocationFixture ;
     skos:definition "Location that is spread across multiple separate areas with no distinction between their importance"@en ;
@@ -50,6 +63,8 @@ dpv:DecentralisedLocations a rdfs:Class,
 
 dpv:EconomicUnion a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-01-19"^^xsd:date ;
     rdfs:subClassOf dpv:Location ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Location ;
@@ -60,6 +75,9 @@ dpv:EconomicUnion a rdfs:Class,
 dpv:FederatedLocations a rdfs:Class,
         skos:Concept,
         dpv:LocationFixture ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-15"^^xsd:date ;
+    dct:modified "2020-10-05"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:LocationFixture ;
     skos:definition "Location that is federated across multiple separate areas with designation of a primary or central location"@en ;
@@ -69,6 +87,9 @@ dpv:FederatedLocations a rdfs:Class,
 dpv:FixedLocation a rdfs:Class,
         skos:Concept,
         dpv:LocationFixture ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-15"^^xsd:date ;
+    dct:modified "2020-10-05"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:LocationFixture ;
     skos:definition "Location that is fixed i.e. known to occur at a specific place"@en ;
@@ -80,6 +101,9 @@ dpv:FixedLocation a rdfs:Class,
 dpv:FixedMultipleLocations a rdfs:Class,
         skos:Concept,
         dpv:LocationFixture ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-15"^^xsd:date ;
+    dct:modified "2020-10-05"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:FixedLocation ;
     skos:definition "Location that is fixed with multiple places e.g. multiple cities"@en ;
@@ -89,6 +113,9 @@ dpv:FixedMultipleLocations a rdfs:Class,
 dpv:FixedSingularLocation a rdfs:Class,
         skos:Concept,
         dpv:LocationFixture ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-15"^^xsd:date ;
+    dct:modified "2020-10-05"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:FixedLocation ;
     skos:definition "Location that is fixed at a specific place e.g. a city"@en ;
@@ -97,6 +124,8 @@ dpv:FixedSingularLocation a rdfs:Class,
 
 dpv:Law a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-01-19"^^xsd:date ;
     rdfs:subClassOf rdfs:Class ;
     sw:term_status "accepted"@en ;
     skos:definition "A law is a set of rules created by government or authorities"@en ;
@@ -106,6 +135,9 @@ dpv:Law a rdfs:Class,
 dpv:LocalLocation a rdfs:Class,
         skos:Concept,
         dpv:Location ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-15"^^xsd:date ;
+    dct:modified "2020-10-05"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:LocationLocality ;
     skos:definition "Location is local"@en ;
@@ -119,6 +151,9 @@ dpv:LocalLocation a rdfs:Class,
 
 dpv:Location a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog" ;
+    dct:created "2022-01-19"^^xsd:date ;
+    vann:example dex:E0011 ;
     rdfs:subClassOf rdfs:Class ;
     rdfs:superClassOf dpv:Country,
         dpv:EconomicUnion,
@@ -135,6 +170,8 @@ dpv:Location a rdfs:Class,
 
 dpv:LocationFixture a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-15"^^xsd:date ;
     rdfs:subClassOf rdfs:Class ;
     sw:term_status "accepted"@en ;
     skos:definition "The fixture of location refers to whether the location is fixed"@en ;
@@ -149,6 +186,9 @@ dpv:LocationFixture a rdfs:Class,
 dpv:LocationLocality a rdfs:Class,
         skos:Concept,
         dpv:Location ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-15"^^xsd:date ;
+    dct:modified "2022-10-04"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Location ;
     skos:definition "Locality refers to whether the specified location is local within some context, e.g. for the user"@en ;
@@ -160,6 +200,8 @@ dpv:LocationLocality a rdfs:Class,
 dpv:PrivateLocation a rdfs:Class,
         skos:Concept,
         dpv:Location ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-10-22"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:LocalLocation ;
     skos:definition "Location that is not or cannot be accessed by the public and is controlled as a private space"@en ;
@@ -169,6 +211,8 @@ dpv:PrivateLocation a rdfs:Class,
 dpv:PublicLocation a rdfs:Class,
         skos:Concept,
         dpv:Location ;
+    dct:contributor "Georg P Krog" ;
+    dct:created "2022-10-22"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:LocalLocation ;
     skos:definition "Location that is or can be accessed by the public"@en ;
@@ -178,6 +222,9 @@ dpv:PublicLocation a rdfs:Class,
 dpv:RandomLocation a rdfs:Class,
         skos:Concept,
         dpv:LocationFixture ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-15"^^xsd:date ;
+    dct:modified "2020-10-05"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:LocationFixture ;
     skos:definition "Location that is random or unknown"@en ;
@@ -186,6 +233,8 @@ dpv:RandomLocation a rdfs:Class,
 
 dpv:Region a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-01-19"^^xsd:date ;
     rdfs:subClassOf dpv:Country ;
     rdfs:superClassOf dpv:City ;
     sw:term_status "accepted"@en ;
@@ -198,6 +247,9 @@ dpv:Region a rdfs:Class,
 dpv:RemoteLocation a rdfs:Class,
         skos:Concept,
         dpv:Location ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-15"^^xsd:date ;
+    dct:modified "2020-10-05"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:LocationLocality ;
     skos:definition "Location is remote i.e. not local"@en ;
@@ -207,6 +259,8 @@ dpv:RemoteLocation a rdfs:Class,
 
 dpv:SupraNationalUnion a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-01-19"^^xsd:date ;
     rdfs:subClassOf dpv:Location ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Location ;
@@ -216,6 +270,8 @@ dpv:SupraNationalUnion a rdfs:Class,
 
 dpv:ThirdCountry a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-02-09"^^xsd:date ;
     rdfs:subClassOf dpv:Country ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Country ;
@@ -226,6 +282,9 @@ dpv:ThirdCountry a rdfs:Class,
 dpv:VariableLocation a rdfs:Class,
         skos:Concept,
         dpv:LocationFixture ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-15"^^xsd:date ;
+    dct:modified "2020-10-05"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:LocationFixture ;
     skos:definition "Location that is known but is variable e.g. somewhere within a given area"@en ;
@@ -235,6 +294,9 @@ dpv:VariableLocation a rdfs:Class,
 dpv:WithinDevice a rdfs:Class,
         skos:Concept,
         dpv:Location ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-15"^^xsd:date ;
+    dct:modified "2020-10-05"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:LocalLocation ;
     skos:definition "Location is local and entirely within a device, such as a smartphone"@en ;
@@ -244,6 +306,8 @@ dpv:WithinDevice a rdfs:Class,
 dpv:WithinPhysicalEnvironment a rdfs:Class,
         skos:Concept,
         dpv:Location ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2020-10-06"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:LocalLocation ;
     skos:definition "Location is local and entirely within a physical environment, such as a room"@en ;
@@ -253,6 +317,8 @@ dpv:WithinPhysicalEnvironment a rdfs:Class,
 dpv:WithinVirtualEnvironment a rdfs:Class,
         skos:Concept,
         dpv:Location ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2020-10-06"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:LocalLocation ;
     skos:definition "Location is local and entirely within a virtual environment, such as a shared network directory"@en ;
@@ -262,6 +328,8 @@ dpv:WithinVirtualEnvironment a rdfs:Class,
 dpv:hasApplicableLaw a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv:Law ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-01-19"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates applicability of a Law"@en ;
     skos:inScheme dpv:jurisdiction-properties ;
@@ -271,6 +339,8 @@ dpv:hasApplicableLaw a rdf:Property,
 dpv:hasJurisdiction a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv:Location ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-01-19"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates applicability of specified jurisdiction"@en ;
     skos:inScheme dpv:jurisdiction-properties ;
@@ -280,6 +350,8 @@ dpv:hasJurisdiction a rdf:Property,
 dpv:hasLocation a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv:Location ;
+    dct:contributor "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar" ;
+    dct:created "2019-04-05"^^xsd:date ;
     dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/)"@en ;
     rdfs:superPropertyOf dpv:hasCountry ;
     sw:term_status "accepted"@en ;
@@ -292,6 +364,8 @@ dpv:hasLocation a rdf:Property,
 dpv:hasThirdCountry a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv:ThirdCountry ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog" ;
+    dct:created "2022-02-09"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasCountry ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasCountry ;
@@ -303,6 +377,8 @@ dpv:hasThirdCountry a rdf:Property,
 dpv:hasCountry a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv:Country ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog" ;
+    dct:created "2022-01-19"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasLocation ;
     rdfs:superPropertyOf dpv:hasThirdCountry ;
     sw:term_status "accepted"@en ;

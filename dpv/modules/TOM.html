@@ -786,6 +786,21 @@
 
     <section>
       <h3>Access Control</h3>
+        <aside class="example" title="Protecting data using encryption and access control">
+    <p>To indicate data is encrypted using the <a href="https://en.wikipedia.org/wiki/RSA_(cryptosystem)">Rivest-Shamir-Adleman (RSA) method</a>, one would extend the <a href="https://www.w3id.org/dpv#Encryption"><code>Encryption</code></a> concept within DPV to represent <code>RSA</code>, and then instantiate it with the specific implementation used (e.g. to indicate key size). Access to this data is further restricted by requiring a password or credential.</p>
+    <pre><code>ex:RSAEncryption rdf:type dpv:TechnicalMeasure ;
+    skos:broader dpv:Encryption ;
+    skos:scopeNote &#34;Key size: 2048, Custom Implementation&#34;@en .
+
+ex:RBACCredential rdf:type dpv:TechnicalMeasure ;
+    skos:broader dpv:AccessControlMethod .
+</code></pre>
+    <p><small>(<em>META</em> 
+      Example ID: <a href="https://w3id.org/dpv/examples#E0016"><code>E0016</code></a>;
+link: <a href="E0016.ttl">source file</a>;      contributor(s): Harsh (2022-10-13))
+    </small></p>
+  </aside>
+
     </section>
 
     <section>
@@ -1274,7 +1289,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>AccessControlMethod</dfn></td>
+          <td><dfn>dpv:AccessControlMethod</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -1311,11 +1326,20 @@
 <tr>
           <th>Definition</th>
           <td><i>Methods which restrict access to a place or resource</i></td>
-        </tr>        
+        </tr>        <tr class="table-separator"></tr>
+          <th>Examples</th>
+          <td>            <a href="https://w3id.org/dpv/examples#E0016">Protecting data using encryption and access control <small>(E0016)</small></a>
+</td>
         <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2019-04-05</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -1328,7 +1352,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>ActivityMonitoring</dfn></td>
+          <td><dfn>dpv:ActivityMonitoring</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -1362,14 +1386,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Monitoring of activities including assessing whether they have been successfully initiated and completed</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/">ENISA Reference Incident Classification Taxonomy 2018</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -1382,7 +1411,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>Anonymisation</dfn></td>
+          <td><dfn>dpv:Anonymisation</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -1418,14 +1447,22 @@
 <tr>
           <th>Definition</th>
           <td><i>Anonymisation is the process by which data is irreversibly altered in such a way that a data subject can no longer be identified directly or indirectly, either by the entity holding the data alone or in collaboration with other entities and information sources</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.iso.org/standard/45123.html">ISO 29100:2011</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2019-04-05</i></td>
+        </tr><tr>
+          <th>Date Modified</th>
+          <td><i>2022-11-24</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -1438,7 +1475,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>Assessment</dfn></td>
+          <td><dfn>dpv:Assessment</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -1475,11 +1512,16 @@
 <tr>
           <th>Definition</th>
           <td><i>The document, plan, or process for assessment or determination towards a purpose e.g. assessment of legality or impact assessments</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2021-09-08</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -1492,7 +1534,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>AssetManagementProcedures</dfn></td>
+          <td><dfn>dpv:AssetManagementProcedures</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -1527,14 +1569,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Procedures related to management of assets</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/5g-cybersecurity-standards">ENISA 5G Cybersecurity Standards</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -1547,7 +1594,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>AsymmetricCryptography</dfn></td>
+          <td><dfn>dpv:AsymmetricCryptography</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -1582,14 +1629,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Use of public-key cryptography or asymmetric cryptography involving a public and private pair of keys</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/">ENISA Reference Incident Classification Taxonomy 2018</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -1602,7 +1654,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>AsymmetricEncryption</dfn></td>
+          <td><dfn>dpv:AsymmetricEncryption</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -1637,14 +1689,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Use of asymmetric cryptography to encrypt data</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/data-pseudonymisation-advanced-techniques-and-use-cases">ENISA Data Pseudonymisation: Advanced Techniques and Use Cases</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -1657,7 +1714,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>Authentication-ABC</dfn></td>
+          <td><dfn>dpv:Authentication-ABC</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -1700,14 +1757,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Use of Attribute Based Credentials (ABC) to perform and manage authentication</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/data-protection-engineering">ENISA Data Protection Engineering</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -1720,7 +1782,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>Authentication-PABC</dfn></td>
+          <td><dfn>dpv:Authentication-PABC</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -1763,14 +1825,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Use of Privacy-enhancing Attribute Based Credentials (ABC) to perform and manage authentication</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/data-protection-engineering">ENISA Data Protection Engineering</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -1783,7 +1850,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>AuthenticationProtocols</dfn></td>
+          <td><dfn>dpv:AuthenticationProtocols</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -1820,11 +1887,16 @@
 <tr>
           <th>Definition</th>
           <td><i>Protocols involving validation of identity i.e. authentication of a person or information</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2019-04-05</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -1837,7 +1909,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>AuthorisationProcedure</dfn></td>
+          <td><dfn>dpv:AuthorisationProcedure</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -1877,11 +1949,16 @@
         </tr><tr>
           <th>Usage Note</th>
           <td><i>non-technical authorisation procedures: How is it described on an organisational level, who gets access to the data</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2019-04-05</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -1894,7 +1971,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>AuthorisationProtocols</dfn></td>
+          <td><dfn>dpv:AuthorisationProtocols</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -1928,14 +2005,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Protocols involving authorisation of roles or profiles to determine permission, rights, or privileges</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/">ENISA Reference Incident Classification Taxonomy 2018</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -1948,7 +2030,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>BackgroundChecks</dfn></td>
+          <td><dfn>dpv:BackgroundChecks</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -1983,14 +2065,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Procedure where the background of an entity is assessed to identity vulnerabilities and threats due to their current or intended role</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/5g-cybersecurity-standards">ENISA 5G Cybersecurity Standards</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -2003,7 +2090,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>BiometricAuthentication</dfn></td>
+          <td><dfn>dpv:BiometricAuthentication</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -2038,14 +2125,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Use of biometric data for authentication</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/">ENISA Reference Incident Classification Taxonomy 2018</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -2058,7 +2150,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>Certification</dfn></td>
+          <td><dfn>dpv:Certification</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -2093,11 +2185,16 @@
 <tr>
           <th>Definition</th>
           <td><i>Certification mechanisms, seals, and marks for the purpose of demonstrating compliance</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2019-04-05</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -2110,7 +2207,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>CertificationSeal</dfn></td>
+          <td><dfn>dpv:CertificationSeal</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -2147,11 +2244,16 @@
 <tr>
           <th>Definition</th>
           <td><i>Certifications, seals, and marks indicating compliance to regulations or practices</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2019-04-05</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -2164,7 +2266,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>CodeOfConduct</dfn></td>
+          <td><dfn>dpv:CodeOfConduct</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -2199,11 +2301,16 @@
 <tr>
           <th>Definition</th>
           <td><i>A set of rules or procedures outlining the norms and practices for conducting activities</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2019-04-05</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -2216,7 +2323,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>ComplianceMonitoring</dfn></td>
+          <td><dfn>dpv:ComplianceMonitoring</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -2251,14 +2358,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Monitoring of compliance (e.g. internal policy, regulations)</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/5g-cybersecurity-standards">ENISA 5G Cybersecurity Standards</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -2271,7 +2383,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>ConsentNotice</dfn></td>
+          <td><dfn>dpv:ConsentNotice</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -2307,11 +2419,16 @@
 <tr>
           <th>Definition</th>
           <td><i>A Notice for information provision associated with Consent</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-06-21</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -2324,7 +2441,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>ConsentRecord</dfn></td>
+          <td><dfn>dpv:ConsentRecord</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -2360,11 +2477,20 @@
 <tr>
           <th>Definition</th>
           <td><i>A Record of Consent or Consent related activities</i></td>
-        </tr>        
+        </tr>        <tr class="table-separator"></tr>
+          <th>Examples</th>
+          <td>            <a href="https://w3id.org/dpv/examples#E0019">Consent record <small>(E0019)</small></a>
+</td>
         <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-06-22</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -2377,7 +2503,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>Consultation</dfn></td>
+          <td><dfn>dpv:Consultation</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -2414,11 +2540,16 @@
 <tr>
           <th>Definition</th>
           <td><i>Consultation is a process of receiving feedback, advice, or opinion from an external agency</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2020-11-04</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Georg P Krog, Harshvardhan J. Pandit, Paul Ryan</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -2431,7 +2562,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>ConsultationWithAuthority</dfn></td>
+          <td><dfn>dpv:ConsultationWithAuthority</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -2466,11 +2597,16 @@
 <tr>
           <th>Definition</th>
           <td><i>Consultation with an authority or authoritative entity</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2020-11-04</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Georg P Krog, Harshvardhan J. Pandit, Paul Ryan</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -2483,7 +2619,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>ConsultationWithDataSubject</dfn></td>
+          <td><dfn>dpv:ConsultationWithDataSubject</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -2521,11 +2657,16 @@
 <tr>
           <th>Definition</th>
           <td><i>Consultation with data subject(s) or their representative(s)</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-06-15</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit, Georg P Krog</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -2538,7 +2679,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>ConsultationWithDataSubjectRepresentative</dfn></td>
+          <td><dfn>dpv:ConsultationWithDataSubjectRepresentative</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -2574,11 +2715,16 @@
 <tr>
           <th>Definition</th>
           <td><i>Consultation with representative of data subject(s)</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-10-22</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit, Georg P Krog</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -2591,7 +2737,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>ConsultationWithDPO</dfn></td>
+          <td><dfn>dpv:ConsultationWithDPO</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -2626,11 +2772,16 @@
 <tr>
           <th>Definition</th>
           <td><i>Consultation with Data Protection Officer(s)</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-06-15</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit, Georg P Krog</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -2643,7 +2794,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>ContractualTerms</dfn></td>
+          <td><dfn>dpv:ContractualTerms</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -2678,11 +2829,16 @@
 <tr>
           <th>Definition</th>
           <td><i>Contractual terms governing data handling within or with an entity</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2019-04-05</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -2695,7 +2851,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>ControllerProcessorAgreement</dfn></td>
+          <td><dfn>dpv:ControllerProcessorAgreement</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -2731,11 +2887,21 @@
 <tr>
           <th>Definition</th>
           <td><i>An agreement outlining conditions, criteria, obligations, responsibilities, and specifics for carrying out processing of personal data between a Data Controller and a Data Processor</i></td>
-        </tr>        
+        </tr>        <tr class="table-separator"></tr>
+          <th>Examples</th>
+          <td>            <a href="https://w3id.org/dpv/examples#E0020">Controller-Processor agreement <small>(E0020)</small></a>; 
+            <a href="https://w3id.org/dpv/examples#E0021">Data transfer safeguards <small>(E0021)</small></a>
+</td>
         <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-01-26</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Georg P Krog, Harshvardhan J. Pandit, Beatriz Esteves, Paul Ryan, Julian Flake</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -2748,7 +2914,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>CredentialManagement</dfn></td>
+          <td><dfn>dpv:CredentialManagement</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -2783,11 +2949,16 @@
 <tr>
           <th>Definition</th>
           <td><i>Management of credentials and their use in authorisations</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-06-15</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Georg P Krog</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -2800,7 +2971,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>CryptographicAuthentication</dfn></td>
+          <td><dfn>dpv:CryptographicAuthentication</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -2844,14 +3015,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Use of cryptography for authentication</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/">ENISA Reference Incident Classification Taxonomy 2018</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -2864,7 +3040,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>CryptographicKeyManagement</dfn></td>
+          <td><dfn>dpv:CryptographicKeyManagement</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -2899,14 +3075,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Management of cryptographic keys, including their generation, storage, assessment, and safekeeping</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/">ENISA Reference Incident Classification Taxonomy 2018</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -2919,7 +3100,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>CryptographicMethods</dfn></td>
+          <td><dfn>dpv:CryptographicMethods</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -2956,14 +3137,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Use of cryptographic methods to perform tasks</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/">ENISA Reference Incident Classification Taxonomy 2018</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -2976,7 +3162,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>CybersecurityAssessment</dfn></td>
+          <td><dfn>dpv:CybersecurityAssessment</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -3000,14 +3186,14 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#SecurityAssessment">dpv:SecurityAssessment</a> → 
-             <a href="#SecurityProcedure">dpv:SecurityProcedure</a> → 
+             <a href="#Assessment">dpv:Assessment</a> → 
              <a href="#OrganisationalMeasure">dpv:OrganisationalMeasure</a> → 
              <a href="#TechnicalOrganisationalMeasure">dpv:TechnicalOrganisationalMeasure</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#SecurityAssessment">dpv:SecurityAssessment</a> → 
-             <a href="#Assessment">dpv:Assessment</a> → 
+             <a href="#SecurityProcedure">dpv:SecurityProcedure</a> → 
              <a href="#OrganisationalMeasure">dpv:OrganisationalMeasure</a> → 
              <a href="#TechnicalOrganisationalMeasure">dpv:TechnicalOrganisationalMeasure</a>
 </td>
@@ -3019,14 +3205,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Assessment of cybersecurity capabilities in terms of vulnerabilities and effectiveness of controls</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/5g-cybersecurity-standards">ENISA 5G Cybersecurity Standards</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -3039,7 +3230,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>CybersecurityTraining</dfn></td>
+          <td><dfn>dpv:CybersecurityTraining</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -3074,14 +3265,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Training methods related to cybersecurity</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/">ENISA Reference Incident Classification Taxonomy 2018</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -3094,7 +3290,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>DataBackupProtocols</dfn></td>
+          <td><dfn>dpv:DataBackupProtocols</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -3128,11 +3324,16 @@
 <tr>
           <th>Definition</th>
           <td><i>Protocols or plans for backing up of data</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-06-15</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Georg P Krog</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -3145,7 +3346,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>DataProcessingAgreement</dfn></td>
+          <td><dfn>dpv:DataProcessingAgreement</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -3186,11 +3387,16 @@
         </tr><tr>
           <th>Usage Note</th>
           <td><i>For specific role-based data processing agreements, see concepts for Processors and JointDataController agreements.</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-01-26</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Georg P Krog, Harshvardhan J. Pandit, Beatriz Esteves, Paul Ryan, Julian Flake</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -3203,7 +3409,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>DataProcessingRecord</dfn></td>
+          <td><dfn>dpv:DataProcessingRecord</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -3241,11 +3447,16 @@
 <tr>
           <th>Definition</th>
           <td><i>Record of data processing, whether ex-ante or ex-post</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2021-09-08</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -3258,7 +3469,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>DataProtectionTraining</dfn></td>
+          <td><dfn>dpv:DataProtectionTraining</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -3293,14 +3504,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Training intended to increase knowledge regarding data protection</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/5g-cybersecurity-standards">ENISA 5G Cybersecurity Standards</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -3313,7 +3529,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>DataRedaction</dfn></td>
+          <td><dfn>dpv:DataRedaction</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -3348,11 +3564,16 @@
 <tr>
           <th>Definition</th>
           <td><i>Removal of sensitive information from a data or document</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2020-10-01</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -3365,7 +3586,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>DataSanitisationTechnique</dfn></td>
+          <td><dfn>dpv:DataSanitisationTechnique</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -3402,14 +3623,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Cleaning or any removal or re-organisation of elements in data based on selective criteria</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/">ENISA Reference Incident Classification Taxonomy 2018</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -3422,7 +3648,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>DataTransferImpactAssessment</dfn></td>
+          <td><dfn>dpv:DataTransferImpactAssessment</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -3458,11 +3684,16 @@
 <tr>
           <th>Definition</th>
           <td><i>Impact Assessment for conducting data transfers</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2021-09-08</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Georg P Krog, Harshvardhan J. Pandit, Paul Ryan</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -3475,7 +3706,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>Deidentification</dfn></td>
+          <td><dfn>dpv:Deidentification</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -3513,14 +3744,22 @@
 <tr>
           <th>Definition</th>
           <td><i>Removal of identity or information to reduce identifiability</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://nvlpubs.nist.gov/nistpubs/ir/2015/NIST.IR.8053.pdf">NISTIR 8053</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2019-04-05</i></td>
+        </tr><tr>
+          <th>Date Modified</th>
+          <td><i>2022-11-24</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -3533,7 +3772,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>DesignStandard</dfn></td>
+          <td><dfn>dpv:DesignStandard</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -3568,11 +3807,16 @@
 <tr>
           <th>Definition</th>
           <td><i>A set of rules or guidelines outlining criterias for design</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2019-04-05</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -3585,7 +3829,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>DeterministicPseudonymisation</dfn></td>
+          <td><dfn>dpv:DeterministicPseudonymisation</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -3622,14 +3866,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Pseudonymisation achieved through a deterministic function</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/data-pseudonymisation-advanced-techniques-and-use-cases">ENISA Data Pseudonymisation: Advanced Techniques and Use Cases</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -3642,7 +3891,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>DifferentialPrivacy</dfn></td>
+          <td><dfn>dpv:DifferentialPrivacy</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -3677,14 +3926,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Utilisation of differential privacy where information is shared as patterns or groups to withhold individual elements</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/data-protection-engineering">ENISA Data Protection Engineering</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -3697,7 +3951,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>DigitalRightsManagement</dfn></td>
+          <td><dfn>dpv:DigitalRightsManagement</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -3731,14 +3985,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Management of access, use, and other operations associated with digital content</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/">ENISA Reference Incident Classification Taxonomy 2018</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -3751,7 +4010,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>DigitalSignatures</dfn></td>
+          <td><dfn>dpv:DigitalSignatures</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -3786,14 +4045,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Expression and authentication of identity through digital information containing cryptographic signatures</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/">ENISA Reference Incident Classification Taxonomy 2018</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -3806,7 +4070,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>DisasterRecoveryProcedures</dfn></td>
+          <td><dfn>dpv:DisasterRecoveryProcedures</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -3841,14 +4105,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Procedures related to management of disasters and recovery</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/5g-cybersecurity-standards">ENISA 5G Cybersecurity Standards</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -3861,7 +4130,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>DistributedSystemSecurity</dfn></td>
+          <td><dfn>dpv:DistributedSystemSecurity</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -3896,14 +4165,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Security implementations provided using or over a distributed system</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/">ENISA Reference Incident Classification Taxonomy 2018</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -3916,7 +4190,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>DocumentRandomisedPseudonymisation</dfn></td>
+          <td><dfn>dpv:DocumentRandomisedPseudonymisation</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -3953,14 +4227,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Use of randomised pseudonymisation where the same elements are assigned different values in the same document or database</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/data-pseudonymisation-advanced-techniques-and-use-cases">ENISA Data Pseudonymisation: Advanced Techniques and Use Cases</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -3973,7 +4252,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>DocumentSecurity</dfn></td>
+          <td><dfn>dpv:DocumentSecurity</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -4008,14 +4287,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Security measures enacted over documents to protect against tampering or restrict access</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/">ENISA Reference Incident Classification Taxonomy 2018</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -4028,7 +4312,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>DPIA</dfn></td>
+          <td><dfn>dpv:DPIA</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -4067,11 +4351,16 @@
         </tr><tr>
           <th>Usage Note</th>
           <td><i>Top class: Impact Assessment, and DPIA is sub-class</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2020-11-04</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Georg P Krog, Harshvardhan J. Pandit, Paul Ryan</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -4084,7 +4373,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>EducationalTraining</dfn></td>
+          <td><dfn>dpv:EducationalTraining</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -4119,14 +4408,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Training methods that are intended to provide education on topic(s)</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/">ENISA Reference Incident Classification Taxonomy 2018</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -4139,7 +4433,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>EffectivenessDeterminationProcedures</dfn></td>
+          <td><dfn>dpv:EffectivenessDeterminationProcedures</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -4174,14 +4468,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Procedures intended to determine effectiveness of other measures</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/5g-cybersecurity-standards">ENISA 5G Cybersecurity Standards</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -4194,7 +4493,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>Encryption</dfn></td>
+          <td><dfn>dpv:Encryption</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -4231,11 +4530,20 @@
 <tr>
           <th>Definition</th>
           <td><i>Technical measures consisting of encryption</i></td>
-        </tr>        
+        </tr>        <tr class="table-separator"></tr>
+          <th>Examples</th>
+          <td>            <a href="https://w3id.org/dpv/examples#E0016">Protecting data using encryption and access control <small>(E0016)</small></a>
+</td>
         <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2019-04-05</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -4248,7 +4556,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>EncryptionAtRest</dfn></td>
+          <td><dfn>dpv:EncryptionAtRest</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -4283,11 +4591,16 @@
 <tr>
           <th>Definition</th>
           <td><i>Encryption of data when being stored (persistent encryption)</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2019-04-05</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -4300,7 +4613,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>EncryptionInTransfer</dfn></td>
+          <td><dfn>dpv:EncryptionInTransfer</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -4335,11 +4648,16 @@
 <tr>
           <th>Definition</th>
           <td><i>Encryption of data in transit e.g. when being transferred from one location to another, including sharing</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2019-04-05</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -4352,7 +4670,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>EncryptionInUse</dfn></td>
+          <td><dfn>dpv:EncryptionInUse</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -4387,11 +4705,16 @@
 <tr>
           <th>Definition</th>
           <td><i>Encryption of data when it is being used</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-10-22</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -4404,7 +4727,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>EndToEndEncryption</dfn></td>
+          <td><dfn>dpv:EndToEndEncryption</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -4439,14 +4762,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Encrypted communications where data is encrypted by the sender and decrypted by the intended receiver to prevent access to any third party</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/data-protection-engineering">ENISA Data Protection Engineering</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -4459,7 +4787,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>FileSystemSecurity</dfn></td>
+          <td><dfn>dpv:FileSystemSecurity</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -4494,14 +4822,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Security implemented over a file system</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/">ENISA Reference Incident Classification Taxonomy 2018</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -4514,7 +4847,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>FullyRandomisedPseudonymisation</dfn></td>
+          <td><dfn>dpv:FullyRandomisedPseudonymisation</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -4551,14 +4884,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Use of randomised pseudonymisation where the same elements are assigned different values each time they occur</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/data-pseudonymisation-advanced-techniques-and-use-cases">ENISA Data Pseudonymisation: Advanced Techniques and Use Cases</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -4571,7 +4909,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>GovernanceProcedures</dfn></td>
+          <td><dfn>dpv:GovernanceProcedures</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -4608,14 +4946,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Procedures related to governance (e.g. organisation, unit, team, process, system)</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/5g-cybersecurity-standards">ENISA 5G Cybersecurity Standards</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -4628,7 +4971,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>GuidelinesPrinciple</dfn></td>
+          <td><dfn>dpv:GuidelinesPrinciple</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -4665,11 +5008,16 @@
 <tr>
           <th>Definition</th>
           <td><i>Guidelines or Principles regarding processing and operational measures</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2019-04-05</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -4682,7 +5030,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>HardwareSecurityProtocols</dfn></td>
+          <td><dfn>dpv:HardwareSecurityProtocols</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -4717,14 +5065,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Security protocols implemented at or within hardware</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/">ENISA Reference Incident Classification Taxonomy 2018</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -4737,7 +5090,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>HashFunctions</dfn></td>
+          <td><dfn>dpv:HashFunctions</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -4772,14 +5125,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Use of hash functions to map information or to retrieve a prior categorisation</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/">ENISA Reference Incident Classification Taxonomy 2018</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -4792,7 +5150,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>HashMessageAuthenticationCode</dfn></td>
+          <td><dfn>dpv:HashMessageAuthenticationCode</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -4835,14 +5193,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Use of HMAC where message authentication code (MAC) utilise a cryptographic hash function and a secret cryptographic key</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/5g-cybersecurity-standards">ENISA 5G Cybersecurity Standards</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -4855,7 +5218,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>HomomorphicEncryption</dfn></td>
+          <td><dfn>dpv:HomomorphicEncryption</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -4890,14 +5253,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Use of Homomorphic encryption that permits computations on encrypted data without decrypting it</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/">ENISA Reference Incident Classification Taxonomy 2018</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -4910,7 +5278,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>IdentityManagementMethod</dfn></td>
+          <td><dfn>dpv:IdentityManagementMethod</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -4945,14 +5313,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Management of identity and identity-based processes</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/">ENISA Reference Incident Classification Taxonomy 2018</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -4965,7 +5338,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>ImpactAssessment</dfn></td>
+          <td><dfn>dpv:ImpactAssessment</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -5003,11 +5376,16 @@
 <tr>
           <th>Definition</th>
           <td><i>Calculating or determining the likelihood of impact of an existing or proposed process, which can involve risks or detriments.</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2020-11-04</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Georg P Krog, Harshvardhan J. Pandit, Paul Ryan</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -5020,7 +5398,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>IncidentManagementProcedures</dfn></td>
+          <td><dfn>dpv:IncidentManagementProcedures</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -5055,14 +5433,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Procedures related to management of incidents</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/5g-cybersecurity-standards">ENISA 5G Cybersecurity Standards</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -5075,7 +5458,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>IncidentReportingCommunication</dfn></td>
+          <td><dfn>dpv:IncidentReportingCommunication</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -5110,14 +5493,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Procedures related to management of incident reporting</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/5g-cybersecurity-standards">ENISA 5G Cybersecurity Standards</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -5130,7 +5518,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>InformationFlowControl</dfn></td>
+          <td><dfn>dpv:InformationFlowControl</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -5164,14 +5552,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Use of measures to control information flows</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/">ENISA Reference Incident Classification Taxonomy 2018</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -5184,7 +5577,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>InformationSecurityPolicy</dfn></td>
+          <td><dfn>dpv:InformationSecurityPolicy</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -5219,14 +5612,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Policy regarding security of information</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/5g-cybersecurity-standards">ENISA 5G Cybersecurity Standards</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -5239,7 +5637,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>IntrusionDetectionSystem</dfn></td>
+          <td><dfn>dpv:IntrusionDetectionSystem</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -5274,14 +5672,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Use of measures to detect intrusions and other unauthorised attempts to gain access to a system</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/">ENISA Reference Incident Classification Taxonomy 2018</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -5294,7 +5697,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>JointDataControllersAgreement</dfn></td>
+          <td><dfn>dpv:JointDataControllersAgreement</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -5330,11 +5733,16 @@
 <tr>
           <th>Definition</th>
           <td><i>An agreement outlining conditions, criteria, obligations, responsibilities, and specifics for carrying out processing of personal data between Controllers within a Joint Controllers relationship</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-01-26</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Georg P Krog, Harshvardhan J. Pandit, Beatriz Esteves, Paul Ryan, Julian Flake</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -5347,7 +5755,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>LegalAgreement</dfn></td>
+          <td><dfn>dpv:LegalAgreement</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -5384,11 +5792,16 @@
 <tr>
           <th>Definition</th>
           <td><i>A legally binding agreement</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2019-04-05</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a>, <a href="https://w3id.org/dpv#vocab-legal-basis">Dpv Legal-basis</a></td>
         </tr>
@@ -5401,7 +5814,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>LegalMeasure</dfn></td>
+          <td><dfn>dpv:LegalMeasure</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -5434,11 +5847,16 @@
 <tr>
           <th>Definition</th>
           <td><i>Legal measures used to safeguard and ensure good practices in connection with data and technologies</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2023-12-10</i></td>
+        </tr><tr>
+          <th>Date Modified</th>
+          <td><i>2023-12-10</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM">Dpv Tom</a></td>
         </tr>
@@ -5451,7 +5869,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>LegitimateInterestAssessment</dfn></td>
+          <td><dfn>dpv:LegitimateInterestAssessment</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -5486,11 +5904,16 @@
 <tr>
           <th>Definition</th>
           <td><i>Indicates an assessment regarding the use of legitimate interest as a lawful basis by the data controller</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2021-09-08</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Georg P Krog, Harshvardhan J. Pandit, Paul Ryan</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -5503,7 +5926,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>LoggingPolicies</dfn></td>
+          <td><dfn>dpv:LoggingPolicies</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -5538,14 +5961,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Policy for logging of information</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/5g-cybersecurity-standards">ENISA 5G Cybersecurity Standards</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -5558,7 +5986,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>MessageAuthenticationCodes</dfn></td>
+          <td><dfn>dpv:MessageAuthenticationCodes</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -5601,14 +6029,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Use of cryptographic methods to authenticate messages</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/">ENISA Reference Incident Classification Taxonomy 2018</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -5621,7 +6054,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>MobilePlatformSecurity</dfn></td>
+          <td><dfn>dpv:MobilePlatformSecurity</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -5656,14 +6089,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Security implemented over a mobile platform</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/">ENISA Reference Incident Classification Taxonomy 2018</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -5676,7 +6114,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>MonitoringPolicies</dfn></td>
+          <td><dfn>dpv:MonitoringPolicies</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -5711,14 +6149,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Policy for monitoring (e.g. progress, performance)</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/5g-cybersecurity-standards">ENISA 5G Cybersecurity Standards</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -5731,7 +6174,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>MonotonicCounterPseudonymisation</dfn></td>
+          <td><dfn>dpv:MonotonicCounterPseudonymisation</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -5768,14 +6211,22 @@
 <tr>
           <th>Definition</th>
           <td><i>A simple pseudonymisation method where identifiers are substituted by a number chosen by a monotonic counter</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/data-pseudonymisation-advanced-techniques-and-use-cases">ENISA Data Pseudonymisation: Advanced Techniques and Use Cases</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Date Modified</th>
+          <td><i>2022-10-13</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -5788,7 +6239,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>MultiFactorAuthentication</dfn></td>
+          <td><dfn>dpv:MultiFactorAuthentication</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -5823,14 +6274,19 @@
 <tr>
           <th>Definition</th>
           <td><i>An authentication system that uses two or more methods to authenticate</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/">ENISA Reference Incident Classification Taxonomy 2018</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -5843,7 +6299,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>NDA</dfn></td>
+          <td><dfn>dpv:NDA</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -5878,11 +6334,16 @@
 <tr>
           <th>Definition</th>
           <td><i>Non-disclosure Agreements e.g. preserving confidentiality of information</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2019-04-05</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -5895,7 +6356,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>NetworkProxyRouting</dfn></td>
+          <td><dfn>dpv:NetworkProxyRouting</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -5930,14 +6391,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Use of network routing using proxy</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/data-protection-engineering">ENISA Data Protection Engineering</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -5950,7 +6416,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>NetworkSecurityProtocols</dfn></td>
+          <td><dfn>dpv:NetworkSecurityProtocols</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -5985,14 +6451,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Security implemented at or over networks protocols</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/">ENISA Reference Incident Classification Taxonomy 2018</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -6005,7 +6476,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>Notice</dfn></td>
+          <td><dfn>dpv:Notice</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -6042,11 +6513,20 @@
 <tr>
           <th>Definition</th>
           <td><i>A notice is an artefact for providing information, choices, or controls</i></td>
-        </tr>        
+        </tr>        <tr class="table-separator"></tr>
+          <th>Examples</th>
+          <td>            <a href="https://w3id.org/dpv/examples#E0025">Consent Notice <small>(E0025)</small></a>
+</td>
         <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2021-09-08</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Paul Ryan, David Hickey, Georg P Krog, Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a>, <a href="https://w3id.org/dpv#vocab-rights">Dpv Rights</a></td>
         </tr>
@@ -6059,7 +6539,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>OperatingSystemSecurity</dfn></td>
+          <td><dfn>dpv:OperatingSystemSecurity</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -6094,14 +6574,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Security implemented at or through operating systems</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/">ENISA Reference Incident Classification Taxonomy 2018</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -6114,7 +6599,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>OrganisationalMeasure</dfn></td>
+          <td><dfn>dpv:OrganisationalMeasure</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -6150,11 +6635,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Organisational measures used to safeguard and ensure good practices in connection with data and technologies</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2019-04-05</i></td>
+        </tr><tr>
+          <th>Date Modified</th>
+          <td><i>2023-12-10</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM">Dpv Tom</a>, <a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a>, <a href="https://w3id.org/dpv#vocab-rights">Dpv Rights</a></td>
         </tr>
@@ -6167,7 +6660,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>PasswordAuthentication</dfn></td>
+          <td><dfn>dpv:PasswordAuthentication</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -6202,14 +6695,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Use of passwords to perform authentication</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/">ENISA Reference Incident Classification Taxonomy 2018</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -6222,7 +6720,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>PenetrationTestingMethods</dfn></td>
+          <td><dfn>dpv:PenetrationTestingMethods</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -6257,14 +6755,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Use of penetration testing to identify weaknesses and vulnerabilities through simulations</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/">ENISA Reference Incident Classification Taxonomy 2018</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -6277,7 +6780,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>PhysicalAccessControlMethod</dfn></td>
+          <td><dfn>dpv:PhysicalAccessControlMethod</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -6312,11 +6815,16 @@
 <tr>
           <th>Definition</th>
           <td><i>Access control applied for physical access e.g. premises or equipment</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-06-15</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Georg P Krog</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -6329,7 +6837,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>PhysicalMeasure</dfn></td>
+          <td><dfn>dpv:PhysicalMeasure</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -6362,11 +6870,16 @@
 <tr>
           <th>Definition</th>
           <td><i>Physical measures used to safeguard and ensure good practices in connection with data and technologies</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2023-12-10</i></td>
+        </tr><tr>
+          <th>Date Modified</th>
+          <td><i>2023-12-10</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM">Dpv Tom</a></td>
         </tr>
@@ -6379,7 +6892,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>PIA</dfn></td>
+          <td><dfn>dpv:PIA</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -6415,11 +6928,16 @@
 <tr>
           <th>Definition</th>
           <td><i>Carrying out an impact assessment regarding privacy risks</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2020-11-04</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Georg P Krog, Harshvardhan J. Pandit, Paul Ryan</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -6432,7 +6950,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>Policy</dfn></td>
+          <td><dfn>dpv:Policy</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -6472,11 +6990,20 @@
 <tr>
           <th>Definition</th>
           <td><i>A guidance document outlining any of: procedures, plans, principles, decisions, intent, or protocols.</i></td>
-        </tr>        
+        </tr>        <tr class="table-separator"></tr>
+          <th>Examples</th>
+          <td>            <a href="https://w3id.org/dpv/examples#E0017">Indicating staff training for use of Credentials <small>(E0017)</small></a>
+</td>
         <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2021-09-08</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Paul Ryan, David Hickey, Georg P Krog, Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -6489,7 +7016,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>PostQuantumCryptography</dfn></td>
+          <td><dfn>dpv:PostQuantumCryptography</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -6524,14 +7051,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Use of algorithms that are intended to be secure against cryptanalytic attack by a quantum computer</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/">ENISA Reference Incident Classification Taxonomy 2018</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -6544,7 +7076,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>PrivacyByDefault</dfn></td>
+          <td><dfn>dpv:PrivacyByDefault</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -6579,11 +7111,16 @@
 <tr>
           <th>Definition</th>
           <td><i>Practices regarding selecting appropriate data protection and privacy measures as the &#39;default&#39; in an activity or service</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2019-04-05</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -6596,7 +7133,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>PrivacyByDesign</dfn></td>
+          <td><dfn>dpv:PrivacyByDesign</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -6630,11 +7167,16 @@
 <tr>
           <th>Definition</th>
           <td><i>Practices regarding incorporating data protection and privacy in the design of information and services</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2019-04-05</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -6647,7 +7189,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>PrivacyNotice</dfn></td>
+          <td><dfn>dpv:PrivacyNotice</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -6685,11 +7227,21 @@
 <tr>
           <th>Definition</th>
           <td><i>Represents a notice or document outlining information regarding privacy</i></td>
-        </tr>        
+        </tr>        <tr class="table-separator"></tr>
+          <th>Examples</th>
+          <td>            <a href="https://w3id.org/dpv/examples#E0018">Notice used in an activity <small>(E0018)</small></a>; 
+            <a href="https://w3id.org/dpv/examples#E0025">Consent Notice <small>(E0025)</small></a>
+</td>
         <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2021-09-08</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Georg P Krog, Paul Ryan, David Hickey, Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -6702,7 +7254,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>PrivacyPreservingProtocol</dfn></td>
+          <td><dfn>dpv:PrivacyPreservingProtocol</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -6737,14 +7289,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Use of protocols designed with the intention of provided additional guarantees regarding privacy</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/">ENISA Reference Incident Classification Taxonomy 2018</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -6757,7 +7314,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>PrivateInformationRetrieval</dfn></td>
+          <td><dfn>dpv:PrivateInformationRetrieval</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -6792,14 +7349,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Use of cryptographic methods to retrieve a record from a system without revealing which record is retrieved</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/data-protection-engineering">ENISA Data Protection Engineering</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -6812,7 +7374,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>ProfessionalTraining</dfn></td>
+          <td><dfn>dpv:ProfessionalTraining</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -6847,14 +7409,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Training methods that are intended to provide professional knowledge and expertise</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/">ENISA Reference Incident Classification Taxonomy 2018</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -6867,7 +7434,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>Pseudonymisation</dfn></td>
+          <td><dfn>dpv:Pseudonymisation</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -6906,14 +7473,22 @@
 <tr>
           <th>Definition</th>
           <td><i>Pseudonymisation means the processing of personal data in such a manner that the personal data can no longer be attributed to a specific data subject without the use of additional information, provided that such additional information is kept separately and is subject to technical and organisational measures to ensure that the personal data are not attributed to an identified or identifiable natural person;</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_5/oj">GDPR Art.4-5</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2019-04-05</i></td>
+        </tr><tr>
+          <th>Date Modified</th>
+          <td><i>2022-11-24</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -6926,7 +7501,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>QuantumCryptography</dfn></td>
+          <td><dfn>dpv:QuantumCryptography</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -6961,14 +7536,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Cryptographic methods that utilise quantum mechanical properties to perform cryptographic tasks</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/">ENISA Reference Incident Classification Taxonomy 2018</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -6981,7 +7561,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>RecordsOfActivities</dfn></td>
+          <td><dfn>dpv:RecordsOfActivities</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -7018,11 +7598,16 @@
 <tr>
           <th>Definition</th>
           <td><i>Records of activities within some context such as maintainence tasks or governance functions</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2021-09-08</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Georg P Krog, Harshvardhan J. Pandit, Paul Ryan</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -7035,7 +7620,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>RegularityOfRecertification</dfn></td>
+          <td><dfn>dpv:RegularityOfRecertification</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -7069,11 +7654,16 @@
 <tr>
           <th>Definition</th>
           <td><i>Policy regarding repetition or renewal of existing certification(s)</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2019-04-05</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -7086,7 +7676,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>ReviewImpactAssessment</dfn></td>
+          <td><dfn>dpv:ReviewImpactAssessment</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -7109,14 +7699,14 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#ImpactAssessment">dpv:ImpactAssessment</a> → 
-             <a href="#Assessment">dpv:Assessment</a> → 
+          <td>             <a href="#ReviewProcedure">dpv:ReviewProcedure</a> → 
              <a href="#OrganisationalMeasure">dpv:OrganisationalMeasure</a> → 
              <a href="#TechnicalOrganisationalMeasure">dpv:TechnicalOrganisationalMeasure</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#ReviewProcedure">dpv:ReviewProcedure</a> → 
+          <td>             <a href="#ImpactAssessment">dpv:ImpactAssessment</a> → 
+             <a href="#Assessment">dpv:Assessment</a> → 
              <a href="#OrganisationalMeasure">dpv:OrganisationalMeasure</a> → 
              <a href="#TechnicalOrganisationalMeasure">dpv:TechnicalOrganisationalMeasure</a>
 </td>
@@ -7128,11 +7718,16 @@
 <tr>
           <th>Definition</th>
           <td><i>Procedures to review impact assessments in terms of continued validity, adequacy for intended purposes, and conformance of processes with findings</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-10-22</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit, Georg P Krog</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -7145,7 +7740,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>ReviewProcedure</dfn></td>
+          <td><dfn>dpv:ReviewProcedure</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -7182,11 +7777,16 @@
 <tr>
           <th>Definition</th>
           <td><i>A procedure or process that reviews the correctness and validity of other measures and processes</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-10-22</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit, Georg P Krog</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -7199,7 +7799,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>RiskManagementPlan</dfn></td>
+          <td><dfn>dpv:RiskManagementPlan</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -7234,14 +7834,19 @@
 <tr>
           <th>Definition</th>
           <td><i>A scheme within the risk management framework specifying the approach, the management components, and resources to be applied to the management of risk</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.iso.org/standard/79637.html">ISO 31073:2022</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-18</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -7254,7 +7859,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>RiskManagementPolicy</dfn></td>
+          <td><dfn>dpv:RiskManagementPolicy</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -7295,14 +7900,19 @@
 <tr>
           <th>Definition</th>
           <td><i>A policy or statement of the overall intentions and direction of an organisation related to risk management</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.iso.org/standard/79637.html">ISO 31073:2022</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-18</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -7315,7 +7925,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>RNGPseudonymisation</dfn></td>
+          <td><dfn>dpv:RNGPseudonymisation</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -7352,14 +7962,22 @@
 <tr>
           <th>Definition</th>
           <td><i>A pseudonymisation method where identifiers are substituted by a number chosen by a Random Number Generator (RNG)</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/data-pseudonymisation-advanced-techniques-and-use-cases">ENISA Data Pseudonymisation: Advanced Techniques and Use Cases</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Date Modified</th>
+          <td><i>2022-10-13</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -7372,7 +7990,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>Safeguard</dfn></td>
+          <td><dfn>dpv:Safeguard</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -7412,11 +8030,16 @@
         </tr><tr>
           <th>Usage Note</th>
           <td><i>This concept is relevant given the requirement to assert safeguards in cross-border data transfers</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2021-09-22</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>David Hickey, Paul Ryan, Georg P Krog, Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -7429,7 +8052,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>SafeguardForDataTransfer</dfn></td>
+          <td><dfn>dpv:SafeguardForDataTransfer</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -7464,11 +8087,16 @@
 <tr>
           <th>Definition</th>
           <td><i>Represents a safeguard used for data transfer. Can include technical or organisational measures.</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2021-09-22</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>David Hickey, Paul Ryan, Georg P Krog, Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -7481,7 +8109,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>Seal</dfn></td>
+          <td><dfn>dpv:Seal</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -7516,11 +8144,16 @@
 <tr>
           <th>Definition</th>
           <td><i>A seal or a mark indicating proof of certification to some certification or standard</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2019-04-05</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -7533,7 +8166,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>SecretSharingSchemes</dfn></td>
+          <td><dfn>dpv:SecretSharingSchemes</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -7568,14 +8201,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Use of secret sharing schemes where the secret can only be reconstructed through combination of sufficient number of individuals</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/data-pseudonymisation-advanced-techniques-and-use-cases">ENISA Data Pseudonymisation: Advanced Techniques and Use Cases</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -7588,7 +8226,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>SecureMultiPartyComputation</dfn></td>
+          <td><dfn>dpv:SecureMultiPartyComputation</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -7623,14 +8261,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Use of cryptographic methods for entities to jointly compute functions without revealing inputs</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/">ENISA Reference Incident Classification Taxonomy 2018</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -7643,7 +8286,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>SecurityAssessment</dfn></td>
+          <td><dfn>dpv:SecurityAssessment</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -7666,13 +8309,13 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#SecurityProcedure">dpv:SecurityProcedure</a> → 
+          <td>             <a href="#Assessment">dpv:Assessment</a> → 
              <a href="#OrganisationalMeasure">dpv:OrganisationalMeasure</a> → 
              <a href="#TechnicalOrganisationalMeasure">dpv:TechnicalOrganisationalMeasure</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#Assessment">dpv:Assessment</a> → 
+          <td>             <a href="#SecurityProcedure">dpv:SecurityProcedure</a> → 
              <a href="#OrganisationalMeasure">dpv:OrganisationalMeasure</a> → 
              <a href="#TechnicalOrganisationalMeasure">dpv:TechnicalOrganisationalMeasure</a>
 </td>
@@ -7687,14 +8330,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Assessment of security intended to identity gaps, vulnerabilities, risks, and effectiveness of controls</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/5g-cybersecurity-standards">ENISA 5G Cybersecurity Standards</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -7707,7 +8355,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>SecurityKnowledgeTraining</dfn></td>
+          <td><dfn>dpv:SecurityKnowledgeTraining</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -7742,14 +8390,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Training intended to increase knowledge regarding security</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/5g-cybersecurity-standards">ENISA 5G Cybersecurity Standards</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -7762,7 +8415,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>SecurityMethod</dfn></td>
+          <td><dfn>dpv:SecurityMethod</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -7799,11 +8452,16 @@
 <tr>
           <th>Definition</th>
           <td><i>Methods that relate to creating and providing security</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-24</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -7816,7 +8474,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>SecurityProcedure</dfn></td>
+          <td><dfn>dpv:SecurityProcedure</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -7853,11 +8511,16 @@
 <tr>
           <th>Definition</th>
           <td><i>Procedures associated with assessing, implementing, and evaluating security</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-24</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -7870,7 +8533,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>SecurityRoleProcedures</dfn></td>
+          <td><dfn>dpv:SecurityRoleProcedures</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -7905,14 +8568,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Procedures related to security roles</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/5g-cybersecurity-standards">ENISA 5G Cybersecurity Standards</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -7925,7 +8593,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>SingleSignOn</dfn></td>
+          <td><dfn>dpv:SingleSignOn</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -7960,11 +8628,16 @@
 <tr>
           <th>Definition</th>
           <td><i>Use of credentials or processes that enable using one set of credentials to authenticate multiple contexts.</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2020-11-04</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Georg P Krog, Harshvardhan J. Pandit, Paul Ryan</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -7977,7 +8650,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>StaffTraining</dfn></td>
+          <td><dfn>dpv:StaffTraining</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -8014,11 +8687,20 @@
 <tr>
           <th>Definition</th>
           <td><i>Practices and policies regarding training of staff members</i></td>
-        </tr>        
+        </tr>        <tr class="table-separator"></tr>
+          <th>Examples</th>
+          <td>            <a href="https://w3id.org/dpv/examples#E0017">Indicating staff training for use of Credentials <small>(E0017)</small></a>
+</td>
         <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2019-04-05</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -8031,7 +8713,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>SubProcessorAgreement</dfn></td>
+          <td><dfn>dpv:SubProcessorAgreement</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -8067,11 +8749,16 @@
 <tr>
           <th>Definition</th>
           <td><i>An agreement outlining conditions, criteria, obligations, responsibilities, and specifics for carrying out processing of personal data between a Data Processor and a Data (Sub-)Processor</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-01-26</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Georg P Krog, Harshvardhan J. Pandit, Beatriz Esteves, Paul Ryan, Julian Flake</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -8084,7 +8771,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>SymmetricCryptography</dfn></td>
+          <td><dfn>dpv:SymmetricCryptography</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -8119,14 +8806,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Use of cryptography where the same keys are utilised for encryption and decryption of information</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/">ENISA Reference Incident Classification Taxonomy 2018</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -8139,7 +8831,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>SymmetricEncryption</dfn></td>
+          <td><dfn>dpv:SymmetricEncryption</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -8174,14 +8866,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Use of symmetric cryptography to encrypt data</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/data-pseudonymisation-advanced-techniques-and-use-cases">ENISA Data Pseudonymisation: Advanced Techniques and Use Cases</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -8194,7 +8891,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>TechnicalMeasure</dfn></td>
+          <td><dfn>dpv:TechnicalMeasure</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -8230,11 +8927,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Technical measures used to safeguard and ensure good practices in connection with data and technologies</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2019-04-05</i></td>
+        </tr><tr>
+          <th>Date Modified</th>
+          <td><i>2023-12-10</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM">Dpv Tom</a>, <a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -8247,7 +8952,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>TechnicalOrganisationalMeasure</dfn></td>
+          <td><dfn>dpv:TechnicalOrganisationalMeasure</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -8279,11 +8984,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Technical and Organisational measures used to safeguard and ensure good practices in connection with data and technologies</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2019-04-05</i></td>
+        </tr><tr>
+          <th>Date Modified</th>
+          <td><i>2023-12-10</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Bud Bruegger</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM">Dpv Tom</a>, <a href="https://w3id.org/dpv#vocab-risk">Dpv Risk</a></td>
         </tr>
@@ -8296,7 +9009,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>ThirdPartyAgreement</dfn></td>
+          <td><dfn>dpv:ThirdPartyAgreement</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -8332,11 +9045,16 @@
 <tr>
           <th>Definition</th>
           <td><i>An agreement outlining conditions, criteria, obligations, responsibilities, and specifics for carrying out processing of personal data between a Data Controller or Processor and a Third Party</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-02-09</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -8349,7 +9067,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>ThirdPartySecurityProcedures</dfn></td>
+          <td><dfn>dpv:ThirdPartySecurityProcedures</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -8384,14 +9102,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Procedures related to security associated with Third Parties</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/5g-cybersecurity-standards">ENISA 5G Cybersecurity Standards</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -8404,7 +9127,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>TrustedComputing</dfn></td>
+          <td><dfn>dpv:TrustedComputing</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -8439,14 +9162,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Use of cryptographic methods to restrict access and execution to trusted parties and code</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/">ENISA Reference Incident Classification Taxonomy 2018</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -8459,7 +9187,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>TrustedExecutionEnvironments</dfn></td>
+          <td><dfn>dpv:TrustedExecutionEnvironments</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -8494,14 +9222,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Use of cryptographic methods to restrict access and execution to trusted parties and code within a dedicated execution environment</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/data-protection-engineering">ENISA Data Protection Engineering</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -8514,7 +9247,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>TrustedThirdPartyUtilisation</dfn></td>
+          <td><dfn>dpv:TrustedThirdPartyUtilisation</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -8549,14 +9282,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Utilisation of a trusted third party to provide or carry out a measure</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/data-pseudonymisation-advanced-techniques-and-use-cases">ENISA Data Pseudonymisation: Advanced Techniques and Use Cases</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-organisational">Dpv Tom-Organisational</a></td>
         </tr>
@@ -8569,7 +9307,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>UsageControl</dfn></td>
+          <td><dfn>dpv:UsageControl</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -8604,14 +9342,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Management of usage, which is intended to be broader than access control and may cover trust, digital rights, or other relevant controls</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/">ENISA Reference Incident Classification Taxonomy 2018</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -8624,7 +9367,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>UseSyntheticData</dfn></td>
+          <td><dfn>dpv:UseSyntheticData</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -8659,14 +9402,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Use of synthetic data to preserve privacy, security, or other effects and side-effects</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/data-protection-engineering">ENISA Data Protection Engineering</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -8679,7 +9427,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>VirtualisationSecurity</dfn></td>
+          <td><dfn>dpv:VirtualisationSecurity</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -8714,14 +9462,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Security implemented at or through virtualised environments</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/">ENISA Reference Incident Classification Taxonomy 2018</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -8734,7 +9487,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>VulnerabilityTestingMethods</dfn></td>
+          <td><dfn>dpv:VulnerabilityTestingMethods</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -8769,14 +9522,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Methods that assess or discover vulnerabilities in a system</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/">ENISA Reference Incident Classification Taxonomy 2018</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -8789,7 +9547,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>WebBrowserSecurity</dfn></td>
+          <td><dfn>dpv:WebBrowserSecurity</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -8824,14 +9582,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Security implemented at or over web browsers</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/">ENISA Reference Incident Classification Taxonomy 2018</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -8844,7 +9607,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>WebSecurityProtocols</dfn></td>
+          <td><dfn>dpv:WebSecurityProtocols</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -8879,14 +9642,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Security implemented at or over web-based protocols</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/">ENISA Reference Incident Classification Taxonomy 2018</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -8899,7 +9667,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>WirelessSecurityProtocols</dfn></td>
+          <td><dfn>dpv:WirelessSecurityProtocols</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -8934,14 +9702,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Security implemented at or over wireless communication protocols</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/">ENISA Reference Incident Classification Taxonomy 2018</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -8954,7 +9727,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>ZeroKnowledgeAuthentication</dfn></td>
+          <td><dfn>dpv:ZeroKnowledgeAuthentication</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -8977,13 +9750,13 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#AuthenticationProtocols">dpv:AuthenticationProtocols</a> → 
+          <td>             <a href="#CryptographicMethods">dpv:CryptographicMethods</a> → 
              <a href="#TechnicalMeasure">dpv:TechnicalMeasure</a> → 
              <a href="#TechnicalOrganisationalMeasure">dpv:TechnicalOrganisationalMeasure</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#CryptographicMethods">dpv:CryptographicMethods</a> → 
+          <td>             <a href="#AuthenticationProtocols">dpv:AuthenticationProtocols</a> → 
              <a href="#TechnicalMeasure">dpv:TechnicalMeasure</a> → 
              <a href="#TechnicalOrganisationalMeasure">dpv:TechnicalOrganisationalMeasure</a>
 </td>
@@ -8995,14 +9768,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Authentication using Zero-Knowledge proofs</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
 <tr>
           <th>Source</th>
           <td><i><a href="https://www.enisa.europa.eu/publications/data-protection-engineering">ENISA Data Protection Engineering</a></i></td>
         </tr>        
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-08-17</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM-technical">Dpv Tom-Technical</a></td>
         </tr>
@@ -9019,7 +9797,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>hasLegalMeasure</dfn></td>
+          <td><dfn>dpv:hasLegalMeasure</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -9056,11 +9834,13 @@
 <tr>
           <th>Definition</th>
           <td><i>Indicates use or applicability of Legal measure</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2023-12-10</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM">Dpv Tom</a></td>
         </tr>
@@ -9073,7 +9853,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>hasNotice</dfn></td>
+          <td><dfn>dpv:hasNotice</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -9110,11 +9890,16 @@
 <tr>
           <th>Definition</th>
           <td><i>Indicates the use or applicability of a Notice for the specified context</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-06-22</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM">Dpv Tom</a></td>
         </tr>
@@ -9127,7 +9912,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>hasOrganisationalMeasure</dfn></td>
+          <td><dfn>dpv:hasOrganisationalMeasure</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -9166,11 +9951,16 @@
 <tr>
           <th>Definition</th>
           <td><i>Indicates use or applicability of Organisational measure</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-02-09</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM">Dpv Tom</a></td>
         </tr>
@@ -9183,7 +9973,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>hasPhysicalMeasure</dfn></td>
+          <td><dfn>dpv:hasPhysicalMeasure</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -9219,11 +10009,13 @@
 <tr>
           <th>Definition</th>
           <td><i>Indicates use or applicability of Physical measure</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2023-12-10</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM">Dpv Tom</a></td>
         </tr>
@@ -9236,7 +10028,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>hasPolicy</dfn></td>
+          <td><dfn>dpv:hasPolicy</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -9272,11 +10064,16 @@
 <tr>
           <th>Definition</th>
           <td><i>Indicates policy applicable or used</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-01-26</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM">Dpv Tom</a></td>
         </tr>
@@ -9289,7 +10086,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>hasTechnicalMeasure</dfn></td>
+          <td><dfn>dpv:hasTechnicalMeasure</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -9325,11 +10122,16 @@
 <tr>
           <th>Definition</th>
           <td><i>Indicates use or applicability of Technical measure</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-02-09</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM">Dpv Tom</a></td>
         </tr>
@@ -9342,7 +10144,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>hasTechnicalOrganisationalMeasure</dfn></td>
+          <td><dfn>dpv:hasTechnicalOrganisationalMeasure</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -9374,11 +10176,19 @@
 <tr>
           <th>Definition</th>
           <td><i>Indicates use or applicability of Technical or Organisational measure</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2019-04-04</i></td>
+        </tr><tr>
+          <th>Date Modified</th>
+          <td><i>2020-11-04</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Axel Polleres, Javier Fernández, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM">Dpv Tom</a>, <a href="https://w3id.org/dpv#vocab-risk">Dpv Risk</a></td>
         </tr>
@@ -9391,7 +10201,7 @@
       <tbody>
         <tr>
           <th>Term</th>
-          <td><dfn>isPolicyFor</dfn></td>
+          <td><dfn>dpv:isPolicyFor</dfn></td>
           <th>Prefix</th>
           <td>dpv</td>
         </tr>
@@ -9420,11 +10230,16 @@
 <tr>
           <th>Definition</th>
           <td><i>Indicates the context or application of policy</i></td>
-        </tr>        
-        <tr class="table-separator"></tr>
+        </tr>        <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
-        <tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-01-26</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-TOM">Dpv Tom</a></td>
         </tr>
@@ -9472,7 +10287,6 @@
         </tr>
         
         <tr class="table-separator"></tr>
-        
         <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
@@ -9512,7 +10326,6 @@
         </tr>
         
         <tr class="table-separator"></tr>
-        
         <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>
@@ -9552,7 +10365,6 @@
         </tr>
         
         <tr class="table-separator"></tr>
-        
         <tr class="table-separator"></tr>
         
         <tr class="table-separator"></tr>

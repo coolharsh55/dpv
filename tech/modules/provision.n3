@@ -1,4 +1,5 @@
 @prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dct: <http://purl.org/dc/terms/> .
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix dpv-tech: <https://w3id.org/dpv/dpv-tech#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -7,10 +8,13 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix tech: <https://w3id.org/dpv/tech#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 tech:Algorithmic a rdfs:Class,
         skos:Concept,
         dpv-tech:TechnologyProvisionMethod ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv-tech:TechnologyProvisionMethod ;
     skos:definition "Technology provided as an algorithm or method"@en ;
@@ -20,6 +24,8 @@ tech:Algorithmic a rdfs:Class,
 tech:Component a rdfs:Class,
         skos:Concept,
         dpv-tech:TechnologyProvisionMethod ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv-tech:TechnologyProvisionMethod ;
     skos:definition "Technology provided as a component"@en ;
@@ -29,6 +35,8 @@ tech:Component a rdfs:Class,
 tech:FixedUse a rdfs:Class,
         skos:Concept,
         dpv-tech:TechnologyProvisionMethod ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv-tech:TechnologyProvisionMethod ;
     skos:definition "Technology that can be used a fixed numner of times"@en ;
@@ -38,6 +46,8 @@ tech:FixedUse a rdfs:Class,
 tech:Goods a rdfs:Class,
         skos:Concept,
         dpv-tech:TechnologyProvisionMethod ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv-tech:TechnologyProvisionMethod ;
     skos:definition "Technology provided or used as goods"@en ;
@@ -47,6 +57,8 @@ tech:Goods a rdfs:Class,
 tech:Product a rdfs:Class,
         skos:Concept,
         dpv-tech:TechnologyProvisionMethod ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv-tech:TechnologyProvisionMethod ;
     skos:definition "Technology that is provided as a product"@en ;
@@ -56,6 +68,8 @@ tech:Product a rdfs:Class,
 tech:Service a rdfs:Class,
         skos:Concept,
         dpv-tech:TechnologyProvisionMethod ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv-tech:TechnologyProvisionMethod ;
     skos:definition "Technology provided or used as service(s)"@en ;
@@ -66,6 +80,8 @@ tech:Service a rdfs:Class,
 tech:Subscription a rdfs:Class,
         skos:Concept,
         dpv-tech:TechnologyProvisionMethod ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv-tech:TechnologyProvisionMethod ;
     skos:definition "Technology that is provided or used as a periodic subscription"@en ;
@@ -75,6 +91,8 @@ tech:Subscription a rdfs:Class,
 tech:System a rdfs:Class,
         skos:Concept,
         dpv-tech:TechnologyProvisionMethod ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv-tech:TechnologyProvisionMethod ;
     skos:definition "Technology provided as a system"@en ;
@@ -85,6 +103,8 @@ tech:hasProvisionMethod a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:Technology ;
     dcam:rangeIncludes dpv-tech:TechnologyProvisionMethod ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-07-02"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifies the provision or usage method of technology"@en ;
     skos:inScheme tech:provision-properties ;

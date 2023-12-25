@@ -127,6 +127,7 @@ for vocab, vocab_data in CSVFILES.items():
         classes = []
         properties = []
         for s, p, o in module_triples:
+            # DEBUG(f'{s} {p} {o}')
             if p != RDF.type: continue
             if o == RDFS.Class: classes.append(s)
             elif o == RDF.Property: properties.append(s)
@@ -134,11 +135,16 @@ for vocab, vocab_data in CSVFILES.items():
             module_triples.append((namespace[f"{module.replace('_','-')}-classes"], RDF.type, SKOS.ConceptScheme))
             for c in classes:
                 module_triples.append((c, SKOS.inScheme, namespace[f"{module.replace('_','-')}-classes"]))
+                if c in EXAMPLES:
+                    for ex in EXAMPLES[c]:
+                        module_triples.append((c, VANN.example, DEX[ex]))
         if properties:
             module_triples.append((namespace[f"{module.replace('_','-')}-properties"], RDF.type, SKOS.ConceptScheme))
             for p in properties:
                 module_triples.append((p, SKOS.inScheme, namespace[f"{module.replace('_','-')}-properties"]))
-        
+                if p in EXAMPLES:
+                    for ex in EXAMPLES[p]:
+                        module_triples.append((p, VANN.example, DEX[ex]))
         INFO(f'Triples: {len(module_triples)} accepted for {len(classes)} classes and {len(properties)} properties, with {len(PROPOSED[vocab][module])} proposed')
         # export module triples
         exportpath = RDF_STRUCTURE[vocab]['modules']

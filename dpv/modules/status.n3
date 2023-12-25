@@ -1,14 +1,18 @@
 @prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dct: <http://purl.org/dc/terms/> .
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dpv:ActivityCompleted a rdfs:Class,
         skos:Concept,
         dpv:ActivityStatus ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-05-18"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:ActivityStatus ;
     skos:definition "State of an activity that has completed i.e. is fully in the past"@en ;
@@ -18,6 +22,8 @@ dpv:ActivityCompleted a rdfs:Class,
 dpv:ActivityHalted a rdfs:Class,
         skos:Concept,
         dpv:ActivityStatus ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-05-18"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:ActivityStatus ;
     skos:definition "State of an activity that was occuring in the past, and has been halted or paused or stoped"@en ;
@@ -27,6 +33,8 @@ dpv:ActivityHalted a rdfs:Class,
 dpv:ActivityNotCompleted a rdfs:Class,
         skos:Concept,
         dpv:ActivityStatus ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-11-30"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:ActivityStatus ;
     skos:definition "State of an activity that could not be completed, but has reached some end state"@en ;
@@ -37,6 +45,8 @@ dpv:ActivityNotCompleted a rdfs:Class,
 dpv:ActivityOngoing a rdfs:Class,
         skos:Concept,
         dpv:ActivityStatus ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-05-18"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:ActivityStatus ;
     skos:definition "State of an activity occuring in continuation i.e. currently ongoing"@en ;
@@ -46,6 +56,8 @@ dpv:ActivityOngoing a rdfs:Class,
 dpv:ActivityProposed a rdfs:Class,
         skos:Concept,
         dpv:ActivityStatus ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-05-18"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:ActivityStatus ;
     skos:definition "State of an activity being proposed or planned i.e. yet to occur"@en ;
@@ -54,6 +66,8 @@ dpv:ActivityProposed a rdfs:Class,
 
 dpv:ActivityStatus a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-05-18"^^xsd:date ;
     rdfs:subClassOf dpv:Status ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Status ;
@@ -69,6 +83,8 @@ dpv:ActivityStatus a rdfs:Class,
 dpv:AuditApproved a rdfs:Class,
         skos:Concept,
         dpv:AuditStatus ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-05-18"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:AuditStatus ;
     skos:definition "State of being approved through the audit"@en ;
@@ -78,6 +94,8 @@ dpv:AuditApproved a rdfs:Class,
 dpv:AuditConditionallyApproved a rdfs:Class,
         skos:Concept,
         dpv:AuditStatus ;
+    dct:contributor "Paul Ryan" ;
+    dct:created "2022-06-29"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:AuditStatus ;
     skos:definition "State of being conditionally approved through the audit"@en ;
@@ -88,6 +106,8 @@ dpv:AuditConditionallyApproved a rdfs:Class,
 dpv:AuditNotRequired a rdfs:Class,
         skos:Concept,
         dpv:AuditStatus ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-05-18"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:AuditStatus ;
     skos:definition "State where an audit is determined as not being required"@en ;
@@ -97,6 +117,8 @@ dpv:AuditNotRequired a rdfs:Class,
 dpv:AuditRejected a rdfs:Class,
         skos:Concept,
         dpv:AuditStatus ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-05-18"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:AuditStatus ;
     skos:definition "State of not being approved or being rejected through the audit"@en ;
@@ -106,6 +128,8 @@ dpv:AuditRejected a rdfs:Class,
 dpv:AuditRequested a rdfs:Class,
         skos:Concept,
         dpv:AuditStatus ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-05-18"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:AuditStatus ;
     skos:definition "State of an audit being requested whose outcome is not yet known"@en ;
@@ -115,6 +139,8 @@ dpv:AuditRequested a rdfs:Class,
 dpv:AuditRequired a rdfs:Class,
         skos:Concept,
         dpv:AuditStatus ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-05-18"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:AuditStatus ;
     skos:definition "State where an audit is determined as being required but has not been conducted"@en ;
@@ -123,6 +149,8 @@ dpv:AuditRequired a rdfs:Class,
 
 dpv:AuditStatus a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-05-18"^^xsd:date ;
     rdfs:subClassOf dpv:Status ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Status ;
@@ -139,6 +167,8 @@ dpv:AuditStatus a rdfs:Class,
 dpv:ComplianceIndeterminate a rdfs:Class,
         skos:Concept,
         dpv:ComplianceStatus ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-09-07"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:ComplianceStatus ;
     skos:definition "State where the status of compliance has not been fully assessed, evaluated, or determined"@en ;
@@ -147,6 +177,8 @@ dpv:ComplianceIndeterminate a rdfs:Class,
 
 dpv:ComplianceStatus a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-05-18"^^xsd:date ;
     rdfs:subClassOf dpv:Status ;
     rdfs:superClassOf dpv:Lawfulness ;
     sw:term_status "accepted"@en ;
@@ -165,6 +197,8 @@ dpv:ComplianceStatus a rdfs:Class,
 dpv:ComplianceUnknown a rdfs:Class,
         skos:Concept,
         dpv:ComplianceStatus ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-09-07"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:ComplianceStatus ;
     skos:definition "State where the status of compliance is unknown"@en ;
@@ -174,6 +208,9 @@ dpv:ComplianceUnknown a rdfs:Class,
 dpv:ComplianceViolation a rdfs:Class,
         skos:Concept,
         dpv:ComplianceStatus ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-05-18"^^xsd:date ;
+    dct:modified "2022-09-07"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:ComplianceStatus ;
     skos:definition "State where compliance cannot be achieved due to requirements being violated"@en ;
@@ -184,6 +221,8 @@ dpv:ComplianceViolation a rdfs:Class,
 dpv:Compliant a rdfs:Class,
         skos:Concept,
         dpv:ComplianceStatus ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-05-18"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:ComplianceStatus ;
     skos:definition "State of being fully compliant"@en ;
@@ -192,6 +231,8 @@ dpv:Compliant a rdfs:Class,
 
 dpv:ConformanceStatus a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-10-22"^^xsd:date ;
     rdfs:subClassOf dpv:Status ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Status ;
@@ -204,6 +245,8 @@ dpv:ConformanceStatus a rdfs:Class,
 dpv:Conformant a rdfs:Class,
         skos:Concept,
         dpv:ConformanceStatus ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-10-22"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:ConformanceStatus ;
     skos:definition "State of being conformant"@en ;
@@ -213,6 +256,8 @@ dpv:Conformant a rdfs:Class,
 dpv:Lawful a rdfs:Class,
         skos:Concept,
         dpv:Lawfulness ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-10-19"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Lawfulness ;
     skos:definition "State of being lawful or legally compliant"@en ;
@@ -221,6 +266,8 @@ dpv:Lawful a rdfs:Class,
 
 dpv:Lawfulness a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-10-19"^^xsd:date ;
     rdfs:subClassOf dpv:ComplianceStatus ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:ComplianceStatus ;
@@ -234,6 +281,8 @@ dpv:Lawfulness a rdfs:Class,
 dpv:LawfulnessUnkown a rdfs:Class,
         skos:Concept,
         dpv:Lawfulness ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-10-19"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Lawfulness ;
     skos:definition "State of the lawfulness not being known"@en ;
@@ -243,6 +292,9 @@ dpv:LawfulnessUnkown a rdfs:Class,
 dpv:NonCompliant a rdfs:Class,
         skos:Concept,
         dpv:ComplianceStatus ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-05-18"^^xsd:date ;
+    dct:modified "2022-09-07"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:ComplianceStatus ;
     skos:definition "State of non-compliance where objectives have not been met, but have not been violated"@en ;
@@ -253,6 +305,8 @@ dpv:NonCompliant a rdfs:Class,
 dpv:NonConformant a rdfs:Class,
         skos:Concept,
         dpv:ConformanceStatus ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-10-22"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:ConformanceStatus ;
     skos:definition "State of being non-conformant"@en ;
@@ -262,6 +316,8 @@ dpv:NonConformant a rdfs:Class,
 dpv:PartiallyCompliant a rdfs:Class,
         skos:Concept,
         dpv:ComplianceStatus ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-05-18"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:ComplianceStatus ;
     skos:definition "State of partially being compliant i.e. only some objectives have been met, and others have not been in violation"@en ;
@@ -271,6 +327,8 @@ dpv:PartiallyCompliant a rdfs:Class,
 dpv:RequestAccepted a rdfs:Class,
         skos:Concept,
         dpv:RequestStatus ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-11-30"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:RequestStatus ;
     skos:definition "State of a request being accepted towards fulfilment"@en ;
@@ -280,6 +338,8 @@ dpv:RequestAccepted a rdfs:Class,
 dpv:RequestAcknowledged a rdfs:Class,
         skos:Concept,
         dpv:RequestStatus ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-11-30"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:RequestStatus ;
     skos:definition "State of a request being acknowledged"@en ;
@@ -289,6 +349,8 @@ dpv:RequestAcknowledged a rdfs:Class,
 dpv:RequestActionDelayed a rdfs:Class,
         skos:Concept,
         dpv:RequestStatus ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-11-30"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:RequestStatus ;
     skos:definition "State of a request being delayed towards fulfilment"@en ;
@@ -298,6 +360,8 @@ dpv:RequestActionDelayed a rdfs:Class,
 dpv:RequestFulfilled a rdfs:Class,
         skos:Concept,
         dpv:RequestStatus ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-11-30"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:RequestStatus ;
     skos:definition "State of a request being fulfilled"@en ;
@@ -307,6 +371,8 @@ dpv:RequestFulfilled a rdfs:Class,
 dpv:RequestInitiated a rdfs:Class,
         skos:Concept,
         dpv:RequestStatus ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-11-30"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:RequestStatus ;
     skos:definition "State of a request being initiated"@en ;
@@ -316,6 +382,8 @@ dpv:RequestInitiated a rdfs:Class,
 dpv:RequestRejected a rdfs:Class,
         skos:Concept,
         dpv:RequestStatus ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-11-30"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:RequestStatus ;
     skos:definition "State of a request being rejected towards non-fulfilment"@en ;
@@ -325,6 +393,8 @@ dpv:RequestRejected a rdfs:Class,
 dpv:RequestRequiredActionPerformed a rdfs:Class,
         skos:Concept,
         dpv:RequestStatus ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-11-30"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:RequestStatus ;
     skos:definition "State of a request's required action having been performed by the other party"@en ;
@@ -334,6 +404,8 @@ dpv:RequestRequiredActionPerformed a rdfs:Class,
 dpv:RequestRequiresAction a rdfs:Class,
         skos:Concept,
         dpv:RequestStatus ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-11-30"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:RequestStatus ;
     skos:definition "State of a request requiring an action to be performed from another party"@en ;
@@ -342,6 +414,8 @@ dpv:RequestRequiresAction a rdfs:Class,
 
 dpv:RequestStatus a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-11-30"^^xsd:date ;
     rdfs:subClassOf dpv:Status ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Status ;
@@ -362,6 +436,8 @@ dpv:RequestStatus a rdfs:Class,
 dpv:RequestStatusQuery a rdfs:Class,
         skos:Concept,
         dpv:RequestStatus ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-11-30"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:RequestStatus ;
     skos:definition "State of a request's status being queried"@en ;
@@ -371,6 +447,8 @@ dpv:RequestStatusQuery a rdfs:Class,
 dpv:RequestUnfulfilled a rdfs:Class,
         skos:Concept,
         dpv:RequestStatus ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-11-30"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:RequestStatus ;
     skos:definition "State of a request being unfulfilled"@en ;
@@ -379,6 +457,8 @@ dpv:RequestUnfulfilled a rdfs:Class,
 
 dpv:Status a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-05-18"^^xsd:date ;
     rdfs:subClassOf dpv:Context ;
     rdfs:superClassOf dpv:ActivityStatus,
         dpv:AuditStatus,
@@ -399,6 +479,8 @@ dpv:Status a rdfs:Class,
 dpv:Unlawful a rdfs:Class,
         skos:Concept,
         dpv:Lawfulness ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-10-19"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Lawfulness ;
     skos:definition "State of being unlawful or legally non-compliant"@en ;
@@ -411,6 +493,8 @@ dpv:Context rdfs:superClassOf dpv:Status ;
 dpv:hasActivityStatus a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv:ActivityStatus ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-05-18"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasStatus ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasStatus ;
@@ -422,6 +506,8 @@ dpv:hasActivityStatus a rdf:Property,
 dpv:hasAuditStatus a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv:AuditStatus ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-22"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasStatus ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasStatus ;
@@ -433,6 +519,8 @@ dpv:hasAuditStatus a rdf:Property,
 dpv:hasLawfulness a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv:Lawfulness ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-10-22"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasComplianceStatus ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasComplianceStatus ;
@@ -444,6 +532,8 @@ dpv:hasLawfulness a rdf:Property,
 dpv:hasComplianceStatus a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv:ComplianceStatus ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-05-18"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasStatus ;
     rdfs:superPropertyOf dpv:hasLawfulness ;
     sw:term_status "accepted"@en ;
@@ -459,6 +549,8 @@ dpv:status-properties a skos:ConceptScheme .
 dpv:hasStatus a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv:Status ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-05-18"^^xsd:date ;
     rdfs:superPropertyOf dpv:hasActivityStatus,
         dpv:hasAuditStatus,
         dpv:hasComplianceStatus ;

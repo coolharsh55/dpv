@@ -213,38 +213,23 @@ def construct_source(item, data, namespace, header):
 
 
 def construct_date_created(item, data, namespace, header):
-    if ':' in data['Term']:
-        return [] # external term
-    if item not in VOCAB_TERM_ACCEPT:
-        return [] # status is not acceptable
     triples = []
-    term, namespace = _get_term_from_prefix_notation(data['Term'], namespace)
-    triples.append((term, DCT.created, Literal(item, datatype=XSD.date)))
+    triples.append((namespace[data['Term']], DCT.created, Literal(item, datatype=XSD.date)))
     return triples
 
 
 def construct_date_modified(item, data, namespace, header):
-    if ':' in data['Term']:
-        return [] # external term
-    if item not in VOCAB_TERM_ACCEPT:
-        return [] # status is not acceptable
     triples = []
     if not item:
         return
-    term, namespace = _get_term_from_prefix_notation(data['Term'], namespace)
-    triples.append((term, DCT.modified, Literal(item, datatype=XSD.date)))
+    triples.append((namespace[data['Term']], DCT.modified, Literal(item, datatype=XSD.date)))
     return triples
 
 
 def construct_contributors(item, data, namespace, header):
-    if ':' in data['Term']:
-        return [] # external term
-    if item not in VOCAB_TERM_ACCEPT:
-        return [] # status is not acceptable
     triples = []
-    term, namespace = _get_term_from_prefix_notation(data['Term'], namespace)
     # TODO: make contributor be URI or a literal (if website available)
-    triples.append((term, DCT.contributor, Literal(item, lang='en')))
+    triples.append((namespace[data['Term']], DCT.contributor, Literal(item)))
     return triples
 
 
@@ -364,4 +349,50 @@ def construct_temporal_duration(term, data, namespace, header):
         triples.append((interval, TIME.hasEnd, dct_date))
         triples.append((
             dct_date, TIME.inXSDDate, Literal(end, datatype=XSD.date)))
+    return triples
+
+
+def construct_example(term, data, namespace, header):
+    return [(namespace[term], RDF.type, DEX.Example)]
+
+
+def construct_dct_title(term, data, namespace, header):
+    return [(namespace[data['Term']], DCT.title, Literal(term))]
+
+
+def construct_dct_description(term, data, namespace, header):
+    return [(namespace[data['Term']], DCT.description, Literal(term))]
+
+
+def construct_example_source(term, data, namespace, header):
+    source_data = data['Source']
+    source_format = data['SourceFormat']
+    if source_format == 'ttl':
+        source_format = 'text/turtle'
+    elif source_format == 'json-ld':
+        source_format = 'application/ld+json'
+    source_type = term
+    term = namespace[data['Term']]
+    triples = []
+    if source_type == 'file': # source is a filepath
+        triples.append((term, DCT.source, Literal(source_data, datatype=XSD.anyURI)))
+    else: # source is data content
+        triples.append((term, RDF.value, Literal(source_data)))
+    triples.append((term, DCT['format'], Literal(source_format)))
+    return triples
+
+
+def add_example_concepts(term, data, namespace, header):
+    concepts = term.split(',')
+    triples = []
+    if not concepts: return [] # return 0 triples
+    for concept in concepts:
+        # add concept as dct:subject of the example
+        concept_namespace, concept_term = concept.split(':')
+        concept_namespace = NAMESPACES[concept_namespace]
+        concept = concept_namespace[concept_term]
+        triples.append((namespace[data['Term']], DCT.subject, concept))
+        if concept not in EXAMPLES: # add to list of examples by concept
+            EXAMPLES[concept] = []
+        EXAMPLES[concept].append(data['Term'])
     return triples

@@ -1,4 +1,5 @@
 @prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dct: <http://purl.org/dc/terms/> .
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix dpv-tech: <https://w3id.org/dpv/dpv-tech#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -7,9 +8,12 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix tech: <https://w3id.org/dpv/tech#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 tech:TechnologyDeveloper a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-15"^^xsd:date ;
     rdfs:subClassOf dpv-tech:TechnologyActor ;
     sw:term_status "accepted"@en ;
     skos:broader dpv-tech:TechnologyActor ;
@@ -19,6 +23,8 @@ tech:TechnologyDeveloper a rdfs:Class,
 
 tech:TechnologyProvider a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-15"^^xsd:date ;
     rdfs:subClassOf dpv-tech:TechnologyActor ;
     sw:term_status "accepted"@en ;
     skos:broader dpv-tech:TechnologyActor ;
@@ -28,6 +34,8 @@ tech:TechnologyProvider a rdfs:Class,
 
 tech:TechnologySubject a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-15"^^xsd:date ;
     rdfs:subClassOf dpv-tech:TechnologyActor ;
     sw:term_status "accepted"@en ;
     skos:broader dpv-tech:TechnologyActor ;
@@ -37,6 +45,8 @@ tech:TechnologySubject a rdfs:Class,
 
 tech:TechnologyUser a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-15"^^xsd:date ;
     rdfs:subClassOf dpv-tech:TechnologyActor ;
     sw:term_status "accepted"@en ;
     skos:broader dpv-tech:TechnologyActor ;
@@ -48,6 +58,9 @@ tech:hasDeveloper a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:Technology ;
     dcam:rangeIncludes dpv-tech:TechnologyDeveloper ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-07-02"^^xsd:date ;
+    dct:modified "2022-10-21"^^xsd:date ;
     rdfs:subPropertyOf dpv-tech:hasTechnologyActor ;
     sw:term_status "accepted"@en ;
     skos:broader dpv-tech:hasTechnologyActor ;
@@ -61,6 +74,9 @@ tech:hasProvider a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:Technology ;
     dcam:rangeIncludes dpv-tech:TechnologyProvider ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-07-02"^^xsd:date ;
+    dct:modified "2022-10-21"^^xsd:date ;
     rdfs:subPropertyOf dpv-tech:hasTechnologyActor ;
     sw:term_status "accepted"@en ;
     skos:broader dpv-tech:hasTechnologyActor ;
@@ -74,6 +90,9 @@ tech:hasSubject a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:Technology ;
     dcam:rangeIncludes dpv-tech:TechnologySubject ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-07-02"^^xsd:date ;
+    dct:modified "2022-10-21"^^xsd:date ;
     rdfs:subPropertyOf dpv-tech:hasTechnologyActor ;
     sw:term_status "accepted"@en ;
     skos:broader dpv-tech:hasTechnologyActor ;
@@ -87,6 +106,9 @@ tech:hasUser a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:Technology ;
     dcam:rangeIncludes dpv-tech:TechnologyUser ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-07-02"^^xsd:date ;
+    dct:modified "2022-10-21"^^xsd:date ;
     rdfs:subPropertyOf dpv-tech:hasTechnologyActor ;
     sw:term_status "accepted"@en ;
     skos:broader dpv-tech:hasTechnologyActor ;

@@ -1,14 +1,20 @@
 @prefix dcam: <http://purl.org/dc/dcam/> .
 @prefix dct: <http://purl.org/dc/terms/> .
+@prefix dex: <https://w3id.org/dpv/examples#> .
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dpv:Entity a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-02-02"^^xsd:date ;
+    vann:example dex:E0027 ;
     rdfs:superClassOf dpv:LegalEntity,
         dpv:NaturalPerson ;
     sw:term_status "accepted"@en ;
@@ -20,6 +26,8 @@ dpv:Entity a rdfs:Class,
 
 dpv:LegalEntity a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2019-04-05"^^xsd:date ;
     rdfs:subClassOf dpv:Entity ;
     rdfs:superClassOf dpv:Representative ;
     sw:term_status "accepted"@en ;
@@ -31,6 +39,8 @@ dpv:LegalEntity a rdfs:Class,
 
 dpv:NaturalPerson a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-02-09"^^xsd:date ;
     rdfs:subClassOf dpv:Entity ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Entity ;
@@ -40,6 +50,8 @@ dpv:NaturalPerson a rdfs:Class,
 
 dpv:Representative a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Georg Krog, Paul Ryan, Harshvardhan J. Pandit, Beatriz Esteves" ;
+    dct:created "2020-11-04"^^xsd:date ;
     dct:source "(GDPR Art.27,https://eur-lex.europa.eu/eli/reg/2016/679/art_27/oj)"@en ;
     rdfs:subClassOf dpv:LegalEntity ;
     sw:term_status "accepted"@en ;
@@ -51,6 +63,8 @@ dpv:Representative a rdfs:Class,
 dpv:hasAddress a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:Entity ;
+    dct:contributor "Harshvardhan J.Pandit, Georg P Krog, Paul Ryan, Beatriz Esteves" ;
+    dct:created "2020-11-04"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifies address of a legal entity such as street address or pin code"@en ;
     skos:inScheme dpv:entities-properties ;
@@ -60,6 +74,8 @@ dpv:hasAddress a rdf:Property,
 dpv:hasContact a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:Entity ;
+    dct:contributor "Harshvardhan J.Pandit, Georg P Krog, Paul Ryan, Beatriz Esteves" ;
+    dct:created "2020-11-04"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifies contact details of a legal entity such as phone  or email"@en ;
     skos:inScheme dpv:entities-properties ;
@@ -69,6 +85,8 @@ dpv:hasContact a rdf:Property,
 dpv:hasName a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:Entity ;
+    dct:contributor "Harshvardhan J.Pandit, Georg P Krog, Paul Ryan, Beatriz Esteves" ;
+    dct:created "2020-11-04"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifies name of a legal entity"@en ;
     skos:inScheme dpv:entities-properties ;
@@ -79,6 +97,8 @@ dpv:hasRepresentative a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:Entity ;
     dcam:rangeIncludes dpv:Representative ;
+    dct:contributor "Harshvardhan J.Pandit, Georg P Krog, Paul Ryan, Beatriz Esteves" ;
+    dct:created "2020-11-04"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasEntity ;
@@ -91,6 +111,8 @@ dpv:hasRepresentative a rdf:Property,
 dpv:hasResponsibleEntity a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv:Entity ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-03-02"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasEntity ;
@@ -103,6 +125,8 @@ dpv:isRepresentativeFor a rdf:Property,
         skos:Concept ;
     dcam:domainIncludes dpv:Representative ;
     dcam:rangeIncludes dpv:Entity ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-11-09"^^xsd:date ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasEntity ;
@@ -117,6 +141,8 @@ dpv:entities-classes a skos:ConceptScheme .
 dpv:hasEntity a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv:Entity ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-02-09"^^xsd:date ;
     rdfs:superPropertyOf dpv:hasRepresentative,
         dpv:hasResponsibleEntity,
         dpv:isRepresentativeFor ;

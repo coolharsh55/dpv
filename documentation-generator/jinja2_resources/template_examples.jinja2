@@ -1,4 +1,5 @@
 {% from 'macro_dpv_document_family.jinja2' import dpv_document_family, sotd %}
+{% from 'macro_example.jinja2' import example_aside %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -75,35 +76,17 @@
 
     <section id="examples">
       <h2>Examples</h2>
-      {% for DEX in examples %}
-        <section id="{{DEX.dct_identifier}}">
-          <h4><strong><i>{{DEX.dct_identifier}}</i>:</strong> {{ DEX.dct_title }}</h4>
-          <p>{{ DEX.dct_description|safe }}</p>
-          {% if DEX.dct_subject %}
-            <p><strong>Relevant Concepts:</strong> 
-            {% if DEX.dct_subject is sequence %}
-              {% for concept in DEX.dct_subject|sort(attribute='iri') %}<a href="{{concept}}">{{ concept|prefix_this }}</a>{{ ", " if not loop.last }}{% endfor %}
-                {% else %}<a href="{{ DEX.dct_subject }}">{{ DEX.dct_subject|prefix_this }}</a>
-              {% endif %}</p>
-          {% endif %}
-          <p>source: <a href="{{DEX.dct_source}}">{{DEX.dct_source}}</a></p>
-          {% if DEX.dex_isEmbedded == "true" %}<pre class="nohighlight"><code>{{ DEX.dct_source|retrieve_source }}</code></pre>{% endif %}
+      
+      {% for DEX in vocab.values()|sort(attribute='term') %}
+        <section id="{{DEX['term']}}">
+          <h4><strong><i>{{DEX['term']}}</i>:</strong> {{ DEX['dct:title'] }}</h4>
+          {{ example_aside(DEX['term']) }}
         </section>
       {% endfor %}
     </section>
 
 
-    <section id='concept-mappings' class='appendix'>
-      <h2>Concept Mappings</h2>
-      <ul>
-      {% for concept, data in mappings.items()|sort(attribute=0) %}
-        <li>{{ concept|prefix_this }} - <a href="{{ concept }}">{{ concept|prefix_this }}</a>
-          <ul>
-            {% for ex, title in data|sort(attribute='0') %}<li><a href="#{{ex}}">#{{ ex }} - {{ title }}</a>{{ ", " if not loop.last }}</li>{% endfor %}
-          </ul></li>
-      {% endfor %}
-      </ul>
-    </section>
+    
     <script type="text/javascript" src="../media/common.js" defer></script>
   </body>
   </html>

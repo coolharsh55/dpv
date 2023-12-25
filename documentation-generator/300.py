@@ -32,6 +32,13 @@ from vocab_management import prefix_from_iri
 # How to do this?
 # load all vocabulary files - create a global dict
 VOCABS = {
+    'dex': {
+        'vocab': f'{IMPORT_PATH}/examples/dex.ttl',
+        'template': 'template_examples.jinja2',
+        'export': f'{EXPORT_PATH}/examples',
+        'modules': {},
+        'module-template': {},
+    },
     'dpv': {
         'vocab': f'{IMPORT_PATH}/dpv/dpv.ttl',
         'template': 'template_dpv.jinja2',
@@ -585,6 +592,32 @@ def sort_iris(items):
     return sorted(items, key=str)
 
 
+def resolve_concepts(items):
+    # DEBUG(DATA.concepts.keys())
+    if type(items) is list:
+        return [DATA.concepts[x] for x in items]
+    return DATA.concepts[items]
+
+
+def retrieve_example(exampleID):
+    ex = DATA.data['dex'][f'dex:{exampleID}']
+    if 'dct:source' in ex:
+        with open(f"../examples/{ex['dct:source']}", 'r') as fd:
+            contents = fd.read()
+    else:
+        contents = ex['rdf:value']
+    return ex, contents
+
+
+def retrieve_example_for_concept(concept):
+    if 'vann:example' not in concept:
+        return []
+    examples = ensure_list(concept['vann:example'])
+    examples = [DATA.concepts[ex]['prefixed'] for ex in examples]
+    examples = [DATA.data['dex'][ex] for ex in examples]
+    examples.sort(key=lambda x: x['iri'])
+    return examples
+
 
 from jinja2 import FileSystemLoader, Environment
 template_loader = FileSystemLoader(searchpath=f'{TEMPLATE_PATH}')
@@ -611,6 +644,9 @@ JINJA2_FILTERS = {
     'get_prop_with_term_range': get_prop_with_term_range,
     'expand_time_interval': expand_time_interval,
     'sort_iris': sort_iris,
+    'resolve_concepts': resolve_concepts,
+    'retrieve_example': retrieve_example,
+    'retrieve_example_for_concept': retrieve_example_for_concept,
 }
 template_env.filters.update(JINJA2_FILTERS)
 

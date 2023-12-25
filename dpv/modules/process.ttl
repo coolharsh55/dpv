@@ -1,13 +1,18 @@
 @prefix dcam: <http://purl.org/dc/dcam/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dex: <https://w3id.org/dpv/examples#> .
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dpv:NonPersonalDataProcess a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit" ;
     rdfs:subClassOf dpv:Process ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Process ;
@@ -18,6 +23,17 @@ dpv:NonPersonalDataProcess a rdfs:Class,
 
 dpv:PersonalDataHandling a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Axel Polleres, Javier Fernández" ;
+    dct:created "2019-04-05"^^xsd:date ;
+    dct:modified "2023-12-10"^^xsd:date ;
+    vann:example dex:E0007,
+        dex:E0008,
+        dex:E0014,
+        dex:E0018,
+        dex:E0019,
+        dex:E0020,
+        dex:E0022,
+        dex:E0028 ;
     rdfs:subClassOf dpv:Process ;
     sw:term_status "sunset"@en ;
     skos:broader dpv:Process ;
@@ -28,6 +44,7 @@ dpv:PersonalDataHandling a rdfs:Class,
 
 dpv:PersonalDataProcess a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit" ;
     rdfs:subClassOf dpv:Process ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Process ;
@@ -37,6 +54,7 @@ dpv:PersonalDataProcess a rdfs:Class,
 
 dpv:Process a rdfs:Class,
         skos:Concept ;
+    dct:contributor "Harshvardhan J. Pandit" ;
     rdfs:superClassOf dpv:NonPersonalDataProcess,
         dpv:PersonalDataHandling,
         dpv:PersonalDataProcess ;
@@ -51,6 +69,8 @@ dpv:Process a rdfs:Class,
 dpv:hasNonPersonalDataProcess a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv:NonPersonalDataProcess ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2023-12-12"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with a Non-Personal Data Process"@en ;
     skos:inScheme dpv:process-properties ;
@@ -60,6 +80,8 @@ dpv:hasNonPersonalDataProcess a rdf:Property,
 dpv:hasPersonalDataHandling a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv:PersonalDataHandling ;
+    dct:contributor "Harshvardhan J. Pandit, Georg P Krog" ;
+    dct:created "2022-01-19"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with Personal Data Handling"@en ;
     skos:inScheme dpv:process-properties ;
@@ -69,6 +91,8 @@ dpv:hasPersonalDataHandling a rdf:Property,
 dpv:hasPersonalDataProcess a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv:PersonalDataProcess ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2023-12-11"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with a Personal Data Process"@en ;
     skos:inScheme dpv:process-properties ;
@@ -78,6 +102,8 @@ dpv:hasPersonalDataProcess a rdf:Property,
 dpv:hasProcess a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv:Process ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2023-12-10"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with a Process"@en ;
     skos:inScheme dpv:process-properties ;

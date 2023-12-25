@@ -1,11 +1,15 @@
+@prefix dct: <http://purl.org/dc/terms/> .
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dpv:ExplicitlyExpressedConsent a rdfs:Class,
         skos:Concept,
         dpv:LegalBasis ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake" ;
+    dct:created "2022-06-21"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:ExpressedConsent ;
     skos:definition "Consent that is expressed through an explicit action solely conveying a consenting decision"@en ;
@@ -16,6 +20,8 @@ dpv:ExplicitlyExpressedConsent a rdfs:Class,
 dpv:ExpressedConsent a rdfs:Class,
         skos:Concept,
         dpv:LegalBasis ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake" ;
+    dct:created "2022-06-21"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:InformedConsent ;
     skos:definition "Consent that is expressed through an action intended to convey a consenting decision"@en ;
@@ -27,6 +33,8 @@ dpv:ExpressedConsent a rdfs:Class,
 dpv:ImpliedConsent a rdfs:Class,
         skos:Concept,
         dpv:LegalBasis ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake" ;
+    dct:created "2022-06-21"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:InformedConsent ;
     skos:definition "Consent that is implied indirectly through an action not associated solely with conveying a consenting decision"@en ;
@@ -37,6 +45,8 @@ dpv:ImpliedConsent a rdfs:Class,
 dpv:InformedConsent a rdfs:Class,
         skos:Concept,
         dpv:LegalBasis ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake" ;
+    dct:created "2022-06-21"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Consent ;
     skos:definition "Consent that is informed i.e. with the requirement to provide sufficient information to make a consenting decision"@en ;
@@ -49,6 +59,8 @@ dpv:InformedConsent a rdfs:Class,
 dpv:UninformedConsent a rdfs:Class,
         skos:Concept,
         dpv:LegalBasis ;
+    dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake" ;
+    dct:created "2022-06-21"^^xsd:date ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Consent ;
     skos:definition "Consent that is uninformed i.e. without requirement to provide sufficient information to make a consenting decision"@en ;

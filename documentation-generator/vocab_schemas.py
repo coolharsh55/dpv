@@ -132,3 +132,17 @@ SCHEMA['laws'] = {
     'Contributors': vocab_funcs.construct_contributors,
     'Resolution': vocab_funcs.construct_resolution, 
 }
+
+SCHEMA['examples'] = {
+    'Term': vocab_funcs.construct_example,
+    'Title': vocab_funcs.construct_dct_title,
+    'Description': vocab_funcs.construct_dct_description,
+    'Source': None,
+    'SourceFormat': None,
+    'SourceType': vocab_funcs.construct_example_source,
+    'Concepts': vocab_funcs.add_example_concepts,
+    'Reference': None,
+    'Status': vocab_funcs.construct_status,
+    'Date': vocab_funcs.construct_date_created,
+    'Contributor': vocab_funcs.construct_contributors,
+}
