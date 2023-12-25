@@ -40,6 +40,8 @@ from vocab_management import *
 import vocab_schemas
 
 PROPOSED = {}
+TRANSLATIONS = {}
+MISSING_TRANSLATIONS = {}
 
 def load_CSV(filepath):
     with open(filepath) as fd:
@@ -119,6 +121,64 @@ def serialize_graph(triples, filepath):
     INFO(f'wrote {filepath}-owl.[{",".join(OWL_SERIALIZATIONS)}]')
 
 
+# Load Translations
+for lang, lang_data in IMPORT_TRANSLATIONS.items():
+    def _convert(term):
+        translated = {}
+        translated['label'] = term['Label_translated']
+        translated['definition'] = term['Definition_translated']
+        if term['Usage_translated'] != 'N/A':
+            translated['usage'] = term['Usage_translated']
+        return translated
+
+    # production-ready translations
+    header, csvdata_prod = load_CSV(lang_data['prod'])
+    for term in csvdata_prod:
+        if term['Term'] not in TRANSLATIONS:
+            TRANSLATIONS[term['Term']] = {}
+        TRANSLATIONS[term['Term']][lang] = _convert(term)
+        TRANSLATIONS[term['Term']][lang]['status'] = 'verified'
+    # to-verify translations
+    header, csvdata_verify = load_CSV(lang_data['verify'])
+    for term in csvdata_verify:
+        if term['Term'] not in TRANSLATIONS:
+            TRANSLATIONS[term['Term']] = {}
+        TRANSLATIONS[term['Term']][lang] = _convert(term)
+        TRANSLATIONS[term['Term']][lang]['status'] = 'unverified'
+    INFO(f"Loaded translations for {lang_data['lang']}: {len(csvdata_prod)} verified, {len(csvdata_verify)} unverified")
+# DEBUG(TRANSLATIONS)
+
+
+def add_translations_for_concept(concept):
+    triples = []
+    term = prefix_from_iri(concept)
+    if term not in TRANSLATIONS: # all translations are missing
+        if term not in MISSING_TRANSLATIONS:
+            MISSING_TRANSLATIONS[term] = list(IMPORT_TRANSLATIONS.keys())
+        return []
+
+    lang_data = TRANSLATIONS[term]
+    for lang, translations in lang_data.items():
+        if translations['status'] == 'unverified':
+            note = " (machine-translated)"
+        else:
+            note = ""
+        triples.append((c, SKOS.prefLabel, 
+            Literal(f"{translations['label']}{note}", lang=lang)))
+        triples.append((c, SKOS.definition, 
+            Literal(f"{translations['definition']}{note}", lang=lang)))
+        if 'usage' in translations:
+            triples.append((
+                c, SKOS.scopeNote, 
+                Literal(f"{translations['usage']}{note}", lang=lang)))
+    for lang in IMPORT_TRANSLATIONS:
+        if lang not in lang_data:
+            if term not in MISSING_TRANSLATIONS:
+                MISSING_TRANSLATIONS[term] = []
+            MISSING_TRANSLATIONS[term].append(lang)
+    return triples
+
+
 global_triples = []
 # iterate over all CSV files for specific vocab e.g. dpv
 for vocab, vocab_data in CSVFILES.items():
@@ -170,6 +230,7 @@ for vocab, vocab_data in CSVFILES.items():
         properties = []
         for s, p, o in module_triples:
             # DEBUG(f'{s} {p} {o}')
+                
             if p != RDF.type: continue
             if o == RDFS.Class: classes.append(s)
             elif o == RDF.Property: properties.append(s)
@@ -180,6 +241,7 @@ for vocab, vocab_data in CSVFILES.items():
                 if c in EXAMPLES:
                     for ex in EXAMPLES[c]:
                         module_triples.append((c, VANN.example, DEX[ex]))
+                module_triples += add_translations_for_concept(c)
         if properties:
             module_triples.append((namespace[f"{module.replace('_','-')}-properties"], RDF.type, SKOS.ConceptScheme))
             for p in properties:
@@ -226,5 +288,11 @@ for collation in collations:
         triples.parse(filepath)
     serialize_graph(triples, collation['output'])
     INFO(f"Collected {len(triples)} triples into {collation['output']}")
+
+INFO('-'*40)
+DEBUG(f"Missing translations for {len(MISSING_TRANSLATIONS)} concepts")
+with open(f"{TRANSLATIONS_TODO_PATH}/translations_todo.json", 'w') as fd:
+    import json
+    json.dump(MISSING_TRANSLATIONS, fd)
 
 INFO('-'*40)

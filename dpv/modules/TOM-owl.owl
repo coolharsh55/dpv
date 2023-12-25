@@ -8,56 +8,16 @@
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
    xmlns:sw="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
-  <rdf:Description rdf:about="https://w3id.org/dpv#hasTechnicalMeasure">
+  <rdf:Description rdf:about="https://w3id.org/dpv#isPolicyFor">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <skos:prefLabel xml:lang="en">has technical measure</skos:prefLabel>
-    <skos:definition xml:lang="en">Indicates use or applicability of Technical measure</skos:definition>
-    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#TechnicalMeasure"/>
-    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#TechnicalMeasure"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/dpv#hasTechnicalOrganisationalMeasure"/>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-09</dct:created>
+    <skos:prefLabel xml:lang="en">is policy for</skos:prefLabel>
+    <skos:definition xml:lang="en">Indicates the context or application of policy</skos:definition>
+    <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#Policy"/>
+    <schema:domainIncludes rdf:resource="https://w3id.org/dpv#Policy"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-01-26</dct:created>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#hasTechnicalOrganisationalMeasure"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#hasLegalMeasure">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <skos:prefLabel xml:lang="en">has legal measure</skos:prefLabel>
-    <skos:definition xml:lang="en">Indicates use or applicability of Legal measure</skos:definition>
-    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#LegalMeasure"/>
-    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#LegalMeasure"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/dpv#hasOrganisationalMeasure"/>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-12-10</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#hasOrganisationalMeasure"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#hasOrganisationalMeasure">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <skos:prefLabel xml:lang="en">has organisational measure</skos:prefLabel>
-    <skos:definition xml:lang="en">Indicates use or applicability of Organisational measure</skos:definition>
-    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#OrganisationalMeasure"/>
-    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#OrganisationalMeasure"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/dpv#hasTechnicalOrganisationalMeasure"/>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-09</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
-    <rdfs:superPropertyOf rdf:resource="https://w3id.org/dpv#hasNotice"/>
-    <rdfs:superPropertyOf rdf:resource="https://w3id.org/dpv#hasLegalMeasure"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#hasTechnicalOrganisationalMeasure"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#TechnicalMeasure">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Technical Measure</skos:prefLabel>
-    <skos:definition xml:lang="en">Technical measures used to safeguard and ensure good practices in connection with data and technologies</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#TechnicalOrganisationalMeasure"/>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-04-05</dct:created>
-    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-12-10</dct:modified>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar</dct:contributor>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#TechnicalOrganisationalMeasure">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
@@ -72,6 +32,34 @@
     <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#OrganisationalMeasure"/>
     <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#LegalMeasure"/>
     <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#PhysicalMeasure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasTechnicalOrganisationalMeasure">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <skos:prefLabel xml:lang="en">has technical and organisational measure</skos:prefLabel>
+    <skos:definition xml:lang="en">Indicates use or applicability of Technical or Organisational measure</skos:definition>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#TechnicalOrganisationalMeasure"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#TechnicalOrganisationalMeasure"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-04-04</dct:created>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-11-04</dct:modified>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Axel Polleres, Javier Fernández, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger</dct:contributor>
+    <rdfs:superPropertyOf rdf:resource="https://w3id.org/dpv#hasTechnicalMeasure"/>
+    <rdfs:superPropertyOf rdf:resource="https://w3id.org/dpv#hasOrganisationalMeasure"/>
+    <rdfs:superPropertyOf rdf:resource="https://w3id.org/dpv#hasPolicy"/>
+    <rdfs:superPropertyOf rdf:resource="https://w3id.org/dpv#hasPhysicalMeasure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasLegalMeasure">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <skos:prefLabel xml:lang="en">has legal measure</skos:prefLabel>
+    <skos:definition xml:lang="en">Indicates use or applicability of Legal measure</skos:definition>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#LegalMeasure"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#LegalMeasure"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/dpv#hasOrganisationalMeasure"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-12-10</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#hasOrganisationalMeasure"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#hasPolicy">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
@@ -97,55 +85,6 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor>Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar</dct:contributor>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#isPolicyFor">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <skos:prefLabel xml:lang="en">is policy for</skos:prefLabel>
-    <skos:definition xml:lang="en">Indicates the context or application of policy</skos:definition>
-    <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#Policy"/>
-    <schema:domainIncludes rdf:resource="https://w3id.org/dpv#Policy"/>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-01-26</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#hasPhysicalMeasure">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <skos:prefLabel xml:lang="en">has physical measure</skos:prefLabel>
-    <skos:definition xml:lang="en">Indicates use or applicability of Physical measure</skos:definition>
-    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#PhysicalMeasure"/>
-    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#PhysicalMeasure"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/dpv#hasTechnicalOrganisationalMeasure"/>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-12-10</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#hasTechnicalOrganisationalMeasure"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#hasTechnicalOrganisationalMeasure">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <skos:prefLabel xml:lang="en">has technical and organisational measure</skos:prefLabel>
-    <skos:definition xml:lang="en">Indicates use or applicability of Technical or Organisational measure</skos:definition>
-    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#TechnicalOrganisationalMeasure"/>
-    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#TechnicalOrganisationalMeasure"/>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-04-04</dct:created>
-    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-11-04</dct:modified>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Axel Polleres, Javier Fernández, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger</dct:contributor>
-    <rdfs:superPropertyOf rdf:resource="https://w3id.org/dpv#hasTechnicalMeasure"/>
-    <rdfs:superPropertyOf rdf:resource="https://w3id.org/dpv#hasOrganisationalMeasure"/>
-    <rdfs:superPropertyOf rdf:resource="https://w3id.org/dpv#hasPolicy"/>
-    <rdfs:superPropertyOf rdf:resource="https://w3id.org/dpv#hasPhysicalMeasure"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#PhysicalMeasure">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Physical Measure</skos:prefLabel>
-    <skos:definition xml:lang="en">Physical measures used to safeguard and ensure good practices in connection with data and technologies</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#TechnicalOrganisationalMeasure"/>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-12-10</dct:created>
-    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-12-10</dct:modified>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#LegalMeasure">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -168,5 +107,66 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor>Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake</dct:contributor>
     <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#hasOrganisationalMeasure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasPhysicalMeasure">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <skos:prefLabel xml:lang="en">has physical measure</skos:prefLabel>
+    <skos:definition xml:lang="en">Indicates use or applicability of Physical measure</skos:definition>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#PhysicalMeasure"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#PhysicalMeasure"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/dpv#hasTechnicalOrganisationalMeasure"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-12-10</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#hasTechnicalOrganisationalMeasure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasTechnicalMeasure">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <skos:prefLabel xml:lang="en">has technical measure</skos:prefLabel>
+    <skos:definition xml:lang="en">Indicates use or applicability of Technical measure</skos:definition>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#TechnicalMeasure"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#TechnicalMeasure"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/dpv#hasTechnicalOrganisationalMeasure"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-09</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#hasTechnicalOrganisationalMeasure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#TechnicalMeasure">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Technical Measure</skos:prefLabel>
+    <skos:definition xml:lang="en">Technical measures used to safeguard and ensure good practices in connection with data and technologies</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#TechnicalOrganisationalMeasure"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-04-05</dct:created>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-12-10</dct:modified>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar</dct:contributor>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasOrganisationalMeasure">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <skos:prefLabel xml:lang="en">has organisational measure</skos:prefLabel>
+    <skos:definition xml:lang="en">Indicates use or applicability of Organisational measure</skos:definition>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#OrganisationalMeasure"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#OrganisationalMeasure"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/dpv#hasTechnicalOrganisationalMeasure"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-09</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:superPropertyOf rdf:resource="https://w3id.org/dpv#hasNotice"/>
+    <rdfs:superPropertyOf rdf:resource="https://w3id.org/dpv#hasLegalMeasure"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#hasTechnicalOrganisationalMeasure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#PhysicalMeasure">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Physical Measure</skos:prefLabel>
+    <skos:definition xml:lang="en">Physical measures used to safeguard and ensure good practices in connection with data and technologies</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#TechnicalOrganisationalMeasure"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-12-10</dct:created>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-12-10</dct:modified>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
   </rdf:Description>
 </rdf:RDF>

@@ -1,6 +1,145 @@
 [
   {
-    "@id": "https://w3id.org/dpv#SmallDataVolume",
+    "@id": "https://w3id.org/dpv#ProcessingContext",
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#Scale"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#RegionalScale",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#GeographicCoverage",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-06-15"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#GeographicCoverage"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Geographic coverage spanning a specific region or regions"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Regional Scale"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#LocalityScale",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#GeographicCoverage",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-06-15"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#GeographicCoverage"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Geographic coverage spanning a specific locality"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Locality Scale"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "For example, geographic scale of a city or an area within a city"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#GeographicCoverage",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit, Georg P Krog, Paul Ryan"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-06-15"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#Scale"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Indicate of scale in terms of geographic coverage"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Geographic Coverage"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#SporadicDataVolume",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class",
       "https://w3id.org/dpv#DataVolume",
@@ -31,82 +170,13 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Data volume that is considered small or limited within the context"
+        "@value": "Data volume that is considered sporadic or sparse within the context"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Small Data Volume"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#Scale",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit, Georg P Krog, Rana Saniei"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#ProcessingContext"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#DataVolume"
-      },
-      {
-        "@id": "https://w3id.org/dpv#DataSubjectScale"
-      },
-      {
-        "@id": "https://w3id.org/dpv#GeographicCoverage"
-      },
-      {
-        "@id": "https://w3id.org/dpv#ProcessingScale"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A measurement along some dimension"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Scale"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "Scales are subjective concepts that need to be defined and interpreted within the context of their application. For example, what would be small within one context could be large within another."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#ProcessingContext",
-    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#Scale"
+        "@value": "Sporadic Data Volume"
       }
     ]
   },
@@ -171,376 +241,6 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#SmallScaleProcessing",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#ProcessingScale",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-09-07"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#ProcessingScale"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Processing that takes place at small scales (as specified by some criteria)"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Small Scale Processing"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#hasDataVolume",
-    "@type": [
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://purl.org/dc/dcam/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#DataVolume"
-      }
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-22"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#hasScale"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/dpv#hasScale"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Indicates the volume of data"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "has data volume"
-      }
-    ],
-    "https://schema.org/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#DataVolume"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#MediumScaleProcessing",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#ProcessingScale",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-09-07"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#ProcessingScale"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Processing that takes place at medium scales (as specified by some criteria)"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Medium Scale Processing"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#hasScale",
-    "@type": [
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://purl.org/dc/dcam/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Scale"
-      }
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#superPropertyOf": [
-      {
-        "@id": "https://w3id.org/dpv#hasDataVolume"
-      },
-      {
-        "@id": "https://w3id.org/dpv#hasDataSubjectScale"
-      },
-      {
-        "@id": "https://w3id.org/dpv#hasGeographicCoverage"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Indicates the scale of specified concept"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "has scale"
-      }
-    ],
-    "https://schema.org/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Scale"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#ProcessingScale",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit, Piero Bonatti"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-09-07"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#Scale"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Scale of Processing"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Processing Scale"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "The exact definition of what constitutes \"scale\" depends on use of jurisdictional, domain-specific, or other forms of externally defined criterias. Where possible, this should be reflected by extending the scales provided with the appropriate context."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#RegionalScale",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#GeographicCoverage",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#GeographicCoverage"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Geographic coverage spanning a specific region or regions"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Regional Scale"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#HugeScaleOfDataSubjects",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#DataSubjectScale",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#DataSubjectScale"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Scale of data subjects considered huge or more than large within the context"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Huge Scale Of Data Subjects"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#HugeDataVolume",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#DataVolume",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#DataVolume"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Data volume that is considered huge or more than large within the context"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Huge Data Volume"
-      }
-    ]
-  },
-  {
     "@id": "https://w3id.org/dpv#LargeDataVolume",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class",
@@ -579,6 +279,48 @@
       {
         "@language": "en",
         "@value": "Large Data Volume"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#SmallScaleProcessing",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#ProcessingScale",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-09-07"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#ProcessingScale"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Processing that takes place at small scales (as specified by some criteria)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Small Scale Processing"
       }
     ]
   },
@@ -639,7 +381,132 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#MultiNationalScale",
+    "@id": "https://w3id.org/dpv#SmallDataVolume",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#DataVolume",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-06-15"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#DataVolume"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Data volume that is considered small or limited within the context"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Small Data Volume"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#HugeDataVolume",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#DataVolume",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-06-15"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#DataVolume"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Data volume that is considered huge or more than large within the context"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Huge Data Volume"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#DataSubjectScale",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit, Georg P Krog, Rana Saniei"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-06-15"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#Scale"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Scale of Data Subject(s)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Data Subject Scale"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#LocalEnvironmentScale",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class",
       "https://w3id.org/dpv#GeographicCoverage",
@@ -670,139 +537,19 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Geographic coverage spanning multiple nations"
+        "@value": "Geographic coverage spanning a specific environment within the locality"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Multi National Scale"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#SingularScaleOfDataSubjects",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#DataSubjectScale",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
+        "@value": "Local Environment Scale"
       }
     ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#DataSubjectScale"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
       {
         "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Scale of data subjects considered singular i.e. a specific data subject"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Singular Scale Of Data Subjects"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#GlobalScale",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#GeographicCoverage",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#GeographicCoverage"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Geographic coverage spanning the entire globe"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Global Scale"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#NearlyGlobalScale",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#GeographicCoverage",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#GeographicCoverage"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Geographic coverage nearly spanning the entire globe"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Nearly Global Scale"
+        "@value": "For example, geographic scale of an event take place in a specific building or room"
       }
     ]
   },
@@ -849,7 +596,49 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#NationalScale",
+    "@id": "https://w3id.org/dpv#HugeScaleOfDataSubjects",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#DataSubjectScale",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-06-15"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#DataSubjectScale"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Scale of data subjects considered huge or more than large within the context"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Huge Scale Of Data Subjects"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#MultiNationalScale",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class",
       "https://w3id.org/dpv#GeographicCoverage",
@@ -880,21 +669,68 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Geographic coverage spanning a nation"
+        "@value": "Geographic coverage spanning multiple nations"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "National Scale"
+        "@value": "Multi National Scale"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#SingularDataVolume",
+    "@id": "https://w3id.org/dpv#ProcessingScale",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#DataVolume",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit, Piero Bonatti"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-09-07"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#Scale"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Scale of Processing"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Processing Scale"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "The exact definition of what constitutes \"scale\" depends on use of jurisdictional, domain-specific, or other forms of externally defined criterias. Where possible, this should be reflected by extending the scales provided with the appropriate context."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#GlobalScale",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#GeographicCoverage",
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://purl.org/dc/terms/contributor": [
@@ -910,9 +746,60 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
+        "@id": "https://w3id.org/dpv#GeographicCoverage"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Geographic coverage spanning the entire globe"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Global Scale"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#hasDataVolume",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/dcam/rangeIncludes": [
+      {
         "@id": "https://w3id.org/dpv#DataVolume"
       }
     ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-06-22"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#hasScale"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/dpv#hasScale"
+      }
+    ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
         "@language": "en",
@@ -922,25 +809,31 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Data volume that is considered singular i.e. a specific instance or single item"
+        "@value": "Indicates the volume of data"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Singular Data Volume"
+        "@value": "has data volume"
+      }
+    ],
+    "https://schema.org/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#DataVolume"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#GeographicCoverage",
+    "@id": "https://w3id.org/dpv#SingularScaleOfDataSubjects",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#DataSubjectScale",
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://purl.org/dc/terms/contributor": [
       {
-        "@value": "Harshvardhan J. Pandit, Georg P Krog, Paul Ryan"
+        "@value": "Harshvardhan J. Pandit"
       }
     ],
     "http://purl.org/dc/terms/created": [
@@ -951,7 +844,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/dpv#Scale"
+        "@id": "https://w3id.org/dpv#DataSubjectScale"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -963,25 +856,26 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Indicate of scale in terms of geographic coverage"
+        "@value": "Scale of data subjects considered singular i.e. a specific data subject"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Geographic Coverage"
+        "@value": "Singular Scale Of Data Subjects"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#DataSubjectScale",
+    "@id": "https://w3id.org/dpv#NearlyGlobalScale",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#GeographicCoverage",
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://purl.org/dc/terms/contributor": [
       {
-        "@value": "Harshvardhan J. Pandit, Georg P Krog, Rana Saniei"
+        "@value": "Harshvardhan J. Pandit"
       }
     ],
     "http://purl.org/dc/terms/created": [
@@ -992,7 +886,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/dpv#Scale"
+        "@id": "https://w3id.org/dpv#GeographicCoverage"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -1004,54 +898,13 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Scale of Data Subject(s)"
+        "@value": "Geographic coverage nearly spanning the entire globe"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Data Subject Scale"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#DataVolume",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit, Georg P Krog, Rana Saniei"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#Scale"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Volume or Scale of Data"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Data Volume"
+        "@value": "Nearly Global Scale"
       }
     ]
   },
@@ -1094,90 +947,6 @@
       {
         "@language": "en",
         "@value": "Medium Data Volume"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#SporadicScaleOfDataSubjects",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#DataSubjectScale",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#DataSubjectScale"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Scale of data subjects considered sporadic or sparse within the context"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Sporadic Scale Of Data Subjects"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#SporadicDataVolume",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#DataVolume",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#DataVolume"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Data volume that is considered sporadic or sparse within the context"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Sporadic Data Volume"
       }
     ]
   },
@@ -1280,7 +1049,7 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#LocalityScale",
+    "@id": "https://w3id.org/dpv#NationalScale",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class",
       "https://w3id.org/dpv#GeographicCoverage",
@@ -1311,19 +1080,13 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Geographic coverage spanning a specific locality"
+        "@value": "Geographic coverage spanning a nation"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Locality Scale"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "For example, geographic scale of a city or an area within a city"
+        "@value": "National Scale"
       }
     ]
   },
@@ -1370,10 +1133,10 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#LocalEnvironmentScale",
+    "@id": "https://w3id.org/dpv#SingularDataVolume",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#GeographicCoverage",
+      "https://w3id.org/dpv#DataVolume",
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://purl.org/dc/terms/contributor": [
@@ -1389,7 +1152,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/dpv#GeographicCoverage"
+        "@id": "https://w3id.org/dpv#DataVolume"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -1401,19 +1164,256 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Geographic coverage spanning a specific environment within the locality"
+        "@value": "Data volume that is considered singular i.e. a specific instance or single item"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Local Environment Scale"
+        "@value": "Singular Data Volume"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#hasScale",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/dcam/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Scale"
+      }
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-06-15"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#superPropertyOf": [
+      {
+        "@id": "https://w3id.org/dpv#hasDataVolume"
+      },
+      {
+        "@id": "https://w3id.org/dpv#hasDataSubjectScale"
+      },
+      {
+        "@id": "https://w3id.org/dpv#hasGeographicCoverage"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Indicates the scale of specified concept"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "has scale"
+      }
+    ],
+    "https://schema.org/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Scale"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#DataVolume",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit, Georg P Krog, Rana Saniei"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-06-15"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#Scale"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Volume or Scale of Data"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Data Volume"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#MediumScaleProcessing",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#ProcessingScale",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-09-07"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#ProcessingScale"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Processing that takes place at medium scales (as specified by some criteria)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Medium Scale Processing"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#Scale",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit, Georg P Krog, Rana Saniei"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-06-15"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#ProcessingContext"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#DataVolume"
+      },
+      {
+        "@id": "https://w3id.org/dpv#DataSubjectScale"
+      },
+      {
+        "@id": "https://w3id.org/dpv#GeographicCoverage"
+      },
+      {
+        "@id": "https://w3id.org/dpv#ProcessingScale"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A measurement along some dimension"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Scale"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#scopeNote": [
       {
         "@language": "en",
-        "@value": "For example, geographic scale of an event take place in a specific building or room"
+        "@value": "Scales are subjective concepts that need to be defined and interpreted within the context of their application. For example, what would be small within one context could be large within another."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#SporadicScaleOfDataSubjects",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#DataSubjectScale",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-06-15"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#DataSubjectScale"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Scale of data subjects considered sporadic or sparse within the context"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Sporadic Scale Of Data Subjects"
       }
     ]
   }

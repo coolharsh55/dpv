@@ -225,6 +225,15 @@ DPV_FILES = {
             'Example',
             ),
     },
+    'translations': {
+        'name': 'translations',
+        'doc_id': '1HqIWw8VdWatYnbRwKoW3gAdXWmVTnSAJ9d9x8FSDsWM',
+        'sheets': (
+            'DE_prod',
+            'DE_verify',
+            'DE_glossary',
+            )
+    }
 }
 
 

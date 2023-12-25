@@ -9,40 +9,6 @@
    xmlns:sw="http://www.w3.org/2003/06/sw-vocab-status/ns#"
    xmlns:vann="http://purl.org/vocab/vann/"
 >
-  <rdf:Description rdf:about="https://w3id.org/dpv#LegalBasis">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Legal Basis</skos:prefLabel>
-    <skos:definition xml:lang="en">Legal basis used to justify processing of data or use of technology in accordance with a law</skos:definition>
-    <skos:scopeNote xml:lang="en">Legal basis (plural: legal bases) are defined by legislations and regulations, whose applicability is usually restricted to specific jurisdictions which can be represented using dpv:hasJurisdiction or dpv:hasLaw. Legal basis can be used without such declarations, e.g. 'Consent', however their interpretation will require association with a law, e.g. 'EU GDPR'.</skos:scopeNote>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-04-05</dct:created>
-    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-11-04</dct:modified>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <vann:example rdf:resource="https://w3id.org/dpv/examples#E0022"/>
-    <vann:example rdf:resource="https://w3id.org/dpv/examples#E0023"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#Contract">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Contract</skos:prefLabel>
-    <skos:definition xml:lang="en">Creation, completion, fulfilment, or performance of a contract involving specified processing of data or technologies</skos:definition>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-04-07</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#LegalAgreement"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#EnterIntoContract">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Enter Into Contract</skos:prefLabel>
-    <skos:definition xml:lang="en">Processing necessary to enter into contract</skos:definition>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-04-07</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Georg P Krog, Harshvardhan J. Pandit, Paul Ryan</dct:contributor>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Contract"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#Consent">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
@@ -60,17 +26,6 @@
     <vann:example rdf:resource="https://w3id.org/dpv/examples#E0026"/>
     <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#LegalBasis"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#LegalObligation">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Legal Obligation</skos:prefLabel>
-    <skos:definition xml:lang="en">Legal Obligation to conduct the specified processing</skos:definition>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-04-07</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#LegalBasis"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#LegitimateInterestOfDataSubject">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
@@ -81,58 +36,6 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor>Georg P Krog</dct:contributor>
     <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#LegitimateInterest"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#DataControllerContract">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Data Controller Contract</skos:prefLabel>
-    <skos:definition xml:lang="en">Creation, completion, fulfilment, or performance of a contract, with Data Controllers as parties being Joint Data Controllers, and involving specified processing</skos:definition>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-12-10</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Contract"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#DataSubjectContract">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Data Subject Contract</skos:prefLabel>
-    <skos:definition xml:lang="en">Creation, completion, fulfilment, or performance of a contract, with the Data Controller and Data Subject as parties, and involving specified processing</skos:definition>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-12-10</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Contract"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#LegitimateInterest">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Legitimate Interest</skos:prefLabel>
-    <skos:definition xml:lang="en">Legitimate Interests of a Party as justification for specified processing</skos:definition>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-05-19</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#LegalBasis"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#OfficialAuthorityOfController">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Official Authority of Controller</skos:prefLabel>
-    <skos:definition xml:lang="en">Processing necessary or authorised through the official authority granted to or vested in the Data Controller</skos:definition>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-05-05</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Georg P Krog, Harshvardhan J. Pandit, Paul Ryan</dct:contributor>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#LegalBasis"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#DataProcessorContract">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Data Processor Contract</skos:prefLabel>
-    <skos:definition xml:lang="en">Creation, completion, fulfilment, or performance of a contract, with the Data Controller and Data Processor as parties, and involving specified processing</skos:definition>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-12-10</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Contract"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#LegitimateInterestOfController">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
@@ -145,6 +48,50 @@
     <dct:contributor>Georg P Krog, Harshvardhan J. Pandit, Paul Ryan</dct:contributor>
     <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#LegitimateInterest"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#Contract">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Contract</skos:prefLabel>
+    <skos:definition xml:lang="en">Creation, completion, fulfilment, or performance of a contract involving specified processing of data or technologies</skos:definition>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-04-07</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#LegalAgreement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#OfficialAuthorityOfController">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Official Authority of Controller</skos:prefLabel>
+    <skos:definition xml:lang="en">Processing necessary or authorised through the official authority granted to or vested in the Data Controller</skos:definition>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-05-05</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Georg P Krog, Harshvardhan J. Pandit, Paul Ryan</dct:contributor>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#LegalBasis"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#LegitimateInterest">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Legitimate Interest</skos:prefLabel>
+    <skos:definition xml:lang="en">Legitimate Interests of a Party as justification for specified processing</skos:definition>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-05-19</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#LegalBasis"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#LegalObligation">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Legal Obligation</skos:prefLabel>
+    <skos:definition xml:lang="en">Legal Obligation to conduct the specified processing</skos:definition>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-04-07</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#LegalBasis"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#VitalInterestOfDataSubject">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
@@ -156,48 +103,48 @@
     <dct:contributor>Georg P Krog, Harshvardhan J. Pandit, Paul Ryan</dct:contributor>
     <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#VitalInterestOfNaturalPerson"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#ThirdPartyContract">
+  <rdf:Description rdf:about="https://w3id.org/dpv#ContractPerformance">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Third Party Contract</skos:prefLabel>
-    <skos:definition xml:lang="en">Creation, completion, fulfilment, or performance of a contract, with the Data Controller and Third Party as parties, and involving specified processing</skos:definition>
+    <skos:prefLabel xml:lang="en">Contract Performance</skos:prefLabel>
+    <skos:definition xml:lang="en">Fulfilment or performance of a contract involving specified processing</skos:definition>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-04-07</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Georg P Krog, Harshvardhan J. Pandit, Paul Ryan</dct:contributor>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Contract"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#DataSubjectContract">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Data Subject Contract</skos:prefLabel>
+    <skos:definition xml:lang="en">Creation, completion, fulfilment, or performance of a contract, with the Data Controller and Data Subject as parties, and involving specified processing</skos:definition>
     <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-12-10</dct:created>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Contract"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#LegitimateInterestOfThirdParty">
+  <rdf:Description rdf:about="https://w3id.org/dpv#LegalBasis">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Legitimate Interest of Third Party</skos:prefLabel>
-    <skos:definition xml:lang="en">Legitimate Interests of a Third Party in conducting specified processing</skos:definition>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-05-19</dct:created>
+    <skos:prefLabel xml:lang="en">Legal Basis</skos:prefLabel>
+    <skos:definition xml:lang="en">Legal basis used to justify processing of data or use of technology in accordance with a law</skos:definition>
+    <skos:scopeNote xml:lang="en">Legal basis (plural: legal bases) are defined by legislations and regulations, whose applicability is usually restricted to specific jurisdictions which can be represented using dpv:hasJurisdiction or dpv:hasLaw. Legal basis can be used without such declarations, e.g. 'Consent', however their interpretation will require association with a law, e.g. 'EU GDPR'.</skos:scopeNote>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-04-05</dct:created>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-11-04</dct:modified>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Georg P Krog, Harshvardhan J. Pandit, Paul Ryan</dct:contributor>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#LegitimateInterest"/>
+    <vann:example rdf:resource="https://w3id.org/dpv/examples#E0022"/>
+    <vann:example rdf:resource="https://w3id.org/dpv/examples#E0023"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#VitalInterest">
+  <rdf:Description rdf:about="https://w3id.org/dpv#DataProcessorContract">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Vital Interest</skos:prefLabel>
-    <skos:definition xml:lang="en">Processing is necessary or required to protect vital interests of a data subject or other natural person</skos:definition>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-04-21</dct:created>
+    <skos:prefLabel xml:lang="en">Data Processor Contract</skos:prefLabel>
+    <skos:definition xml:lang="en">Creation, completion, fulfilment, or performance of a contract, with the Data Controller and Data Processor as parties, and involving specified processing</skos:definition>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-12-10</dct:created>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#LegalBasis"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#VitalInterestOfNaturalPerson">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Vital Interest of Natural Person</skos:prefLabel>
-    <skos:definition xml:lang="en">Processing is necessary or required to protect vital interests of a natural person</skos:definition>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-04-21</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Georg P Krog, Harshvardhan J. Pandit, Paul Ryan</dct:contributor>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#VitalInterest"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Contract"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#PublicInterest">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
@@ -210,16 +157,27 @@
     <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
     <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#LegalBasis"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#ContractPerformance">
+  <rdf:Description rdf:about="https://w3id.org/dpv#VitalInterest">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Contract Performance</skos:prefLabel>
-    <skos:definition xml:lang="en">Fulfilment or performance of a contract involving specified processing</skos:definition>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-04-07</dct:created>
+    <skos:prefLabel xml:lang="en">Vital Interest</skos:prefLabel>
+    <skos:definition xml:lang="en">Processing is necessary or required to protect vital interests of a data subject or other natural person</skos:definition>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-04-21</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#LegalBasis"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#LegitimateInterestOfThirdParty">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Legitimate Interest of Third Party</skos:prefLabel>
+    <skos:definition xml:lang="en">Legitimate Interests of a Third Party in conducting specified processing</skos:definition>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-05-19</dct:created>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor>Georg P Krog, Harshvardhan J. Pandit, Paul Ryan</dct:contributor>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Contract"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#LegitimateInterest"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#hasLegalBasis">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
@@ -233,6 +191,17 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor>Axel Polleres, Javier Fernández</dct:contributor>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#EnterIntoContract">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Enter Into Contract</skos:prefLabel>
+    <skos:definition xml:lang="en">Processing necessary to enter into contract</skos:definition>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-04-07</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Georg P Krog, Harshvardhan J. Pandit, Paul Ryan</dct:contributor>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Contract"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#DataTransferLegalBasis">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
@@ -243,5 +212,36 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor>David Hickey, Georg P Krogg</dct:contributor>
     <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#LegalBasis"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#DataControllerContract">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Data Controller Contract</skos:prefLabel>
+    <skos:definition xml:lang="en">Creation, completion, fulfilment, or performance of a contract, with Data Controllers as parties being Joint Data Controllers, and involving specified processing</skos:definition>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-12-10</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Contract"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#ThirdPartyContract">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Third Party Contract</skos:prefLabel>
+    <skos:definition xml:lang="en">Creation, completion, fulfilment, or performance of a contract, with the Data Controller and Third Party as parties, and involving specified processing</skos:definition>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-12-10</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Contract"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#VitalInterestOfNaturalPerson">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#LegalBasis"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Vital Interest of Natural Person</skos:prefLabel>
+    <skos:definition xml:lang="en">Processing is necessary or required to protect vital interests of a natural person</skos:definition>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-04-21</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Georg P Krog, Harshvardhan J. Pandit, Paul Ryan</dct:contributor>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#VitalInterest"/>
   </rdf:Description>
 </rdf:RDF>

@@ -331,6 +331,19 @@ CSVFILES = {
     # }
 }
 
+
+### Translations
+IMPORT_TRANSLATIONS = {
+    'de': {
+        'lang': 'German',
+        'prod': f'{IMPORT_CSV_PATH}/DE_prod.csv',
+        'verify': f'{IMPORT_CSV_PATH}/DE_verify.csv',
+    },
+}
+TRANSLATIONS_TODO_PATH = IMPORT_CSV_PATH
+
+
+### EXPORTING
 EXPORT_RDF_PATH = '..'
 RDF_STRUCTURE = {
     'dpv': {
@@ -396,6 +409,7 @@ RDF_STRUCTURE = {
 
 ### Examples 
 EXAMPLES = {}
+
 
 ###################### contributors
 

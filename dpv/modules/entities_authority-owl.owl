@@ -8,6 +8,17 @@
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
    xmlns:sw="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
+  <rdf:Description rdf:about="https://w3id.org/dpv#SupraNationalAuthority">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Supra-National Authority</skos:prefLabel>
+    <skos:definition xml:lang="en">An authority tasked with overseeing legal compliance for a supra-national union e.g. EU</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Authority"/>
+    <dct:source xml:lang="en">(ADMS controlled vocabulary,http://purl.org/adms)</dct:source>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-02</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#Authority">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -22,54 +33,11 @@
     <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#RegionalAuthority"/>
     <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#SupraNationalAuthority"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#SupraNationalAuthority">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Supra-National Authority</skos:prefLabel>
-    <skos:definition xml:lang="en">An authority tasked with overseeing legal compliance for a supra-national union e.g. EU</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Authority"/>
-    <dct:source xml:lang="en">(ADMS controlled vocabulary,http://purl.org/adms)</dct:source>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-02</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#NationalAuthority">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <skos:prefLabel xml:lang="en">National Authority</skos:prefLabel>
     <skos:definition xml:lang="en">An authority tasked with overseeing legal compliance for a nation</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Authority"/>
-    <dct:source xml:lang="en">(ADMS controlled vocabulary,http://purl.org/adms)</dct:source>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-02</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#DataProtectionAuthority">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Data Protection Authority</skos:prefLabel>
-    <skos:definition xml:lang="en">An authority tasked with overseeing legal compliance regarding privacy and data protection laws.</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Authority"/>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-11-04</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Georg Krog, Paul Ryan, Harshvardhan Pandit</dct:contributor>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#hasAuthority">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <skos:prefLabel xml:lang="en">has authority</skos:prefLabel>
-    <skos:definition xml:lang="en">Indicates applicability of authority for a jurisdiction</skos:definition>
-    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#Authority"/>
-    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#Authority"/>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-01-19</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J. Pandit, Georg P Krog</dct:contributor>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#RegionalAuthority">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Regional Authority</skos:prefLabel>
-    <skos:definition xml:lang="en">An authority tasked with overseeing legal compliance for a region</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Authority"/>
     <dct:source xml:lang="en">(ADMS controlled vocabulary,http://purl.org/adms)</dct:source>
     <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-02</dct:created>
@@ -87,7 +55,39 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor>Harshvardhan J. Pandit, Georg P Krog</dct:contributor>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasAuthority">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <skos:prefLabel xml:lang="en">has authority</skos:prefLabel>
+    <skos:definition xml:lang="en">Indicates applicability of authority for a jurisdiction</skos:definition>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#Authority"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#Authority"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-01-19</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit, Georg P Krog</dct:contributor>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#GovernmentalOrganisation">
     <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#Authority"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#RegionalAuthority">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Regional Authority</skos:prefLabel>
+    <skos:definition xml:lang="en">An authority tasked with overseeing legal compliance for a region</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Authority"/>
+    <dct:source xml:lang="en">(ADMS controlled vocabulary,http://purl.org/adms)</dct:source>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-02</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#DataProtectionAuthority">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Data Protection Authority</skos:prefLabel>
+    <skos:definition xml:lang="en">An authority tasked with overseeing legal compliance regarding privacy and data protection laws.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Authority"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-11-04</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Georg Krog, Paul Ryan, Harshvardhan Pandit</dct:contributor>
   </rdf:Description>
 </rdf:RDF>
