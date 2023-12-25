@@ -1,4 +1,4 @@
-{% macro index_concepts(vocab, vocab_name, filter, skip_heading=False) %}
+{% macro index_concepts(vocab, vocab_name, filter, skip_heading=False, lang="en") %}
   {% if not skip_heading %}<h3>{{filter|title}}</h3>
   {% endif %}
   {% for iri, concept in vocab.items()|sort(attribute=0) %}
@@ -16,7 +16,7 @@
     {% endif %}
     {% if inscope %}
     <section class="term-def" id="{{term}}">
-      <h4>{{ concept['skos:prefLabel'] }}</h4>
+      <h4>{{ concept|translation_message('skos:prefLabel',lang) }}</h4>
       <table class="term-contents">
       <tbody>
         <tr>
@@ -27,7 +27,7 @@
         </tr>
         <tr>
           <th>Label</th>
-          <td><i>{{ concept['skos:prefLabel'] }}</i></td>
+          <td><i>{{ concept|translation_message('skos:prefLabel',lang) }}</i></td>
         </tr>
         <tr class="technical-detail">
           <th>IRI</th>
@@ -84,12 +84,12 @@
         
         <tr class="table-separator"></tr>
         {# Description #}
-        {% if concept['skos:definition'] %}<tr>
+        {% if concept|translation_message('skos:definition',lang) %}<tr>
           <th>Definition</th>
-          <td><i>{{ concept['skos:definition'] }}</i></td>
+          <td><i>{{ concept|translation_message('skos:definition',lang) }}</i></td>
         </tr>{% endif %}
         {# Usage Note #}
-        {% if concept['skos:scopeNote'] %}{% for note in concept['skos:scopeNote']|ensure_list %}<tr>
+        {% if concept|translation_message('skos:scopeNote',lang) %}{% for note in concept|translation_message('skos:scopeNote',lang)|ensure_list %}<tr>
           <th>Usage Note</th>
           <td><i>{{note}}</i></td>
         </tr>{% endfor %}{% endif %}
@@ -144,37 +144,37 @@
 {% endfor %}
 {% endmacro %}
 
-{% macro list_item_single(topconcepts, concepts, data) %}
+{% macro list_item_single(topconcepts, concepts, data, lang="en") %}
   {% for term in topconcepts %}
   <li>
-    <strong>{{term}}</strong>: {{data[term]['skos:definition']}} 
+    <strong>{{term}}</strong>: {{data[term]|translation_message('skos:definition',lang)}} 
       <small><a href="{{data[term]['iri']}}">go to full definition</a></small><br/>
       data: {{ topconcepts[term] }}
     {% if concepts[term]['children'] %}
       <ul>
-        {{ list_item_single(concepts[term]['children'], concepts, data) }}
+        {{ list_item_single(concepts[term]['children'], concepts, data, lang) }}
       </ul>
     {% endif %}
   </li>
   {% endfor %}
 {% endmacro %}
 
-{% macro list_items(vocab, head=None) %}
+{% macro list_items(vocab, head=None, lang="en") %}
 {% set concepts = vocab|organise_hierarchy(head) %}
 {% if concepts %}<ul class="concept-list">
 {% for term, data in concepts.items() %}
   <li>
-    <strong>{{term}}</strong>: {{data['skos:definition']}} 
+    <strong>{{term}}</strong>: {{data|translation_message('skos:definition',lang)}} 
       <small><a href="{% if term.split(':')[0] == vocab['prefix'] %}#{{data['term']}}{% else %}{{data['iri']}}{% endif %}">go to full definition</a></small>
-      {{ list_items(vocab, head=term) }}
+      {{ list_items(vocab, head=term, lang=lang) }}
   </li>
 {% endfor %}
 </ul>{% endif %}
 {% endmacro %}
 
-{% macro list_hierarchy(vocab, head=None) %}
+{% macro list_hierarchy(vocab, head=None, lang="en") %}
 <div class="list-hierarchy">
-{{ list_items(vocab, head) }}
+{{ list_items(vocab, head, lang=lang) }}
 </div>
 {% endmacro %}
 

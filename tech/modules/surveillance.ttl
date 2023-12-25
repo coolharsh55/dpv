@@ -1,6 +1,5 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix dpv: <https://w3id.org/dpv#> .
-@prefix dpv-tech: <https://w3id.org/dpv/dpv-tech#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
@@ -13,7 +12,7 @@ tech:CovertSurveillanceTechnology a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-tech:SurveillanceTechnology ;
+    skos:broader tech:SurveillanceTechnology ;
     skos:definition "Surveillance that is covert i.e. invisible or non-apparent or implicit"@en ;
     skos:inScheme tech:surveillance-classes ;
     skos:prefLabel "Covert SurveillanceTechnology"@en ;
@@ -25,13 +24,13 @@ tech:OvertSurveillanceTechnology a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-tech:SurveillanceTechnology ;
+    skos:broader tech:SurveillanceTechnology ;
     skos:definition "Surveillance that is overt i.e. visible or apparent or explicit"@en ;
     skos:inScheme tech:surveillance-classes ;
     skos:prefLabel "Overt Surveillance Technology"@en ;
     skos:scopeNote "For example, a CCTV with a notice"@en .
 
-dpv-tech:SurveillanceTechnology skos:narrower tech:CovertSurveillanceTechnology,
+tech:SurveillanceTechnology skos:narrower tech:CovertSurveillanceTechnology,
         tech:OvertSurveillanceTechnology .
 
 tech:surveillance-classes a skos:ConceptScheme .

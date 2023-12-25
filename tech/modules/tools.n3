@@ -1,6 +1,5 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix dpv: <https://w3id.org/dpv#> .
-@prefix dpv-tech: <https://w3id.org/dpv/dpv-tech#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
@@ -13,7 +12,7 @@ tech:Cookie a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-tech:LocalStorage ;
+    skos:broader tech:LocalStorage ;
     skos:definition "A HTTP or web or internet cookie"@en ;
     skos:inScheme tech:tools-classes ;
     skos:prefLabel "Cookie"@en .
@@ -24,7 +23,7 @@ tech:Database a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-tech:DataStorageTechnology ;
+    skos:broader tech:DataStorageTechnology ;
     skos:definition "A database, database management system (DBMS), or application database"@en ;
     skos:inScheme tech:tools-classes ;
     skos:prefLabel "Database"@en .
@@ -35,7 +34,7 @@ tech:FileSystem a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-tech:DataStorageTechnology ;
+    skos:broader tech:DataStorageTechnology ;
     skos:definition "A data storage and retrieval interface provided by an operating system"@en ;
     skos:inScheme tech:tools-classes ;
     skos:prefLabel "File System"@en .
@@ -46,10 +45,11 @@ tech:IdentityManagementTechnology a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-tech:IdentityTechnology,
-        dpv-tech:ManagementTechnology ;
+    skos:broader tech:IdentityTechnology,
+        tech:ManagementTechnology ;
     skos:definition "Technologies providing identity provision, verification, management, and governance"@en ;
     skos:inScheme tech:tools-classes ;
+    skos:narrower tech:IdentityWallet ;
     skos:prefLabel "Identity Management Technology"@en .
 
 tech:IdentityWallet a rdfs:Class,
@@ -58,8 +58,8 @@ tech:IdentityWallet a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-tech:DataStorageTechnology,
-        dpv-tech:IdentityManagementTechnology ;
+    skos:broader tech:DataStorageTechnology,
+        tech:IdentityManagementTechnology ;
     skos:definition "product and service that allows the user to store identity data, credentials and attributes linked to her/his identity, to provide them to relying parties on request and to use them for authentication, online and offline, and to create qualified electronic signatures and seals"@en ;
     skos:inScheme tech:tools-classes ;
     skos:prefLabel "Identity Wallet"@en .
@@ -70,7 +70,7 @@ tech:PersonalInformationManagementSystem a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-tech:DataManagementTechnology ;
+    skos:broader tech:DataManagementTechnology ;
     skos:definition "A PIMS is a system that helps to give individuals more control over their personal data by managing their personal data in secure, on-premises or online storage systems and sharing it when and with whomever they choose"@en ;
     skos:inScheme tech:tools-classes ;
     skos:prefLabel "Personal Information Management System"@en .
@@ -81,24 +81,22 @@ tech:SmartphoneApplication a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-tech:Application ;
+    skos:broader tech:Application ;
     skos:definition "A computing or digital program on a smartphone device"@en ;
     skos:inScheme tech:tools-classes ;
     skos:prefLabel "Smartphone Application"@en .
 
-dpv-tech:Application skos:narrower tech:SmartphoneApplication .
+tech:Application skos:narrower tech:SmartphoneApplication .
 
-dpv-tech:DataManagementTechnology skos:narrower tech:PersonalInformationManagementSystem .
+tech:DataManagementTechnology skos:narrower tech:PersonalInformationManagementSystem .
 
-dpv-tech:IdentityManagementTechnology skos:narrower tech:IdentityWallet .
+tech:IdentityTechnology skos:narrower tech:IdentityManagementTechnology .
 
-dpv-tech:IdentityTechnology skos:narrower tech:IdentityManagementTechnology .
+tech:LocalStorage skos:narrower tech:Cookie .
 
-dpv-tech:LocalStorage skos:narrower tech:Cookie .
+tech:ManagementTechnology skos:narrower tech:IdentityManagementTechnology .
 
-dpv-tech:ManagementTechnology skos:narrower tech:IdentityManagementTechnology .
-
-dpv-tech:DataStorageTechnology skos:narrower tech:Database,
+tech:DataStorageTechnology skos:narrower tech:Database,
         tech:FileSystem,
         tech:IdentityWallet .
 

@@ -1,5 +1,4 @@
 @prefix dct: <http://purl.org/dc/terms/> .
-@prefix dpv-tech: <https://w3id.org/dpv/dpv-tech#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
@@ -8,89 +7,89 @@
 
 tech:BluetoothCommunication a rdfs:Class,
         skos:Concept,
-        dpv-tech:CommunicationMechanism ;
+        tech:CommunicationMechanism ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2023-11-03"^^xsd:date ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-tech:Networking ;
+    skos:broader tech:Networking ;
     skos:definition "Technology utilising bluetooth communication"@en ;
     skos:inScheme tech:comms-classes ;
     skos:prefLabel "Bluetooth Communication"@en .
 
 tech:CellularNetworkCommunication a rdfs:Class,
         skos:Concept,
-        dpv-tech:CommunicationMechanism ;
+        tech:CommunicationMechanism ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2023-11-04"^^xsd:date ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-tech:Networking ;
+    skos:broader tech:Networking ;
     skos:definition "Technology utilising cellular networking communication"@en ;
     skos:inScheme tech:comms-classes ;
     skos:prefLabel "Cellular Network Communication"@en .
 
 tech:GPSCommunication a rdfs:Class,
         skos:Concept,
-        dpv-tech:CommunicationMechanism ;
+        tech:CommunicationMechanism ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2023-11-05"^^xsd:date ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-tech:CommunicationMechanism ;
+    skos:broader tech:CommunicationMechanism ;
     skos:definition "Technology utilising GPS communication"@en ;
     skos:inScheme tech:comms-classes ;
     skos:prefLabel "GPS Communication"@en .
 
 tech:InternetCommunication a rdfs:Class,
         skos:Concept,
-        dpv-tech:CommunicationMechanism ;
+        tech:CommunicationMechanism ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2023-11-01"^^xsd:date ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-tech:Networking ;
+    skos:broader tech:Networking ;
     skos:definition "Technology utilising internet communication"@en ;
     skos:inScheme tech:comms-classes ;
     skos:prefLabel "Internet Communication"@en .
 
 tech:LocalNetworkCommunication a rdfs:Class,
         skos:Concept,
-        dpv-tech:CommunicationMechanism ;
+        tech:CommunicationMechanism ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2023-10-31"^^xsd:date ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-tech:Networking ;
+    skos:broader tech:Networking ;
     skos:definition "Technology utilising local networking communication"@en ;
     skos:inScheme tech:comms-classes ;
     skos:prefLabel "Local Network Communication"@en .
 
 tech:NetworkingCommunication a rdfs:Class,
         skos:Concept,
-        dpv-tech:CommunicationMechanism ;
+        tech:CommunicationMechanism ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2023-10-30"^^xsd:date ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-tech:CommunicationMechanism ;
+    skos:broader tech:CommunicationMechanism ;
     skos:definition "Technology utilising networking communication"@en ;
     skos:inScheme tech:comms-classes ;
     skos:prefLabel "Networking Communication"@en .
 
 tech:WiFiCommunication a rdfs:Class,
         skos:Concept,
-        dpv-tech:CommunicationMechanism ;
+        tech:CommunicationMechanism ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2023-11-02"^^xsd:date ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-tech:Networking ;
+    skos:broader tech:Networking ;
     skos:definition "Technology utilising wifi wireless networking communication"@en ;
     skos:inScheme tech:comms-classes ;
     skos:prefLabel "WiFi Communication"@en .
 
-dpv-tech:Networking skos:narrower tech:BluetoothCommunication,
+tech:Networking skos:narrower tech:BluetoothCommunication,
         tech:CellularNetworkCommunication,
         tech:InternetCommunication,
         tech:LocalNetworkCommunication,
@@ -98,6 +97,6 @@ dpv-tech:Networking skos:narrower tech:BluetoothCommunication,
 
 tech:comms-classes a skos:ConceptScheme .
 
-dpv-tech:CommunicationMechanism skos:narrower tech:GPSCommunication,
+tech:CommunicationMechanism skos:narrower tech:GPSCommunication,
         tech:NetworkingCommunication .
 

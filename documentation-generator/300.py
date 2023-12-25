@@ -10,7 +10,7 @@ EXPORT_PATH = '..'
 TEMPLATE_PATH = './jinja2_resources'
 
 import json
-from rdflib import Graph, Namespace
+from rdflib import Graph, Namespace, BNode, Literal
 from rdflib import RDF, RDFS, OWL, SKOS
 from rdflib import URIRef
 from rdform import DataGraph, RDFS_Resource
@@ -19,9 +19,11 @@ import logging
 logging.basicConfig(
     level=logging.DEBUG, format='%(levelname)s - %(funcName)s :: %(lineno)d - %(message)s')
 DEBUG = logging.debug
+INFO = logging.info
 
 from vocab_management import generate_author_affiliation, NAMESPACES, NS
 from vocab_management import prefix_from_iri
+from vocab_management import IMPORT_TRANSLATIONS, TRANSLATIONS_TODO_PATH
 
 
 # What does HTML document require?
@@ -236,7 +238,7 @@ class DATA(object):
 
     @staticmethod
     def load_vocab(filepath, vocab):
-        DEBUG(f'loading {vocab} data from {filepath}')
+        INFO(f'loading {vocab} data from {filepath}')
         graph = Graph()
         graph.parse(filepath)
         graph.ns = { k:v for k,v in NAMESPACES.items() }
@@ -260,10 +262,12 @@ class DATA(object):
                     'vocab': vocab,
                     'namespace': s.replace(term.split(':')[1], ''),
                     '_dpvterm': s.startswith('https://w3id.org/dpv'),
+                    '_termsource': set(),
                 }
                 if not vocab_data[term]['_dpvterm']:
                     vocab_data[term]['term'] = term
             term = vocab_data[term]
+            term['_termsource'].add(vocab)
             
             # add contents for p and o
             if p in term:
@@ -278,12 +282,20 @@ class DATA(object):
                 term[rel] = o
             if o.startswith('http'):
                 obj = o.n3(graph.namespace_manager)
-                DATA.concepts[o] = {
-                    'iri': o,
-                    'prefixed': obj,
-                    'term': obj.split(':')[1]
-                }
-                DATA.concepts_prefixed[obj] = DATA.concepts[o]
+                if o not in DATA.concepts:
+                    DATA.concepts[o] = {
+                        'iri': o,
+                        'prefixed': obj,
+                        'prefix': obj.split(':')[0],
+                        'term': obj.split(':')[1],
+                        'vocab': vocab,
+                        'namespace': o.replace(obj.split(':')[1], ''),
+                        '_dpvterm': o.startswith('https://w3id.org/dpv'),
+                        '_termsource': set(),
+                    }
+                    DATA.concepts[o]['_termsource'].add(vocab)
+                if obj not in DATA.concepts_prefixed:
+                    DATA.concepts_prefixed[obj] = DATA.concepts[o]
                 if p == RDF.type and o == RDFS.Class:
                     term['_type'] = "class"
                 elif p == RDF.type and o == RDF.Property:
@@ -293,13 +305,34 @@ class DATA(object):
                         DATA.schemes[prefix_from_iri(o)] = {}
                     DATA.schemes[prefix_from_iri(o)][term['prefixed']] = term
             else:
-                obj = str(o)
+                if type(o) == BNode:
+                    obj = o
+                else:
+                    obj = str(o)
         DATA.data[vocab] = vocab_data
         for concept in vocab_data.values():
-            DATA.concepts[concept['iri']] = concept
+            if concept['iri'] not in DATA.concepts:
+                DATA.concepts[concept['iri']] = concept
+            if concept['prefixed'] not in DATA.concepts:
+                DATA.concepts[concept['prefixed']] = concept
             if '_type' not in concept:
                 concept['_type'] = 'notcp'
                 # DEBUG(f"concept has no type {concept['prefixed']}")
+            for prop in ('skos:prefLabel', 'skos:definition', 'skos:scopeNote'):
+                if prop not in concept: continue
+                if type(concept[prop]) != list: concept[prop] = [concept[prop]]
+                languages = {}
+                for prop_value in concept[prop]:
+                    if prop_value.language is None:
+                        concept[f'{prop}-en'] = concept[prop]
+                        continue
+                    if prop_value.language in languages: continue
+                    else:
+                        languages[prop_value.language] = prop_value
+                for language, value in languages.items():
+                    concept[f'{prop}-{language}'] = value
+                concept[prop] = languages['en']
+                    # DEBUG(f"{concept['prefixed']} - {concept['skos:prefLabel']}")
         # vocab_data['_name'] = vocab
         # for scheme in DATA.schemes:
         #     DEBUG(f'registered scheme {prefix_from_iri(scheme)}')
@@ -314,7 +347,7 @@ class DATA(object):
 
     @staticmethod
     def load_module(filepath, module, vocab):
-        DEBUG(f'loading {vocab}:{module} data from {filepath}')
+        INFO(f'loading {vocab}:{module} data from {filepath}')
         graph = Graph()
         graph.parse(filepath)
         graph.ns = { k:v for k,v in NAMESPACES.items() }
@@ -619,6 +652,14 @@ def retrieve_example_for_concept(concept):
     return examples
 
 
+def translation_message(concept, field, lang):
+    if field not in concept: return None
+    # DEBUG(f"{concept['prefixed']} -- {field} {lang} -- {[x for x in concept.keys() if x.startswith('skos:')]}")
+    if f'{field}-{lang}' not in concept:
+        return f'{concept[field]} (translation missing)'
+    return concept[f'{field}-{lang}']
+
+
 from jinja2 import FileSystemLoader, Environment
 template_loader = FileSystemLoader(searchpath=f'{TEMPLATE_PATH}')
 template_env = Environment(
@@ -647,60 +688,142 @@ JINJA2_FILTERS = {
     'resolve_concepts': resolve_concepts,
     'retrieve_example': retrieve_example,
     'retrieve_example_for_concept': retrieve_example_for_concept,
+    'translation_message': translation_message,
 }
 template_env.filters.update(JINJA2_FILTERS)
 
 
-if __name__ == '__main__':
-    for vocab, vocab_data in VOCABS.items(): 
-        DEBUG(f'VOCAB: {vocab}')
-        DATA.load_vocab(vocab_data['vocab'], vocab)
-        module_data = {}
-        DATA.modules[vocab] = {}
-        for module, filepath in vocab_data['modules'].items():
-            DATA.load_module(filepath, module, vocab)
-            # create collection to generate module pages
-            module_name = module.split('-')[0] # e.g. consent-type = consent
-            if module_name not in module_data:
-                module_data[module_name] = {}
-                module_data[module_name]['index'] = {}
-            module_data[module_name][module] = DATA.modules[vocab][module]
-            module_data[module_name]['prefix'] = vocab
-            for data in DATA.modules[vocab][module].values():
-                for k, v in data.items():
-                    module_data[module_name]['index'][k] = v
-        # else:
-        #     DATA.modules[vocab] = []
-        template = template_env.get_template(vocab_data['template'])
-        with open(f'{vocab_data["export"]}/index.html', 'w+') as fd:
+for vocab, vocab_data in VOCABS.items(): 
+    # DEBUG(f'VOCAB: {vocab}')
+    DATA.load_vocab(vocab_data['vocab'], vocab)
+    module_data = {}
+    DATA.modules[vocab] = {}
+    for module, filepath in vocab_data['modules'].items():
+        DATA.load_module(filepath, module, vocab)
+        # create collection to generate module pages
+        module_name = module.split('-')[0] # e.g. consent-type = consent
+        if module_name not in module_data:
+            module_data[module_name] = {}
+            module_data[module_name]['index'] = {}
+        module_data[module_name][module] = DATA.modules[vocab][module]
+        module_data[module_name]['prefix'] = vocab
+        for data in DATA.modules[vocab][module].values():
+            for k, v in data.items():
+                module_data[module_name]['index'][k] = v
+    # else:
+    #     DATA.modules[vocab] = []
+    template = template_env.get_template(vocab_data['template'])
+    with open(f'{vocab_data["export"]}/index.html', 'w+') as fd:
+        fd.write(template.render(
+            data=DATA.data,
+            vocab=DATA.data[vocab],
+            modules=DATA.modules[vocab],
+            vocab_name=vocab,
+            lang='en'))
+    INFO(f'wrote {vocab} spec at {vocab_data["export"]}/index.html')
+    with open(f'{vocab_data["export"]}/index-en.html', 'w+') as fd:
+        fd.write(template.render(
+            data=DATA.data,
+            vocab=DATA.data[vocab],
+            modules=DATA.modules[vocab],
+            vocab_name=vocab,
+            lang='en'))
+    INFO(f'wrote {vocab} spec at {vocab_data["export"]}/index-en.html')
+    for lang in IMPORT_TRANSLATIONS:
+        with open(f'{vocab_data["export"]}/index-{lang}.html', 'w+') as fd:
             fd.write(template.render(
                 data=DATA.data,
                 vocab=DATA.data[vocab],
                 modules=DATA.modules[vocab],
-                vocab_name=vocab))
-        DEBUG(f'wrote {vocab} spec at {vocab_data["export"]}/index.html')
-        # TODO: replace duplicate code with filecopy
-        with open(f'{vocab_data["export"]}/{vocab}.html', 'w+') as fd:
+                vocab_name=vocab,
+                lang=lang))
+        INFO(f'wrote {vocab} spec in {lang} at {vocab_data["export"]}/index-{lang}.html')
+    # TODO: replace duplicate code with filecopy
+    with open(f'{vocab_data["export"]}/{vocab}.html', 'w+') as fd:
+        fd.write(template.render(
+            data=DATA.data,
+            vocab=DATA.data[vocab],
+            modules=DATA.modules[vocab],
+            vocab_name=vocab,
+            lang='en'))
+    INFO(f'wrote {vocab} spec at {vocab_data["export"]}/{vocab}.html')
+    with open(f'{vocab_data["export"]}/{vocab}-en.html', 'w+') as fd:
+        fd.write(template.render(
+            data=DATA.data,
+            vocab=DATA.data[vocab],
+            modules=DATA.modules[vocab],
+            vocab_name=vocab,
+            lang='en'))
+    INFO(f'wrote {vocab} spec at {vocab_data["export"]}/{vocab}-en.html')
+    for lang in IMPORT_TRANSLATIONS:
+        with open(f'{vocab_data["export"]}/{vocab}-{lang}.html', 'w+') as fd:
             fd.write(template.render(
                 data=DATA.data,
                 vocab=DATA.data[vocab],
                 modules=DATA.modules[vocab],
-                vocab_name=vocab))
-        DEBUG(f'wrote {vocab} spec at {vocab_data["export"]}/{vocab}.html')
+                vocab_name=vocab,
+                lang=lang))
+        INFO(f'wrote {vocab} spec at {vocab_data["export"]}/{vocab}-{lang}.html')
 
-        if 'module-template' not in vocab_data:
-            continue # this vocab doesn't have module specific docs
-        # generate module docs
-        for module, data in module_data.items():
-            if module not in vocab_data['module-template']:
-                DEBUG(f'{module} has no template associated - skipping')
-                continue
-            DEBUG(f'exporting {module} page')
-            template = template_env.get_template(vocab_data['module-template'][module])
+    if 'module-template' not in vocab_data:
+        continue # this vocab doesn't have module specific docs
+    # generate module docs
+    for module, data in module_data.items():
+        if module not in vocab_data['module-template']:
+            INFO(f'{module} has no template associated - skipping')
+            continue
+        INFO(f'exporting {module} page')
+        template = template_env.get_template(vocab_data['module-template'][module])
+        with open(f'{vocab_data["export"]}/modules/{module}.html', 'w+') as fd:
+            fd.write(template.render(
+                data=data,
+                vocab=DATA.data[vocab],
+                modules=DATA.modules[vocab],
+                vocab_name=vocab,
+                lang="en"))
+            INFO(f'wrote {vocab}/{module} docs at {vocab_data["export"]}/modules/{module}.html')
+        with open(f'{vocab_data["export"]}/modules/{module}-en.html', 'w+') as fd:
+            fd.write(template.render(
+                data=data,
+                vocab=DATA.data[vocab],
+                modules=DATA.modules[vocab],
+                vocab_name=vocab,
+                lang="en"))
+            INFO(f'wrote {vocab}/{module} docs at {vocab_data["export"]}/modules/{module}-en.html')
+        for lang in IMPORT_TRANSLATIONS:
             with open(f'{vocab_data["export"]}/modules/{module}.html', 'w+') as fd:
                 fd.write(template.render(
                     data=data,
                     vocab=DATA.data[vocab],
                     modules=DATA.modules[vocab],
-                    vocab_name=vocab))
-                DEBUG(f'wrote {vocab}/{module} docs at {vocab_data["export"]}/modules/{module}.html')
+                    vocab_name=vocab,
+                    lang=lang))
+                INFO(f'wrote {vocab}/{module} docs at {vocab_data["export"]}/modules/{module}.html')
+
+# DEBUG(DATA.data.keys())
+# import sys
+# sys.exit(0)
+
+
+## Create translations data
+import json
+with open(f"{TRANSLATIONS_TODO_PATH}/tmp_translations.json", 'r') as fd:
+    data = json.load(fd)
+missing = {k:{} for k in IMPORT_TRANSLATIONS}
+for concept, languages in data.items():
+    for lang in languages:
+        # DEBUG(concept)
+        namespace, term = concept.split(':')
+        if namespace not in DATA.data:
+            DEBUG(f"missing translations ignored for external concept {concept}")
+            continue
+        # DEBUG(DATA.data[namespace].keys())
+        concept = DATA.data[namespace][concept]
+        missing[lang][concept['prefixed']] = {'label': concept['skos:prefLabel']}
+        if 'skos:definition' in concept:
+            missing[lang][concept['prefixed']]['definition'] = concept['skos:definition']
+        if 'skos:scopeNote' in concept:
+            missing[lang][concept['prefixed']]['usage'] = concept['skos:scopeNote']
+with open(f"{TRANSLATIONS_TODO_PATH}/translations_todo.json", 'w') as fd:
+    json.dump(missing, fd, indent=2)
+    INFO(F"concepts with missing translations are collected in {TRANSLATIONS_TODO_PATH}/translations_todo.json")

@@ -1,6 +1,5 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix dpv: <https://w3id.org/dpv#> .
-@prefix dpv-dga: <https://w3id.org/dpv/dpv-gda#> .
 @prefix eu-dga: <https://w3id.org/dpv/legal/eu/dga#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -9,7 +8,7 @@
 
 eu-dga:DataCooperativeService a rdfs:Class,
         owl:Class ;
-    rdfs:subClassOf dpv-dga:DataIntermediationService ;
+    rdfs:subClassOf eu-dga:DataIntermediationService ;
     sw:term_status "accepted"@en ;
     skos:definition "Service provided by a data cooperative"@en ;
     skos:prefLabel "Data Cooperative Service"@en .
@@ -18,6 +17,9 @@ eu-dga:DataIntermediationService a rdfs:Class,
         owl:Class ;
     dct:source "DGA 2.11"@en ;
     rdfs:subClassOf dpv:Service ;
+    rdfs:superClassOf eu-dga:DataCooperativeService,
+        eu-dga:DataIntermediationServiceBetweenHoldersUsers,
+        eu-dga:DataIntermediationServiceBetweenSubjectsUsers ;
     sw:term_status "accepted"@en ;
     skos:definition "Service of data intermediation which aims to facilitate the sharing of data between Data Subjects, Data Holders and Data Users"@en ;
     skos:prefLabel "Data Intermediation Service"@en .
@@ -25,7 +27,7 @@ eu-dga:DataIntermediationService a rdfs:Class,
 eu-dga:DataIntermediationServiceBetweenHoldersUsers a rdfs:Class,
         owl:Class ;
     dct:source "DGA 10.a"@en ;
-    rdfs:subClassOf dpv-dga:DataIntermediationService ;
+    rdfs:subClassOf eu-dga:DataIntermediationService ;
     sw:term_status "accepted"@en ;
     skos:definition "Data intermediation service for data shared between Data Holders and Data Users"@en ;
     skos:prefLabel "Data Intermediation Service between Data Holders and Data Users"@en .
@@ -33,7 +35,7 @@ eu-dga:DataIntermediationServiceBetweenHoldersUsers a rdfs:Class,
 eu-dga:DataIntermediationServiceBetweenSubjectsUsers a rdfs:Class,
         owl:Class ;
     dct:source "DGA 10.b"@en ;
-    rdfs:subClassOf dpv-dga:DataIntermediationService ;
+    rdfs:subClassOf eu-dga:DataIntermediationService ;
     sw:term_status "accepted"@en ;
     skos:definition "Data intermediation service for data shared between Data Subjects, Natural Persons who are Data Holders and Data Users"@en ;
     skos:prefLabel "Data Intermediation Service between Data Subjects and Data Users"@en .
@@ -47,8 +49,4 @@ eu-dga:SingleInformationPoint a rdfs:Class,
 
 dpv:Service rdfs:superClassOf eu-dga:DataIntermediationService,
         eu-dga:SingleInformationPoint .
-
-dpv-dga:DataIntermediationService rdfs:superClassOf eu-dga:DataCooperativeService,
-        eu-dga:DataIntermediationServiceBetweenHoldersUsers,
-        eu-dga:DataIntermediationServiceBetweenSubjectsUsers .
 

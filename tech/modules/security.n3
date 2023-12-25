@@ -1,6 +1,5 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix dpv: <https://w3id.org/dpv#> .
-@prefix dpv-tech: <https://w3id.org/dpv/dpv-tech#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
@@ -13,7 +12,7 @@ tech:DetectionSecurityTechnology a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit, Julian Flake, Georg P Krog, Paul Ryan" ;
     dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-tech:SecurityTechnology ;
+    skos:broader tech:SecurityTechnology ;
     skos:definition "Technology related to detection of vulnerabilities, threats, and exploitations"@en ;
     skos:inScheme tech:security-classes ;
     skos:prefLabel "Detection Security Technology"@en .
@@ -24,7 +23,7 @@ tech:MitigationSecurityTechnology a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit, Julian Flake, Georg P Krog, Paul Ryan" ;
     dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-tech:SecurityTechnology ;
+    skos:broader tech:SecurityTechnology ;
     skos:definition "Technology related to mitigation of vulnerabilities, threats, exploitations"@en ;
     skos:inScheme tech:security-classes ;
     skos:prefLabel "Mitigation Security Technology"@en .
@@ -35,7 +34,7 @@ tech:MonitoringSecurityTechnology a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit, Julian Flake, Georg P Krog, Paul Ryan" ;
     dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-tech:SecurityTechnology ;
+    skos:broader tech:SecurityTechnology ;
     skos:definition "Technology related to monitoring of vulnerabilities, threats, exploitations"@en ;
     skos:inScheme tech:security-classes ;
     skos:prefLabel "Monitoring Security Technology"@en .
@@ -46,7 +45,7 @@ tech:PET a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit, Julian Flake, Georg P Krog, Paul Ryan" ;
     dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-tech:SecurityTechnology ;
+    skos:broader tech:SecurityTechnology ;
     skos:definition "Privacy Enhancing Technologies (PETs) that provide minimisation or security related to data and privacy"@en ;
     skos:inScheme tech:security-classes ;
     skos:prefLabel "PET (Privacy Enhancing Technology)"@en .
@@ -57,7 +56,7 @@ tech:PreventionSecurityTechnology a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit, Julian Flake, Georg P Krog, Paul Ryan" ;
     dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-tech:SecurityTechnology ;
+    skos:broader tech:SecurityTechnology ;
     skos:definition "Technology related to prevention of vulnerabilities, threats, exploitations"@en ;
     skos:inScheme tech:security-classes ;
     skos:prefLabel "Prevention Security Technology"@en .
@@ -68,15 +67,15 @@ tech:SecurityManagementTechnology a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit, Julian Flake, Georg P Krog, Paul Ryan" ;
     dct:created "2022-06-15"^^xsd:date ;
     sw:term_status "accepted"@en ;
-    skos:broader dpv-tech:ManagementTechnology,
-        dpv-tech:SecurityTechnology ;
+    skos:broader tech:ManagementTechnology,
+        tech:SecurityTechnology ;
     skos:definition "Technology related to management of security"@en ;
     skos:inScheme tech:security-classes ;
     skos:prefLabel "Security Management Technology"@en .
 
-dpv-tech:ManagementTechnology skos:narrower tech:SecurityManagementTechnology .
+tech:ManagementTechnology skos:narrower tech:SecurityManagementTechnology .
 
-dpv-tech:SecurityTechnology skos:narrower tech:DetectionSecurityTechnology,
+tech:SecurityTechnology skos:narrower tech:DetectionSecurityTechnology,
         tech:MitigationSecurityTechnology,
         tech:MonitoringSecurityTechnology,
         tech:PET,

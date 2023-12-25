@@ -1,7 +1,6 @@
 @prefix dcam: <http://purl.org/dc/dcam/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix dpv: <https://w3id.org/dpv#> .
-@prefix dpv-dga: <https://w3id.org/dpv/dpv-gda#> .
 @prefix eu-dga: <https://w3id.org/dpv/legal/eu/dga#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -105,6 +104,9 @@ eu-dga:DISP a rdfs:Class,
         owl:Class ;
     dct:source "DGA 2.11"@en ;
     rdfs:subClassOf dpv:LegalEntity ;
+    rdfs:superClassOf eu-dga:DISPForDataHolder,
+        eu-dga:DISPForDataSubject,
+        eu-dga:DataCooperative ;
     sw:term_status "accepted"@en ;
     skos:definition "An entity who establishes commercial relationships for the data sharing between data subjects and data holders on the one hand and data users on the other"@en ;
     skos:prefLabel "Data Intermediation Service Provider"@en .
@@ -121,7 +123,7 @@ eu-dga:DISPEUApproval a rdfs:Class,
 eu-dga:DISPForDataHolder a rdfs:Class,
         owl:Class ;
     dct:source "DGA 10.a"@en ;
-    rdfs:subClassOf dpv-dga:DISP ;
+    rdfs:subClassOf eu-dga:DISP ;
     sw:term_status "accepted"@en ;
     skos:definition "An entity who makes data holders' data available for potential data users, including bilateral or multilateral exchanges of data and platforms and databases for the joint exploitation of data"@en ;
     skos:prefLabel "Data Intermediation Service Provider for Data Holder"@en .
@@ -129,7 +131,7 @@ eu-dga:DISPForDataHolder a rdfs:Class,
 eu-dga:DISPForDataSubject a rdfs:Class,
         owl:Class ;
     dct:source "DGA 10.b"@en ;
-    rdfs:subClassOf dpv-dga:DISP ;
+    rdfs:subClassOf eu-dga:DISP ;
     sw:term_status "accepted"@en ;
     skos:definition "An entity who makes data subjects' personal data available for potential data users"@en ;
     skos:prefLabel "Data Intermediation Service Provider for Data Subject"@en .
@@ -207,14 +209,14 @@ eu-dga:DataAssetList a rdfs:Class,
 eu-dga:DataCooperative a rdfs:Class,
         owl:Class ;
     dct:source "DGA 2.15, 10.c"@en ;
-    rdfs:subClassOf dpv-dga:DISP ;
+    rdfs:subClassOf eu-dga:DISP ;
     sw:term_status "accepted"@en ;
     skos:definition "An entity constituted by data subjects, one-person undertakings or SMEs who provides data intermediation services and supports its members in the exercise of their data-related rights"@en ;
     skos:prefLabel "Data Cooperative"@en .
 
 eu-dga:DataCooperativeService a rdfs:Class,
         owl:Class ;
-    rdfs:subClassOf dpv-dga:DataIntermediationService ;
+    rdfs:subClassOf eu-dga:DataIntermediationService ;
     sw:term_status "accepted"@en ;
     skos:definition "Service provided by a data cooperative"@en ;
     skos:prefLabel "Data Cooperative Service"@en .
@@ -248,6 +250,9 @@ eu-dga:DataIntermediationService a rdfs:Class,
         owl:Class ;
     dct:source "DGA 2.11"@en ;
     rdfs:subClassOf dpv:Service ;
+    rdfs:superClassOf eu-dga:DataCooperativeService,
+        eu-dga:DataIntermediationServiceBetweenHoldersUsers,
+        eu-dga:DataIntermediationServiceBetweenSubjectsUsers ;
     sw:term_status "accepted"@en ;
     skos:definition "Service of data intermediation which aims to facilitate the sharing of data between Data Subjects, Data Holders and Data Users"@en ;
     skos:prefLabel "Data Intermediation Service"@en .
@@ -255,7 +260,7 @@ eu-dga:DataIntermediationService a rdfs:Class,
 eu-dga:DataIntermediationServiceBetweenHoldersUsers a rdfs:Class,
         owl:Class ;
     dct:source "DGA 10.a"@en ;
-    rdfs:subClassOf dpv-dga:DataIntermediationService ;
+    rdfs:subClassOf eu-dga:DataIntermediationService ;
     sw:term_status "accepted"@en ;
     skos:definition "Data intermediation service for data shared between Data Holders and Data Users"@en ;
     skos:prefLabel "Data Intermediation Service between Data Holders and Data Users"@en .
@@ -263,7 +268,7 @@ eu-dga:DataIntermediationServiceBetweenHoldersUsers a rdfs:Class,
 eu-dga:DataIntermediationServiceBetweenSubjectsUsers a rdfs:Class,
         owl:Class ;
     dct:source "DGA 10.b"@en ;
-    rdfs:subClassOf dpv-dga:DataIntermediationService ;
+    rdfs:subClassOf eu-dga:DataIntermediationService ;
     sw:term_status "accepted"@en ;
     skos:definition "Data intermediation service for data shared between Data Subjects, Natural Persons who are Data Holders and Data Users"@en ;
     skos:prefLabel "Data Intermediation Service between Data Subjects and Data Users"@en .
@@ -305,7 +310,7 @@ eu-dga:EUDataAltruismConsentForm a rdfs:Class,
 eu-dga:EUSIPProvider a rdfs:Class,
         owl:Class ;
     dct:source "DGA 8.4"@en ;
-    rdfs:subClassOf dpv-dga:SIP ;
+    rdfs:subClassOf eu-dga:SIP ;
     sw:term_status "accepted"@en ;
     skos:definition "An entity who is responsible for receiving and transmiting requests for the reuse of public data in the EU"@en ;
     skos:prefLabel "EU Single Information Point Provider"@en .
@@ -320,7 +325,7 @@ eu-dga:EuropeanDataInnovationBoard a rdfs:Class,
 
 eu-dga:LocalSIPProvider a rdfs:Class,
         owl:Class ;
-    rdfs:subClassOf dpv-dga:SIP ;
+    rdfs:subClassOf eu-dga:SIP ;
     sw:term_status "accepted"@en ;
     skos:definition "A local entity who is responsible for receiving and transmiting requests for the reuse of public data"@en ;
     skos:prefLabel "Local Single Information Point Provider"@en .
@@ -336,7 +341,7 @@ eu-dga:NationalDataAltruismPolicy a rdfs:Class,
 
 eu-dga:NationalSIPProvider a rdfs:Class,
         owl:Class ;
-    rdfs:subClassOf dpv-dga:SIP ;
+    rdfs:subClassOf eu-dga:SIP ;
     sw:term_status "accepted"@en ;
     skos:definition "A national entity who is responsible for receiving and transmiting requests for the reuse of public data"@en ;
     skos:prefLabel "National Single Information Point Provider"@en .
@@ -352,7 +357,7 @@ eu-dga:PersonalDataReuseNotice a rdfs:Class,
 
 eu-dga:RegionalSIPProvider a rdfs:Class,
         owl:Class ;
-    rdfs:subClassOf dpv-dga:SIP ;
+    rdfs:subClassOf eu-dga:SIP ;
     sw:term_status "accepted"@en ;
     skos:definition "A regional entity who is responsible for receiving and transmiting requests for the reuse of public data"@en ;
     skos:prefLabel "Regional Single Information Point Provider"@en .
@@ -394,7 +399,7 @@ eu-dga:SIPProvider a rdfs:Class,
 
 eu-dga:SectorialSIPProvider a rdfs:Class,
         owl:Class ;
-    rdfs:subClassOf dpv-dga:SIP ;
+    rdfs:subClassOf eu-dga:SIP ;
     sw:term_status "accepted"@en ;
     skos:definition "An entity who is responsible for receiving and transmiting requests for the reuse of public data for a particular sector"@en ;
     skos:prefLabel "Sectorial Single Information Point Provider"@en .
@@ -432,40 +437,40 @@ dpv:SupraNationalAuthority rdfs:superClassOf eu-dga:EuropeanDataInnovationBoard 
 
 eu-dga:hasDAO a rdf:Property,
         owl:ObjectProperty ;
-    dcam:rangeIncludes dpv-dga:DataAltruismOrganisation ;
+    dcam:rangeIncludes eu-dga:DataAltruismOrganisation ;
     dct:contributor "Beatriz Esteves, Harshvardhan J. Pandit" ;
     rdfs:subClassOf dpv:hasEntity ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with data altruism organisation"@en ;
     skos:prefLabel "has data altruism organisation"@en ;
-    schema:rangeIncludes dpv-dga:DataAltruismOrganisation .
+    schema:rangeIncludes eu-dga:DataAltruismOrganisation .
 
 eu-dga:hasDISP a rdf:Property,
         owl:ObjectProperty ;
-    dcam:rangeIncludes dpv-dga:DISP ;
+    dcam:rangeIncludes eu-dga:DISP ;
     dct:contributor "Beatriz Esteves, Harshvardhan J. Pandit" ;
     rdfs:subClassOf dpv:hasEntity ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with data intermediation service provider"@en ;
     skos:prefLabel "has data intermediation service provider"@en ;
-    schema:rangeIncludes dpv-dga:DISP .
+    schema:rangeIncludes eu-dga:DISP .
 
 eu-dga:hasDataHolder a rdf:Property,
         owl:ObjectProperty ;
-    dcam:rangeIncludes dpv-dga:DataHolder ;
+    dcam:rangeIncludes eu-dga:DataHolder ;
     dct:contributor "Beatriz Esteves, Harshvardhan J. Pandit" ;
     rdfs:subClassOf dpv:hasEntity ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with data holder"@en ;
     skos:prefLabel "has data holder"@en ;
-    schema:rangeIncludes dpv-dga:DataHolder .
+    schema:rangeIncludes eu-dga:DataHolder .
 
 eu-dga:hasDataReuseAssistant a rdf:Property,
         owl:ObjectProperty ;
-    dcam:rangeIncludes dpv-dga:DataReuseAssistant ;
+    dcam:rangeIncludes eu-dga:DataReuseAssistant ;
     dct:contributor "Beatriz Esteves, Harshvardhan J. Pandit" ;
     dct:source "DGA 7"@en ;
     rdfs:subClassOf dpv:hasEntity ;
@@ -473,18 +478,18 @@ eu-dga:hasDataReuseAssistant a rdf:Property,
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with competent body designated by the Member State to assist Public Bodies in activities related to data reuse"@en ;
     skos:prefLabel "has data reuse assistant"@en ;
-    schema:rangeIncludes dpv-dga:DataReuseAssistant .
+    schema:rangeIncludes eu-dga:DataReuseAssistant .
 
 eu-dga:hasDataUser a rdf:Property,
         owl:ObjectProperty ;
-    dcam:rangeIncludes dpv-dga:DataUser ;
+    dcam:rangeIncludes eu-dga:DataUser ;
     dct:contributor "Beatriz Esteves, Harshvardhan J. Pandit" ;
     rdfs:subClassOf dpv:hasEntity ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with data user"@en ;
     skos:prefLabel "has data user"@en ;
-    schema:rangeIncludes dpv-dga:DataUser .
+    schema:rangeIncludes eu-dga:DataUser .
 
 dpv:Authority rdfs:superClassOf eu-dga:DataAltruismAuthority,
         eu-dga:DataIntermediationAuthority .
@@ -492,20 +497,12 @@ dpv:Authority rdfs:superClassOf eu-dga:DataAltruismAuthority,
 dpv:Service rdfs:superClassOf eu-dga:DataIntermediationService,
         eu-dga:SingleInformationPoint .
 
-dpv-dga:DataIntermediationService rdfs:superClassOf eu-dga:DataCooperativeService,
-        eu-dga:DataIntermediationServiceBetweenHoldersUsers,
-        eu-dga:DataIntermediationServiceBetweenSubjectsUsers .
-
 dpv:LegalEntity rdfs:superClassOf eu-dga:DISP,
         eu-dga:DataHolder,
         eu-dga:DataUser,
         eu-dga:SIPProvider .
 
-dpv-dga:DISP rdfs:superClassOf eu-dga:DISPForDataHolder,
-        eu-dga:DISPForDataSubject,
-        eu-dga:DataCooperative .
-
-dpv-dga:SIP rdfs:superClassOf eu-dga:EUSIPProvider,
+eu-dga:SIP rdfs:superClassOf eu-dga:EUSIPProvider,
         eu-dga:LocalSIPProvider,
         eu-dga:NationalSIPProvider,
         eu-dga:RegionalSIPProvider,

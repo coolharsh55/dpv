@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{lang}}">
 <head>
   <meta charset="utf-8">
   <title>{% block title %}Data Privacy Vocabulary (DPV){% endblock title %}</title>
@@ -121,6 +121,13 @@
   <link rel="stylesheet" type="text/css" href="../media/common.css">
 </head>
 <body>
+<form id="language-selector">
+  <label>Language</label>
+  <select style="top: 5px;" onchange="location=this.value">
+    <option value="index-en.html" {% if lang=="en" %}selected="selected"{% endif %}>English</option>
+    <option value="index-de.html" {% if lang=="de" %}selected="selected"{% endif %}>Deutsch</option>
+  </select>
+</form>
 {% block ABSTRACT %}
     <section id="abstract">
       <p>The Data Privacy Vocabulary [[DPV]] enables expressing machine-readable metadata about the use and processing of personal data based on legislative requirements such as the General Data Protection Regulation [[GDPR]]. This document describes the DPV specification along with its data model.</p>
@@ -219,7 +226,7 @@
       <p>DPV provides taxonomies for all core concepts except for [=PersonalDataHandling=] which represents an abstract concept to aid in 'grouping' the concepts with one another. The relation [=hasPersonalDataHandling=] associates a [=PersonalDataHandling=] with other concepts including itself.</span></li>
       </ul>
       <p><strong>Concepts</strong></p>
-      {{ list_hierarchy(modules['process']['classes'], head='dpv:Process') }}
+      {{ list_hierarchy(modules['process']['classes'], head='dpv:Process', lang=lang) }}
   </section>
 
   <section>
@@ -553,10 +560,10 @@
 <section id="vocabulary">
 <h2>Vocabulary Index</h2>
   <section id="dpv-classes">
-    {{ index_concepts(vocab, vocab_name, filter="classes") }}
+    {{ index_concepts(vocab, vocab_name, filter="classes", lang=lang) }}
   </section>
   <section id="dpv-properties">
-    {{ index_concepts(vocab, vocab_name, filter="properties") }}
+    {{ index_concepts(vocab, vocab_name, filter="properties", lang=lang) }}
   </section>
   <section id="external-concepts">
     <p>DPV uses the following terms from [[RDF]] and  [[RDFS]] with their defined meanings:</p>

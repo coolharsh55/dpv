@@ -15,12 +15,37 @@
     <skos:definition xml:lang="en">Indicates technology maturity level</skos:definition>
     <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#Technology"/>
     <schema:domainIncludes rdf:resource="https://w3id.org/dpv#Technology"/>
-    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv/dpv-tech#TechnologyReadinessLevel"/>
-    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv/dpv-tech#TechnologyReadinessLevel"/>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv/tech#TechnologyReadinessLevel"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv/tech#TechnologyReadinessLevel"/>
     <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-07-02</dct:created>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
     <skos:inScheme rdf:resource="https://w3id.org/dpv/tech#core-properties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/tech#hasTechnologyActor">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="en">has technology actor</skos:prefLabel>
+    <skos:definition xml:lang="en">Indicates an actor associated with technology</skos:definition>
+    <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#Technology"/>
+    <schema:domainIncludes rdf:resource="https://w3id.org/dpv#Technology"/>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv/tech#TechnologyActor"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv/tech#TechnologyActor"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-10-21</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv/tech#core-properties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/tech#TechnologyProvisionMethod">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:prefLabel xml:lang="en">Technology Provision Method</skos:prefLabel>
+    <skos:definition xml:lang="en">Method associated with provision or use of technology</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-15</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv/tech#core-classes"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/tech#ManagementTechnology">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -29,6 +54,56 @@
     <skos:prefLabel xml:lang="en">Management Technology</skos:prefLabel>
     <skos:definition xml:lang="en">Technology that enables or provides management</skos:definition>
     <skos:broader rdf:resource="https://w3id.org/dpv#Technology"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-15</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv/tech#core-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/tech#hasCommunicationMechanism">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="en">has communication mechanism</skos:prefLabel>
+    <skos:definition xml:lang="en">Indicates communication mechanisms used or provided by technology</skos:definition>
+    <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#Technology"/>
+    <schema:domainIncludes rdf:resource="https://w3id.org/dpv#Technology"/>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv/tech#CommunicationMechanism"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv/tech#CommunicationMechanism"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-07-02</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv/tech#core-properties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/tech#OperationalTechnology">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#Technology"/>
+    <skos:prefLabel xml:lang="en">Operational Technology</skos:prefLabel>
+    <skos:definition xml:lang="en">Technology that enables or performs or executes operations and processes</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#Technology"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-15</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv/tech#core-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/tech#DataTechnology">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#Technology"/>
+    <skos:prefLabel xml:lang="en">Data Technology</skos:prefLabel>
+    <skos:definition xml:lang="en">Technology that uses or interacts with data</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#Technology"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-15</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv/tech#core-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/tech#TechnologyUsageLocation">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#Location"/>
+    <skos:prefLabel xml:lang="en">Technology Usage Location</skos:prefLabel>
+    <skos:definition xml:lang="en">Location for where technology is provided or used</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv#Location"/>
     <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-15</dct:created>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
@@ -46,6 +121,30 @@
     <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
     <skos:inScheme rdf:resource="https://w3id.org/dpv/tech#core-classes"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/tech#CommunicationMechanism">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:prefLabel xml:lang="en">Communication Mechanism</skos:prefLabel>
+    <skos:definition xml:lang="en">Communication mechanism used or provided by Technologoy</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-15</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv/tech#core-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#Class">
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/tech#TechnologyProvisionMethod"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/tech#CommunicationMechanism"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/tech#TechnologyReadinessLevel"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#Technology">
+    <skos:narrower rdf:resource="https://w3id.org/dpv/tech#DataTechnology"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv/tech#OperationalTechnology"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv/tech#SecurityTechnology"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv/tech#ManagementTechnology"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv/tech#IdentityTechnology"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv/tech#SurveillanceTechnology"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/tech#TechnologyActor">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
@@ -58,53 +157,20 @@
     <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
     <skos:inScheme rdf:resource="https://w3id.org/dpv/tech#core-classes"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/tech#OperationalTechnology">
+  <rdf:Description rdf:about="https://w3id.org/dpv/tech#SurveillanceTechnology">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#Technology"/>
-    <skos:prefLabel xml:lang="en">Operational Technology</skos:prefLabel>
-    <skos:definition xml:lang="en">Technology that enables or performs or executes operations and processes</skos:definition>
+    <skos:prefLabel xml:lang="en">Surveillance Technology</skos:prefLabel>
+    <skos:definition xml:lang="en">Technology related to surveillance of individuals or people</skos:definition>
     <skos:broader rdf:resource="https://w3id.org/dpv#Technology"/>
     <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-15</dct:created>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
     <skos:inScheme rdf:resource="https://w3id.org/dpv/tech#core-classes"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/tech#hasCommunicationMechanism">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">has communication mechanism</skos:prefLabel>
-    <skos:definition xml:lang="en">Indicates communication mechanisms used or provided by technology</skos:definition>
-    <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#Technology"/>
-    <schema:domainIncludes rdf:resource="https://w3id.org/dpv#Technology"/>
-    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv/dpv-tech#CommunicationMechanism"/>
-    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv/dpv-tech#CommunicationMechanism"/>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-07-02</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv/tech#core-properties"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/tech#CommunicationMechanism">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <skos:prefLabel xml:lang="en">Communication Mechanism</skos:prefLabel>
-    <skos:definition xml:lang="en">Communication mechanism used or provided by Technologoy</skos:definition>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-15</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv/tech#core-classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/tech#TechnologyProvisionMethod">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <skos:prefLabel xml:lang="en">Technology Provision Method</skos:prefLabel>
-    <skos:definition xml:lang="en">Method associated with provision or use of technology</skos:definition>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-15</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv/tech#core-classes"/>
+  <rdf:Description rdf:about="https://w3id.org/dpv#Location">
+    <skos:narrower rdf:resource="https://w3id.org/dpv/tech#TechnologyUsageLocation"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/tech#TechnologyReadinessLevel">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -132,77 +198,11 @@
   <rdf:Description rdf:about="https://w3id.org/dpv/tech#core-properties">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/tech#TechnologyUsageLocation">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#Location"/>
-    <skos:prefLabel xml:lang="en">Technology Usage Location</skos:prefLabel>
-    <skos:definition xml:lang="en">Location for where technology is provided or used</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#Location"/>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-15</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv/tech#core-classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/tech#hasTechnologyActor">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">has technology actor</skos:prefLabel>
-    <skos:definition xml:lang="en">Indicates an actor associated with technology</skos:definition>
-    <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#Technology"/>
-    <schema:domainIncludes rdf:resource="https://w3id.org/dpv#Technology"/>
-    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv/dpv-tech#TechnologyActor"/>
-    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv/dpv-tech#TechnologyActor"/>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-10-21</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv/tech#core-properties"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://www.w3.org/2000/01/rdf-schema#Class">
-    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/tech#TechnologyProvisionMethod"/>
-    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/tech#CommunicationMechanism"/>
-    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/tech#TechnologyReadinessLevel"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#Entity">
     <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/tech#TechnologyActor"/>
     <skos:narrower rdf:resource="https://w3id.org/dpv/tech#TechnologyActor"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#Location">
-    <skos:narrower rdf:resource="https://w3id.org/dpv/tech#TechnologyUsageLocation"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/tech#DataTechnology">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#Technology"/>
-    <skos:prefLabel xml:lang="en">Data Technology</skos:prefLabel>
-    <skos:definition xml:lang="en">Technology that uses or interacts with data</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#Technology"/>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-15</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv/tech#core-classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/tech#SurveillanceTechnology">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#Technology"/>
-    <skos:prefLabel xml:lang="en">Surveillance Technology</skos:prefLabel>
-    <skos:definition xml:lang="en">Technology related to surveillance of individuals or people</skos:definition>
-    <skos:broader rdf:resource="https://w3id.org/dpv#Technology"/>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-15</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv/tech#core-classes"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/tech#core-classes">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#Technology">
-    <skos:narrower rdf:resource="https://w3id.org/dpv/tech#DataTechnology"/>
-    <skos:narrower rdf:resource="https://w3id.org/dpv/tech#OperationalTechnology"/>
-    <skos:narrower rdf:resource="https://w3id.org/dpv/tech#SecurityTechnology"/>
-    <skos:narrower rdf:resource="https://w3id.org/dpv/tech#ManagementTechnology"/>
-    <skos:narrower rdf:resource="https://w3id.org/dpv/tech#IdentityTechnology"/>
-    <skos:narrower rdf:resource="https://w3id.org/dpv/tech#SurveillanceTechnology"/>
   </rdf:Description>
 </rdf:RDF>

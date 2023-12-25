@@ -1,387 +1,5 @@
 [
   {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#DataAltruismOrganisation",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@language": "en",
-        "@value": "DGA 2.16, 18"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#NonProfitOrganisation"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "An non-profit organisation who collects and shares data for altruistic purposes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Data Altruism Organisation"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#SingleInformationPoint",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#Service"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Service responsible for receiving and transmiting requests for the re-use of public data"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Single Information Point"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/dpv-gda#DataIntermediationService",
-    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#DataCooperativeService"
-      },
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#DataIntermediationServiceBetweenHoldersUsers"
-      },
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#DataIntermediationServiceBetweenSubjectsUsers"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#hasEntity",
-    "http://www.w3.org/2000/01/rdf-schema#superPropertyOf": [
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#hasDataReuseAssistant"
-      },
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#hasDataUser"
-      },
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#hasDataHolder"
-      },
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#hasDAO"
-      },
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#hasDISP"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#NonProfitOrganisation",
-    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#DataAltruismOrganisation"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#Service",
-    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#SingleInformationPoint"
-      },
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#DataIntermediationService"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#EUDataAltruismConsentForm",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#OrganisationalMeasure",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#ConsentManagement"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A form provided by the European Commission for collecting consent"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "European Data Altruism Consent Form"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "DGA 25.1"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#DataReuseRequest",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#OrganisationalMeasure",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#OrganisationalMeasure"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Procedure to handle requests and provide data for reuse via single information point"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Data Reuse Request"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "DGA 5.1"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#DataReuseAssistant",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@language": "en",
-        "@value": "DGA 7"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#Entity"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "An entity designated by the Member State to provide technical support and guidance to public sector bodies regarding access and reuse of data and for requesting consent and permissions"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Data Reuse Assistant"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/dpv-gda#DISP",
-    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#DataCooperative"
-      },
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#DISPForDataHolder"
-      },
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#DISPForDataSubject"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#DAORegisterEU",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#PublicRegisterOfEntities",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@language": "en",
-        "@value": "DGA 19.5"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#PublicRegisterOfEntities"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Registry maintained by EU containing list of recognised data altruism organisations"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "EU's Public Register of Data Altruism Organisations"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#DataIntermediationServiceBetweenHoldersUsers",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@language": "en",
-        "@value": "DGA 10.a"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-gda#DataIntermediationService"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Data intermediation service for data shared between Data Holders and Data Users"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Data Intermediation Service between Data Holders and Data Users"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#DISPForDataSubject",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@language": "en",
-        "@value": "DGA 10.b"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-gda#DISP"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "An entity who makes data subjects' personal data available for potential data users"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Data Intermediation Service Provider for Data Subject"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#LocalSIPProvider",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-gda#SIP"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A local entity who is responsible for receiving and transmiting requests for the reuse of public data"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Local Single Information Point Provider"
-      }
-    ]
-  },
-  {
     "@id": "https://w3id.org/dpv/legal/eu/dga#DataCooperative",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class",
@@ -395,7 +13,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/dpv/dpv-gda#DISP"
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DISP"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -455,29 +73,20 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#Entity",
-    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#DataReuseAssistant"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#RightToLodgeComplaint",
+    "@id": "https://w3id.org/dpv/legal/eu/dga#DataIntermediationServiceBetweenHoldersUsers",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Right",
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://purl.org/dc/terms/source": [
       {
         "@language": "en",
-        "@value": "DGA 27"
+        "@value": "DGA 10.a"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/dpv#Right"
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DataIntermediationService"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -489,18 +98,95 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Right of data subjects and data holders to lodge a complaint"
+        "@value": "Data intermediation service for data shared between Data Holders and Data Users"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Right to Lodge Complaint"
+        "@value": "Data Intermediation Service between Data Holders and Data Users"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#A5-12-Adequacy-Decision",
+    "@id": "https://w3id.org/dpv/legal/eu/dga#DataIntermediationService",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@language": "en",
+        "@value": "DGA 2.11"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#Service"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DataCooperativeService"
+      },
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DataIntermediationServiceBetweenHoldersUsers"
+      },
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DataIntermediationServiceBetweenSubjectsUsers"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Service of data intermediation which aims to facilitate the sharing of data between Data Subjects, Data Holders and Data Users"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Data Intermediation Service"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/legal/eu/dga#RegionalSIPProvider",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#SIP"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A regional entity who is responsible for receiving and transmiting requests for the reuse of public data"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Regional Single Information Point Provider"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/legal/eu/dga#A2-6-Permission",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class",
       "https://w3id.org/dpv#LegalBasis",
@@ -509,12 +195,12 @@
     "http://purl.org/dc/terms/source": [
       {
         "@language": "en",
-        "@value": "(DGA 5.12,https://eur-lex.europa.eu/eli/reg/2022/868/art_5/par_12/oj)"
+        "@value": "(DGA 2.6,https://eur-lex.europa.eu/eli/reg/2022/868/art_2/par_6/oj)"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/dpv#DataTransferLegalBasis"
+        "@id": "https://w3id.org/dpv#NonPersonalDataLegalBasis"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -526,25 +212,75 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Adequacy Decision permitting the transfer of data"
+        "@value": "The legal basis justfiying processing of non-personal data based on the permission of an entity"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Art 5(12) Adequacy Decision"
+        "@value": "Art 2(6) Permission"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "dpv:LegalBasis needs to be divided into dpv:PersonalDataLegalBasis and dpv:NonPersonalDataLegalBasis"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#hasDataUser",
+    "@id": "https://w3id.org/dpv/legal/eu/dga#DataIntermediationAuthority",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@language": "en",
+        "@value": "DGA 13"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#Authority"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "An authority tasked with overseeing the activity of data intermediation service providers and maintaining a public register of said entities"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Data Intermediation Authority"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#SupraNationalAuthority",
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#EuropeanDataInnovationBoard"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/legal/eu/dga#hasDAO",
     "@type": [
       "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://purl.org/dc/dcam/rangeIncludes": [
       {
-        "@id": "https://w3id.org/dpv/dpv-gda#DataUser"
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DataAltruismOrganisation"
       }
     ],
     "http://purl.org/dc/terms/contributor": [
@@ -571,23 +307,97 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Indicates association with data user"
+        "@value": "Indicates association with data altruism organisation"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "has data user"
+        "@value": "has data altruism organisation"
       }
     ],
     "https://schema.org/rangeIncludes": [
       {
-        "@id": "https://w3id.org/dpv/dpv-gda#DataUser"
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DataAltruismOrganisation"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#SIPProvider",
+    "@id": "https://w3id.org/dpv/legal/eu/dga#DataAltruismNotice",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#OrganisationalMeasure",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#Notice"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Notice providing information regarding the processing of data for data altruistic purposes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Data Altruism Notice"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "DGA 21.1"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/legal/eu/dga#DataReuseRequest",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#OrganisationalMeasure",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#OrganisationalMeasure"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Procedure to handle requests and provide data for reuse via single information point"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Data Reuse Request"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "DGA 5.1"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/legal/eu/dga#DataUser",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class",
       "http://www.w3.org/2002/07/owl#Class"
@@ -595,7 +405,7 @@
     "http://purl.org/dc/terms/source": [
       {
         "@language": "en",
-        "@value": "DGA 8"
+        "@value": "DGA 2.9"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
@@ -612,26 +422,32 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "An entity who is responsible for receiving and transmiting requests for the reuse of public data"
+        "@value": "An entity who has access and the right to use personal or non-personal data for commercial or non-commercial purposes"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Single Information Point Provider"
+        "@value": "Data User"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#PersonalDataReuseNotice",
+    "@id": "https://w3id.org/dpv/legal/eu/dga#DAORegisterEU",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#OrganisationalMeasure",
+      "https://w3id.org/dpv#PublicRegisterOfEntities",
       "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@language": "en",
+        "@value": "DGA 19.5"
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/dpv#ConsentNotice"
+        "@id": "https://w3id.org/dpv#PublicRegisterOfEntities"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -643,24 +459,38 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Notice for data subjects to provide consent based on information and advise regarding intended use of data, exercise of rights, and applicable terms and conditions"
+        "@value": "Registry maintained by EU containing list of recognised data altruism organisations"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Personal Data Reuse Notice"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "DGA 12.m"
+        "@value": "EU's Public Register of Data Altruism Organisations"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#EUSIPProvider",
+    "@id": "https://w3id.org/dpv/legal/eu/dga#SIP",
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#EUSIPProvider"
+      },
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#LocalSIPProvider"
+      },
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#NationalSIPProvider"
+      },
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#RegionalSIPProvider"
+      },
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#SectorialSIPProvider"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/legal/eu/dga#DISPForDataSubject",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class",
       "http://www.w3.org/2002/07/owl#Class"
@@ -668,12 +498,12 @@
     "http://purl.org/dc/terms/source": [
       {
         "@language": "en",
-        "@value": "DGA 8.4"
+        "@value": "DGA 10.b"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/dpv/dpv-gda#SIP"
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DISP"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -685,35 +515,176 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "An entity who is responsible for receiving and transmiting requests for the reuse of public data in the EU"
+        "@value": "An entity who makes data subjects' personal data available for potential data users"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "EU Single Information Point Provider"
+        "@value": "Data Intermediation Service Provider for Data Subject"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#LegalEntity",
+    "@id": "https://w3id.org/dpv/legal/eu/dga#DISP",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@language": "en",
+        "@value": "DGA 2.11"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#LegalEntity"
+      }
+    ],
     "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
       {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#DataHolder"
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DataCooperative"
       },
       {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#DISP"
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DISPForDataHolder"
       },
       {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#DataUser"
-      },
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DISPForDataSubject"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#SIPProvider"
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "An entity who establishes commercial relationships for the data sharing between data subjects and data holders on the one hand and data users on the other"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Data Intermediation Service Provider"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#ThirdCountryDataRequestNotice",
+    "@id": "https://w3id.org/dpv/legal/eu/dga#hasDISP",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/dcam/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DISP"
+      }
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Beatriz Esteves, Harshvardhan J. Pandit"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#hasEntity"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/dpv#hasEntity"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Indicates association with data intermediation service provider"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "has data intermediation service provider"
+      }
+    ],
+    "https://schema.org/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DISP"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#Authority",
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DataIntermediationAuthority"
+      },
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DataAltruismAuthority"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/legal/eu/dga#hasDataHolder",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/dcam/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DataHolder"
+      }
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Beatriz Esteves, Harshvardhan J. Pandit"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#hasEntity"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/dpv#hasEntity"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Indicates association with data holder"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "has data holder"
+      }
+    ],
+    "https://schema.org/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DataHolder"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/legal/eu/dga#DataAltruismAnnualReport",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class",
       "https://w3id.org/dpv#OrganisationalMeasure",
@@ -721,7 +692,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/dpv#ThirdCountryTransferNotice"
+        "@id": "https://w3id.org/dpv#RecordsOfActivities"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -733,19 +704,134 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Notice regarding a request of a third-country administrative authority to access data"
+        "@value": "Document containing the annual activities reported by a Data Altruism organisation"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Third Country Data Request Notice"
+        "@value": "Data Altruism Annual Activity Report"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#scopeNote": [
       {
         "@language": "en",
-        "@value": "DGA 31.5"
+        "@value": "DGA 20.2"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/legal/eu/dga#SecureProcessingEnvironment",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#TechnicalMeasure",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#SecureProcessingEnvironment"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Physical or virtual environment to ensure compliance with EU law and allow the entity providing the secure processing environment to determine and supervise all data processing actions"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Secure Processing Environment"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "DGA 2.20"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/legal/eu/dga#RightToDataConversionOptOut",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Right",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@language": "en",
+        "@value": "DGA 12.d"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#Right"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Right of data subjects and data holders to opt-out of data conversions e.g. enhance interoperability or harmonisation with standards"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Right to Data Conversion Opt-out"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/legal/eu/dga#LocalSIPProvider",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#SIP"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A local entity who is responsible for receiving and transmiting requests for the reuse of public data"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Local Single Information Point Provider"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#Service",
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#SingleInformationPoint"
+      },
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DataIntermediationService"
       }
     ]
   },
@@ -787,49 +873,15 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/dpv-gda#SIP",
-    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#EUSIPProvider"
-      },
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#LocalSIPProvider"
-      },
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#NationalSIPProvider"
-      },
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#RegionalSIPProvider"
-      },
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#SectorialSIPProvider"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#hasDataHolder",
+    "@id": "https://w3id.org/dpv/legal/eu/dga#PersonalDataReuseNotice",
     "@type": [
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://purl.org/dc/dcam/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-gda#DataHolder"
-      }
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Beatriz Esteves, Harshvardhan J. Pandit"
-      }
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#OrganisationalMeasure",
+      "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/dpv#hasEntity"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/dpv#hasEntity"
+        "@id": "https://w3id.org/dpv#ConsentNotice"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -841,18 +893,19 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Indicates association with data holder"
+        "@value": "Notice for data subjects to provide consent based on information and advise regarding intended use of data, exercise of rights, and applicable terms and conditions"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "has data holder"
+        "@value": "Personal Data Reuse Notice"
       }
     ],
-    "https://schema.org/rangeIncludes": [
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
       {
-        "@id": "https://w3id.org/dpv/dpv-gda#DataHolder"
+        "@language": "en",
+        "@value": "DGA 12.m"
       }
     ]
   },
@@ -894,35 +947,15 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#hasDataReuseAssistant",
+    "@id": "https://w3id.org/dpv/legal/eu/dga#DataIntermediationRecord",
     "@type": [
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://purl.org/dc/dcam/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-gda#DataReuseAssistant"
-      }
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Beatriz Esteves, Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@language": "en",
-        "@value": "DGA 7"
-      }
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#OrganisationalMeasure",
+      "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/dpv#hasEntity"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/dpv#hasEntity"
+        "@id": "https://w3id.org/dpv#RecordsOfActivities"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -934,18 +967,477 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Indicates association with competent body designated by the Member State to assist Public Bodies in activities related to data reuse"
+        "@value": "Document that logs the activity of the data intermediation service provider"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "has data reuse assistant"
+        "@value": "Record of Data Intermediation Activity"
       }
     ],
-    "https://schema.org/rangeIncludes": [
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
       {
-        "@id": "https://w3id.org/dpv/dpv-gda#DataReuseAssistant"
+        "@language": "en",
+        "@value": "DGA 12.o"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/legal/eu/dga#NationalSIPProvider",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#SIP"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A national entity who is responsible for receiving and transmiting requests for the reuse of public data"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "National Single Information Point Provider"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/legal/eu/dga#A5-12-Adequacy-Decision",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#LegalBasis",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@language": "en",
+        "@value": "(DGA 5.12,https://eur-lex.europa.eu/eli/reg/2022/868/art_5/par_12/oj)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#DataTransferLegalBasis"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Adequacy Decision permitting the transfer of data"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Art 5(12) Adequacy Decision"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/legal/eu/dga#SingleInformationPoint",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#Service"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Service responsible for receiving and transmiting requests for the re-use of public data"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Single Information Point"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/legal/eu/dga#SectorialSIPProvider",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#SIP"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "An entity who is responsible for receiving and transmiting requests for the reuse of public data for a particular sector"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Sectorial Single Information Point Provider"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/legal/eu/dga#RightToLodgeComplaint",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Right",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@language": "en",
+        "@value": "DGA 27"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#Right"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Right of data subjects and data holders to lodge a complaint"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Right to Lodge Complaint"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/legal/eu/dga#RightToImpartialReview",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Right",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@language": "en",
+        "@value": "DGA 28.3"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#Right"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Right of data subjects and data holders to get an review by an impartial body with the appropriate expertise"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Right to Impartial Review"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#hasEntity",
+    "http://www.w3.org/2000/01/rdf-schema#superPropertyOf": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#hasDataReuseAssistant"
+      },
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#hasDataUser"
+      },
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#hasDataHolder"
+      },
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#hasDAO"
+      },
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#hasDISP"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/legal/eu/dga#DataAssetList",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#OrganisationalMeasure",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#OrganisationalMeasure"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Searchable asset list which contains available data resources including their data format and size and the conditions for their re-use"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Data Asset List"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "DGA 8.2"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/legal/eu/dga#DataReuseAssistant",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@language": "en",
+        "@value": "DGA 7"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#Entity"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "An entity designated by the Member State to provide technical support and guidance to public sector bodies regarding access and reuse of data and for requesting consent and permissions"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Data Reuse Assistant"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/legal/eu/dga#A5-9-Transfer-Permission",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#LegalBasis",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@language": "en",
+        "@value": "(DGA 5.9,https://eur-lex.europa.eu/eli/reg/2022/868/art_5/par_9/oj)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#DataTransferLegalBasis"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "The legal basis justfiying processing of non-personal data based on the permission of an entity to transfer data"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Art 5(9) Permission for Transfer"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/legal/eu/dga#SIPProvider",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@language": "en",
+        "@value": "DGA 8"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#LegalEntity"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "An entity who is responsible for receiving and transmiting requests for the reuse of public data"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Single Information Point Provider"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#LegalEntity",
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DataHolder"
+      },
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DISP"
+      },
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DataUser"
+      },
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#SIPProvider"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/legal/eu/dga#A31-3-Third-Country-Judgement",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#LegalBasis",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@language": "en",
+        "@value": "(DGA 31.3,https://eur-lex.europa.eu/eli/reg/2022/868/art_31/par_3/oj)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#DataTransferLegalBasis"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Data Transfer Third Country Judgement"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Art 31(3) Data Transfer Third Country Judgement"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/legal/eu/dga#NationalDataAltruismPolicy",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#OrganisationalMeasure",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#Policy"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A Policy established at National level regarding Data Altruism"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "National Data Altruism Policy"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "DGA 16"
       }
     ]
   },
@@ -1060,21 +1552,20 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#A2-6-Permission",
+    "@id": "https://w3id.org/dpv/legal/eu/dga#EUSIPProvider",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#LegalBasis",
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://purl.org/dc/terms/source": [
       {
         "@language": "en",
-        "@value": "(DGA 2.6,https://eur-lex.europa.eu/eli/reg/2022/868/art_2/par_6/oj)"
+        "@value": "DGA 8.4"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/dpv#NonPersonalDataLegalBasis"
+        "@id": "https://w3id.org/dpv/legal/eu/dga#SIP"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -1086,32 +1577,31 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "The legal basis justfiying processing of non-personal data based on the permission of an entity"
+        "@value": "An entity who is responsible for receiving and transmiting requests for the reuse of public data in the EU"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Art 2(6) Permission"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "dpv:LegalBasis needs to be divided into dpv:PersonalDataLegalBasis and dpv:NonPersonalDataLegalBasis"
+        "@value": "EU Single Information Point Provider"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#DataAltruismNotice",
+    "@id": "https://w3id.org/dpv/legal/eu/dga#DataAltruismOrganisation",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#OrganisationalMeasure",
       "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@language": "en",
+        "@value": "DGA 2.16, 18"
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/dpv#Notice"
+        "@id": "https://w3id.org/dpv#NonProfitOrganisation"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -1123,31 +1613,46 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Notice providing information regarding the processing of data for data altruistic purposes"
+        "@value": "An non-profit organisation who collects and shares data for altruistic purposes"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Data Altruism Notice"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "DGA 21.1"
+        "@value": "Data Altruism Organisation"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#SectorialSIPProvider",
+    "@id": "https://w3id.org/dpv/legal/eu/dga#hasDataReuseAssistant",
     "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/dcam/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DataReuseAssistant"
+      }
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Beatriz Esteves, Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@language": "en",
+        "@value": "DGA 7"
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/dpv/dpv-gda#SIP"
+        "@id": "https://w3id.org/dpv#hasEntity"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/dpv#hasEntity"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -1159,13 +1664,18 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "An entity who is responsible for receiving and transmiting requests for the reuse of public data for a particular sector"
+        "@value": "Indicates association with competent body designated by the Member State to assist Public Bodies in activities related to data reuse"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Sectorial Single Information Point Provider"
+        "@value": "has data reuse assistant"
+      }
+    ],
+    "https://schema.org/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DataReuseAssistant"
       }
     ]
   },
@@ -1183,7 +1693,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/dpv/dpv-gda#DataIntermediationService"
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DataIntermediationService"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -1206,7 +1716,7 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#DISP",
+    "@id": "https://w3id.org/dpv/legal/eu/dga#DataAltruismAuthority",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class",
       "http://www.w3.org/2002/07/owl#Class"
@@ -1214,12 +1724,12 @@
     "http://purl.org/dc/terms/source": [
       {
         "@language": "en",
-        "@value": "DGA 2.11"
+        "@value": "DGA 23"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/dpv#LegalEntity"
+        "@id": "https://w3id.org/dpv#Authority"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -1231,433 +1741,13 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "An entity who establishes commercial relationships for the data sharing between data subjects and data holders on the one hand and data users on the other"
+        "@value": "An authority tasked with overseeing the activity of data altruism organisations and maintaining a public register of said entities"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Data Intermediation Service Provider"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#DISPEUApproval",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#OrganisationalMeasure",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#CertificationSeal"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Confirmation and approval by a competent authority for the Data Intermediation Service Provider's compliance with Article 11 and Article 12 of the DGA"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "EU Approval for Data Intermediation Service Provider"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "DGA 11.9"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#DataCooperativeService",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-gda#DataIntermediationService"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Service provided by a data cooperative"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Data Cooperative Service"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#DataUser",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@language": "en",
-        "@value": "DGA 2.9"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#LegalEntity"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "An entity who has access and the right to use personal or non-personal data for commercial or non-commercial purposes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Data User"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#hasDAO",
-    "@type": [
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://purl.org/dc/dcam/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-gda#DataAltruismOrganisation"
-      }
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Beatriz Esteves, Harshvardhan J. Pandit"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#hasEntity"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/dpv#hasEntity"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Indicates association with data altruism organisation"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "has data altruism organisation"
-      }
-    ],
-    "https://schema.org/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-gda#DataAltruismOrganisation"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#RightToImpartialReview",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Right",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@language": "en",
-        "@value": "DGA 28.3"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#Right"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Right of data subjects and data holders to get an review by an impartial body with the appropriate expertise"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Right to Impartial Review"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#DataAssetList",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#OrganisationalMeasure",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#OrganisationalMeasure"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Searchable asset list which contains available data resources including their data format and size and the conditions for their re-use"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Data Asset List"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "DGA 8.2"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#SupraNationalAuthority",
-    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#EuropeanDataInnovationBoard"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#DISPNotice",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#OrganisationalMeasure",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#Notice"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Notification by a Data Intermediation Service Provider to a competent authority concerning changes to details regarding its Data Intermediation Service"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Data Intermediation Service Notification"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "DGA 11.1, DGA 11.9, DGA 11.12, DGA 11.13"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#DataIntermediationRecord",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#OrganisationalMeasure",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#RecordsOfActivities"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Document that logs the activity of the data intermediation service provider"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Record of Data Intermediation Activity"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "DGA 12.o"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#A31-3-Third-Country-Judgement",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#LegalBasis",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@language": "en",
-        "@value": "(DGA 31.3,https://eur-lex.europa.eu/eli/reg/2022/868/art_31/par_3/oj)"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#DataTransferLegalBasis"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Data Transfer Third Country Judgement"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Art 31(3) Data Transfer Third Country Judgement"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#SecureProcessingEnvironment",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#TechnicalMeasure",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#SecureProcessingEnvironment"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Physical or virtual environment to ensure compliance with EU law and allow the entity providing the secure processing environment to determine and supervise all data processing actions"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Secure Processing Environment"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "DGA 2.20"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#NationalDataAltruismPolicy",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#OrganisationalMeasure",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#Policy"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A Policy established at National level regarding Data Altruism"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "National Data Altruism Policy"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "DGA 16"
+        "@value": "Data Altruism Authority"
       }
     ]
   },
@@ -1675,7 +1765,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/dpv/dpv-gda#DISP"
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DISP"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -1694,6 +1784,14 @@
       {
         "@language": "en",
         "@value": "Data Intermediation Service Provider for Data Holder"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#NonProfitOrganisation",
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DataAltruismOrganisation"
       }
     ]
   },
@@ -1735,15 +1833,29 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#DataAltruismAnnualReport",
+    "@id": "https://w3id.org/dpv/legal/eu/dga#hasDataUser",
     "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#OrganisationalMeasure",
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/dcam/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DataUser"
+      }
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Beatriz Esteves, Harshvardhan J. Pandit"
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/dpv#RecordsOfActivities"
+        "@id": "https://w3id.org/dpv#hasEntity"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/dpv#hasEntity"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -1755,55 +1867,18 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Document containing the annual activities reported by a Data Altruism organisation"
+        "@value": "Indicates association with data user"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Data Altruism Annual Activity Report"
+        "@value": "has data user"
       }
     ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+    "https://schema.org/rangeIncludes": [
       {
-        "@language": "en",
-        "@value": "DGA 20.2"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#DataAltruismAuthority",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@language": "en",
-        "@value": "DGA 23"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#Authority"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "An authority tasked with overseeing the activity of data altruism organisations and maintaining a public register of said entities"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Data Altruism Authority"
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DataUser"
       }
     ]
   },
@@ -1845,71 +1920,15 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#hasDISP",
-    "@type": [
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://purl.org/dc/dcam/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-gda#DISP"
-      }
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Beatriz Esteves, Harshvardhan J. Pandit"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#hasEntity"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/dpv#hasEntity"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Indicates association with data intermediation service provider"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "has data intermediation service provider"
-      }
-    ],
-    "https://schema.org/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-gda#DISP"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#RightToDataConversionOptOut",
+    "@id": "https://w3id.org/dpv/legal/eu/dga#ThirdCountryDataRequestNotice",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Right",
+      "https://w3id.org/dpv#OrganisationalMeasure",
       "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@language": "en",
-        "@value": "DGA 12.d"
-      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/dpv#Right"
+        "@id": "https://w3id.org/dpv#ThirdCountryTransferNotice"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -1921,25 +1940,68 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Right of data subjects and data holders to opt-out of data conversions e.g. enhance interoperability or harmonisation with standards"
+        "@value": "Notice regarding a request of a third-country administrative authority to access data"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Right to Data Conversion Opt-out"
+        "@value": "Third Country Data Request Notice"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "DGA 31.5"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#RegionalSIPProvider",
+    "@id": "https://w3id.org/dpv/legal/eu/dga#EUDataAltruismConsentForm",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#OrganisationalMeasure",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#ConsentManagement"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A form provided by the European Commission for collecting consent"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "European Data Altruism Consent Form"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "DGA 25.1"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/legal/eu/dga#DataCooperativeService",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class",
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/dpv/dpv-gda#SIP"
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DataIntermediationService"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -1951,97 +2013,58 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "A regional entity who is responsible for receiving and transmiting requests for the reuse of public data"
+        "@value": "Service provided by a data cooperative"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Regional Single Information Point Provider"
+        "@value": "Data Cooperative Service"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#A5-9-Transfer-Permission",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#LegalBasis",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@language": "en",
-        "@value": "(DGA 5.9,https://eur-lex.europa.eu/eli/reg/2022/868/art_5/par_9/oj)"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#DataTransferLegalBasis"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The legal basis justfiying processing of non-personal data based on the permission of an entity to transfer data"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Art 5(9) Permission for Transfer"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#DataIntermediationAuthority",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@language": "en",
-        "@value": "DGA 13"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#Authority"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "An authority tasked with overseeing the activity of data intermediation service providers and maintaining a public register of said entities"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Data Intermediation Authority"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#Authority",
+    "@id": "https://w3id.org/dpv#Entity",
     "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
       {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#DataIntermediationAuthority"
-      },
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DataReuseAssistant"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/legal/eu/dga#DISPNotice",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#OrganisationalMeasure",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#DataAltruismAuthority"
+        "@id": "https://w3id.org/dpv#Notice"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Notification by a Data Intermediation Service Provider to a competent authority concerning changes to details regarding its Data Intermediation Service"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Data Intermediation Service Notification"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "DGA 11.1, DGA 11.9, DGA 11.12, DGA 11.13"
       }
     ]
   },
@@ -2082,20 +2105,15 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#DataIntermediationService",
+    "@id": "https://w3id.org/dpv/legal/eu/dga#DISPEUApproval",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#OrganisationalMeasure",
       "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@language": "en",
-        "@value": "DGA 2.11"
-      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/dpv#Service"
+        "@id": "https://w3id.org/dpv#CertificationSeal"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -2107,43 +2125,19 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Service of data intermediation which aims to facilitate the sharing of data between Data Subjects, Data Holders and Data Users"
+        "@value": "Confirmation and approval by a competent authority for the Data Intermediation Service Provider's compliance with Article 11 and Article 12 of the DGA"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Data Intermediation Service"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#NationalSIPProvider",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-gda#SIP"
+        "@value": "EU Approval for Data Intermediation Service Provider"
       }
     ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
       {
         "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A national entity who is responsible for receiving and transmiting requests for the reuse of public data"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "National Single Information Point Provider"
+        "@value": "DGA 11.9"
       }
     ]
   }

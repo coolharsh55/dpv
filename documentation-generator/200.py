@@ -291,8 +291,8 @@ for collation in collations:
 
 INFO('-'*40)
 DEBUG(f"Missing translations for {len(MISSING_TRANSLATIONS)} concepts")
-with open(f"{TRANSLATIONS_TODO_PATH}/translations_todo.json", 'w') as fd:
+with open(f"{TRANSLATIONS_TODO_PATH}/tmp_translations.json", 'w') as fd:
     import json
-    json.dump(MISSING_TRANSLATIONS, fd)
+    json.dump(MISSING_TRANSLATIONS, fd, indent=2)
 
 INFO('-'*40)
