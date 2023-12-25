@@ -9,20 +9,30 @@
    xmlns:sw="http://www.w3.org/2003/06/sw-vocab-status/ns#"
    xmlns:vann="http://purl.org/vocab/vann/"
 >
-  <rdf:Description rdf:about="https://w3id.org/dpv#Process">
-    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#PersonalDataHandling"/>
-    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#PersonalDataProcess"/>
-    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#NonPersonalDataProcess"/>
-    <skos:narrower rdf:resource="https://w3id.org/dpv#PersonalDataHandling"/>
-    <skos:narrower rdf:resource="https://w3id.org/dpv#PersonalDataProcess"/>
-    <skos:narrower rdf:resource="https://w3id.org/dpv#NonPersonalDataProcess"/>
+  <rdf:Description rdf:about="https://w3id.org/dpv#PersonalDataHandling">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <skos:prefLabel xml:lang="en">Process</skos:prefLabel>
-    <skos:definition xml:lang="en">An action, activity, or method</skos:definition>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <skos:prefLabel xml:lang="en">Personal Data Handling</skos:prefLabel>
+    <skos:definition xml:lang="en">An abstract concept describing 'personal data handling'</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Process"/>
+    <skos:broader rdf:resource="https://w3id.org/dpv#Process"/>
+    <skos:scopeNote xml:lang="en">This concept will be deprecated in future updates. It is recommended to use dpv:PersonalDataProcess as the equivalent alternative which is better aligned with legal and operational terminology.</skos:scopeNote>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-04-05</dct:created>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-12-10</dct:modified>
+    <sw:term_status xml:lang="en">sunset</sw:term_status>
+    <dct:contributor>Axel Polleres, Javier Fernández</dct:contributor>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#process-classes"/>
+    <vann:example rdf:resource="https://w3id.org/dpv/examples#E0007"/>
+    <vann:example rdf:resource="https://w3id.org/dpv/examples#E0008"/>
+    <vann:example rdf:resource="https://w3id.org/dpv/examples#E0014"/>
+    <vann:example rdf:resource="https://w3id.org/dpv/examples#E0018"/>
+    <vann:example rdf:resource="https://w3id.org/dpv/examples#E0019"/>
+    <vann:example rdf:resource="https://w3id.org/dpv/examples#E0020"/>
+    <vann:example rdf:resource="https://w3id.org/dpv/examples#E0022"/>
+    <vann:example rdf:resource="https://w3id.org/dpv/examples#E0028"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#process-classes">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#hasProcess">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
@@ -48,27 +58,20 @@
     <dct:contributor>Harshvardhan J. Pandit, Georg P Krog</dct:contributor>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#process-properties"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#PersonalDataHandling">
+  <rdf:Description rdf:about="https://w3id.org/dpv#Process">
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#PersonalDataHandling"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#PersonalDataProcess"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#NonPersonalDataProcess"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv#PersonalDataHandling"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv#PersonalDataProcess"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv#NonPersonalDataProcess"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <skos:prefLabel xml:lang="en">Personal Data Handling</skos:prefLabel>
-    <skos:definition xml:lang="en">An abstract concept describing 'personal data handling'</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Process"/>
-    <skos:broader rdf:resource="https://w3id.org/dpv#Process"/>
-    <skos:scopeNote xml:lang="en">This concept will be deprecated in future updates. It is recommended to use dpv:PersonalDataProcess as the equivalent alternative which is better aligned with legal and operational terminology.</skos:scopeNote>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-04-05</dct:created>
-    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-12-10</dct:modified>
-    <sw:term_status xml:lang="en">sunset</sw:term_status>
-    <dct:contributor>Axel Polleres, Javier Fernández</dct:contributor>
+    <skos:prefLabel xml:lang="en">Process</skos:prefLabel>
+    <skos:definition xml:lang="en">An action, activity, or method</skos:definition>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#process-classes"/>
-    <vann:example rdf:resource="https://w3id.org/dpv/examples#E0007"/>
-    <vann:example rdf:resource="https://w3id.org/dpv/examples#E0008"/>
-    <vann:example rdf:resource="https://w3id.org/dpv/examples#E0014"/>
-    <vann:example rdf:resource="https://w3id.org/dpv/examples#E0018"/>
-    <vann:example rdf:resource="https://w3id.org/dpv/examples#E0019"/>
-    <vann:example rdf:resource="https://w3id.org/dpv/examples#E0020"/>
-    <vann:example rdf:resource="https://w3id.org/dpv/examples#E0022"/>
-    <vann:example rdf:resource="https://w3id.org/dpv/examples#E0028"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#hasPersonalDataProcess">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
@@ -116,9 +119,6 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#process-classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#process-classes">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#process-properties">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>

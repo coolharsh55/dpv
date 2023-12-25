@@ -1,0 +1,86 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dpv-tech: <https://w3id.org/dpv/dpv-tech#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix tech: <https://w3id.org/dpv/tech#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+tech:BluetoothCommunication a rdfs:Class,
+        owl:Class,
+        dpv-tech:CommunicationMechanism ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-15"^^xsd:date ;
+    dct:modified "2023-11-03"^^xsd:date ;
+    rdfs:subClassOf dpv-tech:Networking ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Technology utilising bluetooth communication"@en ;
+    skos:prefLabel "Bluetooth Communication"@en .
+
+tech:CellularNetworkCommunication a rdfs:Class,
+        owl:Class,
+        dpv-tech:CommunicationMechanism ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-15"^^xsd:date ;
+    dct:modified "2023-11-04"^^xsd:date ;
+    rdfs:subClassOf dpv-tech:Networking ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Technology utilising cellular networking communication"@en ;
+    skos:prefLabel "Cellular Network Communication"@en .
+
+tech:GPSCommunication a rdfs:Class,
+        owl:Class,
+        dpv-tech:CommunicationMechanism ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-15"^^xsd:date ;
+    dct:modified "2023-11-05"^^xsd:date ;
+    rdfs:subClassOf dpv-tech:CommunicationMechanism ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Technology utilising GPS communication"@en ;
+    skos:prefLabel "GPS Communication"@en .
+
+tech:InternetCommunication a rdfs:Class,
+        owl:Class,
+        dpv-tech:CommunicationMechanism ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-15"^^xsd:date ;
+    dct:modified "2023-11-01"^^xsd:date ;
+    rdfs:subClassOf dpv-tech:Networking ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Technology utilising internet communication"@en ;
+    skos:prefLabel "Internet Communication"@en .
+
+tech:LocalNetworkCommunication a rdfs:Class,
+        owl:Class,
+        dpv-tech:CommunicationMechanism ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-15"^^xsd:date ;
+    dct:modified "2023-10-31"^^xsd:date ;
+    rdfs:subClassOf dpv-tech:Networking ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Technology utilising local networking communication"@en ;
+    skos:prefLabel "Local Network Communication"@en .
+
+tech:NetworkingCommunication a rdfs:Class,
+        owl:Class,
+        dpv-tech:CommunicationMechanism ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-15"^^xsd:date ;
+    dct:modified "2023-10-30"^^xsd:date ;
+    rdfs:subClassOf dpv-tech:CommunicationMechanism ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Technology utilising networking communication"@en ;
+    skos:prefLabel "Networking Communication"@en .
+
+tech:WiFiCommunication a rdfs:Class,
+        owl:Class,
+        dpv-tech:CommunicationMechanism ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-06-15"^^xsd:date ;
+    dct:modified "2023-11-02"^^xsd:date ;
+    rdfs:subClassOf dpv-tech:Networking ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Technology utilising wifi wireless networking communication"@en ;
+    skos:prefLabel "WiFi Communication"@en .
+

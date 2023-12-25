@@ -21,6 +21,12 @@ RDF_SERIALIZATIONS = {
     'n3': 'n3',
     'jsonld': 'json-ld'
     }
+OWL_SERIALIZATIONS = {
+    'owl': 'xml', 
+    'ttl': 'turtle', 
+    'n3': 'n3',
+    'jsonld': 'json-ld'
+    }
 
 
 ###################### vocab term statuses

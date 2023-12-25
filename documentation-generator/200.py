@@ -75,6 +75,48 @@ def serialize_graph(triples, filepath):
     for ext, format in RDF_SERIALIZATIONS.items():
         graph.serialize(f'{filepath}.{ext}', format=format)
     INFO(f'wrote {filepath}.[{",".join(RDF_SERIALIZATIONS)}]')
+    # Serialise OWL variant
+    # filepath is the same, but the extension is {name}-owl.[ttl,owl]
+    # conversion to manchester syntax happens through external script
+    # TODO: What IRI to use for OWL variant?
+    # Options:
+    # 1) same IRI e.g. https://w3id.org/dpv#Concept
+    # 2) different IRI e.g. https://w3id.org/dpv/owl#Concept
+    #    /owl is the suffix to distinguish owl variant
+    # 3) current IRI e.g. https://w3id.org/dpv/dpv-owl#Concept
+    #    /dpv-owl is the prefix to distinguish owl variant
+    # TODO: Add skos:exactMatch between default and OWL concepts
+    graph.update("""
+        DELETE { ?s rdf:type skos:Concept }
+        INSERT { ?s rdf:type owl:Class }
+        WHERE { ?s rdf:type rdfs:Class }
+        """)
+    graph.update("""
+        DELETE { ?s rdf:type skos:Concept }
+        INSERT { ?s rdf:type owl:ObjectProperty }
+        WHERE { ?s rdf:type rdf:Property }
+        """)
+    graph.update("""
+        DELETE { ?s skos:inScheme ?o }
+        WHERE { ?s skos:inScheme ?o }
+        """)
+    graph.update("""
+        DELETE { ?s rdf:type skos:ConceptScheme }
+        WHERE { ?s rdf:type skos:ConceptScheme }
+        """)
+    graph.update("""
+        DELETE { ?s skos:broader ?o . ?o skos:narrower ?s  }
+        INSERT { ?s rdfs:subClassOf ?o }
+        WHERE { ?s skos:broader ?o }
+        """)
+    # TODO: SPARQL CONSTRUCT to create domain/range values for properties
+    # use existing dcam:domainIncludes/rangeIncludes
+    # convert to owl:unionOf ( domain/range )
+    # problem: how to construct rdf:Collection using SPARQL?
+    for ext, format in OWL_SERIALIZATIONS.items():
+        graph.serialize(f'{filepath}-owl.{ext}', format=format)
+    # TODO: Call converter from OWL to OMN
+    INFO(f'wrote {filepath}-owl.[{",".join(OWL_SERIALIZATIONS)}]')
 
 
 global_triples = []

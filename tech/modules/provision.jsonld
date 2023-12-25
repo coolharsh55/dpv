@@ -1,105 +1,5 @@
 [
   {
-    "@id": "https://w3id.org/dpv/tech#provision-classes",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#FixedUse",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Technology that can be used a fixed numner of times"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv/tech#provision-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Fixed Use"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#Goods",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Technology provided or used as goods"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv/tech#provision-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Goods"
-      }
-    ]
-  },
-  {
     "@id": "https://w3id.org/dpv/tech#Product",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
@@ -144,6 +44,12 @@
         "@language": "en",
         "@value": "Product"
       }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#provision-classes",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
     ]
   },
   {
@@ -194,7 +100,7 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#Service",
+    "@id": "https://w3id.org/dpv/tech#Component",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
@@ -225,7 +131,7 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Technology provided or used as service(s)"
+        "@value": "Technology provided as a component"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -236,42 +142,7 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Service"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "Removed plural suffix for consistency in terms"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod",
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv/tech#FixedUse"
-      },
-      {
-        "@id": "https://w3id.org/dpv/tech#Subscription"
-      },
-      {
-        "@id": "https://w3id.org/dpv/tech#Product"
-      },
-      {
-        "@id": "https://w3id.org/dpv/tech#Goods"
-      },
-      {
-        "@id": "https://w3id.org/dpv/tech#Service"
-      },
-      {
-        "@id": "https://w3id.org/dpv/tech#Algorithmic"
-      },
-      {
-        "@id": "https://w3id.org/dpv/tech#System"
-      },
-      {
-        "@id": "https://w3id.org/dpv/tech#Component"
+        "@value": "Component"
       }
     ]
   },
@@ -343,7 +214,7 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#Subscription",
+    "@id": "https://w3id.org/dpv/tech#Service",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
@@ -374,7 +245,7 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Technology that is provided or used as a periodic subscription"
+        "@value": "Technology provided or used as service(s)"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -385,7 +256,13 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Subscription"
+        "@value": "Service"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "Removed plural suffix for consistency in terms"
       }
     ]
   },
@@ -437,7 +314,7 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#Component",
+    "@id": "https://w3id.org/dpv/tech#Goods",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
@@ -468,7 +345,7 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Technology provided as a component"
+        "@value": "Technology provided or used as goods"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -479,7 +356,130 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Component"
+        "@value": "Goods"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#Subscription",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-06-15"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Technology that is provided or used as a periodic subscription"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv/tech#provision-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Subscription"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#FixedUse",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-06-15"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Technology that can be used a fixed numner of times"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv/tech#provision-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Fixed Use"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/dpv-tech#TechnologyProvisionMethod",
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv/tech#FixedUse"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#Subscription"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#Product"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#Goods"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#Service"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#Algorithmic"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#System"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#Component"
       }
     ]
   }

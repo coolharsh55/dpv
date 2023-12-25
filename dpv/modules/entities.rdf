@@ -9,33 +9,17 @@
    xmlns:sw="http://www.w3.org/2003/06/sw-vocab-status/ns#"
    xmlns:vann="http://purl.org/vocab/vann/"
 >
-  <rdf:Description rdf:about="https://w3id.org/dpv#isRepresentativeFor">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  <rdf:Description rdf:about="https://w3id.org/dpv#NaturalPerson">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">is representative for</skos:prefLabel>
-    <skos:definition xml:lang="en">Indicates the entity is a representative for specified entity</skos:definition>
-    <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#Representative"/>
-    <schema:domainIncludes rdf:resource="https://w3id.org/dpv#Representative"/>
-    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#Entity"/>
-    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#Entity"/>
-    <rdfs:subPropertyOf rdf:resource="https://w3id.org/dpv#hasEntity"/>
-    <skos:broader rdf:resource="https://w3id.org/dpv#hasEntity"/>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-09</dct:created>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:prefLabel xml:lang="en">Natural Person</skos:prefLabel>
+    <skos:definition xml:lang="en">A human</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Entity"/>
+    <skos:broader rdf:resource="https://w3id.org/dpv#Entity"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-09</dct:created>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-properties"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#hasContact">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">has contact</skos:prefLabel>
-    <skos:definition xml:lang="en">Specifies contact details of a legal entity such as phone  or email</skos:definition>
-    <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#Entity"/>
-    <schema:domainIncludes rdf:resource="https://w3id.org/dpv#Entity"/>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-11-04</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J.Pandit, Georg P Krog, Paul Ryan, Beatriz Esteves</dct:contributor>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-properties"/>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-classes"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#hasEntity">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
@@ -70,20 +54,6 @@
     <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-properties"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#LegalEntity">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <skos:prefLabel xml:lang="en">Legal Entity</skos:prefLabel>
-    <skos:definition xml:lang="en">A human or non-human 'thing' that constitutes as an entity and which is recognised and defined in law</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Entity"/>
-    <skos:broader rdf:resource="https://w3id.org/dpv#Entity"/>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-04-05</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
-    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#Representative"/>
-    <skos:narrower rdf:resource="https://w3id.org/dpv#Representative"/>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-classes"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#Entity">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
@@ -99,11 +69,40 @@
     <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-classes"/>
     <vann:example rdf:resource="https://w3id.org/dpv/examples#E0027"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#hasAddress">
+  <rdf:Description rdf:about="https://w3id.org/dpv#Representative">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:prefLabel xml:lang="en">Representative</skos:prefLabel>
+    <skos:definition xml:lang="en">A representative of a legal entity</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#LegalEntity"/>
+    <skos:broader rdf:resource="https://w3id.org/dpv#LegalEntity"/>
+    <dct:source xml:lang="en">(GDPR Art.27,https://eur-lex.europa.eu/eli/reg/2016/679/art_27/oj)</dct:source>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-11-04</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Georg Krog, Paul Ryan, Harshvardhan J. Pandit, Beatriz Esteves</dct:contributor>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#isRepresentativeFor">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:prefLabel xml:lang="en">has address</skos:prefLabel>
-    <skos:definition xml:lang="en">Specifies address of a legal entity such as street address or pin code</skos:definition>
+    <skos:prefLabel xml:lang="en">is representative for</skos:prefLabel>
+    <skos:definition xml:lang="en">Indicates the entity is a representative for specified entity</skos:definition>
+    <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#Representative"/>
+    <schema:domainIncludes rdf:resource="https://w3id.org/dpv#Representative"/>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#Entity"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#Entity"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/dpv#hasEntity"/>
+    <skos:broader rdf:resource="https://w3id.org/dpv#hasEntity"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-09</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-properties"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasContact">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:prefLabel xml:lang="en">has contact</skos:prefLabel>
+    <skos:definition xml:lang="en">Specifies contact details of a legal entity such as phone  or email</skos:definition>
     <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#Entity"/>
     <schema:domainIncludes rdf:resource="https://w3id.org/dpv#Entity"/>
     <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-11-04</dct:created>
@@ -127,18 +126,17 @@
     <dct:contributor>Harshvardhan J.Pandit, Georg P Krog, Paul Ryan, Beatriz Esteves</dct:contributor>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-properties"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#Representative">
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasAddress">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <skos:prefLabel xml:lang="en">Representative</skos:prefLabel>
-    <skos:definition xml:lang="en">A representative of a legal entity</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#LegalEntity"/>
-    <skos:broader rdf:resource="https://w3id.org/dpv#LegalEntity"/>
-    <dct:source xml:lang="en">(GDPR Art.27,https://eur-lex.europa.eu/eli/reg/2016/679/art_27/oj)</dct:source>
+    <skos:prefLabel xml:lang="en">has address</skos:prefLabel>
+    <skos:definition xml:lang="en">Specifies address of a legal entity such as street address or pin code</skos:definition>
+    <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#Entity"/>
+    <schema:domainIncludes rdf:resource="https://w3id.org/dpv#Entity"/>
     <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-11-04</dct:created>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Georg Krog, Paul Ryan, Harshvardhan J. Pandit, Beatriz Esteves</dct:contributor>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-classes"/>
+    <dct:contributor>Harshvardhan J.Pandit, Georg P Krog, Paul Ryan, Beatriz Esteves</dct:contributor>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-properties"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#hasName">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
@@ -152,22 +150,24 @@
     <dct:contributor>Harshvardhan J.Pandit, Georg P Krog, Paul Ryan, Beatriz Esteves</dct:contributor>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-properties"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#NaturalPerson">
+  <rdf:Description rdf:about="https://w3id.org/dpv#LegalEntity">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <skos:prefLabel xml:lang="en">Natural Person</skos:prefLabel>
-    <skos:definition xml:lang="en">A human</skos:definition>
+    <skos:prefLabel xml:lang="en">Legal Entity</skos:prefLabel>
+    <skos:definition xml:lang="en">A human or non-human 'thing' that constitutes as an entity and which is recognised and defined in law</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Entity"/>
     <skos:broader rdf:resource="https://w3id.org/dpv#Entity"/>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-09</dct:created>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-04-05</dct:created>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#Representative"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv#Representative"/>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#entities-classes"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#entities-properties">
+  <rdf:Description rdf:about="https://w3id.org/dpv#entities-classes">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#entities-classes">
+  <rdf:Description rdf:about="https://w3id.org/dpv#entities-properties">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
   </rdf:Description>
 </rdf:RDF>
