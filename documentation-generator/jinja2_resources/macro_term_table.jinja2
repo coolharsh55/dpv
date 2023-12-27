@@ -1,7 +1,8 @@
 {% macro index_concepts(vocab, vocab_name, filter, skip_heading=False, lang="en") %}
   {% if not skip_heading %}<h3>{{filter|title}}</h3>
   {% endif %}
-  {% for iri, concept in vocab.items()|sort(attribute=0) %}
+  {% for iri in vocab.keys()|sort %}
+    {% set concept=vocab[iri] %}
     {% if filter == "external" %}
       {% set inscope = not concept['_dpvterm'] and concept['prefix'] != '_' %}
       {% set term = concept['skos:prefLabel'] %}
@@ -15,7 +16,7 @@
       {% endif %}
     {% endif %}
     {% if inscope %}
-    <section class="term-def" id="{{term}}">
+    <section class="term-def" id="{{concept['term']}}">
       <h4>{{ concept|translation_message('skos:prefLabel',lang) }}</h4>
       <table class="term-contents">
       <tbody>
@@ -46,7 +47,7 @@
         {% if concept['skos:broader'] %}
         {% for parentlist in concept|get_parent_hierarchy %}<tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>{% for parent in parentlist %}
+          <td>{% for parent in parentlist|resolve_concepts %}
              <a href="{% if parent['prefixed'].split(':')[0] == parent['vocab'] %}#{{parent['term']}}{% else %}{{parent['iri']}}{% endif %}">{{ parent['prefixed'] }}</a>{{ " → " if not loop.last }}
             {% endfor %}</td>
         {% endfor %}</tr>{% endif %}

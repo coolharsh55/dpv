@@ -1,20 +1,24 @@
 #!/usr/bin/env python3
 #author: Harshvardhan J. Pandit
 
-'''Extracts Namespaces from CSV and builds RDFLib objects'''
+'''Data and configurations for vocabulary management'''
 
 import csv
 from rdflib import Namespace
 
 import logging
-# logging configuration for debugging to console
 logging.basicConfig(
     level=logging.DEBUG, format='%(levelname)s - %(funcName)s :: %(lineno)d - %(message)s')
 DEBUG = logging.debug
 INFO = logging.info
 
-###################### serializations 
-# in the form of extention: rdflib name
+# == data ==
+
+# === serializations ===
+
+# Serialisations are `key:value` where `key` is the file extension
+# and `value` is the format passed to rdflib to serialise triples
+
 RDF_SERIALIZATIONS = {
     'rdf': 'xml', 
     'ttl': 'turtle', 
@@ -29,12 +33,12 @@ OWL_SERIALIZATIONS = {
     }
 
 
-###################### vocab term statuses
+## === term-statuses ===
 VOCAB_TERM_ACCEPT = ('accepted', 'changed', 'modified', 'sunset')
 VOCAB_TERM_REJECT = ('deprecated', 'removed')
 
 
-###################### namespaces
+# === namespaces ===
 NAMESPACE_CSV = (
 	'vocab_csv/Namespaces.csv',
 	'vocab_csv/Namespaces_Other.csv',
@@ -57,17 +61,16 @@ from rdflib import Graph
 NS = Graph()
 NS.ns = { k:v for k,v in NAMESPACES.items() }
 
-def prefix_from_iri(iri):
-    # DEBUG(iri)
-    for prefix, ns in NAMESPACES.items():
-        if iri.startswith(ns):
-            term = iri.replace(ns, '')
-            # DEBUG(f'prefix: {prefix} :: term {term}')
-            return f'{prefix}:{term}'
-    return None
+# === Import/Export for RDF and HTML ===
 
+# Root folder to import RDF files from
+IMPORT_PATH = '..'
+# Root folder to export HTML filese to
+EXPORT_PATH = '..'
+# Root folder where Jinja2 templates are stored
+TEMPLATE_PATH = './jinja2_resources'
 
-###################### CSV files
+# === csv-files ===
 IMPORT_CSV_PATH = './vocab_csv'
 CSVFILES = {
     'dex': {
@@ -320,19 +323,10 @@ CSVFILES = {
             'taxonomy': f'{IMPORT_CSV_PATH}/EUFundamentalRights.csv',
         },
     },
-
-    # 'todo': {
-    #     f'{IMPORT_CSV_PATH}/legal_Authorities.csv',
-    #     f'{IMPORT_CSV_PATH}/legal_EU_Adequacy.csv',
-    #     f'{IMPORT_CSV_PATH}/legal_EU_EEA.csv',
-    #     f'{IMPORT_CSV_PATH}/legal_Laws.csv',
-    #     f'{IMPORT_CSV_PATH}/legal_Locations.csv',
-    #     f'{IMPORT_CSV_PATH}/legal_properties.csv',
-    # }
 }
 
 
-### Translations
+# === translations ===
 IMPORT_TRANSLATIONS = {
     'de': {
         'lang': 'German',
@@ -340,10 +334,200 @@ IMPORT_TRANSLATIONS = {
         'verify': f'{IMPORT_CSV_PATH}/DE_verify.csv',
     },
 }
-TRANSLATIONS_TODO_PATH = IMPORT_CSV_PATH
+# This file will save the missing translations.
+# The initial list is populated in [[200.py]] and then the data is 
+# collected and overwritten in [[300.py]]
+TRANSLATIONS_MISSING_FILE = f"{IMPORT_CSV_PATH}/translations_missing.json"
 
+# === rdf-vocabs ===
+# How to do this?
+# load all vocabulary files - create a global dict
+RDF_VOCABS = {
+    'dex': {
+        'vocab': f'{IMPORT_PATH}/examples/dex.ttl',
+        'template': 'template_examples.jinja2',
+        'export': f'{EXPORT_PATH}/examples',
+        'modules': {},
+        'module-template': {},
+    },
+    'dpv': {
+        'vocab': f'{IMPORT_PATH}/dpv/dpv.ttl',
+        'template': 'template_dpv.jinja2',
+        'export': f'{EXPORT_PATH}/dpv',
+        'modules': {
+            # 'core': f'{IMPORT_PATH}/dpv/modules/core.ttl',
+            'process': f'{IMPORT_PATH}/dpv/modules/process.ttl',
+            'personal_data': f'{IMPORT_PATH}/dpv/modules/personal_data.ttl',
+            'purposes': f'{IMPORT_PATH}/dpv/modules/purposes.ttl',
+            'processing': f'{IMPORT_PATH}/dpv/modules/processing.ttl',
+            'TOM': f'{IMPORT_PATH}/dpv/modules/TOM.ttl',
+            'TOM-technical': f'{IMPORT_PATH}/dpv/modules/technical_measures.ttl',
+            'TOM-organisational': f'{IMPORT_PATH}/dpv/modules/organisational_measures.ttl',
+            'entities': f'{IMPORT_PATH}/dpv/modules/entities.ttl',
+            'entities-authority': f'{IMPORT_PATH}/dpv/modules/entities_authority.ttl',
+            'entities-legalrole': f'{IMPORT_PATH}/dpv/modules/entities_legalrole.ttl',
+            'entities-organisation': f'{IMPORT_PATH}/dpv/modules/entities_organisation.ttl',
+            'entities-datasubject': f'{IMPORT_PATH}/dpv/modules/entities_datasubject.ttl',
+            'legal_basis': f'{IMPORT_PATH}/dpv/modules/legal_basis.ttl',
+            'legal_basis-consent': f'{IMPORT_PATH}/dpv/modules/consent.ttl',
+            'legal_basis-consent-types': f'{IMPORT_PATH}/dpv/modules/consent_types.ttl',
+            'legal_basis-consent-status': f'{IMPORT_PATH}/dpv/modules/consent_status.ttl',
+            'processing-context': f'{IMPORT_PATH}/dpv/modules/processing_context.ttl',
+            'processing-scale': f'{IMPORT_PATH}/dpv/modules/processing_scale.ttl',
+            'context': f'{IMPORT_PATH}/dpv/modules/context.ttl',
+            'context-status': f'{IMPORT_PATH}/dpv/modules/status.ttl',
+            'context-jurisdiction': f'{IMPORT_PATH}/dpv/modules/jurisdiction.ttl',
+            'risk': f'{IMPORT_PATH}/dpv/modules/risk.ttl',
+            'rights': f'{IMPORT_PATH}/dpv/modules/rights.ttl',
+            'rules': f'{IMPORT_PATH}/dpv/modules/rules.ttl',
+        },
+        'module-template': {
+            'entities': 'contents_dpv_entities.jinja2',
+            'purposes': 'contents_dpv_purposes.jinja2',
+            'processing': 'contents_dpv_processing.jinja2',
+            'TOM': 'contents_dpv_TOM.jinja2',
+            'legal_basis': 'contents_dpv_legal_basis.jinja2',
+            'context': 'contents_dpv_context.jinja2',
+            'risk': 'contents_dpv_risk.jinja2',
+            'rights': 'contents_dpv_rights.jinja2',
+            'rules': 'contents_dpv_rules.jinja2',
+        },
+    },
+    # EXTENSIONS
+    'pd': {
+        'vocab': f'{IMPORT_PATH}/pd/pd.ttl',
+        'template': 'template_pd.jinja2',
+        'export': f'{EXPORT_PATH}/pd',
+        'modules': {
+            'core': f'{IMPORT_PATH}/pd/modules/core.ttl',
+            'extended': f'{IMPORT_PATH}/pd/modules/extended.ttl',
+        },
+    },
+    'tech': {
+        'vocab': f'{IMPORT_PATH}/tech/tech.ttl',
+        'template': 'template_tech.jinja2',
+        'export': f'{EXPORT_PATH}/tech',
+        'modules': {
+            'core': f'{IMPORT_PATH}/tech/modules/core.ttl',
+            'data': f'{IMPORT_PATH}/tech/modules/data.ttl',
+            'ops': f'{IMPORT_PATH}/tech/modules/ops.ttl',
+            'security': f'{IMPORT_PATH}/tech/modules/security.ttl',
+            'surveillance': f'{IMPORT_PATH}/tech/modules/surveillance.ttl',
+            'provision': f'{IMPORT_PATH}/tech/modules/provision.ttl',
+            'actors': f'{IMPORT_PATH}/tech/modules/actors.ttl',
+            'comms': f'{IMPORT_PATH}/tech/modules/comms.ttl',
+            'provision': f'{IMPORT_PATH}/tech/modules/provision.ttl',
+            'tools': f'{IMPORT_PATH}/tech/modules/tools.ttl',
+        },
+    },
+    'risk': {
+        'vocab': f'{IMPORT_PATH}/risk/risk.ttl',
+        'template': 'template_risk.jinja2',
+        'export': f'{EXPORT_PATH}/risk',
+        'modules': {
+            'risk_consequences': f'{IMPORT_PATH}/risk/modules/risk_consequences.ttl',
+            'risk_levels': f'{IMPORT_PATH}/risk/modules/risk_levels.ttl',
+            'risk_matrix': f'{IMPORT_PATH}/risk/modules/risk_matrix.ttl',
+            'risk_controls': f'{IMPORT_PATH}/risk/modules/risk_controls.ttl',
+            'risk_assessment': f'{IMPORT_PATH}/risk/modules/risk_assessment.ttl',
+            'risk_methodology': f'{IMPORT_PATH}/risk/modules/risk_methodology.ttl',
+        }
+    },
+    'loc': {
+        'vocab': f'{IMPORT_PATH}/loc/loc.ttl',
+        'template': 'template_locations.jinja2',
+        'export': f'{EXPORT_PATH}/loc',
+        'modules': {
+            'locations': f'{IMPORT_PATH}/loc/modules/locations.ttl',
+        },
+    },
+    # LEGAL VOCABS
+    'legal-eu': {
+        'vocab': f'{IMPORT_PATH}/legal/eu/legal-eu.ttl',
+        'template': 'template_legal_jurisdiction.jinja2',
+        'export': f'{EXPORT_PATH}/legal/eu',
+        'modules': {
+            'legal': f'{IMPORT_PATH}/legal/eu/legal-eu.ttl',
+        }
+    },
+    'legal-de': {
+        'vocab': f'{IMPORT_PATH}/legal/de/legal-de.ttl',
+        'template': 'template_legal_jurisdiction.jinja2',
+        'export': f'{EXPORT_PATH}/legal/de',
+        'modules': {
+            'legal': f'{IMPORT_PATH}/legal/de/legal-de.ttl',
+        }
+    },
+    'legal-gb': {
+        'vocab': f'{IMPORT_PATH}/legal/gb/legal-gb.ttl',
+        'template': 'template_legal_jurisdiction.jinja2',
+        'export': f'{EXPORT_PATH}/legal/gb',
+        'modules': {
+            'legal': f'{IMPORT_PATH}/legal/gb/legal-gb.ttl',
+        }
+    },
+    'legal-ie': {
+        'vocab': f'{IMPORT_PATH}/legal/ie/legal-ie.ttl',
+        'template': 'template_legal_jurisdiction.jinja2',
+        'export': f'{EXPORT_PATH}/legal/ie',
+        'modules': {
+            'legal': f'{IMPORT_PATH}/legal/ie/legal-ie.ttl',
+        }
+    },
+    'legal-us': {
+        'vocab': f'{IMPORT_PATH}/legal/us/legal-us.ttl',
+        'template': 'template_legal_jurisdiction.jinja2',
+        'export': f'{EXPORT_PATH}/legal/us',
+        'modules': {
+            'legal': f'{IMPORT_PATH}/legal/us/legal-us.ttl',
+        }
+    },
+    'legal': {
+        'vocab': f'{IMPORT_PATH}/legal/legal.ttl',
+        'template': 'template_legal_jurisdiction.jinja2',
+        'export': f'{EXPORT_PATH}/legal',
+        'modules': {
+            'legal': f'{IMPORT_PATH}/legal/legal.ttl',
+        }
+    },
+    # EU Laws
+    'eu-gdpr': {
+        'vocab': f'{IMPORT_PATH}/legal/eu/gdpr/eu-gdpr.ttl',
+        'template': 'template_legal_eu_gdpr.jinja2',
+        'export': f'{EXPORT_PATH}/legal/eu/gdpr',
+        'modules': {
+            'legal_basis': f'{IMPORT_PATH}/legal/eu/gdpr/modules/legal_basis.ttl',
+            'legal_basis-special': f'{IMPORT_PATH}/legal/eu/gdpr/modules/legal_basis_special.ttl',
+            'legal_basis-data_transfer': f'{IMPORT_PATH}/legal/eu/gdpr/modules/legal_basis_data_transfer.ttl',
+            'rights': f'{IMPORT_PATH}/legal/eu/gdpr/modules/rights.ttl',
+            'data_transfers': f'{IMPORT_PATH}/legal/eu/gdpr/modules/data_transfers.ttl',
+            'dpia': f'{IMPORT_PATH}/legal/eu/gdpr/modules/dpia.ttl',
+            'compliance': f'{IMPORT_PATH}/legal/eu/gdpr/modules/compliance.ttl',
+            'legal_basis-rights_mapping': f'{IMPORT_PATH}/legal/eu/gdpr/modules/legal_basis_rights_mapping.ttl',
+        },
+    },
+    'eu-dga': {
+        'vocab': f'{IMPORT_PATH}/legal/eu/dga/eu-dga.ttl',
+        'template': 'template_legal_eu_dga.jinja2',
+        'export': f'{EXPORT_PATH}/legal/eu/dga',
+        'modules': {
+            'entities': f'{IMPORT_PATH}/legal/eu/dga/modules/entities.ttl',
+            'legal_basis': f'{IMPORT_PATH}/legal/eu/dga/modules/legal_basis.ttl',
+            'legal_rights': f'{IMPORT_PATH}/legal/eu/dga/modules/legal_rights.ttl',
+            'registers': f'{IMPORT_PATH}/legal/eu/dga/modules/registers.ttl',
+            'services': f'{IMPORT_PATH}/legal/eu/dga/modules/services.ttl',
+            'toms': f'{IMPORT_PATH}/legal/eu/dga/modules/toms.ttl',
+        },
+    },
+    'eu-rights': {
+        'vocab': f'{IMPORT_PATH}/legal/eu/rights/eu-rights.ttl',
+        'template': 'template_legal_eu_rights.jinja2',
+        'export': f'{EXPORT_PATH}/legal/eu/rights',
+        'modules': {},
+    },
+}
 
-### EXPORTING
+# === exports ===
 EXPORT_RDF_PATH = '..'
 RDF_STRUCTURE = {
     'dpv': {
@@ -407,16 +591,34 @@ RDF_STRUCTURE = {
     }
 }
 
-### Examples 
+# Collated concepts
+RDF_COLLATIONS = ({
+    'name': 'legal',
+    'input': (
+        f'{EXPORT_RDF_PATH}/legal/eu/legal-eu.ttl',
+        f'{EXPORT_RDF_PATH}/legal/de/legal-de.ttl',
+        f'{EXPORT_RDF_PATH}/legal/ie/legal-ie.ttl',
+        f'{EXPORT_RDF_PATH}/legal/gb/legal-gb.ttl',
+        f'{EXPORT_RDF_PATH}/legal/us/legal-us.ttl',
+        ),
+    'output': f'{EXPORT_RDF_PATH}/legal/legal',
+},)
+
+# === examples ===
 EXAMPLES = {}
 
+# == functions ==
 
-###################### contributors
+# === prefix-iri ===
+def prefix_from_iri(iri):
+    for prefix, ns in NAMESPACES.items():
+        if iri.startswith(ns):
+            term = iri.replace(ns, '')
+            return f'{prefix}:{term}'
+    return None
 
-'''A Jinja2 filter that takes author names and returns their affiliations'''
-
+# === contributors ==
 import json
-
 with open('../contributors.json', 'r') as fd:
     contributors = json.load(fd)
 

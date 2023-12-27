@@ -451,10 +451,31 @@
     <div class="list-hierarchy">
 <ul class="concept-list">
   <li>
-    <strong>tech:CommunicationMechanism</strong>: Communication mechanism used or provided by Technologoy 
-      <small><a href="https://w3id.org/dpv/tech#CommunicationMechanism">go to full definition</a></small>
+    <strong>dpv:Entity</strong>: A human or non-human &#39;thing&#39; that constitutes as an entity 
+      <small><a href="https://w3id.org/dpv#Entity">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>tech:TechnologyActor</strong>: Actors and Entities involved in provision, use, and management of Technology 
+      <small><a href="https://w3id.org/dpv/tech#TechnologyActor">go to full definition</a></small>
       
   </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:Location</strong>: A location is a position, site, or area where something is located 
+      <small><a href="https://w3id.org/dpv#Location">go to full definition</a></small>
+      <ul class="concept-list">
+  <li>
+    <strong>tech:TechnologyUsageLocation</strong>: Location for where technology is provided or used 
+      <small><a href="https://w3id.org/dpv/tech#TechnologyUsageLocation">go to full definition</a></small>
+      
+  </li>
+</ul>
+  </li>
+  <li>
+    <strong>dpv:Technology</strong>: The technology, technological implementation, or any techniques, skills, methods, and processes used or applied 
+      <small><a href="https://w3id.org/dpv#Technology">go to full definition</a></small>
+      <ul class="concept-list">
   <li>
     <strong>tech:DataTechnology</strong>: Technology that uses or interacts with data 
       <small><a href="https://w3id.org/dpv/tech#DataTechnology">go to full definition</a></small>
@@ -485,9 +506,11 @@
       <small><a href="https://w3id.org/dpv/tech#SurveillanceTechnology">go to full definition</a></small>
       
   </li>
+</ul>
+  </li>
   <li>
-    <strong>tech:TechnologyActor</strong>: Actors and Entities involved in provision, use, and management of Technology 
-      <small><a href="https://w3id.org/dpv/tech#TechnologyActor">go to full definition</a></small>
+    <strong>tech:CommunicationMechanism</strong>: Communication mechanism used or provided by Technologoy 
+      <small><a href="https://w3id.org/dpv/tech#CommunicationMechanism">go to full definition</a></small>
       
   </li>
   <li>
@@ -498,11 +521,6 @@
   <li>
     <strong>tech:TechnologyReadinessLevel</strong>: Indication of maturity of Technology (ISO 16290:2013) 
       <small><a href="https://w3id.org/dpv/tech#TechnologyReadinessLevel">go to full definition</a></small>
-      
-  </li>
-  <li>
-    <strong>tech:TechnologyUsageLocation</strong>: Location for where technology is provided or used 
-      <small><a href="https://w3id.org/dpv/tech#TechnologyUsageLocation">go to full definition</a></small>
       
   </li>
 </ul>
@@ -970,6 +988,188 @@
 <h2>Vocabulary Index</h2>
   <section id="dpv-classes">
     <h3>Classes</h3>
+    <section class="term-def" id="Entity">
+      <h4>Entity</h4>
+      <table class="term-contents">
+      <tbody>
+        <tr>
+          <th>Term</th>
+          <td><dfn>dpv:Entity</dfn></td>
+          <th>Prefix</th>
+          <td>dpv</td>
+        </tr>
+        <tr>
+          <th>Label</th>
+          <td><i>Entity</i></td>
+        </tr>
+        <tr class="technical-detail">
+          <th>IRI</th>
+          <td><a href="https://w3id.org/dpv#Entity">https://w3id.org/dpv#Entity</a></td>
+        </tr>
+        <tr class="technical-detail">
+          
+        </tr>
+        
+        <tr class="table-separator"></tr>
+        <tr class="technical-detail">
+          <th>Type</th>
+          <td><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></td>
+        </tr>
+        <tr class="technical-detail">
+          <th>Narrower/Specialised types</th>
+          <td><a href="https://w3id.org/dpv#LegalEntity">dpv:LegalEntity</a>, <a href="https://w3id.org/dpv#NaturalPerson">dpv:NaturalPerson</a>, <a href="https://w3id.org/dpv#OrganisationalUnit">dpv:OrganisationalUnit</a>, <a href="https://w3id.org/dpv/tech#TechnologyActor">tech:TechnologyActor</a></td>
+        </tr><tr>
+          <th>Subject of relation</th>
+          <td><a href="https://w3id.org/dpv#hasRelationWithDataSubject">dpv:hasRelationWithDataSubject, <a href="https://w3id.org/dpv#hasRepresentative">dpv:hasRepresentative, <a href="https://w3id.org/dpv#hasName">dpv:hasName, <a href="https://w3id.org/dpv#hasAddress">dpv:hasAddress, <a href="https://w3id.org/dpv#hasContact">dpv:hasContact</td>
+        </tr><tr>
+          <th>Object of relation</th>
+          <td><a href="https://w3id.org/dpv#isImplementedByEntity">dpv:isImplementedByEntity, <a href="https://w3id.org/dpv#isIndicatedBy">dpv:isIndicatedBy, <a href="https://w3id.org/dpv#hasResponsibleEntity">dpv:hasResponsibleEntity, <a href="https://w3id.org/dpv#hasEntity">dpv:hasEntity, <a href="https://w3id.org/dpv#isRepresentativeFor">dpv:isRepresentativeFor</td>
+        </tr>        
+        <tr class="table-separator"></tr>
+<tr>
+          <th>Definition</th>
+          <td><i>A human or non-human &#39;thing&#39; that constitutes as an entity</i></td>
+        </tr>        <tr class="table-separator"></tr>
+          <th>Examples</th>
+          <td>            <a href="https://w3id.org/dpv/examples#E0027">Describing Entities <small>(E0027)</small></a>
+</td>
+        <tr class="table-separator"></tr>
+        
+        <tr class="table-separator"></tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-02-02</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
+          <th>Documented in</th>
+          <td><a href="https://w3id.org/dpv#vocab-entities">Dex Entities</a>, <a href="https://w3id.org/dpv#vocab-entities-organisation">Dex Entities-Organisation</a>, <a href="https://w3id.org/dpv#vocab-core">Dex Core</a></td>
+        </tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="term-def" id="Location">
+      <h4>Location</h4>
+      <table class="term-contents">
+      <tbody>
+        <tr>
+          <th>Term</th>
+          <td><dfn>dpv:Location</dfn></td>
+          <th>Prefix</th>
+          <td>dpv</td>
+        </tr>
+        <tr>
+          <th>Label</th>
+          <td><i>Location</i></td>
+        </tr>
+        <tr class="technical-detail">
+          <th>IRI</th>
+          <td><a href="https://w3id.org/dpv#Location">https://w3id.org/dpv#Location</a></td>
+        </tr>
+        <tr class="technical-detail">
+          
+        </tr>
+        
+        <tr class="table-separator"></tr>
+        <tr class="technical-detail">
+          <th>Type</th>
+          <td><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></td>
+        </tr>
+        <tr class="technical-detail">
+          <th>Narrower/Specialised types</th>
+          <td><a href="https://w3id.org/dpv#Country">dpv:Country</a>, <a href="https://w3id.org/dpv#EconomicUnion">dpv:EconomicUnion</a>, <a href="https://w3id.org/dpv#LocationLocality">dpv:LocationLocality</a>, <a href="https://w3id.org/dpv#StorageLocation">dpv:StorageLocation</a>, <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a>, <a href="https://w3id.org/dpv/tech#TechnologyUsageLocation">tech:TechnologyUsageLocation</a></td>
+        </tr><tr>
+          <th>Object of relation</th>
+          <td><a href="https://w3id.org/dpv#hasJurisdiction">dpv:hasJurisdiction, <a href="https://w3id.org/dpv#hasLocation">dpv:hasLocation</td>
+        </tr>        
+        <tr class="table-separator"></tr>
+<tr>
+          <th>Definition</th>
+          <td><i>A location is a position, site, or area where something is located</i></td>
+        </tr><tr>
+          <th>Usage Note</th>
+          <td><i>Location may be geographic, physical, or virtual.</i></td>
+        </tr>        <tr class="table-separator"></tr>
+          <th>Examples</th>
+          <td>            <a href="https://w3id.org/dpv/examples#E0011">Storage Conditions <small>(E0011)</small></a>
+</td>
+        <tr class="table-separator"></tr>
+        
+        <tr class="table-separator"></tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-01-19</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit, Georg P Krog</i></td>
+        </tr>        <tr>
+          <th>Documented in</th>
+          <td><a href="https://w3id.org/dpv#vocab-processing-context">Dex Processing-Context</a>, <a href="https://w3id.org/dpv#vocab-context-jurisdiction">Dex Context-Jurisdiction</a>, <a href="https://w3id.org/dpv#vocab-core">Dex Core</a></td>
+        </tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="term-def" id="Technology">
+      <h4>Technology</h4>
+      <table class="term-contents">
+      <tbody>
+        <tr>
+          <th>Term</th>
+          <td><dfn>dpv:Technology</dfn></td>
+          <th>Prefix</th>
+          <td>dpv</td>
+        </tr>
+        <tr>
+          <th>Label</th>
+          <td><i>Technology</i></td>
+        </tr>
+        <tr class="technical-detail">
+          <th>IRI</th>
+          <td><a href="https://w3id.org/dpv#Technology">https://w3id.org/dpv#Technology</a></td>
+        </tr>
+        <tr class="technical-detail">
+          
+        </tr>
+        
+        <tr class="table-separator"></tr>
+        <tr class="technical-detail">
+          <th>Type</th>
+          <td><a href="http://www.w3.org/2000/01/rdf-schema#Class">rdfs:Class</a>, <a href="http://www.w3.org/2004/02/skos/core#Concept">skos:Concept</a></td>
+        </tr>
+        <tr class="technical-detail">
+          <th>Narrower/Specialised types</th>
+          <td><a href="https://w3id.org/dpv/tech#DataTechnology">tech:DataTechnology</a>, <a href="https://w3id.org/dpv/tech#IdentityTechnology">tech:IdentityTechnology</a>, <a href="https://w3id.org/dpv/tech#ManagementTechnology">tech:ManagementTechnology</a>, <a href="https://w3id.org/dpv/tech#OperationalTechnology">tech:OperationalTechnology</a>, <a href="https://w3id.org/dpv/tech#SecurityTechnology">tech:SecurityTechnology</a>, <a href="https://w3id.org/dpv/tech#SurveillanceTechnology">tech:SurveillanceTechnology</a></td>
+        </tr><tr>
+          <th>Subject of relation</th>
+          <td><a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
+        </tr><tr>
+          <th>Object of relation</th>
+          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
+        </tr>        
+        <tr class="table-separator"></tr>
+<tr>
+          <th>Definition</th>
+          <td><i>The technology, technological implementation, or any techniques, skills, methods, and processes used or applied</i></td>
+        </tr><tr>
+          <th>Usage Note</th>
+          <td><i>Examples (non-exhaustive) include: Algorithm, Process, Method, Skill, Database, Cookies, Server, Device</i></td>
+        </tr>        <tr class="table-separator"></tr>
+        
+        <tr class="table-separator"></tr>
+<tr>
+          <th>Date Created</th>
+          <td><i>2022-01-26</i></td>
+        </tr><tr>
+          <th>Contributors</th>
+          <td><i>Harshvardhan J. Pandit</i></td>
+        </tr>        <tr>
+          <th>Documented in</th>
+          <td><a href="https://w3id.org/dpv#vocab-processing-context">Dpv Processing-Context</a>, <a href="https://w3id.org/dpv#vocab-core">Dpv Core</a></td>
+        </tr>
+        </tbody>
+      </table>
+    </section>
     <section class="term-def" id="Algorithmic">
       <h4>Algorithmic</h4>
       <table class="term-contents">
@@ -1003,7 +1203,7 @@
 </td>
 </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -1054,17 +1254,18 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#OperationalTechnology">tech:OperationalTechnology</a>
+          <td>             <a href="#OperationalTechnology">tech:OperationalTechnology</a> → 
+             <a href="#Technology">dpv:Technology</a>
 </td>
 </tr>        <tr class="technical-detail">
           <th>Narrower/Specialised types</th>
           <td><a href="https://w3id.org/dpv/tech#SmartphoneApplication">tech:SmartphoneApplication</a></td>
         </tr><tr>
           <th>Subject of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology, <a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
+          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -1119,7 +1320,7 @@
 </td>
 </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism</td>
+          <td><a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -1177,7 +1378,7 @@
 </td>
 </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism</td>
+          <td><a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -1234,7 +1435,7 @@
           <td><a href="https://w3id.org/dpv/tech#GPSCommunication">tech:GPSCommunication</a>, <a href="https://w3id.org/dpv/tech#NetworkingCommunication">tech:NetworkingCommunication</a></td>
         </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism</td>
+          <td><a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -1289,7 +1490,7 @@
 </td>
 </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -1344,10 +1545,10 @@
 </td>
 </tr><tr>
           <th>Subject of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology, <a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
+          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -1398,14 +1599,15 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#SurveillanceTechnology">tech:SurveillanceTechnology</a>
+          <td>             <a href="#SurveillanceTechnology">tech:SurveillanceTechnology</a> → 
+             <a href="#Technology">dpv:Technology</a>
 </td>
 </tr><tr>
           <th>Subject of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology, <a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
+          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -1459,14 +1661,16 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#DataStorageTechnology">tech:DataStorageTechnology</a>
+          <td>             <a href="#DataStorageTechnology">tech:DataStorageTechnology</a> → 
+             <a href="#DataTechnology">tech:DataTechnology</a> → 
+             <a href="#Technology">dpv:Technology</a>
 </td>
 </tr><tr>
           <th>Subject of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology, <a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
+          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -1517,14 +1721,15 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#DataTechnology">tech:DataTechnology</a>
+          <td>             <a href="#DataTechnology">tech:DataTechnology</a> → 
+             <a href="#Technology">dpv:Technology</a>
 </td>
 </tr><tr>
           <th>Subject of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology, <a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
+          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -1575,14 +1780,15 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#DataTechnology">tech:DataTechnology</a>
+          <td>             <a href="#DataTechnology">tech:DataTechnology</a> → 
+             <a href="#Technology">dpv:Technology</a>
 </td>
 </tr><tr>
           <th>Subject of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology, <a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
+          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -1633,21 +1839,23 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#DataTechnology">tech:DataTechnology</a>
+          <td>             <a href="#DataTechnology">tech:DataTechnology</a> → 
+             <a href="#Technology">dpv:Technology</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#ManagementTechnology">tech:ManagementTechnology</a>
+          <td>             <a href="#ManagementTechnology">tech:ManagementTechnology</a> → 
+             <a href="#Technology">dpv:Technology</a>
 </td>
 </tr>        <tr class="technical-detail">
           <th>Narrower/Specialised types</th>
           <td><a href="https://w3id.org/dpv/tech#PersonalInformationManagementSystem">tech:PersonalInformationManagementSystem</a></td>
         </tr><tr>
           <th>Subject of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology, <a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
+          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -1698,14 +1906,15 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#DataTechnology">tech:DataTechnology</a>
+          <td>             <a href="#DataTechnology">tech:DataTechnology</a> → 
+             <a href="#Technology">dpv:Technology</a>
 </td>
 </tr><tr>
           <th>Subject of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology, <a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
+          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -1756,14 +1965,15 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#DataTechnology">tech:DataTechnology</a>
+          <td>             <a href="#DataTechnology">tech:DataTechnology</a> → 
+             <a href="#Technology">dpv:Technology</a>
 </td>
 </tr><tr>
           <th>Subject of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology, <a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
+          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -1814,14 +2024,15 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#DataTechnology">tech:DataTechnology</a>
+          <td>             <a href="#DataTechnology">tech:DataTechnology</a> → 
+             <a href="#Technology">dpv:Technology</a>
 </td>
 </tr><tr>
           <th>Subject of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology, <a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
+          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -1872,18 +2083,20 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#SecurityTechnology">tech:SecurityTechnology</a>
+          <td>             <a href="#SecurityTechnology">tech:SecurityTechnology</a> → 
+             <a href="#Technology">dpv:Technology</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#DataTechnology">tech:DataTechnology</a>
+          <td>             <a href="#DataTechnology">tech:DataTechnology</a> → 
+             <a href="#Technology">dpv:Technology</a>
 </td>
 </tr><tr>
           <th>Subject of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology, <a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
+          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -1934,17 +2147,18 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#DataTechnology">tech:DataTechnology</a>
+          <td>             <a href="#DataTechnology">tech:DataTechnology</a> → 
+             <a href="#Technology">dpv:Technology</a>
 </td>
 </tr>        <tr class="technical-detail">
           <th>Narrower/Specialised types</th>
           <td><a href="https://w3id.org/dpv/tech#Database">tech:Database</a>, <a href="https://w3id.org/dpv/tech#FileSystem">tech:FileSystem</a>, <a href="https://w3id.org/dpv/tech#IdentityWallet">tech:IdentityWallet</a></td>
         </tr><tr>
           <th>Subject of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology, <a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
+          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -2002,10 +2216,10 @@
           <td><a href="https://w3id.org/dpv/tech#DataCopyingTechnology">tech:DataCopyingTechnology</a>, <a href="https://w3id.org/dpv/tech#DataDisclosureTechnology">tech:DataDisclosureTechnology</a>, <a href="https://w3id.org/dpv/tech#DataManagementTechnology">tech:DataManagementTechnology</a>, <a href="https://w3id.org/dpv/tech#DataObtainingTechnology">tech:DataObtainingTechnology</a>, <a href="https://w3id.org/dpv/tech#DataOrganisingTechnology">tech:DataOrganisingTechnology</a>, <a href="https://w3id.org/dpv/tech#DataRemovalTechnology">tech:DataRemovalTechnology</a>, <a href="https://w3id.org/dpv/tech#DataSecurityTechnology">tech:DataSecurityTechnology</a>, <a href="https://w3id.org/dpv/tech#DataStorageTechnology">tech:DataStorageTechnology</a>, <a href="https://w3id.org/dpv/tech#DataTransferTechnology">tech:DataTransferTechnology</a>, <a href="https://w3id.org/dpv/tech#DataTransformationTechnology">tech:DataTransformationTechnology</a>, <a href="https://w3id.org/dpv/tech#DataUsageTechnology">tech:DataUsageTechnology</a></td>
         </tr><tr>
           <th>Subject of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology, <a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
+          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -2056,14 +2270,15 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#DataTechnology">tech:DataTechnology</a>
+          <td>             <a href="#DataTechnology">tech:DataTechnology</a> → 
+             <a href="#Technology">dpv:Technology</a>
 </td>
 </tr><tr>
           <th>Subject of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology, <a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
+          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -2114,14 +2329,15 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#DataTechnology">tech:DataTechnology</a>
+          <td>             <a href="#DataTechnology">tech:DataTechnology</a> → 
+             <a href="#Technology">dpv:Technology</a>
 </td>
 </tr><tr>
           <th>Subject of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology, <a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
+          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -2172,14 +2388,15 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#DataTechnology">tech:DataTechnology</a>
+          <td>             <a href="#DataTechnology">tech:DataTechnology</a> → 
+             <a href="#Technology">dpv:Technology</a>
 </td>
 </tr><tr>
           <th>Subject of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology, <a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
+          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -2230,14 +2447,15 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#SecurityTechnology">tech:SecurityTechnology</a>
+          <td>             <a href="#SecurityTechnology">tech:SecurityTechnology</a> → 
+             <a href="#Technology">dpv:Technology</a>
 </td>
 </tr><tr>
           <th>Subject of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology, <a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
+          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -2288,14 +2506,16 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#DataStorageTechnology">tech:DataStorageTechnology</a>
+          <td>             <a href="#DataStorageTechnology">tech:DataStorageTechnology</a> → 
+             <a href="#DataTechnology">tech:DataTechnology</a> → 
+             <a href="#Technology">dpv:Technology</a>
 </td>
 </tr><tr>
           <th>Subject of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology, <a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
+          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -2350,7 +2570,7 @@
 </td>
 </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -2405,7 +2625,7 @@
 </td>
 </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -2460,7 +2680,7 @@
 </td>
 </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism</td>
+          <td><a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -2514,21 +2734,23 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#ManagementTechnology">tech:ManagementTechnology</a>
+          <td>             <a href="#IdentityTechnology">tech:IdentityTechnology</a> → 
+             <a href="#Technology">dpv:Technology</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#IdentityTechnology">tech:IdentityTechnology</a>
+          <td>             <a href="#ManagementTechnology">tech:ManagementTechnology</a> → 
+             <a href="#Technology">dpv:Technology</a>
 </td>
 </tr>        <tr class="technical-detail">
           <th>Narrower/Specialised types</th>
           <td><a href="https://w3id.org/dpv/tech#IdentityWallet">tech:IdentityWallet</a></td>
         </tr><tr>
           <th>Subject of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology, <a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
+          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -2586,10 +2808,10 @@
           <td><a href="https://w3id.org/dpv/tech#IdentityManagementTechnology">tech:IdentityManagementTechnology</a></td>
         </tr><tr>
           <th>Subject of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology, <a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
+          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -2640,18 +2862,28 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#IdentityManagementTechnology">tech:IdentityManagementTechnology</a>
+          <td>             <a href="#IdentityManagementTechnology">tech:IdentityManagementTechnology</a> → 
+             <a href="#IdentityTechnology">tech:IdentityTechnology</a> → 
+             <a href="#Technology">dpv:Technology</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#DataStorageTechnology">tech:DataStorageTechnology</a>
+          <td>             <a href="#IdentityManagementTechnology">tech:IdentityManagementTechnology</a> → 
+             <a href="#ManagementTechnology">tech:ManagementTechnology</a> → 
+             <a href="#Technology">dpv:Technology</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>             <a href="#DataStorageTechnology">tech:DataStorageTechnology</a> → 
+             <a href="#DataTechnology">tech:DataTechnology</a> → 
+             <a href="#Technology">dpv:Technology</a>
 </td>
 </tr><tr>
           <th>Subject of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology, <a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
+          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -2706,7 +2938,7 @@
 </td>
 </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism</td>
+          <td><a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -2764,7 +2996,7 @@
 </td>
 </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism</td>
+          <td><a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -2825,10 +3057,10 @@
           <td><a href="https://w3id.org/dpv/tech#DataManagementTechnology">tech:DataManagementTechnology</a>, <a href="https://w3id.org/dpv/tech#IdentityManagementTechnology">tech:IdentityManagementTechnology</a>, <a href="https://w3id.org/dpv/tech#SecurityManagementTechnology">tech:SecurityManagementTechnology</a></td>
         </tr><tr>
           <th>Subject of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology, <a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
+          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -2879,14 +3111,15 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#SecurityTechnology">tech:SecurityTechnology</a>
+          <td>             <a href="#SecurityTechnology">tech:SecurityTechnology</a> → 
+             <a href="#Technology">dpv:Technology</a>
 </td>
 </tr><tr>
           <th>Subject of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology, <a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
+          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -2937,14 +3170,15 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#SecurityTechnology">tech:SecurityTechnology</a>
+          <td>             <a href="#SecurityTechnology">tech:SecurityTechnology</a> → 
+             <a href="#Technology">dpv:Technology</a>
 </td>
 </tr><tr>
           <th>Subject of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology, <a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
+          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -2999,7 +3233,7 @@
 </td>
 </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism</td>
+          <td><a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -3060,10 +3294,10 @@
           <td><a href="https://w3id.org/dpv/tech#Application">tech:Application</a>, <a href="https://w3id.org/dpv/tech#OperationDevice">tech:OperationDevice</a>, <a href="https://w3id.org/dpv/tech#OperationEnvironment">tech:OperationEnvironment</a>, <a href="https://w3id.org/dpv/tech#OperationManagement">tech:OperationManagement</a></td>
         </tr><tr>
           <th>Subject of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology, <a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
+          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -3114,14 +3348,15 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#OperationalTechnology">tech:OperationalTechnology</a>
+          <td>             <a href="#OperationalTechnology">tech:OperationalTechnology</a> → 
+             <a href="#Technology">dpv:Technology</a>
 </td>
 </tr><tr>
           <th>Subject of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology, <a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
+          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -3172,14 +3407,15 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#OperationalTechnology">tech:OperationalTechnology</a>
+          <td>             <a href="#OperationalTechnology">tech:OperationalTechnology</a> → 
+             <a href="#Technology">dpv:Technology</a>
 </td>
 </tr><tr>
           <th>Subject of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology, <a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
+          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -3230,14 +3466,15 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#OperationalTechnology">tech:OperationalTechnology</a>
+          <td>             <a href="#OperationalTechnology">tech:OperationalTechnology</a> → 
+             <a href="#Technology">dpv:Technology</a>
 </td>
 </tr><tr>
           <th>Subject of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology, <a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
+          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -3288,14 +3525,15 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#SurveillanceTechnology">tech:SurveillanceTechnology</a>
+          <td>             <a href="#SurveillanceTechnology">tech:SurveillanceTechnology</a> → 
+             <a href="#Technology">dpv:Technology</a>
 </td>
 </tr><tr>
           <th>Subject of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology, <a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
+          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -3349,14 +3587,22 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#DataManagementTechnology">tech:DataManagementTechnology</a>
+          <td>             <a href="#DataManagementTechnology">tech:DataManagementTechnology</a> → 
+             <a href="#DataTechnology">tech:DataTechnology</a> → 
+             <a href="#Technology">dpv:Technology</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>             <a href="#DataManagementTechnology">tech:DataManagementTechnology</a> → 
+             <a href="#ManagementTechnology">tech:ManagementTechnology</a> → 
+             <a href="#Technology">dpv:Technology</a>
 </td>
 </tr><tr>
           <th>Subject of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology, <a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
+          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -3407,14 +3653,15 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#SecurityTechnology">tech:SecurityTechnology</a>
+          <td>             <a href="#SecurityTechnology">tech:SecurityTechnology</a> → 
+             <a href="#Technology">dpv:Technology</a>
 </td>
 </tr><tr>
           <th>Subject of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology, <a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
+          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -3465,14 +3712,15 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#SecurityTechnology">tech:SecurityTechnology</a>
+          <td>             <a href="#SecurityTechnology">tech:SecurityTechnology</a> → 
+             <a href="#Technology">dpv:Technology</a>
 </td>
 </tr><tr>
           <th>Subject of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology, <a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
+          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -3527,7 +3775,7 @@
 </td>
 </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -3578,18 +3826,20 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#ManagementTechnology">tech:ManagementTechnology</a>
+          <td>             <a href="#SecurityTechnology">tech:SecurityTechnology</a> → 
+             <a href="#Technology">dpv:Technology</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#SecurityTechnology">tech:SecurityTechnology</a>
+          <td>             <a href="#ManagementTechnology">tech:ManagementTechnology</a> → 
+             <a href="#Technology">dpv:Technology</a>
 </td>
 </tr><tr>
           <th>Subject of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology, <a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
+          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -3647,10 +3897,10 @@
           <td><a href="https://w3id.org/dpv/tech#DataSecurityTechnology">tech:DataSecurityTechnology</a>, <a href="https://w3id.org/dpv/tech#DetectionSecurityTechnology">tech:DetectionSecurityTechnology</a>, <a href="https://w3id.org/dpv/tech#MitigationSecurityTechnology">tech:MitigationSecurityTechnology</a>, <a href="https://w3id.org/dpv/tech#MonitoringSecurityTechnology">tech:MonitoringSecurityTechnology</a>, <a href="https://w3id.org/dpv/tech#PET">tech:PET</a>, <a href="https://w3id.org/dpv/tech#PreventionSecurityTechnology">tech:PreventionSecurityTechnology</a>, <a href="https://w3id.org/dpv/tech#SecurityManagementTechnology">tech:SecurityManagementTechnology</a></td>
         </tr><tr>
           <th>Subject of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology, <a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
+          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -3705,7 +3955,7 @@
 </td>
 </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -3759,14 +4009,16 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#Application">tech:Application</a>
+          <td>             <a href="#Application">tech:Application</a> → 
+             <a href="#OperationalTechnology">tech:OperationalTechnology</a> → 
+             <a href="#Technology">dpv:Technology</a>
 </td>
 </tr><tr>
           <th>Subject of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology, <a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
+          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -3821,7 +4073,7 @@
 </td>
 </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -3879,10 +4131,10 @@
           <td><a href="https://w3id.org/dpv/tech#CovertSurveillanceTechnology">tech:CovertSurveillanceTechnology</a>, <a href="https://w3id.org/dpv/tech#OvertSurveillanceTechnology">tech:OvertSurveillanceTechnology</a></td>
         </tr><tr>
           <th>Subject of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvider">tech:hasProvider, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasDeveloper">tech:hasDeveloper, <a href="https://w3id.org/dpv/tech#hasTechnologyActor">tech:hasTechnologyActor, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasUser">tech:hasUser, <a href="https://w3id.org/dpv/tech#hasSubject">tech:hasSubject, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology, <a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
+          <td><a href="https://w3id.org/dpv#isImplementedUsingTechnology">dpv:isImplementedUsingTechnology</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -3937,7 +4189,7 @@
 </td>
 </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -4046,7 +4298,8 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#TechnologyActor">tech:TechnologyActor</a>
+          <td>             <a href="#TechnologyActor">tech:TechnologyActor</a> → 
+             <a href="https://w3id.org/dpv#Entity">dpv:Entity</a>
 </td>
 </tr><tr>
           <th>Object of relation</th>
@@ -4101,7 +4354,8 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#TechnologyActor">tech:TechnologyActor</a>
+          <td>             <a href="#TechnologyActor">tech:TechnologyActor</a> → 
+             <a href="https://w3id.org/dpv#Entity">dpv:Entity</a>
 </td>
 </tr><tr>
           <th>Object of relation</th>
@@ -4159,7 +4413,7 @@
           <td><a href="https://w3id.org/dpv/tech#Algorithmic">tech:Algorithmic</a>, <a href="https://w3id.org/dpv/tech#Component">tech:Component</a>, <a href="https://w3id.org/dpv/tech#FixedUse">tech:FixedUse</a>, <a href="https://w3id.org/dpv/tech#Goods">tech:Goods</a>, <a href="https://w3id.org/dpv/tech#Product">tech:Product</a>, <a href="https://w3id.org/dpv/tech#Service">tech:Service</a>, <a href="https://w3id.org/dpv/tech#Subscription">tech:Subscription</a>, <a href="https://w3id.org/dpv/tech#System">tech:System</a></td>
         </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod, <a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
+          <td><a href="https://w3id.org/dpv/tech#hasProvisionMethod">tech:hasProvisionMethod</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -4210,7 +4464,7 @@
         </tr>
 <tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL, <a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL</td>
+          <td><a href="https://w3id.org/dpv/tech#hasTRL">tech:hasTRL</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -4261,7 +4515,8 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#TechnologyActor">tech:TechnologyActor</a>
+          <td>             <a href="#TechnologyActor">tech:TechnologyActor</a> → 
+             <a href="https://w3id.org/dpv#Entity">dpv:Entity</a>
 </td>
 </tr><tr>
           <th>Object of relation</th>
@@ -4320,7 +4575,7 @@
 </td>
 </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv#hasJurisdiction">dpv:hasJurisdiction, <a href="https://w3id.org/dpv#hasJurisdiction">dpv:hasJurisdiction, <a href="https://w3id.org/dpv#hasLocation">dpv:hasLocation</td>
+          <td><a href="https://w3id.org/dpv#hasJurisdiction">dpv:hasJurisdiction, <a href="https://w3id.org/dpv#hasLocation">dpv:hasLocation</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -4371,7 +4626,8 @@
         </tr>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#TechnologyActor">tech:TechnologyActor</a>
+          <td>             <a href="#TechnologyActor">tech:TechnologyActor</a> → 
+             <a href="https://w3id.org/dpv#Entity">dpv:Entity</a>
 </td>
 </tr><tr>
           <th>Object of relation</th>
@@ -4430,7 +4686,7 @@
 </td>
 </tr><tr>
           <th>Object of relation</th>
-          <td><a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism, <a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism</td>
+          <td><a href="https://w3id.org/dpv/tech#hasCommunicationMechanism">tech:hasCommunicationMechanism</td>
         </tr>        
         <tr class="table-separator"></tr>
 <tr>
@@ -4946,7 +5202,7 @@
       </ul>
     <p>The following external concepts are re-used within DPV:</p>
     <h3>External</h3>
-    <section class="term-def" id="">
+    <section class="term-def" id="rdfs:Class">
       <h4>None</h4>
       <table class="term-contents">
       <tbody>
@@ -4980,7 +5236,7 @@
         <tr class="table-separator"></tr>
         <tr>
           <th>Documented in</th>
-          <td><a href="http://www.w3.org/2000/01/rdf-schema#vocab-core">Tech Core</a></td>
+          <td><a href="http://www.w3.org/2000/01/rdf-schema#vocab-context-jurisdiction">Dpv Context-Jurisdiction</a>, <a href="http://www.w3.org/2000/01/rdf-schema#vocab-core">Dpv Core</a></td>
         </tr>
         </tbody>
       </table>

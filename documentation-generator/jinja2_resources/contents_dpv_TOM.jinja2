@@ -75,7 +75,7 @@
 
     <section>
       <h3>Access Control</h3>
-      {{ example_aside('E0016') }}
+      {{ example_aside('dex:E0016') }}
     </section>
 
     <section>
@@ -166,10 +166,10 @@
   <section>
   <h2>Vocabulary Index</h2>
   <section id="classes">
-    {{ index_concepts(data['index'], filter="classes") }}
+    {{ index_concepts(modules['TOM'], filter="classes") }}
   </section>
   <section id="properties">
-    {{ index_concepts(data['index'], filter="properties") }}
+    {{ index_concepts(modules['TOM'], filter="properties") }}
   </section>
   <section id="external-concepts">
     <p>DPV uses the following terms from [[RDF]] and  [[RDFS]] with their defined meanings:</p>
@@ -180,7 +180,7 @@
       <li id="rdf:Property"><dfn>rdf:Property</dfn> to denote a concept is a property or a relation</li>
       </ul>
     <p>The following external concepts are re-used within DPV:</p>
-    {{ index_concepts(data['index'], filter="external") }}
+    {{ index_concepts(modules['TOM'], filter="external") }}
   </section>
 </section>
 <script type="text/javascript" src="../../media/common.js" defer></script>

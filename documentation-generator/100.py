@@ -15,6 +15,8 @@ logging.basicConfig(
 DEBUG = logging.debug
 INFO = logging.info
 
+# == Export ==
+
 # This is the Google Excel Export link which requires the
 # document ID to download the document as XLSX
 GOOGLE_EXCEL_EXPORT_LINK = (
@@ -23,7 +25,7 @@ GOOGLE_EXCEL_EXPORT_LINK = (
 # Documents are to be stored in this folder
 DOCS_FOLDER = './vocab_csv'
 
-### DPV Files
+# == DPV Files == 
 DPV_FILES = {
     # The files to download are indicated in the following structure:
     # Each group/dictionary represents the
@@ -265,7 +267,7 @@ DPV_FILES = {
     }
 }
 
-### Downloading files
+# == Downloading files ==
 from urllib import request
 
 
@@ -325,7 +327,7 @@ def _extract_all_CSVs():
         _extract_CSVs(document_name, sheets)
 
 
-### Calling the Script
+# == script ==
 if __name__ == '__main__':
     # The script has a default behaviour where it will NOT download
     # any file and will extract ALL CSVs from existing files.

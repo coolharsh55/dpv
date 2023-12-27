@@ -65,6 +65,11 @@ dpv:ActivityStatus a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-05-18"^^xsd:date ;
     rdfs:subClassOf dpv:Status ;
+    rdfs:superClassOf dpv:ActivityCompleted,
+        dpv:ActivityHalted,
+        dpv:ActivityNotCompleted,
+        dpv:ActivityOngoing,
+        dpv:ActivityProposed ;
     sw:term_status "accepted"@en ;
     skos:definition "Status associated with activity operations and lifecycles"@en ;
     skos:prefLabel "Activity Status"@en .
@@ -135,6 +140,12 @@ dpv:AuditStatus a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-05-18"^^xsd:date ;
     rdfs:subClassOf dpv:Status ;
+    rdfs:superClassOf dpv:AuditApproved,
+        dpv:AuditConditionallyApproved,
+        dpv:AuditNotRequired,
+        dpv:AuditRejected,
+        dpv:AuditRequested,
+        dpv:AuditRequired ;
     sw:term_status "accepted"@en ;
     skos:definition "Status associated with Auditing or Investigation"@en ;
     skos:prefLabel "Audit Status"@en .
@@ -154,7 +165,13 @@ dpv:ComplianceStatus a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-05-18"^^xsd:date ;
     rdfs:subClassOf dpv:Status ;
-    rdfs:superClassOf dpv:Lawfulness ;
+    rdfs:superClassOf dpv:ComplianceIndeterminate,
+        dpv:ComplianceUnknown,
+        dpv:ComplianceViolation,
+        dpv:Compliant,
+        dpv:Lawfulness,
+        dpv:NonCompliant,
+        dpv:PartiallyCompliant ;
     sw:term_status "accepted"@en ;
     skos:definition "Status associated with Compliance with some norms, objectives, or requirements"@en ;
     skos:prefLabel "Compliance Status"@en .
@@ -196,6 +213,8 @@ dpv:ConformanceStatus a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-10-22"^^xsd:date ;
     rdfs:subClassOf dpv:Status ;
+    rdfs:superClassOf dpv:Conformant,
+        dpv:NonConformant ;
     sw:term_status "accepted"@en ;
     skos:definition "Status associated with conformance to a standard, guideline, code, or recommendation"@en ;
     skos:prefLabel "Conformance Status"@en .
@@ -225,6 +244,9 @@ dpv:Lawfulness a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-10-19"^^xsd:date ;
     rdfs:subClassOf dpv:ComplianceStatus ;
+    rdfs:superClassOf dpv:Lawful,
+        dpv:LawfulnessUnkown,
+        dpv:Unlawful ;
     sw:term_status "accepted"@en ;
     skos:definition "Status associated with expressing lawfullness or legal compliance"@en ;
     skos:prefLabel "Lawfulness"@en .
@@ -356,6 +378,16 @@ dpv:RequestStatus a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-11-30"^^xsd:date ;
     rdfs:subClassOf dpv:Status ;
+    rdfs:superClassOf dpv:RequestAccepted,
+        dpv:RequestAcknowledged,
+        dpv:RequestActionDelayed,
+        dpv:RequestFulfilled,
+        dpv:RequestInitiated,
+        dpv:RequestRejected,
+        dpv:RequestRequiredActionPerformed,
+        dpv:RequestRequiresAction,
+        dpv:RequestStatusQuery,
+        dpv:RequestUnfulfilled ;
     sw:term_status "accepted"@en ;
     skos:definition "Status associated with requests"@en ;
     skos:prefLabel "Request Status"@en .
@@ -411,7 +443,6 @@ dpv:hasActivityStatus a rdf:Property,
     dcam:rangeIncludes dpv:ActivityStatus ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-05-18"^^xsd:date ;
-    rdfs:subClassOf dpv:hasStatus ;
     rdfs:subPropertyOf dpv:hasStatus ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the status of activity of specified concept"@en ;
@@ -423,7 +454,6 @@ dpv:hasAuditStatus a rdf:Property,
     dcam:rangeIncludes dpv:AuditStatus ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-22"^^xsd:date ;
-    rdfs:subClassOf dpv:hasStatus ;
     rdfs:subPropertyOf dpv:hasStatus ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the status of audit associated with specified concept"@en ;
@@ -435,7 +465,6 @@ dpv:hasLawfulness a rdf:Property,
     dcam:rangeIncludes dpv:Lawfulness ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-10-22"^^xsd:date ;
-    rdfs:subClassOf dpv:hasComplianceStatus ;
     rdfs:subPropertyOf dpv:hasComplianceStatus ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the status of being lawful or legally compliant"@en ;
@@ -447,7 +476,6 @@ dpv:hasComplianceStatus a rdf:Property,
     dcam:rangeIncludes dpv:ComplianceStatus ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-05-18"^^xsd:date ;
-    rdfs:subClassOf dpv:hasStatus ;
     rdfs:subPropertyOf dpv:hasStatus ;
     rdfs:superPropertyOf dpv:hasLawfulness ;
     sw:term_status "accepted"@en ;

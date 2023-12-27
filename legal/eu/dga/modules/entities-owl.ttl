@@ -154,7 +154,6 @@ eu-dga:hasDAO a rdf:Property,
         owl:ObjectProperty ;
     dcam:rangeIncludes eu-dga:DataAltruismOrganisation ;
     dct:contributor "Beatriz Esteves, Harshvardhan J. Pandit" ;
-    rdfs:subClassOf dpv:hasEntity ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with data altruism organisation"@en ;
@@ -165,7 +164,6 @@ eu-dga:hasDISP a rdf:Property,
         owl:ObjectProperty ;
     dcam:rangeIncludes eu-dga:DISP ;
     dct:contributor "Beatriz Esteves, Harshvardhan J. Pandit" ;
-    rdfs:subClassOf dpv:hasEntity ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with data intermediation service provider"@en ;
@@ -176,7 +174,6 @@ eu-dga:hasDataHolder a rdf:Property,
         owl:ObjectProperty ;
     dcam:rangeIncludes eu-dga:DataHolder ;
     dct:contributor "Beatriz Esteves, Harshvardhan J. Pandit" ;
-    rdfs:subClassOf dpv:hasEntity ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with data holder"@en ;
@@ -188,7 +185,6 @@ eu-dga:hasDataReuseAssistant a rdf:Property,
     dcam:rangeIncludes eu-dga:DataReuseAssistant ;
     dct:contributor "Beatriz Esteves, Harshvardhan J. Pandit" ;
     dct:source "DGA 7"@en ;
-    rdfs:subClassOf dpv:hasEntity ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with competent body designated by the Member State to assist Public Bodies in activities related to data reuse"@en ;
@@ -199,7 +195,6 @@ eu-dga:hasDataUser a rdf:Property,
         owl:ObjectProperty ;
     dcam:rangeIncludes eu-dga:DataUser ;
     dct:contributor "Beatriz Esteves, Harshvardhan J. Pandit" ;
-    rdfs:subClassOf dpv:hasEntity ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with data user"@en ;
@@ -214,15 +209,15 @@ dpv:LegalEntity rdfs:superClassOf eu-dga:DISP,
         eu-dga:DataUser,
         eu-dga:SIPProvider .
 
-eu-dga:SIP rdfs:superClassOf eu-dga:EUSIPProvider,
-        eu-dga:LocalSIPProvider,
-        eu-dga:NationalSIPProvider,
-        eu-dga:RegionalSIPProvider,
-        eu-dga:SectorialSIPProvider .
-
 dpv:hasEntity rdfs:superPropertyOf eu-dga:hasDAO,
         eu-dga:hasDISP,
         eu-dga:hasDataHolder,
         eu-dga:hasDataReuseAssistant,
         eu-dga:hasDataUser .
+
+eu-dga:SIP rdfs:superClassOf eu-dga:EUSIPProvider,
+        eu-dga:LocalSIPProvider,
+        eu-dga:NationalSIPProvider,
+        eu-dga:RegionalSIPProvider,
+        eu-dga:SectorialSIPProvider .
 

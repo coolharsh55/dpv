@@ -1,55 +1,29 @@
 [
   {
-    "@id": "https://w3id.org/dpv#hasRecipient",
+    "@id": "https://w3id.org/dpv#hasRecipientDataController",
     "@type": [
       "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
       "http://www.w3.org/2004/02/skos/core#Concept"
     ],
     "http://purl.org/dc/dcam/rangeIncludes": [
       {
-        "@id": "https://w3id.org/dpv#Recipient"
+        "@id": "https://w3id.org/dpv#DataController"
       }
     ],
     "http://purl.org/dc/terms/contributor": [
       {
-        "@value": "Axel Polleres, Javier Fernández, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger"
+        "@value": "Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit"
       }
     ],
     "http://purl.org/dc/terms/created": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2019-04-04"
-      }
-    ],
-    "http://purl.org/dc/terms/modified": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2020-11-04"
-      }
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@language": "en",
-        "@value": "(SPECIAL Project,https://specialprivacy.ercim.eu/)"
+        "@value": "2022-02-09"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "https://w3id.org/dpv#hasEntity"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#superPropertyOf": [
-      {
-        "@id": "https://w3id.org/dpv#hasDataProcessor"
-      },
-      {
-        "@id": "https://w3id.org/dpv#hasRecipientDataController"
-      },
-      {
-        "@id": "https://w3id.org/dpv#hasRecipientThirdParty"
-      },
-      {
-        "@id": "https://w3id.org/dpv#hasDataImporter"
+        "@id": "https://w3id.org/dpv#hasRecipient"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -60,13 +34,13 @@
     ],
     "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@id": "https://w3id.org/dpv#hasEntity"
+        "@id": "https://w3id.org/dpv#hasRecipient"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Indicates Recipient of Data"
+        "@value": "Indiciates inclusion or applicability of a Data Controller as a Recipient of persona data"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -74,29 +48,228 @@
         "@id": "https://w3id.org/dpv#entities-legalrole-properties"
       }
     ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "has recipient data controller"
+      }
+    ],
+    "https://schema.org/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#DataController"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#DataProcessor",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2019-06-04"
+      }
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@language": "en",
+        "@value": "(GDPR Art.4-8,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_8/oj)"
+      }
+    ],
+    "http://purl.org/vocab/vann/example": [
+      {
+        "@id": "https://w3id.org/dpv/examples#E0011"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#Recipient"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#DataSubProcessor"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#Recipient"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A ‘processor’ means a natural or legal person, public authority, agency or other body which processes data on behalf of the controller."
+      },
+      {
+        "@language": "de",
+        "@value": "Ein \"Auftragsverarbeiter\" ist eine natürliche oder juristische Person, Behörde, Einrichtung oder andere Stelle, die Daten im Auftrag des für die Verarbeitung Verantwortlichen verarbeitet. (machine-translated)"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#entities-legalrole-classes"
+      }
+    ],
     "http://www.w3.org/2004/02/skos/core#narrower": [
       {
-        "@id": "https://w3id.org/dpv#hasDataProcessor"
-      },
-      {
-        "@id": "https://w3id.org/dpv#hasRecipientDataController"
-      },
-      {
-        "@id": "https://w3id.org/dpv#hasRecipientThirdParty"
-      },
-      {
-        "@id": "https://w3id.org/dpv#hasDataImporter"
+        "@id": "https://w3id.org/dpv#DataSubProcessor"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "has recipient"
+        "@value": "Data Processor"
+      },
+      {
+        "@language": "de",
+        "@value": "Datenverarbeiter (machine-translated)"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#ThirdParty",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
       }
     ],
-    "https://schema.org/rangeIncludes": [
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2019-06-04"
+      }
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@language": "en",
+        "@value": "(GDPR Art.4-10,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_10/oj)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
         "@id": "https://w3id.org/dpv#Recipient"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#Recipient"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A ‘third party’ means a natural or legal person, public authority, agency or body other than the data subject, controller, processor and people who, under the direct authority of the controller or processor, are authorised to process personal data."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#entities-legalrole-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Third Party"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#Representative",
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#DataProtectionOfficer"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv#DataProtectionOfficer"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#DataExporter",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "David Hickey, Georg Krog, Paul Ryan, Harshvardhan Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2021-09-08"
+      }
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@language": "en",
+        "@value": "(EDPB Recommendations 01/2020 on Data Transfers, https://edpb.europa.eu/our-work-tools/our-documents/recommendations/recommendations-012020-measures-supplement-transfer_en)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#LegalEntity"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#LegalEntity"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "An entity that 'exports' data where exporting is considered a form of data transfer"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#entities-legalrole-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Data Exporter"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "The term 'Data Exporter' is used by the EU-EDPB as the entity that transfer data across borders. While the EDPB refers to the jurisdictional border of EU, the term within DPV can be used to denote any 'export' or transfer or transmission of data and is thus a broader concept than the EDPB's definition."
       }
     ]
   },
@@ -158,15 +331,71 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#Representative",
-    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+    "@id": "https://w3id.org/dpv#entities-legalrole-classes",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#DataImporter",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
       {
-        "@id": "https://w3id.org/dpv#DataProtectionOfficer"
+        "@value": "David Hickey, Georg Krog, Paul Ryan, Harshvardhan Pandit"
       }
     ],
-    "http://www.w3.org/2004/02/skos/core#narrower": [
+    "http://purl.org/dc/terms/created": [
       {
-        "@id": "https://w3id.org/dpv#DataProtectionOfficer"
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2021-09-08"
+      }
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@language": "en",
+        "@value": "(EDPB Recommendations 01/2020 on Data Transfers, https://edpb.europa.eu/our-work-tools/our-documents/recommendations/recommendations-012020-measures-supplement-transfer_en)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#Recipient"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#Recipient"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "An entity that 'imports' data where importing is considered a form of data transfer"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#entities-legalrole-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Data Importer"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "The term 'Data Importer' is used by the EU-EDPB as the entity that receives transferred data across borders. While the EDPB refers to the jurisdictional border of EU, the term within DPV can be used to denote any 'import' or reception of transfer or transmission of data and is thus a broader concept than the EDPB's definition."
       }
     ]
   },
@@ -273,305 +502,16 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#entities-legalrole-classes",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#hasDataProtectionOfficer",
-    "@type": [
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://purl.org/dc/dcam/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#DataProtectionOfficer"
-      }
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Paul Ryan, Rob Brennan"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-03-02"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/dpv#hasRepresentative"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#hasRepresentative"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Specifices an associated data protection officer"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#entities-legalrole-properties"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "has data protection officer"
-      }
-    ],
-    "https://schema.org/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#DataProtectionOfficer"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#hasDataProcessor",
-    "@type": [
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://purl.org/dc/dcam/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#DataProcessor"
-      }
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-02-09"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/dpv#hasRecipient"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#hasRecipient"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Indiciates inclusion or applicability of a Data Processor"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#entities-legalrole-properties"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "has data processor"
-      }
-    ],
-    "https://schema.org/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#DataProcessor"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#hasRecipientDataController",
-    "@type": [
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://purl.org/dc/dcam/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#DataController"
-      }
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-02-09"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/dpv#hasRecipient"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#hasRecipient"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Indiciates inclusion or applicability of a Data Controller as a Recipient of persona data"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#entities-legalrole-properties"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "has recipient data controller"
-      }
-    ],
-    "https://schema.org/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#DataController"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#hasEntity",
+    "@id": "https://w3id.org/dpv#hasRepresentative",
     "http://www.w3.org/2000/01/rdf-schema#superPropertyOf": [
       {
-        "@id": "https://w3id.org/dpv#hasDataController"
-      },
-      {
-        "@id": "https://w3id.org/dpv#hasRecipient"
-      },
-      {
-        "@id": "https://w3id.org/dpv#hasDataExporter"
+        "@id": "https://w3id.org/dpv#hasDataProtectionOfficer"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#narrower": [
       {
-        "@id": "https://w3id.org/dpv#hasDataController"
-      },
-      {
-        "@id": "https://w3id.org/dpv#hasRecipient"
-      },
-      {
-        "@id": "https://w3id.org/dpv#hasDataExporter"
+        "@id": "https://w3id.org/dpv#hasDataProtectionOfficer"
       }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#ThirdParty",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2019-06-04"
-      }
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@language": "en",
-        "@value": "(GDPR Art.4-10,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_10/oj)"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#Recipient"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#Recipient"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A ‘third party’ means a natural or legal person, public authority, agency or body other than the data subject, controller, processor and people who, under the direct authority of the controller or processor, are authorised to process personal data."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#entities-legalrole-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Third Party"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#LegalEntity",
-    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#DataController"
-      },
-      {
-        "@id": "https://w3id.org/dpv#Recipient"
-      },
-      {
-        "@id": "https://w3id.org/dpv#DataExporter"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv#DataController"
-      },
-      {
-        "@id": "https://w3id.org/dpv#Recipient"
-      },
-      {
-        "@id": "https://w3id.org/dpv#DataExporter"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#entities-legalrole-properties",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
     ]
   },
   {
@@ -652,6 +592,67 @@
     ]
   },
   {
+    "@id": "https://w3id.org/dpv#hasDataProcessor",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/dcam/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#DataProcessor"
+      }
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-02-09"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/dpv#hasRecipient"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#hasRecipient"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Indiciates inclusion or applicability of a Data Processor"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#entities-legalrole-properties"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "has data processor"
+      }
+    ],
+    "https://schema.org/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#DataProcessor"
+      }
+    ]
+  },
+  {
     "@id": "https://w3id.org/dpv#DataProtectionOfficer",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
@@ -711,82 +712,6 @@
       {
         "@language": "en",
         "@value": "Data Protection Officer"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#hasRepresentative",
-    "http://www.w3.org/2000/01/rdf-schema#superPropertyOf": [
-      {
-        "@id": "https://w3id.org/dpv#hasDataProtectionOfficer"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv#hasDataProtectionOfficer"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#DataImporter",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "David Hickey, Georg Krog, Paul Ryan, Harshvardhan Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2021-09-08"
-      }
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@language": "en",
-        "@value": "(EDPB Recommendations 01/2020 on Data Transfers, https://edpb.europa.eu/our-work-tools/our-documents/recommendations/recommendations-012020-measures-supplement-transfer_en)"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#Recipient"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#Recipient"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "An entity that 'imports' data where importing is considered a form of data transfer"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#entities-legalrole-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Data Importer"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "The term 'Data Importer' is used by the EU-EDPB as the entity that receives transferred data across borders. While the EDPB refers to the jurisdictional border of EU, the term within DPV can be used to denote any 'import' or reception of transfer or transmission of data and is thus a broader concept than the EDPB's definition."
       }
     ]
   },
@@ -890,149 +815,6 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#DataProcessor",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2019-06-04"
-      }
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@language": "en",
-        "@value": "(GDPR Art.4-8,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_8/oj)"
-      }
-    ],
-    "http://purl.org/vocab/vann/example": [
-      {
-        "@id": "https://w3id.org/dpv/examples#E0011"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#Recipient"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#DataSubProcessor"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#Recipient"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A ‘processor’ means a natural or legal person, public authority, agency or other body which processes data on behalf of the controller."
-      },
-      {
-        "@language": "de",
-        "@value": "Ein \"Auftragsverarbeiter\" ist eine natürliche oder juristische Person, Behörde, Einrichtung oder andere Stelle, die Daten im Auftrag des für die Verarbeitung Verantwortlichen verarbeitet. (machine-translated)"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#entities-legalrole-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv#DataSubProcessor"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Data Processor"
-      },
-      {
-        "@language": "de",
-        "@value": "Datenverarbeiter (machine-translated)"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#DataExporter",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "David Hickey, Georg Krog, Paul Ryan, Harshvardhan Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2021-09-08"
-      }
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@language": "en",
-        "@value": "(EDPB Recommendations 01/2020 on Data Transfers, https://edpb.europa.eu/our-work-tools/our-documents/recommendations/recommendations-012020-measures-supplement-transfer_en)"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#LegalEntity"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#LegalEntity"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "An entity that 'exports' data where exporting is considered a form of data transfer"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#entities-legalrole-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Data Exporter"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "The term 'Data Exporter' is used by the EU-EDPB as the entity that transfer data across borders. While the EDPB refers to the jurisdictional border of EU, the term within DPV can be used to denote any 'export' or transfer or transmission of data and is thus a broader concept than the EDPB's definition."
-      }
-    ]
-  },
-  {
     "@id": "https://w3id.org/dpv#JointDataControllers",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
@@ -1090,14 +872,20 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#hasJointDataControllers",
+    "@id": "https://w3id.org/dpv#entities-legalrole-properties",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#hasDataExporter",
     "@type": [
       "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
       "http://www.w3.org/2004/02/skos/core#Concept"
     ],
     "http://purl.org/dc/dcam/rangeIncludes": [
       {
-        "@id": "https://w3id.org/dpv#JointDataControllers"
+        "@id": "https://w3id.org/dpv#DataExporter"
       }
     ],
     "http://purl.org/dc/terms/contributor": [
@@ -1113,7 +901,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "https://w3id.org/dpv#hasDataController"
+        "@id": "https://w3id.org/dpv#hasEntity"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -1124,13 +912,13 @@
     ],
     "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@id": "https://w3id.org/dpv#hasDataController"
+        "@id": "https://w3id.org/dpv#hasEntity"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Indicates inclusion or applicability of a Joint Data Controller"
+        "@value": "Indiciates inclusion or applicability of a LegalEntity in the role of Data Exporter"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -1141,12 +929,37 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "has joint data controllers"
+        "@value": "has data exporter"
       }
     ],
     "https://schema.org/rangeIncludes": [
       {
-        "@id": "https://w3id.org/dpv#JointDataControllers"
+        "@id": "https://w3id.org/dpv#DataExporter"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#LegalEntity",
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#DataController"
+      },
+      {
+        "@id": "https://w3id.org/dpv#Recipient"
+      },
+      {
+        "@id": "https://w3id.org/dpv#DataExporter"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv#DataController"
+      },
+      {
+        "@id": "https://w3id.org/dpv#Recipient"
+      },
+      {
+        "@id": "https://w3id.org/dpv#DataExporter"
       }
     ]
   },
@@ -1212,30 +1025,56 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#hasDataExporter",
+    "@id": "https://w3id.org/dpv#hasRecipient",
     "@type": [
       "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
       "http://www.w3.org/2004/02/skos/core#Concept"
     ],
     "http://purl.org/dc/dcam/rangeIncludes": [
       {
-        "@id": "https://w3id.org/dpv#DataExporter"
+        "@id": "https://w3id.org/dpv#Recipient"
       }
     ],
     "http://purl.org/dc/terms/contributor": [
       {
-        "@value": "Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit"
+        "@value": "Axel Polleres, Javier Fernández, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger"
       }
     ],
     "http://purl.org/dc/terms/created": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-02-09"
+        "@value": "2019-04-04"
+      }
+    ],
+    "http://purl.org/dc/terms/modified": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2020-11-04"
+      }
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@language": "en",
+        "@value": "(SPECIAL Project,https://specialprivacy.ercim.eu/)"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
         "@id": "https://w3id.org/dpv#hasEntity"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#superPropertyOf": [
+      {
+        "@id": "https://w3id.org/dpv#hasDataProcessor"
+      },
+      {
+        "@id": "https://w3id.org/dpv#hasRecipientDataController"
+      },
+      {
+        "@id": "https://w3id.org/dpv#hasRecipientThirdParty"
+      },
+      {
+        "@id": "https://w3id.org/dpv#hasDataImporter"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -1252,7 +1091,7 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Indiciates inclusion or applicability of a LegalEntity in the role of Data Exporter"
+        "@value": "Indicates Recipient of Data"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -1260,15 +1099,29 @@
         "@id": "https://w3id.org/dpv#entities-legalrole-properties"
       }
     ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv#hasDataProcessor"
+      },
+      {
+        "@id": "https://w3id.org/dpv#hasRecipientDataController"
+      },
+      {
+        "@id": "https://w3id.org/dpv#hasRecipientThirdParty"
+      },
+      {
+        "@id": "https://w3id.org/dpv#hasDataImporter"
+      }
+    ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "has data exporter"
+        "@value": "has recipient"
       }
     ],
     "https://schema.org/rangeIncludes": [
       {
-        "@id": "https://w3id.org/dpv#DataExporter"
+        "@id": "https://w3id.org/dpv#Recipient"
       }
     ]
   },
@@ -1330,6 +1183,153 @@
     "https://schema.org/rangeIncludes": [
       {
         "@id": "https://w3id.org/dpv#DataImporter"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#hasEntity",
+    "http://www.w3.org/2000/01/rdf-schema#superPropertyOf": [
+      {
+        "@id": "https://w3id.org/dpv#hasDataController"
+      },
+      {
+        "@id": "https://w3id.org/dpv#hasRecipient"
+      },
+      {
+        "@id": "https://w3id.org/dpv#hasDataExporter"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv#hasDataController"
+      },
+      {
+        "@id": "https://w3id.org/dpv#hasRecipient"
+      },
+      {
+        "@id": "https://w3id.org/dpv#hasDataExporter"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#hasJointDataControllers",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/dcam/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#JointDataControllers"
+      }
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-02-09"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/dpv#hasDataController"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#hasDataController"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Indicates inclusion or applicability of a Joint Data Controller"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#entities-legalrole-properties"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "has joint data controllers"
+      }
+    ],
+    "https://schema.org/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#JointDataControllers"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#hasDataProtectionOfficer",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/dcam/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#DataProtectionOfficer"
+      }
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Paul Ryan, Rob Brennan"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-03-02"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/dpv#hasRepresentative"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#hasRepresentative"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Specifices an associated data protection officer"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#entities-legalrole-properties"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "has data protection officer"
+      }
+    ],
+    "https://schema.org/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#DataProtectionOfficer"
       }
     ]
   }

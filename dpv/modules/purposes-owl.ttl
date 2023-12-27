@@ -38,6 +38,7 @@ dpv:Advertising a rdfs:Class,
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Beatriz Esteves" ;
     dct:created "2020-11-04"^^xsd:date ;
     rdfs:subClassOf dpv:Marketing ;
+    rdfs:superClassOf dpv:PersonalisedAdvertising ;
     sw:term_status "accepted"@en ;
     skos:definition "Purposes associated with conducting advertising i.e. process or artefact used to call attention to a product, service, etc. through announcements, notices, or other forms of communication"@en ;
     skos:prefLabel "Advertising"@en ;
@@ -81,6 +82,7 @@ dpv:CommunicationManagement a rdfs:Class,
     dct:contributor "Georg P Krog, Paul Ryan, David Hickey, Harshvardhan J. Pandit" ;
     dct:created "2021-09-01"^^xsd:date ;
     rdfs:subClassOf dpv:Purpose ;
+    rdfs:superClassOf dpv:CommunicationForCustomerCare ;
     sw:term_status "accepted"@en ;
     skos:definition "Communication Management refers to purposes associated with providing or managing communication activities e.g. to send an email for notifying some information"@en ;
     skos:prefLabel "Communication Management"@en ;
@@ -102,6 +104,8 @@ dpv:CreditChecking a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-04-20"^^xsd:date ;
     rdfs:subClassOf dpv:CustomerSolvencyMonitoring ;
+    rdfs:superClassOf dpv:MaintainCreditCheckingDatabase,
+        dpv:MaintainCreditRatingDatabase ;
     sw:term_status "accepted"@en ;
     skos:definition "Purposes associated with monitoring, performing, or assessing credit worthiness or solvency"@en ;
     skos:prefLabel "Credit Checking"@en .
@@ -112,6 +116,7 @@ dpv:CustomerCare a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal" ;
     dct:created "2019-04-05"^^xsd:date ;
     rdfs:subClassOf dpv:CustomerManagement ;
+    rdfs:superClassOf dpv:CommunicationForCustomerCare ;
     sw:term_status "accepted"@en ;
     skos:definition "Customer Care refers to purposes associated with purposes for providing assistance, resolving issues, ensuring satisfaction, etc. in relation to services provided"@en ;
     skos:prefLabel "Customer Care"@en ;
@@ -134,6 +139,11 @@ dpv:CustomerManagement a rdfs:Class,
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Beatriz" ;
     dct:created "2021-09-08"^^xsd:date ;
     rdfs:subClassOf dpv:Purpose ;
+    rdfs:superClassOf dpv:CustomerCare,
+        dpv:CustomerClaimsManagement,
+        dpv:CustomerOrderManagement,
+        dpv:CustomerRelationshipManagement,
+        dpv:CustomerSolvencyMonitoring ;
     sw:term_status "accepted"@en ;
     skos:definition "Customer Management refers to purposes associated with managing activities related with past, current, and future customers"@en ;
     skos:prefLabel "Customer Management"@en .
@@ -155,6 +165,7 @@ dpv:CustomerRelationshipManagement a rdfs:Class,
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Beatriz" ;
     dct:created "2021-09-08"^^xsd:date ;
     rdfs:subClassOf dpv:CustomerManagement ;
+    rdfs:superClassOf dpv:ImproveInternalCRMProcesses ;
     sw:term_status "accepted"@en ;
     skos:definition "Customer Relationship Management refers to purposes associated with managing and analysing interactions with past, current, and potential customers"@en ;
     skos:prefLabel "Customer Relationship Management"@en .
@@ -166,6 +177,7 @@ dpv:CustomerSolvencyMonitoring a rdfs:Class,
     dct:created "2021-09-08"^^xsd:date ;
     dct:source "(Belgian DPA ROPA Template, https://www.privacycommission.be/nl/model-voor-een-register-van-de-verwerkingsactiviteiten)"@en ;
     rdfs:subClassOf dpv:CustomerManagement ;
+    rdfs:superClassOf dpv:CreditChecking ;
     sw:term_status "accepted"@en ;
     skos:definition "Customer Solvency Monitoring refers to purposes associated with monitor solvency of customers for financial diligence"@en ;
     skos:prefLabel "Customer Solvency Monitoring"@en .
@@ -220,6 +232,10 @@ dpv:EnforceSecurity a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal" ;
     dct:created "2019-04-05"^^xsd:date ;
     rdfs:subClassOf dpv:Purpose ;
+    rdfs:superClassOf dpv:AntiTerrorismOperations,
+        dpv:EnforceAccessControl,
+        dpv:FraudPreventionAndDetection,
+        dpv:IdentityVerification ;
     sw:term_status "accepted"@en ;
     skos:definition "Purposes associated with ensuring and enforcing security for data, personnel, or other related matters"@en ;
     skos:prefLabel "Enforce Security"@en ;
@@ -241,6 +257,8 @@ dpv:FraudPreventionAndDetection a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal" ;
     dct:created "2019-04-05"^^xsd:date ;
     rdfs:subClassOf dpv:EnforceSecurity ;
+    rdfs:superClassOf dpv:CounterMoneyLaundering,
+        dpv:MaintainFraudDatabase ;
     sw:term_status "accepted"@en ;
     skos:definition "Purposes associated with fraud detection, prevention, and mitigation"@en ;
     skos:prefLabel "Fraud Prevention and Detection"@en ;
@@ -262,6 +280,8 @@ dpv:FulfilmentOfObligation a rdfs:Class,
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit" ;
     dct:created "2022-11-09"^^xsd:date ;
     rdfs:subClassOf dpv:Purpose ;
+    rdfs:superClassOf dpv:FulfilmentOfContractualObligation,
+        dpv:LegalCompliance ;
     sw:term_status "accepted"@en ;
     skos:definition "Purposes associated with carrying out data processing to fulfill an obligation"@en ;
     skos:prefLabel "Fulfilment of Obligation"@en .
@@ -273,6 +293,7 @@ dpv:HumanResourceManagement a rdfs:Class,
     dct:created "2021-09-01"^^xsd:date ;
     dct:source "(Belgian DPA ROPA Template, https://www.privacycommission.be/nl/model-voor-een-register-van-de-verwerkingsactiviteiten)"@en ;
     rdfs:subClassOf dpv:Purpose ;
+    rdfs:superClassOf dpv:PersonnelManagement ;
     sw:term_status "accepted"@en ;
     skos:definition "Purposes associated with managing humans and 'human resources' within the organisation for effective and efficient operations."@en ;
     skos:prefLabel "Human Resource Management"@en ;
@@ -377,6 +398,10 @@ dpv:Marketing a rdfs:Class,
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Beatriz Esteves" ;
     dct:created "2020-11-04"^^xsd:date ;
     rdfs:subClassOf dpv:Purpose ;
+    rdfs:superClassOf dpv:Advertising,
+        dpv:DirectMarketing,
+        dpv:PublicRelations,
+        dpv:SocialMediaMarketing ;
     sw:term_status "accepted"@en ;
     skos:definition "Purposes associated with conducting marketing in relation to organisation or products or services e.g. promoting, selling, and distributing"@en ;
     skos:prefLabel "Marketing"@en ;
@@ -409,6 +434,7 @@ dpv:OptimisationForConsumer a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal" ;
     dct:created "2019-04-05"^^xsd:date ;
     rdfs:subClassOf dpv:ServiceOptimisation ;
+    rdfs:superClassOf dpv:OptimiseUserInterface ;
     sw:term_status "accepted"@en ;
     skos:definition "Purposes associated with optimisation of activities and services for consumer or user"@en ;
     skos:prefLabel "Optimisation for Consumer"@en ;
@@ -421,6 +447,10 @@ dpv:OptimisationForController a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal" ;
     dct:created "2019-04-05"^^xsd:date ;
     rdfs:subClassOf dpv:ServiceOptimisation ;
+    rdfs:superClassOf dpv:ImproveExistingProductsAndServices,
+        dpv:ImproveInternalCRMProcesses,
+        dpv:IncreaseServiceRobustness,
+        dpv:InternalResourceOptimisation ;
     sw:term_status "accepted"@en ;
     skos:definition "Purposes associated with optimisation of activities and services for provider or controller"@en ;
     skos:prefLabel "Optimisation for Controller"@en .
@@ -453,6 +483,10 @@ dpv:OrganisationGovernance a rdfs:Class,
     dct:created "2021-09-01"^^xsd:date ;
     dct:source "(Belgian DPA ROPA Template, https://www.privacycommission.be/nl/model-voor-een-register-van-de-verwerkingsactiviteiten)"@en ;
     rdfs:subClassOf dpv:Purpose ;
+    rdfs:superClassOf dpv:DisputeManagement,
+        dpv:MemberPartnerManagement,
+        dpv:OrganisationComplianceManagement,
+        dpv:OrganisationRiskManagement ;
     sw:term_status "accepted"@en ;
     skos:definition "Purposes associated with conducting activities and functions for governance of an organisation"@en ;
     skos:prefLabel "Organisation Governance"@en .
@@ -483,6 +517,8 @@ dpv:Personalisation a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2021-09-01"^^xsd:date ;
     rdfs:subClassOf dpv:Purpose ;
+    rdfs:superClassOf dpv:PersonalisedAdvertising,
+        dpv:ServicePersonalisation ;
     sw:term_status "accepted"@en ;
     skos:definition "Purposes associated with creating and providing customisation based on attributes and/or needs of person(s) or context(s)."@en ;
     skos:prefLabel "Personalisation"@en ;
@@ -495,6 +531,7 @@ dpv:PersonalisedAdvertising a rdfs:Class,
     dct:created "2020-11-04"^^xsd:date ;
     rdfs:subClassOf dpv:Advertising,
         dpv:Personalisation ;
+    rdfs:superClassOf dpv:TargetedAdvertising ;
     sw:term_status "accepted"@en ;
     skos:definition "Purposes associated with creating and providing personalised advertising"@en ;
     skos:prefLabel "Personalised Advertising"@en .
@@ -526,6 +563,8 @@ dpv:PersonnelManagement a rdfs:Class,
     dct:created "2022-03-30"^^xsd:date ;
     dct:source "(Belgian DPA ROPA Template, https://www.privacycommission.be/nl/model-voor-een-register-van-de-verwerkingsactiviteiten)"@en ;
     rdfs:subClassOf dpv:HumanResourceManagement ;
+    rdfs:superClassOf dpv:PersonnelHiring,
+        dpv:PersonnelPayment ;
     sw:term_status "accepted"@en ;
     skos:definition "Purposes associated with management of personnel associated with the organisation e.g. evaluation and management of employees and intermediaries"@en ;
     skos:prefLabel "Personnel Management"@en .
@@ -560,6 +599,8 @@ dpv:ProvidePersonalisedRecommendations a rdfs:Class,
     dct:modified "2022-10-14"^^xsd:date ;
     dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/)"@en ;
     rdfs:subClassOf dpv:ServicePersonalisation ;
+    rdfs:superClassOf dpv:ProvideEventRecommendations,
+        dpv:ProvideProductRecommendations ;
     sw:term_status "accepted"@en ;
     skos:definition "Purposes associated with creating and providing personalised recommendations"@en ;
     skos:prefLabel "Provide Personalised Recommendations"@en .
@@ -601,6 +642,20 @@ dpv:Purpose a rdfs:Class,
         dex:E0009,
         dex:E0010,
         dex:E0014 ;
+    rdfs:superClassOf dpv:AccountManagement,
+        dpv:CommunicationManagement,
+        dpv:CustomerManagement,
+        dpv:EnforceSecurity,
+        dpv:EstablishContractualAgreement,
+        dpv:FulfilmentOfObligation,
+        dpv:HumanResourceManagement,
+        dpv:Marketing,
+        dpv:OrganisationGovernance,
+        dpv:Personalisation,
+        dpv:RecordManagement,
+        dpv:ResearchAndDevelopment,
+        dpv:ServiceProvision,
+        dpv:VendorManagement ;
     sw:term_status "accepted"@en ;
     skos:definition "Purpose or Goal of processing data or using technology"@en ;
     skos:prefLabel "Purpose"@en ;
@@ -635,6 +690,7 @@ dpv:RequestedServiceProvision a rdfs:Class,
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Beatriz Esteves" ;
     dct:created "2021-09-08"^^xsd:date ;
     rdfs:subClassOf dpv:ServiceProvision ;
+    rdfs:superClassOf dpv:DeliveryOfGoods ;
     sw:term_status "accepted"@en ;
     skos:definition "Purposes associated with delivering services as requested by user or consumer"@en ;
     skos:prefLabel "Requested Service Provision"@en ;
@@ -646,6 +702,9 @@ dpv:ResearchAndDevelopment a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal" ;
     dct:created "2019-04-05"^^xsd:date ;
     rdfs:subClassOf dpv:Purpose ;
+    rdfs:superClassOf dpv:AcademicResearch,
+        dpv:CommercialResearch,
+        dpv:NonCommercialResearch ;
     sw:term_status "accepted"@en ;
     skos:definition "Purposes associated with conducting research and development for new methods, products, or services"@en ;
     skos:prefLabel "Research and Development"@en .
@@ -698,6 +757,9 @@ dpv:SellProducts a rdfs:Class,
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Beatriz Esteves" ;
     dct:created "2021-09-08"^^xsd:date ;
     rdfs:subClassOf dpv:ServiceProvision ;
+    rdfs:superClassOf dpv:SellDataToThirdParties,
+        dpv:SellInsightsFromData,
+        dpv:SellProductsToDataSubject ;
     sw:term_status "accepted"@en ;
     skos:definition "Purposes associated with selling products or services"@en ;
     skos:prefLabel "Sell Products"@en ;
@@ -720,6 +782,8 @@ dpv:ServiceOptimisation a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit, Javier Fernandez, Axel Polleres, Elmar Kiesling, Fajar Ekaputra, Simon Steyskal" ;
     dct:created "2019-04-05"^^xsd:date ;
     rdfs:subClassOf dpv:ServiceProvision ;
+    rdfs:superClassOf dpv:OptimisationForConsumer,
+        dpv:OptimisationForController ;
     sw:term_status "accepted"@en ;
     skos:definition "Purposes associated with optimisation of services or activities"@en ;
     skos:prefLabel "Service Optimisation"@en ;
@@ -732,6 +796,9 @@ dpv:ServicePersonalisation a rdfs:Class,
     dct:created "2019-04-05"^^xsd:date ;
     rdfs:subClassOf dpv:Personalisation,
         dpv:ServiceProvision ;
+    rdfs:superClassOf dpv:PersonalisedBenefits,
+        dpv:ProvidePersonalisedRecommendations,
+        dpv:UserInterfacePersonalisation ;
     sw:term_status "accepted"@en ;
     skos:definition "Purposes associated with providing personalisation within services or product or activities"@en ;
     skos:prefLabel "Service Personalisation"@en .
@@ -743,6 +810,16 @@ dpv:ServiceProvision a rdfs:Class,
     dct:created "2019-04-05"^^xsd:date ;
     vann:example dex:E0018 ;
     rdfs:subClassOf dpv:Purpose ;
+    rdfs:superClassOf dpv:PaymentManagement,
+        dpv:RepairImpairments,
+        dpv:RequestedServiceProvision,
+        dpv:SearchFunctionalities,
+        dpv:SellProducts,
+        dpv:ServiceOptimisation,
+        dpv:ServicePersonalisation,
+        dpv:ServiceRegistration,
+        dpv:ServiceUsageAnalytics,
+        dpv:TechnicalServiceProvision ;
     sw:term_status "accepted"@en ;
     skos:definition "Purposes associated with providing service or product or activities"@en ;
     skos:prefLabel "Service Provision"@en .
@@ -818,6 +895,9 @@ dpv:VendorManagement a rdfs:Class,
     dct:created "2021-09-01"^^xsd:date ;
     dct:source "(Belgian DPA ROPA Template, https://www.privacycommission.be/nl/model-voor-een-register-van-de-verwerkingsactiviteiten)"@en ;
     rdfs:subClassOf dpv:Purpose ;
+    rdfs:superClassOf dpv:VendorPayment,
+        dpv:VendorRecordsManagement,
+        dpv:VendorSelectionAssessment ;
     sw:term_status "accepted"@en ;
     skos:definition "Purposes associated with manage orders, payment, evaluation, and prospecting related to vendors"@en ;
     skos:prefLabel "Vendor Management"@en .

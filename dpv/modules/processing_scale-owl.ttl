@@ -14,6 +14,12 @@ dpv:DataSubjectScale a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit, Georg P Krog, Rana Saniei" ;
     dct:created "2022-06-15"^^xsd:date ;
     rdfs:subClassOf dpv:Scale ;
+    rdfs:superClassOf dpv:HugeScaleOfDataSubjects,
+        dpv:LargeScaleOfDataSubjects,
+        dpv:MediumScaleOfDataSubjects,
+        dpv:SingularScaleOfDataSubjects,
+        dpv:SmallScaleOfDataSubjects,
+        dpv:SporadicScaleOfDataSubjects ;
     sw:term_status "accepted"@en ;
     skos:definition "Scale of Data Subject(s)"@en ;
     skos:prefLabel "Data Subject Scale"@en .
@@ -23,6 +29,12 @@ dpv:DataVolume a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit, Georg P Krog, Rana Saniei" ;
     dct:created "2022-06-15"^^xsd:date ;
     rdfs:subClassOf dpv:Scale ;
+    rdfs:superClassOf dpv:HugeDataVolume,
+        dpv:LargeDataVolume,
+        dpv:MediumDataVolume,
+        dpv:SingularDataVolume,
+        dpv:SmallDataVolume,
+        dpv:SporadicDataVolume ;
     sw:term_status "accepted"@en ;
     skos:definition "Volume or Scale of Data"@en ;
     skos:prefLabel "Data Volume"@en .
@@ -32,6 +44,13 @@ dpv:GeographicCoverage a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit, Georg P Krog, Paul Ryan" ;
     dct:created "2022-06-15"^^xsd:date ;
     rdfs:subClassOf dpv:Scale ;
+    rdfs:superClassOf dpv:GlobalScale,
+        dpv:LocalEnvironmentScale,
+        dpv:LocalityScale,
+        dpv:MultiNationalScale,
+        dpv:NationalScale,
+        dpv:NearlyGlobalScale,
+        dpv:RegionalScale ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicate of scale in terms of geographic coverage"@en ;
     skos:prefLabel "Geographic Coverage"@en .
@@ -186,6 +205,9 @@ dpv:ProcessingScale a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit, Piero Bonatti" ;
     dct:created "2022-09-07"^^xsd:date ;
     rdfs:subClassOf dpv:Scale ;
+    rdfs:superClassOf dpv:LargeScaleProcessing,
+        dpv:MediumScaleProcessing,
+        dpv:SmallScaleProcessing ;
     sw:term_status "accepted"@en ;
     skos:definition "Scale of Processing"@en ;
     skos:prefLabel "Processing Scale"@en ;
@@ -292,7 +314,6 @@ dpv:hasDataSubjectScale a rdf:Property,
     dcam:rangeIncludes dpv:DataSubjectScale ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-22"^^xsd:date ;
-    rdfs:subClassOf dpv:hasScale ;
     rdfs:subPropertyOf dpv:hasScale ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the scale of data subjects"@en ;
@@ -304,7 +325,6 @@ dpv:hasDataVolume a rdf:Property,
     dcam:rangeIncludes dpv:DataVolume ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-22"^^xsd:date ;
-    rdfs:subClassOf dpv:hasScale ;
     rdfs:subPropertyOf dpv:hasScale ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the volume of data"@en ;
@@ -316,7 +336,6 @@ dpv:hasGeographicCoverage a rdf:Property,
     dcam:rangeIncludes dpv:GeographicCoverage ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-22"^^xsd:date ;
-    rdfs:subClassOf dpv:hasScale ;
     rdfs:subPropertyOf dpv:hasScale ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicate the geographic coverage (of specified context)"@en ;

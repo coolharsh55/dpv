@@ -33,6 +33,9 @@ eu-gdpr:GDPRLawfulness a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-10-22"^^xsd:date ;
     rdfs:subClassOf dpv:Lawfulness ;
+    rdfs:superClassOf eu-gdpr:GDPRComplianceUnknown,
+        eu-gdpr:GDPRCompliant,
+        eu-gdpr:GDPRNonCompliant ;
     sw:term_status "accepted"@en ;
     skos:definition "Status or state associated with being lawful or legally compliant regarding GDPR"@en ;
     skos:prefLabel "GDPR Lawfulness"@en .
@@ -46,4 +49,6 @@ eu-gdpr:GDPRNonCompliant a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:definition "State of being unlawful or legally non-compliant for GDPR"@en ;
     skos:prefLabel "GDPR Non-compliant"@en .
+
+dpv:Lawfulness rdfs:superClassOf eu-gdpr:GDPRLawfulness .
 

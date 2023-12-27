@@ -68,3 +68,12 @@ tech:SecurityManagementTechnology a rdfs:Class,
     skos:definition "Technology related to management of security"@en ;
     skos:prefLabel "Security Management Technology"@en .
 
+tech:ManagementTechnology rdfs:superClassOf tech:SecurityManagementTechnology .
+
+tech:SecurityTechnology rdfs:superClassOf tech:DetectionSecurityTechnology,
+        tech:MitigationSecurityTechnology,
+        tech:MonitoringSecurityTechnology,
+        tech:PET,
+        tech:PreventionSecurityTechnology,
+        tech:SecurityManagementTechnology .
+

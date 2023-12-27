@@ -1,5 +1,66 @@
 [
   {
+    "@id": "https://w3id.org/dpv#hasRepresentative",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/dcam/domainIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Entity"
+      }
+    ],
+    "http://purl.org/dc/dcam/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Representative"
+      }
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J.Pandit, Georg P Krog, Paul Ryan, Beatriz Esteves"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2020-11-04"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "https://w3id.org/dpv#hasEntity"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Specifies representative of the legal entity"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "has representative"
+      }
+    ],
+    "https://schema.org/domainIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Entity"
+      }
+    ],
+    "https://schema.org/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Representative"
+      }
+    ]
+  },
+  {
     "@id": "https://w3id.org/dpv#isRepresentativeFor",
     "@type": [
       "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
@@ -24,11 +85,6 @@
       {
         "@type": "http://www.w3.org/2001/XMLSchema#date",
         "@value": "2022-11-09"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#hasEntity"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
@@ -112,6 +168,140 @@
     ]
   },
   {
+    "@id": "https://w3id.org/dpv#NaturalPerson",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-02-09"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#Entity"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A human"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Natural Person"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#Representative",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Georg Krog, Paul Ryan, Harshvardhan J. Pandit, Beatriz Esteves"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2020-11-04"
+      }
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@language": "en",
+        "@value": "(GDPR Art.27,https://eur-lex.europa.eu/eli/reg/2016/679/art_27/oj)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#LegalEntity"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A representative of a legal entity"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Representative"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#LegalEntity",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2019-04-05"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#Entity"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#Representative"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A human or non-human 'thing' that constitutes as an entity and which is recognised and defined in law"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Legal Entity"
+      }
+    ]
+  },
+  {
     "@id": "https://w3id.org/dpv#hasEntity",
     "@type": [
       "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
@@ -175,10 +365,15 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#NaturalPerson",
+    "@id": "https://w3id.org/dpv#hasResponsibleEntity",
     "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/dcam/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Entity"
+      }
     ],
     "http://purl.org/dc/terms/contributor": [
       {
@@ -188,12 +383,12 @@
     "http://purl.org/dc/terms/created": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-02-09"
+        "@value": "2022-03-02"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
-        "@id": "https://w3id.org/dpv#Entity"
+        "@id": "https://w3id.org/dpv#hasEntity"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -205,18 +400,23 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "A human"
+        "@value": "Specifies the indicated entity is responsible within some context"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Natural Person"
+        "@value": "has responsible entity"
+      }
+    ],
+    "https://schema.org/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Entity"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#LegalEntity",
+    "@id": "https://w3id.org/dpv#Entity",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class",
       "http://www.w3.org/2002/07/owl#Class"
@@ -229,17 +429,20 @@
     "http://purl.org/dc/terms/created": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2019-04-05"
+        "@value": "2022-02-02"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "http://purl.org/vocab/vann/example": [
       {
-        "@id": "https://w3id.org/dpv#Entity"
+        "@id": "https://w3id.org/dpv/examples#E0027"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
       {
-        "@id": "https://w3id.org/dpv#Representative"
+        "@id": "https://w3id.org/dpv#LegalEntity"
+      },
+      {
+        "@id": "https://w3id.org/dpv#NaturalPerson"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -251,13 +454,13 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "A human or non-human 'thing' that constitutes as an entity and which is recognised and defined in law"
+        "@value": "A human or non-human 'thing' that constitutes as an entity"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Legal Entity"
+        "@value": "Entity"
       }
     ]
   },
@@ -350,224 +553,6 @@
     "https://schema.org/domainIncludes": [
       {
         "@id": "https://w3id.org/dpv#Entity"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#Entity",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-02-02"
-      }
-    ],
-    "http://purl.org/vocab/vann/example": [
-      {
-        "@id": "https://w3id.org/dpv/examples#E0027"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#LegalEntity"
-      },
-      {
-        "@id": "https://w3id.org/dpv#NaturalPerson"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A human or non-human 'thing' that constitutes as an entity"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Entity"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#hasResponsibleEntity",
-    "@type": [
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://purl.org/dc/dcam/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Entity"
-      }
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-03-02"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#hasEntity"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/dpv#hasEntity"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Specifies the indicated entity is responsible within some context"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "has responsible entity"
-      }
-    ],
-    "https://schema.org/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Entity"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#hasRepresentative",
-    "@type": [
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://purl.org/dc/dcam/domainIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Entity"
-      }
-    ],
-    "http://purl.org/dc/dcam/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Representative"
-      }
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J.Pandit, Georg P Krog, Paul Ryan, Beatriz Esteves"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2020-11-04"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#hasEntity"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "https://w3id.org/dpv#hasEntity"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Specifies representative of the legal entity"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "has representative"
-      }
-    ],
-    "https://schema.org/domainIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Entity"
-      }
-    ],
-    "https://schema.org/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Representative"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#Representative",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Georg Krog, Paul Ryan, Harshvardhan J. Pandit, Beatriz Esteves"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2020-11-04"
-      }
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@language": "en",
-        "@value": "(GDPR Art.27,https://eur-lex.europa.eu/eli/reg/2016/679/art_27/oj)"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#LegalEntity"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A representative of a legal entity"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Representative"
       }
     ]
   }

@@ -119,3 +119,19 @@ tech:DataUsageTechnology a rdfs:Class,
     skos:definition "Technology related to using data"@en ;
     skos:prefLabel "Data Usage Technology"@en .
 
+tech:ManagementTechnology rdfs:superClassOf tech:DataManagementTechnology .
+
+tech:SecurityTechnology rdfs:superClassOf tech:DataSecurityTechnology .
+
+tech:DataTechnology rdfs:superClassOf tech:DataCopyingTechnology,
+        tech:DataDisclosureTechnology,
+        tech:DataManagementTechnology,
+        tech:DataObtainingTechnology,
+        tech:DataOrganisingTechnology,
+        tech:DataRemovalTechnology,
+        tech:DataSecurityTechnology,
+        tech:DataStorageTechnology,
+        tech:DataTransferTechnology,
+        tech:DataTransformationTechnology,
+        tech:DataUsageTechnology .
+

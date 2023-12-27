@@ -1,189 +1,185 @@
 <!DOCTYPE html>
-
 <html>
 <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
   <title>100.py</title>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <link rel="stylesheet" href="dycco.css">
+  <link rel="stylesheet" href="pycco.css">
 </head>
 <body>
-  <div id="container">
-    <div id="background"></div>
-    <table cellpadding="0" cellspacing="0">
-      <thead>
-        <tr>
-          <th class="docs">
-            <h1>100.py</h1>
-          </th>
-          <th class="code">
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-          <tr id="section-2">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-2">&#182;</a>
-              </div>
-              <p>author: Harshvardhan J. Pandit</p>
-            </td>
-            <td class="code">
-              
-            </td>
-          </tr>
-          <tr id="section-10">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-10">&#182;</a>
-              </div>
-              <p>This script will Download Spreadsheets and Extract CSVs.
- The spreadsheets are currently stored in a <a href="https://drive.google.com/drive/folders/1oDJBjxukEZantJL82gg4zbiRugRqyePT">shared google drive
- folder</a>
- from which the spreadsheet file IDs are used to download the
- entire document as Excel (.xlsx) and then individual CSVs are
- extracted from it using an external tool <a href="https://github.com/dilshod/xlsx2csv">xlsx2csv
- </a>.</p>
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
+<div id='container'>
+  <div id="background"></div>
+  <div class='section'>
+    <div class='docs'><h1>100.py</h1></div>
+  </div>
+  <div class='clearall'>
+  <div class='section' id='section-0'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-0'>#</a>
+      </div>
+      <p>author: Harshvardhan J. Pandit</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span></span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-1'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-1'>#</a>
+      </div>
+      <p>This script will Download Spreadsheets and Extract CSVs.
+The spreadsheets are currently stored in a <a href="https://drive.google.com/drive/folders/1oDJBjxukEZantJL82gg4zbiRugRqyePT">shared google drive
+folder</a>
+from which the spreadsheet file IDs are used to download the
+entire document as Excel (.xlsx) and then individual CSVs are
+extracted from it using an external tool <a href="https://github.com/dilshod/xlsx2csv">xlsx2csv
+</a>.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="kn">import</span> <span class="nn">logging</span>
 <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span>
     <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%(levelname)s</span><span class="s1"> - </span><span class="si">%(funcName)s</span><span class="s1"> :: </span><span class="si">%(lineno)d</span><span class="s1"> - </span><span class="si">%(message)s</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="n">DEBUG</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">debug</span>
-<span class="n">INFO</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">info</span>
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-19">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-19">&#182;</a>
-              </div>
-              <p>This is the Google Excel Export link which requires the
- document ID to download the document as XLSX</p>
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span><span class="n">GOOGLE_EXCEL_EXPORT_LINK</span> <span class="o">=</span> <span class="p">(</span>
+<span class="n">INFO</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">info</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-2'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-2'>#</a>
+      </div>
+      <h2><span id="export" href="export"> Export </span></h2>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-3'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-3'>#</a>
+      </div>
+      <p>This is the Google Excel Export link which requires the
+document ID to download the document as XLSX</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="n">GOOGLE_EXCEL_EXPORT_LINK</span> <span class="o">=</span> <span class="p">(</span>
     <span class="s1">&#39;https://docs.google.com/spreadsheets/d/&#39;</span>
-    <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">/export?exportFormat=xlsx&amp;format=xlsx&amp;title=</span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-23">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-23">&#182;</a>
-              </div>
-              <p>Documents are to be stored in this folder</p>
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span><span class="n">DOCS_FOLDER</span> <span class="o">=</span> <span class="s1">&#39;./vocab_csv&#39;</span>
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-26">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-26">&#182;</a>
-              </div>
-              <h2>DPV Files</h2>
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span><span class="n">DPV_FILES</span> <span class="o">=</span> <span class="p">{</span>
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-33">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-33">&#182;</a>
-              </div>
-              <p>The files to download are indicated in the following structure:
- Each group/dictionary represents the
- 'document level' grouping - this is the collection
- of 'sheets' in a single document
- The documents in Google Drive are organised per 
- topic already, so this mapping reflects that.</p>
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span>    <span class="s1">&#39;process&#39;</span><span class="p">:</span> <span class="p">{</span> 
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-35">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-35">&#182;</a>
-              </div>
-              <p>The name is the document name the downloaded file is saved as</p>
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span>        <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;process&#39;</span><span class="p">,</span> 
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-39">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-39">&#182;</a>
-              </div>
-              <p>The ID of the document through which it is downloaded
- (obtained by copying the info in
- link where https://docs.google.com/spreadsheets/d/<code>&lt;DOC_ID&gt;</code>)</p>
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span>        <span class="s1">&#39;doc_id&#39;</span><span class="p">:</span> <span class="s1">&#39;1x5Wfl-2Xp22R89lhNwNpYP0xN0zfQLFlNe3On6pwNM4&#39;</span><span class="p">,</span>
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-41">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-41">&#182;</a>
-              </div>
-              <p>Only the list of 'sheets' will be downloaded</p>
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span>        <span class="s1">&#39;sheets&#39;</span><span class="p">:</span> <span class="p">(</span> 
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-43">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-43">&#182;</a>
-              </div>
-              <blockquote>
-<p>Note: the 'name' of the 'sheet' MUST be exact</p>
+    <span class="s1">&#39;</span><span class="si">%s</span><span class="s1">/export?exportFormat=xlsx&amp;format=xlsx&amp;title=</span><span class="si">%s</span><span class="s1">&#39;</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-4'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-4'>#</a>
+      </div>
+      <p>Documents are to be stored in this folder</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="n">DOCS_FOLDER</span> <span class="o">=</span> <span class="s1">&#39;./vocab_csv&#39;</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-5'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-5'>#</a>
+      </div>
+      <h2><span id="dpv-files" href="dpv-files"> DPV Files </span></h2>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="n">DPV_FILES</span> <span class="o">=</span> <span class="p">{</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-6'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-6'>#</a>
+      </div>
+      <p>The files to download are indicated in the following structure:
+Each group/dictionary represents the
+&lsquo;document level&rsquo; grouping - this is the collection
+of &lsquo;sheets&rsquo; in a single document
+The documents in Google Drive are organised per 
+topic already, so this mapping reflects that.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="s1">&#39;process&#39;</span><span class="p">:</span> <span class="p">{</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-7'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-7'>#</a>
+      </div>
+      <p>The name is the document name the downloaded file is saved as</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;process&#39;</span><span class="p">,</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-8'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-8'>#</a>
+      </div>
+      <p>The ID of the document through which it is downloaded
+(obtained by copying the info in
+link where https://docs.google.com/spreadsheets/d/<code>&lt;DOC_ID&gt;</code>)</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="s1">&#39;doc_id&#39;</span><span class="p">:</span> <span class="s1">&#39;1x5Wfl-2Xp22R89lhNwNpYP0xN0zfQLFlNe3On6pwNM4&#39;</span><span class="p">,</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-9'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-9'>#</a>
+      </div>
+      <p>Only the list of &lsquo;sheets&rsquo; will be downloaded</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>        <span class="s1">&#39;sheets&#39;</span><span class="p">:</span> <span class="p">(</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-10'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-10'>#</a>
+      </div>
+      <blockquote>
+<p>Note: the &lsquo;name&rsquo; of the &lsquo;sheet&rsquo; MUST be exact</p>
 </blockquote>
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span>            <span class="s1">&#39;Namespaces&#39;</span><span class="p">,</span> 
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>            <span class="s1">&#39;Namespaces&#39;</span><span class="p">,</span> 
             <span class="s1">&#39;Namespaces_Other&#39;</span><span class="p">,</span> 
             <span class="s1">&#39;Process&#39;</span><span class="p">,</span> 
             <span class="s1">&#39;Process_properties&#39;</span><span class="p">,</span>
             <span class="p">),</span>
-    <span class="p">},</span>
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-50">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-50">&#182;</a>
-              </div>
-              <p>Sheets for Data concepts in main DPV and Personal Data extension</p>
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span>    <span class="s1">&#39;pd&#39;</span><span class="p">:</span> <span class="p">{</span> 
+    <span class="p">},</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-11'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-11'>#</a>
+      </div>
+      <p>Sheets for Data concepts in main DPV and Personal Data extension</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="s1">&#39;pd&#39;</span><span class="p">:</span> <span class="p">{</span> 
         <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;pd&#39;</span><span class="p">,</span>
         <span class="s1">&#39;doc_id&#39;</span><span class="p">:</span> <span class="s1">&#39;1SI6gZh9-dq1rf_etfrlYHj0QZwq9Vd25f_OHPX5hbSQ&#39;</span><span class="p">,</span>
         <span class="s1">&#39;sheets&#39;</span><span class="p">:</span> <span class="p">(</span>
@@ -192,20 +188,19 @@
             <span class="s1">&#39;pd-core&#39;</span><span class="p">,</span>
             <span class="s1">&#39;pd-extended&#39;</span><span class="p">,</span>
             <span class="p">),</span>
-    <span class="p">},</span>
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-61">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-61">&#182;</a>
-              </div>
-              <p>Sheets for Purpose, Processing, and Processing Context/Scale</p>
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span>    <span class="s1">&#39;purpose_processing&#39;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="p">},</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-12'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-12'>#</a>
+      </div>
+      <p>Sheets for Purpose, Processing, and Processing Context/Scale</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="s1">&#39;purpose_processing&#39;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;purpose_processing&#39;</span><span class="p">,</span>
         <span class="s1">&#39;doc_id&#39;</span><span class="p">:</span> <span class="s1">&#39;1ePg6BU2Zp9fiSDuEnKuVi6dIRrFLEVdatbVxjHRk-8s&#39;</span><span class="p">,</span>
         <span class="s1">&#39;sheets&#39;</span><span class="p">:</span> <span class="p">(</span>
@@ -218,20 +213,19 @@
            <span class="s1">&#39;ProcessingScale&#39;</span><span class="p">,</span> 
            <span class="s1">&#39;ProcessingScale_properties&#39;</span><span class="p">,</span>
            <span class="p">),</span>
-    <span class="p">},</span>
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-76">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-76">&#182;</a>
-              </div>
-              <p>Sheets for Context and Statuses</p>
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span>    <span class="s1">&#39;context_status&#39;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="p">},</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-13'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-13'>#</a>
+      </div>
+      <p>Sheets for Context and Statuses</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="s1">&#39;context_status&#39;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;context_status&#39;</span><span class="p">,</span>
         <span class="s1">&#39;doc_id&#39;</span><span class="p">:</span>  <span class="s1">&#39;1VPQW1DanprQhMwnhSqyKSGbEXdTmLHdc6UjpWJhyLMA&#39;</span><span class="p">,</span> 
         <span class="s1">&#39;sheets&#39;</span><span class="p">:</span> <span class="p">(</span>
@@ -240,54 +234,51 @@
             <span class="s1">&#39;Status&#39;</span><span class="p">,</span> 
             <span class="s1">&#39;Status_properties&#39;</span><span class="p">,</span>
             <span class="p">),</span>
-    <span class="p">},</span>
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-87">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-87">&#182;</a>
-              </div>
-              <p>Sheets for Tech/Org Measures</p>
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span>    <span class="s1">&#39;toms&#39;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="p">},</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-14'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-14'>#</a>
+      </div>
+      <p>Sheets for Tech/Org Measures</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="s1">&#39;toms&#39;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;toms&#39;</span><span class="p">,</span>
         <span class="s1">&#39;doc_id&#39;</span><span class="p">:</span>  <span class="s1">&#39;16d0_k6ueoXxXRTgecih9Ny7NpeXYF8icm4QX99cPYJA&#39;</span><span class="p">,</span> 
         <span class="s1">&#39;sheets&#39;</span><span class="p">:</span> <span class="p">(</span>
             <span class="s1">&#39;TOM&#39;</span><span class="p">,</span> 
             <span class="s1">&#39;TOM_properties&#39;</span><span class="p">,</span> 
             <span class="s1">&#39;TechnicalMeasure&#39;</span><span class="p">,</span> 
-            <span class="s1">&#39;OrganisationalMeasure&#39;</span><span class="p">,</span>
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-96">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-96">&#182;</a>
-              </div>
-              <p>TODO: Add sheets for Legal and Physical measure</p>
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span>            <span class="p">),</span>
-    <span class="p">},</span>
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-99">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-99">&#182;</a>
-              </div>
-              <p>Sheets for Entities</p>
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span>    <span class="s1">&#39;entities&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;OrganisationalMeasure&#39;</span><span class="p">,</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-15'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-15'>#</a>
+      </div>
+      <p>TODO: Add sheets for Legal and Physical measure</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>            <span class="p">),</span>
+    <span class="p">},</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-16'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-16'>#</a>
+      </div>
+      <p>Sheets for Entities</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="s1">&#39;entities&#39;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;entities&#39;</span><span class="p">,</span>
         <span class="s1">&#39;doc_id&#39;</span><span class="p">:</span>  <span class="s1">&#39;1g6zLqVt5FlNlgsXq_NW2W9INv3KdGEFjJCyOd03UmOg&#39;</span><span class="p">,</span> 
         <span class="s1">&#39;sheets&#39;</span><span class="p">:</span> <span class="p">(</span>
@@ -301,20 +292,19 @@
             <span class="s1">&#39;Entities_DataSubject&#39;</span><span class="p">,</span> 
             <span class="s1">&#39;Entities_DataSubject_properties&#39;</span><span class="p">,</span>
             <span class="p">),</span>
-    <span class="p">},</span>
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-115">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-115">&#182;</a>
-              </div>
-              <p>Sheets for Locations and Jurisdiction</p>
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span>    <span class="s1">&#39;location_jurisdiction&#39;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="p">},</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-17'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-17'>#</a>
+      </div>
+      <p>Sheets for Locations and Jurisdiction</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="s1">&#39;location_jurisdiction&#39;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;location_jurisdiction&#39;</span><span class="p">,</span>
         <span class="s1">&#39;doc_id&#39;</span><span class="p">:</span> <span class="s1">&#39;19exhY34jq6VDApRp2abHD-br6rpm6Q7BOP7H_pm5sKM&#39;</span><span class="p">,</span>
         <span class="s1">&#39;sheets&#39;</span><span class="p">:</span> <span class="p">(</span>
@@ -324,20 +314,19 @@
             <span class="s1">&#39;location_properties&#39;</span><span class="p">,</span>
             <span class="s1">&#39;location_memberships&#39;</span><span class="p">,</span>
             <span class="p">),</span>
-    <span class="p">},</span>
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-127">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-127">&#182;</a>
-              </div>
-              <p>Sheets for Legal Basis and Consent</p>
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span>    <span class="s1">&#39;legal_basis&#39;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="p">},</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-18'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-18'>#</a>
+      </div>
+      <p>Sheets for Legal Basis and Consent</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="s1">&#39;legal_basis&#39;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;legal_basis&#39;</span><span class="p">,</span>
         <span class="s1">&#39;doc_id&#39;</span><span class="p">:</span>  <span class="s1">&#39;13Ub4LXHruocffYnd7JKCMvzi1MYv3Gy61d3UmQBhARc&#39;</span><span class="p">,</span> 
         <span class="s1">&#39;sheets&#39;</span><span class="p">:</span> <span class="p">(</span>
@@ -347,20 +336,19 @@
             <span class="s1">&#39;ConsentStatus&#39;</span><span class="p">,</span> 
             <span class="s1">&#39;Consent_properties&#39;</span><span class="p">,</span>
             <span class="p">),</span>
-    <span class="p">},</span>
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-139">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-139">&#182;</a>
-              </div>
-              <p>Sheets for Tech extension</p>
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span>    <span class="s1">&#39;tech&#39;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="p">},</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-19'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-19'>#</a>
+      </div>
+      <p>Sheets for Tech extension</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="s1">&#39;tech&#39;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;tech&#39;</span><span class="p">,</span>
         <span class="s1">&#39;doc_id&#39;</span><span class="p">:</span> <span class="s1">&#39;1GVmF4c7b-9xMSs0TyT45kXoCLLUVs8bbW34tfcozbuA&#39;</span><span class="p">,</span>
         <span class="s1">&#39;sheets&#39;</span><span class="p">:</span> <span class="p">(</span>
@@ -378,20 +366,19 @@
             <span class="s1">&#39;tech-tools&#39;</span><span class="p">,</span>
             <span class="s1">&#39;tech-algorithms&#39;</span><span class="p">,</span>
             <span class="p">),</span>
-    <span class="p">},</span>
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-159">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-159">&#182;</a>
-              </div>
-              <p>Sheets for Risk extension</p>
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span>    <span class="s1">&#39;risk&#39;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="p">},</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-20'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-20'>#</a>
+      </div>
+      <p>Sheets for Risk extension</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="s1">&#39;risk&#39;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;risk&#39;</span><span class="p">,</span>
         <span class="s1">&#39;doc_id&#39;</span><span class="p">:</span> <span class="s1">&#39;1y8r3Vk-_Gi1MqbyAM6Ot4DoNDJpa2ZVhCyCyFQkGBy0&#39;</span><span class="p">,</span>
         <span class="s1">&#39;sheets&#39;</span><span class="p">:</span> <span class="p">(</span>
@@ -406,20 +393,19 @@
             <span class="s1">&#39;RiskMethodology&#39;</span><span class="p">,</span>
             <span class="s1">&#39;Justifications&#39;</span><span class="p">,</span>
             <span class="p">),</span>
-    <span class="p">},</span>
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-176">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-176">&#182;</a>
-              </div>
-              <p>Sheets for Rights extension</p>
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span>    <span class="s1">&#39;rights&#39;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="p">},</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-21'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-21'>#</a>
+      </div>
+      <p>Sheets for Rights extension</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="s1">&#39;rights&#39;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;rights&#39;</span><span class="p">,</span>
         <span class="s1">&#39;doc_id&#39;</span><span class="p">:</span> <span class="s1">&#39;1XW-L6rGWbgGGp62q8eA22SWvh4wUWK5BpC0zfD6wAxM&#39;</span><span class="p">,</span>
         <span class="s1">&#39;sheets&#39;</span><span class="p">:</span> <span class="p">(</span>
@@ -427,59 +413,56 @@
             <span class="s1">&#39;Rights_properties&#39;</span><span class="p">,</span> 
             <span class="s1">&#39;EUFundamentalRights&#39;</span><span class="p">,</span>
             <span class="p">),</span>
-    <span class="p">},</span>
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-186">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-186">&#182;</a>
-              </div>
-              <p>Sheets for Rules extension</p>
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span>    <span class="s1">&#39;rules&#39;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="p">},</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-22'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-22'>#</a>
+      </div>
+      <p>Sheets for Rules extension</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="s1">&#39;rules&#39;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;rules&#39;</span><span class="p">,</span>
         <span class="s1">&#39;doc_id&#39;</span><span class="p">:</span>  <span class="s1">&#39;1SDmlzSo1Ax_35v754Jzx4oFGKvGo5nyNtEAL0vSBbM0&#39;</span><span class="p">,</span> 
         <span class="s1">&#39;sheets&#39;</span><span class="p">:</span> <span class="p">(</span>
             <span class="s1">&#39;Rules&#39;</span><span class="p">,</span> 
             <span class="s1">&#39;Rules_properties&#39;</span><span class="p">,</span>
             <span class="p">),</span>
-    <span class="p">},</span>
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-195">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-195">&#182;</a>
-              </div>
-              <p>Sheets for Standards extension</p>
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span>    <span class="s1">&#39;standards&#39;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="p">},</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-23'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-23'>#</a>
+      </div>
+      <p>Sheets for Standards extension</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="s1">&#39;standards&#39;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;standards&#39;</span><span class="p">,</span>
         <span class="s1">&#39;doc_id&#39;</span><span class="p">:</span> <span class="s1">&#39;1z-qaB2m6lD1ROmPVf9yhfG05D68Z7H4glYLERj6ZCRk&#39;</span><span class="p">,</span>
         <span class="s1">&#39;sheets&#39;</span><span class="p">:</span> <span class="p">(</span>
             <span class="s1">&#39;Standards_ISO&#39;</span><span class="p">,</span>
             <span class="p">),</span>
-    <span class="p">},</span>
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-203">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-203">&#182;</a>
-              </div>
-              <p>Sheets for Legal extension</p>
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span>    <span class="s1">&#39;laws-authorities&#39;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="p">},</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-24'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-24'>#</a>
+      </div>
+      <p>Sheets for Legal extension</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="s1">&#39;laws-authorities&#39;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;laws-authorities&#39;</span><span class="p">,</span>
         <span class="s1">&#39;doc_id&#39;</span><span class="p">:</span> <span class="s1">&#39;1pqGE67I5kyoGrkhMItJbi18VLguVqE1jVecnfki1ujY&#39;</span><span class="p">,</span>
         <span class="s1">&#39;sheets&#39;</span><span class="p">:</span> <span class="p">(</span>
@@ -489,20 +472,19 @@
             <span class="s1">&#39;legal-ie&#39;</span><span class="p">,</span>
             <span class="s1">&#39;legal-us&#39;</span><span class="p">,</span>
             <span class="p">)</span>
-    <span class="p">},</span>
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-215">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-215">&#182;</a>
-              </div>
-              <p>Sheets for EU-GDPR extension</p>
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span>    <span class="s1">&#39;eu-gdpr&#39;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="p">},</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-25'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-25'>#</a>
+      </div>
+      <p>Sheets for EU-GDPR extension</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="s1">&#39;eu-gdpr&#39;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;eu-gdpr&#39;</span><span class="p">,</span>
         <span class="s1">&#39;doc_id&#39;</span><span class="p">:</span> <span class="s1">&#39;1lDJZpl0UND8Bm_4iWKVQtgmMUz0YwP2R63CgP7Gro-U&#39;</span><span class="p">,</span>
         <span class="s1">&#39;sheets&#39;</span><span class="p">:</span> <span class="p">(</span>
@@ -516,20 +498,19 @@
             <span class="s1">&#39;GDPR_DPIA_properties&#39;</span><span class="p">,</span>
             <span class="s1">&#39;GDPR_compliance&#39;</span>
             <span class="p">),</span>
-    <span class="p">},</span>
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-231">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-231">&#182;</a>
-              </div>
-              <p>Sheets for EU-DGA extension</p>
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span>    <span class="s1">&#39;eu-dga&#39;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="p">},</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-26'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-26'>#</a>
+      </div>
+      <p>Sheets for EU-DGA extension</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="s1">&#39;eu-dga&#39;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;eu-dga&#39;</span><span class="p">,</span>
         <span class="s1">&#39;doc_id&#39;</span><span class="p">:</span>  <span class="s1">&#39;1wKsf0Vqr0Gg1C91MqshtI5tjGXmQvXu4p4xF0yK0KaA&#39;</span><span class="p">,</span>
         <span class="s1">&#39;sheets&#39;</span><span class="p">:</span> <span class="p">(</span>
@@ -541,20 +522,19 @@
             <span class="s1">&#39;DGA_entities&#39;</span><span class="p">,</span>
             <span class="s1">&#39;DGA_properties&#39;</span><span class="p">,</span>
             <span class="p">),</span>
-    <span class="p">},</span>
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-245">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-245">&#182;</a>
-              </div>
-              <p>Sheets for Use-Cases, Requirements, and Examples</p>
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span>    <span class="s1">&#39;ucr&#39;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="p">},</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-27'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-27'>#</a>
+      </div>
+      <p>Sheets for Use-Cases, Requirements, and Examples</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="s1">&#39;ucr&#39;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;ucr&#39;</span><span class="p">,</span>
         <span class="s1">&#39;doc_id&#39;</span><span class="p">:</span> <span class="s1">&#39;1__STWvOEZRc1u2J-8teOYjLpnTPlZ80_ebTytrUlWgQ&#39;</span><span class="p">,</span>
         <span class="s1">&#39;sheets&#39;</span><span class="p">:</span> <span class="p">(</span>
@@ -562,320 +542,301 @@
             <span class="s1">&#39;Requirement&#39;</span><span class="p">,</span>
             <span class="s1">&#39;Example&#39;</span><span class="p">,</span>
             <span class="p">),</span>
-    <span class="p">},</span>
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-255">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-255">&#182;</a>
-              </div>
-              <p>Sheets for Translations</p>
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span>    <span class="s1">&#39;translations&#39;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="p">},</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-28'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-28'>#</a>
+      </div>
+      <p>Sheets for Translations</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="s1">&#39;translations&#39;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;translations&#39;</span><span class="p">,</span>
         <span class="s1">&#39;doc_id&#39;</span><span class="p">:</span> <span class="s1">&#39;1HqIWw8VdWatYnbRwKoW3gAdXWmVTnSAJ9d9x8FSDsWM&#39;</span><span class="p">,</span>
         <span class="s1">&#39;sheets&#39;</span><span class="p">:</span> <span class="p">(</span>
             <span class="s1">&#39;DE_prod&#39;</span><span class="p">,</span>
             <span class="s1">&#39;DE_verify&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;DE_glossary&#39;</span><span class="p">,</span>
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-263">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-263">&#182;</a>
-              </div>
-              <p>TODO: Add sheets for FR, IT, etc. languages</p>
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span>            <span class="p">)</span>
+            <span class="s1">&#39;DE_glossary&#39;</span><span class="p">,</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-29'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-29'>#</a>
+      </div>
+      <p>TODO: Add sheets for FR, IT, etc. languages</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>            <span class="p">)</span>
     <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-268">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-268">&#182;</a>
-              </div>
-              <h2>Downloading files</h2>
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">urllib</span> <span class="kn">import</span> <span class="n">request</span>
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-271">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-271">&#182;</a>
-              </div>
-              <p>Download the document and save to specified path in specified format</p>
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">download_document</span><span class="p">(</span>
+<span class="p">}</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-30'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-30'>#</a>
+      </div>
+      <h2><span id="downloading-files" href="downloading-files"> Downloading files </span></h2>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="kn">from</span> <span class="nn">urllib</span> <span class="kn">import</span> <span class="n">request</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-31'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-31'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">download_document</span><span class="p">(</span>
     <span class="n">document_id</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">document_name</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">export_link</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">ext</span><span class="p">:</span><span class="nb">str</span><span class="o">=</span><span class="s1">&#39;xlsx&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-279">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-279">&#182;</a>
-              </div>
-              <ul>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;Download the document and save to specified path in specified format&#39;&#39;&#39;</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-32'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-32'>#</a>
+      </div>
+      <ul>
 <li><code>document_id</code>: ID of document to be downloaded</li>
 <li><code>document_name</code>: name to save the document with</li>
 <li><code>export_link</code>: string template to call to download the document 
-   (this will be the google export link)</li>
+  (this will be the google export link)</li>
 <li><code>ext</code>: extension to save the document as (XLSX default)</li>
 </ul>
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span>    <span class="n">url</span> <span class="o">=</span> <span class="n">export_link</span> <span class="o">%</span> <span class="p">(</span><span class="n">document_id</span><span class="p">,</span> <span class="n">document_name</span><span class="p">)</span>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="n">url</span> <span class="o">=</span> <span class="n">export_link</span> <span class="o">%</span> <span class="p">(</span><span class="n">document_id</span><span class="p">,</span> <span class="n">document_name</span><span class="p">)</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">request</span><span class="o">.</span><span class="n">urlretrieve</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">DOCS_FOLDER</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">document_name</span><span class="si">}</span><span class="s1">.</span><span class="si">{</span><span class="n">ext</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
         <span class="n">INFO</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Downloaded </span><span class="si">{</span><span class="n">document_name</span><span class="si">}</span><span class="s1">.</span><span class="si">{</span><span class="n">ext</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
     <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">E</span><span class="p">:</span>
-        <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;ERROR :: </span><span class="si">{</span><span class="n">E</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-287">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-287">&#182;</a>
-              </div>
-              
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">_download_spreadsheets</span><span class="p">(</span><span class="n">document_id</span><span class="p">,</span> <span class="n">document_name</span><span class="p">,</span> <span class="n">export_link</span><span class="p">):</span>
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-290">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-290">&#182;</a>
-              </div>
-              <p>This is just a wrapper function that calls <code>download_document</code>
- with the Google excel export link</p>
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span>    <span class="n">download_document</span><span class="p">(</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;ERROR :: </span><span class="si">{</span><span class="n">E</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-33'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-33'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">_download_spreadsheets</span><span class="p">(</span><span class="n">document_id</span><span class="p">,</span> <span class="n">document_name</span><span class="p">,</span> <span class="n">export_link</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-34'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-34'>#</a>
+      </div>
+      <p>This is just a wrapper function that calls <code>download_document</code>
+with the Google excel export link</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="n">download_document</span><span class="p">(</span>
         <span class="n">document_id</span><span class="o">=</span><span class="n">document_id</span><span class="p">,</span>
         <span class="n">document_name</span><span class="o">=</span><span class="n">document_name</span><span class="p">,</span>
         <span class="n">export_link</span><span class="o">=</span><span class="n">GOOGLE_EXCEL_EXPORT_LINK</span><span class="p">,</span>
-        <span class="n">ext</span><span class="o">=</span><span class="s1">&#39;xlsx&#39;</span><span class="p">)</span>
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-297">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-297">&#182;</a>
-              </div>
-              
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">_extract_CSVs</span><span class="p">(</span><span class="n">document_name</span><span class="p">,</span> <span class="n">sheets</span><span class="p">):</span>
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-300">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-300">&#182;</a>
-              </div>
-              <p>Extracts sheets from XLSX file and saves them as individual CSVs</p>
+        <span class="n">ext</span><span class="o">=</span><span class="s1">&#39;xlsx&#39;</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-35'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-35'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">_extract_CSVs</span><span class="p">(</span><span class="n">document_name</span><span class="p">,</span> <span class="n">sheets</span><span class="p">):</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-36'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-36'>#</a>
+      </div>
+      <p>Extracts sheets from XLSX file and saves them as individual CSVs</p>
 <blockquote>
 <p>Note: XLSX2CSV is an <strong>external</strong> tool called as a subprocess</p>
 </blockquote>
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span>    <span class="n">INFO</span><span class="p">(</span><span class="n">document_name</span><span class="p">)</span>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="n">INFO</span><span class="p">(</span><span class="n">document_name</span><span class="p">)</span>
     <span class="kn">import</span> <span class="nn">subprocess</span>
     <span class="k">for</span> <span class="n">sheet_name</span> <span class="ow">in</span> <span class="n">sheets</span><span class="p">:</span>
         <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">DOCS_FOLDER</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">sheet_name</span><span class="si">}</span><span class="s1">.csv&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">outfile</span><span class="p">:</span>
             <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">([</span><span class="s2">&quot;xlsx2csv&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">DOCS_FOLDER</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">document_name</span><span class="si">}</span><span class="s2">.xlsx&quot;</span><span class="p">,</span> <span class="s2">&quot;-n&quot;</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">sheet_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">],</span> <span class="n">stdout</span><span class="o">=</span><span class="n">outfile</span><span class="p">)</span>
-        <span class="n">INFO</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Wrote </span><span class="si">{</span><span class="n">sheet_name</span><span class="si">}</span><span class="s1">.csv from </span><span class="si">{</span><span class="n">document_name</span><span class="si">}</span><span class="s1">.xlsx&#39;</span><span class="p">)</span>
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-308">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-308">&#182;</a>
-              </div>
-              
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">_download_all_spreadsheets</span><span class="p">():</span>
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-311">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-311">&#182;</a>
-              </div>
-              <p>Iterate and download all spreadsheets 
- as specified in DPV_FILES variable</p>
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span>    <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">DPV_FILES</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+        <span class="n">INFO</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Wrote </span><span class="si">{</span><span class="n">sheet_name</span><span class="si">}</span><span class="s1">.csv from </span><span class="si">{</span><span class="n">document_name</span><span class="si">}</span><span class="s1">.xlsx&#39;</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-37'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-37'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">_download_all_spreadsheets</span><span class="p">():</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-38'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-38'>#</a>
+      </div>
+      <p>Iterate and download all spreadsheets 
+as specified in DPV_FILES variable</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">DPV_FILES</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
         <span class="n">doc_id</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;doc_id&#39;</span><span class="p">]</span>
         <span class="n">document_name</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
         <span class="n">_download_spreadsheets</span><span class="p">(</span>
-            <span class="n">doc_id</span><span class="p">,</span> <span class="n">document_name</span><span class="p">,</span> <span class="n">GOOGLE_EXCEL_EXPORT_LINK</span><span class="p">)</span>
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-318">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-318">&#182;</a>
-              </div>
-              
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">_extract_all_CSVs</span><span class="p">():</span>
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-321">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-321">&#182;</a>
-              </div>
-              <p>Iterate and extract all CSVs 
- as specified in the DPV_FILES variable</p>
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span>    <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">DPV_FILES</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="n">doc_id</span><span class="p">,</span> <span class="n">document_name</span><span class="p">,</span> <span class="n">GOOGLE_EXCEL_EXPORT_LINK</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-39'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-39'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">_extract_all_CSVs</span><span class="p">():</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-40'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-40'>#</a>
+      </div>
+      <p>Iterate and extract all CSVs 
+as specified in the DPV_FILES variable</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">DPV_FILES</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
         <span class="n">document_name</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
         <span class="n">sheets</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;sheets&#39;</span><span class="p">]</span>
-        <span class="n">_extract_CSVs</span><span class="p">(</span><span class="n">document_name</span><span class="p">,</span> <span class="n">sheets</span><span class="p">)</span>
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-328">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-328">&#182;</a>
-              </div>
-              <h2>Calling the Script</h2>
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-331">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-331">&#182;</a>
-              </div>
-              <p>The script has a default behaviour where it will NOT download
- any file and will extract ALL CSVs from existing files.</p>
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span>    <span class="kn">import</span> <span class="nn">argparse</span>
-    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-334">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-334">&#182;</a>
-              </div>
-              <ul>
+        <span class="n">_extract_CSVs</span><span class="p">(</span><span class="n">document_name</span><span class="p">,</span> <span class="n">sheets</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-41'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-41'>#</a>
+      </div>
+      <h2><span id="script" href="script"> script </span></h2>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-42'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-42'>#</a>
+      </div>
+      <p>The script has a default behaviour where it will NOT download
+any file and will extract ALL CSVs from existing files.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="kn">import</span> <span class="nn">argparse</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-43'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-43'>#</a>
+      </div>
+      <ul>
 <li><code>-d</code> will download and extract ALL files</li>
 </ul>
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span>    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-d&#39;</span><span class="p">,</span> <span class="s1">&#39;--d&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;download data files&quot;</span><span class="p">)</span>
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-336">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-336">&#182;</a>
-              </div>
-              <ul>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-d&#39;</span><span class="p">,</span> <span class="s1">&#39;--d&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;download data files&quot;</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-44'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-44'>#</a>
+      </div>
+      <ul>
 <li><code>-x</code> will extract ALL files</li>
 </ul>
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span>    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-x&#39;</span><span class="p">,</span> <span class="s1">&#39;--x&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;extract CSVs from all data files&quot;</span><span class="p">)</span>
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-338">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-338">&#182;</a>
-              </div>
-              <ul>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;-x&#39;</span><span class="p">,</span> <span class="s1">&#39;--x&#39;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s1">&#39;store_true&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;extract CSVs from all data files&quot;</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-45'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-45'>#</a>
+      </div>
+      <ul>
 <li><code>-ds &lt;foo&gt;</code> will download and extract ONLY <code>foo</code> files</li>
 </ul>
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span>    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--ds&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;download only indicated data files&quot;</span><span class="p">)</span>
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-340">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-340">&#182;</a>
-              </div>
-              <ul>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--ds&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;download only indicated data files&quot;</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-46'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-46'>#</a>
+      </div>
+      <ul>
 <li><code>-xs &lt;foo&gt;</code> will extract ONLY <code>foo</code> files</li>
 </ul>
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span>    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--xs&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;extract CSVs from indicated data files&quot;</span><span class="p">)</span>
-    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-344">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-344">&#182;</a>
-              </div>
-              <p>If files are to be downloaded, do the following.</p>
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span>    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">d</span> <span class="ow">or</span> <span class="n">args</span><span class="o">.</span><span class="n">ds</span><span class="p">:</span>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--xs&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s2">&quot;extract CSVs from indicated data files&quot;</span><span class="p">)</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-47'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-47'>#</a>
+      </div>
+      <p>If files are to be downloaded, do the following.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">d</span> <span class="ow">or</span> <span class="n">args</span><span class="o">.</span><span class="n">ds</span><span class="p">:</span>
         <span class="n">INFO</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">40</span><span class="p">)</span>
         <span class="n">INFO</span><span class="p">(</span><span class="s1">&#39;Downloading spreadsheets...&#39;</span><span class="p">)</span>
         <span class="n">INFO</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">40</span><span class="p">)</span>
@@ -892,20 +853,19 @@
                     <span class="n">DPV_FILES</span><span class="p">[</span><span class="n">document_name</span><span class="p">][</span><span class="s1">&#39;doc_id&#39;</span><span class="p">],</span>
                     <span class="n">document_name</span><span class="p">,</span> <span class="n">GOOGLE_EXCEL_EXPORT_LINK</span><span class="p">)</span>
             <span class="n">args</span><span class="o">.</span><span class="n">xs</span> <span class="o">=</span> <span class="n">args</span><span class="o">.</span><span class="n">ds</span> <span class="c1"># set extraction queue to be same as download</span>
-        <span class="n">INFO</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">40</span><span class="p">)</span>
-</pre></div>
-
-            </td>
-          </tr>
-          <tr id="section-363">
-            <td class="docs">
-              <div class="pilwrap">
-                <a class="pilcrow" href="#section-363">&#182;</a>
-              </div>
-              <p>If files are to be extracted do the following.</p>
-            </td>
-            <td class="code">
-              <div class="highlight"><pre><span></span>    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">x</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="n">INFO</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">40</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-48'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-48'>#</a>
+      </div>
+      <p>If files are to be extracted do the following.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">if</span> <span class="n">args</span><span class="o">.</span><span class="n">x</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
         <span class="n">INFO</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">40</span><span class="p">)</span>
         <span class="n">INFO</span><span class="p">(</span><span class="s1">&#39;Extracting CSVs...&#39;</span><span class="p">)</span>
         <span class="n">INFO</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">40</span><span class="p">)</span>
@@ -920,16 +880,10 @@
                 <span class="n">_extract_CSVs</span><span class="p">(</span>
                     <span class="n">document_name</span><span class="p">,</span> <span class="n">DPV_FILES</span><span class="p">[</span><span class="n">document_name</span><span class="p">][</span><span class="s1">&#39;sheets&#39;</span><span class="p">])</span>
         <span class="n">INFO</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">40</span><span class="p">)</span>
-</pre></div>
 
-            </td>
-          </tr>
-      </tbody>
-    </table>
-    <footer>
-      Generated by <b><a href="https://github.com/rojalator/dycco">Dycco</a></b>.
-      Last updated <b>26 Dec 2023</b>.
-    </footer>
+</pre></div>
+    </div>
   </div>
+  <div class='clearall'></div>
+</div>
 </body>
-</html>

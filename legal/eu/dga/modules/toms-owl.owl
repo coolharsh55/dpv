@@ -5,16 +5,6 @@
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
    xmlns:sw="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
-  <rdf:Description rdf:about="https://w3id.org/dpv/legal/eu/dga#SecureProcessingEnvironment">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#TechnicalMeasure"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Secure Processing Environment</skos:prefLabel>
-    <skos:definition xml:lang="en">Physical or virtual environment to ensure compliance with EU law and allow the entity providing the secure processing environment to determine and supervise all data processing actions</skos:definition>
-    <skos:scopeNote xml:lang="en">DGA 2.20</skos:scopeNote>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#SecureProcessingEnvironment"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/legal/eu/dga#DataIntermediationRecord">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#OrganisationalMeasure"/>
@@ -25,6 +15,26 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#RecordsOfActivities"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/legal/eu/dga#DataAltruismAnnualReport">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#OrganisationalMeasure"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Data Altruism Annual Activity Report</skos:prefLabel>
+    <skos:definition xml:lang="en">Document containing the annual activities reported by a Data Altruism organisation</skos:definition>
+    <skos:scopeNote xml:lang="en">DGA 20.2</skos:scopeNote>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#RecordsOfActivities"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/legal/eu/dga#DISPEUApproval">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#OrganisationalMeasure"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">EU Approval for Data Intermediation Service Provider</skos:prefLabel>
+    <skos:definition xml:lang="en">Confirmation and approval by a competent authority for the Data Intermediation Service Provider's compliance with Article 11 and Article 12 of the DGA</skos:definition>
+    <skos:scopeNote xml:lang="en">DGA 11.9</skos:scopeNote>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#CertificationSeal"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/legal/eu/dga#EUDataAltruismConsentForm">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#OrganisationalMeasure"/>
@@ -34,6 +44,49 @@
     <skos:scopeNote xml:lang="en">DGA 25.1</skos:scopeNote>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#ConsentManagement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/legal/eu/dga#SecureProcessingEnvironment">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#TechnicalMeasure"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Secure Processing Environment</skos:prefLabel>
+    <skos:definition xml:lang="en">Physical or virtual environment to ensure compliance with EU law and allow the entity providing the secure processing environment to determine and supervise all data processing actions</skos:definition>
+    <skos:scopeNote xml:lang="en">DGA 2.20</skos:scopeNote>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#SecureProcessingEnvironment"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#CertificationSeal">
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/legal/eu/dga#DISPEUApproval"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/legal/eu/dga#DataAssetList">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#OrganisationalMeasure"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Data Asset List</skos:prefLabel>
+    <skos:definition xml:lang="en">Searchable asset list which contains available data resources including their data format and size and the conditions for their re-use</skos:definition>
+    <skos:scopeNote xml:lang="en">DGA 8.2</skos:scopeNote>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#OrganisationalMeasure"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/legal/eu/dga#NationalDataAltruismPolicy">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#OrganisationalMeasure"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">National Data Altruism Policy</skos:prefLabel>
+    <skos:definition xml:lang="en">A Policy established at National level regarding Data Altruism</skos:definition>
+    <skos:scopeNote xml:lang="en">DGA 16</skos:scopeNote>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Policy"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/legal/eu/dga#DataReuseRequest">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#OrganisationalMeasure"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Data Reuse Request</skos:prefLabel>
+    <skos:definition xml:lang="en">Procedure to handle requests and provide data for reuse via single information point</skos:definition>
+    <skos:scopeNote xml:lang="en">DGA 5.1</skos:scopeNote>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#OrganisationalMeasure"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/legal/eu/dga#PersonalDataReuseNotice">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
@@ -55,25 +108,10 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#ThirdCountryTransferNotice"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/legal/eu/dga#DISPEUApproval">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#OrganisationalMeasure"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">EU Approval for Data Intermediation Service Provider</skos:prefLabel>
-    <skos:definition xml:lang="en">Confirmation and approval by a competent authority for the Data Intermediation Service Provider's compliance with Article 11 and Article 12 of the DGA</skos:definition>
-    <skos:scopeNote xml:lang="en">DGA 11.9</skos:scopeNote>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#CertificationSeal"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/legal/eu/dga#DataAssetList">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#OrganisationalMeasure"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Data Asset List</skos:prefLabel>
-    <skos:definition xml:lang="en">Searchable asset list which contains available data resources including their data format and size and the conditions for their re-use</skos:definition>
-    <skos:scopeNote xml:lang="en">DGA 8.2</skos:scopeNote>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#OrganisationalMeasure"/>
+  <rdf:Description rdf:about="https://w3id.org/dpv#RecordsOfActivities">
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/legal/eu/dga#DataIntermediationRecord"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/legal/eu/dga#DataAltruismRecord"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/legal/eu/dga#DataAltruismAnnualReport"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/legal/eu/dga#DataAltruismRecord">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
@@ -82,46 +120,6 @@
     <skos:prefLabel xml:lang="en">Record of Data Altruism Activity</skos:prefLabel>
     <skos:definition xml:lang="en">Document that logs the activity of the data altruism organisation</skos:definition>
     <skos:scopeNote xml:lang="en">DGA 20</skos:scopeNote>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#RecordsOfActivities"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/legal/eu/dga#DataReuseRequest">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#OrganisationalMeasure"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Data Reuse Request</skos:prefLabel>
-    <skos:definition xml:lang="en">Procedure to handle requests and provide data for reuse via single information point</skos:definition>
-    <skos:scopeNote xml:lang="en">DGA 5.1</skos:scopeNote>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#OrganisationalMeasure"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/legal/eu/dga#DISPNotice">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#OrganisationalMeasure"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Data Intermediation Service Notification</skos:prefLabel>
-    <skos:definition xml:lang="en">Notification by a Data Intermediation Service Provider to a competent authority concerning changes to details regarding its Data Intermediation Service</skos:definition>
-    <skos:scopeNote xml:lang="en">DGA 11.1, DGA 11.9, DGA 11.12, DGA 11.13</skos:scopeNote>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Notice"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/legal/eu/dga#NationalDataAltruismPolicy">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#OrganisationalMeasure"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">National Data Altruism Policy</skos:prefLabel>
-    <skos:definition xml:lang="en">A Policy established at National level regarding Data Altruism</skos:definition>
-    <skos:scopeNote xml:lang="en">DGA 16</skos:scopeNote>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Policy"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/legal/eu/dga#DataAltruismAnnualReport">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#OrganisationalMeasure"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Data Altruism Annual Activity Report</skos:prefLabel>
-    <skos:definition xml:lang="en">Document containing the annual activities reported by a Data Altruism organisation</skos:definition>
-    <skos:scopeNote xml:lang="en">DGA 20.2</skos:scopeNote>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#RecordsOfActivities"/>
   </rdf:Description>
@@ -134,5 +132,38 @@
     <skos:scopeNote xml:lang="en">DGA 21.1</skos:scopeNote>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Notice"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#ConsentManagement">
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/legal/eu/dga#EUDataAltruismConsentForm"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/legal/eu/dga#DISPNotice">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#OrganisationalMeasure"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Data Intermediation Service Notification</skos:prefLabel>
+    <skos:definition xml:lang="en">Notification by a Data Intermediation Service Provider to a competent authority concerning changes to details regarding its Data Intermediation Service</skos:definition>
+    <skos:scopeNote xml:lang="en">DGA 11.1, DGA 11.9, DGA 11.12, DGA 11.13</skos:scopeNote>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Notice"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#ConsentNotice">
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/legal/eu/dga#PersonalDataReuseNotice"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#SecureProcessingEnvironment">
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/legal/eu/dga#SecureProcessingEnvironment"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#ThirdCountryTransferNotice">
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/legal/eu/dga#ThirdCountryDataRequestNotice"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#OrganisationalMeasure">
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/legal/eu/dga#DataAssetList"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/legal/eu/dga#DataReuseRequest"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#Notice">
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/legal/eu/dga#DataAltruismNotice"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/legal/eu/dga#DISPNotice"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#Policy">
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/legal/eu/dga#NationalDataAltruismPolicy"/>
   </rdf:Description>
 </rdf:RDF>

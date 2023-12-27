@@ -6,12 +6,12 @@
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
    xmlns:sw="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
-  <rdf:Description rdf:about="https://w3id.org/dpv/legal/eu/dga#DataCooperativeService">
+  <rdf:Description rdf:about="https://w3id.org/dpv/legal/eu/dga#SingleInformationPoint">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Data Cooperative Service</skos:prefLabel>
-    <skos:definition xml:lang="en">Service provided by a data cooperative</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv/legal/eu/dga#DataIntermediationService"/>
+    <skos:prefLabel xml:lang="en">Single Information Point</skos:prefLabel>
+    <skos:definition xml:lang="en">Service responsible for receiving and transmiting requests for the re-use of public data</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Service"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/legal/eu/dga#DataIntermediationService">
@@ -26,15 +26,6 @@
     <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/legal/eu/dga#DataIntermediationServiceBetweenHoldersUsers"/>
     <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/legal/eu/dga#DataIntermediationServiceBetweenSubjectsUsers"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/legal/eu/dga#DataIntermediationServiceBetweenHoldersUsers">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Data Intermediation Service between Data Holders and Data Users</skos:prefLabel>
-    <skos:definition xml:lang="en">Data intermediation service for data shared between Data Holders and Data Users</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv/legal/eu/dga#DataIntermediationService"/>
-    <dct:source xml:lang="en">DGA 10.a</dct:source>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/legal/eu/dga#DataIntermediationServiceBetweenSubjectsUsers">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -44,12 +35,21 @@
     <dct:source xml:lang="en">DGA 10.b</dct:source>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/legal/eu/dga#SingleInformationPoint">
+  <rdf:Description rdf:about="https://w3id.org/dpv/legal/eu/dga#DataIntermediationServiceBetweenHoldersUsers">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Single Information Point</skos:prefLabel>
-    <skos:definition xml:lang="en">Service responsible for receiving and transmiting requests for the re-use of public data</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Service"/>
+    <skos:prefLabel xml:lang="en">Data Intermediation Service between Data Holders and Data Users</skos:prefLabel>
+    <skos:definition xml:lang="en">Data intermediation service for data shared between Data Holders and Data Users</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv/legal/eu/dga#DataIntermediationService"/>
+    <dct:source xml:lang="en">DGA 10.a</dct:source>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/legal/eu/dga#DataCooperativeService">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Data Cooperative Service</skos:prefLabel>
+    <skos:definition xml:lang="en">Service provided by a data cooperative</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv/legal/eu/dga#DataIntermediationService"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#Service">

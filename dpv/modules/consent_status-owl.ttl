@@ -102,6 +102,8 @@ dpv:ConsentStatus a rdfs:Class,
         dex:E0025,
         dex:E0026 ;
     rdfs:subClassOf dpv:Status ;
+    rdfs:superClassOf dpv:ConsentStatusInvalidForProcessing,
+        dpv:ConsentStatusValidForProcessing ;
     sw:term_status "accepted"@en ;
     skos:definition "The state or status of 'consent' that provides information reflecting its operational status and validity for processing data"@en ;
     skos:prefLabel "Consent Status"@en ;
@@ -114,6 +116,14 @@ dpv:ConsentStatusInvalidForProcessing a rdfs:Class,
     dct:created "2022-06-22"^^xsd:date ;
     dct:source "(GConsent,https://w3id.org/GConsent)"@en ;
     rdfs:subClassOf dpv:ConsentStatus ;
+    rdfs:superClassOf dpv:ConsentExpired,
+        dpv:ConsentInvalidated,
+        dpv:ConsentRefused,
+        dpv:ConsentRequestDeferred,
+        dpv:ConsentRequested,
+        dpv:ConsentRevoked,
+        dpv:ConsentUnknown,
+        dpv:ConsentWithdrawn ;
     sw:term_status "accepted"@en ;
     skos:definition "States of consent that cannot be used as valid justifications for processing data"@en ;
     skos:prefLabel "Consent Status Invalid for Processing"@en ;
@@ -126,6 +136,8 @@ dpv:ConsentStatusValidForProcessing a rdfs:Class,
     dct:created "2022-06-22"^^xsd:date ;
     dct:source "(GConsent,https://w3id.org/GConsent)"@en ;
     rdfs:subClassOf dpv:ConsentStatus ;
+    rdfs:superClassOf dpv:ConsentGiven,
+        dpv:RenewedConsentGiven ;
     sw:term_status "accepted"@en ;
     skos:definition "States of consent that can be used as valid justifications for processing data"@en ;
     skos:prefLabel "Consent Status Valid for Processing"@en ;

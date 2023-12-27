@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>vocab_management.py</title>
+  <link rel="stylesheet" href="pycco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <div class='section'>
+    <div class='docs'><h1>vocab_management.py</h1></div>
+  </div>
+  <div class='clearall'>
+  <div class='section' id='section-0'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-0'>#</a>
+      </div>
+      <p>author: Harshvardhan J. Pandit</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;Data and configurations for vocabulary management&#39;&#39;&#39;</span>
+
+<span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">from</span> <span class="nn">rdflib</span> <span class="kn">import</span> <span class="n">Namespace</span>
+
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span>
+    <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%(levelname)s</span><span class="s1"> - </span><span class="si">%(funcName)s</span><span class="s1"> :: </span><span class="si">%(lineno)d</span><span class="s1"> - </span><span class="si">%(message)s</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">DEBUG</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">debug</span>
+<span class="n">INFO</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">info</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-1'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-1'>#</a>
+      </div>
+      <h2><span id="data" href="data"> data </span></h2>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-2'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-2'>#</a>
+      </div>
+      <h3><span id="serializations" href="serializations"> serializations </span></h3>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-3'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-3'>#</a>
+      </div>
+      <p>Serialisations are <code>key:value</code> where <code>key</code> is the file extension
+and <code>value</code> is the format passed to rdflib to serialise triples</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="n">RDF_SERIALIZATIONS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;rdf&#39;</span><span class="p">:</span> <span class="s1">&#39;xml&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;ttl&#39;</span><span class="p">:</span> <span class="s1">&#39;turtle&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;n3&#39;</span><span class="p">:</span> <span class="s1">&#39;n3&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;jsonld&#39;</span><span class="p">:</span> <span class="s1">&#39;json-ld&#39;</span>
+    <span class="p">}</span>
+<span class="n">OWL_SERIALIZATIONS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;owl&#39;</span><span class="p">:</span> <span class="s1">&#39;xml&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;ttl&#39;</span><span class="p">:</span> <span class="s1">&#39;turtle&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;n3&#39;</span><span class="p">:</span> <span class="s1">&#39;n3&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;jsonld&#39;</span><span class="p">:</span> <span class="s1">&#39;json-ld&#39;</span>
+    <span class="p">}</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-4'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-4'>#</a>
+      </div>
+      <h1>=== term-statuses ===</h1>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="n">VOCAB_TERM_ACCEPT</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;accepted&#39;</span><span class="p">,</span> <span class="s1">&#39;changed&#39;</span><span class="p">,</span> <span class="s1">&#39;modified&#39;</span><span class="p">,</span> <span class="s1">&#39;sunset&#39;</span><span class="p">)</span>
+<span class="n">VOCAB_TERM_REJECT</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;deprecated&#39;</span><span class="p">,</span> <span class="s1">&#39;removed&#39;</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-5'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-5'>#</a>
+      </div>
+      <h3><span id="namespaces" href="namespaces"> namespaces </span></h3>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="n">NAMESPACE_CSV</span> <span class="o">=</span> <span class="p">(</span>
+	<span class="s1">&#39;vocab_csv/Namespaces.csv&#39;</span><span class="p">,</span>
+	<span class="s1">&#39;vocab_csv/Namespaces_Other.csv&#39;</span><span class="p">,</span>
+	<span class="p">)</span>
+<span class="n">NAMESPACES</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">csvfile</span> <span class="ow">in</span> <span class="n">NAMESPACE_CSV</span><span class="p">:</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-6'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-6'>#</a>
+      </div>
+      <p>DEBUG(f&rsquo;Extracting namespaces from {csvfile}&rsquo;)</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>	<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">csvfile</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span>
+		<span class="n">csvreader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">fd</span><span class="p">)</span>
+		<span class="nb">next</span><span class="p">(</span><span class="n">csvreader</span><span class="p">)</span>
+		<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">csvreader</span><span class="p">:</span>
+			<span class="n">prefix</span><span class="p">,</span> <span class="n">iri</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+			<span class="n">variable</span> <span class="o">=</span> <span class="n">prefix</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="s1">&#39;_&#39;</span><span class="p">)</span>
+			<span class="n">namespace</span> <span class="o">=</span> <span class="n">Namespace</span><span class="p">(</span><span class="n">iri</span><span class="p">)</span>
+			<span class="nb">globals</span><span class="p">()[</span><span class="n">variable</span><span class="p">]</span> <span class="o">=</span> <span class="n">namespace</span>
+			<span class="n">NAMESPACES</span><span class="p">[</span><span class="n">prefix</span><span class="p">]</span> <span class="o">=</span> <span class="n">namespace</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-7'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-7'>#</a>
+      </div>
+      <p>DEBUG(f&rsquo;{prefix} namespace with IRI {iri}&rsquo;)</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="kn">from</span> <span class="nn">rdflib</span> <span class="kn">import</span> <span class="n">Graph</span>
+<span class="n">NS</span> <span class="o">=</span> <span class="n">Graph</span><span class="p">()</span>
+<span class="n">NS</span><span class="o">.</span><span class="n">ns</span> <span class="o">=</span> <span class="p">{</span> <span class="n">k</span><span class="p">:</span><span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">NAMESPACES</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="p">}</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-8'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-8'>#</a>
+      </div>
+      <h3><span id="csv-files" href="csv-files"> csv-files </span></h3>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="n">IMPORT_CSV_PATH</span> <span class="o">=</span> <span class="s1">&#39;./vocab_csv&#39;</span>
+<span class="n">CSVFILES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;dex&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;examples&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;examples&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/Example.csv&#39;</span><span class="p">,</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;dpv&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;process&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;classes&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/Process.csv&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;properties&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/Process_properties.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;personal_data&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;classes&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/PersonalData.csv&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;properties&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/PersonalData_properties.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;purposes&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/Purpose.csv&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;properties&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/Purpose_properties.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;processing&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/Processing.csv&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;properties&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/Processing_properties.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;TOM&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/TOM.csv&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;properties&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/TOM_properties.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;technical_measures&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/TechnicalMeasure.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;organisational_measures&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/OrganisationalMeasure.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;entities&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/Entities.csv&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;properties&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/Entities_properties.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;entities_authority&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/Entities_Authority.csv&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;properties&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/Entities_Authority_properties.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;entities_legalrole&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/Entities_LegalRole.csv&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;properties&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/Entities_LegalRole_properties.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;entities_organisation&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/Entities_Organisation.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;entities_datasubject&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/Entities_DataSubject.csv&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;properties&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/Entities_DataSubject_properties.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;legal_basis&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/LegalBasis.csv&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;properties&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/LegalBasis_properties.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;consent&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;properties&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/Consent_properties.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;consent_types&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/ConsentTypes.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;consent_status&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/ConsentStatus.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;context&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/Context.csv&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;properties&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/Context_properties.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;processing_context&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/ProcessingContext.csv&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;properties&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/ProcessingContext_properties.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;processing_scale&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/ProcessingScale.csv&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;properties&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/ProcessingScale_properties.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;status&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/Status.csv&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;properties&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/Status_properties.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;risk&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/Risk.csv&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;properties&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/Risk_properties.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;jurisdiction&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/Jurisdiction.csv&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;properties&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/Jurisdiction_properties.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;rights&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/Rights.csv&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;properties&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/Rights_properties.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;rules&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/Rules.csv&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;properties&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/Rules_properties.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;pd&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;core&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/pd-core.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;extended&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/pd-extended.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;tech&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;core&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/tech-core.csv&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;properties&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/tech-core-properties.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/tech-data.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;ops&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/tech-ops.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;security&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/tech-security.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;surveillance&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/tech-surveillance.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;provision&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/tech-provision.csv&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;properties&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/tech-provision-properties.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;actors&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/tech-actors.csv&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;properties&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/tech-actors-properties.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;comms&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/tech-comms.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;provision&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/tech-provision.csv&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;properties&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/tech-provision-properties.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;tools&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/tech-tools.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span> 
+    <span class="p">},</span>
+    <span class="s1">&#39;risk&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;risk_consequences&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/RiskConsequences.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;risk_levels&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/RiskLevels.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;risk_matrix&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/RiskMatrix.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;risk_controls&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/RiskControls.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;risk_assessment&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/RiskAssessment.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;risk_methodology&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/RiskMethodology.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;loc&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;locations&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;locations&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/location.csv&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;properties&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/location_properties.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;memberships&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;memberships&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/location_memberships.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-9'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-9'>#</a>
+      </div>
+      <p>Laws-Authorities</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="s1">&#39;legal-eu&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;eu&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;laws&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/legal-eu.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;legal-de&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;de&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;laws&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/legal-de.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;legal-gb&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;gb&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;laws&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/legal-gb.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;legal-ie&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;ie&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;laws&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/legal-ie.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;legal-us&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;us&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;laws&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/legal-us.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-10'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-10'>#</a>
+      </div>
+      <p>EU Regulations</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="s1">&#39;eu-gdpr&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;legal_basis&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/GDPR_LegalBasis.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;legal_basis_special&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/GDPR_LegalBasis_SpecialCategory.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;legal_basis_data_transfer&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/GDPR_LegalBasis_DataTransfer.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;rights&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/GDPR_LegalRights.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;data_transfers&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/GDPR_DataTransfers.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;dpia&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/GDPR_DPIA.csv&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;properties&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/GDPR_DPIA_properties.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;compliance&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/GDPR_compliance.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;legal_basis_rights_mapping&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;legal_basis_rights_mapping&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/GDPR_LegalBasis_Rights_Mapping.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;eu-dga&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;legal_basis&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/DGA_LegalBasis.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;legal_rights&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/DGA_LegalRights.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;services&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/DGA_Services.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;registers&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/DGA_Registers.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;toms&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/DGA_TOMs.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;entities&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/DGA_entities.csv&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;properties&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/DGA_properties.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;eu-rights&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;fundamental&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;taxonomy&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/EUFundamentalRights.csv&#39;</span><span class="p">,</span>
+        <span class="p">},</span>
+    <span class="p">},</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-11'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-11'>#</a>
+      </div>
+      <p>&lsquo;todo&rsquo;: {
+    f&rsquo;{IMPORT_CSV_PATH}/legal_Authorities.csv&rsquo;,
+    f&rsquo;{IMPORT_CSV_PATH}/legal_EU_Adequacy.csv&rsquo;,
+    f&rsquo;{IMPORT_CSV_PATH}/legal_EU_EEA.csv&rsquo;,
+    f&rsquo;{IMPORT_CSV_PATH}/legal_Laws.csv&rsquo;,
+    f&rsquo;{IMPORT_CSV_PATH}/legal_Locations.csv&rsquo;,
+    f&rsquo;{IMPORT_CSV_PATH}/legal_properties.csv&rsquo;,
+}</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="p">}</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-12'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-12'>#</a>
+      </div>
+      <h3><span id="translations" href="translations"> translations </span></h3>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="n">IMPORT_TRANSLATIONS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;de&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;lang&#39;</span><span class="p">:</span> <span class="s1">&#39;German&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;prod&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/DE_prod.csv&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;verify&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s1">/DE_verify.csv&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">}</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-13'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-13'>#</a>
+      </div>
+      <p>This file will save the missing translations.
+The initial list is populated in  <a href="200.html">200.py</a> and then the data is 
+collected and overwritten in  <a href="300.html">300.py</a></p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="n">TRANSLATIONS_MISSING_FILE</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">IMPORT_CSV_PATH</span><span class="si">}</span><span class="s2">/translations_missing.json&quot;</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-14'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-14'>#</a>
+      </div>
+      <h3><span id="exports" href="exports"> exports </span></h3>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="n">EXPORT_RDF_PATH</span> <span class="o">=</span> <span class="s1">&#39;..&#39;</span>
+<span class="n">RDF_STRUCTURE</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;dpv&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;main&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">EXPORT_RDF_PATH</span><span class="si">}</span><span class="s1">/dpv&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;modules&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">EXPORT_RDF_PATH</span><span class="si">}</span><span class="s1">/dpv/modules&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;pd&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;main&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">EXPORT_RDF_PATH</span><span class="si">}</span><span class="s1">/pd&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;modules&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">EXPORT_RDF_PATH</span><span class="si">}</span><span class="s1">/pd/modules&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;tech&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;main&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">EXPORT_RDF_PATH</span><span class="si">}</span><span class="s1">/tech&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;modules&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">EXPORT_RDF_PATH</span><span class="si">}</span><span class="s1">/tech/modules&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;risk&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;main&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">EXPORT_RDF_PATH</span><span class="si">}</span><span class="s1">/risk&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;modules&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">EXPORT_RDF_PATH</span><span class="si">}</span><span class="s1">/risk/modules&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;loc&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;main&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">EXPORT_RDF_PATH</span><span class="si">}</span><span class="s1">/loc&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;modules&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">EXPORT_RDF_PATH</span><span class="si">}</span><span class="s1">/loc/modules&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;legal&#39;</span><span class="p">:</span> <span class="p">{</span>  <span class="c1"># Consolidated graph of all legal data</span>
+        <span class="s1">&#39;main&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">EXPORT_RDF_PATH</span><span class="si">}</span><span class="s1">/legal&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;legal-eu&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;main&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">EXPORT_RDF_PATH</span><span class="si">}</span><span class="s1">/legal/eu&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;modules&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">EXPORT_RDF_PATH</span><span class="si">}</span><span class="s1">/legal/eu/modules&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;legal-de&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;main&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">EXPORT_RDF_PATH</span><span class="si">}</span><span class="s1">/legal/de&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;modules&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">EXPORT_RDF_PATH</span><span class="si">}</span><span class="s1">/legal/de/modules&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;legal-gb&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;main&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">EXPORT_RDF_PATH</span><span class="si">}</span><span class="s1">/legal/gb&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;modules&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">EXPORT_RDF_PATH</span><span class="si">}</span><span class="s1">/legal/gb/modules&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;legal-ie&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;main&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">EXPORT_RDF_PATH</span><span class="si">}</span><span class="s1">/legal/ie&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;modules&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">EXPORT_RDF_PATH</span><span class="si">}</span><span class="s1">/legal/ie/modules&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;legal-us&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;main&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">EXPORT_RDF_PATH</span><span class="si">}</span><span class="s1">/legal/us&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;modules&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">EXPORT_RDF_PATH</span><span class="si">}</span><span class="s1">/legal/us/modules&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;eu-gdpr&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;main&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">EXPORT_RDF_PATH</span><span class="si">}</span><span class="s1">/legal/eu/gdpr&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;modules&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">EXPORT_RDF_PATH</span><span class="si">}</span><span class="s1">/legal/eu/gdpr/modules&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;eu-dga&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;main&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">EXPORT_RDF_PATH</span><span class="si">}</span><span class="s1">/legal/eu/dga&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;modules&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">EXPORT_RDF_PATH</span><span class="si">}</span><span class="s1">/legal/eu/dga/modules&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;eu-rights&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;main&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">EXPORT_RDF_PATH</span><span class="si">}</span><span class="s1">/legal/eu/rights&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;modules&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">EXPORT_RDF_PATH</span><span class="si">}</span><span class="s1">/legal/eu/rights/modules&#39;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;dex&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;main&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">EXPORT_RDF_PATH</span><span class="si">}</span><span class="s1">/examples&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;modules&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">EXPORT_RDF_PATH</span><span class="si">}</span><span class="s1">/examples/modules&#39;</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">}</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-15'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-15'>#</a>
+      </div>
+      <p>Collated concepts</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="n">RDF_COLLATIONS</span> <span class="o">=</span> <span class="p">({</span>
+    <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;legal&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;input&#39;</span><span class="p">:</span> <span class="p">(</span>
+        <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">EXPORT_RDF_PATH</span><span class="si">}</span><span class="s1">/legal/eu/legal-eu.ttl&#39;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">EXPORT_RDF_PATH</span><span class="si">}</span><span class="s1">/legal/de/legal-de.ttl&#39;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">EXPORT_RDF_PATH</span><span class="si">}</span><span class="s1">/legal/ie/legal-ie.ttl&#39;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">EXPORT_RDF_PATH</span><span class="si">}</span><span class="s1">/legal/gb/legal-gb.ttl&#39;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">EXPORT_RDF_PATH</span><span class="si">}</span><span class="s1">/legal/us/legal-us.ttl&#39;</span><span class="p">,</span>
+        <span class="p">),</span>
+    <span class="s1">&#39;output&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">EXPORT_RDF_PATH</span><span class="si">}</span><span class="s1">/legal/legal&#39;</span><span class="p">,</span>
+<span class="p">},)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-16'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-16'>#</a>
+      </div>
+      <h3><span id="examples" href="examples"> examples </span></h3>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="n">EXAMPLES</span> <span class="o">=</span> <span class="p">{}</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-17'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-17'>#</a>
+      </div>
+      <h2><span id="functions" href="functions"> functions </span></h2>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-18'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-18'>#</a>
+      </div>
+      <h3><span id="prefix-iri" href="prefix-iri"> prefix-iri </span></h3>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">prefix_from_iri</span><span class="p">(</span><span class="n">iri</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">ns</span> <span class="ow">in</span> <span class="n">NAMESPACES</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">iri</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">ns</span><span class="p">):</span>
+            <span class="n">term</span> <span class="o">=</span> <span class="n">iri</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">ns</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="n">term</span><span class="si">}</span><span class="s1">&#39;</span>
+    <span class="k">return</span> <span class="kc">None</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-19'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-19'>#</a>
+      </div>
+      <h3><span id="contributors" href="contributors"> contributors </span></h3>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="kn">import</span> <span class="nn">json</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;../contributors.json&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span>
+    <span class="n">contributors</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">fd</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-20'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-20'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">generate_author_affiliation</span><span class="p">(</span><span class="n">author</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;takes author name, returns affiliation&#39;&#39;&#39;</span>
+    <span class="k">if</span> <span class="n">author</span> <span class="ow">in</span> <span class="n">contributors</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">contributors</span><span class="p">[</span><span class="n">author</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;&#39;</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-21'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-21'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">def</span> <span class="nf">generate_authors_affiliations</span><span class="p">(</span><span class="n">authors</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39;takes author name, returns affiliation&#39;&#39;&#39;</span>
+    <span class="n">authors</span> <span class="o">=</span> <span class="p">[</span><span class="n">contributors</span><span class="p">[</span><span class="n">author</span><span class="p">]</span> <span class="k">for</span> <span class="n">author</span> <span class="ow">in</span> <span class="n">contributors</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">authors</span>
+
+</pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+</div>
+</body>

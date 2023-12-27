@@ -26,6 +26,7 @@ tech:Application a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     rdfs:subClassOf tech:OperationalTechnology ;
+    rdfs:superClassOf tech:SmartphoneApplication ;
     sw:term_status "accepted"@en ;
     skos:definition "A computing or digital program"@en ;
     skos:prefLabel "Application"@en .
@@ -57,6 +58,8 @@ tech:CommunicationMechanism a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     rdfs:subClassOf rdfs:Class ;
+    rdfs:superClassOf tech:GPSCommunication,
+        tech:NetworkingCommunication ;
     sw:term_status "accepted"@en ;
     skos:definition "Communication mechanism used or provided by Technologoy"@en ;
     skos:prefLabel "Communication Mechanism"@en .
@@ -119,6 +122,7 @@ tech:DataManagementTechnology a rdfs:Class,
     dct:created "2022-06-15"^^xsd:date ;
     rdfs:subClassOf tech:DataTechnology,
         tech:ManagementTechnology ;
+    rdfs:superClassOf tech:PersonalInformationManagementSystem ;
     sw:term_status "accepted"@en ;
     skos:definition "Technology related to management of data"@en ;
     skos:prefLabel "Data Management Technology"@en .
@@ -170,6 +174,9 @@ tech:DataStorageTechnology a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     rdfs:subClassOf tech:DataTechnology ;
+    rdfs:superClassOf tech:Database,
+        tech:FileSystem,
+        tech:IdentityWallet ;
     sw:term_status "accepted"@en ;
     skos:definition "Technology related to storing data"@en ;
     skos:prefLabel "Data Storage Technology"@en .
@@ -180,6 +187,17 @@ tech:DataTechnology a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     rdfs:subClassOf dpv:Technology ;
+    rdfs:superClassOf tech:DataCopyingTechnology,
+        tech:DataDisclosureTechnology,
+        tech:DataManagementTechnology,
+        tech:DataObtainingTechnology,
+        tech:DataOrganisingTechnology,
+        tech:DataRemovalTechnology,
+        tech:DataSecurityTechnology,
+        tech:DataStorageTechnology,
+        tech:DataTransferTechnology,
+        tech:DataTransformationTechnology,
+        tech:DataUsageTechnology ;
     sw:term_status "accepted"@en ;
     skos:definition "Technology that uses or interacts with data"@en ;
     skos:prefLabel "Data Technology"@en .
@@ -282,6 +300,7 @@ tech:IdentityManagementTechnology a rdfs:Class,
     dct:created "2022-06-15"^^xsd:date ;
     rdfs:subClassOf tech:IdentityTechnology,
         tech:ManagementTechnology ;
+    rdfs:superClassOf tech:IdentityWallet ;
     sw:term_status "accepted"@en ;
     skos:definition "Technologies providing identity provision, verification, management, and governance"@en ;
     skos:prefLabel "Identity Management Technology"@en .
@@ -292,6 +311,7 @@ tech:IdentityTechnology a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     rdfs:subClassOf dpv:Technology ;
+    rdfs:superClassOf tech:IdentityManagementTechnology ;
     sw:term_status "accepted"@en ;
     skos:definition "Technology related to identity or identifiers"@en ;
     skos:prefLabel "Identity Technology"@en .
@@ -335,6 +355,9 @@ tech:ManagementTechnology a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     rdfs:subClassOf dpv:Technology ;
+    rdfs:superClassOf tech:DataManagementTechnology,
+        tech:IdentityManagementTechnology,
+        tech:SecurityManagementTechnology ;
     sw:term_status "accepted"@en ;
     skos:definition "Technology that enables or provides management"@en ;
     skos:prefLabel "Management Technology"@en .
@@ -406,6 +429,10 @@ tech:OperationalTechnology a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     rdfs:subClassOf dpv:Technology ;
+    rdfs:superClassOf tech:Application,
+        tech:OperationDevice,
+        tech:OperationEnvironment,
+        tech:OperationManagement ;
     sw:term_status "accepted"@en ;
     skos:definition "Technology that enables or performs or executes operations and processes"@en ;
     skos:prefLabel "Operational Technology"@en .
@@ -478,6 +505,13 @@ tech:SecurityTechnology a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     rdfs:subClassOf dpv:Technology ;
+    rdfs:superClassOf tech:DataSecurityTechnology,
+        tech:DetectionSecurityTechnology,
+        tech:MitigationSecurityTechnology,
+        tech:MonitoringSecurityTechnology,
+        tech:PET,
+        tech:PreventionSecurityTechnology,
+        tech:SecurityManagementTechnology ;
     sw:term_status "accepted"@en ;
     skos:definition "Technology that enables or provides security"@en ;
     skos:prefLabel "Security Technology"@en .
@@ -519,6 +553,8 @@ tech:SurveillanceTechnology a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     rdfs:subClassOf dpv:Technology ;
+    rdfs:superClassOf tech:CovertSurveillanceTechnology,
+        tech:OvertSurveillanceTechnology ;
     sw:term_status "accepted"@en ;
     skos:definition "Technology related to surveillance of individuals or people"@en ;
     skos:prefLabel "Surveillance Technology"@en .
@@ -569,6 +605,14 @@ tech:TechnologyProvisionMethod a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     rdfs:subClassOf rdfs:Class ;
+    rdfs:superClassOf tech:Algorithmic,
+        tech:Component,
+        tech:FixedUse,
+        tech:Goods,
+        tech:Product,
+        tech:Service,
+        tech:Subscription,
+        tech:System ;
     sw:term_status "accepted"@en ;
     skos:definition "Method associated with provision or use of technology"@en ;
     skos:prefLabel "Technology Provision Method"@en .
@@ -659,6 +703,8 @@ tech:hasTRL a rdf:Property,
 
 dpv:Entity rdfs:superClassOf tech:TechnologyActor .
 
+tech:LocalStorage rdfs:superClassOf tech:Cookie .
+
 tech:hasDeveloper a rdf:Property,
         owl:ObjectProperty ;
     dcam:domainIncludes dpv:Technology ;
@@ -666,7 +712,6 @@ tech:hasDeveloper a rdf:Property,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-07-02"^^xsd:date ;
     dct:modified "2022-10-21"^^xsd:date ;
-    rdfs:subClassOf tech:hasTechnologyActor ;
     rdfs:subPropertyOf tech:hasTechnologyActor ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates technology developer"@en ;
@@ -681,7 +726,6 @@ tech:hasProvider a rdf:Property,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-07-02"^^xsd:date ;
     dct:modified "2022-10-21"^^xsd:date ;
-    rdfs:subClassOf tech:hasTechnologyActor ;
     rdfs:subPropertyOf tech:hasTechnologyActor ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates technology provider"@en ;
@@ -696,7 +740,6 @@ tech:hasSubject a rdf:Property,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-07-02"^^xsd:date ;
     dct:modified "2022-10-21"^^xsd:date ;
-    rdfs:subClassOf tech:hasTechnologyActor ;
     rdfs:subPropertyOf tech:hasTechnologyActor ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates technology subject"@en ;
@@ -711,13 +754,14 @@ tech:hasUser a rdf:Property,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-07-02"^^xsd:date ;
     dct:modified "2022-10-21"^^xsd:date ;
-    rdfs:subClassOf tech:hasTechnologyActor ;
     rdfs:subPropertyOf tech:hasTechnologyActor ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates technology user"@en ;
     skos:prefLabel "has user"@en ;
     schema:domainIncludes dpv:Technology ;
     schema:rangeIncludes tech:TechnologyUser .
+
+dpv:Location rdfs:superClassOf tech:TechnologyUsageLocation .
 
 tech:hasTechnologyActor a rdf:Property,
         owl:ObjectProperty ;
@@ -734,6 +778,19 @@ tech:hasTechnologyActor a rdf:Property,
     skos:prefLabel "has technology actor"@en ;
     schema:domainIncludes dpv:Technology ;
     schema:rangeIncludes tech:TechnologyActor .
+
+tech:Networking rdfs:superClassOf tech:BluetoothCommunication,
+        tech:CellularNetworkCommunication,
+        tech:InternetCommunication,
+        tech:LocalNetworkCommunication,
+        tech:WiFiCommunication .
+
+dpv:Technology rdfs:superClassOf tech:DataTechnology,
+        tech:IdentityTechnology,
+        tech:ManagementTechnology,
+        tech:OperationalTechnology,
+        tech:SecurityTechnology,
+        tech:SurveillanceTechnology .
 
 rdfs:Class rdfs:superClassOf tech:CommunicationMechanism,
         tech:TechnologyProvisionMethod,

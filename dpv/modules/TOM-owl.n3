@@ -74,7 +74,6 @@ dpv:hasLegalMeasure a rdf:Property,
         owl:ObjectProperty ;
     dcam:rangeIncludes dpv:LegalMeasure ;
     dct:created "2023-12-10"^^xsd:date ;
-    rdfs:subClassOf dpv:hasOrganisationalMeasure ;
     rdfs:subPropertyOf dpv:hasOrganisationalMeasure ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates use or applicability of Legal measure"@en ;
@@ -86,7 +85,6 @@ dpv:hasNotice a rdf:Property,
     dcam:rangeIncludes dpv:Notice ;
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake" ;
     dct:created "2022-06-22"^^xsd:date ;
-    rdfs:subClassOf dpv:hasOrganisationalMeasure ;
     rdfs:subPropertyOf dpv:hasOrganisationalMeasure ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the use or applicability of a Notice for the specified context"@en ;
@@ -97,7 +95,6 @@ dpv:hasPhysicalMeasure a rdf:Property,
         owl:ObjectProperty ;
     dcam:rangeIncludes dpv:PhysicalMeasure ;
     dct:created "2023-12-10"^^xsd:date ;
-    rdfs:subClassOf dpv:hasTechnicalOrganisationalMeasure ;
     rdfs:subPropertyOf dpv:hasTechnicalOrganisationalMeasure ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates use or applicability of Physical measure"@en ;
@@ -109,7 +106,6 @@ dpv:hasPolicy a rdf:Property,
     dcam:rangeIncludes dpv:Policy ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-01-26"^^xsd:date ;
-    rdfs:subClassOf dpv:hasTechnicalOrganisationalMeasure ;
     rdfs:subPropertyOf dpv:hasTechnicalOrganisationalMeasure ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates policy applicable or used"@en ;
@@ -121,7 +117,6 @@ dpv:hasTechnicalMeasure a rdf:Property,
     dcam:rangeIncludes dpv:TechnicalMeasure ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-02-09"^^xsd:date ;
-    rdfs:subClassOf dpv:hasTechnicalOrganisationalMeasure ;
     rdfs:subPropertyOf dpv:hasTechnicalOrganisationalMeasure ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates use or applicability of Technical measure"@en ;
@@ -133,7 +128,6 @@ dpv:hasOrganisationalMeasure a rdf:Property,
     dcam:rangeIncludes dpv:OrganisationalMeasure ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-02-09"^^xsd:date ;
-    rdfs:subClassOf dpv:hasTechnicalOrganisationalMeasure ;
     rdfs:subPropertyOf dpv:hasTechnicalOrganisationalMeasure ;
     rdfs:superPropertyOf dpv:hasLegalMeasure,
         dpv:hasNotice ;

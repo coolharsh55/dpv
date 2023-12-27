@@ -49,6 +49,13 @@ dpv:Automation a rdfs:Class,
     dct:created "2023-12-10"^^xsd:date ;
     vann:example dex:E0013 ;
     rdfs:subClassOf dpv:ProcessingContext ;
+    rdfs:superClassOf dpv:AssistiveAutomation,
+        dpv:Autonomous,
+        dpv:ConditionalAutomation,
+        dpv:FullAutomation,
+        dpv:HighAutomation,
+        dpv:NotAutomated,
+        dpv:PartialAutomation ;
     sw:term_status "accepted"@en ;
     skos:definition "Indication of degree or level of automation associated with specified context"@en ;
     skos:prefLabel "Automation"@en .
@@ -102,6 +109,11 @@ dpv:DataSource a rdfs:Class,
     vann:example dex:E0012,
         dex:E0020 ;
     rdfs:subClassOf dpv:ProcessingContext ;
+    rdfs:superClassOf dpv:DataControllerDataSource,
+        dpv:DataSubjectDataSource,
+        dpv:NonPublicDataSource,
+        dpv:PublicDataSource,
+        dpv:ThirdPartyDataSource ;
     sw:term_status "accepted"@en ;
     skos:definition "The source or origin of data"@en ;
     skos:prefLabel "Data Source"@en ;
@@ -112,6 +124,7 @@ dpv:DataSubjectDataSource a rdfs:Class,
         dpv:DataSource ;
     dct:created "2023-10-12"^^xsd:date ;
     rdfs:subClassOf dpv:DataSource ;
+    rdfs:superClassOf dpv:DataPublishedByDataSubject ;
     sw:term_status "accepted"@en ;
     skos:definition "Data Sourced from Data Subject(s), e.g. when data is collected via a form or observed from their activities"@en ;
     skos:prefLabel "Data Subject as Data Source"@en .
@@ -144,6 +157,8 @@ dpv:EvaluationScoring a rdfs:Class,
     dct:created "2020-11-04"^^xsd:date ;
     dct:source "(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)"@en ;
     rdfs:subClassOf dpv:ProcessingContext ;
+    rdfs:superClassOf dpv:EvaluationOfIndividuals,
+        dpv:ScoringOfIndividuals ;
     sw:term_status "accepted"@en ;
     skos:definition "Processing that involves evaluation and scoring of individuals"@en ;
     skos:prefLabel "Evaluation and Scoring"@en .
@@ -185,6 +200,14 @@ dpv:HumanInvolvement a rdfs:Class,
     dct:created "2022-01-26"^^xsd:date ;
     dct:modified "2023-12-10"^^xsd:date ;
     rdfs:subClassOf dpv:ProcessingContext ;
+    rdfs:superClassOf dpv:HumanInvolved,
+        dpv:HumanInvolvementForControl,
+        dpv:HumanInvolvementForDecision,
+        dpv:HumanInvolvementForInput,
+        dpv:HumanInvolvementForIntervention,
+        dpv:HumanInvolvementForOversight,
+        dpv:HumanInvolvementForVerification,
+        dpv:HumanNotInvolved ;
     sw:term_status "accepted"@en ;
     skos:definition "The involvement of humans in specified context"@en ;
     skos:prefLabel "Human Involvement"@en ;
@@ -295,6 +318,8 @@ dpv:InnovativeUseOfTechnology a rdfs:Class,
         owl:Class ;
     dct:created "2023-12-10"^^xsd:date ;
     rdfs:subClassOf dpv:ProcessingContext ;
+    rdfs:superClassOf dpv:InnovativeUseOfExistingTechnology,
+        dpv:InnovativeUseOfNewTechnologies ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates that technology is being used in an innovative manner"@en ;
     skos:prefLabel "Innovative use of Technology"@en ;
@@ -353,7 +378,8 @@ dpv:ProcessingContext a rdfs:Class,
         dpv:EvaluationScoring,
         dpv:HumanInvolvement,
         dpv:InnovativeUseOfTechnology,
-        dpv:ProcessingCondition ;
+        dpv:ProcessingCondition,
+        dpv:SystematicMonitoring ;
     sw:term_status "accepted"@en ;
     skos:definition "Context or conditions within which processing takes place"@en ;
     skos:prefLabel "Processing Context"@en .

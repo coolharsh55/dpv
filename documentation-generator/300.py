@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 #author: Harshvardhan J. Pandit 
 
-'''Generates ReSpec documentation for DPV using RDF and SPARQL'''
+"""
+Generates documentation for DPV
+"""
 
-# The vocabularies are modular
-
-IMPORT_PATH = '..'
-EXPORT_PATH = '..'
-TEMPLATE_PATH = './jinja2_resources'
+# This script reads RDF, creates an in-memory `dict` holding
+# all concepts, and then uses it to produce HTML by using
+# Jinja templates - which is essentially HTML with some logic
+# that Jinja uses to populate based on passed data.
 
 import json
 from rdflib import Graph, Namespace, BNode, Literal
@@ -15,263 +16,111 @@ from rdflib import RDF, RDFS, OWL, SKOS
 from rdflib import URIRef
 from rdform import DataGraph, RDFS_Resource
 import logging
-# logging configuration for debugging to console
 logging.basicConfig(
     level=logging.DEBUG, format='%(levelname)s - %(funcName)s :: %(lineno)d - %(message)s')
 DEBUG = logging.debug
 INFO = logging.info
 
-from vocab_management import generate_author_affiliation, NAMESPACES, NS
-from vocab_management import prefix_from_iri
-from vocab_management import IMPORT_TRANSLATIONS, TRANSLATIONS_TODO_PATH
+# [[vocab_management.py]] contains:
+# [namespaces](vocab_management.html#namespaces),
+# [RDF contents and paths](vocab_management.html#csv-files),
+# [criteria for accepted terms](vocab_management.html#term-statuses),
+# [serialisation export configuration](vocab_management.html#serialisations),
+# [translation import configuration](vocab_management.html#translations),
+# [export paths and configuration](vocab_management.html#export)
+from vocab_management import *
 
-
-# What does HTML document require?
-# per-vocab: modules and concepts/properties within the module
-# dynamic content - number of subclasses/instances
-# structured contents: prefixed form, term name from IRI
-
-# How to do this?
-# load all vocabulary files - create a global dict
-VOCABS = {
-    'dex': {
-        'vocab': f'{IMPORT_PATH}/examples/dex.ttl',
-        'template': 'template_examples.jinja2',
-        'export': f'{EXPORT_PATH}/examples',
-        'modules': {},
-        'module-template': {},
-    },
-    'dpv': {
-        'vocab': f'{IMPORT_PATH}/dpv/dpv.ttl',
-        'template': 'template_dpv.jinja2',
-        'export': f'{EXPORT_PATH}/dpv',
-        'modules': {
-            # 'core': f'{IMPORT_PATH}/dpv/modules/core.ttl',
-            'process': f'{IMPORT_PATH}/dpv/modules/process.ttl',
-            'personal_data': f'{IMPORT_PATH}/dpv/modules/personal_data.ttl',
-            'purposes': f'{IMPORT_PATH}/dpv/modules/purposes.ttl',
-            'processing': f'{IMPORT_PATH}/dpv/modules/processing.ttl',
-            'TOM': f'{IMPORT_PATH}/dpv/modules/TOM.ttl',
-            'TOM-technical': f'{IMPORT_PATH}/dpv/modules/technical_measures.ttl',
-            'TOM-organisational': f'{IMPORT_PATH}/dpv/modules/organisational_measures.ttl',
-            'entities': f'{IMPORT_PATH}/dpv/modules/entities.ttl',
-            'entities-authority': f'{IMPORT_PATH}/dpv/modules/entities_authority.ttl',
-            'entities-legalrole': f'{IMPORT_PATH}/dpv/modules/entities_legalrole.ttl',
-            'entities-organisation': f'{IMPORT_PATH}/dpv/modules/entities_organisation.ttl',
-            'entities-datasubject': f'{IMPORT_PATH}/dpv/modules/entities_datasubject.ttl',
-            'legal_basis': f'{IMPORT_PATH}/dpv/modules/legal_basis.ttl',
-            'legal_basis-consent': f'{IMPORT_PATH}/dpv/modules/consent.ttl',
-            'legal_basis-consent-types': f'{IMPORT_PATH}/dpv/modules/consent_types.ttl',
-            'legal_basis-consent-status': f'{IMPORT_PATH}/dpv/modules/consent_status.ttl',
-            'processing-context': f'{IMPORT_PATH}/dpv/modules/processing_context.ttl',
-            'processing-scale': f'{IMPORT_PATH}/dpv/modules/processing_scale.ttl',
-            'context': f'{IMPORT_PATH}/dpv/modules/context.ttl',
-            'context-status': f'{IMPORT_PATH}/dpv/modules/status.ttl',
-            'context-jurisdiction': f'{IMPORT_PATH}/dpv/modules/jurisdiction.ttl',
-            'risk': f'{IMPORT_PATH}/dpv/modules/risk.ttl',
-            'rights': f'{IMPORT_PATH}/dpv/modules/rights.ttl',
-            'rules': f'{IMPORT_PATH}/dpv/modules/rules.ttl',
-        },
-        'module-template': {
-            'entities': 'contents_dpv_entities.jinja2',
-            'purposes': 'contents_dpv_purposes.jinja2',
-            'processing': 'contents_dpv_processing.jinja2',
-            'TOM': 'contents_dpv_TOM.jinja2',
-            'legal_basis': 'contents_dpv_legal_basis.jinja2',
-            'context': 'contents_dpv_context.jinja2',
-            'risk': 'contents_dpv_risk.jinja2',
-            'rights': 'contents_dpv_rights.jinja2',
-            'rules': 'contents_dpv_rules.jinja2',
-        },
-    },
-    # EXTENSIONS
-    'pd': {
-        'vocab': f'{IMPORT_PATH}/pd/pd.ttl',
-        'template': 'template_pd.jinja2',
-        'export': f'{EXPORT_PATH}/pd',
-        'modules': {
-            'core': f'{IMPORT_PATH}/pd/modules/core.ttl',
-            'extended': f'{IMPORT_PATH}/pd/modules/extended.ttl',
-        },
-    },
-    'tech': {
-        'vocab': f'{IMPORT_PATH}/tech/tech.ttl',
-        'template': 'template_tech.jinja2',
-        'export': f'{EXPORT_PATH}/tech',
-        'modules': {
-            'core': f'{IMPORT_PATH}/tech/modules/core.ttl',
-            'data': f'{IMPORT_PATH}/tech/modules/data.ttl',
-            'ops': f'{IMPORT_PATH}/tech/modules/ops.ttl',
-            'security': f'{IMPORT_PATH}/tech/modules/security.ttl',
-            'surveillance': f'{IMPORT_PATH}/tech/modules/surveillance.ttl',
-            'provision': f'{IMPORT_PATH}/tech/modules/provision.ttl',
-            'actors': f'{IMPORT_PATH}/tech/modules/actors.ttl',
-            'comms': f'{IMPORT_PATH}/tech/modules/comms.ttl',
-            'provision': f'{IMPORT_PATH}/tech/modules/provision.ttl',
-            'tools': f'{IMPORT_PATH}/tech/modules/tools.ttl',
-        },
-    },
-    'risk': {
-        'vocab': f'{IMPORT_PATH}/risk/risk.ttl',
-        'template': 'template_risk.jinja2',
-        'export': f'{EXPORT_PATH}/risk',
-        'modules': {
-            'risk_consequences': f'{IMPORT_PATH}/risk/modules/risk_consequences.ttl',
-            'risk_levels': f'{IMPORT_PATH}/risk/modules/risk_levels.ttl',
-            'risk_matrix': f'{IMPORT_PATH}/risk/modules/risk_matrix.ttl',
-            'risk_controls': f'{IMPORT_PATH}/risk/modules/risk_controls.ttl',
-            'risk_assessment': f'{IMPORT_PATH}/risk/modules/risk_assessment.ttl',
-            'risk_methodology': f'{IMPORT_PATH}/risk/modules/risk_methodology.ttl',
-        }
-    },
-    'loc': {
-        'vocab': f'{IMPORT_PATH}/loc/loc.ttl',
-        'template': 'template_locations.jinja2',
-        'export': f'{EXPORT_PATH}/loc',
-        'modules': {
-            'locations': f'{IMPORT_PATH}/loc/modules/locations.ttl',
-        },
-    },
-    # LEGAL VOCABS
-    'legal-eu': {
-        'vocab': f'{IMPORT_PATH}/legal/eu/legal-eu.ttl',
-        'template': 'template_legal_jurisdiction.jinja2',
-        'export': f'{EXPORT_PATH}/legal/eu',
-        'modules': {
-            'legal': f'{IMPORT_PATH}/legal/eu/legal-eu.ttl',
-        }
-    },
-    'legal-de': {
-        'vocab': f'{IMPORT_PATH}/legal/de/legal-de.ttl',
-        'template': 'template_legal_jurisdiction.jinja2',
-        'export': f'{EXPORT_PATH}/legal/de',
-        'modules': {
-            'legal': f'{IMPORT_PATH}/legal/de/legal-de.ttl',
-        }
-    },
-    'legal-gb': {
-        'vocab': f'{IMPORT_PATH}/legal/gb/legal-gb.ttl',
-        'template': 'template_legal_jurisdiction.jinja2',
-        'export': f'{EXPORT_PATH}/legal/gb',
-        'modules': {
-            'legal': f'{IMPORT_PATH}/legal/gb/legal-gb.ttl',
-        }
-    },
-    'legal-ie': {
-        'vocab': f'{IMPORT_PATH}/legal/ie/legal-ie.ttl',
-        'template': 'template_legal_jurisdiction.jinja2',
-        'export': f'{EXPORT_PATH}/legal/ie',
-        'modules': {
-            'legal': f'{IMPORT_PATH}/legal/ie/legal-ie.ttl',
-        }
-    },
-    'legal-us': {
-        'vocab': f'{IMPORT_PATH}/legal/us/legal-us.ttl',
-        'template': 'template_legal_jurisdiction.jinja2',
-        'export': f'{EXPORT_PATH}/legal/us',
-        'modules': {
-            'legal': f'{IMPORT_PATH}/legal/us/legal-us.ttl',
-        }
-    },
-    'legal': {
-        'vocab': f'{IMPORT_PATH}/legal/legal.ttl',
-        'template': 'template_legal_jurisdiction.jinja2',
-        'export': f'{EXPORT_PATH}/legal',
-        'modules': {
-            'legal': f'{IMPORT_PATH}/legal/legal.ttl',
-        }
-    },
-    # EU Laws
-    'eu-gdpr': {
-        'vocab': f'{IMPORT_PATH}/legal/eu/gdpr/eu-gdpr.ttl',
-        'template': 'template_legal_eu_gdpr.jinja2',
-        'export': f'{EXPORT_PATH}/legal/eu/gdpr',
-        'modules': {
-            'legal_basis': f'{IMPORT_PATH}/legal/eu/gdpr/modules/legal_basis.ttl',
-            'legal_basis-special': f'{IMPORT_PATH}/legal/eu/gdpr/modules/legal_basis_special.ttl',
-            'legal_basis-data_transfer': f'{IMPORT_PATH}/legal/eu/gdpr/modules/legal_basis_data_transfer.ttl',
-            'rights': f'{IMPORT_PATH}/legal/eu/gdpr/modules/rights.ttl',
-            'data_transfers': f'{IMPORT_PATH}/legal/eu/gdpr/modules/data_transfers.ttl',
-            'dpia': f'{IMPORT_PATH}/legal/eu/gdpr/modules/dpia.ttl',
-            'compliance': f'{IMPORT_PATH}/legal/eu/gdpr/modules/compliance.ttl',
-            'legal_basis-rights_mapping': f'{IMPORT_PATH}/legal/eu/gdpr/modules/legal_basis_rights_mapping.ttl',
-        },
-    },
-    'eu-dga': {
-        'vocab': f'{IMPORT_PATH}/legal/eu/dga/eu-dga.ttl',
-        'template': 'template_legal_eu_dga.jinja2',
-        'export': f'{EXPORT_PATH}/legal/eu/dga',
-        'modules': {
-            'entities': f'{IMPORT_PATH}/legal/eu/dga/modules/entities.ttl',
-            'legal_basis': f'{IMPORT_PATH}/legal/eu/dga/modules/legal_basis.ttl',
-            'legal_rights': f'{IMPORT_PATH}/legal/eu/dga/modules/legal_rights.ttl',
-            'registers': f'{IMPORT_PATH}/legal/eu/dga/modules/registers.ttl',
-            'services': f'{IMPORT_PATH}/legal/eu/dga/modules/services.ttl',
-            'toms': f'{IMPORT_PATH}/legal/eu/dga/modules/toms.ttl',
-        },
-    },
-    'eu-rights': {
-        'vocab': f'{IMPORT_PATH}/legal/eu/rights/eu-rights.ttl',
-        'template': 'template_legal_eu_rights.jinja2',
-        'export': f'{EXPORT_PATH}/legal/eu/rights',
-        'modules': {},
-    },
-}
+# == DATA class ==
 
 class DATA(object):
-    # data = {
-    #     vocab: {
-    #         term: { rel: obj },
-    #         _module_name: { term: ref-to-term }
-    #     }
-    # }
+    """
+    The DATA class holds the data loaded from RDF files and makes it
+    accessible as python dicts. It also provides functions to load the
+    data at vocab and module levels.
+    """
+
+    # === data-dicts ===
+
+    # `data` holds a dict for each vocabulary
     data = {}
+    # `modules` holds a dict for each vocabulary and then a dict for
+    # modules within that vocabulary
     modules = {}
+    # `schemes` holds concept schemes (this isn't currently used)
     schemes = {}
+    # `concepts` is a dict acting as a lookup table for all concepts
+    # parsed - they keys are full IRI and prefixed notation with
+    # the same dict as value
     concepts = {}
-    concepts_prefixed = {}
+    # concepts_prefixed = {}
     
-
+    # === load-vocab ===
     @staticmethod
-    def get_X(param):
-        return
-
-    @staticmethod
-    def load_vocab(filepath, vocab):
+    def load_vocab(filepath:str, vocab:str) -> None:
+        """
+        loads the RDF triples from specified filepath and saves it
+        in DATA dicts under the vocab namespace
+        """
         INFO(f'loading {vocab} data from {filepath}')
         graph = Graph()
         graph.parse(filepath)
         graph.ns = { k:v for k,v in NAMESPACES.items() }
         vocab_data = {}
         for s, p, o in graph:
-            # DEBUG(f'{s} {p} {o}')
-            # DEBUG(s.n3(graph.namespace_manager))
-            # gets prefix:term using the n3 notation
-            # convert s,p,o into prefixed terms and literals
-            term = s.n3(graph.namespace_manager)
-            rel = p.n3(graph.namespace_manager)
-            # DEBUG(f"{term} {rel} {obj}")
+            # ==== parse-subject ====
 
-            # if this is the first occurence, add to dict
-            if term not in vocab_data:
-                vocab_data[term] = {
+            # n3 gets prefix:term using the n3 notation
+            # which makes it easier to directly look up terms
+            # rather than using the full IRIs
+            term = s.n3(graph.namespace_manager)
+            if term not in DATA.concepts: # first occurence
+                # DATA.concepts is a dict holding all concepts that 
+                # are parsed. Keys are IRIs and prefixed notations -
+                # duplicates with reference to the same dict as value,
+                # to make it easy to lookup terms by either way.
+                # Each entry value contains:
+                DATA.concepts[term] = {
+                    # `iri`: the full IRI
                     'iri': s,
-                    'prefixed': term,
+                    # `prefixed`: the prefixed form i.e. ns:Term
+                    'prefixed': term, 
+                    # `prefix`: the prefix i.e ns
                     'prefix': term.split(':')[0],
+                    # `term`: the term i.e. IRI without ns
                     'term': term.split(':')[1],
+                    # `vocab`: vocab name as passed in param
                     'vocab': vocab,
+                    # `namespace`: ns IRI i.e. without the term
                     'namespace': s.replace(term.split(':')[1], ''),
+                    # `_dpvterm`: boolean stating if term is in any DPV vocab
                     '_dpvterm': s.startswith('https://w3id.org/dpv'),
+                    # `_termsource`: vocabs where this term is used
                     '_termsource': set(),
                 }
-                if not vocab_data[term]['_dpvterm']:
-                    vocab_data[term]['term'] = term
-            term = vocab_data[term]
+                # for DPV terms, the `term` is set to non-prefixed 'Term'
+                # and for non-DPV terms, it is set to prefixed 'ns:Term'
+                # to visually see they are external
+                if DATA.concepts[term]['_dpvterm'] is False:
+                    DATA.concepts[term]['term'] = term
+                DATA.concepts[s] = DATA.concepts[term]
+            term = DATA.concepts[term]
             term['_termsource'].add(vocab)
-            
-            # add contents for p and o
+            vocab_data[term['prefixed']] = term
+
+            # ==== parse-predicate ====
+
+            # For properties and objects, the term dict contains the
+            # prefixed form as key, e.g. skos:prefLabel of Term will
+            # be saved as `ns:Term: { 'skos:prefLabel': <value> }`.
+            rel = p.n3(graph.namespace_manager)
             if p in term:
+                # If there are multiple values for a given property,
+                # then they are stored as a list under the same key.
                 if type(term[p]) is list:
+                    # There are two variations for the keys,
+                    # full IRI and prefixed form - so that the
+                    # term's properties can be accessed using both
+                    # the IRI and the prefixed forms as keys
                     term[p].append(o)
                     term[rel].append(o)
                 else:
@@ -280,10 +129,21 @@ class DATA(object):
             else:
                 term[p] = o
                 term[rel] = o
-            if o.startswith('http'):
+
+            # ==== parse-object ====
+
+            # Objects can be DPV terms, external terms, or literals.
+            if type(o) is not Literal:
                 obj = o.n3(graph.namespace_manager)
-                if o not in DATA.concepts:
-                    DATA.concepts[o] = {
+                # For DPV and existing terms - they may already be present
+                # in the data dicts or this could be their first occurence,
+                # in which case they won't have any metadata.
+                # Whenever their declaration is parsed, the existing dict 
+                # gets updated with the metadata (label, etc.).
+                # For new concepts, the metadata stored is the same as 
+                # the earlier new term metadata
+                if obj not in DATA.concepts:
+                    DATA.concepts[obj] = {
                         'iri': o,
                         'prefixed': obj,
                         'prefix': obj.split(':')[0],
@@ -293,37 +153,43 @@ class DATA(object):
                         '_dpvterm': o.startswith('https://w3id.org/dpv'),
                         '_termsource': set(),
                     }
-                    DATA.concepts[o]['_termsource'].add(vocab)
-                if obj not in DATA.concepts_prefixed:
-                    DATA.concepts_prefixed[obj] = DATA.concepts[o]
+                    DATA.concepts[obj]['_termsource'].add(vocab)
+                    # If this is an external concept, the term should
+                    # be used with prefixed notation
+                    if DATA.concepts[obj]['_dpvterm'] is False:
+                        DATA.concepts[obj]['term'] = obj
+                    DATA.concepts[o] = DATA.concepts[obj]
                 if p == RDF.type and o == RDFS.Class:
                     term['_type'] = "class"
                 elif p == RDF.type and o == RDF.Property:
                     term['_type'] = "property" 
                 elif p == SKOS.inScheme:
-                    if prefix_from_iri(o) not in DATA.schemes:
-                        DATA.schemes[prefix_from_iri(o)] = {}
-                    DATA.schemes[prefix_from_iri(o)][term['prefixed']] = term
-            else:
+                    if obj not in DATA.schemes:
+                        DATA.schemes[obj] = {}
+                    DATA.schemes[obj][term['prefixed']] = term
+            else: # obj is a literal
                 if type(o) == BNode:
+                    # TODO: handling BNodes is icky at the moment
                     obj = o
                 else:
                     obj = str(o)
+
+        # `vocab_data` is the collection of terms in a vocab,
+        # stored under `vocab` key in `DATA.data`
         DATA.data[vocab] = vocab_data
         for concept in vocab_data.values():
-            if concept['iri'] not in DATA.concepts:
-                DATA.concepts[concept['iri']] = concept
-            if concept['prefixed'] not in DATA.concepts:
-                DATA.concepts[concept['prefixed']] = concept
-            if '_type' not in concept:
+            if '_type' not in concept: # term is neither class/property
                 concept['_type'] = 'notcp'
-                # DEBUG(f"concept has no type {concept['prefixed']}")
-            for prop in ('skos:prefLabel', 'skos:definition', 'skos:scopeNote'):
-                if prop not in concept: continue
-                if type(concept[prop]) != list: concept[prop] = [concept[prop]]
+            # For literals with text, there can be multiple languages.
+            # For each term's properties with multiple languages,
+            # construct `{prop: {'lang': 'value'}}`
+            for prop in (
+                    'skos:prefLabel', 'skos:definition', 'skos:scopeNote'):
+                if prop not in concept: continue # unsupported text
+                concept[prop] = ensure_list(concept[prop])
                 languages = {}
                 for prop_value in concept[prop]:
-                    if prop_value.language is None:
+                    if prop_value.language is None: # default lang is EN
                         concept[f'{prop}-en'] = concept[prop]
                         continue
                     if prop_value.language in languages: continue
@@ -332,66 +198,71 @@ class DATA(object):
                 for language, value in languages.items():
                     concept[f'{prop}-{language}'] = value
                 concept[prop] = languages['en']
-                    # DEBUG(f"{concept['prefixed']} - {concept['skos:prefLabel']}")
-        # vocab_data['_name'] = vocab
-        # for scheme in DATA.schemes:
-        #     DEBUG(f'registered scheme {prefix_from_iri(scheme)}')
-        return
 
+    # ==== load-module ====
     @staticmethod
-    def hierarchical_classes(concepts):
-        # TODO: produce hierarchical view of classes
-        # to be used as nested lists in HTML
-        hierarchy = []
-        return hierarchy
-
-    @staticmethod
-    def load_module(filepath, module, vocab):
+    def load_module(filepath:str, module:str, vocab:str) -> None:
+        """
+        loads the RDF triples from specified filepath and saves it
+        in DATA dicts under the vocab/module namespace
+        """
         INFO(f'loading {vocab}:{module} data from {filepath}')
         graph = Graph()
         graph.parse(filepath)
         graph.ns = { k:v for k,v in NAMESPACES.items() }
         module_data_temp = {}
+        # For modules, only the list of concepts is to be generated,
+        # since all the actual data needed would have been parsed from
+        # the `load_vocab` and be available in the dicts.
+        # Modules are a 'grouping of concepts' - they are useful to
+        # generate the HTML sections and dedicated pages.
+        # Each module contains the specified structure
+        module_data = {
+            # `metadata`: about the module with prefix to use
+            'metadata': {'prefix': vocab, 'name': {module}},
+            # `classes`: list of classes in module
+            'classes': {},
+            # `properties`: list of properties in module
+            'properties': {},
+            # `schemes`: list of concept schemes in module
+            'schemes': {},
+        }
+        # Modules are stored under the `vocab` they belong to
+        # such that `DATA.modules[vocab]` gives all the modules
+        # within that vocab
+        if vocab not in DATA.modules:
+            DATA.modules[vocab] = {}
+        DATA.modules[vocab][module] = module_data
+        # Populate the classes/properties in module
         for s, _, _ in graph:
             term = s.n3(graph.namespace_manager)
             if term.startswith('_'): # BNode
                 continue
-            module_data_temp[term] = DATA.data[vocab][term]
-            if 'module' not in DATA.data[vocab][term]:
-                DATA.data[vocab][term]['module'] = []
-            if module not in DATA.data[vocab][term]['module']:
-                DATA.data[vocab][term]['module'].append(module)
-        module_data = {
-            'metadata': {'prefix': vocab, 'name': {module}},
-            'classes': {},
-            'properties': {},
-            'schemes': {},
-        }
-        for k, v in module_data_temp.items():
-            # DEBUG(v['iri'])
-            # DEBUG(v.keys())
-            if '_type' not in v:
-                logging.warning(f"{v['iri']} has misconfigured information")
-                continue
-            if v['_type'] == 'class':
-                module_data['classes'][k] = v
-            elif v['_type'] == 'property':
-                module_data['properties'][k] = v
-        if vocab not in DATA.modules:
-            DATA.modules[vocab] = {}
-        DATA.modules[vocab][module] = module_data
-
+            term = DATA.concepts[term]
+            # Each term records which modules it belongs to via `module`
+            if 'module' not in term:
+                term['module'] = []
+            if module not in term['module']:
+                term['module'].append(module)
+            if term['_type'] == 'class':
+                module_data['classes'][term['prefixed']] = term
+            elif term['_type'] == 'property':
+                module_data['properties'][term['prefixed']] = term
+        # Populate the concept schemes
         if f'{vocab}:{module}-classes' in DATA.schemes:
             scheme = DATA.schemes[f'{vocab}:{module}-classes']
-            # DEBUG(f'{module} has scheme {vocab}:{module}-classes')
             module_data['schemes']['classes'] = scheme
         if f'{vocab}:{module}-properties' in DATA.schemes:
             scheme = DATA.schemes[f'{vocab}:{module}-properties']
-            # DEBUG(f'{module} has scheme {vocab}:{module}-properties')
-        return
 
 
-def get_concept_list(term):
+# == Helper Functions ==
+
+def get_concept_list(term:list) -> list:
+    """
+    get list of concepts for the list of terms provided - 
+    the concepts are sorted by IRI
+    """
     if not term:
         return []
     if not type(term) is list:
@@ -400,26 +271,45 @@ def get_concept_list(term):
         [DATA.concepts[item] for item in term], 
         key=lambda x: x['iri'])
 
+# === Hierarchy ===
 
-def get_parent_hierarchy(term):
-    # DEBUG(f'getting parents for {term["prefixed"]}')
-    if 'skos:broader' not in term: return []
-    terms = term['skos:broader']
-    if type(terms) is not list: terms = [terms]
-    # DEBUG(f'parentlist: {terms}')
+def get_hierarchy(term:dict, relation:str) -> list:
+    """
+    Generic function to return the hierarchy emanating from the
+    term based on the provided relation. For parents the relation is `skos:broader`, and for children it is `skos:narrower`.
+    """
+    if relation not in term: return []
+    terms = term[relation]
+    terms = ensure_list(terms)
 
+    # The documentation assumes relation=parents/ancestor to write
+    # the algorithm. Otherwise relation can also be children.
+    # `ancestor_set` ensures each ancestor is only 'found' once as there
+    # can be multiple paths to the same ancestor from multiple parents
     ancestor_set = set()
     ancestory = []
     
-    def _get_ancestor(term, ancestorlist):
-        # if there are no parents, this is the ancestor
-        # DEBUG(f'{term} :: {ancestorlist}')
-        if 'skos:broader' not in DATA.concepts[term]:
-            # DEBUG('path complete')
+    # `_get_ancestor` returns the last/highest ancestor for a given
+    # concept, defined as a term with no further parents.
+    # This allows accessing the 'top concept' within that term's 
+    # taxonomy, and is useful to declare in term description tables.
+    # The `ancestorlist` is a mutable list of parents/ancestors
+    # passed in each recursion as the term checks its parents,
+    # until there are no more parents - at which point the 'path'
+    # from term to ancestor is in the `ancestorlist`, and which is
+    # added to `ancestory`.
+    def _get_ancestor(term:dict, ancestorlist:list) -> None:
+        '''helper function to get list of ancestors for given term'''
+        # If there are no parents, this is the ancestor.
+        # Add the list of ancestors to ancestory and return.
+        if relation not in DATA.concepts[term]:
             ancestory.append(ancestorlist)
             return
-        # there are parents, so find grandparents
-        parents = DATA.concepts[term]['skos:broader']
+        # There are parents, so see if they have ancestors.
+        # If there are multiple parents, there are multiple
+        # possible ancestors - so copy the current ancestorlist
+        # and delve deeper recursively for each parent
+        parents = DATA.concepts[term][relation]
         if type(parents) is list:
             for parent in parents:
                 ancestor_set.add(parent)
@@ -430,87 +320,82 @@ def get_parent_hierarchy(term):
             ancestorlist.append(parents)
             ancestor_set.add(parents)
             _get_ancestor(parents, ancestorlist)
-        return
-
     for parent in terms:
         _get_ancestor(parent, [parent])
+    # To ensure only the unique paths are recorded, filter
+    # the parentlists based on whether the first term has not 
+    # already been registered as an parent/ancestor for another
+    # term i.e. for a path A->B->C, ensure another path B->C 
+    # doesn't show up as it would be a 'duplicate'.
     ancestorlist = [
         parentlist for parentlist in ancestory
-        if parentlist[0] not in ancestor_set]    
-    ancestory = []
+        if parentlist[0] not in ancestor_set]
+    ancestory = [] # retrieve parent concepts from DATA
     for parentlist in ancestorlist:
         ancestory.append([DATA.concepts[parent] for parent in parentlist])
     return ancestory
 
 
+# ==== Parent Hierarchy ====
+def get_parent_hierarchy(term:dict) -> list:
+    """
+    get hierarchy of parents/ancestors for given term.
+    Parents are defined using `skos:broader`
+    """
+    return get_hierarchy(term, 'skos:broader')
+
+
+# ==== Children Hierarchy ==== 
 def get_children_hierarchy(term):
-    # DEBUG(f'getting parents for {term["prefixed"]}')
-    if 'skos:narrower' not in term: return []
-    terms = term['skos:narrower']
-    if type(terms) is not list: terms = [terms]
-    # DEBUG(f'parentlist: {terms}')
+    """
+    Get a hierarchy of all children for the given term.
+    Children are defined using `skos:narrower`
+    """
+    return get_hierarchy(term, 'skos:narrower')
 
-    ancestor_set = set()
-    ancestory = []
-    
-    def _get_ancestor(term, ancestorlist):
-        # if there are no parents, this is the ancestor
-        # DEBUG(f'{term} :: {ancestorlist}')
-        if 'skos:narrower' not in DATA.concepts[term]:
-            # DEBUG('path complete')
-            ancestory.append(ancestorlist)
-            return
-        # there are parents, so find grandparents
-        parents = DATA.concepts[term]['skos:narrower']
-        if type(parents) is list:
-            for parent in parents:
-                ancestor_set.add(parent)
-                parentlist = ancestorlist.copy()
-                parentlist.append(parent)
-                _get_ancestor(parent, parentlist)
-        else:
-            ancestorlist.append(parents)
-            ancestor_set.add(parents)
-            _get_ancestor(parents, ancestorlist)
-        return
 
-    for parent in terms:
-        _get_ancestor(parent, [parent])
-    ancestorlist = [
-        parentlist for parentlist in ancestory
-        if parentlist[0] not in ancestor_set]    
-    ancestory = []
-    for parentlist in ancestorlist:
-        ancestory.append([DATA.concepts[parent] for parent in parentlist])
-    return ancestory
-
-def organise_hierarchy(terms, top=None):
-    '''organise the given list of terms into a hierarchy
-    returns { parent: { children: { children: { } } } }'''
+# ==== Organise into hierarchy ====
+def organise_hierarchy(terms:list, top:str=None) -> dict:
+    """
+    Organise the given list of terms into a hierarchy.
+    `terms` is a list of terms to be organised into a hierarchy,
+    `top` is the optional top concept - if provided then only
+    those terms that are organised under it will be returned.
+    returns `{ parent: { children: { grandchildren: { } } } }`
+    """
     data = {}
     for term in terms:
         data[term] = { 'parents': [], 'children': [] }
+    # Some metadata dicts have `prefix` added amongst
+    # the list of concepts - remove that.
     if 'prefix' in data:
         del data['prefix'] # this isn't a term
+    # From each term, populate parents and children lists
     for key, term in terms.items():
         if 'skos:broader' in term: # has parents
             parents = term['skos:broader'] # get parents
-            if type(parents) is not list: # single parent
-                parents = [parents]
-            # DEBUG(f'{key} -> {parents}')
+            parents = ensure_list(parents)
             for parent in parents: # check parents are not present in terms
                 if prefix_from_iri(parent) in terms:
                     data[key]['parents'].append(prefix_from_iri(parent))
                     data[prefix_from_iri(parent)]['children'].append(key)
-    
+    # Based on top, filter out terms that are not under top (as parent)
     if top is None:
         results = {k:terms[k] for k,v in data.items() if not v['parents']}
     else:
         results = {k:terms[k] for k,v in data.items() if top in v['parents']}
+    # Sort the terms by IRI and return them.
     return {k:results[k] for k in sorted(results.keys(), key=str.casefold)}
 
 
-def get_sources(sourcestring):
+# === Other Helper Functions
+
+def get_sources(sourcestring:str) -> list:
+    """
+    Source strings are organised as (link,label),(link2,label2)...
+    This function extracts them and returns them as a list of tuples
+    containing (link,label) for each
+    """
     sourcestring = sourcestring.replace('(', '').replace(')', '').split(',')
     sources = []
     for i in range(1, len(sourcestring), 2):
@@ -518,122 +403,131 @@ def get_sources(sourcestring):
     return sources
 
 
-def ensure_list(item):
+def ensure_list(item) -> list:
+    """
+    Simple function that ensures item is a list or puts it in one
+    """
     if type(item) is not list:
         item = [item]
     return item
 
 
-def filter_type(itemlist, itemtype, vocab=None, debug=None):
-    # if debug:
-    #     DEBUG(debug)
-    # DEBUG(itemtype)
-    # DEBUG(itemlist)
+def filter_type(itemlist:list, itemtype:str, vocab:str=None) -> list:
+    """
+    Filters itemlist for items that match itemtype and optionally
+    limits them to specified vocab
+    """
     results = []
     for item in itemlist:
-        if type(item) is dict:
-            itemvocab = item['vocab']
-        else:
-            if type(item) != str:
-                item = prefix_from_iri(item)
-            itemvocab = item.split(':')[0]
-            if itemvocab not in DATA.data:
-                continue
-            item = DATA.data[itemvocab][item]
+        if type(item) is not dict:
+            item = DATA.concepts[item]
+        itemvocab = item['vocab']
         if vocab != itemvocab or 'rdf:type' not in item:
             if vocab is not None:
                 continue
-        parents = item['rdf:type']
-        if type(parents) is not list:
-            parents = [parents]
+        parents = ensure_list(item['rdf:type'])
         for p in parents:
             prefixed = prefix_from_iri(p)
             if prefixed == itemtype:
                 results.append(item)
-    # DEBUG(results)
     return results
 
 
-def get_prop_with_term_domain(term, vocab):
-    props = []
+def get_prop_with_term_domain(term:dict, vocab:str) -> list:
+    """
+    Retrieves properties where specified term is in the domain.
+    Property domain can be the term or the term's parents/types
+    """
+    props = set()
     term_types = term['rdf:type']
     term_types = [str(x) for x in term_types]
     term_types.append(str(term['iri']))
-    # DEBUG(term_types)
     for prop in DATA.concepts.values():
-        # DEBUG(prop['prefixed'])
-        if '_type' not in prop: continue
+        if '_type' not in prop: continue # not a useful term
         if prop['_type'] != 'property': continue
         if 'dcam:domainIncludes' not in prop: continue
-        domains = prop['dcam:domainIncludes']
-        # DEBUG(f"{prop['prefixed']} - domains {domains}")
-        if type(domains) is not list: domains = [domains]
-        for domain in domains:
+        for domain in ensure_list(prop['dcam:domainIncludes']):
             for t in term_types:
-                # DEBUG(type(domain))
-                # DEBUG(f"{domain} x {t} = {domain == t}")
                 if str(domain) == t:
-                    props.append(prop)
-                    # DEBUG(f"{term['prefixed']} range {prop['prefixed']}")
-    return props
+                    props.add(prop['prefixed'])
+    return [DATA.concepts[c] for c in props]
 
 
-def get_prop_with_term_range(term, vocab):
-    props = []
+def get_prop_with_term_range(term:dict, vocab:str) -> list:
+    """
+    Retrieves properties where specified term is in the range.
+    Property range can be the term or the term's parents/types
+    """
+    props = set()
     term_types = term['rdf:type']
     term_types = [str(x) for x in term_types]
     term_types.append(str(term['iri']))
-    # DEBUG(term_types)
     for prop in DATA.concepts.values():
-        # DEBUG(prop['prefixed'])
-        if '_type' not in prop: continue
+        if '_type' not in prop: continue # not a useful term
         if prop['_type'] != 'property': continue
         if 'dcam:rangeIncludes' not in prop: continue
-        domains = prop['dcam:rangeIncludes']
-        # DEBUG(f"{prop['prefixed']} - domains {domains}")
-        if type(domains) is not list: domains = [domains]
-        for domain in domains:
+        for domain in ensure_list(prop['dcam:rangeIncludes']):
             for t in term_types:
-                # DEBUG(type(domain))
-                # DEBUG(f"{domain} x {t} = {domain == t}")
                 if str(domain) == t:
-                    props.append(prop)
-                    # DEBUG(f"{term['prefixed']} range {prop['prefixed']}")
-    return props
+                    props.add(prop['prefixed'])
+    return [DATA.concepts[c] for c in props]
 
 
-def expand_time_interval(term, prop):
+def expand_time_interval(term:dict, prop:str) -> str:
+    """
+    Takes a time interval (declared using TIME vocabulary) and
+    returns a string representation. The time interval is associated
+    with the `term` using the specified `prop` relation
+    """
     if prop not in term:
         return ''
-    interval = DATA.concepts[term[prop]]
-    returnval = ''
-    if 'time:hasBeginning' in interval:
-        start = DATA.concepts[interval['time:hasBeginning']]['time:inXSDDate']
-        returnval = str(start)
-    else:
-        returnval = 'N/A'
-    returnval += '/'
-    if 'time:hasEnd' in interval:
-        end = DATA.concepts[interval['time:hasEnd']]['time:inXSDDate']
-        returnval += str(end)
-    else:
-        returnval += 'ongoing'
-    return returnval
+    intervals = ensure_list(term[prop]) # this would be a BNode
+    returnset = set()
+    for interval in intervals:
+        interval = DATA.concepts[interval]
+        returnval = ''
+        # Interval starting point or N/A if none exists
+        if 'time:hasBeginning' in interval:
+            start = DATA.concepts[interval['time:hasBeginning']]['time:inXSDDate']
+            returnval = str(start)
+        else:
+            returnval = 'N/A'
+        returnval += '/'
+        # Interval ending point or N/A if none exists
+        if 'time:hasEnd' in interval:
+            end = DATA.concepts[interval['time:hasEnd']]['time:inXSDDate']
+            returnval += str(end)
+        else:
+            returnval += 'ongoing'
+        returnset.add(returnval)
+    return returnset
 
 
-def sort_iris(items):
+def sort_iris(items:list) -> list:
+    """
+    Helper function to sort list of IRIs
+    """
     return sorted(items, key=str)
 
 
-def resolve_concepts(items):
-    # DEBUG(DATA.concepts.keys())
+def resolve_concepts(items:str | list) -> str | list:
+    """
+    Helper function to take a list of IRIs or prefixed terms
+    and return a list with their data from the lookup table
+    """
     if type(items) is list:
+        if type(items[0]) is dict: # concepts are already resolved
+            return items
         return [DATA.concepts[x] for x in items]
     return DATA.concepts[items]
 
 
-def retrieve_example(exampleID):
-    ex = DATA.data['dex'][f'dex:{exampleID}']
+def retrieve_example(exampleID:str) -> tuple:
+    """
+    Retrieves the example specified by provided ID.
+    The example contents are read from the associated file if needed.
+    """
+    ex = DATA.data['dex'][exampleID]
     if 'dct:source' in ex:
         with open(f"../examples/{ex['dct:source']}", 'r') as fd:
             contents = fd.read()
@@ -642,24 +536,37 @@ def retrieve_example(exampleID):
     return ex, contents
 
 
-def retrieve_example_for_concept(concept):
+def retrieve_example_for_concept(concept:dict) -> list:
+    """
+    Retrieves list of examples associated with concept
+    """
     if 'vann:example' not in concept:
         return []
+    # Get associated examples from concept's data
     examples = ensure_list(concept['vann:example'])
-    examples = [DATA.concepts[ex]['prefixed'] for ex in examples]
+    # Get prefixed notation for examples
+    examples = [prefix_from_iri(ex) for ex in examples]
+    # Retrieve example data
     examples = [DATA.data['dex'][ex] for ex in examples]
+    # Sort examplese by IRI
     examples.sort(key=lambda x: x['iri'])
     return examples
 
 
-def translation_message(concept, field, lang):
+def translation_message(concept:dict, field:str, lang:str) -> str:
+    """
+    Retrieves `lang` translation for `concept[field]` if present,
+    otherwise returns EN text with suffix 'translation missing'
+    """
     if field not in concept: return None
-    # DEBUG(f"{concept['prefixed']} -- {field} {lang} -- {[x for x in concept.keys() if x.startswith('skos:')]}")
     if f'{field}-{lang}' not in concept:
         return f'{concept[field]} (translation missing)'
     return concept[f'{field}-{lang}']
 
 
+# == HTML Export ==
+
+# === Jinja setup ===
 from jinja2 import FileSystemLoader, Environment
 template_loader = FileSystemLoader(searchpath=f'{TEMPLATE_PATH}')
 template_env = Environment(
@@ -667,13 +574,8 @@ template_env = Environment(
     autoescape=True, trim_blocks=True, lstrip_blocks=True)
 
 JINJA2_FILTERS = {
-    'fragment_this': lambda x: x,
     'prefix_this': prefix_from_iri,
-    'subclasses': lambda x: x,
-    'saved_label': lambda x: x,
     'generate_author_affiliation': generate_author_affiliation,
-    'get_example_title': lambda x: x,
-    'get_namespace_reference': lambda x: x,
     'get_concept_list': get_concept_list,
     'get_parent_hierarchy': get_parent_hierarchy,
     'get_children_hierarchy': get_children_hierarchy,
@@ -692,15 +594,54 @@ JINJA2_FILTERS = {
 }
 template_env.filters.update(JINJA2_FILTERS)
 
+def _write_template(
+    template:str, filepath:str, filename:str,
+    vocab:str, index:bool=False, lang:str="en"):
+    """
+    Helper function to refactor jinja output function.
+    `template` is the name of the template to load.
+    `filepath` is the full path of the output file.
+    `filename` is the name of the file to write.
+    `vocab` is the vocab name whose data will be used in output.
+    `index` (default False) controls creating copy with name `index-<lang>`
+    `lang` is the language to use in output (default=EN).
+    The `vocab` (without -lang suffix) page is only written for EN language.
+    """
+    params = {
+        'data': DATA.data,
+        'vocab': DATA.data[vocab],
+        'modules': DATA.modules[vocab],
+        'vocab_name': vocab,
+        'lang': lang,
+        'template': template_env.get_template(template),
+    }
+    template = template_env.get_template(template)
+    with open(f'{filepath}/{filename}-{lang}.html', 'w+') as fd:
+        fd.write(template.render(**params))
+        INFO(f'wrote {filename} spec at {filepath}/{filename}-{lang}.html')
+    if lang == "en":
+        with open(f'{filepath}/{filename}.html', 'w+') as fd:
+            fd.write(template.render(**params))
+            INFO(f'wrote {filename} spec at {filepath}/{filename}.html')
+    if index:
+        with open(f'{filepath}/index-{lang}.html', 'w+') as fd:
+            fd.write(template.render(**params))
+            INFO(f'wrote {filename} spec at {filepath}/index-{lang}.html')
+        if lang == "en":
+            with open(f'{filepath}/index.html', 'w+') as fd:
+                fd.write(template.render(**params))
+                INFO(f'wrote {filename} spec at {filepath}/index.html')
 
-for vocab, vocab_data in VOCABS.items(): 
-    # DEBUG(f'VOCAB: {vocab}')
+
+# === Load RDF data ===
+for vocab, vocab_data in RDF_VOCABS.items(): 
+    # Load vocab RDF data into DATA dicts
     DATA.load_vocab(vocab_data['vocab'], vocab)
     module_data = {}
     DATA.modules[vocab] = {}
+    # Load the module RDF data and store it in DATA dicts
     for module, filepath in vocab_data['modules'].items():
         DATA.load_module(filepath, module, vocab)
-        # create collection to generate module pages
         module_name = module.split('-')[0] # e.g. consent-type = consent
         if module_name not in module_data:
             module_data[module_name] = {}
@@ -710,120 +651,63 @@ for vocab, vocab_data in VOCABS.items():
         for data in DATA.modules[vocab][module].values():
             for k, v in data.items():
                 module_data[module_name]['index'][k] = v
-    # else:
-    #     DATA.modules[vocab] = []
-    template = template_env.get_template(vocab_data['template'])
-    with open(f'{vocab_data["export"]}/index.html', 'w+') as fd:
-        fd.write(template.render(
-            data=DATA.data,
-            vocab=DATA.data[vocab],
-            modules=DATA.modules[vocab],
-            vocab_name=vocab,
-            lang='en'))
-    INFO(f'wrote {vocab} spec at {vocab_data["export"]}/index.html')
-    with open(f'{vocab_data["export"]}/index-en.html', 'w+') as fd:
-        fd.write(template.render(
-            data=DATA.data,
-            vocab=DATA.data[vocab],
-            modules=DATA.modules[vocab],
-            vocab_name=vocab,
-            lang='en'))
-    INFO(f'wrote {vocab} spec at {vocab_data["export"]}/index-en.html')
-    for lang in IMPORT_TRANSLATIONS:
-        with open(f'{vocab_data["export"]}/index-{lang}.html', 'w+') as fd:
-            fd.write(template.render(
-                data=DATA.data,
-                vocab=DATA.data[vocab],
-                modules=DATA.modules[vocab],
-                vocab_name=vocab,
-                lang=lang))
-        INFO(f'wrote {vocab} spec in {lang} at {vocab_data["export"]}/index-{lang}.html')
-    # TODO: replace duplicate code with filecopy
-    with open(f'{vocab_data["export"]}/{vocab}.html', 'w+') as fd:
-        fd.write(template.render(
-            data=DATA.data,
-            vocab=DATA.data[vocab],
-            modules=DATA.modules[vocab],
-            vocab_name=vocab,
-            lang='en'))
-    INFO(f'wrote {vocab} spec at {vocab_data["export"]}/{vocab}.html')
-    with open(f'{vocab_data["export"]}/{vocab}-en.html', 'w+') as fd:
-        fd.write(template.render(
-            data=DATA.data,
-            vocab=DATA.data[vocab],
-            modules=DATA.modules[vocab],
-            vocab_name=vocab,
-            lang='en'))
-    INFO(f'wrote {vocab} spec at {vocab_data["export"]}/{vocab}-en.html')
-    for lang in IMPORT_TRANSLATIONS:
-        with open(f'{vocab_data["export"]}/{vocab}-{lang}.html', 'w+') as fd:
-            fd.write(template.render(
-                data=DATA.data,
-                vocab=DATA.data[vocab],
-                modules=DATA.modules[vocab],
-                vocab_name=vocab,
-                lang=lang))
-        INFO(f'wrote {vocab} spec at {vocab_data["export"]}/{vocab}-{lang}.html')
 
+    # === Write Vocab HTML file ===
+    _write_template(
+        template=vocab_data['template'],
+        filepath=vocab_data["export"], filename=vocab,
+        index=True, vocab=vocab, lang="en")
+    for lang in IMPORT_TRANSLATIONS:
+        _write_template(
+            template=vocab_data['template'],
+            filepath=vocab_data["export"], filename=vocab,
+            index=True, vocab=vocab, lang=lang)
+
+    # === Write Module HTML file ===
     if 'module-template' not in vocab_data:
         continue # this vocab doesn't have module specific docs
-    # generate module docs
     for module, data in module_data.items():
         if module not in vocab_data['module-template']:
             INFO(f'{module} has no template associated - skipping')
             continue
         INFO(f'exporting {module} page')
-        template = template_env.get_template(vocab_data['module-template'][module])
-        with open(f'{vocab_data["export"]}/modules/{module}.html', 'w+') as fd:
-            fd.write(template.render(
-                data=data,
-                vocab=DATA.data[vocab],
-                modules=DATA.modules[vocab],
-                vocab_name=vocab,
-                lang="en"))
-            INFO(f'wrote {vocab}/{module} docs at {vocab_data["export"]}/modules/{module}.html')
-        with open(f'{vocab_data["export"]}/modules/{module}-en.html', 'w+') as fd:
-            fd.write(template.render(
-                data=data,
-                vocab=DATA.data[vocab],
-                modules=DATA.modules[vocab],
-                vocab_name=vocab,
-                lang="en"))
-            INFO(f'wrote {vocab}/{module} docs at {vocab_data["export"]}/modules/{module}-en.html')
+        _write_template(
+            template=vocab_data['module-template'][module],
+            filepath=f"{vocab_data["export"]}/modules", filename=module,
+            index=False, vocab=vocab, lang="en")
         for lang in IMPORT_TRANSLATIONS:
-            with open(f'{vocab_data["export"]}/modules/{module}.html', 'w+') as fd:
-                fd.write(template.render(
-                    data=data,
-                    vocab=DATA.data[vocab],
-                    modules=DATA.modules[vocab],
-                    vocab_name=vocab,
-                    lang=lang))
-                INFO(f'wrote {vocab}/{module} docs at {vocab_data["export"]}/modules/{module}.html')
-
-# DEBUG(DATA.data.keys())
-# import sys
-# sys.exit(0)
+            _write_template(
+            template=vocab_data['module-template'][module],
+            filepath=f"{vocab_data["export"]}/modules", filename=module,
+            index=False, vocab=vocab, lang=lang)
 
 
-## Create translations data
+# == Collate Missing Translations ==
 import json
-with open(f"{TRANSLATIONS_TODO_PATH}/tmp_translations.json", 'r') as fd:
+# [[vocab_management.py]] declares the languages for which
+# translations should exist and the paths to save the data
+with open(TRANSLATIONS_MISSING_FILE, 'r') as fd:
     data = json.load(fd)
-missing = {k:{} for k in IMPORT_TRANSLATIONS}
-for concept, languages in data.items():
-    for lang in languages:
-        # DEBUG(concept)
-        namespace, term = concept.split(':')
-        if namespace not in DATA.data:
-            DEBUG(f"missing translations ignored for external concept {concept}")
-            continue
-        # DEBUG(DATA.data[namespace].keys())
-        concept = DATA.data[namespace][concept]
-        missing[lang][concept['prefixed']] = {'label': concept['skos:prefLabel']}
-        if 'skos:definition' in concept:
-            missing[lang][concept['prefixed']]['definition'] = concept['skos:definition']
-        if 'skos:scopeNote' in concept:
-            missing[lang][concept['prefixed']]['usage'] = concept['skos:scopeNote']
-with open(f"{TRANSLATIONS_TODO_PATH}/translations_todo.json", 'w') as fd:
-    json.dump(missing, fd, indent=2)
-    INFO(F"concepts with missing translations are collected in {TRANSLATIONS_TODO_PATH}/translations_todo.json")
+if ':' in list(data.keys())[0]: # hack to detect repeated script call
+    missing = {lang:{} for lang in IMPORT_TRANSLATIONS}
+    # For each concept declared in the missing translations file,
+    # collect the label, definition, and (if exists) scope note
+    # and save it back to the missing translations file.
+    for concept, languages in data.items():
+        for lang in languages:
+            DEBUG(concept)
+            namespace, term = concept.split(':')
+            if namespace not in DATA.data:
+                DEBUG(f"ignored translations missing - external concept {concept}")
+                continue
+            concept = DATA.data[namespace][concept]
+            missing[lang][concept['prefixed']] = {
+                'label': concept['skos:prefLabel']
+                }
+            if 'skos:definition' in concept:
+                missing[lang][concept['prefixed']]['definition'] = concept['skos:definition']
+            if 'skos:scopeNote' in concept:
+                missing[lang][concept['prefixed']]['usage'] = concept['skos:scopeNote']
+    with open(TRANSLATIONS_MISSING_FILE, 'w') as fd:
+        json.dump(missing, fd, indent=2)
+        INFO(F"missing translations collected in {TRANSLATIONS_MISSING_FILE}")

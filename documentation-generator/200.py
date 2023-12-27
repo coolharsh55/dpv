@@ -1,49 +1,80 @@
 #!/usr/bin/env python3
 #author: Harshvardhan J. Pandit
 
-'''Take CSV and generate RDF from it'''
-
-########################################
-# How to read and understand this file #
-# 1. Start from the end of the file
-# 2. This script reads CSV files explicitly declared
-# 3. It generates RDF terms using rdflib for Classes and Properties
-# 4. It writes those terms to a file - one per each module
-# 5. It combines all written files into dpv.ttl and dpv-gdpr.ttl
-
-# This script assumes the input if well structured and formatted
-# If it isn't, the 'erors' may silently propogate
-
-# CSV FILES are in IMPORT_CSV_PATH
-# RDF FILES are written to EXPORT_DPV_MODULE_PATH
-
-# CONTRIBUTION: If anyone is willing to turn these scripts into
-# an equivalent RML/R2RML or similar mappings, please let us know
-########################################
+'''This script parses CSV files and generates RDF serialisations from it'''
 
 import csv
 from collections import namedtuple
 import json
-
+# [RDFLib](https://rdflib.readthedocs.io/en/stable/) library required
 from rdflib import Graph, Namespace
 from rdflib.compare import graph_diff
 from rdflib.term import Literal, URIRef, BNode
 
 import logging
-# logging configuration for debugging to console
 logging.basicConfig(
     level=logging.DEBUG, format='%(levelname)s - %(funcName)s :: %(lineno)d - %(message)s')
 DEBUG = logging.debug
 INFO = logging.info
 
+# [[vocab_management.py]] contains:
+# [namespaces](vocab_management.html#namespaces),
+# [CSV contents and paths](vocab_management.html#csv-files),
+# [criteria for accepted terms](vocab_management.html#term-statuses),
+# [serialisation export configuration](vocab_management.html#serialisations),
+# [translation import configuration](vocab_management.html#translations),
+# [export paths and configuration](vocab_management.html#export)
 from vocab_management import *
+
+# [[vocab_schemas.py]] contains information 
+# on how the spreadsheets are structured and how to parse them 
+# using python functions defined in [[vocab_funcs.py]]
 import vocab_schemas
 
-PROPOSED = {}
-TRANSLATIONS = {}
-MISSING_TRANSLATIONS = {}
+# == DATA ==
 
-def load_CSV(filepath):
+# `PROPOSED` will hold the proposed concepts.
+PROPOSED = {}
+# E.g. structure
+__examples = { '<vocab>': ['dpv:Concept']}
+
+# === translations ===
+TRANSLATIONS = {}
+# The languages to be translated are
+# as per [vocab_management.IMPORT_TRANSLATIONS
+# ](vocab_management.html#translations).
+# Example  of translated concept -
+__example = { 'dpv:Concept': ['<ISO 3166-2 code>'] }
+
+# === translations-missing ===
+MISSING_TRANSLATIONS = {}
+# `MISSING_TRANSLATIONS` will hold concepts that don't
+# have translations, saved to file as per [vocab_management
+# ](vocab_management.html#translations)
+# Example  of missing concept -
+__example = {
+    'dpv:Concept': {
+        '<ISO 3166-2 code>': {
+            'label': 'translated label',
+            'definition': 'translated definition',
+            'usage': 'translated usage note', # if it exists
+            'status': '[verified or unverified]'
+        }
+    }
+}
+
+### Loading Data
+
+#### Load CSV Data
+def load_CSV(filepath:str) -> (list, dict):
+    '''`load_CSV` will parse CSV and return header (schema) and other rows,
+    with cleaned fields (strips out empty space) and truncating cells
+    in rows to what is defined in the header. Google Sheets export has an
+    issue where empty cells are added in rows (e.g. ",,,,") - to correct
+    this, for each row only the number of columns as per the header row
+    are extracted and used. The returned data contains header list with
+    field names from header row, and a dict with keys as header fields
+    and values as the row values'''
     with open(filepath) as fd:
         csvreader = csv.reader(fd)
         # First row contains header/labels, which give the count of 
@@ -55,20 +86,60 @@ def load_CSV(filepath):
         count = len(header)
         terms = []
         for row in csvreader:
-            # skip empty rows
-            if len(row) == 0 or not row[0].strip():
+            if len(row) == 0 or not row[0].strip(): # skip empty rows
                 continue
-            # extract required amount of terms, ignore any field after that
-            row = [term.strip() for term in row[:count]]
+            row = [
+                term.strip() 
+                for term in row[:count]] # extract nos of header columns
             rowdata = {}
             for index, item in enumerate(row):
-                rowdata[header[index]] = row[index]
+                rowdata[header[index]] = row[index] # dict of rows values
             terms.append(rowdata)
     return header, terms
 
 
-def serialize_graph(triples, filepath):
-    '''serializes triples at filepath with defined formats'''
+#### Load Translations from CSV
+# This module-level code loads the translated concepts
+# from the spreadsheets into [translations](#translations). The languages
+# and filepaths are taken from 
+# [vocab_management](vocab_management.html#translations)
+# where `lang` is the ISO 3166-2 code and `lang_data_ contains the
+# `lang` language name (e.g. English), `prod` to denote translations
+# that are verified, and `verify` for unverified translations.
+for lang, lang_data in IMPORT_TRANSLATIONS.items():
+    def _convert(term:dict) -> dict:
+        '''`_convert` is a convenience function that refactors
+        common code to extract translations'''
+        translated = {}
+        translated['label'] = term['Label_translated']
+        translated['definition'] = term['Definition_translated']
+        if term['Usage_translated'] != 'N/A':
+            translated['usage'] = term['Usage_translated']
+        return translated
+
+    # Add production-ready translations with `status: verified`
+    header, csvdata_prod = load_CSV(lang_data['prod'])
+    for term in csvdata_prod:
+        if term['Term'] not in TRANSLATIONS:
+            TRANSLATIONS[term['Term']] = {}
+        TRANSLATIONS[term['Term']][lang] = _convert(term)
+        TRANSLATIONS[term['Term']][lang]['status'] = 'verified'
+    # Add production-ready translations with `status: unverified`
+    header, csvdata_verify = load_CSV(lang_data['verify'])
+    for term in csvdata_verify:
+        if term['Term'] not in TRANSLATIONS:
+            TRANSLATIONS[term['Term']] = {}
+        TRANSLATIONS[term['Term']][lang] = _convert(term)
+        TRANSLATIONS[term['Term']][lang]['status'] = 'unverified'
+    INFO(f"Loaded translations for {lang_data['lang']}: {len(csvdata_prod)} verified, {len(csvdata_verify)} unverified")
+
+
+# == export ==
+
+# === serialise-RDF ===
+def serialize_graph(triples:list, filepath:str) -> None:
+    '''`serialize_graph` serializes triples at filepath with defined 
+    formats from `vocab_management.RDF_SERIALIZATIONS`.'''
     graph = Graph()
     for prefix, namespace in NAMESPACES.items():
         graph.namespace_manager.bind(prefix, namespace)
@@ -77,27 +148,44 @@ def serialize_graph(triples, filepath):
     for ext, format in RDF_SERIALIZATIONS.items():
         graph.serialize(f'{filepath}.{ext}', format=format)
     INFO(f'wrote {filepath}.[{",".join(RDF_SERIALIZATIONS)}]')
-    # Serialise OWL variant
-    # filepath is the same, but the extension is {name}-owl.[ttl,owl]
-    # conversion to manchester syntax happens through external script
-    # TODO: What IRI to use for OWL variant?
-    # Options:
-    # 1) same IRI e.g. https://w3id.org/dpv#Concept
-    # 2) different IRI e.g. https://w3id.org/dpv/owl#Concept
-    #    /owl is the suffix to distinguish owl variant
-    # 3) current IRI e.g. https://w3id.org/dpv/dpv-owl#Concept
-    #    /dpv-owl is the prefix to distinguish owl variant
-    # TODO: Add skos:exactMatch between default and OWL concepts
+
+    ##### Serialise in OWL
+    # - TODO: Decide format for serialising OWL variant
+    # - TODO: convert to manchester syntax via external tool
+    # - TODO: What IRI to use for OWL variant?
+    # - TODO: Add `skos:exactMatch` between default and OWL concepts
+    # - TODO: Correctly declare `AnnotationProperty` e.g. `dpv:hasName`
+    # - TODO: Add domain/range values or hints
+    
+    # Options for IRI:
+
+    # 1. same IRI e.g. `https://w3id.org/dpv/pd#Concept`
+    # 2. different IRI e.g. `https://w3id.org/dpv/pd/owl/#Concept`
+    #    where `/owl` is the suffix to distinguish owl variant
+    # 3. current IRI e.g. `https://w3id.org/dpv/dpv-owl/pd#Concept`
+    #    where `/dpv-owl` is the prefix to distinguish owl variant
+    
+    # Current implementation is #1 with the same IRI, where OWL is
+    # generated at same filepath with extension {name}-owl.[ttl,owl]
+
+    ##### OWL semantics
+    # For reference, see [Using OWL and SKOS (May 2008)
+    # ](https://www.w3.org/2006/07/SWD/SKOS/skos-and-owl/master.html)
+
+    # for classes, `skos:Concept` is converted to `owl:Class`
     graph.update("""
         DELETE { ?s rdf:type skos:Concept }
         INSERT { ?s rdf:type owl:Class }
         WHERE { ?s rdf:type rdfs:Class }
         """)
+    # for properties, `skos:Concept` is converted to `owl:ObjectProperty`
+    # - this is not correct for annotation properties such as `dpv:hasName`
     graph.update("""
         DELETE { ?s rdf:type skos:Concept }
         INSERT { ?s rdf:type owl:ObjectProperty }
         WHERE { ?s rdf:type rdf:Property }
         """)
+    # remove SKOS schemes and memberships
     graph.update("""
         DELETE { ?s skos:inScheme ?o }
         WHERE { ?s skos:inScheme ?o }
@@ -106,71 +194,81 @@ def serialize_graph(triples, filepath):
         DELETE { ?s rdf:type skos:ConceptScheme }
         WHERE { ?s rdf:type skos:ConceptScheme }
         """)
+    # for classes, replace `skos:broader` with `rdfs:subClassOf`
+    # and `skos:narrower` with `rdfs:superClassOf` (made up relation)
     graph.update("""
-        DELETE { ?s skos:broader ?o . ?o skos:narrower ?s  }
-        INSERT { ?s rdfs:subClassOf ?o }
+        INSERT { ?s rdfs:subClassOf ?o . ?o rdfs:superClassOf ?s }
+        WHERE { ?s a rdfs:Class . ?s skos:broader ?o }
+        """)
+    # for properties, replace `skos:broader` with `rdfs:subPropertyOf`
+    # and `skos:narrower` with `rdfs:superPropertyOf` (made up relation)
+    graph.update("""
+        INSERT { ?s rdfs:subPropertyOf ?o . ?o rdfs:superPropertyOf ?s }
+        WHERE { ?s a rdf:Property . ?s skos:broader ?o }
+        """)
+    # Delete any hanging `skos:narrower` and `skos:broader`
+    graph.update("""
+        DELETE { ?s skos:narrower ?o }
+        WHERE { ?s skos:narrower ?o }
+        """)
+    graph.update("""
+        DELETE { ?s skos:broader ?o }
         WHERE { ?s skos:broader ?o }
         """)
-    # TODO: SPARQL CONSTRUCT to create domain/range values for properties
-    # use existing dcam:domainIncludes/rangeIncludes
-    # convert to owl:unionOf ( domain/range )
-    # problem: how to construct rdf:Collection using SPARQL?
+
+    # For domain/range, the semantically correct use would be to
+    # declare `owl:unionOf` with a `rdf:Collection` containing all
+    # the possible values - HOWEVER, collections are a pain to deal
+    # with, and will muck up all the code in `300 HTML` script.
+    # RDFLib has covenience functions that can assist with getting
+    # collections as pythonic lists - and since OWL serialisation
+    # doesn't yet have a separate page and isn't parsed, this can be 
+    # done here without any _damage_ as such. The question is how to
+    # get the union values i.e. how to retrieve all the possible
+    # values for a property's domain/range when they are spread
+    # across domains and ranges.
+    # Can SPARQL CONSTRUCT be used to create domain/range values
+    # from existing dcam:domainIncludes/rangeIncludes?
+
+    # Serialising OWL is done as per `vocab_management.OWL_SERIALIZATIONS`
     for ext, format in OWL_SERIALIZATIONS.items():
         graph.serialize(f'{filepath}-owl.{ext}', format=format)
-    # TODO: Call converter from OWL to OMN
     INFO(f'wrote {filepath}-owl.[{",".join(OWL_SERIALIZATIONS)}]')
 
 
-# Load Translations
-for lang, lang_data in IMPORT_TRANSLATIONS.items():
-    def _convert(term):
-        translated = {}
-        translated['label'] = term['Label_translated']
-        translated['definition'] = term['Definition_translated']
-        if term['Usage_translated'] != 'N/A':
-            translated['usage'] = term['Usage_translated']
-        return translated
-
-    # production-ready translations
-    header, csvdata_prod = load_CSV(lang_data['prod'])
-    for term in csvdata_prod:
-        if term['Term'] not in TRANSLATIONS:
-            TRANSLATIONS[term['Term']] = {}
-        TRANSLATIONS[term['Term']][lang] = _convert(term)
-        TRANSLATIONS[term['Term']][lang]['status'] = 'verified'
-    # to-verify translations
-    header, csvdata_verify = load_CSV(lang_data['verify'])
-    for term in csvdata_verify:
-        if term['Term'] not in TRANSLATIONS:
-            TRANSLATIONS[term['Term']] = {}
-        TRANSLATIONS[term['Term']][lang] = _convert(term)
-        TRANSLATIONS[term['Term']][lang]['status'] = 'unverified'
-    INFO(f"Loaded translations for {lang_data['lang']}: {len(csvdata_prod)} verified, {len(csvdata_verify)} unverified")
-# DEBUG(TRANSLATIONS)
-
-
+# === translations-rdf ===
 def add_translations_for_concept(concept):
     triples = []
     term = prefix_from_iri(concept)
-    if term not in TRANSLATIONS: # all translations are missing
+    # See [translations](#translations) for terms used.
+    # If term is not present in `TRANSLATIONS`, then all translations
+    # are missing
+    if term not in TRANSLATIONS:
+        # If term is not present in `MISSING_TRANSLATIONS`, then
+        # translations for all languages are missing
         if term not in MISSING_TRANSLATIONS:
+            # If so, add the term with all languages as missing
             MISSING_TRANSLATIONS[term] = list(IMPORT_TRANSLATIONS.keys())
         return []
 
+    # Term has some translations
     lang_data = TRANSLATIONS[term]
     for lang, translations in lang_data.items():
+        # For unverified translations, the suffix _machine-translated_
+        # is added to distinguish verified and unverified terms
         if translations['status'] == 'unverified':
             note = " (machine-translated)"
         else:
             note = ""
-        triples.append((c, SKOS.prefLabel, 
+        triples.append((concept, SKOS.prefLabel, 
             Literal(f"{translations['label']}{note}", lang=lang)))
-        triples.append((c, SKOS.definition, 
+        triples.append((concept, SKOS.definition, 
             Literal(f"{translations['definition']}{note}", lang=lang)))
         if 'usage' in translations:
             triples.append((
-                c, SKOS.scopeNote, 
+                concept, SKOS.scopeNote, 
                 Literal(f"{translations['usage']}{note}", lang=lang)))
+    # Check if term has any missing translations for declared languages
     for lang in IMPORT_TRANSLATIONS:
         if lang not in lang_data:
             if term not in MISSING_TRANSLATIONS:
@@ -179,36 +277,45 @@ def add_translations_for_concept(concept):
     return triples
 
 
+# === generate-triples ===
 global_triples = []
 # iterate over all CSV files for specific vocab e.g. dpv
 for vocab, vocab_data in CSVFILES.items():
-    # work with modules within each structure e.g core
     namespace = NAMESPACES[vocab]
     INFO('-'*40)
     INFO(f'VOCAB: {vocab} ({namespace})')
     INFO('-'*40)
     vocab_triples = []
     PROPOSED[vocab] = {}
+    # Each 'module' corresponds to a CSV, and is combined
+    # together into a 'vocab' as per [[vocab_management.py]].
+    # The file generated at the end will be for each vocab,
+    # and for each module in the vocab.
     for module, module_data in vocab_data.items():
         # get schemas and data for each csv in module
         module_triples = []
         PROPOSED[vocab][module] = []
         for schema_name, filepath in module_data.items():
+            # Each module (CSV) has a schema declared for how the
+            # CSV is organised, which dictates which functions to
+            # call to handle each row within that CSV
             schema = vocab_schemas.get_schema(schema_name)
             INFO(f'MODULE: {module}')
             INFO(f'parsing {filepath} with schema: {schema_name}')
             header, csvdata = load_CSV(filepath)
-            # clean data (dangling spaces)
             header = [x.strip() for x in header]
             # csvdata is a list of dicts containing column:value
             for row in csvdata:
                 if not row['Term']: # skip empty rows
                     continue
-                # clean data (dangling spaces)
                 row = {x.strip():y.strip() for x,y in row.items()}
-                # filter proposed terms
+                # If there is no 'Status' column in the row, then skip -
+                # because it might be empty row (quirk of Google export)
+                # or it might be working notes not meant to be in RDF
                 if 'Status' not in row:
                     continue
+                # Filter out proposed concepts - they are to be collected
+                # and listed separately in another file
                 if row['Status'] == 'proposed':
                     # TODO: skip rows if they don't have a status
                     PROPOSED[vocab][module].append(row['Term'])
@@ -216,72 +323,67 @@ for vocab, vocab_data in CSVFILES.items():
                 # skip empty rows, annotations, deprecated concepts
                 if row['Status'] not in VOCAB_TERM_ACCEPT:
                     continue
-                # create a dict to hold the row data
+                # For each row value, call the assigned function from
+                # [[vocab_schema.py]]
                 for index, item in enumerate(row.values()):
-                    # get function to handle column value
-                    func = schema[header[index]]
-                    # empty func or item means no triples to be generated
-                    if func is None:
-                        continue
                     if not item:
+                        continue
+                    func = schema[header[index]]
+                    if func is None:
                         continue
                     module_triples += func(item, row, namespace, header[index])
         classes = []
         properties = []
+
+        # Iterate over triples and collect lists of classes and properties.
+        # Also link examples if present for the concept.
         for s, p, o in module_triples:
-            # DEBUG(f'{s} {p} {o}')
-                
             if p != RDF.type: continue
             if o == RDFS.Class: classes.append(s)
             elif o == RDF.Property: properties.append(s)
+            if o not in (RDFS.Class, RDF.Property): continue
+            # Only add examples and translations for classes and properties
+            if s in EXAMPLES:
+                for ex in EXAMPLES[s]:
+                    module_triples.append((s, VANN.example, DEX[ex]))
+            module_triples += add_translations_for_concept(s)
+        # Add class concepts to a ConceptScheme
         if classes:
             module_triples.append((namespace[f"{module.replace('_','-')}-classes"], RDF.type, SKOS.ConceptScheme))
             for c in classes:
                 module_triples.append((c, SKOS.inScheme, namespace[f"{module.replace('_','-')}-classes"]))
-                if c in EXAMPLES:
-                    for ex in EXAMPLES[c]:
-                        module_triples.append((c, VANN.example, DEX[ex]))
-                module_triples += add_translations_for_concept(c)
+        # Add property concepts to a ConceptScheme
         if properties:
             module_triples.append((namespace[f"{module.replace('_','-')}-properties"], RDF.type, SKOS.ConceptScheme))
             for p in properties:
                 module_triples.append((p, SKOS.inScheme, namespace[f"{module.replace('_','-')}-properties"]))
-                if p in EXAMPLES:
-                    for ex in EXAMPLES[p]:
-                        module_triples.append((p, VANN.example, DEX[ex]))
         INFO(f'Triples: {len(module_triples)} accepted for {len(classes)} classes and {len(properties)} properties, with {len(PROPOSED[vocab][module])} proposed')
+
         # export module triples
         exportpath = RDF_STRUCTURE[vocab]['modules']
         filepath = f'{exportpath}/{module}'
         serialize_graph(module_triples, filepath)
         vocab_triples += module_triples
+
     # export vocab triples
     exportpath = RDF_STRUCTURE[vocab]['main']
     filepath = f'{exportpath}/{vocab}'
     serialize_graph(vocab_triples, filepath)
     INFO(f'VOCAB triples: {len(vocab_triples)} accepted, {sum((len(m) for m in PROPOSED[vocab].values()))} proposed')
     global_triples += vocab_triples
+
 INFO('-'*40)
 INFO(f'TOTAL triples: {len(global_triples)} accepted')
 INFO('-'*40)
 
-
+# === collated-collections ===
 INFO('Creating collated collections')
 INFO('-'*40)
 
-collations = ({
-    'name': 'legal',
-    'input': (
-        f'{EXPORT_RDF_PATH}/legal/eu/legal-eu.ttl',
-        f'{EXPORT_RDF_PATH}/legal/de/legal-de.ttl',
-        f'{EXPORT_RDF_PATH}/legal/ie/legal-ie.ttl',
-        f'{EXPORT_RDF_PATH}/legal/gb/legal-gb.ttl',
-        f'{EXPORT_RDF_PATH}/legal/us/legal-us.ttl',
-        ),
-    'output': f'{EXPORT_RDF_PATH}/legal/legal',
-},)
-
-for collation in collations:
+# "collated collections" are different related concepts grouped together
+# in a single RDF file for convenience. The collations are declared in
+# [vocab_management.py](vocab_management.html#exports)
+for collation in RDF_COLLATIONS:
     INFO(f"Collating {collation['name']}")
     triples = Graph()
     for filepath in collation['input']:
@@ -289,9 +391,10 @@ for collation in collations:
     serialize_graph(triples, collation['output'])
     INFO(f"Collected {len(triples)} triples into {collation['output']}")
 
+# === serialise-missing-translations ===
 INFO('-'*40)
 DEBUG(f"Missing translations for {len(MISSING_TRANSLATIONS)} concepts")
-with open(f"{TRANSLATIONS_TODO_PATH}/tmp_translations.json", 'w') as fd:
+with open(f"{TRANSLATIONS_MISSING_FILE}", 'w') as fd:
     import json
     json.dump(MISSING_TRANSLATIONS, fd, indent=2)
 

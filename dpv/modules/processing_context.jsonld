@@ -1,10 +1,122 @@
 [
   {
-    "@id": "https://w3id.org/dpv#HighAutomation",
+    "@id": "https://w3id.org/dpv#hasProcessingAutomation",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/dcam/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#AutomationOfProcessing"
+      }
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-08-13"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Indicates the use or extent of automation associated with processing"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#processing-context-properties"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "has processing automation"
+      }
+    ],
+    "https://schema.org/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#AutomationOfProcessing"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#DecisionMaking",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-09-07"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#ProcessingContext"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#AutomatedDecisionMaking"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#ProcessingContext"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Processing that involves decision making"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#processing-context-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv#AutomatedDecisionMaking"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Decision Making"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#InnovativeUseOfExistingTechnology",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Automation"
+      "https://w3id.org/dpv#InnovativeUseOfTechnology"
     ],
     "http://purl.org/dc/terms/created": [
       {
@@ -20,13 +132,13 @@
     ],
     "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@id": "https://w3id.org/dpv#Automation"
+        "@id": "https://w3id.org/dpv#InnovativeUseOfTechnology"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "The system performs parts of its mission without external intervention"
+        "@value": "Involvement of existing technologies used in an innovative manner"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -37,13 +149,191 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "High Automation"
+        "@value": "Innovative Use of Existing Technologies"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#Automation",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2023-12-10"
+      }
+    ],
+    "http://purl.org/vocab/vann/example": [
+      {
+        "@id": "https://w3id.org/dpv/examples#E0013"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#ProcessingContext"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#ProcessingContext"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Indication of degree or level of automation associated with specified context"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#processing-context-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv#Autonomous"
+      },
+      {
+        "@id": "https://w3id.org/dpv#FullAutomation"
+      },
+      {
+        "@id": "https://w3id.org/dpv#HighAutomation"
+      },
+      {
+        "@id": "https://w3id.org/dpv#ConditionalAutomation"
+      },
+      {
+        "@id": "https://w3id.org/dpv#PartialAutomation"
+      },
+      {
+        "@id": "https://w3id.org/dpv#AssistiveAutomation"
+      },
+      {
+        "@id": "https://w3id.org/dpv#NotAutomated"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Automation"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#hasDataSource",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/dcam/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#DataSource"
+      }
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Georg P. Krog, Paul Ryan, Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2020-11-04"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Indicates the source or origin of data being processed"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#processing-context-properties"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "has data source"
+      }
+    ],
+    "https://schema.org/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#DataSource"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#HumanInvolvementForInput",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#HumanInvolvement"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-09-07"
+      }
+    ],
+    "http://purl.org/dc/terms/modified": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2023-12-10"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#HumanInvolvement"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Human involvement for the purposes of providing inputs to the specified context"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#processing-context-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Human Involvement for Input"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#scopeNote": [
       {
         "@language": "en",
-        "@value": "Human Involvement is implied here, e.g. for intervention, input, decisions"
+        "@value": "Inputs can be in the form of data or other resources."
       }
     ]
   },
@@ -113,7 +403,64 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#AssistiveAutomation",
+    "@id": "https://w3id.org/dpv#hasHumanInvolvement",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/dcam/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#HumanInvolvement"
+      }
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Georg P. Krog, Paul Ryan, Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2020-11-04"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Indicates Involvement of humans in processing such as within automated decision making process"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#processing-context-properties"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "has human involvement"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "Human involvement is also relevant to 'human in the loop'"
+      }
+    ],
+    "https://schema.org/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#HumanInvolvement"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#FullAutomation",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
@@ -139,7 +486,7 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "The system assists an operator"
+        "@value": "The system is capable of performing its entire mission without external intervention"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -150,13 +497,164 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Assistive Automation"
+        "@value": "Full Automation"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#scopeNote": [
       {
         "@language": "en",
-        "@value": "Human Involvement is implied here, specifically the ability to make decisions regarding operations, but also possibly for intervention, oversight, and verification"
+        "@value": "Though Fully Automated such operations can still be associated with dpv:HumanInvolved e.g. for inputs, oversight or verification"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#StorageDeletion",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2019-04-05"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#StorageCondition"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#StorageCondition"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Deletion or Erasure of data including any deletion guarantees"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#processing-context-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Storage Deletion"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#DataSubjectDataSource",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#DataSource"
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2023-10-12"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#DataSource"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Data Sourced from Data Subject(s), e.g. when data is collected via a form or observed from their activities"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#processing-context-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv#DataPublishedByDataSubject"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Data Subject as Data Source"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#PublicDataSource",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#DataSource"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Georg P Krog, Harshvardhan J. Pandit, Beatriz Esteves, Paul Ryan, Julian Flake"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-01-26"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#DataSource"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A source of data that is publicly accessible or available"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#processing-context-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Public Data Source"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "The term 'Public' is used here in a broad sense. Actual consideration of what is 'Public Data' can vary based on several contextual or jurisdictional factors such as  definition of open, methods of access, permissions and licenses."
       }
     ]
   },
@@ -267,6 +765,320 @@
     ]
   },
   {
+    "@id": "https://w3id.org/dpv#InnovativeUseOfTechnology",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2023-12-10"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#ProcessingContext"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#ProcessingContext"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Indicates that technology is being used in an innovative manner"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#processing-context-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv#InnovativeUseOfExistingTechnology"
+      },
+      {
+        "@id": "https://w3id.org/dpv#InnovativeUseOfNewTechnologies"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Innovative use of Technology"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "Innovative here refers to 'state of the art' rather than the implementing entity, and can be for either new technology or new uses of existing technology"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#StorageCondition",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2019-04-05"
+      }
+    ],
+    "http://purl.org/vocab/vann/example": [
+      {
+        "@id": "https://w3id.org/dpv/examples#E0011"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#ProcessingCondition"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#StorageDeletion"
+      },
+      {
+        "@id": "https://w3id.org/dpv#StorageDuration"
+      },
+      {
+        "@id": "https://w3id.org/dpv#StorageLocation"
+      },
+      {
+        "@id": "https://w3id.org/dpv#StorageRestoration"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#ProcessingCondition"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Conditions required or followed regarding storage of data"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#processing-context-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv#StorageDeletion"
+      },
+      {
+        "@id": "https://w3id.org/dpv#StorageDuration"
+      },
+      {
+        "@id": "https://w3id.org/dpv#StorageLocation"
+      },
+      {
+        "@id": "https://w3id.org/dpv#StorageRestoration"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Storage Condition"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#HumanInvolvementForOversight",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#HumanInvolvement"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-09-07"
+      }
+    ],
+    "http://purl.org/dc/terms/modified": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2023-12-10"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#HumanInvolvement"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Human involvement for the purposes of having oversight over the specified context regarding its operations, inputs, or outputs"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#processing-context-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Human Involvement for Oversight"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "Oversight by itself does not indicate the ability to intervene or control the operations."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#HighAutomation",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Automation"
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2023-12-10"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#Automation"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "The system performs parts of its mission without external intervention"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#processing-context-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "High Automation"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "Human Involvement is implied here, e.g. for intervention, input, decisions"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#StorageLocation",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2019-04-05"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#StorageCondition"
+      },
+      {
+        "@id": "https://w3id.org/dpv#Location"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#StorageCondition"
+      },
+      {
+        "@id": "https://w3id.org/dpv#Location"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Location or geospatial scope where the data is stored"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#processing-context-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Storage Location"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#processing-context-properties",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    ]
+  },
+  {
     "@id": "https://w3id.org/dpv#EvaluationScoring",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
@@ -332,25 +1144,16 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#StorageDeletion",
+    "@id": "https://w3id.org/dpv#NotAutomated",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar"
-      }
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Automation"
     ],
     "http://purl.org/dc/terms/created": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2019-04-05"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#StorageCondition"
+        "@value": "2023-12-10"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -361,13 +1164,13 @@
     ],
     "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@id": "https://w3id.org/dpv#StorageCondition"
+        "@id": "https://w3id.org/dpv#Automation"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Deletion or Erasure of data including any deletion guarantees"
+        "@value": "The operator fully controls the system"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -378,26 +1181,25 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Storage Deletion"
+        "@value": "Not Automated"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "Human Involvement is necessary here as there is no automation"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#processing-context-properties",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#PublicDataSource",
+    "@id": "https://w3id.org/dpv#Technology",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#DataSource"
+      "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://purl.org/dc/terms/contributor": [
       {
-        "@value": "Georg P Krog, Harshvardhan J. Pandit, Beatriz Esteves, Paul Ryan, Julian Flake"
+        "@value": "Harshvardhan J. Pandit"
       }
     ],
     "http://purl.org/dc/terms/created": [
@@ -412,15 +1214,10 @@
         "@value": "accepted"
       }
     ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#DataSource"
-      }
-    ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "A source of data that is publicly accessible or available"
+        "@value": "The technology, technological implementation, or any techniques, skills, methods, and processes used or applied"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -431,204 +1228,24 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Public Data Source"
+        "@value": "Technology"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#scopeNote": [
       {
         "@language": "en",
-        "@value": "The term 'Public' is used here in a broad sense. Actual consideration of what is 'Public Data' can vary based on several contextual or jurisdictional factors such as  definition of open, methods of access, permissions and licenses."
+        "@value": "Examples (non-exhaustive) include: Algorithm, Process, Method, Skill, Database, Cookies, Server, Device"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#ProcessingCondition",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2023-12-10"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#ProcessingContext"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#StorageCondition"
-      },
-      {
-        "@id": "https://w3id.org/dpv#ProcessingLocation"
-      },
-      {
-        "@id": "https://w3id.org/dpv#ProcessingDuration"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#ProcessingContext"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Conditions required or followed regarding processing of data or use of technologies"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#processing-context-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv#StorageCondition"
-      },
-      {
-        "@id": "https://w3id.org/dpv#ProcessingLocation"
-      },
-      {
-        "@id": "https://w3id.org/dpv#ProcessingDuration"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Processing Condition"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#DataSubjectDataSource",
+    "@id": "https://w3id.org/dpv#ConditionalAutomation",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#DataSource"
+      "https://w3id.org/dpv#Automation"
     ],
     "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2023-10-12"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#DataSource"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Data Sourced from Data Subject(s), e.g. when data is collected via a form or observed from their activities"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#processing-context-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv#DataPublishedByDataSubject"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Data Subject as Data Source"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#EvaluationOfIndividuals",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#EvaluationScoring"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-10-22"
-      }
-    ],
-    "http://purl.org/dc/terms/modified": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-11-30"
-      }
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@language": "en",
-        "@value": "(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#EvaluationScoring"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Processing that involves evaluation of individuals"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#processing-context-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Evaluation of Individuals"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#HumanInvolvementForControl",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#HumanInvolvement"
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-09-04"
-      }
-    ],
-    "http://purl.org/dc/terms/modified": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#date",
         "@value": "2023-12-10"
@@ -642,13 +1259,13 @@
     ],
     "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@id": "https://w3id.org/dpv#HumanInvolvement"
+        "@id": "https://w3id.org/dpv#Automation"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Human involvement for the purposes of exercising control over the specified operations in context"
+        "@value": "Sustained and specific performance by a system, with an external agent ready to take over when necessary"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -659,234 +1276,13 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Human Involvement for control"
+        "@value": "Conditional Automation"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#scopeNote": [
       {
         "@language": "en",
-        "@value": "Control is a broad term that can be applied to various stages and operations. It maps to None, Assistive, and Partial automation models."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#HumanInvolvementForVerification",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#HumanInvolvement"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-09-07"
-      }
-    ],
-    "http://purl.org/dc/terms/modified": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2023-12-10"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#HumanInvolvement"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Human involvement for the purposes of verification of specified context to ensure its operations, inputs, or outputs are correct or are acceptable."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#processing-context-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Human Involvement for Verification"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "Verification by itself does not imply ability to Control, Intervene, or having Oversight."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#ProcessingLocation",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2023-12-10"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#ProcessingCondition"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#ProcessingCondition"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Conditions regarding Location for processing of data or use of technologies"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#processing-context-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Processing Location"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#HumanInvolvementForInput",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#HumanInvolvement"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-09-07"
-      }
-    ],
-    "http://purl.org/dc/terms/modified": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2023-12-10"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#HumanInvolvement"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Human involvement for the purposes of providing inputs to the specified context"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#processing-context-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Human Involvement for Input"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "Inputs can be in the form of data or other resources."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#hasStorageCondition",
-    "@type": [
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://purl.org/dc/dcam/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#StorageCondition"
-      }
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-08-13"
-      }
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@language": "en",
-        "@value": "(SPECIAL Project,https://specialprivacy.ercim.eu/)"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Indicates information about storage condition"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#processing-context-properties"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "has storage condition"
-      }
-    ],
-    "https://schema.org/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#StorageCondition"
+        "@value": "Human Involvement is implied here, e.g. for intervention, input, decisions"
       }
     ]
   },
@@ -954,11 +1350,11 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#InnovativeUseOfExistingTechnology",
+    "@id": "https://w3id.org/dpv#HumanNotInvolved",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#InnovativeUseOfTechnology"
+      "https://w3id.org/dpv#HumanInvolvement"
     ],
     "http://purl.org/dc/terms/created": [
       {
@@ -974,13 +1370,13 @@
     ],
     "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@id": "https://w3id.org/dpv#InnovativeUseOfTechnology"
+        "@id": "https://w3id.org/dpv#HumanInvolvement"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Involvement of existing technologies used in an innovative manner"
+        "@value": "Humans are not involved in the specified context"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -991,7 +1387,80 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Innovative Use of Existing Technologies"
+        "@value": "Human not involved"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "This maps to Autonomous and Full Automation models if no humans are involved."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#Location",
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#StorageLocation"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv#StorageLocation"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#HumanInvolvementForIntervention",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#HumanInvolvement"
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-09-05"
+      }
+    ],
+    "http://purl.org/dc/terms/modified": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2023-12-10"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#HumanInvolvement"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Human involvement for the purposes of exercising interventions over the specified operations in context"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#processing-context-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Human Involvement for intervention"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "Intervention indicates the ability to intervene in operations, which can be at various stages. It maps to Conditional and High automation models."
       }
     ]
   },
@@ -1055,27 +1524,20 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#DataPublishedByDataSubject",
+    "@id": "https://w3id.org/dpv#ProcessingDuration",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#DataSubjectDataSource"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Julian Flake"
-      }
+      "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://purl.org/dc/terms/created": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-08-24"
+        "@value": "2023-12-10"
       }
     ],
-    "http://purl.org/dc/terms/modified": [
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2023-12-10"
+        "@id": "https://w3id.org/dpv#ProcessingCondition"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -1086,13 +1548,13 @@
     ],
     "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@id": "https://w3id.org/dpv#DataSubjectDataSource"
+        "@id": "https://w3id.org/dpv#ProcessingCondition"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Data is published by the data subject"
+        "@value": "Conditions regarding Duration for processing of data or use of technologies"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -1103,177 +1565,7 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Data published by Data Subject"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "This refers to where that data was made publicly available by the data subject. An example of this would be a social media profile that the data subject has made publicly accessible."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#HumanInvolvementForOversight",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#HumanInvolvement"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-09-07"
-      }
-    ],
-    "http://purl.org/dc/terms/modified": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2023-12-10"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#HumanInvolvement"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Human involvement for the purposes of having oversight over the specified context regarding its operations, inputs, or outputs"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#processing-context-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Human Involvement for Oversight"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "Oversight by itself does not indicate the ability to intervene or control the operations."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#Autonomous",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Automation"
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2023-12-10"
-      }
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@language": "en",
-        "@value": "(ISO/IEC 22989:2022 Artificial intelligence concepts and terminology,https://www.iso.org/standard/74296.html)"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#Automation"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The system is capable of modifying its operation domain or its goals without external intervention, control or oversight"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#processing-context-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Autonomous"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "Though Autonomous, such operations can still be associated with dpv:HumanInvolved e.g. for inputs, oversight or verification"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#hasProcessingAutomation",
-    "@type": [
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://purl.org/dc/dcam/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#AutomationOfProcessing"
-      }
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-08-13"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Indicates the use or extent of automation associated with processing"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#processing-context-properties"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "has processing automation"
-      }
-    ],
-    "https://schema.org/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#AutomationOfProcessing"
+        "@value": "Processing Duration"
       }
     ]
   },
@@ -1320,124 +1612,14 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#StorageLocation",
+    "@id": "https://w3id.org/dpv#AutomatedDecisionMaking",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://purl.org/dc/terms/contributor": [
       {
-        "@value": "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2019-04-05"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#StorageCondition"
-      },
-      {
-        "@id": "https://w3id.org/dpv#Location"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#StorageCondition"
-      },
-      {
-        "@id": "https://w3id.org/dpv#Location"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Location or geospatial scope where the data is stored"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#processing-context-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Storage Location"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#HumanNotInvolved",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#HumanInvolvement"
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2023-12-10"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#HumanInvolvement"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Humans are not involved in the specified context"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#processing-context-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Human not involved"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "This maps to Autonomous and Full Automation models if no humans are involved."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#hasDataSource",
-    "@type": [
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://purl.org/dc/dcam/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#DataSource"
-      }
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Georg P. Krog, Paul Ryan, Harshvardhan J. Pandit"
+        "@value": "Harshvardhan J. Pandit, Piero Bonatti"
       }
     ],
     "http://purl.org/dc/terms/created": [
@@ -1446,214 +1628,21 @@
         "@value": "2020-11-04"
       }
     ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Indicates the source or origin of data being processed"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#processing-context-properties"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "has data source"
-      }
-    ],
-    "https://schema.org/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#DataSource"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#HumanInvolvementForDecision",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#HumanInvolvement"
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-09-06"
-      }
-    ],
     "http://purl.org/dc/terms/modified": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2023-12-10"
+        "@value": "2022-09-07"
       }
     ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+    "http://purl.org/dc/terms/source": [
       {
         "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#HumanInvolvement"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Human involvement for the purposes of exercising decisions over the specified operations in context"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#processing-context-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Human Involvement for decision"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "Decisions are about exercising control over the operation, and are distinct from input (data or parameters)."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#ConditionalAutomation",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Automation"
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2023-12-10"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#Automation"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Sustained and specific performance by a system, with an external agent ready to take over when necessary"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#processing-context-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Conditional Automation"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "Human Involvement is implied here, e.g. for intervention, input, decisions"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#hasHumanInvolvement",
-    "@type": [
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://purl.org/dc/dcam/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#HumanInvolvement"
-      }
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Georg P. Krog, Paul Ryan, Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2020-11-04"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Indicates Involvement of humans in processing such as within automated decision making process"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#processing-context-properties"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "has human involvement"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "Human involvement is also relevant to 'human in the loop'"
-      }
-    ],
-    "https://schema.org/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#HumanInvolvement"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#Automation",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2023-12-10"
-      }
-    ],
-    "http://purl.org/vocab/vann/example": [
-      {
-        "@id": "https://w3id.org/dpv/examples#E0013"
+        "@value": "(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/dpv#ProcessingContext"
+        "@id": "https://w3id.org/dpv#DecisionMaking"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -1664,83 +1653,13 @@
     ],
     "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@id": "https://w3id.org/dpv#ProcessingContext"
+        "@id": "https://w3id.org/dpv#DecisionMaking"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Indication of degree or level of automation associated with specified context"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#processing-context-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv#Autonomous"
-      },
-      {
-        "@id": "https://w3id.org/dpv#FullAutomation"
-      },
-      {
-        "@id": "https://w3id.org/dpv#HighAutomation"
-      },
-      {
-        "@id": "https://w3id.org/dpv#ConditionalAutomation"
-      },
-      {
-        "@id": "https://w3id.org/dpv#PartialAutomation"
-      },
-      {
-        "@id": "https://w3id.org/dpv#AssistiveAutomation"
-      },
-      {
-        "@id": "https://w3id.org/dpv#NotAutomated"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Automation"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#NonPublicDataSource",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#DataSource"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Georg P Krog, Harshvardhan J. Pandit, Beatriz Esteves, Paul Ryan, Julian Flake"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-01-26"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#DataSource"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A source of data that is not publicly accessible or available"
+        "@value": "Processing that involves automated decision making"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -1751,233 +1670,13 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Non-Public Data Source"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#HumanInvolved",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#HumanInvolvement"
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-09-03"
-      }
-    ],
-    "http://purl.org/dc/terms/modified": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2023-12-10"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#HumanInvolvement"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Humans are involved in the specified context"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#processing-context-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Human involved"
+        "@value": "Automated Decision Making"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#scopeNote": [
       {
         "@language": "en",
-        "@value": "This concept only indicates that humans are involved. For specific involvement, see specialised concepts e.g. involved for input, oversight."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#isImplementedByEntity",
-    "@type": [
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://purl.org/dc/dcam/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Entity"
-      }
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Axel Polleres, Harshvardhan J. Pandit, Beatriz Esteves, Paul Ryan, Julian Flake"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2019-05-07"
-      }
-    ],
-    "http://purl.org/dc/terms/modified": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-01-26"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Indicates implementation details such as entities or agents"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#processing-context-properties"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "is implemented by entity"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "The use of 'entity' is inclusive of entities (e.g. Data Processor) as well as 'agent' (e.g. DPO). For indicating technological implementation, the property isImplementedByTechnology should be used."
-      }
-    ],
-    "https://schema.org/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Entity"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#Duration",
-    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#StorageDuration"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv#StorageDuration"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#FullAutomation",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Automation"
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2023-12-10"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#Automation"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The system is capable of performing its entire mission without external intervention"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#processing-context-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Full Automation"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "Though Fully Automated such operations can still be associated with dpv:HumanInvolved e.g. for inputs, oversight or verification"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#PartialAutomation",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Automation"
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2023-12-10"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#Automation"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Some sub-functions of the system are fully automated while the system remains under the control of an external agent"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#processing-context-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Partial Automation"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "Human Involvement is implied here, specifically the ability to Control operations, but also possibly for intervention, oversight, and verification"
+        "@value": "Automated decision making can be defined as “the ability to make decisions by technological means without human involvement.” (“Guidelines on Automated individual decision-making and Profiling for the purposes of Regulation 2016/679 (wp251rev.01)”, 2018, p. 8)"
       }
     ]
   },
@@ -2071,10 +1770,167 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#AutomatedDecisionMaking",
+    "@id": "https://w3id.org/dpv#PartialAutomation",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Automation"
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2023-12-10"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#Automation"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Some sub-functions of the system are fully automated while the system remains under the control of an external agent"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#processing-context-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Partial Automation"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "Human Involvement is implied here, specifically the ability to Control operations, but also possibly for intervention, oversight, and verification"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#hasAlgorithmicLogic",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/dcam/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#AlgorithmicLogic"
+      }
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Georg P. Krog, Paul Ryan, Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2020-11-04"
+      }
+    ],
+    "http://purl.org/dc/terms/modified": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-06-15"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Indicates the logic used in processing such as for automated decision making"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#processing-context-properties"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "has algorithmic logic"
+      }
+    ],
+    "https://schema.org/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#AlgorithmicLogic"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#StorageRestoration",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2019-04-05"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#StorageCondition"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#StorageCondition"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Regularity and temporal span of data restoration/backup mechanisms that guarantee that data is preserved"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#processing-context-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Storage Restoration"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#SystematicMonitoring",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#ProcessingContext"
     ],
     "http://purl.org/dc/terms/contributor": [
       {
@@ -2087,21 +1943,10 @@
         "@value": "2020-11-04"
       }
     ],
-    "http://purl.org/dc/terms/modified": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-09-07"
-      }
-    ],
     "http://purl.org/dc/terms/source": [
       {
         "@language": "en",
         "@value": "(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#DecisionMaking"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -2112,13 +1957,13 @@
     ],
     "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@id": "https://w3id.org/dpv#DecisionMaking"
+        "@id": "https://w3id.org/dpv#ProcessingContext"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Processing that involves automated decision making"
+        "@value": "Processing that involves systematic monitoring of individuals"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -2129,13 +1974,151 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Automated Decision Making"
+        "@value": "Systematic Monitoring"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#hasStorageCondition",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/dcam/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#StorageCondition"
       }
     ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-08-13"
+      }
+    ],
+    "http://purl.org/dc/terms/source": [
       {
         "@language": "en",
-        "@value": "Automated decision making can be defined as “the ability to make decisions by technological means without human involvement.” (“Guidelines on Automated individual decision-making and Profiling for the purposes of Regulation 2016/679 (wp251rev.01)”, 2018, p. 8)"
+        "@value": "(SPECIAL Project,https://specialprivacy.ercim.eu/)"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Indicates information about storage condition"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#processing-context-properties"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "has storage condition"
+      }
+    ],
+    "https://schema.org/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#StorageCondition"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#Duration",
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#StorageDuration"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv#StorageDuration"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#processing-context-classes",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#ProcessingCondition",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2023-12-10"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#ProcessingContext"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#StorageCondition"
+      },
+      {
+        "@id": "https://w3id.org/dpv#ProcessingLocation"
+      },
+      {
+        "@id": "https://w3id.org/dpv#ProcessingDuration"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#ProcessingContext"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Conditions required or followed regarding processing of data or use of technologies"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#processing-context-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv#StorageCondition"
+      },
+      {
+        "@id": "https://w3id.org/dpv#ProcessingLocation"
+      },
+      {
+        "@id": "https://w3id.org/dpv#ProcessingDuration"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Processing Condition"
       }
     ]
   },
@@ -2197,52 +2180,11 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#ThirdPartyDataSource",
+    "@id": "https://w3id.org/dpv#EvaluationOfIndividuals",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#DataSource"
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2023-10-12"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#DataSource"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Data Sourced from a Third Party, e.g. when data is collected from an entity that is neither the Controller nor the Data Subject"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#processing-context-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "ThirdParty as Data Source"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#Technology",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
+      "https://w3id.org/dpv#EvaluationScoring"
     ],
     "http://purl.org/dc/terms/contributor": [
       {
@@ -2252,76 +2194,19 @@
     "http://purl.org/dc/terms/created": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-01-26"
+        "@value": "2022-10-22"
       }
     ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The technology, technological implementation, or any techniques, skills, methods, and processes used or applied"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#processing-context-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Technology"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "Examples (non-exhaustive) include: Algorithm, Process, Method, Skill, Database, Cookies, Server, Device"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#Context",
-    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#ProcessingContext"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv#ProcessingContext"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#Location",
-    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#StorageLocation"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv#StorageLocation"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#NotAutomated",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Automation"
-    ],
-    "http://purl.org/dc/terms/created": [
+    "http://purl.org/dc/terms/modified": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2023-12-10"
+        "@value": "2022-11-30"
+      }
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@language": "en",
+        "@value": "(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -2332,13 +2217,13 @@
     ],
     "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@id": "https://w3id.org/dpv#Automation"
+        "@id": "https://w3id.org/dpv#EvaluationScoring"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "The operator fully controls the system"
+        "@value": "Processing that involves evaluation of individuals"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -2349,116 +2234,7 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Not Automated"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "Human Involvement is necessary here as there is no automation"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#processing-context-classes",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#StorageRestoration",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2019-04-05"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#StorageCondition"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#StorageCondition"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Regularity and temporal span of data restoration/backup mechanisms that guarantee that data is preserved"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#processing-context-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Storage Restoration"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#ProcessingDuration",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2023-12-10"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#ProcessingCondition"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#ProcessingCondition"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Conditions regarding Duration for processing of data or use of technologies"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#processing-context-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Processing Duration"
+        "@value": "Evaluation of Individuals"
       }
     ]
   },
@@ -2526,7 +2302,226 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#HumanInvolvementForIntervention",
+    "@id": "https://w3id.org/dpv#Autonomous",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Automation"
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2023-12-10"
+      }
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@language": "en",
+        "@value": "(ISO/IEC 22989:2022 Artificial intelligence concepts and terminology,https://www.iso.org/standard/74296.html)"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#Automation"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "The system is capable of modifying its operation domain or its goals without external intervention, control or oversight"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#processing-context-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Autonomous"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "Though Autonomous, such operations can still be associated with dpv:HumanInvolved e.g. for inputs, oversight or verification"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#NonPublicDataSource",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#DataSource"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Georg P Krog, Harshvardhan J. Pandit, Beatriz Esteves, Paul Ryan, Julian Flake"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-01-26"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#DataSource"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A source of data that is not publicly accessible or available"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#processing-context-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Non-Public Data Source"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#ThirdPartyDataSource",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#DataSource"
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2023-10-12"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#DataSource"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Data Sourced from a Third Party, e.g. when data is collected from an entity that is neither the Controller nor the Data Subject"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#processing-context-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "ThirdParty as Data Source"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#Context",
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#ProcessingContext"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv#ProcessingContext"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#isImplementedByEntity",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://purl.org/dc/dcam/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Entity"
+      }
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Axel Polleres, Harshvardhan J. Pandit, Beatriz Esteves, Paul Ryan, Julian Flake"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2019-05-07"
+      }
+    ],
+    "http://purl.org/dc/terms/modified": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-01-26"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Indicates implementation details such as entities or agents"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#processing-context-properties"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "is implemented by entity"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "The use of 'entity' is inclusive of entities (e.g. Data Processor) as well as 'agent' (e.g. DPO). For indicating technological implementation, the property isImplementedByTechnology should be used."
+      }
+    ],
+    "https://schema.org/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Entity"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#HumanInvolvementForDecision",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
@@ -2535,7 +2530,7 @@
     "http://purl.org/dc/terms/created": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-09-05"
+        "@value": "2022-09-06"
       }
     ],
     "http://purl.org/dc/terms/modified": [
@@ -2558,7 +2553,7 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Human involvement for the purposes of exercising interventions over the specified operations in context"
+        "@value": "Human involvement for the purposes of exercising decisions over the specified operations in context"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -2569,103 +2564,33 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Human Involvement for intervention"
+        "@value": "Human Involvement for decision"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#scopeNote": [
       {
         "@language": "en",
-        "@value": "Intervention indicates the ability to intervene in operations, which can be at various stages. It maps to Conditional and High automation models."
+        "@value": "Decisions are about exercising control over the operation, and are distinct from input (data or parameters)."
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#DecisionMaking",
+    "@id": "https://w3id.org/dpv#HumanInvolvementForControl",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#HumanInvolvement"
     ],
     "http://purl.org/dc/terms/created": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-09-07"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#ProcessingContext"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#AutomatedDecisionMaking"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#ProcessingContext"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Processing that involves decision making"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#processing-context-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv#AutomatedDecisionMaking"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Decision Making"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#hasAlgorithmicLogic",
-    "@type": [
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://purl.org/dc/dcam/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#AlgorithmicLogic"
-      }
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Georg P. Krog, Paul Ryan, Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2020-11-04"
+        "@value": "2022-09-04"
       }
     ],
     "http://purl.org/dc/terms/modified": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
+        "@value": "2023-12-10"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -2674,68 +2599,163 @@
         "@value": "accepted"
       }
     ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#HumanInvolvement"
+      }
+    ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Indicates the logic used in processing such as for automated decision making"
+        "@value": "Human involvement for the purposes of exercising control over the specified operations in context"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
       {
-        "@id": "https://w3id.org/dpv#processing-context-properties"
+        "@id": "https://w3id.org/dpv#processing-context-classes"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "has algorithmic logic"
+        "@value": "Human Involvement for control"
       }
     ],
-    "https://schema.org/rangeIncludes": [
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
       {
-        "@id": "https://w3id.org/dpv#AlgorithmicLogic"
+        "@language": "en",
+        "@value": "Control is a broad term that can be applied to various stages and operations. It maps to None, Assistive, and Partial automation models."
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#StorageCondition",
+    "@id": "https://w3id.org/dpv#DataPublishedByDataSubject",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#DataSubjectDataSource"
     ],
     "http://purl.org/dc/terms/contributor": [
       {
-        "@value": "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar"
+        "@value": "Julian Flake"
       }
     ],
     "http://purl.org/dc/terms/created": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2019-04-05"
+        "@value": "2022-08-24"
       }
     ],
-    "http://purl.org/vocab/vann/example": [
+    "http://purl.org/dc/terms/modified": [
       {
-        "@id": "https://w3id.org/dpv/examples#E0011"
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2023-12-10"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#DataSubjectDataSource"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Data is published by the data subject"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#processing-context-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Data published by Data Subject"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "This refers to where that data was made publicly available by the data subject. An example of this would be a social media profile that the data subject has made publicly accessible."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#HumanInvolved",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#HumanInvolvement"
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-09-03"
+      }
+    ],
+    "http://purl.org/dc/terms/modified": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2023-12-10"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#HumanInvolvement"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Humans are involved in the specified context"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#processing-context-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Human involved"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "This concept only indicates that humans are involved. For specific involvement, see specialised concepts e.g. involved for input, oversight."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#ProcessingLocation",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2023-12-10"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
         "@id": "https://w3id.org/dpv#ProcessingCondition"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#StorageDeletion"
-      },
-      {
-        "@id": "https://w3id.org/dpv#StorageDuration"
-      },
-      {
-        "@id": "https://w3id.org/dpv#StorageLocation"
-      },
-      {
-        "@id": "https://w3id.org/dpv#StorageRestoration"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -2752,7 +2772,7 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Conditions required or followed regarding storage of data"
+        "@value": "Conditions regarding Location for processing of data or use of technologies"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -2760,24 +2780,58 @@
         "@id": "https://w3id.org/dpv#processing-context-classes"
       }
     ],
-    "http://www.w3.org/2004/02/skos/core#narrower": [
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
-        "@id": "https://w3id.org/dpv#StorageDeletion"
-      },
+        "@language": "en",
+        "@value": "Processing Location"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#AssistiveAutomation",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Automation"
+    ],
+    "http://purl.org/dc/terms/created": [
       {
-        "@id": "https://w3id.org/dpv#StorageDuration"
-      },
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2023-12-10"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
-        "@id": "https://w3id.org/dpv#StorageLocation"
-      },
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@id": "https://w3id.org/dpv#StorageRestoration"
+        "@id": "https://w3id.org/dpv#Automation"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "The system assists an operator"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#processing-context-classes"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Storage Condition"
+        "@value": "Assistive Automation"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "Human Involvement is implied here, specifically the ability to make decisions regarding operations, but also possibly for intervention, oversight, and verification"
       }
     ]
   },
@@ -2864,75 +2918,29 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#SystematicMonitoring",
+    "@id": "https://w3id.org/dpv#HumanInvolvementForVerification",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#ProcessingContext"
+      "https://w3id.org/dpv#HumanInvolvement"
     ],
     "http://purl.org/dc/terms/contributor": [
       {
-        "@value": "Harshvardhan J. Pandit, Piero Bonatti"
+        "@value": "Harshvardhan J. Pandit"
       }
     ],
     "http://purl.org/dc/terms/created": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2020-11-04"
+        "@value": "2022-09-07"
       }
     ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@language": "en",
-        "@value": "(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#ProcessingContext"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Processing that involves systematic monitoring of individuals"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv#processing-context-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Systematic Monitoring"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#InnovativeUseOfTechnology",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://purl.org/dc/terms/created": [
+    "http://purl.org/dc/terms/modified": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#date",
         "@value": "2023-12-10"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#ProcessingContext"
-      }
-    ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
         "@language": "en",
@@ -2941,13 +2949,13 @@
     ],
     "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@id": "https://w3id.org/dpv#ProcessingContext"
+        "@id": "https://w3id.org/dpv#HumanInvolvement"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Indicates that technology is being used in an innovative manner"
+        "@value": "Human involvement for the purposes of verification of specified context to ensure its operations, inputs, or outputs are correct or are acceptable."
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -2955,24 +2963,16 @@
         "@id": "https://w3id.org/dpv#processing-context-classes"
       }
     ],
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv#InnovativeUseOfExistingTechnology"
-      },
-      {
-        "@id": "https://w3id.org/dpv#InnovativeUseOfNewTechnologies"
-      }
-    ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Innovative use of Technology"
+        "@value": "Human Involvement for Verification"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#scopeNote": [
       {
         "@language": "en",
-        "@value": "Innovative here refers to 'state of the art' rather than the implementing entity, and can be for either new technology or new uses of existing technology"
+        "@value": "Verification by itself does not imply ability to Control, Intervene, or having Oversight."
       }
     ]
   }

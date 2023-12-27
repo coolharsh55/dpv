@@ -83,3 +83,12 @@ tech:WiFiCommunication a rdfs:Class,
     skos:definition "Technology utilising wifi wireless networking communication"@en ;
     skos:prefLabel "WiFi Communication"@en .
 
+tech:Networking rdfs:superClassOf tech:BluetoothCommunication,
+        tech:CellularNetworkCommunication,
+        tech:InternetCommunication,
+        tech:LocalNetworkCommunication,
+        tech:WiFiCommunication .
+
+tech:CommunicationMechanism rdfs:superClassOf tech:GPSCommunication,
+        tech:NetworkingCommunication .
+

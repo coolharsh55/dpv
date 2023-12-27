@@ -6,23 +6,24 @@
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
    xmlns:sw="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
-  <rdf:Description rdf:about="https://w3id.org/dpv/tech#MonitoringSecurityTechnology">
+  <rdf:Description rdf:about="https://w3id.org/dpv/tech#SecurityManagementTechnology">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#Technology"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Monitoring Security Technology</skos:prefLabel>
-    <skos:definition xml:lang="en">Technology related to monitoring of vulnerabilities, threats, exploitations</skos:definition>
+    <skos:prefLabel xml:lang="en">Security Management Technology</skos:prefLabel>
+    <skos:definition xml:lang="en">Technology related to management of security</skos:definition>
     <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-15</dct:created>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor>Harshvardhan J. Pandit, Julian Flake, Georg P Krog, Paul Ryan</dct:contributor>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv/tech#ManagementTechnology"/>
     <rdfs:subClassOf rdf:resource="https://w3id.org/dpv/tech#SecurityTechnology"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/tech#MitigationSecurityTechnology">
+  <rdf:Description rdf:about="https://w3id.org/dpv/tech#DetectionSecurityTechnology">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#Technology"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Mitigation Security Technology</skos:prefLabel>
-    <skos:definition xml:lang="en">Technology related to mitigation of vulnerabilities, threats, exploitations</skos:definition>
+    <skos:prefLabel xml:lang="en">Detection Security Technology</skos:prefLabel>
+    <skos:definition xml:lang="en">Technology related to detection of vulnerabilities, threats, and exploitations</skos:definition>
     <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-15</dct:created>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor>Harshvardhan J. Pandit, Julian Flake, Georg P Krog, Paul Ryan</dct:contributor>
@@ -50,27 +51,37 @@
     <dct:contributor>Harshvardhan J. Pandit, Julian Flake, Georg P Krog, Paul Ryan</dct:contributor>
     <rdfs:subClassOf rdf:resource="https://w3id.org/dpv/tech#SecurityTechnology"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/tech#DetectionSecurityTechnology">
+  <rdf:Description rdf:about="https://w3id.org/dpv/tech#MonitoringSecurityTechnology">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#Technology"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Detection Security Technology</skos:prefLabel>
-    <skos:definition xml:lang="en">Technology related to detection of vulnerabilities, threats, and exploitations</skos:definition>
+    <skos:prefLabel xml:lang="en">Monitoring Security Technology</skos:prefLabel>
+    <skos:definition xml:lang="en">Technology related to monitoring of vulnerabilities, threats, exploitations</skos:definition>
     <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-15</dct:created>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor>Harshvardhan J. Pandit, Julian Flake, Georg P Krog, Paul Ryan</dct:contributor>
     <rdfs:subClassOf rdf:resource="https://w3id.org/dpv/tech#SecurityTechnology"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/tech#SecurityManagementTechnology">
+  <rdf:Description rdf:about="https://w3id.org/dpv/tech#SecurityTechnology">
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/tech#PreventionSecurityTechnology"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/tech#DetectionSecurityTechnology"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/tech#MonitoringSecurityTechnology"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/tech#SecurityManagementTechnology"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/tech#MitigationSecurityTechnology"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/tech#PET"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/tech#MitigationSecurityTechnology">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#Technology"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Security Management Technology</skos:prefLabel>
-    <skos:definition xml:lang="en">Technology related to management of security</skos:definition>
+    <skos:prefLabel xml:lang="en">Mitigation Security Technology</skos:prefLabel>
+    <skos:definition xml:lang="en">Technology related to mitigation of vulnerabilities, threats, exploitations</skos:definition>
     <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-15</dct:created>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor>Harshvardhan J. Pandit, Julian Flake, Georg P Krog, Paul Ryan</dct:contributor>
     <rdfs:subClassOf rdf:resource="https://w3id.org/dpv/tech#SecurityTechnology"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv/tech#ManagementTechnology"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/tech#ManagementTechnology">
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/tech#SecurityManagementTechnology"/>
   </rdf:Description>
 </rdf:RDF>

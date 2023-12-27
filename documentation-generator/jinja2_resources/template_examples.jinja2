@@ -80,7 +80,7 @@
       {% for DEX in vocab.values()|sort(attribute='term') %}
         <section id="{{DEX['term']}}">
           <h4><strong><i>{{DEX['term']}}</i>:</strong> {{ DEX['dct:title'] }}</h4>
-          {{ example_aside(DEX['term']) }}
+          {{ example_aside(DEX['prefixed']) }}
         </section>
       {% endfor %}
     </section>

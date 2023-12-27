@@ -15,6 +15,8 @@ eu-gdpr:A6-1-a a rdfs:Class,
     dct:modified "2022-11-24"^^xsd:date ;
     dct:source "(GDPR Art.6-1a,https://eur-lex.europa.eu/eli/reg/2016/679/art_6/par_1/pnt_a/oj)"@en ;
     rdfs:subClassOf dpv:ExpressedConsent ;
+    rdfs:superClassOf eu-gdpr:A6-1-a-explicit-consent,
+        eu-gdpr:A6-1-a-non-explicit-consent ;
     sw:term_status "accepted"@en ;
     skos:definition "Legal basis based on data subject's given consent to the processing of his or her personal data for one or more specific purposes"@en ;
     skos:prefLabel "Art.6(1-a) consent"@en ;
@@ -56,6 +58,8 @@ eu-gdpr:A6-1-b a rdfs:Class,
     dct:modified "2022-11-24"^^xsd:date ;
     dct:source "(GDPR Art.6-1b,https://eur-lex.europa.eu/eli/reg/2016/679/art_6/par_1/pnt_b/oj)"@en ;
     rdfs:subClassOf dpv:Contract ;
+    rdfs:superClassOf eu-gdpr:A6-1-b-contract-performance,
+        eu-gdpr:A6-1-b-enter-into-contract ;
     sw:term_status "accepted"@en ;
     skos:definition "Legal basis based on performance of a contract to which the data subject is party or in order to take steps at the request of the data subject prior to entering into a contract"@en ;
     skos:prefLabel "Art 6(1-b) contract"@en .
@@ -106,6 +110,8 @@ eu-gdpr:A6-1-d a rdfs:Class,
     dct:modified "2022-11-24"^^xsd:date ;
     dct:source "(GDPR Art.6-1d,https://eur-lex.europa.eu/eli/reg/2016/679/art_6/par_1/pnt_d/oj)"@en ;
     rdfs:subClassOf dpv:VitalInterest ;
+    rdfs:superClassOf eu-gdpr:A6-1-d-data-subject,
+        eu-gdpr:A6-1-d-natual-person ;
     sw:term_status "accepted"@en ;
     skos:definition "Legal basis based on protecting the vital interests of the data subject or of another natural person"@en ;
     skos:prefLabel "Art 6(1-d) protect vital interests"@en .
@@ -145,6 +151,8 @@ eu-gdpr:A6-1-e a rdfs:Class,
     dct:source "(GDPR Art.6-1e,https://eur-lex.europa.eu/eli/reg/2016/679/art_6/par_1/pnt_e/oj)"@en ;
     rdfs:subClassOf dpv:OfficialAuthorityOfController,
         dpv:PublicInterest ;
+    rdfs:superClassOf eu-gdpr:A6-1-e-official-authority,
+        eu-gdpr:A6-1-e-public-interest ;
     sw:term_status "accepted"@en ;
     skos:definition "Legal basis based on performance of a task carried out in the public interest or in the exercise of official authority vested in the controller"@en ;
     skos:prefLabel "Art 6(1-e) public interest or official authority"@en .
@@ -183,6 +191,8 @@ eu-gdpr:A6-1-f a rdfs:Class,
     dct:modified "2022-11-24"^^xsd:date ;
     dct:source "(GDPR Art.6-1f,https://eur-lex.europa.eu/eli/reg/2016/679/art_6/par_1/pnt_f/oj)"@en ;
     rdfs:subClassOf dpv:LegitimateInterest ;
+    rdfs:superClassOf eu-gdpr:A6-1-f-controller,
+        eu-gdpr:A6-1-f-third-party ;
     sw:term_status "accepted"@en ;
     skos:definition "Legal basis based on the purposes of the legitimate interests pursued by the controller or by a third party, except where such interests are overridden by the interests or fundamental rights and freedoms of the data subject which require protection of personal data, in particular where the data subject is a child"@en ;
     skos:prefLabel "Art 6(1-f) legitimate interest"@en .
@@ -212,4 +222,35 @@ eu-gdpr:A6-1-f-third-party a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:definition "Legal basis based on the purposes of the legitimate interests pursued by a third party, except where such interests are overridden by the interests or fundamental rights and freedoms of the data subject which require protection of personal data, in particular where the data subject is a child"@en ;
     skos:prefLabel "Art 6(1-f) legitimate interest of third party"@en .
+
+dpv:Contract rdfs:superClassOf eu-gdpr:A6-1-b .
+
+dpv:ContractPerformance rdfs:superClassOf eu-gdpr:A6-1-b-contract-performance .
+
+dpv:EnterIntoContract rdfs:superClassOf eu-gdpr:A6-1-b-enter-into-contract .
+
+dpv:ExplicitlyExpressedConsent rdfs:superClassOf eu-gdpr:A6-1-a-explicit-consent .
+
+dpv:LegalObligation rdfs:superClassOf eu-gdpr:A6-1-c .
+
+dpv:LegitimateInterest rdfs:superClassOf eu-gdpr:A6-1-f .
+
+dpv:LegitimateInterestOfController rdfs:superClassOf eu-gdpr:A6-1-f-controller .
+
+dpv:LegitimateInterestOfThirdParty rdfs:superClassOf eu-gdpr:A6-1-f-third-party .
+
+dpv:VitalInterest rdfs:superClassOf eu-gdpr:A6-1-d .
+
+dpv:VitalInterestOfDataSubject rdfs:superClassOf eu-gdpr:A6-1-d-data-subject .
+
+dpv:VitalInterestOfNaturalPerson rdfs:superClassOf eu-gdpr:A6-1-d-natual-person .
+
+dpv:ExpressedConsent rdfs:superClassOf eu-gdpr:A6-1-a,
+        eu-gdpr:A6-1-a-non-explicit-consent .
+
+dpv:OfficialAuthorityOfController rdfs:superClassOf eu-gdpr:A6-1-e,
+        eu-gdpr:A6-1-e-official-authority .
+
+dpv:PublicInterest rdfs:superClassOf eu-gdpr:A6-1-e,
+        eu-gdpr:A6-1-e-public-interest .
 

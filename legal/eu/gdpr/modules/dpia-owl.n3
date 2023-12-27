@@ -23,6 +23,8 @@ eu-gdpr:DPIAConformity a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit, Georg P Krog" ;
     dct:created "2022-10-22"^^xsd:date ;
     rdfs:subClassOf dpv:ConformanceStatus ;
+    rdfs:superClassOf eu-gdpr:DPIAConformant,
+        eu-gdpr:DPIANonConformant ;
     sw:term_status "accepted"@en ;
     skos:definition "Conformity of a process with a DPIA"@en ;
     skos:prefLabel "DPIA Conformity"@en .
@@ -72,6 +74,8 @@ eu-gdpr:DPIANecessityStatus a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-22"^^xsd:date ;
     rdfs:subClassOf dpv:AuditStatus ;
+    rdfs:superClassOf eu-gdpr:DPIANotRequired,
+        eu-gdpr:DPIARequired ;
     sw:term_status "accepted"@en ;
     skos:definition "Status reflecting whether a DPIA is necessary"@en ;
     skos:prefLabel "DPIA Necessity Status"@en .
@@ -141,6 +145,9 @@ eu-gdpr:DPIAOutcomeStatus a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-22"^^xsd:date ;
     rdfs:subClassOf dpv:AuditStatus ;
+    rdfs:superClassOf eu-gdpr:DPIAOutcomeDPAConsultation,
+        eu-gdpr:DPIAOutcomeHighResidualRisk,
+        eu-gdpr:DPIAOutcomeRisksMitigated ;
     sw:term_status "accepted"@en ;
     skos:definition "Status reflecting the outcomes of a DPIA"@en ;
     skos:prefLabel "DPIA Outcome Status"@en .
@@ -160,6 +167,8 @@ eu-gdpr:DPIAProcessingRecommendation a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit, Georg P Krog" ;
     dct:created "2022-10-22"^^xsd:date ;
     rdfs:subClassOf dpv:AuditStatus ;
+    rdfs:superClassOf eu-gdpr:DPIARecommendsProcessingContinue,
+        eu-gdpr:DPIARecommendsProcessingNotContinue ;
     sw:term_status "accepted"@en ;
     skos:definition "Recommendation from the DPIA regarding processing"@en ;
     skos:prefLabel "DPIA Processing Recommendation"@en .
@@ -199,6 +208,9 @@ eu-gdpr:DPIARiskStatus a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-22"^^xsd:date ;
     rdfs:subClassOf dpv:AuditStatus ;
+    rdfs:superClassOf eu-gdpr:DPIAIndicatesHighRisk,
+        eu-gdpr:DPIAIndicatesLowRisk,
+        eu-gdpr:DPIAIndicatesNoRisk ;
     sw:term_status "accepted"@en ;
     skos:definition "Status reflecting the status of risk associated with a DPIA"@en ;
     skos:prefLabel "DPIA Risk Status"@en .
@@ -283,6 +295,10 @@ dpv:hasStatus a rdf:Property,
     skos:scopeNote "For expressing the status of the DPIA document or process. Here different statuses are used to convey different contextual meanings. For example, dpv:ActivityStatus expresses the state of the activity in terms of whether it is ongoing or completed, and dpv:AuditStatus expresses the state of the audit process in terms of being required, approved, or rejected. These are applied over each step of the DPIA i.e. DPIANecessityAssessment, DPIAProcedure, and DPIAOutcome. Similarly, a process also uses hasStatus with DPIAConformity to indicate adherence to the results of the DPIA process."@en .
 
 dpv:ConformanceStatus rdfs:superClassOf eu-gdpr:DPIAConformity .
+
+dpv:DPIA rdfs:superClassOf eu-gdpr:DPIANecessityAssessment,
+        eu-gdpr:DPIAOutcome,
+        eu-gdpr:DPIAProcedure .
 
 dpv:AuditStatus rdfs:superClassOf eu-gdpr:DPIANecessityStatus,
         eu-gdpr:DPIAOutcomeStatus,

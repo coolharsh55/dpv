@@ -43,6 +43,9 @@ dpv:Rule a rdfs:Class,
         owl:Class ;
     dct:contributor "Harshvardhan J. Pandit, Georg P Krog, Beatriz Esteves, Paul Ryan" ;
     dct:created "2022-10-19"^^xsd:date ;
+    rdfs:superClassOf dpv:Obligation,
+        dpv:Permission,
+        dpv:Prohibition ;
     sw:term_status "accepted"@en ;
     skos:definition "A rule describing a process or control that directs or determines if and how an activity should be conducted"@en ;
     skos:prefLabel "Rule"@en .
@@ -53,7 +56,6 @@ dpv:hasObligation a rdf:Property,
     dcam:rangeIncludes dpv:Obligation ;
     dct:contributor "Harshvardhan J. Pandit, Georg P Krog, Beatriz Esteves, Paul Ryan" ;
     dct:created "2022-10-19"^^xsd:date ;
-    rdfs:subClassOf dpv:hasRule ;
     rdfs:subPropertyOf dpv:hasRule ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifying applicability or inclusion of an obligation rule within specified context"@en ;
@@ -67,7 +69,6 @@ dpv:hasPermission a rdf:Property,
     dcam:rangeIncludes dpv:Permission ;
     dct:contributor "Harshvardhan J. Pandit, Georg P Krog, Beatriz Esteves, Paul Ryan" ;
     dct:created "2022-10-19"^^xsd:date ;
-    rdfs:subClassOf dpv:hasRule ;
     rdfs:subPropertyOf dpv:hasRule ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifying applicability or inclusion of a permission rule within specified context"@en ;
@@ -81,7 +82,6 @@ dpv:hasProhibition a rdf:Property,
     dcam:rangeIncludes dpv:Prohibition ;
     dct:contributor "Harshvardhan J. Pandit, Georg P Krog, Beatriz Esteves, Paul Ryan" ;
     dct:created "2022-10-19"^^xsd:date ;
-    rdfs:subClassOf dpv:hasRule ;
     rdfs:subPropertyOf dpv:hasRule ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifying applicability or inclusion of a prohibition rule within specified context"@en ;

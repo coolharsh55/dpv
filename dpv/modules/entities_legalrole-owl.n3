@@ -130,7 +130,6 @@ dpv:hasDataExporter a rdf:Property,
     dcam:rangeIncludes dpv:DataExporter ;
     dct:contributor "Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit" ;
     dct:created "2022-02-09"^^xsd:date ;
-    rdfs:subClassOf dpv:hasEntity ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:definition "Indiciates inclusion or applicability of a LegalEntity in the role of Data Exporter"@en ;
@@ -142,7 +141,6 @@ dpv:hasDataImporter a rdf:Property,
     dcam:rangeIncludes dpv:DataImporter ;
     dct:contributor "Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit" ;
     dct:created "2022-02-09"^^xsd:date ;
-    rdfs:subClassOf dpv:hasRecipient ;
     rdfs:subPropertyOf dpv:hasRecipient ;
     sw:term_status "accepted"@en ;
     skos:definition "Indiciates inclusion or applicability of a LegalEntity in the role of Data Importer"@en ;
@@ -154,7 +152,6 @@ dpv:hasDataProcessor a rdf:Property,
     dcam:rangeIncludes dpv:DataProcessor ;
     dct:contributor "Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit" ;
     dct:created "2022-02-09"^^xsd:date ;
-    rdfs:subClassOf dpv:hasRecipient ;
     rdfs:subPropertyOf dpv:hasRecipient ;
     sw:term_status "accepted"@en ;
     skos:definition "Indiciates inclusion or applicability of a Data Processor"@en ;
@@ -166,7 +163,6 @@ dpv:hasDataProtectionOfficer a rdf:Property,
     dcam:rangeIncludes dpv:DataProtectionOfficer ;
     dct:contributor "Paul Ryan, Rob Brennan" ;
     dct:created "2022-03-02"^^xsd:date ;
-    rdfs:subClassOf dpv:hasRepresentative ;
     rdfs:subPropertyOf dpv:hasRepresentative ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifices an associated data protection officer"@en ;
@@ -178,7 +174,6 @@ dpv:hasJointDataControllers a rdf:Property,
     dcam:rangeIncludes dpv:JointDataControllers ;
     dct:contributor "Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit" ;
     dct:created "2022-02-09"^^xsd:date ;
-    rdfs:subClassOf dpv:hasDataController ;
     rdfs:subPropertyOf dpv:hasDataController ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates inclusion or applicability of a Joint Data Controller"@en ;
@@ -190,7 +185,6 @@ dpv:hasRecipientDataController a rdf:Property,
     dcam:rangeIncludes dpv:DataController ;
     dct:contributor "Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit" ;
     dct:created "2022-02-09"^^xsd:date ;
-    rdfs:subClassOf dpv:hasRecipient ;
     rdfs:subPropertyOf dpv:hasRecipient ;
     sw:term_status "accepted"@en ;
     skos:definition "Indiciates inclusion or applicability of a Data Controller as a Recipient of persona data"@en ;
@@ -202,7 +196,6 @@ dpv:hasRecipientThirdParty a rdf:Property,
     dcam:rangeIncludes dpv:ThirdParty ;
     dct:contributor "Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit" ;
     dct:created "2022-02-09"^^xsd:date ;
-    rdfs:subClassOf dpv:hasRecipient ;
     rdfs:subPropertyOf dpv:hasRecipient ;
     sw:term_status "accepted"@en ;
     skos:definition "Indiciates inclusion or applicability of a Third Party as a Recipient of persona data"@en ;
@@ -211,23 +204,22 @@ dpv:hasRecipientThirdParty a rdf:Property,
 
 dpv:hasRepresentative rdfs:superPropertyOf dpv:hasDataProtectionOfficer .
 
-dpv:LegalEntity rdfs:superClassOf dpv:DataController,
-        dpv:DataExporter,
-        dpv:Recipient .
-
 dpv:hasDataController a rdf:Property,
         owl:ObjectProperty ;
     dcam:rangeIncludes dpv:DataController ;
     dct:contributor "Axel Polleres, Javier Fernández, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" ;
     dct:created "2019-04-04"^^xsd:date ;
     dct:modified "2020-11-04"^^xsd:date ;
-    rdfs:subClassOf dpv:hasEntity ;
     rdfs:subPropertyOf dpv:hasEntity ;
     rdfs:superPropertyOf dpv:hasJointDataControllers ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with Data Controller"@en ;
     skos:prefLabel "has data controller"@en ;
     schema:rangeIncludes dpv:DataController .
+
+dpv:LegalEntity rdfs:superClassOf dpv:DataController,
+        dpv:DataExporter,
+        dpv:Recipient .
 
 dpv:hasEntity rdfs:superPropertyOf dpv:hasDataController,
         dpv:hasDataExporter,
@@ -240,7 +232,6 @@ dpv:hasRecipient a rdf:Property,
     dct:created "2019-04-04"^^xsd:date ;
     dct:modified "2020-11-04"^^xsd:date ;
     dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/)"@en ;
-    rdfs:subClassOf dpv:hasEntity ;
     rdfs:subPropertyOf dpv:hasEntity ;
     rdfs:superPropertyOf dpv:hasDataImporter,
         dpv:hasDataProcessor,

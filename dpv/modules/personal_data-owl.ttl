@@ -311,18 +311,6 @@ dpv:VerifiedData a rdfs:Class,
     skos:definition "Data that has been verified in terms of accuracy, consistency, or quality"@en ;
     skos:prefLabel "Verified Data"@en .
 
-dpv:hasPersonalData a rdf:Property,
-        owl:ObjectProperty ;
-    dcam:rangeIncludes dpv:PersonalData ;
-    dct:contributor "Harshvardhan J. Pandit" ;
-    dct:created "2022-01-19"^^xsd:date ;
-    rdfs:subClassOf dpv:hasData ;
-    rdfs:subPropertyOf dpv:hasData ;
-    sw:term_status "accepted"@en ;
-    skos:definition "Indicates association with Personal Data"@en ;
-    skos:prefLabel "has personal data"@en ;
-    schema:rangeIncludes dpv:PersonalData .
-
 dpv:hasData a rdf:Property,
         owl:ObjectProperty ;
     dcam:rangeIncludes dpv:Data ;
@@ -333,4 +321,15 @@ dpv:hasData a rdf:Property,
     skos:definition "Indicates associated with Data (may or may not be personal)"@en ;
     skos:prefLabel "has data"@en ;
     schema:rangeIncludes dpv:Data .
+
+dpv:hasPersonalData a rdf:Property,
+        owl:ObjectProperty ;
+    dcam:rangeIncludes dpv:PersonalData ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-01-19"^^xsd:date ;
+    rdfs:subPropertyOf dpv:hasData ;
+    sw:term_status "accepted"@en ;
+    skos:definition "Indicates association with Personal Data"@en ;
+    skos:prefLabel "has personal data"@en ;
+    schema:rangeIncludes dpv:PersonalData .
 

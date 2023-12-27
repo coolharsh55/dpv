@@ -87,6 +87,7 @@ dpv:Customer a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit, Georg P. Krog, Julian Flake, Paul Ryan, Beatriz Esteves" ;
     dct:created "2022-04-06"^^xsd:date ;
     rdfs:subClassOf dpv:DataSubject ;
+    rdfs:superClassOf dpv:Client ;
     sw:term_status "accepted"@en ;
     skos:definition "Data subjects that purchase goods or services"@en ;
     skos:prefLabel "Customer"@en ;
@@ -99,6 +100,27 @@ dpv:DataSubject a rdfs:Class,
     dct:modified "2020-11-04"^^xsd:date ;
     dct:source "(GDPR Art.4-1g,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_1/oj)"@en ;
     rdfs:subClassOf dpv:LegalEntity ;
+    rdfs:superClassOf dpv:Adult,
+        dpv:Applicant,
+        dpv:Child,
+        dpv:Citizen,
+        dpv:Consumer,
+        dpv:Customer,
+        dpv:Employee,
+        dpv:GuardianOfDataSubject,
+        dpv:Immigrant,
+        dpv:JobApplicant,
+        dpv:Member,
+        dpv:NonCitizen,
+        dpv:ParentOfDataSubject,
+        dpv:Participant,
+        dpv:Patient,
+        dpv:Student,
+        dpv:Subscriber,
+        dpv:Tourist,
+        dpv:User,
+        dpv:Visitor,
+        dpv:VulnerableDataSubject ;
     sw:term_status "accepted"@en ;
     skos:definition "The individual (or category of individuals) whose personal data is being processed"@en ;
     skos:prefLabel "Data Subject"@en ;
@@ -271,6 +293,9 @@ dpv:VulnerableDataSubject a rdfs:Class,
     dct:contributor "Georg Krog, Paul Ryan, Harshvardhan Pandit" ;
     dct:created "2020-11-04"^^xsd:date ;
     rdfs:subClassOf dpv:DataSubject ;
+    rdfs:superClassOf dpv:AsylumSeeker,
+        dpv:ElderlyDataSubject,
+        dpv:MentallyVulnerableDataSubject ;
     sw:term_status "accepted"@en ;
     skos:definition "Data Subjects which should be considered 'vulnerable' and therefore would require additional measures and safeguards"@en ;
     skos:prefLabel "Vulnerable Data Subject"@en ;
@@ -284,7 +309,6 @@ dpv:hasDataSubject a rdf:Property,
     dct:contributor "Axel Polleres, Javier Fernández, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" ;
     dct:created "2019-04-04"^^xsd:date ;
     dct:modified "2020-11-04"^^xsd:date ;
-    rdfs:subClassOf dpv:hasEntity ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with Data Subject"@en ;
@@ -296,7 +320,6 @@ dpv:hasRelationWithDataSubject a rdf:Property,
     dcam:domainIncludes dpv:Entity ;
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake" ;
     dct:created "2022-06-21"^^xsd:date ;
-    rdfs:subClassOf dpv:hasEntity ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the relation between specified Entity and Data Subject"@en ;

@@ -73,7 +73,7 @@
                 <td>{{ law['skos:prefLabel'] }}</td>
                 <td>{% for loc in law['dpv:hasJurisdiction']|ensure_list|sort(attribute='iri') %}
                 {% set loc=data[(loc|prefix_this).split(':')[0]][loc|prefix_this] %}
-                <a href="{{loc['iri']}}">{{ loc['skos:prefLabel'] }}</a>{% if 'skos:broader' in loc %}{% for loc_broader in loc['skos:broader']|ensure_list|filter_type("dpv:Country", vocab="loc", debug=vocab_name+"--LAWS") %}, <a href="{{loc_broader['iri']}}">{{ loc_broader['skos:prefLabel'] }}</a>
+                <a href="{{loc['iri']}}">{{ loc['skos:prefLabel'] }}</a>{% if 'skos:broader' in loc %}{% for loc_broader in loc['skos:broader']|ensure_list|filter_type("dpv:Country", vocab="loc") %}, <a href="{{loc_broader['iri']}}">{{ loc_broader['skos:prefLabel'] }}</a>
                     {% endfor %}{% endif %}
                 {{ "; " if not loop.last }}{% endfor %}</td>
                 <td>{% for page in law['foaf:homepage']|ensure_list %}<a href="{{page}}">link</a>{{ ", " if not loop.first }}{% endfor %}</td>
@@ -103,7 +103,7 @@
                 <td>{{ law['skos:prefLabel'] }}</td>
                 <td>{% for loc in law['dpv:hasJurisdiction']|ensure_list|sort(attribute='iri') %}
                 {% set loc=data[(loc|prefix_this).split(':')[0]][loc|prefix_this] %}
-                <a href="{{loc['iri']}}">{{ loc['skos:prefLabel'] }}</a>{% if 'skos:broader' in loc %}{% for loc_broader in loc['skos:broader']|ensure_list|filter_type("dpv:Country", vocab="loc", debug=vocab_name+"--LAWS") %}, <a href="{{loc_broader['iri']}}">{{ loc_broader['skos:prefLabel'] }}</a>
+                <a href="{{loc['iri']}}">{{ loc['skos:prefLabel'] }}</a>{% if 'skos:broader' in loc %}{% for loc_broader in loc['skos:broader']|ensure_list|filter_type("dpv:Country", vocab="loc") %}, <a href="{{loc_broader['iri']}}">{{ loc_broader['skos:prefLabel'] }}</a>
                     {% endfor %}{% endif %}
                 {{ "; " if not loop.last }}{% endfor %}</td>
                 <td>{% for law in law['dpv:hasLaw']|ensure_list|sort(attribute='iri') %}

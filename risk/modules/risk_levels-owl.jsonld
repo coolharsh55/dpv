@@ -1,6 +1,65 @@
 [
   {
-    "@id": "https://w3id.org/dpv/risk#ExtremelyLowRisk",
+    "@id": "https://w3id.org/dpv/risk#ModerateSeverity",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Severity",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-08-18"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@value": "0.5,xsd:decimal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/risk#3SeverityLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#5SeverityLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#7SeverityLevels"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Level where Severity is Moderate"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Moderate Severity"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "The suggested quantitative value for this concept is 0.5 on a scale of 0 to 1"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/risk#3RiskLevels",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class",
       "https://w3id.org/dpv#RiskLevel",
@@ -17,14 +76,20 @@
         "@value": "2022-08-18"
       }
     ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
-      {
-        "@value": "0.01,xsd:decimal"
-      }
-    ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/dpv/risk#7RiskLevels"
+        "@id": "https://w3id.org/dpv#RiskLevel"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/risk#ModerateRisk"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#LowRisk"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#HighRisk"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -36,27 +101,21 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Level where Risk is Extremely Low"
+        "@value": "Scale with 3 Risk Levels from High to Low"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Extremely Low Risk"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "The suggested quantitative value for this concept is 0.01 on a scale of 0 to 1"
+        "@value": "3 Risk Levels"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/risk#VeryHighSeverity",
+    "@id": "https://w3id.org/dpv/risk#VeryHighRisk",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Severity",
+      "https://w3id.org/dpv#RiskLevel",
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://purl.org/dc/terms/contributor": [
@@ -77,10 +136,10 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/dpv/risk#7SeverityLevels"
+        "@id": "https://w3id.org/dpv/risk#5RiskLevels"
       },
       {
-        "@id": "https://w3id.org/dpv/risk#5SeverityLevels"
+        "@id": "https://w3id.org/dpv/risk#7RiskLevels"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -92,13 +151,13 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Level where Severity is Very High"
+        "@value": "Level where Risk is Very High"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Very High Severity"
+        "@value": "Very High Risk"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#scopeNote": [
@@ -162,105 +221,7 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/risk#3SeverityLevels",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Severity",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-08-18"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#Severity"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Scale with 3 Severity Levels from High to Low"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "3 Severity Levels"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/risk#VeryLowRisk",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#RiskLevel",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-08-18"
-      }
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
-      {
-        "@value": "0.1,xsd:decimal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/risk#7RiskLevels"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#5RiskLevels"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Level where Risk is Very Low"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Very Low Risk"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "The suggested quantitative value for this concept is 0.1 on a scale of 0 to 1"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/risk#7RiskLevels",
+    "@id": "https://w3id.org/dpv/risk#5RiskLevels",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class",
       "https://w3id.org/dpv#RiskLevel",
@@ -282,6 +243,23 @@
         "@id": "https://w3id.org/dpv#RiskLevel"
       }
     ],
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/risk#ModerateRisk"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#VeryLowRisk"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#VeryHighRisk"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#LowRisk"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#HighRisk"
+      }
+    ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
         "@language": "en",
@@ -291,13 +269,266 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Scale with 7 Risk Levels from Extremely High to Extremely Low"
+        "@value": "Scale with 5 Risk Levels from Very High to Very Low"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "7 Risk Levels"
+        "@value": "5 Risk Levels"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/risk#7LikelihoodLevels",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Likelihood",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-08-18"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#Likelihood"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/risk#ExtremelyHighLikelihood"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#VeryHighLikelihood"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#LowLikelihood"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#VeryLowLikelihood"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#ExtremelyLowLikelihood"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#HighLikelihood"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#ModerateLikelihood"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Scale with 7 Likelihood Levels from Extremely High to Extremely Low"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "7 Likelihood Levels"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#Severity",
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/risk#3SeverityLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#5SeverityLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#7SeverityLevels"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/risk#5LikelihoodLevels",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Likelihood",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-08-18"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#Likelihood"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/risk#VeryLowLikelihood"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#LowLikelihood"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#VeryHighLikelihood"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#ModerateLikelihood"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#HighLikelihood"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Scale with 5 Likelihood Levels from Very High to Very Low"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "5 Likelihood Levels"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/risk#LowLikelihood",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Likelihood",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-08-18"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@value": "0.25,xsd:decimal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/risk#7LikelihoodLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#5LikelihoodLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#3LikelihoodLevels"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Level where Likelihood is Low"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Low Likelihood"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "The suggested quantitative value for this concept is 0.25 on a scale of 0 to 1"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/risk#VeryLowLikelihood",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Likelihood",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-08-18"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@value": "0.1,xsd:decimal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/risk#7LikelihoodLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#5LikelihoodLevels"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Level where Likelihood is Very Low"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Very Low Likelihood"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "The suggested quantitative value for this concept is 0.1 on a scale of 0 to 1"
       }
     ]
   },
@@ -351,6 +582,718 @@
       {
         "@language": "en",
         "@value": "The suggested quantitative value for this concept is 0.99 on a scale of 0 to 1"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/risk#ExtremelyHighSeverity",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Severity",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-08-18"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@value": "0.99,xsd:decimal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/risk#7SeverityLevels"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Level where Severity is Extremely High"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Extremely High Severity"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "The suggested quantitative value for this concept is 0.99 on a scale of 0 to 1"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/risk#VeryLowRisk",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#RiskLevel",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-08-18"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@value": "0.1,xsd:decimal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/risk#5RiskLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#7RiskLevels"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Level where Risk is Very Low"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Very Low Risk"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "The suggested quantitative value for this concept is 0.1 on a scale of 0 to 1"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/risk#3SeverityLevels",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Severity",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-08-18"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#Severity"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/risk#ModerateSeverity"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#LowSeverity"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#HighSeverity"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Scale with 3 Severity Levels from High to Low"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "3 Severity Levels"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/risk#VeryHighLikelihood",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Likelihood",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-08-18"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@value": "0.9,xsd:decimal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/risk#7LikelihoodLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#5LikelihoodLevels"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Level where Likelihood is Very High"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Very High Likelihood"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "The suggested quantitative value for this concept is 0.9 on a scale of 0 to 1"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#Likelihood",
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/risk#7LikelihoodLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#5LikelihoodLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#3LikelihoodLevels"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/risk#LowSeverity",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Severity",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-08-18"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@value": "0.25,xsd:decimal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/risk#3SeverityLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#7SeverityLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#5SeverityLevels"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Level where Severity is Low"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Low Severity"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "The suggested quantitative value for this concept is 0.25 on a scale of 0 to 1"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/risk#ModerateRisk",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#RiskLevel",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-08-18"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@value": "0.5,xsd:decimal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/risk#5RiskLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#3RiskLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#7RiskLevels"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Level where Risk is Moderate"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Moderate Risk"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "The suggested quantitative value for this concept is 0.5 on a scale of 0 to 1"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/risk#HighRisk",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#RiskLevel",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-08-18"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@value": "0.75,xsd:decimal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/risk#7RiskLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#3RiskLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#5RiskLevels"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Level where Risk is High"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "High Risk"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "The suggested quantitative value for this concept is 0.75 on a scale of 0 to 1"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/risk#ExtremelyHighRisk",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#RiskLevel",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-08-18"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@value": "0.99,xsd:decimal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/risk#7RiskLevels"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Level where Risk is Extremely High"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Extremely High Risk"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "The suggested quantitative value for this concept is 0.99 on a scale of 0 to 1"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/risk#7SeverityLevels",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Severity",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-08-18"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#Severity"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/risk#VeryLowSeverity"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#HighSeverity"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#VeryHighSeverity"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#ExtremelyLowSeverity"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#LowSeverity"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#ExtremelyHighSeverity"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#ModerateSeverity"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Scale with 7 Severity Levels from Extremely High to Extremely Low"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "7 Severity Levels"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/risk#ExtremelyLowSeverity",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Severity",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-08-18"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@value": "0.01,xsd:decimal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/risk#7SeverityLevels"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Level where Severity is Extremely Low"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Extremely Low Severity"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "The suggested quantitative value for this concept is 0.01 on a scale of 0 to 1"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/risk#7RiskLevels",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#RiskLevel",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-08-18"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#RiskLevel"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/risk#LowRisk"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#ExtremelyLowRisk"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#ExtremelyHighRisk"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#HighRisk"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#ModerateRisk"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#VeryLowRisk"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#VeryHighRisk"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Scale with 7 Risk Levels from Extremely High to Extremely Low"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "7 Risk Levels"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/risk#ExtremelyLowRisk",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#RiskLevel",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-08-18"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@value": "0.01,xsd:decimal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/risk#7RiskLevels"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Level where Risk is Extremely Low"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Extremely Low Risk"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "The suggested quantitative value for this concept is 0.01 on a scale of 0 to 1"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#RiskLevel",
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/risk#7RiskLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#5RiskLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#3RiskLevels"
       }
     ]
   },
@@ -414,412 +1357,6 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/risk#LowSeverity",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Severity",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-08-18"
-      }
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
-      {
-        "@value": "0.25,xsd:decimal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/risk#7SeverityLevels"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#5SeverityLevels"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#3SeverityLevels"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Level where Severity is Low"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Low Severity"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "The suggested quantitative value for this concept is 0.25 on a scale of 0 to 1"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/risk#5LikelihoodLevels",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Likelihood",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-08-18"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#Likelihood"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Scale with 5 Likelihood Levels from Very High to Very Low"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "5 Likelihood Levels"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/risk#3LikelihoodLevels",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Likelihood",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-08-18"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#Likelihood"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Scale with 3 Likelihood Levels from High to Low"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "3 Likelihood Levels"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/risk#VeryHighRisk",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#RiskLevel",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-08-18"
-      }
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
-      {
-        "@value": "0.9,xsd:decimal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/risk#5RiskLevels"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#7RiskLevels"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Level where Risk is Very High"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Very High Risk"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "The suggested quantitative value for this concept is 0.9 on a scale of 0 to 1"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/risk#ExtremelyLowSeverity",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Severity",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-08-18"
-      }
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
-      {
-        "@value": "0.01,xsd:decimal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/risk#7SeverityLevels"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Level where Severity is Extremely Low"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Extremely Low Severity"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "The suggested quantitative value for this concept is 0.01 on a scale of 0 to 1"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/risk#ExtremelyHighSeverity",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Severity",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-08-18"
-      }
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
-      {
-        "@value": "0.99,xsd:decimal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/risk#7SeverityLevels"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Level where Severity is Extremely High"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Extremely High Severity"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "The suggested quantitative value for this concept is 0.99 on a scale of 0 to 1"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/risk#HighLikelihood",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Likelihood",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-08-18"
-      }
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
-      {
-        "@value": "0.75,xsd:decimal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/risk#7LikelihoodLevels"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#5LikelihoodLevels"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#3LikelihoodLevels"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Level where Likelihood is High"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "High Likelihood"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "The suggested quantitative value for this concept is 0.75 on a scale of 0 to 1"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/risk#5RiskLevels",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#RiskLevel",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-08-18"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#RiskLevel"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Scale with 5 Risk Levels from Very High to Very Low"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "5 Risk Levels"
-      }
-    ]
-  },
-  {
     "@id": "https://w3id.org/dpv/risk#5SeverityLevels",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class",
@@ -842,6 +1379,23 @@
         "@id": "https://w3id.org/dpv#Severity"
       }
     ],
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/risk#VeryLowSeverity"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#HighSeverity"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#VeryHighSeverity"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#ModerateSeverity"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#LowSeverity"
+      }
+    ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
         "@language": "en",
@@ -862,170 +1416,10 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/risk#HighRisk",
+    "@id": "https://w3id.org/dpv/risk#VeryHighSeverity",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#RiskLevel",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-08-18"
-      }
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
-      {
-        "@value": "0.75,xsd:decimal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/risk#3RiskLevels"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#5RiskLevels"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#7RiskLevels"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Level where Risk is High"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "High Risk"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "The suggested quantitative value for this concept is 0.75 on a scale of 0 to 1"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/risk#ModerateLikelihood",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Likelihood",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-08-18"
-      }
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
-      {
-        "@value": "0.5,xsd:decimal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/risk#5LikelihoodLevels"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#3LikelihoodLevels"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#7LikelihoodLevels"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Level where Likelihood is Moderate"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Moderate Likelihood"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "The suggested quantitative value for this concept is 0.5 on a scale of 0 to 1"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/risk#7LikelihoodLevels",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Likelihood",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-08-18"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#Likelihood"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Scale with 7 Likelihood Levels from Extremely High to Extremely Low"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "7 Likelihood Levels"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/risk#VeryHighLikelihood",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Likelihood",
+      "https://w3id.org/dpv#Severity",
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://purl.org/dc/terms/contributor": [
@@ -1046,10 +1440,10 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/dpv/risk#5LikelihoodLevels"
+        "@id": "https://w3id.org/dpv/risk#7SeverityLevels"
       },
       {
-        "@id": "https://w3id.org/dpv/risk#7LikelihoodLevels"
+        "@id": "https://w3id.org/dpv/risk#5SeverityLevels"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -1061,117 +1455,19 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Level where Likelihood is Very High"
+        "@value": "Level where Severity is Very High"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Very High Likelihood"
+        "@value": "Very High Severity"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#scopeNote": [
       {
         "@language": "en",
         "@value": "The suggested quantitative value for this concept is 0.9 on a scale of 0 to 1"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/risk#3RiskLevels",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#RiskLevel",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-08-18"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#RiskLevel"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Scale with 3 Risk Levels from High to Low"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "3 Risk Levels"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/risk#VeryLowLikelihood",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Likelihood",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-08-18"
-      }
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
-      {
-        "@value": "0.1,xsd:decimal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/risk#5LikelihoodLevels"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#7LikelihoodLevels"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Level where Likelihood is Very Low"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Very Low Likelihood"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "The suggested quantitative value for this concept is 0.1 on a scale of 0 to 1"
       }
     ]
   },
@@ -1200,13 +1496,13 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/dpv/risk#5RiskLevels"
-      },
-      {
         "@id": "https://w3id.org/dpv/risk#7RiskLevels"
       },
       {
         "@id": "https://w3id.org/dpv/risk#3RiskLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#5RiskLevels"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -1235,108 +1531,7 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/risk#ModerateRisk",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#RiskLevel",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-08-18"
-      }
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
-      {
-        "@value": "0.5,xsd:decimal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/risk#5RiskLevels"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#7RiskLevels"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#3RiskLevels"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Level where Risk is Moderate"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Moderate Risk"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "The suggested quantitative value for this concept is 0.5 on a scale of 0 to 1"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/risk#7SeverityLevels",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Severity",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-08-18"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#Severity"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Scale with 7 Severity Levels from Extremely High to Extremely Low"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "7 Severity Levels"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/risk#LowLikelihood",
+    "@id": "https://w3id.org/dpv/risk#HighLikelihood",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class",
       "https://w3id.org/dpv#Likelihood",
@@ -1355,7 +1550,7 @@
     ],
     "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
       {
-        "@value": "0.25,xsd:decimal"
+        "@value": "0.75,xsd:decimal"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
@@ -1363,69 +1558,10 @@
         "@id": "https://w3id.org/dpv/risk#3LikelihoodLevels"
       },
       {
-        "@id": "https://w3id.org/dpv/risk#5LikelihoodLevels"
-      },
-      {
         "@id": "https://w3id.org/dpv/risk#7LikelihoodLevels"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Level where Likelihood is Low"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Low Likelihood"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "The suggested quantitative value for this concept is 0.25 on a scale of 0 to 1"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/risk#ModerateSeverity",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Severity",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-08-18"
-      }
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
-      {
-        "@value": "0.5,xsd:decimal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/risk#5SeverityLevels"
       },
       {
-        "@id": "https://w3id.org/dpv/risk#3SeverityLevels"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#7SeverityLevels"
+        "@id": "https://w3id.org/dpv/risk#5LikelihoodLevels"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -1437,72 +1573,19 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Level where Severity is Moderate"
+        "@value": "Level where Likelihood is High"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Moderate Severity"
+        "@value": "High Likelihood"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#scopeNote": [
       {
         "@language": "en",
-        "@value": "The suggested quantitative value for this concept is 0.5 on a scale of 0 to 1"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/risk#ExtremelyHighRisk",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#RiskLevel",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-08-18"
-      }
-    ],
-    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
-      {
-        "@value": "0.99,xsd:decimal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/risk#7RiskLevels"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Level where Risk is Extremely High"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Extremely High Risk"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "The suggested quantitative value for this concept is 0.99 on a scale of 0 to 1"
+        "@value": "The suggested quantitative value for this concept is 0.75 on a scale of 0 to 1"
       }
     ]
   },
@@ -1531,10 +1614,10 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/dpv/risk#5SeverityLevels"
+        "@id": "https://w3id.org/dpv/risk#7SeverityLevels"
       },
       {
-        "@id": "https://w3id.org/dpv/risk#7SeverityLevels"
+        "@id": "https://w3id.org/dpv/risk#5SeverityLevels"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -1559,6 +1642,118 @@
       {
         "@language": "en",
         "@value": "The suggested quantitative value for this concept is 0.1 on a scale of 0 to 1"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/risk#3LikelihoodLevels",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Likelihood",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-08-18"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#Likelihood"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/risk#HighLikelihood"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#ModerateLikelihood"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#LowLikelihood"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Scale with 3 Likelihood Levels from High to Low"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "3 Likelihood Levels"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/risk#ModerateLikelihood",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Likelihood",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-08-18"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@value": "0.5,xsd:decimal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/risk#3LikelihoodLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#7LikelihoodLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#5LikelihoodLevels"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Level where Likelihood is Moderate"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Moderate Likelihood"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "The suggested quantitative value for this concept is 0.5 on a scale of 0 to 1"
       }
     ]
   }
