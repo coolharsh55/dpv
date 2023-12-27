@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>200.py</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="dycco.css">
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    <table cellpadding="0" cellspacing="0">
+      <thead>
+        <tr>
+          <th class="docs">
+            <h1>200.py</h1>
+          </th>
+          <th class="code">
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr id="section-2">
+            <td class="docs">
+              <div class="pilwrap">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>author: Harshvardhan J. Pandit</p>
+            </td>
+            <td class="code">
+              
+            </td>
+          </tr>
+          <tr id="section-3">
+            <td class="docs">
+              <div class="pilwrap">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>Take CSV and generate RDF from it</p>
+            </td>
+            <td class="code">
+              
+            </td>
+          </tr>
+          <tr id="section-12">
+            <td class="docs">
+              <div class="pilwrap">
+                <a class="pilcrow" href="#section-12">&#182;</a>
+              </div>
+              <h6></h6>
+<p>How to read and understand this file #
+ 1. Start from the end of the file
+ 2. This script reads CSV files explicitly declared
+ 3. It generates RDF terms using rdflib for Classes and Properties
+ 4. It writes those terms to a file - one per each module
+ 5. It combines all written files into dpv.ttl and dpv-gdpr.ttl</p>
+            </td>
+            <td class="code">
+              
+            </td>
+          </tr>
+          <tr id="section-15">
+            <td class="docs">
+              <div class="pilwrap">
+                <a class="pilcrow" href="#section-15">&#182;</a>
+              </div>
+              <p>This script assumes the input if well structured and formatted
+ If it isn't, the 'erors' may silently propogate</p>
+            </td>
+            <td class="code">
+              
+            </td>
+          </tr>
+          <tr id="section-18">
+            <td class="docs">
+              <div class="pilwrap">
+                <a class="pilcrow" href="#section-18">&#182;</a>
+              </div>
+              <p>CSV FILES are in IMPORT_CSV_PATH
+ RDF FILES are written to EXPORT_DPV_MODULE_PATH</p>
+            </td>
+            <td class="code">
+              
+            </td>
+          </tr>
+          <tr id="section-22">
+            <td class="docs">
+              <div class="pilwrap">
+                <a class="pilcrow" href="#section-22">&#182;</a>
+              </div>
+              <p>CONTRIBUTION: If anyone is willing to turn these scripts into
+ an equivalent RML/R2RML or similar mappings, please let us know</p>
+<h6></h6>
+            </td>
+            <td class="code">
+              <div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="kn">from</span> <span class="nn">rdflib</span> <span class="kn">import</span> <span class="n">Graph</span><span class="p">,</span> <span class="n">Namespace</span>
+<span class="kn">from</span> <span class="nn">rdflib.compare</span> <span class="kn">import</span> <span class="n">graph_diff</span>
+<span class="kn">from</span> <span class="nn">rdflib.term</span> <span class="kn">import</span> <span class="n">Literal</span><span class="p">,</span> <span class="n">URIRef</span><span class="p">,</span> <span class="n">BNode</span>
+
+<span class="kn">import</span> <span class="nn">logging</span>
+</pre></div>
+
+            </td>
+          </tr>
+          <tr id="section-33">
+            <td class="docs">
+              <div class="pilwrap">
+                <a class="pilcrow" href="#section-33">&#182;</a>
+              </div>
+              <p>logging configuration for debugging to console</p>
+            </td>
+            <td class="code">
+              <div class="highlight"><pre><span></span><span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span>
+    <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%(levelname)s</span><span class="s1"> - </span><span class="si">%(funcName)s</span><span class="s1"> :: </span><span class="si">%(lineno)d</span><span class="s1"> - </span><span class="si">%(message)s</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">DEBUG</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">debug</span>
+<span class="n">INFO</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">info</span>
+
+<span class="kn">from</span> <span class="nn">vocab_management</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">vocab_schemas</span>
+
+<span class="n">PROPOSED</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">TRANSLATIONS</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">MISSING_TRANSLATIONS</span> <span class="o">=</span> <span class="p">{}</span>
+</pre></div>
+
+            </td>
+          </tr>
+          <tr id="section-45">
+            <td class="docs">
+              <div class="pilwrap">
+                <a class="pilcrow" href="#section-45">&#182;</a>
+              </div>
+              
+            </td>
+            <td class="code">
+              <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">load_CSV</span><span class="p">(</span><span class="n">filepath</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span>
+        <span class="n">csvreader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">fd</span><span class="p">)</span>
+</pre></div>
+
+            </td>
+          </tr>
+          <tr id="section-53">
+            <td class="docs">
+              <div class="pilwrap">
+                <a class="pilcrow" href="#section-53">&#182;</a>
+              </div>
+              <p>First row contains header/labels, which give the count of 
+ attributes to extract from each row.
+ CAUTION: Google Sheets mangles the CSV where there are empty 
+ columns in the row towards the end. To fix this, we presume
+ there are no empty headers in the CSV.</p>
+            </td>
+            <td class="code">
+              <div class="highlight"><pre><span></span>        <span class="n">header</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">next</span><span class="p">(</span><span class="n">csvreader</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="p">]</span>
+        <span class="n">count</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">header</span><span class="p">)</span>
+        <span class="n">terms</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">csvreader</span><span class="p">:</span>
+</pre></div>
+
+            </td>
+          </tr>
+          <tr id="section-58">
+            <td class="docs">
+              <div class="pilwrap">
+                <a class="pilcrow" href="#section-58">&#182;</a>
+              </div>
+              <p>skip empty rows</p>
+            </td>
+            <td class="code">
+              <div class="highlight"><pre><span></span>            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">row</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+                <span class="k">continue</span>
+</pre></div>
+
+            </td>
+          </tr>
+          <tr id="section-61">
+            <td class="docs">
+              <div class="pilwrap">
+                <a class="pilcrow" href="#section-61">&#182;</a>
+              </div>
+              <p>extract required amount of terms, ignore any field after that</p>
+            </td>
+            <td class="code">
+              <div class="highlight"><pre><span></span>            <span class="n">row</span> <span class="o">=</span> <span class="p">[</span><span class="n">term</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">term</span> <span class="ow">in</span> <span class="n">row</span><span class="p">[:</span><span class="n">count</span><span class="p">]]</span>
+            <span class="n">rowdata</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+                <span class="n">rowdata</span><span class="p">[</span><span class="n">header</span><span class="p">[</span><span class="n">index</span><span class="p">]]</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+            <span class="n">terms</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rowdata</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">header</span><span class="p">,</span> <span class="n">terms</span>
+</pre></div>
+
+            </td>
+          </tr>
+          <tr id="section-69">
+            <td class="docs">
+              <div class="pilwrap">
+                <a class="pilcrow" href="#section-69">&#182;</a>
+              </div>
+              <p>serializes triples at filepath with defined formats</p>
+            </td>
+            <td class="code">
+              <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">serialize_graph</span><span class="p">(</span><span class="n">triples</span><span class="p">,</span> <span class="n">filepath</span><span class="p">):</span>
+    <span class="n">graph</span> <span class="o">=</span> <span class="n">Graph</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">namespace</span> <span class="ow">in</span> <span class="n">NAMESPACES</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">graph</span><span class="o">.</span><span class="n">namespace_manager</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="n">prefix</span><span class="p">,</span> <span class="n">namespace</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">triple</span> <span class="ow">in</span> <span class="n">triples</span><span class="p">:</span>
+        <span class="n">graph</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">triple</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">ext</span><span class="p">,</span> <span class="nb">format</span> <span class="ow">in</span> <span class="n">RDF_SERIALIZATIONS</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">graph</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">filepath</span><span class="si">}</span><span class="s1">.</span><span class="si">{</span><span class="n">ext</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="nb">format</span><span class="p">)</span>
+    <span class="n">INFO</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;wrote </span><span class="si">{</span><span class="n">filepath</span><span class="si">}</span><span class="s1">.[</span><span class="si">{</span><span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">RDF_SERIALIZATIONS</span><span class="p">)</span><span class="si">}</span><span class="s1">]&#39;</span><span class="p">)</span>
+</pre></div>
+
+            </td>
+          </tr>
+          <tr id="section-90">
+            <td class="docs">
+              <div class="pilwrap">
+                <a class="pilcrow" href="#section-90">&#182;</a>
+              </div>
+              <p>Serialise OWL variant
+ filepath is the same, but the extension is {name}-owl.[ttl,owl]
+ conversion to manchester syntax happens through external script
+ TODO: What IRI to use for OWL variant?
+ Options:
+ 1) same IRI e.g. https://w3id.org/dpv#Concept
+ 2) different IRI e.g. https://w3id.org/dpv/owl#Concept
+    /owl is the suffix to distinguish owl variant
+ 3) current IRI e.g. https://w3id.org/dpv/dpv-owl#Concept
+    /dpv-owl is the prefix to distinguish owl variant
+ TODO: Add skos:exactMatch between default and OWL concepts</p>
+            </td>
+            <td class="code">
+              <div class="highlight"><pre><span></span>    <span class="n">graph</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        DELETE { ?s rdf:type skos:Concept }</span>
+<span class="s2">        INSERT { ?s rdf:type owl:Class }</span>
+<span class="s2">        WHERE { ?s rdf:type rdfs:Class }</span>
+<span class="s2">        &quot;&quot;&quot;</span><span class="p">)</span>
+    <span class="n">graph</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        DELETE { ?s rdf:type skos:Concept }</span>
+<span class="s2">        INSERT { ?s rdf:type owl:ObjectProperty }</span>
+<span class="s2">        WHERE { ?s rdf:type rdf:Property }</span>
+<span class="s2">        &quot;&quot;&quot;</span><span class="p">)</span>
+    <span class="n">graph</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        DELETE { ?s skos:inScheme ?o }</span>
+<span class="s2">        WHERE { ?s skos:inScheme ?o }</span>
+<span class="s2">        &quot;&quot;&quot;</span><span class="p">)</span>
+    <span class="n">graph</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        DELETE { ?s rdf:type skos:ConceptScheme }</span>
+<span class="s2">        WHERE { ?s rdf:type skos:ConceptScheme }</span>
+<span class="s2">        &quot;&quot;&quot;</span><span class="p">)</span>
+    <span class="n">graph</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        DELETE { ?s skos:broader ?o . ?o skos:narrower ?s  }</span>
+<span class="s2">        INSERT { ?s rdfs:subClassOf ?o }</span>
+<span class="s2">        WHERE { ?s skos:broader ?o }</span>
+<span class="s2">        &quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+
+            </td>
+          </tr>
+          <tr id="section-117">
+            <td class="docs">
+              <div class="pilwrap">
+                <a class="pilcrow" href="#section-117">&#182;</a>
+              </div>
+              <p>TODO: SPARQL CONSTRUCT to create domain/range values for properties
+ use existing dcam:domainIncludes/rangeIncludes
+ convert to owl:unionOf ( domain/range )
+ problem: how to construct rdf:Collection using SPARQL?</p>
+            </td>
+            <td class="code">
+              <div class="highlight"><pre><span></span>    <span class="k">for</span> <span class="n">ext</span><span class="p">,</span> <span class="nb">format</span> <span class="ow">in</span> <span class="n">OWL_SERIALIZATIONS</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">graph</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">filepath</span><span class="si">}</span><span class="s1">-owl.</span><span class="si">{</span><span class="n">ext</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="nb">format</span><span class="p">)</span>
+</pre></div>
+
+            </td>
+          </tr>
+          <tr id="section-120">
+            <td class="docs">
+              <div class="pilwrap">
+                <a class="pilcrow" href="#section-120">&#182;</a>
+              </div>
+              <p>TODO: Call converter from OWL to OMN</p>
+            </td>
+            <td class="code">
+              <div class="highlight"><pre><span></span>    <span class="n">INFO</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;wrote </span><span class="si">{</span><span class="n">filepath</span><span class="si">}</span><span class="s1">-owl.[</span><span class="si">{</span><span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">OWL_SERIALIZATIONS</span><span class="p">)</span><span class="si">}</span><span class="s1">]&#39;</span><span class="p">)</span>
+</pre></div>
+
+            </td>
+          </tr>
+          <tr id="section-124">
+            <td class="docs">
+              <div class="pilwrap">
+                <a class="pilcrow" href="#section-124">&#182;</a>
+              </div>
+              <p>Load Translations</p>
+            </td>
+            <td class="code">
+              <div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">lang</span><span class="p">,</span> <span class="n">lang_data</span> <span class="ow">in</span> <span class="n">IMPORT_TRANSLATIONS</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</pre></div>
+
+            </td>
+          </tr>
+          <tr id="section-125">
+            <td class="docs">
+              <div class="pilwrap">
+                <a class="pilcrow" href="#section-125">&#182;</a>
+              </div>
+              
+            </td>
+            <td class="code">
+              <div class="highlight"><pre><span></span>    <span class="k">def</span> <span class="nf">_convert</span><span class="p">(</span><span class="n">term</span><span class="p">):</span>
+        <span class="n">translated</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">translated</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">term</span><span class="p">[</span><span class="s1">&#39;Label_translated&#39;</span><span class="p">]</span>
+        <span class="n">translated</span><span class="p">[</span><span class="s1">&#39;definition&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">term</span><span class="p">[</span><span class="s1">&#39;Definition_translated&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">term</span><span class="p">[</span><span class="s1">&#39;Usage_translated&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;N/A&#39;</span><span class="p">:</span>
+            <span class="n">translated</span><span class="p">[</span><span class="s1">&#39;usage&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">term</span><span class="p">[</span><span class="s1">&#39;Usage_translated&#39;</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">translated</span>
+</pre></div>
+
+            </td>
+          </tr>
+          <tr id="section-134">
+            <td class="docs">
+              <div class="pilwrap">
+                <a class="pilcrow" href="#section-134">&#182;</a>
+              </div>
+              <p>production-ready translations</p>
+            </td>
+            <td class="code">
+              <div class="highlight"><pre><span></span>    <span class="n">header</span><span class="p">,</span> <span class="n">csvdata_prod</span> <span class="o">=</span> <span class="n">load_CSV</span><span class="p">(</span><span class="n">lang_data</span><span class="p">[</span><span class="s1">&#39;prod&#39;</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">term</span> <span class="ow">in</span> <span class="n">csvdata_prod</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">term</span><span class="p">[</span><span class="s1">&#39;Term&#39;</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">TRANSLATIONS</span><span class="p">:</span>
+            <span class="n">TRANSLATIONS</span><span class="p">[</span><span class="n">term</span><span class="p">[</span><span class="s1">&#39;Term&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">TRANSLATIONS</span><span class="p">[</span><span class="n">term</span><span class="p">[</span><span class="s1">&#39;Term&#39;</span><span class="p">]][</span><span class="n">lang</span><span class="p">]</span> <span class="o">=</span> <span class="n">_convert</span><span class="p">(</span><span class="n">term</span><span class="p">)</span>
+        <span class="n">TRANSLATIONS</span><span class="p">[</span><span class="n">term</span><span class="p">[</span><span class="s1">&#39;Term&#39;</span><span class="p">]][</span><span class="n">lang</span><span class="p">][</span><span class="s1">&#39;status&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;verified&#39;</span>
+</pre></div>
+
+            </td>
+          </tr>
+          <tr id="section-141">
+            <td class="docs">
+              <div class="pilwrap">
+                <a class="pilcrow" href="#section-141">&#182;</a>
+              </div>
+              <p>to-verify translations</p>
+            </td>
+            <td class="code">
+              <div class="highlight"><pre><span></span>    <span class="n">header</span><span class="p">,</span> <span class="n">csvdata_verify</span> <span class="o">=</span> <span class="n">load_CSV</span><span class="p">(</span><span class="n">lang_data</span><span class="p">[</span><span class="s1">&#39;verify&#39;</span><span class="p">])</span>
+    <span class="k">for</span> <span class="n">term</span> <span class="ow">in</span> <span class="n">csvdata_verify</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">term</span><span class="p">[</span><span class="s1">&#39;Term&#39;</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">TRANSLATIONS</span><span class="p">:</span>
+            <span class="n">TRANSLATIONS</span><span class="p">[</span><span class="n">term</span><span class="p">[</span><span class="s1">&#39;Term&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">TRANSLATIONS</span><span class="p">[</span><span class="n">term</span><span class="p">[</span><span class="s1">&#39;Term&#39;</span><span class="p">]][</span><span class="n">lang</span><span class="p">]</span> <span class="o">=</span> <span class="n">_convert</span><span class="p">(</span><span class="n">term</span><span class="p">)</span>
+        <span class="n">TRANSLATIONS</span><span class="p">[</span><span class="n">term</span><span class="p">[</span><span class="s1">&#39;Term&#39;</span><span class="p">]][</span><span class="n">lang</span><span class="p">][</span><span class="s1">&#39;status&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;unverified&#39;</span>
+    <span class="n">INFO</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Loaded translations for </span><span class="si">{</span><span class="n">lang_data</span><span class="p">[</span><span class="s1">&#39;lang&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">csvdata_prod</span><span class="p">)</span><span class="si">}</span><span class="s2"> verified, </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">csvdata_verify</span><span class="p">)</span><span class="si">}</span><span class="s2"> unverified&quot;</span><span class="p">)</span>
+</pre></div>
+
+            </td>
+          </tr>
+          <tr id="section-149">
+            <td class="docs">
+              <div class="pilwrap">
+                <a class="pilcrow" href="#section-149">&#182;</a>
+              </div>
+              <p>DEBUG(TRANSLATIONS)</p>
+            </td>
+            <td class="code">
+              
+            </td>
+          </tr>
+          <tr id="section-151">
+            <td class="docs">
+              <div class="pilwrap">
+                <a class="pilcrow" href="#section-151">&#182;</a>
+              </div>
+              
+            </td>
+            <td class="code">
+              <div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_translations_for_concept</span><span class="p">(</span><span class="n">concept</span><span class="p">):</span>
+    <span class="n">triples</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">term</span> <span class="o">=</span> <span class="n">prefix_from_iri</span><span class="p">(</span><span class="n">concept</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">term</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">TRANSLATIONS</span><span class="p">:</span> <span class="c1"># all translations are missing</span>
+        <span class="k">if</span> <span class="n">term</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">MISSING_TRANSLATIONS</span><span class="p">:</span>
+            <span class="n">MISSING_TRANSLATIONS</span><span class="p">[</span><span class="n">term</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">IMPORT_TRANSLATIONS</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+        <span class="k">return</span> <span class="p">[]</span>
+
+    <span class="n">lang_data</span> <span class="o">=</span> <span class="n">TRANSLATIONS</span><span class="p">[</span><span class="n">term</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">lang</span><span class="p">,</span> <span class="n">translations</span> <span class="ow">in</span> <span class="n">lang_data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">translations</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;unverified&#39;</span><span class="p">:</span>
+            <span class="n">note</span> <span class="o">=</span> <span class="s2">&quot; (machine-translated)&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">note</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+        <span class="n">triples</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">c</span><span class="p">,</span> <span class="n">SKOS</span><span class="o">.</span><span class="n">prefLabel</span><span class="p">,</span> 
+            <span class="n">Literal</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">translations</span><span class="p">[</span><span class="s1">&#39;label&#39;</span><span class="p">]</span><span class="si">}{</span><span class="n">note</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="n">lang</span><span class="p">)))</span>
+        <span class="n">triples</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">c</span><span class="p">,</span> <span class="n">SKOS</span><span class="o">.</span><span class="n">definition</span><span class="p">,</span> 
+            <span class="n">Literal</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">translations</span><span class="p">[</span><span class="s1">&#39;definition&#39;</span><span class="p">]</span><span class="si">}{</span><span class="n">note</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="n">lang</span><span class="p">)))</span>
+        <span class="k">if</span> <span class="s1">&#39;usage&#39;</span> <span class="ow">in</span> <span class="n">translations</span><span class="p">:</span>
+            <span class="n">triples</span><span class="o">.</span><span class="n">append</span><span class="p">((</span>
+                <span class="n">c</span><span class="p">,</span> <span class="n">SKOS</span><span class="o">.</span><span class="n">scopeNote</span><span class="p">,</span> 
+                <span class="n">Literal</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">translations</span><span class="p">[</span><span class="s1">&#39;usage&#39;</span><span class="p">]</span><span class="si">}{</span><span class="n">note</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="n">lang</span><span class="p">)))</span>
+    <span class="k">for</span> <span class="n">lang</span> <span class="ow">in</span> <span class="n">IMPORT_TRANSLATIONS</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">lang</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">lang_data</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">term</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">MISSING_TRANSLATIONS</span><span class="p">:</span>
+                <span class="n">MISSING_TRANSLATIONS</span><span class="p">[</span><span class="n">term</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">MISSING_TRANSLATIONS</span><span class="p">[</span><span class="n">term</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lang</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">triples</span>
+
+
+<span class="n">global_triples</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+
+            </td>
+          </tr>
+          <tr id="section-183">
+            <td class="docs">
+              <div class="pilwrap">
+                <a class="pilcrow" href="#section-183">&#182;</a>
+              </div>
+              <p>iterate over all CSV files for specific vocab e.g. dpv</p>
+            </td>
+            <td class="code">
+              <div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">vocab</span><span class="p">,</span> <span class="n">vocab_data</span> <span class="ow">in</span> <span class="n">CSVFILES</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</pre></div>
+
+            </td>
+          </tr>
+          <tr id="section-185">
+            <td class="docs">
+              <div class="pilwrap">
+                <a class="pilcrow" href="#section-185">&#182;</a>
+              </div>
+              <p>work with modules within each structure e.g core</p>
+            </td>
+            <td class="code">
+              <div class="highlight"><pre><span></span>    <span class="n">namespace</span> <span class="o">=</span> <span class="n">NAMESPACES</span><span class="p">[</span><span class="n">vocab</span><span class="p">]</span>
+    <span class="n">INFO</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">40</span><span class="p">)</span>
+    <span class="n">INFO</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;VOCAB: </span><span class="si">{</span><span class="n">vocab</span><span class="si">}</span><span class="s1"> (</span><span class="si">{</span><span class="n">namespace</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+    <span class="n">INFO</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">40</span><span class="p">)</span>
+    <span class="n">vocab_triples</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">PROPOSED</span><span class="p">[</span><span class="n">vocab</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">module</span><span class="p">,</span> <span class="n">module_data</span> <span class="ow">in</span> <span class="n">vocab_data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</pre></div>
+
+            </td>
+          </tr>
+          <tr id="section-193">
+            <td class="docs">
+              <div class="pilwrap">
+                <a class="pilcrow" href="#section-193">&#182;</a>
+              </div>
+              <p>get schemas and data for each csv in module</p>
+            </td>
+            <td class="code">
+              <div class="highlight"><pre><span></span>        <span class="n">module_triples</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">PROPOSED</span><span class="p">[</span><span class="n">vocab</span><span class="p">][</span><span class="n">module</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">schema_name</span><span class="p">,</span> <span class="n">filepath</span> <span class="ow">in</span> <span class="n">module_data</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="n">schema</span> <span class="o">=</span> <span class="n">vocab_schemas</span><span class="o">.</span><span class="n">get_schema</span><span class="p">(</span><span class="n">schema_name</span><span class="p">)</span>
+            <span class="n">INFO</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;MODULE: </span><span class="si">{</span><span class="n">module</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="n">INFO</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;parsing </span><span class="si">{</span><span class="n">filepath</span><span class="si">}</span><span class="s1"> with schema: </span><span class="si">{</span><span class="n">schema_name</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="n">header</span><span class="p">,</span> <span class="n">csvdata</span> <span class="o">=</span> <span class="n">load_CSV</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+</pre></div>
+
+            </td>
+          </tr>
+          <tr id="section-201">
+            <td class="docs">
+              <div class="pilwrap">
+                <a class="pilcrow" href="#section-201">&#182;</a>
+              </div>
+              <p>clean data (dangling spaces)</p>
+            </td>
+            <td class="code">
+              <div class="highlight"><pre><span></span>            <span class="n">header</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">header</span><span class="p">]</span>
+</pre></div>
+
+            </td>
+          </tr>
+          <tr id="section-203">
+            <td class="docs">
+              <div class="pilwrap">
+                <a class="pilcrow" href="#section-203">&#182;</a>
+              </div>
+              <p>csvdata is a list of dicts containing column:value</p>
+            </td>
+            <td class="code">
+              <div class="highlight"><pre><span></span>            <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">csvdata</span><span class="p">:</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Term&#39;</span><span class="p">]:</span> <span class="c1"># skip empty rows</span>
+                    <span class="k">continue</span>
+</pre></div>
+
+            </td>
+          </tr>
+          <tr id="section-207">
+            <td class="docs">
+              <div class="pilwrap">
+                <a class="pilcrow" href="#section-207">&#182;</a>
+              </div>
+              <p>clean data (dangling spaces)</p>
+            </td>
+            <td class="code">
+              <div class="highlight"><pre><span></span>                <span class="n">row</span> <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span><span class="n">y</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="ow">in</span> <span class="n">row</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+</pre></div>
+
+            </td>
+          </tr>
+          <tr id="section-209">
+            <td class="docs">
+              <div class="pilwrap">
+                <a class="pilcrow" href="#section-209">&#182;</a>
+              </div>
+              <p>filter proposed terms</p>
+            </td>
+            <td class="code">
+              <div class="highlight"><pre><span></span>                <span class="k">if</span> <span class="s1">&#39;Status&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">row</span><span class="p">:</span>
+                    <span class="k">continue</span>
+                <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Status&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;proposed&#39;</span><span class="p">:</span>
+</pre></div>
+
+            </td>
+          </tr>
+          <tr id="section-213">
+            <td class="docs">
+              <div class="pilwrap">
+                <a class="pilcrow" href="#section-213">&#182;</a>
+              </div>
+              <p>TODO: skip rows if they don't have a status</p>
+            </td>
+            <td class="code">
+              <div class="highlight"><pre><span></span>                    <span class="n">PROPOSED</span><span class="p">[</span><span class="n">vocab</span><span class="p">][</span><span class="n">module</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;Term&#39;</span><span class="p">])</span>
+                    <span class="k">continue</span>
+</pre></div>
+
+            </td>
+          </tr>
+          <tr id="section-216">
+            <td class="docs">
+              <div class="pilwrap">
+                <a class="pilcrow" href="#section-216">&#182;</a>
+              </div>
+              <p>skip empty rows, annotations, deprecated concepts</p>
+            </td>
+            <td class="code">
+              <div class="highlight"><pre><span></span>                <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Status&#39;</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">VOCAB_TERM_ACCEPT</span><span class="p">:</span>
+                    <span class="k">continue</span>
+</pre></div>
+
+            </td>
+          </tr>
+          <tr id="section-219">
+            <td class="docs">
+              <div class="pilwrap">
+                <a class="pilcrow" href="#section-219">&#182;</a>
+              </div>
+              <p>create a dict to hold the row data</p>
+            </td>
+            <td class="code">
+              <div class="highlight"><pre><span></span>                <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">values</span><span class="p">()):</span>
+</pre></div>
+
+            </td>
+          </tr>
+          <tr id="section-221">
+            <td class="docs">
+              <div class="pilwrap">
+                <a class="pilcrow" href="#section-221">&#182;</a>
+              </div>
+              <p>get function to handle column value</p>
+            </td>
+            <td class="code">
+              <div class="highlight"><pre><span></span>                    <span class="n">func</span> <span class="o">=</span> <span class="n">schema</span><span class="p">[</span><span class="n">header</span><span class="p">[</span><span class="n">index</span><span class="p">]]</span>
+</pre></div>
+
+            </td>
+          </tr>
+          <tr id="section-223">
+            <td class="docs">
+              <div class="pilwrap">
+                <a class="pilcrow" href="#section-223">&#182;</a>
+              </div>
+              <p>empty func or item means no triples to be generated</p>
+            </td>
+            <td class="code">
+              <div class="highlight"><pre><span></span>                    <span class="k">if</span> <span class="n">func</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="k">continue</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="n">item</span><span class="p">:</span>
+                        <span class="k">continue</span>
+                    <span class="n">module_triples</span> <span class="o">+=</span> <span class="n">func</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">namespace</span><span class="p">,</span> <span class="n">header</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+        <span class="n">classes</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">properties</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">s</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">o</span> <span class="ow">in</span> <span class="n">module_triples</span><span class="p">:</span>
+</pre></div>
+
+            </td>
+          </tr>
+          <tr id="section-232">
+            <td class="docs">
+              <div class="pilwrap">
+                <a class="pilcrow" href="#section-232">&#182;</a>
+              </div>
+              <p>DEBUG(f'{s} {p} {o}')</p>
+            </td>
+            <td class="code">
+              <div class="highlight"><pre><span></span>                
+            <span class="k">if</span> <span class="n">p</span> <span class="o">!=</span> <span class="n">RDF</span><span class="o">.</span><span class="n">type</span><span class="p">:</span> <span class="k">continue</span>
+            <span class="k">if</span> <span class="n">o</span> <span class="o">==</span> <span class="n">RDFS</span><span class="o">.</span><span class="n">Class</span><span class="p">:</span> <span class="n">classes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+            <span class="k">elif</span> <span class="n">o</span> <span class="o">==</span> <span class="n">RDF</span><span class="o">.</span><span class="n">Property</span><span class="p">:</span> <span class="n">properties</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">classes</span><span class="p">:</span>
+            <span class="n">module_triples</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">namespace</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">module</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">-classes&quot;</span><span class="p">],</span> <span class="n">RDF</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="n">SKOS</span><span class="o">.</span><span class="n">ConceptScheme</span><span class="p">))</span>
+            <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">classes</span><span class="p">:</span>
+                <span class="n">module_triples</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">c</span><span class="p">,</span> <span class="n">SKOS</span><span class="o">.</span><span class="n">inScheme</span><span class="p">,</span> <span class="n">namespace</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">module</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">-classes&quot;</span><span class="p">]))</span>
+                <span class="k">if</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">EXAMPLES</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">ex</span> <span class="ow">in</span> <span class="n">EXAMPLES</span><span class="p">[</span><span class="n">c</span><span class="p">]:</span>
+                        <span class="n">module_triples</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">c</span><span class="p">,</span> <span class="n">VANN</span><span class="o">.</span><span class="n">example</span><span class="p">,</span> <span class="n">DEX</span><span class="p">[</span><span class="n">ex</span><span class="p">]))</span>
+                <span class="n">module_triples</span> <span class="o">+=</span> <span class="n">add_translations_for_concept</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">properties</span><span class="p">:</span>
+            <span class="n">module_triples</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">namespace</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">module</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">-properties&quot;</span><span class="p">],</span> <span class="n">RDF</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="n">SKOS</span><span class="o">.</span><span class="n">ConceptScheme</span><span class="p">))</span>
+            <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">properties</span><span class="p">:</span>
+                <span class="n">module_triples</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">p</span><span class="p">,</span> <span class="n">SKOS</span><span class="o">.</span><span class="n">inScheme</span><span class="p">,</span> <span class="n">namespace</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">module</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">,</span><span class="s1">&#39;-&#39;</span><span class="p">)</span><span class="si">}</span><span class="s2">-properties&quot;</span><span class="p">]))</span>
+                <span class="k">if</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">EXAMPLES</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">ex</span> <span class="ow">in</span> <span class="n">EXAMPLES</span><span class="p">[</span><span class="n">p</span><span class="p">]:</span>
+                        <span class="n">module_triples</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">p</span><span class="p">,</span> <span class="n">VANN</span><span class="o">.</span><span class="n">example</span><span class="p">,</span> <span class="n">DEX</span><span class="p">[</span><span class="n">ex</span><span class="p">]))</span>
+        <span class="n">INFO</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Triples: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">module_triples</span><span class="p">)</span><span class="si">}</span><span class="s1"> accepted for </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">classes</span><span class="p">)</span><span class="si">}</span><span class="s1"> classes and </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">properties</span><span class="p">)</span><span class="si">}</span><span class="s1"> properties, with </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">PROPOSED</span><span class="p">[</span><span class="n">vocab</span><span class="p">][</span><span class="n">module</span><span class="p">])</span><span class="si">}</span><span class="s1"> proposed&#39;</span><span class="p">)</span>
+</pre></div>
+
+            </td>
+          </tr>
+          <tr id="section-253">
+            <td class="docs">
+              <div class="pilwrap">
+                <a class="pilcrow" href="#section-253">&#182;</a>
+              </div>
+              <p>export module triples</p>
+            </td>
+            <td class="code">
+              <div class="highlight"><pre><span></span>        <span class="n">exportpath</span> <span class="o">=</span> <span class="n">RDF_STRUCTURE</span><span class="p">[</span><span class="n">vocab</span><span class="p">][</span><span class="s1">&#39;modules&#39;</span><span class="p">]</span>
+        <span class="n">filepath</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">exportpath</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">module</span><span class="si">}</span><span class="s1">&#39;</span>
+        <span class="n">serialize_graph</span><span class="p">(</span><span class="n">module_triples</span><span class="p">,</span> <span class="n">filepath</span><span class="p">)</span>
+        <span class="n">vocab_triples</span> <span class="o">+=</span> <span class="n">module_triples</span>
+</pre></div>
+
+            </td>
+          </tr>
+          <tr id="section-258">
+            <td class="docs">
+              <div class="pilwrap">
+                <a class="pilcrow" href="#section-258">&#182;</a>
+              </div>
+              <p>export vocab triples</p>
+            </td>
+            <td class="code">
+              <div class="highlight"><pre><span></span>    <span class="n">exportpath</span> <span class="o">=</span> <span class="n">RDF_STRUCTURE</span><span class="p">[</span><span class="n">vocab</span><span class="p">][</span><span class="s1">&#39;main&#39;</span><span class="p">]</span>
+    <span class="n">filepath</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">exportpath</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">vocab</span><span class="si">}</span><span class="s1">&#39;</span>
+    <span class="n">serialize_graph</span><span class="p">(</span><span class="n">vocab_triples</span><span class="p">,</span> <span class="n">filepath</span><span class="p">)</span>
+    <span class="n">INFO</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;VOCAB triples: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">vocab_triples</span><span class="p">)</span><span class="si">}</span><span class="s1"> accepted, </span><span class="si">{</span><span class="nb">sum</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">m</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">PROPOSED</span><span class="p">[</span><span class="n">vocab</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span><span class="si">}</span><span class="s1"> proposed&#39;</span><span class="p">)</span>
+    <span class="n">global_triples</span> <span class="o">+=</span> <span class="n">vocab_triples</span>
+<span class="n">INFO</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">40</span><span class="p">)</span>
+<span class="n">INFO</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;TOTAL triples: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">global_triples</span><span class="p">)</span><span class="si">}</span><span class="s1"> accepted&#39;</span><span class="p">)</span>
+<span class="n">INFO</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">40</span><span class="p">)</span>
+
+
+<span class="n">INFO</span><span class="p">(</span><span class="s1">&#39;Creating collated collections&#39;</span><span class="p">)</span>
+<span class="n">INFO</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">40</span><span class="p">)</span>
+
+<span class="n">collations</span> <span class="o">=</span> <span class="p">({</span>
+    <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;legal&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;input&#39;</span><span class="p">:</span> <span class="p">(</span>
+        <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">EXPORT_RDF_PATH</span><span class="si">}</span><span class="s1">/legal/eu/legal-eu.ttl&#39;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">EXPORT_RDF_PATH</span><span class="si">}</span><span class="s1">/legal/de/legal-de.ttl&#39;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">EXPORT_RDF_PATH</span><span class="si">}</span><span class="s1">/legal/ie/legal-ie.ttl&#39;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">EXPORT_RDF_PATH</span><span class="si">}</span><span class="s1">/legal/gb/legal-gb.ttl&#39;</span><span class="p">,</span>
+        <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">EXPORT_RDF_PATH</span><span class="si">}</span><span class="s1">/legal/us/legal-us.ttl&#39;</span><span class="p">,</span>
+        <span class="p">),</span>
+    <span class="s1">&#39;output&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">EXPORT_RDF_PATH</span><span class="si">}</span><span class="s1">/legal/legal&#39;</span><span class="p">,</span>
+<span class="p">},)</span>
+
+<span class="k">for</span> <span class="n">collation</span> <span class="ow">in</span> <span class="n">collations</span><span class="p">:</span>
+    <span class="n">INFO</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Collating </span><span class="si">{</span><span class="n">collation</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">triples</span> <span class="o">=</span> <span class="n">Graph</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">filepath</span> <span class="ow">in</span> <span class="n">collation</span><span class="p">[</span><span class="s1">&#39;input&#39;</span><span class="p">]:</span>
+        <span class="n">triples</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+    <span class="n">serialize_graph</span><span class="p">(</span><span class="n">triples</span><span class="p">,</span> <span class="n">collation</span><span class="p">[</span><span class="s1">&#39;output&#39;</span><span class="p">])</span>
+    <span class="n">INFO</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Collected </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">triples</span><span class="p">)</span><span class="si">}</span><span class="s2"> triples into </span><span class="si">{</span><span class="n">collation</span><span class="p">[</span><span class="s1">&#39;output&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">INFO</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">40</span><span class="p">)</span>
+<span class="n">DEBUG</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Missing translations for </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">MISSING_TRANSLATIONS</span><span class="p">)</span><span class="si">}</span><span class="s2"> concepts&quot;</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">TRANSLATIONS_TODO_PATH</span><span class="si">}</span><span class="s2">/tmp_translations.json&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">json</span>
+    <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">MISSING_TRANSLATIONS</span><span class="p">,</span> <span class="n">fd</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">INFO</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">40</span><span class="p">)</span>
+</pre></div>
+
+            </td>
+          </tr>
+      </tbody>
+    </table>
+    <footer>
+      Generated by <b><a href="https://github.com/rojalator/dycco">Dycco</a></b>.
+      Last updated <b>26 Dec 2023</b>.
+    </footer>
+  </div>
+</body>
+</html>
