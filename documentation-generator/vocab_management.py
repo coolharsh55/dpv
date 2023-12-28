@@ -37,6 +37,9 @@ OWL_SERIALIZATIONS = {
 VOCAB_TERM_ACCEPT = ('accepted', 'changed', 'modified', 'sunset')
 VOCAB_TERM_REJECT = ('deprecated', 'removed')
 
+## === term-ignored
+
+IGNORED_TERMS = ('rdf:type', 'rdfs:Class', 'rdf:Property', 'skos:Concept')
 
 # === namespaces ===
 NAMESPACE_CSV = (
@@ -603,6 +606,20 @@ RDF_COLLATIONS = ({
         ),
     'output': f'{EXPORT_RDF_PATH}/legal/legal',
 },)
+
+# === SPARQL Query Hooks ===
+RDF_EXPORT_HOOK = {
+    'pd': [ # Create concept scheme for Special Category Personal Data
+        # Derive all concepts that are instances of SCPD
+        f"""
+        INSERT {{
+            <{NAMESPACES['pd']['specialcategory-classes']}> a skos:ConceptScheme .
+            ?s a dpv:SpecialCategoryPersonalData .
+            ?s skos:inScheme <{NAMESPACES['pd']['specialcategory-classes']}> }}
+        WHERE {{ ?s skos:broader+ dpv:SpecialCategoryPersonalData }}
+        """,
+    ],
+}
 
 # === examples ===
 EXAMPLES = {}

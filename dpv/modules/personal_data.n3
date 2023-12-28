@@ -14,6 +14,7 @@ dpv:AnonymisedData a rdfs:Class,
         skos:Concept ;
     dct:contributor "Piero Bonatti" ;
     dct:created "2022-01-19"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:NonPersonalData ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:NonPersonalData ;
@@ -25,6 +26,7 @@ dpv:AnonymisedData a rdfs:Class,
 dpv:CollectedData a rdfs:Class,
         skos:Concept ;
     dct:created "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Data ;
     rdfs:superClassOf dpv:CollectedPersonalData ;
     sw:term_status "accepted"@en ;
@@ -39,6 +41,7 @@ dpv:CollectedPersonalData a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-03-30"^^xsd:date ;
     dct:modified "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:CollectedData,
         dpv:PersonalData ;
     sw:term_status "accepted"@en ;
@@ -52,6 +55,7 @@ dpv:CollectedPersonalData a rdfs:Class,
 dpv:CommerciallyConfidentialData a rdfs:Class,
         skos:Concept ;
     dct:source "DGA 6.5(c)"@en ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Data ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Data ;
@@ -62,6 +66,7 @@ dpv:CommerciallyConfidentialData a rdfs:Class,
 dpv:ConfidentialData a rdfs:Class,
         skos:Concept ;
     dct:source "DGA 5.10"@en ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Data ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Data ;
@@ -73,6 +78,7 @@ dpv:Data a rdfs:Class,
         skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-01-19"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:superClassOf dpv:CollectedData,
         dpv:CommerciallyConfidentialData,
         dpv:ConfidentialData,
@@ -111,6 +117,7 @@ dpv:Data a rdfs:Class,
 dpv:DerivedData a rdfs:Class,
         skos:Concept ;
     dct:created "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Data ;
     rdfs:superClassOf dpv:DerivedPersonalData ;
     sw:term_status "accepted"@en ;
@@ -126,6 +133,7 @@ dpv:DerivedPersonalData a rdfs:Class,
     dct:created "2019-05-07"^^xsd:date ;
     dct:modified "2023-12-10"^^xsd:date ;
     dct:source "(DPVCG, https://www.w3.org/community/dpvcg/)"@en ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:DerivedData,
         dpv:PersonalData ;
     rdfs:superClassOf dpv:InferredPersonalData ;
@@ -142,6 +150,7 @@ dpv:DerivedPersonalData a rdfs:Class,
 dpv:GeneratedData a rdfs:Class,
         skos:Concept ;
     dct:created "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Data ;
     rdfs:superClassOf dpv:SyntheticData ;
     sw:term_status "accepted"@en ;
@@ -156,6 +165,7 @@ dpv:GeneratedPersonalData a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-03-30"^^xsd:date ;
     dct:modified "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:InferredData,
         dpv:PersonalData ;
     rdfs:superClassOf dpv:InferredPersonalData ;
@@ -170,6 +180,7 @@ dpv:GeneratedPersonalData a rdfs:Class,
 
 dpv:IdentifyingPersonalData a rdfs:Class,
         skos:Concept ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:PersonalData ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:PersonalData ;
@@ -182,6 +193,7 @@ dpv:IncorrectData a rdfs:Class,
         skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-11-02"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Data ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Data ;
@@ -192,6 +204,7 @@ dpv:IncorrectData a rdfs:Class,
 dpv:InferredData a rdfs:Class,
         skos:Concept ;
     dct:created "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Data ;
     rdfs:superClassOf dpv:GeneratedPersonalData ;
     sw:term_status "accepted"@en ;
@@ -206,6 +219,7 @@ dpv:InferredPersonalData a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-01-19"^^xsd:date ;
     dct:modified "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:DerivedPersonalData,
         dpv:GeneratedPersonalData ;
     sw:term_status "accepted"@en ;
@@ -219,6 +233,7 @@ dpv:InferredPersonalData a rdfs:Class,
 dpv:IntellectualPropertyData a rdfs:Class,
         skos:Concept ;
     dct:source "DGA 5.10"@en ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Data ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Data ;
@@ -230,6 +245,7 @@ dpv:NonPersonalData a rdfs:Class,
         skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-01-19"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Data ;
     rdfs:superClassOf dpv:AnonymisedData ;
     sw:term_status "accepted"@en ;
@@ -243,6 +259,7 @@ dpv:NonPersonalData a rdfs:Class,
 dpv:ObservedData a rdfs:Class,
         skos:Concept ;
     dct:created "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Data ;
     rdfs:superClassOf dpv:ObservedPersonalData ;
     sw:term_status "accepted"@en ;
@@ -257,6 +274,7 @@ dpv:ObservedPersonalData a rdfs:Class,
     dct:contributor "Georg P Krog" ;
     dct:created "2022-08-24"^^xsd:date ;
     dct:modified "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:ObservedData,
         dpv:PersonalData ;
     sw:term_status "accepted"@en ;
@@ -272,6 +290,7 @@ dpv:PersonalData a rdfs:Class,
     dct:created "2019-04-05"^^xsd:date ;
     dct:modified "2022-01-19"^^xsd:date ;
     dct:source "(GDPR Art.4-1g,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_1/oj)"@en ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Data ;
     rdfs:superClassOf dpv:CollectedPersonalData,
         dpv:DerivedPersonalData,
@@ -299,6 +318,7 @@ dpv:PseudonymisedData a rdfs:Class,
         skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-01-19"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:PersonalData ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:PersonalData ;
@@ -308,6 +328,7 @@ dpv:PseudonymisedData a rdfs:Class,
 
 dpv:SensitiveData a rdfs:Class,
         skos:Concept ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Data ;
     rdfs:superClassOf dpv:SensitiveNonPersonalData ;
     sw:term_status "accepted"@en ;
@@ -320,6 +341,7 @@ dpv:SensitiveData a rdfs:Class,
 dpv:SensitiveNonPersonalData a rdfs:Class,
         skos:Concept ;
     dct:source "DGA 30(a)"@en ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:SensitiveData ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:SensitiveData ;
@@ -332,6 +354,7 @@ dpv:SensitivePersonalData a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-01-19"^^xsd:date ;
     vann:example dex:E0015 ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:PersonalData ;
     rdfs:superClassOf dpv:SpecialCategoryPersonalData ;
     sw:term_status "accepted"@en ;
@@ -349,6 +372,7 @@ dpv:SpecialCategoryPersonalData a rdfs:Class,
     dct:modified "2022-01-19"^^xsd:date ;
     dct:source "(GDPR Art.9-1, https://eur-lex.europa.eu/eli/reg/2016/679/art_9/par_1/oj)"@en ;
     vann:example dex:E0015 ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:SensitivePersonalData ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:SensitivePersonalData ;
@@ -360,6 +384,7 @@ dpv:SpecialCategoryPersonalData a rdfs:Class,
 dpv:StatisticallyConfidentialData a rdfs:Class,
         skos:Concept ;
     dct:source "DGA 2(20)"@en ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Data ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Data ;
@@ -373,6 +398,7 @@ dpv:SyntheticData a rdfs:Class,
     dct:created "2022-08-18"^^xsd:date ;
     dct:modified "2023-12-10"^^xsd:date ;
     dct:source "(ENISA Data Protection Engineering,https://www.enisa.europa.eu/publications/data-protection-engineering)"@en ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:GeneratedData ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:GeneratedData ;
@@ -384,6 +410,7 @@ dpv:UnverifiedData a rdfs:Class,
         skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-11-02"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Data ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Data ;
@@ -395,6 +422,7 @@ dpv:VerifiedData a rdfs:Class,
         skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-11-02"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Data ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Data ;
@@ -407,6 +435,7 @@ dpv:hasData a rdf:Property,
     dcam:rangeIncludes dpv:Data ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-08-18"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:superPropertyOf dpv:hasPersonalData ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates associated with Data (may or may not be personal)"@en ;
@@ -420,6 +449,7 @@ dpv:hasPersonalData a rdf:Property,
     dcam:rangeIncludes dpv:PersonalData ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-01-19"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subPropertyOf dpv:hasData ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasData ;

@@ -13,6 +13,7 @@
 dpv:NonPersonalDataProcess a rdfs:Class,
         skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit" ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Process ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Process ;
@@ -34,6 +35,7 @@ dpv:PersonalDataHandling a rdfs:Class,
         dex:E0020,
         dex:E0022,
         dex:E0028 ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Process ;
     sw:term_status "sunset"@en ;
     skos:broader dpv:Process ;
@@ -45,6 +47,7 @@ dpv:PersonalDataHandling a rdfs:Class,
 dpv:PersonalDataProcess a rdfs:Class,
         skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit" ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Process ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Process ;
@@ -55,6 +58,7 @@ dpv:PersonalDataProcess a rdfs:Class,
 dpv:Process a rdfs:Class,
         skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit" ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:superClassOf dpv:NonPersonalDataProcess,
         dpv:PersonalDataHandling,
         dpv:PersonalDataProcess ;
@@ -71,6 +75,7 @@ dpv:hasNonPersonalDataProcess a rdf:Property,
     dcam:rangeIncludes dpv:NonPersonalDataProcess ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2023-12-12"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with a Non-Personal Data Process"@en ;
     skos:inScheme dpv:process-properties ;
@@ -82,6 +87,7 @@ dpv:hasPersonalDataHandling a rdf:Property,
     dcam:rangeIncludes dpv:PersonalDataHandling ;
     dct:contributor "Harshvardhan J. Pandit, Georg P Krog" ;
     dct:created "2022-01-19"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with Personal Data Handling"@en ;
     skos:inScheme dpv:process-properties ;
@@ -93,6 +99,7 @@ dpv:hasPersonalDataProcess a rdf:Property,
     dcam:rangeIncludes dpv:PersonalDataProcess ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2023-12-11"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with a Personal Data Process"@en ;
     skos:inScheme dpv:process-properties ;
@@ -104,6 +111,7 @@ dpv:hasProcess a rdf:Property,
     dcam:rangeIncludes dpv:Process ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with a Process"@en ;
     skos:inScheme dpv:process-properties ;

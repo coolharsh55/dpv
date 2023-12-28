@@ -6,39 +6,6 @@
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
    xmlns:sw="http://www.w3.org/2003/06/sw-vocab-status/ns#"
 >
-  <rdf:Description rdf:about="https://w3id.org/dpv#OrganisationalUnit">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Organisational Unit</skos:prefLabel>
-    <skos:definition xml:lang="en">Entity within an organisation that does not constitute as a separate legal entity</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Entity"/>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-03-23</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J. Pandit, Paul Ryan</dct:contributor>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#ForProfitOrganisation">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">For-Profit Organisation</skos:prefLabel>
-    <skos:definition xml:lang="en">An organisation that aims to achieve profit as its primary goal</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Organisation"/>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-02</dct:created>
-    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-05</dct:modified>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#NonGovernmentalOrganisation">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Non-Governmental Organisation</skos:prefLabel>
-    <skos:definition xml:lang="en">An organisation not part of or independent from the government</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Organisation"/>
-    <dct:source xml:lang="en">(ADMS controlled vocabulary,http://purl.org/adms)</dct:source>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-02</dct:created>
-    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-05</dct:modified>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#Organisation">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -55,6 +22,7 @@
     <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#NonProfitOrganisation"/>
     <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#AcademicScientificOrganisation"/>
     <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#InternationalOrganisation"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#InternationalOrganisation">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
@@ -67,6 +35,7 @@
     <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-05</dct:modified>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor>Julian Flake, Georg P. Krog</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#GovernmentalOrganisation">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
@@ -78,30 +47,7 @@
     <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-05</dct:modified>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#NonProfitOrganisation">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Non-Profit Organisation</skos:prefLabel>
-    <skos:definition xml:lang="en">An organisation that does not aim to achieve profit as its primary goal</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Organisation"/>
-    <dct:source xml:lang="en">(ADMS controlled vocabulary,http://purl.org/adms)</dct:source>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-02</dct:created>
-    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-05</dct:modified>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#IndustryConsortium">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Industry Consortium</skos:prefLabel>
-    <skos:definition xml:lang="en">A consortium established and comprising on industry organisations</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Organisation"/>
-    <dct:source xml:lang="en">(ADMS controlled vocabulary,http://purl.org/adms)</dct:source>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-02</dct:created>
-    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-05</dct:modified>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#AcademicScientificOrganisation">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
@@ -114,6 +60,69 @@
     <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-05</dct:modified>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#NonProfitOrganisation">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Non-Profit Organisation</skos:prefLabel>
+    <skos:definition xml:lang="en">An organisation that does not aim to achieve profit as its primary goal</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Organisation"/>
+    <dct:source xml:lang="en">(ADMS controlled vocabulary,http://purl.org/adms)</dct:source>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-02</dct:created>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-05</dct:modified>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#OrganisationalUnit">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Organisational Unit</skos:prefLabel>
+    <skos:definition xml:lang="en">Entity within an organisation that does not constitute as a separate legal entity</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Entity"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-03-23</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit, Paul Ryan</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#IndustryConsortium">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Industry Consortium</skos:prefLabel>
+    <skos:definition xml:lang="en">A consortium established and comprising on industry organisations</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Organisation"/>
+    <dct:source xml:lang="en">(ADMS controlled vocabulary,http://purl.org/adms)</dct:source>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-02</dct:created>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-05</dct:modified>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#ForProfitOrganisation">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">For-Profit Organisation</skos:prefLabel>
+    <skos:definition xml:lang="en">An organisation that aims to achieve profit as its primary goal</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Organisation"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-02</dct:created>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-05</dct:modified>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#NonGovernmentalOrganisation">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Non-Governmental Organisation</skos:prefLabel>
+    <skos:definition xml:lang="en">An organisation not part of or independent from the government</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Organisation"/>
+    <dct:source xml:lang="en">(ADMS controlled vocabulary,http://purl.org/adms)</dct:source>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-02</dct:created>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-05</dct:modified>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#Entity">
     <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#OrganisationalUnit"/>

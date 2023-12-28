@@ -12,6 +12,7 @@
 eu-dga:DISP a rdfs:Class,
         owl:Class ;
     dct:source "DGA 2.11"@en ;
+    rdfs:isDefinedBy eu-dga: ;
     rdfs:subClassOf dpv:LegalEntity ;
     rdfs:superClassOf eu-dga:DISPForDataHolder,
         eu-dga:DISPForDataSubject,
@@ -23,6 +24,7 @@ eu-dga:DISP a rdfs:Class,
 eu-dga:DISPForDataHolder a rdfs:Class,
         owl:Class ;
     dct:source "DGA 10.a"@en ;
+    rdfs:isDefinedBy eu-dga: ;
     rdfs:subClassOf eu-dga:DISP ;
     sw:term_status "accepted"@en ;
     skos:definition "An entity who makes data holders' data available for potential data users, including bilateral or multilateral exchanges of data and platforms and databases for the joint exploitation of data"@en ;
@@ -31,6 +33,7 @@ eu-dga:DISPForDataHolder a rdfs:Class,
 eu-dga:DISPForDataSubject a rdfs:Class,
         owl:Class ;
     dct:source "DGA 10.b"@en ;
+    rdfs:isDefinedBy eu-dga: ;
     rdfs:subClassOf eu-dga:DISP ;
     sw:term_status "accepted"@en ;
     skos:definition "An entity who makes data subjects' personal data available for potential data users"@en ;
@@ -39,6 +42,7 @@ eu-dga:DISPForDataSubject a rdfs:Class,
 eu-dga:DataAltruismAuthority a rdfs:Class,
         owl:Class ;
     dct:source "DGA 23"@en ;
+    rdfs:isDefinedBy eu-dga: ;
     rdfs:subClassOf dpv:Authority ;
     sw:term_status "accepted"@en ;
     skos:definition "An authority tasked with overseeing the activity of data altruism organisations and maintaining a public register of said entities"@en ;
@@ -47,6 +51,7 @@ eu-dga:DataAltruismAuthority a rdfs:Class,
 eu-dga:DataAltruismOrganisation a rdfs:Class,
         owl:Class ;
     dct:source "DGA 2.16, 18"@en ;
+    rdfs:isDefinedBy eu-dga: ;
     rdfs:subClassOf dpv:NonProfitOrganisation ;
     sw:term_status "accepted"@en ;
     skos:definition "An non-profit organisation who collects and shares data for altruistic purposes"@en ;
@@ -55,6 +60,7 @@ eu-dga:DataAltruismOrganisation a rdfs:Class,
 eu-dga:DataCooperative a rdfs:Class,
         owl:Class ;
     dct:source "DGA 2.15, 10.c"@en ;
+    rdfs:isDefinedBy eu-dga: ;
     rdfs:subClassOf eu-dga:DISP ;
     sw:term_status "accepted"@en ;
     skos:definition "An entity constituted by data subjects, one-person undertakings or SMEs who provides data intermediation services and supports its members in the exercise of their data-related rights"@en ;
@@ -63,6 +69,7 @@ eu-dga:DataCooperative a rdfs:Class,
 eu-dga:DataHolder a rdfs:Class,
         owl:Class ;
     dct:source "DGA 2.8"@en ;
+    rdfs:isDefinedBy eu-dga: ;
     rdfs:subClassOf dpv:LegalEntity ;
     sw:term_status "accepted"@en ;
     skos:definition "An entity who has the right to grant access to or to share certain personal data or non-personal data"@en ;
@@ -71,6 +78,7 @@ eu-dga:DataHolder a rdfs:Class,
 eu-dga:DataIntermediationAuthority a rdfs:Class,
         owl:Class ;
     dct:source "DGA 13"@en ;
+    rdfs:isDefinedBy eu-dga: ;
     rdfs:subClassOf dpv:Authority ;
     sw:term_status "accepted"@en ;
     skos:definition "An authority tasked with overseeing the activity of data intermediation service providers and maintaining a public register of said entities"@en ;
@@ -79,6 +87,7 @@ eu-dga:DataIntermediationAuthority a rdfs:Class,
 eu-dga:DataReuseAssistant a rdfs:Class,
         owl:Class ;
     dct:source "DGA 7"@en ;
+    rdfs:isDefinedBy eu-dga: ;
     rdfs:subClassOf dpv:Entity ;
     sw:term_status "accepted"@en ;
     skos:definition "An entity designated by the Member State to provide technical support and guidance to public sector bodies regarding access and reuse of data and for requesting consent and permissions"@en ;
@@ -87,6 +96,7 @@ eu-dga:DataReuseAssistant a rdfs:Class,
 eu-dga:DataUser a rdfs:Class,
         owl:Class ;
     dct:source "DGA 2.9"@en ;
+    rdfs:isDefinedBy eu-dga: ;
     rdfs:subClassOf dpv:LegalEntity ;
     sw:term_status "accepted"@en ;
     skos:definition "An entity who has access and the right to use personal or non-personal data for commercial or non-commercial purposes"@en ;
@@ -95,6 +105,7 @@ eu-dga:DataUser a rdfs:Class,
 eu-dga:EUSIPProvider a rdfs:Class,
         owl:Class ;
     dct:source "DGA 8.4"@en ;
+    rdfs:isDefinedBy eu-dga: ;
     rdfs:subClassOf eu-dga:SIP ;
     sw:term_status "accepted"@en ;
     skos:definition "An entity who is responsible for receiving and transmiting requests for the reuse of public data in the EU"@en ;
@@ -103,6 +114,7 @@ eu-dga:EUSIPProvider a rdfs:Class,
 eu-dga:EuropeanDataInnovationBoard a rdfs:Class,
         owl:Class ;
     dct:source "DGA 29"@en ;
+    rdfs:isDefinedBy eu-dga: ;
     rdfs:subClassOf dpv:SupraNationalAuthority ;
     sw:term_status "accepted"@en ;
     skos:definition "An authority tasked with overseeing the activities of data intermediation service providers and data altruism organisations"@en ;
@@ -110,6 +122,7 @@ eu-dga:EuropeanDataInnovationBoard a rdfs:Class,
 
 eu-dga:LocalSIPProvider a rdfs:Class,
         owl:Class ;
+    rdfs:isDefinedBy eu-dga: ;
     rdfs:subClassOf eu-dga:SIP ;
     sw:term_status "accepted"@en ;
     skos:definition "A local entity who is responsible for receiving and transmiting requests for the reuse of public data"@en ;
@@ -117,6 +130,7 @@ eu-dga:LocalSIPProvider a rdfs:Class,
 
 eu-dga:NationalSIPProvider a rdfs:Class,
         owl:Class ;
+    rdfs:isDefinedBy eu-dga: ;
     rdfs:subClassOf eu-dga:SIP ;
     sw:term_status "accepted"@en ;
     skos:definition "A national entity who is responsible for receiving and transmiting requests for the reuse of public data"@en ;
@@ -124,6 +138,7 @@ eu-dga:NationalSIPProvider a rdfs:Class,
 
 eu-dga:RegionalSIPProvider a rdfs:Class,
         owl:Class ;
+    rdfs:isDefinedBy eu-dga: ;
     rdfs:subClassOf eu-dga:SIP ;
     sw:term_status "accepted"@en ;
     skos:definition "A regional entity who is responsible for receiving and transmiting requests for the reuse of public data"@en ;
@@ -132,6 +147,7 @@ eu-dga:RegionalSIPProvider a rdfs:Class,
 eu-dga:SIPProvider a rdfs:Class,
         owl:Class ;
     dct:source "DGA 8"@en ;
+    rdfs:isDefinedBy eu-dga: ;
     rdfs:subClassOf dpv:LegalEntity ;
     sw:term_status "accepted"@en ;
     skos:definition "An entity who is responsible for receiving and transmiting requests for the reuse of public data"@en ;
@@ -139,6 +155,7 @@ eu-dga:SIPProvider a rdfs:Class,
 
 eu-dga:SectorialSIPProvider a rdfs:Class,
         owl:Class ;
+    rdfs:isDefinedBy eu-dga: ;
     rdfs:subClassOf eu-dga:SIP ;
     sw:term_status "accepted"@en ;
     skos:definition "An entity who is responsible for receiving and transmiting requests for the reuse of public data for a particular sector"@en ;
@@ -154,6 +171,7 @@ eu-dga:hasDAO a rdf:Property,
         owl:ObjectProperty ;
     dcam:rangeIncludes eu-dga:DataAltruismOrganisation ;
     dct:contributor "Beatriz Esteves, Harshvardhan J. Pandit" ;
+    rdfs:isDefinedBy eu-dga: ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with data altruism organisation"@en ;
@@ -164,6 +182,7 @@ eu-dga:hasDISP a rdf:Property,
         owl:ObjectProperty ;
     dcam:rangeIncludes eu-dga:DISP ;
     dct:contributor "Beatriz Esteves, Harshvardhan J. Pandit" ;
+    rdfs:isDefinedBy eu-dga: ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with data intermediation service provider"@en ;
@@ -174,6 +193,7 @@ eu-dga:hasDataHolder a rdf:Property,
         owl:ObjectProperty ;
     dcam:rangeIncludes eu-dga:DataHolder ;
     dct:contributor "Beatriz Esteves, Harshvardhan J. Pandit" ;
+    rdfs:isDefinedBy eu-dga: ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with data holder"@en ;
@@ -185,6 +205,7 @@ eu-dga:hasDataReuseAssistant a rdf:Property,
     dcam:rangeIncludes eu-dga:DataReuseAssistant ;
     dct:contributor "Beatriz Esteves, Harshvardhan J. Pandit" ;
     dct:source "DGA 7"@en ;
+    rdfs:isDefinedBy eu-dga: ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with competent body designated by the Member State to assist Public Bodies in activities related to data reuse"@en ;
@@ -195,6 +216,7 @@ eu-dga:hasDataUser a rdf:Property,
         owl:ObjectProperty ;
     dcam:rangeIncludes eu-dga:DataUser ;
     dct:contributor "Beatriz Esteves, Harshvardhan J. Pandit" ;
+    rdfs:isDefinedBy eu-dga: ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with data user"@en ;

@@ -12,6 +12,7 @@ dpv:LegalMeasure a rdfs:Class,
         skos:Concept ;
     dct:created "2023-12-10"^^xsd:date ;
     dct:modified "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:TechnicalOrganisationalMeasure ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:TechnicalOrganisationalMeasure ;
@@ -24,6 +25,7 @@ dpv:OrganisationalMeasure a rdfs:Class,
     dct:contributor "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar" ;
     dct:created "2019-04-05"^^xsd:date ;
     dct:modified "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:TechnicalOrganisationalMeasure ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:TechnicalOrganisationalMeasure ;
@@ -35,6 +37,7 @@ dpv:PhysicalMeasure a rdfs:Class,
         skos:Concept ;
     dct:created "2023-12-10"^^xsd:date ;
     dct:modified "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:TechnicalOrganisationalMeasure ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:TechnicalOrganisationalMeasure ;
@@ -47,6 +50,7 @@ dpv:TechnicalMeasure a rdfs:Class,
     dct:contributor "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar" ;
     dct:created "2019-04-05"^^xsd:date ;
     dct:modified "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:TechnicalOrganisationalMeasure ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:TechnicalOrganisationalMeasure ;
@@ -59,6 +63,7 @@ dpv:TechnicalOrganisationalMeasure a rdfs:Class,
     dct:contributor "Bud Bruegger" ;
     dct:created "2019-04-05"^^xsd:date ;
     dct:modified "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:superClassOf dpv:LegalMeasure,
         dpv:OrganisationalMeasure,
         dpv:PhysicalMeasure,
@@ -77,6 +82,7 @@ dpv:isPolicyFor a rdf:Property,
     dcam:domainIncludes dpv:Policy ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-01-26"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the context or application of policy"@en ;
     skos:inScheme dpv:TOM-properties ;
@@ -87,6 +93,7 @@ dpv:hasLegalMeasure a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv:LegalMeasure ;
     dct:created "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subPropertyOf dpv:hasOrganisationalMeasure ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasOrganisationalMeasure ;
@@ -100,6 +107,7 @@ dpv:hasNotice a rdf:Property,
     dcam:rangeIncludes dpv:Notice ;
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake" ;
     dct:created "2022-06-22"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subPropertyOf dpv:hasOrganisationalMeasure ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasOrganisationalMeasure ;
@@ -112,6 +120,7 @@ dpv:hasPhysicalMeasure a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv:PhysicalMeasure ;
     dct:created "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subPropertyOf dpv:hasTechnicalOrganisationalMeasure ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasTechnicalOrganisationalMeasure ;
@@ -125,6 +134,7 @@ dpv:hasPolicy a rdf:Property,
     dcam:rangeIncludes dpv:Policy ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-01-26"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subPropertyOf dpv:hasTechnicalOrganisationalMeasure ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasTechnicalOrganisationalMeasure ;
@@ -138,6 +148,7 @@ dpv:hasTechnicalMeasure a rdf:Property,
     dcam:rangeIncludes dpv:TechnicalMeasure ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-02-09"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subPropertyOf dpv:hasTechnicalOrganisationalMeasure ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasTechnicalOrganisationalMeasure ;
@@ -153,6 +164,7 @@ dpv:hasOrganisationalMeasure a rdf:Property,
     dcam:rangeIncludes dpv:OrganisationalMeasure ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-02-09"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subPropertyOf dpv:hasTechnicalOrganisationalMeasure ;
     rdfs:superPropertyOf dpv:hasLegalMeasure,
         dpv:hasNotice ;
@@ -173,6 +185,7 @@ dpv:hasTechnicalOrganisationalMeasure a rdf:Property,
     dct:contributor "Axel Polleres, Javier Fernández, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" ;
     dct:created "2019-04-04"^^xsd:date ;
     dct:modified "2020-11-04"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:superPropertyOf dpv:hasOrganisationalMeasure,
         dpv:hasPhysicalMeasure,
         dpv:hasPolicy,

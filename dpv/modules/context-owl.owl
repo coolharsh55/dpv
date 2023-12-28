@@ -9,83 +9,28 @@
    xmlns:sw="http://www.w3.org/2003/06/sw-vocab-status/ns#"
    xmlns:vann="http://purl.org/vocab/vann/"
 >
-  <rdf:Description rdf:about="https://w3id.org/dpv#ContinousFrequency">
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasOutcome">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <skos:prefLabel xml:lang="en">has outcome</skos:prefLabel>
+    <skos:definition xml:lang="en">Indicates an outcome of specified concept or context</skos:definition>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-05-18</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#SporadicFrequency">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#Frequency"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Continous Frequency</skos:prefLabel>
-    <skos:definition xml:lang="en">Frequency where occurences are continous</skos:definition>
+    <skos:prefLabel xml:lang="en">Sporadic Frequency</skos:prefLabel>
+    <skos:definition xml:lang="en">Frequency where occurences are sporadic or infrequent or sparse</skos:definition>
     <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-15</dct:created>
     <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-05</dct:modified>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
     <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Frequency"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#hasIdentifier">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <skos:prefLabel xml:lang="en">has identifier</skos:prefLabel>
-    <skos:definition xml:lang="en">Indicates an identifier associated for identification or reference</skos:definition>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-11-25</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J.Pandit, Georg P Krog, Paul Ryan, Beatriz Esteves</dct:contributor>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#SecondaryImportance">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#Importance"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Secondary Importance</skos:prefLabel>
-    <skos:definition xml:lang="en">Indication of 'secondary' or 'minor' or 'auxiliary' importance</skos:definition>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-11</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J. Pandit, Paul Ryan, Georg P Krog, Julian Flake, Beatriz Esteves</dct:contributor>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Importance"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#hasContext">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <skos:prefLabel xml:lang="en">has context</skos:prefLabel>
-    <skos:definition xml:lang="en">Indicates a purpose is restricted to the specified context(s)</skos:definition>
-    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#Context"/>
-    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#Context"/>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-04-05</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#Frequency">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Frequency</skos:prefLabel>
-    <skos:definition xml:lang="en">The frequency or information about periods and repetitions in terms of recurrence.</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Context"/>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-16</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
-    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#SporadicFrequency"/>
-    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#ContinousFrequency"/>
-    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#SingularFrequency"/>
-    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#OftenFrequency"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#Scope">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Scope</skos:prefLabel>
-    <skos:definition xml:lang="en">Indication of the extent or range or boundaries associated with(in) a context</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Context"/>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-15</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#hasDuration">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <skos:prefLabel xml:lang="en">has duration</skos:prefLabel>
-    <skos:definition xml:lang="en">Indicates information about duration</skos:definition>
-    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#Duration"/>
-    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#Duration"/>
-    <dct:source xml:lang="en">(SPECIAL Project,https://specialprivacy.ercim.eu/)</dct:source>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-04-05</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar</dct:contributor>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#Context">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
@@ -104,28 +49,69 @@
     <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#Frequency"/>
     <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#Duration"/>
     <vann:example rdf:resource="https://w3id.org/dpv/examples#E0028"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#TemporalDuration">
+  <rdf:Description rdf:about="https://w3id.org/dpv#Frequency">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Temporal Duration</skos:prefLabel>
-    <skos:definition xml:lang="en">Duration that has a fixed temporal duration e.g. 6 months</skos:definition>
+    <skos:prefLabel xml:lang="en">Frequency</skos:prefLabel>
+    <skos:definition xml:lang="en">The frequency or information about periods and repetitions in terms of recurrence.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Context"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-16</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#OftenFrequency"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#SporadicFrequency"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#SingularFrequency"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#ContinousFrequency"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#Scope">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Scope</skos:prefLabel>
+    <skos:definition xml:lang="en">Indication of the extent or range or boundaries associated with(in) a context</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Context"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-15</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#FixedOccurencesDuration">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Fixed Occurences Duration</skos:prefLabel>
+    <skos:definition xml:lang="en">Duration that takes place a fixed number of times e.g. 3 times</skos:definition>
     <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Duration"/>
     <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-15</dct:created>
     <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-05</dct:modified>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#hasScope">
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasContext">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <skos:prefLabel xml:lang="en">has scope</skos:prefLabel>
-    <skos:definition xml:lang="en">Indicates the scope of specified concept or context</skos:definition>
-    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#Scope"/>
-    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#Scope"/>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-15</dct:created>
+    <skos:prefLabel xml:lang="en">has context</skos:prefLabel>
+    <skos:definition xml:lang="en">Indicates a purpose is restricted to the specified context(s)</skos:definition>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#Context"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#Context"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-04-05</dct:created>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasDuration">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <skos:prefLabel xml:lang="en">has duration</skos:prefLabel>
+    <skos:definition xml:lang="en">Indicates information about duration</skos:definition>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#Duration"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#Duration"/>
+    <dct:source xml:lang="en">(SPECIAL Project,https://specialprivacy.ercim.eu/)</dct:source>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-04-05</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#Necessity">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
@@ -138,58 +124,45 @@
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor>Harshvardhan J. Pandit, Paul Ryan, Georg P Krog, Julian Flake, Beatriz Esteves</dct:contributor>
     <vann:example rdf:resource="https://w3id.org/dpv/examples#E0028"/>
-    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#Required"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
     <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#NotRequired"/>
     <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#Optional"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#Required"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#Importance">
+  <rdf:Description rdf:about="https://w3id.org/dpv#SecondaryImportance">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#Importance"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Importance</skos:prefLabel>
-    <skos:definition xml:lang="en">An indication of 'importance' within a context</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Context"/>
-    <skos:scopeNote xml:lang="en">Importance can be used to express importance, desirability, relevance, or significance as a context.</skos:scopeNote>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-09</dct:created>
+    <skos:prefLabel xml:lang="en">Secondary Importance</skos:prefLabel>
+    <skos:definition xml:lang="en">Indication of 'secondary' or 'minor' or 'auxiliary' importance</skos:definition>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-11</dct:created>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor>Harshvardhan J. Pandit, Paul Ryan, Georg P Krog, Julian Flake, Beatriz Esteves</dct:contributor>
-    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#PrimaryImportance"/>
-    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#SecondaryImportance"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Importance"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#IndeterminateDuration">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#Duration"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Indeterminate Duration</skos:prefLabel>
-    <skos:definition xml:lang="en">Duration that is indeterminate or cannot be determined</skos:definition>
-    <skos:scopeNote xml:lang="en">Indeterminate means (exact or otherwise) information about the duration cannot be determined, which is distinct from 'EndlessDuration' where it is known (or decided) that the duration is open-ended or without an end.</skos:scopeNote>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-30</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Duration"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#SporadicFrequency">
+  <rdf:Description rdf:about="https://w3id.org/dpv#ContinousFrequency">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#Frequency"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Sporadic Frequency</skos:prefLabel>
-    <skos:definition xml:lang="en">Frequency where occurences are sporadic or infrequent or sparse</skos:definition>
+    <skos:prefLabel xml:lang="en">Continous Frequency</skos:prefLabel>
+    <skos:definition xml:lang="en">Frequency where occurences are continous</skos:definition>
     <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-15</dct:created>
     <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-05</dct:modified>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
     <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Frequency"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#OftenFrequency">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#Frequency"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Often Frequency</skos:prefLabel>
-    <skos:definition xml:lang="en">Frequency where occurences are often or frequent, but not continous</skos:definition>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-15</dct:created>
-    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-05</dct:modified>
+  <rdf:Description rdf:about="https://w3id.org/dpv#isAfter">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <skos:prefLabel xml:lang="en">is after</skos:prefLabel>
+    <skos:definition xml:lang="en">Indicates the specified concepts is 'after' this concept in some context</skos:definition>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-03-02</dct:created>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Frequency"/>
+    <dct:contributor>Georg P. Krog, Harshvardhan J. Pandit, Julian Flake</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#hasFrequency">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
@@ -201,6 +174,7 @@
     <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-16</dct:created>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#UntilTimeDuration">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
@@ -212,112 +186,17 @@
     <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-05</dct:modified>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#Justification">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Justification</skos:prefLabel>
-    <skos:definition xml:lang="en">A form of documentation providing reaosns, explanations, or justifications</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Context"/>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-15</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#Required">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#Necessity"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Required</skos:prefLabel>
-    <skos:definition xml:lang="en">Indication of 'required' or 'necessary'</skos:definition>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-13</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J. Pandit, Paul Ryan, Georg P Krog, Julian Flake, Beatriz Esteves</dct:contributor>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Necessity"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#UntilEventDuration">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Until Event Duration</skos:prefLabel>
-    <skos:definition xml:lang="en">Duration that takes place until a specific event occurs e.g. Account Closure</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Duration"/>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-15</dct:created>
-    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-05</dct:modified>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#FixedOccurencesDuration">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Fixed Occurences Duration</skos:prefLabel>
-    <skos:definition xml:lang="en">Duration that takes place a fixed number of times e.g. 3 times</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Duration"/>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-15</dct:created>
-    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-05</dct:modified>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#EndlessDuration">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#Duration"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Endless Duration</skos:prefLabel>
-    <skos:definition xml:lang="en">Duration that is (known or intended to be) open ended or without an end</skos:definition>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-15</dct:created>
-    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-05</dct:modified>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Duration"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#hasOutcome">
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasIdentifier">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <skos:prefLabel xml:lang="en">has outcome</skos:prefLabel>
-    <skos:definition xml:lang="en">Indicates an outcome of specified concept or context</skos:definition>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-05-18</dct:created>
+    <skos:prefLabel xml:lang="en">has identifier</skos:prefLabel>
+    <skos:definition xml:lang="en">Indicates an identifier associated for identification or reference</skos:definition>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-11-25</dct:created>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#Optional">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#Necessity"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Optional</skos:prefLabel>
-    <skos:definition xml:lang="en">Indication of 'optional' or 'voluntary'</skos:definition>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-14</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J. Pandit, Paul Ryan, Georg P Krog, Julian Flake, Beatriz Esteves</dct:contributor>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Necessity"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#NotRequired">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#Necessity"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Not Required</skos:prefLabel>
-    <skos:definition xml:lang="en">Indication of neither being required nor optional i.e. not relevant or needed</skos:definition>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-15</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J. Pandit, Paul Ryan, Georg P Krog, Julian Flake, Beatriz Esteves</dct:contributor>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Necessity"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#isBefore">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <skos:prefLabel xml:lang="en">is before</skos:prefLabel>
-    <skos:definition xml:lang="en">Indicates the specified concepts is 'before' this concept in some context</skos:definition>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-03-02</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Georg P. Krog, Harshvardhan J. Pandit, Julian Flake</dct:contributor>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#PrimaryImportance">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#Importance"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Primary Importance</skos:prefLabel>
-    <skos:definition xml:lang="en">Indication of 'primary' or 'main' or 'core' importance</skos:definition>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-10</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J. Pandit, Paul Ryan, Georg P Krog, Julian Flake, Beatriz Esteves</dct:contributor>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Importance"/>
+    <dct:contributor>Harshvardhan J.Pandit, Georg P Krog, Paul Ryan, Beatriz Esteves</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#Duration">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
@@ -336,6 +215,19 @@
     <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#IndeterminateDuration"/>
     <vann:example rdf:resource="https://w3id.org/dpv/examples#E0011"/>
     <vann:example rdf:resource="https://w3id.org/dpv/examples#E0019"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#Optional">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#Necessity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Optional</skos:prefLabel>
+    <skos:definition xml:lang="en">Indication of 'optional' or 'voluntary'</skos:definition>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-14</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit, Paul Ryan, Georg P Krog, Julian Flake, Beatriz Esteves</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Necessity"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#hasJustification">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
@@ -347,15 +239,7 @@
     <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-15</dct:created>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#isAfter">
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <skos:prefLabel xml:lang="en">is after</skos:prefLabel>
-    <skos:definition xml:lang="en">Indicates the specified concepts is 'after' this concept in some context</skos:definition>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-03-02</dct:created>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Georg P. Krog, Harshvardhan J. Pandit, Julian Flake</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#SingularFrequency">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
@@ -367,6 +251,153 @@
     <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-05</dct:modified>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
     <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Frequency"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#PrimaryImportance">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#Importance"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Primary Importance</skos:prefLabel>
+    <skos:definition xml:lang="en">Indication of 'primary' or 'main' or 'core' importance</skos:definition>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-10</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit, Paul Ryan, Georg P Krog, Julian Flake, Beatriz Esteves</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Importance"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#UntilEventDuration">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Until Event Duration</skos:prefLabel>
+    <skos:definition xml:lang="en">Duration that takes place until a specific event occurs e.g. Account Closure</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Duration"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-15</dct:created>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-05</dct:modified>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasScope">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <skos:prefLabel xml:lang="en">has scope</skos:prefLabel>
+    <skos:definition xml:lang="en">Indicates the scope of specified concept or context</skos:definition>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#Scope"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#Scope"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-15</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#TemporalDuration">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Temporal Duration</skos:prefLabel>
+    <skos:definition xml:lang="en">Duration that has a fixed temporal duration e.g. 6 months</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Duration"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-15</dct:created>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-05</dct:modified>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#Required">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#Necessity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Required</skos:prefLabel>
+    <skos:definition xml:lang="en">Indication of 'required' or 'necessary'</skos:definition>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-13</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit, Paul Ryan, Georg P Krog, Julian Flake, Beatriz Esteves</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Necessity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#EndlessDuration">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#Duration"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Endless Duration</skos:prefLabel>
+    <skos:definition xml:lang="en">Duration that is (known or intended to be) open ended or without an end</skos:definition>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-15</dct:created>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-05</dct:modified>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Duration"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#OftenFrequency">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#Frequency"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Often Frequency</skos:prefLabel>
+    <skos:definition xml:lang="en">Frequency where occurences are often or frequent, but not continous</skos:definition>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-15</dct:created>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-05</dct:modified>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Frequency"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#IndeterminateDuration">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#Duration"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Indeterminate Duration</skos:prefLabel>
+    <skos:definition xml:lang="en">Duration that is indeterminate or cannot be determined</skos:definition>
+    <skos:scopeNote xml:lang="en">Indeterminate means (exact or otherwise) information about the duration cannot be determined, which is distinct from 'EndlessDuration' where it is known (or decided) that the duration is open-ended or without an end.</skos:scopeNote>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-30</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Duration"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#Justification">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Justification</skos:prefLabel>
+    <skos:definition xml:lang="en">A form of documentation providing reaosns, explanations, or justifications</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Context"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-15</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#isBefore">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <skos:prefLabel xml:lang="en">is before</skos:prefLabel>
+    <skos:definition xml:lang="en">Indicates the specified concepts is 'before' this concept in some context</skos:definition>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-03-02</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Georg P. Krog, Harshvardhan J. Pandit, Julian Flake</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#Importance">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Importance</skos:prefLabel>
+    <skos:definition xml:lang="en">An indication of 'importance' within a context</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Context"/>
+    <skos:scopeNote xml:lang="en">Importance can be used to express importance, desirability, relevance, or significance as a context.</skos:scopeNote>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-09</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit, Paul Ryan, Georg P Krog, Julian Flake, Beatriz Esteves</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#PrimaryImportance"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#SecondaryImportance"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#NotRequired">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#Necessity"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Not Required</skos:prefLabel>
+    <skos:definition xml:lang="en">Indication of neither being required nor optional i.e. not relevant or needed</skos:definition>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-15</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit, Paul Ryan, Georg P Krog, Julian Flake, Beatriz Esteves</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Necessity"/>
   </rdf:Description>
 </rdf:RDF>

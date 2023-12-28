@@ -4,23 +4,41 @@
    xmlns:dpv="https://w3id.org/dpv#"
    xmlns:foaf="http://xmlns.com/foaf/0.1/"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
    xmlns:sw="http://www.w3.org/2003/06/sw-vocab-status/ns#"
    xmlns:time="http://www.w3.org/2006/time#"
 >
-  <rdf:Description rdf:nodeID="Nd525158b2b284d5dabfd6db339996f38">
-    <time:inXSDDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-03-30</time:inXSDDate>
+  <rdf:Description rdf:nodeID="N6abe19f27a044e86a96cc453de312424">
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
+    <time:hasBeginning rdf:nodeID="N4f618c237f1541cba6fa09d90b6af0f2"/>
+    <time:hasEnd rdf:nodeID="N97ee38ad45fa4abe975169276a5e9bba"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/legal/us#law-CT-CTPA">
+  <rdf:Description rdf:about="https://w3id.org/dpv/legal/us#DPA-US-UT">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#DataProtectionAuthority"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#Authority"/>
+    <skos:prefLabel xml:lang="en">Utah Attorney General</skos:prefLabel>
+    <dpv:hasJurisdiction rdf:resource="https://w3id.org/dpv/loc#US-UT"/>
+    <foaf:homepage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://attorneygeneral.utah.gov/</foaf:homepage>
+    <dpv:hasLaw rdf:resource="https://w3id.org/dpv/legal/us#law-UT-UCPA"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Jonathan Bowker</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv/legal/us#"/>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv/legal/us#us-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/legal/us#law-UT-UCPA">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#Law"/>
-    <skos:prefLabel xml:lang="en">Connecticut Data Privacy Act (CTPA)</skos:prefLabel>
-    <dpv:hasJurisdiction rdf:resource="https://w3id.org/dpv/loc#US-CT"/>
-    <foaf:homepage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.cga.ct.gov/2022/ACT/PA/PDF/2022PA-00015-R00SB-00006-PA.PDF</foaf:homepage>
-    <dct:temporal rdf:nodeID="Nad800d48a8144ab386fce0729ef63f83"/>
+    <skos:prefLabel xml:lang="en">Utah Consumer Privacy Act (UCPA)</skos:prefLabel>
+    <dpv:hasJurisdiction rdf:resource="https://w3id.org/dpv/loc#US-UT"/>
+    <foaf:homepage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://le.utah.gov/~2022/bills/static/SB0227.html</foaf:homepage>
+    <dct:temporal rdf:nodeID="N3dc83b4b3e9f4979a458291fc7a1ebab"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor>Jonathan Bowker</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv/legal/us#"/>
     <skos:inScheme rdf:resource="https://w3id.org/dpv/legal/us#us-classes"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/legal/us#DPA-US-CT">
@@ -34,6 +52,68 @@
     <dpv:hasLaw rdf:resource="https://w3id.org/dpv/legal/us#law-CT-CTPA"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor>Jonathan Bowker</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv/legal/us#"/>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv/legal/us#us-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nefae1ffd84da4655912dcc1c04010bc4">
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
+    <time:hasBeginning rdf:nodeID="Nfb47b0444acf44339da6e698f8d04cf8"/>
+    <time:hasEnd rdf:nodeID="N7a6968879d804340afc81d7ce61c16b0"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/legal/us#law-NV-NPICICA">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#Law"/>
+    <skos:prefLabel xml:lang="en">Nevada Privacy of Information Collected on the Internet from Consumers Act (NPICICA)</skos:prefLabel>
+    <dpv:hasJurisdiction rdf:resource="https://w3id.org/dpv/loc#US-NV"/>
+    <foaf:homepage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.leg.state.nv.us/NRS/NRS-603A.html</foaf:homepage>
+    <dct:temporal rdf:nodeID="N4649ff53416c421c98ff97a6a53c28ad"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Jonathan Bowker</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv/legal/us#"/>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv/legal/us#us-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/legal/us#DPA-US-VA">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#DataProtectionAuthority"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#Authority"/>
+    <skos:prefLabel xml:lang="en">Virginia Attorney General</skos:prefLabel>
+    <dpv:hasJurisdiction rdf:resource="https://w3id.org/dpv/loc#US-VA"/>
+    <foaf:homepage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.oag.state.va.us</foaf:homepage>
+    <dpv:hasLaw rdf:resource="https://w3id.org/dpv/legal/us#law-VA-VCDPA"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Jonathan Bowker</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv/legal/us#"/>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv/legal/us#us-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Ndbe9016cc3c74be7a2a6682da6e40ea9">
+    <time:inXSDDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-23</time:inXSDDate>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/legal/us#law-CA-CPRA">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#Law"/>
+    <skos:prefLabel xml:lang="en">California Privacy Rights Act (CPRA)</skos:prefLabel>
+    <dpv:hasJurisdiction rdf:resource="https://w3id.org/dpv/loc#US-CA"/>
+    <foaf:homepage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201720180AB375</foaf:homepage>
+    <dct:temporal rdf:nodeID="N38898298cd2e4dbfa6066b9103239880"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv/legal/us#"/>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv/legal/us#us-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/legal/us#law-VA-VCDPA">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#Law"/>
+    <skos:prefLabel xml:lang="en">Virginia Consumer Data Protection Act (VCDPA)</skos:prefLabel>
+    <dpv:hasJurisdiction rdf:resource="https://w3id.org/dpv/loc#US-VA"/>
+    <foaf:homepage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://lis.virginia.gov/cgi-bin/legp604.exe?212+sum+HB2307</foaf:homepage>
+    <dct:temporal rdf:nodeID="Nefae1ffd84da4655912dcc1c04010bc4"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Jonathan Bowker</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv/legal/us#"/>
     <skos:inScheme rdf:resource="https://w3id.org/dpv/legal/us#us-classes"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/legal/us#DPA-US-CO">
@@ -47,86 +127,7 @@
     <dpv:hasLaw rdf:resource="https://w3id.org/dpv/legal/us#law-CO-CPA"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor>Jonathan Bowker</dct:contributor>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv/legal/us#us-classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N993ff6ebb89f4f4cbf4b05b564345426">
-    <time:inXSDDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-22</time:inXSDDate>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/legal/us#law-VA-VCDPA">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#Law"/>
-    <skos:prefLabel xml:lang="en">Virginia Consumer Data Protection Act (VCDPA)</skos:prefLabel>
-    <dpv:hasJurisdiction rdf:resource="https://w3id.org/dpv/loc#US-VA"/>
-    <foaf:homepage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://lis.virginia.gov/cgi-bin/legp604.exe?212+sum+HB2307</foaf:homepage>
-    <dct:temporal rdf:nodeID="Nbe868401dd9c4c14a84e2dcc5fd938d7"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Jonathan Bowker</dct:contributor>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv/legal/us#us-classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/legal/us#law-CA-CCPA">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#Law"/>
-    <skos:prefLabel xml:lang="en">California Consumer Privacy Act (CCPA)</skos:prefLabel>
-    <dpv:hasJurisdiction rdf:resource="https://w3id.org/dpv/loc#US-CA"/>
-    <foaf:homepage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201720180AB375</foaf:homepage>
-    <dct:temporal rdf:nodeID="Nbe014b05622b4cceb94a064e2bbd9f17"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv/legal/us#us-classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/legal/us#DPA-US-UT">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#DataProtectionAuthority"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#Authority"/>
-    <skos:prefLabel xml:lang="en">Utah Attorney General</skos:prefLabel>
-    <dpv:hasJurisdiction rdf:resource="https://w3id.org/dpv/loc#US-UT"/>
-    <foaf:homepage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://attorneygeneral.utah.gov/</foaf:homepage>
-    <dpv:hasLaw rdf:resource="https://w3id.org/dpv/legal/us#law-UT-UCPA"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Jonathan Bowker</dct:contributor>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv/legal/us#us-classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/legal/us#law-UT-UCPA">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#Law"/>
-    <skos:prefLabel xml:lang="en">Utah Consumer Privacy Act (UCPA)</skos:prefLabel>
-    <dpv:hasJurisdiction rdf:resource="https://w3id.org/dpv/loc#US-UT"/>
-    <foaf:homepage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://le.utah.gov/~2022/bills/static/SB0227.html</foaf:homepage>
-    <dct:temporal rdf:nodeID="N4751b133cfa94e31877d182e0f255aaf"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Jonathan Bowker</dct:contributor>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv/legal/us#us-classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/legal/us#law-NV-NPICICA">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#Law"/>
-    <skos:prefLabel xml:lang="en">Nevada Privacy of Information Collected on the Internet from Consumers Act (NPICICA)</skos:prefLabel>
-    <dpv:hasJurisdiction rdf:resource="https://w3id.org/dpv/loc#US-NV"/>
-    <foaf:homepage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.leg.state.nv.us/NRS/NRS-603A.html</foaf:homepage>
-    <dct:temporal rdf:nodeID="N78a7e0b8e4af4de18c116a62a6a05f29"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Jonathan Bowker</dct:contributor>
-    <skos:inScheme rdf:resource="https://w3id.org/dpv/legal/us#us-classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nc3c4fdc4780a4d58adcde4cfb51be58c">
-    <time:inXSDDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-01-01</time:inXSDDate>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/legal/us#DPA-US-VA">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#DataProtectionAuthority"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#Authority"/>
-    <skos:prefLabel xml:lang="en">Virginia Attorney General</skos:prefLabel>
-    <dpv:hasJurisdiction rdf:resource="https://w3id.org/dpv/loc#US-VA"/>
-    <foaf:homepage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.oag.state.va.us</foaf:homepage>
-    <dpv:hasLaw rdf:resource="https://w3id.org/dpv/legal/us#law-VA-VCDPA"/>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Jonathan Bowker</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv/legal/us#"/>
     <skos:inScheme rdf:resource="https://w3id.org/dpv/legal/us#us-classes"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/legal/us#DPA-US-NV">
@@ -140,12 +141,8 @@
     <dpv:hasLaw rdf:resource="https://w3id.org/dpv/legal/us#law-NV-NPICICA"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor>Jonathan Bowker</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv/legal/us#"/>
     <skos:inScheme rdf:resource="https://w3id.org/dpv/legal/us#us-classes"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N8ad05090587c4810a57f67fdd2ebb6af">
-    <rdf:type rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
-    <time:hasBeginning rdf:nodeID="Nc3c4fdc4780a4d58adcde4cfb51be58c"/>
-    <time:hasEnd rdf:nodeID="N1aa2fa1c958f4df2bf90eb3d060dfde2"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/legal/us#DPA-US-CA">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -158,35 +155,39 @@
     <dpv:hasLaw rdf:resource="https://w3id.org/dpv/legal/us#law-CA-CCPA"/>
     <dpv:hasLaw rdf:resource="https://w3id.org/dpv/legal/us#law-CA-CPRA"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv/legal/us#"/>
     <skos:inScheme rdf:resource="https://w3id.org/dpv/legal/us#us-classes"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N963e7bf85a1347a082321e48aefd00c9">
-    <rdf:type rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
-    <time:hasBeginning rdf:nodeID="N7731db5da90e4ee7a91f0e5aebab237b"/>
-    <time:hasEnd rdf:nodeID="N663a27c5e5524532a498273693dcc25a"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/legal/us#law-CA-CPRA">
+  <rdf:Description rdf:about="https://w3id.org/dpv/legal/us#law-CT-CTPA">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv#Law"/>
-    <skos:prefLabel xml:lang="en">California Privacy Rights Act (CPRA)</skos:prefLabel>
-    <dpv:hasJurisdiction rdf:resource="https://w3id.org/dpv/loc#US-CA"/>
-    <foaf:homepage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201720180AB375</foaf:homepage>
-    <dct:temporal rdf:nodeID="N8ad05090587c4810a57f67fdd2ebb6af"/>
+    <skos:prefLabel xml:lang="en">Connecticut Data Privacy Act (CTPA)</skos:prefLabel>
+    <dpv:hasJurisdiction rdf:resource="https://w3id.org/dpv/loc#US-CT"/>
+    <foaf:homepage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.cga.ct.gov/2022/ACT/PA/PDF/2022PA-00015-R00SB-00006-PA.PDF</foaf:homepage>
+    <dct:temporal rdf:nodeID="N6abe19f27a044e86a96cc453de312424"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <dct:contributor>Jonathan Bowker</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv/legal/us#"/>
     <skos:inScheme rdf:resource="https://w3id.org/dpv/legal/us#us-classes"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/legal/us#us-classes">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N663a27c5e5524532a498273693dcc25a">
-    <time:inXSDDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-23</time:inXSDDate>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nbe014b05622b4cceb94a064e2bbd9f17">
+  <rdf:Description rdf:nodeID="Nc5c9f96d6cd24b63b2a993c8bef29952">
     <rdf:type rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
-    <time:hasBeginning rdf:nodeID="N6d5e97fb8cd74c94bc37834aaeaa76b0"/>
-    <time:hasEnd rdf:nodeID="Nd525158b2b284d5dabfd6db339996f38"/>
+    <time:hasBeginning rdf:nodeID="N7ed0c042d0ab4905b89f67f90e1a8202"/>
+    <time:hasEnd rdf:nodeID="N75501b3d4bb24eda97c1a1308240ef50"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N6f4c6ca073e548158177a679062691cd">
+    <time:inXSDDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-12-31</time:inXSDDate>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4649ff53416c421c98ff97a6a53c28ad">
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
+    <time:hasBeginning rdf:nodeID="N18880ac4b705424899f72bf4c87f6030"/>
+    <time:hasEnd rdf:nodeID="N5558a0b275bd4ee7af7a4881c3fa394c"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N2c4cb60f5f3e4990a66743275c257af2">
+    <rdf:type rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
+    <time:hasBeginning rdf:nodeID="N7076a911f908476387cba221faf8bfff"/>
+    <time:hasEnd rdf:nodeID="Ndbe9016cc3c74be7a2a6682da6e40ea9"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/legal/us#law-CO-CPA">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
@@ -195,59 +196,72 @@
     <skos:prefLabel xml:lang="en">Colorado Privacy Act (CPA)</skos:prefLabel>
     <dpv:hasJurisdiction rdf:resource="https://w3id.org/dpv/loc#US-CO"/>
     <foaf:homepage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://leg.colorado.gov/bills/sb21-190</foaf:homepage>
-    <dct:temporal rdf:nodeID="N963e7bf85a1347a082321e48aefd00c9"/>
+    <dct:temporal rdf:nodeID="N2c4cb60f5f3e4990a66743275c257af2"/>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor>Jonathan Bowker</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv/legal/us#"/>
     <skos:inScheme rdf:resource="https://w3id.org/dpv/legal/us#us-classes"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N6d5e97fb8cd74c94bc37834aaeaa76b0">
-    <time:inXSDDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-01-01</time:inXSDDate>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nad800d48a8144ab386fce0729ef63f83">
+  <rdf:Description rdf:nodeID="N38898298cd2e4dbfa6066b9103239880">
     <rdf:type rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
-    <time:hasBeginning rdf:nodeID="N8db6077e034f4719a1d25a3ec6459a08"/>
-    <time:hasEnd rdf:nodeID="Nf14ae164a7ba4d97b7d26c04153e4f6e"/>
+    <time:hasBeginning rdf:nodeID="N0bbb255c66954e8cb69327bf3c83a629"/>
+    <time:hasEnd rdf:nodeID="Ncb4ac1846a104c3f8b362fcba1984fe2"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N7731db5da90e4ee7a91f0e5aebab237b">
-    <time:inXSDDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-01-07</time:inXSDDate>
+  <rdf:Description rdf:about="https://w3id.org/dpv/legal/us#law-CA-CCPA">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#Law"/>
+    <skos:prefLabel xml:lang="en">California Consumer Privacy Act (CCPA)</skos:prefLabel>
+    <dpv:hasJurisdiction rdf:resource="https://w3id.org/dpv/loc#US-CA"/>
+    <foaf:homepage rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201720180AB375</foaf:homepage>
+    <dct:temporal rdf:nodeID="Nc5c9f96d6cd24b63b2a993c8bef29952"/>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv/legal/us#"/>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv/legal/us#us-classes"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N580f381fd8f94223af86260b337726b1">
-    <time:inXSDDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-23</time:inXSDDate>
+  <rdf:Description rdf:nodeID="N18880ac4b705424899f72bf4c87f6030">
+    <time:inXSDDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-01-10</time:inXSDDate>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N011c030283ea4b81af00c90629221f5d">
-    <time:inXSDDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-23</time:inXSDDate>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N1aa2fa1c958f4df2bf90eb3d060dfde2">
+  <rdf:Description rdf:nodeID="Ncb4ac1846a104c3f8b362fcba1984fe2">
     <time:inXSDDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-03-30</time:inXSDDate>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nf14ae164a7ba4d97b7d26c04153e4f6e">
+  <rdf:Description rdf:nodeID="N5558a0b275bd4ee7af7a4881c3fa394c">
     <time:inXSDDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-23</time:inXSDDate>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nbe868401dd9c4c14a84e2dcc5fd938d7">
+  <rdf:Description rdf:nodeID="N3dc83b4b3e9f4979a458291fc7a1ebab">
     <rdf:type rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
-    <time:hasBeginning rdf:nodeID="Ne8dfb4578e084dda8ea4feb07338040b"/>
-    <time:hasEnd rdf:nodeID="N580f381fd8f94223af86260b337726b1"/>
+    <time:hasBeginning rdf:nodeID="N6f4c6ca073e548158177a679062691cd"/>
+    <time:hasEnd rdf:nodeID="N116600d5707c4b48ac919fafb268db69"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N4751b133cfa94e31877d182e0f255aaf">
-    <rdf:type rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
-    <time:hasBeginning rdf:nodeID="Nab05c2b09d7d4f169693d27e707d4a5f"/>
-    <time:hasEnd rdf:nodeID="N993ff6ebb89f4f4cbf4b05b564345426"/>
+  <rdf:Description rdf:nodeID="N116600d5707c4b48ac919fafb268db69">
+    <time:inXSDDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-22</time:inXSDDate>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Ne8dfb4578e084dda8ea4feb07338040b">
+  <rdf:Description rdf:nodeID="N0bbb255c66954e8cb69327bf3c83a629">
     <time:inXSDDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-01-01</time:inXSDDate>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nab05c2b09d7d4f169693d27e707d4a5f">
-    <time:inXSDDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-12-31</time:inXSDDate>
+  <rdf:Description rdf:about="https://w3id.org/dpv/legal/us#us-classes">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N8db6077e034f4719a1d25a3ec6459a08">
+  <rdf:Description rdf:nodeID="N7076a911f908476387cba221faf8bfff">
+    <time:inXSDDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-01-07</time:inXSDDate>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7a6968879d804340afc81d7ce61c16b0">
+    <time:inXSDDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-23</time:inXSDDate>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nfb47b0444acf44339da6e698f8d04cf8">
+    <time:inXSDDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-01-01</time:inXSDDate>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4f618c237f1541cba6fa09d90b6af0f2">
     <time:inXSDDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-01-07</time:inXSDDate>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N78a7e0b8e4af4de18c116a62a6a05f29">
-    <rdf:type rdf:resource="http://www.w3.org/2006/time#ProperInterval"/>
-    <time:hasBeginning rdf:nodeID="Na8cfd44a826e4d20b45bb0f29fcd0abe"/>
-    <time:hasEnd rdf:nodeID="N011c030283ea4b81af00c90629221f5d"/>
+  <rdf:Description rdf:nodeID="N97ee38ad45fa4abe975169276a5e9bba">
+    <time:inXSDDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-23</time:inXSDDate>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Na8cfd44a826e4d20b45bb0f29fcd0abe">
-    <time:inXSDDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-01-10</time:inXSDDate>
+  <rdf:Description rdf:nodeID="N75501b3d4bb24eda97c1a1308240ef50">
+    <time:inXSDDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-03-30</time:inXSDDate>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N7ed0c042d0ab4905b89f67f90e1a8202">
+    <time:inXSDDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-01-01</time:inXSDDate>
   </rdf:Description>
 </rdf:RDF>

@@ -137,14 +137,23 @@ for lang, lang_data in IMPORT_TRANSLATIONS.items():
 # == export ==
 
 # === serialise-RDF ===
-def serialize_graph(triples:list, filepath:str) -> None:
+def serialize_graph(triples:list, filepath:str, hook:str=None) -> None:
     '''`serialize_graph` serializes triples at filepath with defined 
-    formats from `vocab_management.RDF_SERIALIZATIONS`.'''
+    formats from `vocab_management.RDF_SERIALIZATIONS`. `hook` defines
+    a string key which is used to retrieve SPARQL queries for the
+    provided graph e.g. to add/delete/update triples'''
     graph = Graph()
     for prefix, namespace in NAMESPACES.items():
         graph.namespace_manager.bind(prefix, namespace)
     for triple in triples:
         graph.add(triple)
+
+    if hook in RDF_EXPORT_HOOK:
+        for query in RDF_EXPORT_HOOK[hook]:
+            DEBUG(query)
+            graph.update(query)
+        DEBUG(f"Updated graph with {len(RDF_EXPORT_HOOK[hook])} queries")
+
     for ext, format in RDF_SERIALIZATIONS.items():
         graph.serialize(f'{filepath}.{ext}', format=format)
     INFO(f'wrote {filepath}.[{",".join(RDF_SERIALIZATIONS)}]')
@@ -347,6 +356,7 @@ for vocab, vocab_data in CSVFILES.items():
                 for ex in EXAMPLES[s]:
                     module_triples.append((s, VANN.example, DEX[ex]))
             module_triples += add_translations_for_concept(s)
+            module_triples.append((s, RDFS.isDefinedBy, namespace['']))
         # Add class concepts to a ConceptScheme
         if classes:
             module_triples.append((namespace[f"{module.replace('_','-')}-classes"], RDF.type, SKOS.ConceptScheme))
@@ -362,13 +372,13 @@ for vocab, vocab_data in CSVFILES.items():
         # export module triples
         exportpath = RDF_STRUCTURE[vocab]['modules']
         filepath = f'{exportpath}/{module}'
-        serialize_graph(module_triples, filepath)
+        serialize_graph(module_triples, filepath, hook=f'{vocab}-{module}')
         vocab_triples += module_triples
 
     # export vocab triples
     exportpath = RDF_STRUCTURE[vocab]['main']
     filepath = f'{exportpath}/{vocab}'
-    serialize_graph(vocab_triples, filepath)
+    serialize_graph(vocab_triples, filepath, hook=vocab)
     INFO(f'VOCAB triples: {len(vocab_triples)} accepted, {sum((len(m) for m in PROPOSED[vocab].values()))} proposed')
     global_triples += vocab_triples
 
@@ -388,7 +398,7 @@ for collation in RDF_COLLATIONS:
     triples = Graph()
     for filepath in collation['input']:
         triples.parse(filepath)
-    serialize_graph(triples, collation['output'])
+    serialize_graph(triples, collation['output'], hook=f'collation-{collation}')
     INFO(f"Collected {len(triples)} triples into {collation['output']}")
 
 # === serialise-missing-translations ===

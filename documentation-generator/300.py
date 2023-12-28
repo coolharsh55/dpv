@@ -96,12 +96,13 @@ class DATA(object):
                     '_dpvterm': s.startswith('https://w3id.org/dpv'),
                     # `_termsource`: vocabs where this term is used
                     '_termsource': set(),
+                    '_ignored': term in IGNORED_TERMS,
                 }
                 # for DPV terms, the `term` is set to non-prefixed 'Term'
                 # and for non-DPV terms, it is set to prefixed 'ns:Term'
                 # to visually see they are external
-                if DATA.concepts[term]['_dpvterm'] is False:
-                    DATA.concepts[term]['term'] = term
+                # if DATA.concepts[term]['_dpvterm'] is False:
+                #     DATA.concepts[term]['term'] = term
                 DATA.concepts[s] = DATA.concepts[term]
             term = DATA.concepts[term]
             term['_termsource'].add(vocab)
@@ -152,12 +153,13 @@ class DATA(object):
                         'namespace': o.replace(obj.split(':')[1], ''),
                         '_dpvterm': o.startswith('https://w3id.org/dpv'),
                         '_termsource': set(),
+                        '_ignored': obj in IGNORED_TERMS,
                     }
                     DATA.concepts[obj]['_termsource'].add(vocab)
                     # If this is an external concept, the term should
                     # be used with prefixed notation
-                    if DATA.concepts[obj]['_dpvterm'] is False:
-                        DATA.concepts[obj]['term'] = obj
+                    # if DATA.concepts[obj]['_dpvterm'] is False:
+                    #     DATA.concepts[obj]['term'] = obj
                     DATA.concepts[o] = DATA.concepts[obj]
                 if p == RDF.type and o == RDFS.Class:
                     term['_type'] = "class"
@@ -459,16 +461,16 @@ def get_prop_with_term_range(term:dict, vocab:str) -> list:
     Property range can be the term or the term's parents/types
     """
     props = set()
-    term_types = term['rdf:type']
-    term_types = [str(x) for x in term_types]
-    term_types.append(str(term['iri']))
+    term_types = get_parent_hierarchy(term)
+    term_types = {x['iri'] for y in term_types for x in y}
+    term_types.add((term['iri']))
     for prop in DATA.concepts.values():
         if '_type' not in prop: continue # not a useful term
         if prop['_type'] != 'property': continue
         if 'dcam:rangeIncludes' not in prop: continue
         for domain in ensure_list(prop['dcam:rangeIncludes']):
             for t in term_types:
-                if str(domain) == t:
+                if domain == t:
                     props.add(prop['prefixed'])
     return [DATA.concepts[c] for c in props]
 
@@ -695,7 +697,6 @@ if ':' in list(data.keys())[0]: # hack to detect repeated script call
     # and save it back to the missing translations file.
     for concept, languages in data.items():
         for lang in languages:
-            DEBUG(concept)
             namespace, term = concept.split(':')
             if namespace not in DATA.data:
                 DEBUG(f"ignored translations missing - external concept {concept}")

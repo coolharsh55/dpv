@@ -146,7 +146,40 @@
 
   <section>
     <h2>Extended Taxonomy</h2>
-    {{ list_hierarchy(modules['extended']['classes']) }}
+    <section>
+      <h3>External</h3>
+      {{ list_hierarchy(modules['extended']['classes'], head='pd:External') }}
+    </section>
+
+    <section>
+      <h3>Financial</h3>
+      {{ list_hierarchy(modules['extended']['classes'], head='pd:Financial') }}
+    </section>
+
+    <section>
+      <h3>Historical</h3>
+      {{ list_hierarchy(modules['extended']['classes'], head='pd:Historical') }}
+    </section>
+
+    <section>
+      <h3>Internal</h3>
+      {{ list_hierarchy(modules['extended']['classes'], head='pd:Internal') }}
+    </section>
+
+    <section>
+      <h3>Social</h3>
+      {{ list_hierarchy(modules['extended']['classes'], head='pd:Social') }}
+    </section>
+
+    <section>
+      <h3>Tracking</h3>
+      {{ list_hierarchy(modules['extended']['classes'], head='pd:Tracking') }}
+    </section>
+  </section>
+
+  <section>
+    <h2>Special Categories</h2>
+    {{ list_hierarchy(vocab, head='dpv:SpecialCategoryPersonalData') }}
   </section>
 
   <section id="external-vocabs">

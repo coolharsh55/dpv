@@ -22,6 +22,7 @@ dpv:Consent a rdfs:Class,
         dex:E0024,
         dex:E0025,
         dex:E0026 ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:LegalBasis ;
     sw:term_status "accepted"@en ;
     skos:definition "Consent of the Data Subject for specified processing"@en ;
@@ -32,6 +33,7 @@ dpv:Contract a rdfs:Class,
         dpv:LegalBasis ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2021-04-07"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:LegalAgreement ;
     rdfs:superClassOf dpv:ContractPerformance,
         dpv:DataControllerContract,
@@ -48,6 +50,7 @@ dpv:ContractPerformance a rdfs:Class,
         dpv:LegalBasis ;
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan" ;
     dct:created "2021-04-07"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Contract ;
     sw:term_status "accepted"@en ;
     skos:definition "Fulfilment or performance of a contract involving specified processing"@en ;
@@ -57,6 +60,7 @@ dpv:DataControllerContract a rdfs:Class,
         owl:Class,
         dpv:LegalBasis ;
     dct:created "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Contract ;
     sw:term_status "accepted"@en ;
     skos:definition "Creation, completion, fulfilment, or performance of a contract, with Data Controllers as parties being Joint Data Controllers, and involving specified processing"@en ;
@@ -66,6 +70,7 @@ dpv:DataProcessorContract a rdfs:Class,
         owl:Class,
         dpv:LegalBasis ;
     dct:created "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Contract ;
     sw:term_status "accepted"@en ;
     skos:definition "Creation, completion, fulfilment, or performance of a contract, with the Data Controller and Data Processor as parties, and involving specified processing"@en ;
@@ -75,6 +80,7 @@ dpv:DataSubjectContract a rdfs:Class,
         owl:Class,
         dpv:LegalBasis ;
     dct:created "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Contract ;
     sw:term_status "accepted"@en ;
     skos:definition "Creation, completion, fulfilment, or performance of a contract, with the Data Controller and Data Subject as parties, and involving specified processing"@en ;
@@ -85,6 +91,7 @@ dpv:DataTransferLegalBasis a rdfs:Class,
         dpv:LegalBasis ;
     dct:contributor "David Hickey, Georg P Krogg" ;
     dct:created "2021-09-08"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:LegalBasis ;
     sw:term_status "accepted"@en ;
     skos:definition "Specific or special categories and instances of legal basis intended for justifying data transfers"@en ;
@@ -95,6 +102,7 @@ dpv:EnterIntoContract a rdfs:Class,
         dpv:LegalBasis ;
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan" ;
     dct:created "2021-04-07"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Contract ;
     sw:term_status "accepted"@en ;
     skos:definition "Processing necessary to enter into contract"@en ;
@@ -106,6 +114,7 @@ dpv:LegalBasis a rdfs:Class,
     dct:modified "2020-11-04"^^xsd:date ;
     vann:example dex:E0022,
         dex:E0023 ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:superClassOf dpv:Consent,
         dpv:DataTransferLegalBasis,
         dpv:LegalObligation,
@@ -123,6 +132,7 @@ dpv:LegalObligation a rdfs:Class,
         dpv:LegalBasis ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2021-04-07"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:LegalBasis ;
     sw:term_status "accepted"@en ;
     skos:definition "Legal Obligation to conduct the specified processing"@en ;
@@ -133,6 +143,7 @@ dpv:LegitimateInterest a rdfs:Class,
         dpv:LegalBasis ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2021-05-19"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:LegalBasis ;
     rdfs:superClassOf dpv:LegitimateInterestOfController,
         dpv:LegitimateInterestOfDataSubject,
@@ -146,6 +157,7 @@ dpv:LegitimateInterestOfController a rdfs:Class,
         dpv:LegalBasis ;
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan" ;
     dct:created "2021-05-19"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:LegitimateInterest ;
     sw:term_status "accepted"@en ;
     skos:definition "Legitimate Interests of a Data Controller in conducting specified processing"@en ;
@@ -156,6 +168,7 @@ dpv:LegitimateInterestOfDataSubject a rdfs:Class,
         dpv:LegalBasis ;
     dct:contributor "Georg P Krog" ;
     dct:created "2022-10-22"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:LegitimateInterest ;
     sw:term_status "accepted"@en ;
     skos:definition "Legitimate Interests of the Data Subject in conducting specified processing"@en ;
@@ -166,6 +179,7 @@ dpv:LegitimateInterestOfThirdParty a rdfs:Class,
         dpv:LegalBasis ;
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan" ;
     dct:created "2021-05-19"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:LegitimateInterest ;
     sw:term_status "accepted"@en ;
     skos:definition "Legitimate Interests of a Third Party in conducting specified processing"@en ;
@@ -176,6 +190,7 @@ dpv:OfficialAuthorityOfController a rdfs:Class,
         dpv:LegalBasis ;
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan" ;
     dct:created "2021-05-05"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:LegalBasis ;
     sw:term_status "accepted"@en ;
     skos:definition "Processing necessary or authorised through the official authority granted to or vested in the Data Controller"@en ;
@@ -186,6 +201,7 @@ dpv:PublicInterest a rdfs:Class,
         dpv:LegalBasis ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2021-04-21"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:LegalBasis ;
     sw:term_status "accepted"@en ;
     skos:definition "Processing is necessary or beneficial for interest of the public or society at large"@en ;
@@ -195,6 +211,7 @@ dpv:ThirdPartyContract a rdfs:Class,
         owl:Class,
         dpv:LegalBasis ;
     dct:created "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Contract ;
     sw:term_status "accepted"@en ;
     skos:definition "Creation, completion, fulfilment, or performance of a contract, with the Data Controller and Third Party as parties, and involving specified processing"@en ;
@@ -205,6 +222,7 @@ dpv:VitalInterest a rdfs:Class,
         dpv:LegalBasis ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2021-04-21"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:LegalBasis ;
     rdfs:superClassOf dpv:VitalInterestOfNaturalPerson ;
     sw:term_status "accepted"@en ;
@@ -216,6 +234,7 @@ dpv:VitalInterestOfDataSubject a rdfs:Class,
         dpv:LegalBasis ;
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan" ;
     dct:created "2021-04-21"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:VitalInterestOfNaturalPerson ;
     sw:term_status "accepted"@en ;
     skos:definition "Processing is necessary or required to protect vital interests of a data subject"@en ;
@@ -226,6 +245,7 @@ dpv:VitalInterestOfNaturalPerson a rdfs:Class,
         dpv:LegalBasis ;
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan" ;
     dct:created "2021-04-21"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:VitalInterest ;
     rdfs:superClassOf dpv:VitalInterestOfDataSubject ;
     sw:term_status "accepted"@en ;
@@ -238,6 +258,7 @@ dpv:hasLegalBasis a rdf:Property,
     dct:contributor "Axel Polleres, Javier Fernández" ;
     dct:created "2019-04-04"^^xsd:date ;
     dct:modified "2020-11-04"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates use or applicability of a Legal Basis"@en ;
     skos:prefLabel "has legal basis"@en ;

@@ -14,6 +14,7 @@
 dpv:NonPersonalDataProcess a rdfs:Class,
         owl:Class ;
     dct:contributor "Harshvardhan J. Pandit" ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Process ;
     sw:term_status "accepted"@en ;
     skos:definition "An action, activity, or method involving non-personal data, and asserting that no personal data is involved"@en ;
@@ -33,6 +34,7 @@ dpv:PersonalDataHandling a rdfs:Class,
         dex:E0020,
         dex:E0022,
         dex:E0028 ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Process ;
     sw:term_status "sunset"@en ;
     skos:definition "An abstract concept describing 'personal data handling'"@en ;
@@ -42,6 +44,7 @@ dpv:PersonalDataHandling a rdfs:Class,
 dpv:PersonalDataProcess a rdfs:Class,
         owl:Class ;
     dct:contributor "Harshvardhan J. Pandit" ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Process ;
     sw:term_status "accepted"@en ;
     skos:definition "An action, activity, or method involving personal data"@en ;
@@ -50,6 +53,7 @@ dpv:PersonalDataProcess a rdfs:Class,
 dpv:Process a rdfs:Class,
         owl:Class ;
     dct:contributor "Harshvardhan J. Pandit" ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:superClassOf dpv:NonPersonalDataProcess,
         dpv:PersonalDataHandling,
         dpv:PersonalDataProcess ;
@@ -62,6 +66,7 @@ dpv:hasNonPersonalDataProcess a rdf:Property,
     dcam:rangeIncludes dpv:NonPersonalDataProcess ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2023-12-12"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with a Non-Personal Data Process"@en ;
     skos:prefLabel "has non-personal data process"@en ;
@@ -72,6 +77,7 @@ dpv:hasPersonalDataHandling a rdf:Property,
     dcam:rangeIncludes dpv:PersonalDataHandling ;
     dct:contributor "Harshvardhan J. Pandit, Georg P Krog" ;
     dct:created "2022-01-19"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with Personal Data Handling"@en ;
     skos:prefLabel "has personal data handling"@en ;
@@ -82,6 +88,7 @@ dpv:hasPersonalDataProcess a rdf:Property,
     dcam:rangeIncludes dpv:PersonalDataProcess ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2023-12-11"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with a Personal Data Process"@en ;
     skos:prefLabel "has personal data process"@en ;
@@ -92,6 +99,7 @@ dpv:hasProcess a rdf:Property,
     dcam:rangeIncludes dpv:Process ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates association with a Process"@en ;
     skos:prefLabel "has process"@en ;

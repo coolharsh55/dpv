@@ -15,6 +15,7 @@ dpv:City a rdfs:Class,
         owl:Class ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-10-22"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Region ;
     sw:term_status "accepted"@en ;
     skos:definition "A region consisting of urban population and commerce"@en ;
@@ -26,6 +27,7 @@ dpv:CloudLocation a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2020-10-05"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:RemoteLocation ;
     sw:term_status "accepted"@en ;
     skos:definition "Location that is in the 'cloud' i.e. a logical location operated over the internet"@en ;
@@ -35,6 +37,7 @@ dpv:Country a rdfs:Class,
         owl:Class ;
     dct:contributor "Harshvardhan J. Pandit, Georg P Krog" ;
     dct:created "2022-01-19"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Location ;
     rdfs:superClassOf dpv:Region,
         dpv:ThirdCountry ;
@@ -49,6 +52,7 @@ dpv:DecentralisedLocations a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2020-10-05"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:LocationFixture ;
     sw:term_status "accepted"@en ;
     skos:definition "Location that is spread across multiple separate areas with no distinction between their importance"@en ;
@@ -58,6 +62,7 @@ dpv:EconomicUnion a rdfs:Class,
         owl:Class ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-01-19"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Location ;
     sw:term_status "accepted"@en ;
     skos:definition "A political union of two or more countries based on economic or trade agreements"@en ;
@@ -69,6 +74,7 @@ dpv:FederatedLocations a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2020-10-05"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:LocationFixture ;
     sw:term_status "accepted"@en ;
     skos:definition "Location that is federated across multiple separate areas with designation of a primary or central location"@en ;
@@ -80,6 +86,7 @@ dpv:FixedLocation a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2020-10-05"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:LocationFixture ;
     rdfs:superClassOf dpv:FixedMultipleLocations,
         dpv:FixedSingularLocation ;
@@ -93,6 +100,7 @@ dpv:FixedMultipleLocations a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2020-10-05"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:FixedLocation ;
     sw:term_status "accepted"@en ;
     skos:definition "Location that is fixed with multiple places e.g. multiple cities"@en ;
@@ -104,6 +112,7 @@ dpv:FixedSingularLocation a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2020-10-05"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:FixedLocation ;
     sw:term_status "accepted"@en ;
     skos:definition "Location that is fixed at a specific place e.g. a city"@en ;
@@ -113,6 +122,7 @@ dpv:Law a rdfs:Class,
         owl:Class ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-01-19"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf rdfs:Class ;
     sw:term_status "accepted"@en ;
     skos:definition "A law is a set of rules created by government or authorities"@en ;
@@ -124,6 +134,7 @@ dpv:LocalLocation a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2020-10-05"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:LocationLocality ;
     rdfs:superClassOf dpv:PrivateLocation,
         dpv:PublicLocation,
@@ -139,6 +150,7 @@ dpv:Location a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit, Georg P Krog" ;
     dct:created "2022-01-19"^^xsd:date ;
     vann:example dex:E0011 ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf rdfs:Class ;
     rdfs:superClassOf dpv:Country,
         dpv:EconomicUnion,
@@ -153,6 +165,7 @@ dpv:LocationFixture a rdfs:Class,
         owl:Class ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf rdfs:Class ;
     rdfs:superClassOf dpv:DecentralisedLocations,
         dpv:FederatedLocations,
@@ -169,6 +182,7 @@ dpv:LocationLocality a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2022-10-04"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Location ;
     rdfs:superClassOf dpv:LocalLocation,
         dpv:RemoteLocation ;
@@ -181,6 +195,7 @@ dpv:PrivateLocation a rdfs:Class,
         dpv:Location ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-10-22"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:LocalLocation ;
     sw:term_status "accepted"@en ;
     skos:definition "Location that is not or cannot be accessed by the public and is controlled as a private space"@en ;
@@ -191,6 +206,7 @@ dpv:PublicLocation a rdfs:Class,
         dpv:Location ;
     dct:contributor "Georg P Krog" ;
     dct:created "2022-10-22"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:LocalLocation ;
     sw:term_status "accepted"@en ;
     skos:definition "Location that is or can be accessed by the public"@en ;
@@ -202,6 +218,7 @@ dpv:RandomLocation a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2020-10-05"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:LocationFixture ;
     sw:term_status "accepted"@en ;
     skos:definition "Location that is random or unknown"@en ;
@@ -211,6 +228,7 @@ dpv:Region a rdfs:Class,
         owl:Class ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-01-19"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Country ;
     rdfs:superClassOf dpv:City ;
     sw:term_status "accepted"@en ;
@@ -223,6 +241,7 @@ dpv:RemoteLocation a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2020-10-05"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:LocationLocality ;
     rdfs:superClassOf dpv:CloudLocation ;
     sw:term_status "accepted"@en ;
@@ -233,6 +252,7 @@ dpv:SupraNationalUnion a rdfs:Class,
         owl:Class ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-01-19"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Location ;
     sw:term_status "accepted"@en ;
     skos:definition "A political union of two or more countries with an establishment of common authority"@en ;
@@ -242,6 +262,7 @@ dpv:ThirdCountry a rdfs:Class,
         owl:Class ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-02-09"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Country ;
     sw:term_status "accepted"@en ;
     skos:definition "Represents a country outside applicable or compatible jurisdiction as outlined in law"@en ;
@@ -253,6 +274,7 @@ dpv:VariableLocation a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2020-10-05"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:LocationFixture ;
     sw:term_status "accepted"@en ;
     skos:definition "Location that is known but is variable e.g. somewhere within a given area"@en ;
@@ -264,6 +286,7 @@ dpv:WithinDevice a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2020-10-05"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:LocalLocation ;
     sw:term_status "accepted"@en ;
     skos:definition "Location is local and entirely within a device, such as a smartphone"@en ;
@@ -274,6 +297,7 @@ dpv:WithinPhysicalEnvironment a rdfs:Class,
         dpv:Location ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2020-10-06"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:LocalLocation ;
     sw:term_status "accepted"@en ;
     skos:definition "Location is local and entirely within a physical environment, such as a room"@en ;
@@ -284,6 +308,7 @@ dpv:WithinVirtualEnvironment a rdfs:Class,
         dpv:Location ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2020-10-06"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:LocalLocation ;
     sw:term_status "accepted"@en ;
     skos:definition "Location is local and entirely within a virtual environment, such as a shared network directory"@en ;
@@ -294,6 +319,7 @@ dpv:hasApplicableLaw a rdf:Property,
     dcam:rangeIncludes dpv:Law ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-01-19"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates applicability of a Law"@en ;
     skos:prefLabel "has applicable law"@en ;
@@ -304,6 +330,7 @@ dpv:hasJurisdiction a rdf:Property,
     dcam:rangeIncludes dpv:Location ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-01-19"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates applicability of specified jurisdiction"@en ;
     skos:prefLabel "has jurisdiction"@en ;
@@ -315,6 +342,7 @@ dpv:hasLocation a rdf:Property,
     dct:contributor "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar" ;
     dct:created "2019-04-05"^^xsd:date ;
     dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/)"@en ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:superPropertyOf dpv:hasCountry ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates information about location"@en ;
@@ -326,6 +354,7 @@ dpv:hasThirdCountry a rdf:Property,
     dcam:rangeIncludes dpv:ThirdCountry ;
     dct:contributor "Harshvardhan J. Pandit, Georg P Krog" ;
     dct:created "2022-02-09"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subPropertyOf dpv:hasCountry ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates applicability or relevance of a 'third country'"@en ;
@@ -337,6 +366,7 @@ dpv:hasCountry a rdf:Property,
     dcam:rangeIncludes dpv:Country ;
     dct:contributor "Harshvardhan J. Pandit, Georg P Krog" ;
     dct:created "2022-01-19"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subPropertyOf dpv:hasLocation ;
     rdfs:superPropertyOf dpv:hasThirdCountry ;
     sw:term_status "accepted"@en ;

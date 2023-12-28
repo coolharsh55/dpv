@@ -14,6 +14,7 @@ dpv:ConsentExpired a rdfs:Class,
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake" ;
     dct:created "2022-06-22"^^xsd:date ;
     dct:source "(GConsent,https://w3id.org/GConsent)"@en ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:ConsentStatusInvalidForProcessing ;
     sw:term_status "accepted"@en ;
     skos:definition "The state where the temporal or contextual validity of consent has 'expired'"@en ;
@@ -26,6 +27,7 @@ dpv:ConsentGiven a rdfs:Class,
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake" ;
     dct:created "2022-06-22"^^xsd:date ;
     dct:source "(GConsent,https://w3id.org/GConsent)"@en ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:ConsentStatusValidForProcessing ;
     sw:term_status "accepted"@en ;
     skos:definition "The state where consent has been given"@en ;
@@ -38,6 +40,7 @@ dpv:ConsentInvalidated a rdfs:Class,
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake" ;
     dct:created "2022-06-22"^^xsd:date ;
     dct:source "(GConsent,https://w3id.org/GConsent)"@en ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:ConsentStatusInvalidForProcessing ;
     sw:term_status "accepted"@en ;
     skos:definition "The state where consent has been deemed to be invalid"@en ;
@@ -50,6 +53,7 @@ dpv:ConsentRefused a rdfs:Class,
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake" ;
     dct:created "2022-06-22"^^xsd:date ;
     dct:source "(GConsent,https://w3id.org/GConsent)"@en ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:ConsentStatusInvalidForProcessing ;
     sw:term_status "accepted"@en ;
     skos:definition "The state where consent has been refused"@en ;
@@ -62,6 +66,7 @@ dpv:ConsentRequestDeferred a rdfs:Class,
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake" ;
     dct:created "2022-06-22"^^xsd:date ;
     dct:source "(GConsent,https://w3id.org/GConsent)"@en ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:ConsentStatusInvalidForProcessing ;
     sw:term_status "accepted"@en ;
     skos:definition "State where a request for consent has been deferred without a decision"@en ;
@@ -74,6 +79,7 @@ dpv:ConsentRequested a rdfs:Class,
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake" ;
     dct:created "2022-06-22"^^xsd:date ;
     dct:source "(GConsent,https://w3id.org/GConsent)"@en ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:ConsentStatusInvalidForProcessing ;
     sw:term_status "accepted"@en ;
     skos:definition "State where a request for consent has been made and is awaiting a decision"@en ;
@@ -86,6 +92,7 @@ dpv:ConsentRevoked a rdfs:Class,
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake" ;
     dct:created "2022-06-22"^^xsd:date ;
     dct:source "(GConsent,https://w3id.org/GConsent)"@en ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:ConsentStatusInvalidForProcessing ;
     sw:term_status "accepted"@en ;
     skos:definition "The state where the consent is revoked by an entity other than the data subject and which prevents it from being further used as a valid state"@en ;
@@ -101,6 +108,7 @@ dpv:ConsentStatus a rdfs:Class,
         dex:E0024,
         dex:E0025,
         dex:E0026 ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Status ;
     rdfs:superClassOf dpv:ConsentStatusInvalidForProcessing,
         dpv:ConsentStatusValidForProcessing ;
@@ -115,6 +123,7 @@ dpv:ConsentStatusInvalidForProcessing a rdfs:Class,
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake" ;
     dct:created "2022-06-22"^^xsd:date ;
     dct:source "(GConsent,https://w3id.org/GConsent)"@en ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:ConsentStatus ;
     rdfs:superClassOf dpv:ConsentExpired,
         dpv:ConsentInvalidated,
@@ -135,6 +144,7 @@ dpv:ConsentStatusValidForProcessing a rdfs:Class,
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake" ;
     dct:created "2022-06-22"^^xsd:date ;
     dct:source "(GConsent,https://w3id.org/GConsent)"@en ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:ConsentStatus ;
     rdfs:superClassOf dpv:ConsentGiven,
         dpv:RenewedConsentGiven ;
@@ -149,6 +159,7 @@ dpv:ConsentUnknown a rdfs:Class,
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake" ;
     dct:created "2022-06-22"^^xsd:date ;
     dct:source "(GConsent,https://w3id.org/GConsent)"@en ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:ConsentStatusInvalidForProcessing ;
     sw:term_status "accepted"@en ;
     skos:definition "State where information about consent is not available or is unknown"@en ;
@@ -161,6 +172,7 @@ dpv:ConsentWithdrawn a rdfs:Class,
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake" ;
     dct:created "2022-06-22"^^xsd:date ;
     dct:source "(GConsent,https://w3id.org/GConsent)"@en ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:ConsentStatusInvalidForProcessing ;
     sw:term_status "accepted"@en ;
     skos:definition "The state where the consent is withdrawn or revoked specifically by the data subject and which prevents it from being further used as a valid state"@en ;
@@ -173,6 +185,7 @@ dpv:RenewedConsentGiven a rdfs:Class,
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake" ;
     dct:created "2022-06-22"^^xsd:date ;
     dct:source "(GConsent,https://w3id.org/GConsent)"@en ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:ConsentStatusValidForProcessing ;
     sw:term_status "accepted"@en ;
     skos:definition "The state where a previously given consent has been 'renewed' or 'refreshed' or 'reaffirmed' to form a new instance of given consent"@en ;

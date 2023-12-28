@@ -18,6 +18,7 @@ dpv:DataController a rdfs:Class,
     dct:source "(GDPR Art.4-7g,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_7/oj)"@en ;
     vann:example dex:E0019,
         dex:E0020 ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:LegalEntity ;
     rdfs:superClassOf dpv:JointDataControllers ;
     sw:term_status "accepted"@en ;
@@ -36,6 +37,7 @@ dpv:DataExporter a rdfs:Class,
     dct:contributor "David Hickey, Georg Krog, Paul Ryan, Harshvardhan Pandit" ;
     dct:created "2021-09-08"^^xsd:date ;
     dct:source "(EDPB Recommendations 01/2020 on Data Transfers, https://edpb.europa.eu/our-work-tools/our-documents/recommendations/recommendations-012020-measures-supplement-transfer_en)"@en ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:LegalEntity ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:LegalEntity ;
@@ -49,6 +51,7 @@ dpv:DataImporter a rdfs:Class,
     dct:contributor "David Hickey, Georg Krog, Paul Ryan, Harshvardhan Pandit" ;
     dct:created "2021-09-08"^^xsd:date ;
     dct:source "(EDPB Recommendations 01/2020 on Data Transfers, https://edpb.europa.eu/our-work-tools/our-documents/recommendations/recommendations-012020-measures-supplement-transfer_en)"@en ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Recipient ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Recipient ;
@@ -63,6 +66,7 @@ dpv:DataProcessor a rdfs:Class,
     dct:created "2019-06-04"^^xsd:date ;
     dct:source "(GDPR Art.4-8,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_8/oj)"@en ;
     vann:example dex:E0011 ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Recipient ;
     rdfs:superClassOf dpv:DataSubProcessor ;
     sw:term_status "accepted"@en ;
@@ -80,6 +84,7 @@ dpv:DataProtectionOfficer a rdfs:Class,
     dct:created "2020-11-04"^^xsd:date ;
     dct:modified "2021-12-08"^^xsd:date ;
     dct:source "(GDPR Art.37,https://eur-lex.europa.eu/eli/reg/2016/679/art_37/oj)"@en ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Representative ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Representative ;
@@ -91,6 +96,7 @@ dpv:DataSubProcessor a rdfs:Class,
         skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2020-11-25"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:DataProcessor ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:DataProcessor ;
@@ -103,6 +109,7 @@ dpv:JointDataControllers a rdfs:Class,
         skos:Concept ;
     dct:contributor "Georg Krog, Harshvardhan Pandit" ;
     dct:created "2022-02-02"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:DataController ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:DataController ;
@@ -118,6 +125,7 @@ dpv:Recipient a rdfs:Class,
     dct:modified "2023-12-10"^^xsd:date ;
     dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/),(GDPR Art.4-9g,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_9/oj)"@en ;
     vann:example dex:E0019 ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:LegalEntity ;
     rdfs:superClassOf dpv:DataImporter,
         dpv:DataProcessor,
@@ -138,6 +146,7 @@ dpv:ThirdParty a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2019-06-04"^^xsd:date ;
     dct:source "(GDPR Art.4-10,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_10/oj)"@en ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Recipient ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Recipient ;
@@ -153,6 +162,7 @@ dpv:hasDataExporter a rdf:Property,
     dcam:rangeIncludes dpv:DataExporter ;
     dct:contributor "Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit" ;
     dct:created "2022-02-09"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subPropertyOf dpv:hasEntity ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasEntity ;
@@ -166,6 +176,7 @@ dpv:hasDataImporter a rdf:Property,
     dcam:rangeIncludes dpv:DataImporter ;
     dct:contributor "Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit" ;
     dct:created "2022-02-09"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subPropertyOf dpv:hasRecipient ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasRecipient ;
@@ -179,6 +190,7 @@ dpv:hasDataProcessor a rdf:Property,
     dcam:rangeIncludes dpv:DataProcessor ;
     dct:contributor "Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit" ;
     dct:created "2022-02-09"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subPropertyOf dpv:hasRecipient ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasRecipient ;
@@ -192,6 +204,7 @@ dpv:hasDataProtectionOfficer a rdf:Property,
     dcam:rangeIncludes dpv:DataProtectionOfficer ;
     dct:contributor "Paul Ryan, Rob Brennan" ;
     dct:created "2022-03-02"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subPropertyOf dpv:hasRepresentative ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasRepresentative ;
@@ -205,6 +218,7 @@ dpv:hasJointDataControllers a rdf:Property,
     dcam:rangeIncludes dpv:JointDataControllers ;
     dct:contributor "Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit" ;
     dct:created "2022-02-09"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subPropertyOf dpv:hasDataController ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasDataController ;
@@ -218,6 +232,7 @@ dpv:hasRecipientDataController a rdf:Property,
     dcam:rangeIncludes dpv:DataController ;
     dct:contributor "Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit" ;
     dct:created "2022-02-09"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subPropertyOf dpv:hasRecipient ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasRecipient ;
@@ -231,6 +246,7 @@ dpv:hasRecipientThirdParty a rdf:Property,
     dcam:rangeIncludes dpv:ThirdParty ;
     dct:contributor "Paul Ryan, Georg P. Krog, Harshvardhan J. Pandit" ;
     dct:created "2022-02-09"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subPropertyOf dpv:hasRecipient ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:hasRecipient ;
@@ -248,6 +264,7 @@ dpv:hasDataController a rdf:Property,
     dct:contributor "Axel Polleres, Javier Fernández, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger" ;
     dct:created "2019-04-04"^^xsd:date ;
     dct:modified "2020-11-04"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subPropertyOf dpv:hasEntity ;
     rdfs:superPropertyOf dpv:hasJointDataControllers ;
     sw:term_status "accepted"@en ;
@@ -283,6 +300,7 @@ dpv:hasRecipient a rdf:Property,
     dct:created "2019-04-04"^^xsd:date ;
     dct:modified "2020-11-04"^^xsd:date ;
     dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/)"@en ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subPropertyOf dpv:hasEntity ;
     rdfs:superPropertyOf dpv:hasDataImporter,
         dpv:hasDataProcessor,

@@ -16,6 +16,7 @@ dpv:Context a rdfs:Class,
     dct:created "2019-04-05"^^xsd:date ;
     dct:modified "2022-06-15"^^xsd:date ;
     vann:example dex:E0028 ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:superClassOf dpv:Duration,
         dpv:Frequency,
         dpv:Importance,
@@ -40,6 +41,7 @@ dpv:ContinousFrequency a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2020-10-05"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Frequency ;
     skos:definition "Frequency where occurences are continous"@en ;
@@ -52,6 +54,7 @@ dpv:Duration a rdfs:Class,
     dct:created "2022-02-09"^^xsd:date ;
     vann:example dex:E0011,
         dex:E0019 ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Context ;
     rdfs:superClassOf dpv:FixedOccurencesDuration,
         dpv:TemporalDuration,
@@ -75,6 +78,7 @@ dpv:EndlessDuration a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2020-10-05"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Duration ;
     skos:definition "Duration that is (known or intended to be) open ended or without an end"@en ;
@@ -86,6 +90,7 @@ dpv:FixedOccurencesDuration a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2020-10-05"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Duration ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Duration ;
@@ -97,6 +102,7 @@ dpv:Frequency a rdfs:Class,
         skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-02-16"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Context ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Context ;
@@ -112,6 +118,7 @@ dpv:Importance a rdfs:Class,
         skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit, Paul Ryan, Georg P Krog, Julian Flake, Beatriz Esteves" ;
     dct:created "2022-02-09"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Context ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Context ;
@@ -127,6 +134,7 @@ dpv:IndeterminateDuration a rdfs:Class,
         dpv:Duration ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-11-30"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Duration ;
     skos:definition "Duration that is indeterminate or cannot be determined"@en ;
@@ -138,6 +146,7 @@ dpv:Justification a rdfs:Class,
         skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Context ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Context ;
@@ -150,6 +159,7 @@ dpv:Necessity a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit, Paul Ryan, Georg P Krog, Julian Flake, Beatriz Esteves" ;
     dct:created "2022-02-12"^^xsd:date ;
     vann:example dex:E0028 ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Context ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Context ;
@@ -166,6 +176,7 @@ dpv:NotRequired a rdfs:Class,
         dpv:Necessity ;
     dct:contributor "Harshvardhan J. Pandit, Paul Ryan, Georg P Krog, Julian Flake, Beatriz Esteves" ;
     dct:created "2022-02-15"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Necessity ;
     skos:definition "Indication of neither being required nor optional i.e. not relevant or needed"@en ;
@@ -178,6 +189,7 @@ dpv:OftenFrequency a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2020-10-05"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Frequency ;
     skos:definition "Frequency where occurences are often or frequent, but not continous"@en ;
@@ -189,6 +201,7 @@ dpv:Optional a rdfs:Class,
         dpv:Necessity ;
     dct:contributor "Harshvardhan J. Pandit, Paul Ryan, Georg P Krog, Julian Flake, Beatriz Esteves" ;
     dct:created "2022-02-14"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Necessity ;
     skos:definition "Indication of 'optional' or 'voluntary'"@en ;
@@ -200,6 +213,7 @@ dpv:PrimaryImportance a rdfs:Class,
         dpv:Importance ;
     dct:contributor "Harshvardhan J. Pandit, Paul Ryan, Georg P Krog, Julian Flake, Beatriz Esteves" ;
     dct:created "2022-02-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Importance ;
     skos:definition "Indication of 'primary' or 'main' or 'core' importance"@en ;
@@ -211,6 +225,7 @@ dpv:Required a rdfs:Class,
         dpv:Necessity ;
     dct:contributor "Harshvardhan J. Pandit, Paul Ryan, Georg P Krog, Julian Flake, Beatriz Esteves" ;
     dct:created "2022-02-13"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Necessity ;
     skos:definition "Indication of 'required' or 'necessary'"@en ;
@@ -221,6 +236,7 @@ dpv:Scope a rdfs:Class,
         skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Context ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Context ;
@@ -233,6 +249,7 @@ dpv:SecondaryImportance a rdfs:Class,
         dpv:Importance ;
     dct:contributor "Harshvardhan J. Pandit, Paul Ryan, Georg P Krog, Julian Flake, Beatriz Esteves" ;
     dct:created "2022-02-11"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Importance ;
     skos:definition "Indication of 'secondary' or 'minor' or 'auxiliary' importance"@en ;
@@ -245,6 +262,7 @@ dpv:SingularFrequency a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2020-10-05"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Frequency ;
     skos:definition "Frequency where occurences are singular i.e. they take place only once"@en ;
@@ -257,6 +275,7 @@ dpv:SporadicFrequency a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2020-10-05"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Frequency ;
     skos:definition "Frequency where occurences are sporadic or infrequent or sparse"@en ;
@@ -268,6 +287,7 @@ dpv:TemporalDuration a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2020-10-05"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Duration ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Duration ;
@@ -280,6 +300,7 @@ dpv:UntilEventDuration a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2020-10-05"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Duration ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Duration ;
@@ -292,6 +313,7 @@ dpv:UntilTimeDuration a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
     dct:modified "2020-10-05"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Duration ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Duration ;
@@ -303,6 +325,7 @@ dpv:hasContext a rdf:Property,
         skos:Concept ;
     dcam:rangeIncludes dpv:Context ;
     dct:created "2019-04-05"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates a purpose is restricted to the specified context(s)"@en ;
     skos:inScheme dpv:context-properties ;
@@ -315,6 +338,7 @@ dpv:hasDuration a rdf:Property,
     dct:contributor "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar" ;
     dct:created "2019-04-05"^^xsd:date ;
     dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/)"@en ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates information about duration"@en ;
     skos:inScheme dpv:context-properties ;
@@ -326,6 +350,7 @@ dpv:hasFrequency a rdf:Property,
     dcam:rangeIncludes dpv:Frequency ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-02-16"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the frequency with which something takes place"@en ;
     skos:inScheme dpv:context-properties ;
@@ -336,6 +361,7 @@ dpv:hasIdentifier a rdf:Property,
         skos:Concept ;
     dct:contributor "Harshvardhan J.Pandit, Georg P Krog, Paul Ryan, Beatriz Esteves" ;
     dct:created "2020-11-25"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates an identifier associated for identification or reference"@en ;
     skos:inScheme dpv:context-properties ;
@@ -346,6 +372,7 @@ dpv:hasJustification a rdf:Property,
     dcam:rangeIncludes dpv:Justification ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates a justification for specified concept or context"@en ;
     skos:inScheme dpv:context-properties ;
@@ -356,6 +383,7 @@ dpv:hasOutcome a rdf:Property,
         skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-05-18"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates an outcome of specified concept or context"@en ;
     skos:inScheme dpv:context-properties ;
@@ -366,6 +394,7 @@ dpv:hasScope a rdf:Property,
     dcam:rangeIncludes dpv:Scope ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-06-15"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the scope of specified concept or context"@en ;
     skos:inScheme dpv:context-properties ;
@@ -376,6 +405,7 @@ dpv:isAfter a rdf:Property,
         skos:Concept ;
     dct:contributor "Georg P. Krog, Harshvardhan J. Pandit, Julian Flake" ;
     dct:created "2022-03-02"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the specified concepts is 'after' this concept in some context"@en ;
     skos:inScheme dpv:context-properties ;
@@ -385,6 +415,7 @@ dpv:isBefore a rdf:Property,
         skos:Concept ;
     dct:contributor "Georg P. Krog, Harshvardhan J. Pandit, Julian Flake" ;
     dct:created "2022-03-02"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the specified concepts is 'before' this concept in some context"@en ;
     skos:inScheme dpv:context-properties ;

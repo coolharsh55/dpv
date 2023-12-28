@@ -1,10 +1,134 @@
 [
   {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#DataIntermediationRecord",
+    "@id": "https://w3id.org/dpv/legal/eu/dga#DISPEUApproval",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
       "https://w3id.org/dpv#OrganisationalMeasure"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#CertificationSeal"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Confirmation and approval by a competent authority for the Data Intermediation Service Provider's compliance with Article 11 and Article 12 of the DGA"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#toms-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "EU Approval for Data Intermediation Service Provider"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "DGA 11.9"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#RecordsOfActivities",
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DataAltruismAnnualReport"
+      },
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DataAltruismRecord"
+      },
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DataIntermediationRecord"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#OrganisationalMeasure",
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DataAssetList"
+      },
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DataReuseRequest"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/legal/eu/dga#SecureProcessingEnvironment",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#TechnicalMeasure"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#SecureProcessingEnvironment"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Physical or virtual environment to ensure compliance with EU law and allow the entity providing the secure processing environment to determine and supervise all data processing actions"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#toms-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Secure Processing Environment"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "DGA 2.20"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/legal/eu/dga#DataAltruismRecord",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#OrganisationalMeasure"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#"
+      }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
@@ -20,7 +144,7 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Document that logs the activity of the data intermediation service provider"
+        "@value": "Document that logs the activity of the data altruism organisation"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -31,29 +155,60 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Record of Data Intermediation Activity"
+        "@value": "Record of Data Altruism Activity"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#scopeNote": [
       {
         "@language": "en",
-        "@value": "DGA 12.o"
+        "@value": "DGA 20"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#ConsentNotice",
-    "http://www.w3.org/2004/02/skos/core#narrower": [
+    "@id": "https://w3id.org/dpv/legal/eu/dga#PersonalDataReuseNotice",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#OrganisationalMeasure"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#PersonalDataReuseNotice"
+        "@id": "https://w3id.org/dpv/legal/eu/dga#"
       }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#SecureProcessingEnvironment",
-    "http://www.w3.org/2004/02/skos/core#narrower": [
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#SecureProcessingEnvironment"
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#ConsentNotice"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Notice for data subjects to provide consent based on information and advise regarding intended use of data, exercise of rights, and applicable terms and conditions"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#toms-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Personal Data Reuse Notice"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "DGA 12.m"
       }
     ]
   },
@@ -63,6 +218,11 @@
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
       "https://w3id.org/dpv#OrganisationalMeasure"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#"
+      }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
@@ -100,10 +260,79 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#Policy",
+    "@id": "https://w3id.org/dpv#ConsentManagement",
     "http://www.w3.org/2004/02/skos/core#narrower": [
       {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#NationalDataAltruismPolicy"
+        "@id": "https://w3id.org/dpv/legal/eu/dga#EUDataAltruismConsentForm"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#SecureProcessingEnvironment",
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#SecureProcessingEnvironment"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/legal/eu/dga#toms-classes",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#CertificationSeal",
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DISPEUApproval"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/legal/eu/dga#ThirdCountryDataRequestNotice",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#OrganisationalMeasure"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#ThirdCountryTransferNotice"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Notice regarding a request of a third-country administrative authority to access data"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#toms-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Third Country Data Request Notice"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "DGA 31.5"
       }
     ]
   },
@@ -113,6 +342,11 @@
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
       "https://w3id.org/dpv#OrganisationalMeasure"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#"
+      }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
@@ -156,6 +390,11 @@
       "http://www.w3.org/2000/01/rdf-schema#Class",
       "https://w3id.org/dpv#OrganisationalMeasure"
     ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#"
+      }
+    ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
         "@language": "en",
@@ -192,70 +431,11 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#CertificationSeal",
+    "@id": "https://w3id.org/dpv#ConsentNotice",
     "http://www.w3.org/2004/02/skos/core#narrower": [
       {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#DISPEUApproval"
+        "@id": "https://w3id.org/dpv/legal/eu/dga#PersonalDataReuseNotice"
       }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#OrganisationalMeasure",
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#DataAssetList"
-      },
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#DataReuseRequest"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#DataAssetList",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#OrganisationalMeasure"
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#OrganisationalMeasure"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Searchable asset list which contains available data resources including their data format and size and the conditions for their re-use"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#toms-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Data Asset List"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "DGA 8.2"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#toms-classes",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
     ]
   },
   {
@@ -264,6 +444,11 @@
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
       "https://w3id.org/dpv#OrganisationalMeasure"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#"
+      }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
@@ -301,72 +486,16 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#DISPEUApproval",
+    "@id": "https://w3id.org/dpv/legal/eu/dga#DataIntermediationRecord",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
       "https://w3id.org/dpv#OrganisationalMeasure"
     ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@language": "en",
-        "@value": "accepted"
+        "@id": "https://w3id.org/dpv/legal/eu/dga#"
       }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#CertificationSeal"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Confirmation and approval by a competent authority for the Data Intermediation Service Provider's compliance with Article 11 and Article 12 of the DGA"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#toms-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "EU Approval for Data Intermediation Service Provider"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "DGA 11.9"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#Notice",
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#DataAltruismNotice"
-      },
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#DISPNotice"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#ThirdCountryTransferNotice",
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#ThirdCountryDataRequestNotice"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#DataAltruismRecord",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#OrganisationalMeasure"
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
@@ -382,7 +511,7 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Document that logs the activity of the data altruism organisation"
+        "@value": "Document that logs the activity of the data intermediation service provider"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -393,161 +522,13 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Record of Data Altruism Activity"
+        "@value": "Record of Data Intermediation Activity"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#scopeNote": [
       {
         "@language": "en",
-        "@value": "DGA 20"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#EUDataAltruismConsentForm",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#OrganisationalMeasure"
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#ConsentManagement"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A form provided by the European Commission for collecting consent"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#toms-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "European Data Altruism Consent Form"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "DGA 25.1"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#SecureProcessingEnvironment",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#TechnicalMeasure"
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#SecureProcessingEnvironment"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Physical or virtual environment to ensure compliance with EU law and allow the entity providing the secure processing environment to determine and supervise all data processing actions"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#toms-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Secure Processing Environment"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "DGA 2.20"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#ConsentManagement",
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#EUDataAltruismConsentForm"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#ThirdCountryDataRequestNotice",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#OrganisationalMeasure"
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#ThirdCountryTransferNotice"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Notice regarding a request of a third-country administrative authority to access data"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#toms-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Third Country Data Request Notice"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "DGA 31.5"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#RecordsOfActivities",
-    "http://www.w3.org/2004/02/skos/core#narrower": [
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#DataAltruismAnnualReport"
-      },
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#DataAltruismRecord"
-      },
-      {
-        "@id": "https://w3id.org/dpv/legal/eu/dga#DataIntermediationRecord"
+        "@value": "DGA 12.o"
       }
     ]
   },
@@ -557,6 +538,11 @@
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
       "https://w3id.org/dpv#OrganisationalMeasure"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#"
+      }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
@@ -594,11 +580,32 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/legal/eu/dga#PersonalDataReuseNotice",
+    "@id": "https://w3id.org/dpv#Policy",
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#NationalDataAltruismPolicy"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#ThirdCountryTransferNotice",
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#ThirdCountryDataRequestNotice"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/legal/eu/dga#EUDataAltruismConsentForm",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
       "https://w3id.org/dpv#OrganisationalMeasure"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#"
+      }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
@@ -608,13 +615,13 @@
     ],
     "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@id": "https://w3id.org/dpv#ConsentNotice"
+        "@id": "https://w3id.org/dpv#ConsentManagement"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Notice for data subjects to provide consent based on information and advise regarding intended use of data, exercise of rights, and applicable terms and conditions"
+        "@value": "A form provided by the European Commission for collecting consent"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -625,13 +632,71 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Personal Data Reuse Notice"
+        "@value": "European Data Altruism Consent Form"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#scopeNote": [
       {
         "@language": "en",
-        "@value": "DGA 12.m"
+        "@value": "DGA 25.1"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/legal/eu/dga#DataAssetList",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#OrganisationalMeasure"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#OrganisationalMeasure"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Searchable asset list which contains available data resources including their data format and size and the conditions for their re-use"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#toms-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Data Asset List"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "DGA 8.2"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#Notice",
+    "http://www.w3.org/2004/02/skos/core#narrower": [
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DataAltruismNotice"
+      },
+      {
+        "@id": "https://w3id.org/dpv/legal/eu/dga#DISPNotice"
       }
     ]
   }

@@ -185,28 +185,29 @@ def construct_value(item, data, namespace, header):
     triples = []
     if not item:
         return triples
-    triples.append((namespace[data['Term']], RDF.value, Literal(item)))
+    term = _term_with_namespace(data['Term'], namespace)
+    triples.append((term, RDF.value, Literal(item)))
     return triples
 
 
 def construct_related_terms(item, data, namespace, header):
     triples = []
-    term = namespace[data['Term']]
     # TODO: make related be a URI
+    term = _term_with_namespace(data['Term'], namespace)
     triples.append((term, SKOS.related, Literal(item, lang='en')))
     return triples
 
 
 def construct_scope_note(item, data, namespace, header):
     triples = []
-    term = namespace[data['Term']]
+    term = _term_with_namespace(data['Term'], namespace)
     triples.append((term, SKOS.scopeNote, Literal(item, lang='en')))
     return triples
 
 
 def construct_source(item, data, namespace, header):
     triples = []
-    term = namespace[data['Term']]
+    term = _term_with_namespace(data['Term'], namespace)
     # TODO: make source be a URI or a Literal (if startswith http)
     triples.append((term, DCT.source, Literal(item, lang='en')))
     return triples
@@ -214,7 +215,8 @@ def construct_source(item, data, namespace, header):
 
 def construct_date_created(item, data, namespace, header):
     triples = []
-    triples.append((namespace[data['Term']], DCT.created, Literal(item, datatype=XSD.date)))
+    term = _term_with_namespace(data['Term'], namespace)
+    triples.append((term, DCT.created, Literal(item, datatype=XSD.date)))
     return triples
 
 
@@ -222,14 +224,16 @@ def construct_date_modified(item, data, namespace, header):
     triples = []
     if not item:
         return
-    triples.append((namespace[data['Term']], DCT.modified, Literal(item, datatype=XSD.date)))
+    term = _term_with_namespace(data['Term'], namespace)
+    triples.append((term, DCT.modified, Literal(item, datatype=XSD.date)))
     return triples
 
 
 def construct_contributors(item, data, namespace, header):
     triples = []
     # TODO: make contributor be URI or a literal (if website available)
-    triples.append((namespace[data['Term']], DCT.contributor, Literal(item)))
+    term = _term_with_namespace(data['Term'], namespace)
+    triples.append((term, DCT.contributor, Literal(item)))
     return triples
 
 
@@ -242,7 +246,8 @@ def construct_status(item, data, namespace, header):
         return [] # external term
     if item not in VOCAB_TERM_ACCEPT:
         return [] # status is not acceptable
-    return [(namespace[data['Term']], SW.term_status, Literal(item, lang='en'))]
+    term = _term_with_namespace(data['Term'], namespace)
+    return [(term, SW.term_status, Literal(item, lang='en'))]
 
 
 def construct_legal_basis_rights_mapping(item, data, namespace, header):
@@ -263,6 +268,15 @@ def _get_term_from_prefix_notation(term, namespace):
         prefix, term = term.split(':')
         namespace = NAMESPACES[prefix]
     return term, namespace
+
+
+def _term_with_namespace(term, namespace):
+    if ':' in term:
+        namespace = NAMESPACES[term.split(':')[0]]
+        term = namespace[term.split(':')[1]]
+    else:
+        term = namespace[term]
+    return term
 
 
 def construct_iso_3166_alpha2(term, data, namespace, header):

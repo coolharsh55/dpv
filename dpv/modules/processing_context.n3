@@ -15,6 +15,7 @@ dpv:AlgorithmicLogic a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-01-26"^^xsd:date ;
     dct:modified "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:ProcessingContext ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:ProcessingContext ;
@@ -27,6 +28,7 @@ dpv:AssistiveAutomation a rdfs:Class,
         skos:Concept,
         dpv:Automation ;
     dct:created "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Automation ;
     skos:definition "The system assists an operator"@en ;
@@ -40,6 +42,7 @@ dpv:AutomatedDecisionMaking a rdfs:Class,
     dct:created "2020-11-04"^^xsd:date ;
     dct:modified "2022-09-07"^^xsd:date ;
     dct:source "(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)"@en ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:DecisionMaking ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:DecisionMaking ;
@@ -52,6 +55,7 @@ dpv:Automation a rdfs:Class,
         skos:Concept ;
     dct:created "2023-12-10"^^xsd:date ;
     vann:example dex:E0013 ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:ProcessingContext ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:ProcessingContext ;
@@ -71,6 +75,7 @@ dpv:Autonomous a rdfs:Class,
         dpv:Automation ;
     dct:created "2023-12-10"^^xsd:date ;
     dct:source "(ISO/IEC 22989:2022 Artificial intelligence concepts and terminology,https://www.iso.org/standard/74296.html)"@en ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Automation ;
     skos:definition "The system is capable of modifying its operation domain or its goals without external intervention, control or oversight"@en ;
@@ -82,6 +87,7 @@ dpv:ConditionalAutomation a rdfs:Class,
         skos:Concept,
         dpv:Automation ;
     dct:created "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Automation ;
     skos:definition "Sustained and specific performance by a system, with an external agent ready to take over when necessary"@en ;
@@ -93,6 +99,7 @@ dpv:DataControllerDataSource a rdfs:Class,
         skos:Concept,
         dpv:DataSource ;
     dct:created "2023-10-12"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:DataSource ;
     skos:definition "Data Sourced from Data Controller(s), e.g. a Controller inferring data or generating data"@en ;
@@ -105,6 +112,7 @@ dpv:DataPublishedByDataSubject a rdfs:Class,
     dct:contributor "Julian Flake" ;
     dct:created "2022-08-24"^^xsd:date ;
     dct:modified "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:DataSubjectDataSource ;
     skos:definition "Data is published by the data subject"@en ;
@@ -118,6 +126,7 @@ dpv:DataSource a rdfs:Class,
     dct:created "2020-11-04"^^xsd:date ;
     vann:example dex:E0012,
         dex:E0020 ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:ProcessingContext ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:ProcessingContext ;
@@ -135,6 +144,7 @@ dpv:DataSubjectDataSource a rdfs:Class,
         skos:Concept,
         dpv:DataSource ;
     dct:created "2023-10-12"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:DataSource ;
     skos:definition "Data Sourced from Data Subject(s), e.g. when data is collected via a form or observed from their activities"@en ;
@@ -146,6 +156,7 @@ dpv:DecisionMaking a rdfs:Class,
         skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-09-07"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:ProcessingContext ;
     rdfs:superClassOf dpv:AutomatedDecisionMaking ;
     sw:term_status "accepted"@en ;
@@ -162,6 +173,7 @@ dpv:EvaluationOfIndividuals a rdfs:Class,
     dct:created "2022-10-22"^^xsd:date ;
     dct:modified "2022-11-30"^^xsd:date ;
     dct:source "(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)"@en ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:EvaluationScoring ;
     skos:definition "Processing that involves evaluation of individuals"@en ;
@@ -173,6 +185,7 @@ dpv:EvaluationScoring a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit, Piero Bonatti" ;
     dct:created "2020-11-04"^^xsd:date ;
     dct:source "(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)"@en ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:ProcessingContext ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:ProcessingContext ;
@@ -186,6 +199,7 @@ dpv:FullAutomation a rdfs:Class,
         skos:Concept,
         dpv:Automation ;
     dct:created "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Automation ;
     skos:definition "The system is capable of performing its entire mission without external intervention"@en ;
@@ -197,6 +211,7 @@ dpv:HighAutomation a rdfs:Class,
         skos:Concept,
         dpv:Automation ;
     dct:created "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Automation ;
     skos:definition "The system performs parts of its mission without external intervention"@en ;
@@ -209,6 +224,7 @@ dpv:HumanInvolved a rdfs:Class,
         dpv:HumanInvolvement ;
     dct:created "2022-09-03"^^xsd:date ;
     dct:modified "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:HumanInvolvement ;
     skos:definition "Humans are involved in the specified context"@en ;
@@ -221,6 +237,7 @@ dpv:HumanInvolvement a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-01-26"^^xsd:date ;
     dct:modified "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:ProcessingContext ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:ProcessingContext ;
@@ -242,6 +259,7 @@ dpv:HumanInvolvementForControl a rdfs:Class,
         dpv:HumanInvolvement ;
     dct:created "2022-09-04"^^xsd:date ;
     dct:modified "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:HumanInvolvement ;
     skos:definition "Human involvement for the purposes of exercising control over the specified operations in context"@en ;
@@ -254,6 +272,7 @@ dpv:HumanInvolvementForDecision a rdfs:Class,
         dpv:HumanInvolvement ;
     dct:created "2022-09-06"^^xsd:date ;
     dct:modified "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:HumanInvolvement ;
     skos:definition "Human involvement for the purposes of exercising decisions over the specified operations in context"@en ;
@@ -267,6 +286,7 @@ dpv:HumanInvolvementForInput a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-09-07"^^xsd:date ;
     dct:modified "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:HumanInvolvement ;
     skos:definition "Human involvement for the purposes of providing inputs to the specified context"@en ;
@@ -279,6 +299,7 @@ dpv:HumanInvolvementForIntervention a rdfs:Class,
         dpv:HumanInvolvement ;
     dct:created "2022-09-05"^^xsd:date ;
     dct:modified "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:HumanInvolvement ;
     skos:definition "Human involvement for the purposes of exercising interventions over the specified operations in context"@en ;
@@ -292,6 +313,7 @@ dpv:HumanInvolvementForOversight a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-09-07"^^xsd:date ;
     dct:modified "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:HumanInvolvement ;
     skos:definition "Human involvement for the purposes of having oversight over the specified context regarding its operations, inputs, or outputs"@en ;
@@ -305,6 +327,7 @@ dpv:HumanInvolvementForVerification a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-09-07"^^xsd:date ;
     dct:modified "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:HumanInvolvement ;
     skos:definition "Human involvement for the purposes of verification of specified context to ensure its operations, inputs, or outputs are correct or are acceptable."@en ;
@@ -316,6 +339,7 @@ dpv:HumanNotInvolved a rdfs:Class,
         skos:Concept,
         dpv:HumanInvolvement ;
     dct:created "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:HumanInvolvement ;
     skos:definition "Humans are not involved in the specified context"@en ;
@@ -327,6 +351,7 @@ dpv:InnovativeUseOfExistingTechnology a rdfs:Class,
         skos:Concept,
         dpv:InnovativeUseOfTechnology ;
     dct:created "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:InnovativeUseOfTechnology ;
     skos:definition "Involvement of existing technologies used in an innovative manner"@en ;
@@ -340,6 +365,7 @@ dpv:InnovativeUseOfNewTechnologies a rdfs:Class,
     dct:created "2020-11-04"^^xsd:date ;
     dct:modified "2023-12-10"^^xsd:date ;
     dct:source "(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)"@en ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:InnovativeUseOfTechnology ;
     skos:definition "Involvement of a new (innovative) technologies"@en ;
@@ -350,6 +376,7 @@ dpv:InnovativeUseOfNewTechnologies a rdfs:Class,
 dpv:InnovativeUseOfTechnology a rdfs:Class,
         skos:Concept ;
     dct:created "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:ProcessingContext ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:ProcessingContext ;
@@ -365,6 +392,7 @@ dpv:NonPublicDataSource a rdfs:Class,
         dpv:DataSource ;
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Beatriz Esteves, Paul Ryan, Julian Flake" ;
     dct:created "2022-01-26"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:DataSource ;
     skos:definition "A source of data that is not publicly accessible or available"@en ;
@@ -375,6 +403,7 @@ dpv:NotAutomated a rdfs:Class,
         skos:Concept,
         dpv:Automation ;
     dct:created "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Automation ;
     skos:definition "The operator fully controls the system"@en ;
@@ -386,6 +415,7 @@ dpv:PartialAutomation a rdfs:Class,
         skos:Concept,
         dpv:Automation ;
     dct:created "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:Automation ;
     skos:definition "Some sub-functions of the system are fully automated while the system remains under the control of an external agent"@en ;
@@ -396,6 +426,7 @@ dpv:PartialAutomation a rdfs:Class,
 dpv:ProcessingCondition a rdfs:Class,
         skos:Concept ;
     dct:created "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:ProcessingContext ;
     rdfs:superClassOf dpv:ProcessingDuration,
         dpv:ProcessingLocation,
@@ -413,6 +444,7 @@ dpv:ProcessingContext a rdfs:Class,
         skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-02-09"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Context ;
     rdfs:superClassOf dpv:AlgorithmicLogic,
         dpv:Automation,
@@ -440,6 +472,7 @@ dpv:ProcessingContext a rdfs:Class,
 dpv:ProcessingDuration a rdfs:Class,
         skos:Concept ;
     dct:created "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:ProcessingCondition ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:ProcessingCondition ;
@@ -450,6 +483,7 @@ dpv:ProcessingDuration a rdfs:Class,
 dpv:ProcessingLocation a rdfs:Class,
         skos:Concept ;
     dct:created "2023-12-10"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:ProcessingCondition ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:ProcessingCondition ;
@@ -462,6 +496,7 @@ dpv:PublicDataSource a rdfs:Class,
         dpv:DataSource ;
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Beatriz Esteves, Paul Ryan, Julian Flake" ;
     dct:created "2022-01-26"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:DataSource ;
     skos:definition "A source of data that is publicly accessible or available"@en ;
@@ -476,6 +511,7 @@ dpv:ScoringOfIndividuals a rdfs:Class,
     dct:created "2022-10-22"^^xsd:date ;
     dct:modified "2022-11-30"^^xsd:date ;
     dct:source "(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)"@en ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:EvaluationScoring ;
     skos:definition "Processing that involves scoring of individuals"@en ;
@@ -487,6 +523,7 @@ dpv:StorageCondition a rdfs:Class,
     dct:contributor "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar" ;
     dct:created "2019-04-05"^^xsd:date ;
     vann:example dex:E0011 ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:ProcessingCondition ;
     rdfs:superClassOf dpv:StorageDeletion,
         dpv:StorageDuration,
@@ -506,6 +543,7 @@ dpv:StorageDeletion a rdfs:Class,
         skos:Concept ;
     dct:contributor "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar" ;
     dct:created "2019-04-05"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:StorageCondition ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:StorageCondition ;
@@ -517,6 +555,7 @@ dpv:StorageDuration a rdfs:Class,
         skos:Concept ;
     dct:contributor "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar" ;
     dct:created "2019-04-05"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Duration,
         dpv:StorageCondition ;
     sw:term_status "accepted"@en ;
@@ -530,6 +569,7 @@ dpv:StorageLocation a rdfs:Class,
         skos:Concept ;
     dct:contributor "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar" ;
     dct:created "2019-04-05"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Location,
         dpv:StorageCondition ;
     sw:term_status "accepted"@en ;
@@ -543,6 +583,7 @@ dpv:StorageRestoration a rdfs:Class,
         skos:Concept ;
     dct:contributor "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar" ;
     dct:created "2019-04-05"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:StorageCondition ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:StorageCondition ;
@@ -556,6 +597,7 @@ dpv:SystematicMonitoring a rdfs:Class,
     dct:contributor "Harshvardhan J. Pandit, Piero Bonatti" ;
     dct:created "2020-11-04"^^xsd:date ;
     dct:source "(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)"@en ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:ProcessingContext ;
     skos:definition "Processing that involves systematic monitoring of individuals"@en ;
@@ -566,6 +608,7 @@ dpv:Technology a rdfs:Class,
         skos:Concept ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-01-26"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:definition "The technology, technological implementation, or any techniques, skills, methods, and processes used or applied"@en ;
     skos:inScheme dpv:processing-context-classes ;
@@ -576,6 +619,7 @@ dpv:ThirdPartyDataSource a rdfs:Class,
         skos:Concept,
         dpv:DataSource ;
     dct:created "2023-10-12"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:broader dpv:DataSource ;
     skos:definition "Data Sourced from a Third Party, e.g. when data is collected from an entity that is neither the Controller nor the Data Subject"@en ;
@@ -588,6 +632,7 @@ dpv:hasAlgorithmicLogic a rdf:Property,
     dct:contributor "Georg P. Krog, Paul Ryan, Harshvardhan J. Pandit" ;
     dct:created "2020-11-04"^^xsd:date ;
     dct:modified "2022-06-15"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the logic used in processing such as for automated decision making"@en ;
     skos:inScheme dpv:processing-context-properties ;
@@ -599,6 +644,7 @@ dpv:hasDataSource a rdf:Property,
     dcam:rangeIncludes dpv:DataSource ;
     dct:contributor "Georg P. Krog, Paul Ryan, Harshvardhan J. Pandit" ;
     dct:created "2020-11-04"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the source or origin of data being processed"@en ;
     skos:inScheme dpv:processing-context-properties ;
@@ -610,6 +656,7 @@ dpv:hasHumanInvolvement a rdf:Property,
     dcam:rangeIncludes dpv:HumanInvolvement ;
     dct:contributor "Georg P. Krog, Paul Ryan, Harshvardhan J. Pandit" ;
     dct:created "2020-11-04"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates Involvement of humans in processing such as within automated decision making process"@en ;
     skos:inScheme dpv:processing-context-properties ;
@@ -622,6 +669,7 @@ dpv:hasProcessingAutomation a rdf:Property,
     dcam:rangeIncludes dpv:AutomationOfProcessing ;
     dct:contributor "Harshvardhan J. Pandit" ;
     dct:created "2022-08-13"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates the use or extent of automation associated with processing"@en ;
     skos:inScheme dpv:processing-context-properties ;
@@ -634,6 +682,7 @@ dpv:hasStorageCondition a rdf:Property,
     dct:contributor "Axel Polleres, Rob Brennan, Harshvardhan J. Pandit, Mark Lizar" ;
     dct:created "2022-08-13"^^xsd:date ;
     dct:source "(SPECIAL Project,https://specialprivacy.ercim.eu/)"@en ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates information about storage condition"@en ;
     skos:inScheme dpv:processing-context-properties ;
@@ -646,6 +695,7 @@ dpv:isImplementedByEntity a rdf:Property,
     dct:contributor "Axel Polleres, Harshvardhan J. Pandit, Beatriz Esteves, Paul Ryan, Julian Flake" ;
     dct:created "2019-05-07"^^xsd:date ;
     dct:modified "2022-01-26"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates implementation details such as entities or agents"@en ;
     skos:inScheme dpv:processing-context-properties ;
@@ -659,6 +709,7 @@ dpv:isImplementedUsingTechnology a rdf:Property,
     dct:contributor "Beatriz Esteves, Harshvardhan J. Pandit, Paul Ryan, Julian Flake" ;
     dct:created "2022-01-26"^^xsd:date ;
     dct:modified "2022-06-15"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:definition "Indicates implementation details such as technologies or processes"@en ;
     skos:inScheme dpv:processing-context-properties ;

@@ -3,6 +3,7 @@
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
@@ -13,6 +14,7 @@ dpv:hasConsentStatus a rdf:Property,
     dcam:rangeIncludes dpv:ConsentStatus ;
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake" ;
     dct:created "2022-06-21"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifies the state or status of consent"@en ;
     skos:prefLabel "has consent status"@en ;
@@ -22,6 +24,7 @@ dpv:hasIndicationMethod a rdf:Property,
         owl:ObjectProperty ;
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake" ;
     dct:created "2022-06-21"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifies the method by which an entity has indicated the specific context"@en ;
     skos:prefLabel "has indication method"@en .
@@ -30,6 +33,7 @@ dpv:isIndicatedAtTime a rdf:Property,
         owl:ObjectProperty ;
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake" ;
     dct:created "2022-06-21"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifies the temporal information for when the entity has indicated the specific context"@en ;
     skos:prefLabel "is indicated at time"@en .
@@ -39,6 +43,7 @@ dpv:isIndicatedBy a rdf:Property,
     dcam:rangeIncludes dpv:Entity ;
     dct:contributor "Georg P Krog, Harshvardhan J. Pandit, Paul Ryan, Julian Flake" ;
     dct:created "2022-06-21"^^xsd:date ;
+    rdfs:isDefinedBy dpv: ;
     sw:term_status "accepted"@en ;
     skos:definition "Specifies entity who indicates the specific context"@en ;
     skos:prefLabel "is indicated by"@en ;
