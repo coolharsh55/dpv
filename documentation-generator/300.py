@@ -675,12 +675,12 @@ for vocab, vocab_data in RDF_VOCABS.items():
         INFO(f'exporting {module} page')
         _write_template(
             template=vocab_data['module-template'][module],
-            filepath=f"{vocab_data["export"]}/modules", filename=module,
+            filepath=f"{vocab_data['export']}/modules", filename=module,
             index=False, vocab=vocab, lang="en")
         for lang in IMPORT_TRANSLATIONS:
             _write_template(
             template=vocab_data['module-template'][module],
-            filepath=f"{vocab_data["export"]}/modules", filename=module,
+            filepath=f"{vocab_data['export']}/modules", filename=module,
             index=False, vocab=vocab, lang=lang)
 
 

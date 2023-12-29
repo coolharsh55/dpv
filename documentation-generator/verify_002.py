@@ -1,103 +1,128 @@
 #!/usr/bin/env python3
 #author: Harshvardhan J. Pandit
 
-# ensure the output of SHACL conformance tests is true
+'''
+SHACL validation tests
+'''
 
-#############################################################
-
-# this is where the data to be validated is situated in
-# file is expected to be executed from the documentation-generator folder
-# (parent of folder containing this file)
-# (because its less typing of cd & cd ..)
+# Path to data files to be validated.
+# Only the .ttl files are included for convenience in debugging.
 DATA_PATHS = [
-    '../dpv/dpv.ttl',
-    # '../dpv/modules',
-    '../dpv-gdpr/dpv-gdpr.ttl',
-    # '../dpv-gdpr/modules',
-    '../dpv-pd/dpv-pd.ttl',
-    # '../dpv-legal',
-    # '../dpv-legal/modules',
-    '../dpv-tech/dpv-tech.ttl',
+    '../pd/pd.ttl',
+    '../loc/loc.ttl',
     '../rights/eu/rights-eu.ttl',
+    '../legal/us/legal-us.ttl',
+    '../legal/legal.ttl',
+    '../legal/gb/legal-gb.ttl',
+    '../legal/de/legal-de.ttl',
+    '../legal/ie/legal-ie.ttl',
+    '../legal/eu/gdpr/eu-gdpr.ttl',
+    '../legal/eu/rights/eu-rights.ttl',
+    '../legal/eu/dga/eu-dga.ttl',
+    '../legal/eu/legal-eu.ttl',
+    '../tech/tech.ttl',
+    '../dpv/dpv.ttl',
     '../risk/risk.ttl',
-    # '../risk/modules',
 ]
 
-# this is the list of shapes to be validated against
+# Combine all files into a common single graph
+from rdflib import Graph
+data_graph = Graph()
+for file in DATA_PATHS:
+    data_graph.parse(file)
+
+# Shapes to use as validation tests.
+# There can be multiple shapes e.g. associated with specific modules.
 SHAPES = [
     './shacl_shapes/shapes.ttl',
     ]
+shacl_graph = Graph()
+for file in SHAPES:
+    shacl_graph.parse(file)
 
-# note that this has parameters for filepath
-from os import getenv
-from os import path
-SHACLROOT = getenv('SHACLROOT', None)
-if SHACLROOT is None:
-    raise Exception('declare SHACLROOT to path containing shaclvalidate.sh')
-SHACL_VALIDATION_COMMAND = {
-        'shaclbinary': path.join(SHACLROOT, 'shaclvalidate.sh'),
-        'shapeparam': '-shapesfile',
-        # set this variable to the file containing constraints
-        'shapesfile': '{param}',
-        # 'dataparam': '-datafile',
-        # set this variable to the file to be validated
-        # 'datafile': '{param}',
-        }
+# Apply the shapes iteratively to the data graph
+from pyshacl import validate
+conforms, results_graph, results_text = validate( 
+    # returns (conforms:boolean, results_graph, results_text)
+    data_graph=data_graph,
+    shacl_graph=shacl_graph,
+    ont_graph=None,
+    inference='none',
+    abort_on_first=False,
+    )
 
-#############################################################
+# Parse results.
+# If graph conforms, exit.
+if conforms:
+    print('Validation tests passed')
+    import sys
+    sys.exit(0)
 
-from rdflib import Graph, Namespace
+# Load namespaces into the graph so that outputs are
+# convenient to handle e.g. dpv:Concept
+from vocab_management import NAMESPACES
+for k, v in NAMESPACES.items():
+    if k not in results_graph.namespaces():
+        results_graph.bind(k, v)
 
-SHACL = Namespace('http://www.w3.org/ns/shacl#')
+# for ns in results_graph.namespaces():
+#     print(ns)
+# import sys
+# sys.exit(0)
+
+# If errors exist, parse them to produce actionable messages.
 SPARQL_ERROR_MESSAGE = """
     prefix sh: <http://www.w3.org/ns/shacl#>
-    SELECT ?node ?message
+    SELECT ?node ?message ?component ?shape
     WHERE {
         ?report a sh:ValidationResult .
         ?report sh:focusNode ?node .
         ?report sh:resultMessage ?message .
+        ?report sh:sourceConstraintComponent ?component ;
+        sh:sourceShape ?shape ;
     }
     """
+errors = results_graph.query(SPARQL_ERROR_MESSAGE)
 
-def get_shacl_results(output):
-    '''for each output of the SHACL validation process,
-    load the graph, retrieve errors, and display messages'''
-    graph = Graph()
-    graph.parse(data=output, format='turtle')
-    results = graph.query(SPARQL_ERROR_MESSAGE)
-    print(f'{len(results)} errors found')
-    for node, message in results:
-        print(f'{node.n3(graph.namespace_manager)} :: {message}')
+# Ignore these errors.
+# Format is for vocab, ignore specific error shapes
+IGNORE_ERRORS = {
+    # legal concepts e.g. laws have no definition
+    'legal': ['ex:Require_SKOS_Definition'],
+    'legal-eu': ['ex:Require_SKOS_Definition'],
+    'legal-de': ['ex:Require_SKOS_Definition'],
+    'legal-us': ['ex:Require_SKOS_Definition'],
+    'legal-gb': ['ex:Require_SKOS_Definition'],
+    'legal-ie': ['ex:Require_SKOS_Definition'],
+}
 
+# Collate errors.
+# Format is: collate by vocab, then collate by error type
+vocabs = {}
 
-
-from os import remove, walk
-import subprocess
-
-
-def test_shacl(shape):
-    print(f'validating with constraints in {shape}')
-    SHACL_VALIDATION_COMMAND['shapesfile'] = shape
-    command = list(SHACL_VALIDATION_COMMAND.values())
-    command.append('-datafile')
-    command.append('data.ttl')
-    print(f'command: {command}')
-    output = subprocess.run(command, stdout=subprocess.PIPE)
-    output = output.stdout.decode('utf-8')
-    get_shacl_results(output)
-
-
-#############################################################
-
-g = Graph()
-for file in DATA_PATHS:
-    if not file.endswith('.ttl'):
-        # skip non-turtle files
+for node, message, component, shape in errors:
+    # Ignore errors for external concepts
+    if not node.startswith('https://w3id.org/dpv'): continue
+    # Organise errors under vocabs and then by concepts
+    node = node.n3(results_graph.namespace_manager)
+    vocab, term = node.split(':')
+    shape = shape.n3(results_graph.namespace_manager)
+    if vocab in IGNORE_ERRORS and shape in IGNORE_ERRORS[vocab]:
         continue
-    g.parse(file)
-g.serialize('data.ttl')
+    if vocab not in vocabs: vocabs[vocab] = {}
+    if message not in vocabs[vocab]: vocabs[vocab][message] = []
+    # Add error message
+    vocabs[vocab][message].append(term)
 
-for shape in SHAPES:
-    test_shacl(shape)
-
-remove('data.ttl')
+# Render errors in a HTML file so it is easily accessible
+# for anyone without requiring browsing the code.
+OUTPUT_FILE = 'validation.html'
+with open(OUTPUT_FILE, 'w') as fd:
+    from jinja2 import FileSystemLoader, Environment
+    template_loader = FileSystemLoader(searchpath='jinja2_resources')
+    template_env = Environment(
+        loader=template_loader, 
+        autoescape=True, trim_blocks=True, lstrip_blocks=True)
+    template = template_env.get_template('validation.jinja2')
+    with open(f'{OUTPUT_FILE}', 'w+') as fd:
+        fd.write(template.render(data=vocabs))

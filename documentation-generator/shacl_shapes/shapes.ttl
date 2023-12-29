@@ -1,14 +1,16 @@
-@prefix dash: <http://datashapes.org/dash#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dct: <http://purl.org/dc/terms/> .
-@prefix dpv: <http://www.w3id.org/dpv#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 
-@prefix ex: <http://example.com/dpv-shapes/> .
+@prefix ex: <http://example.com/shapes/> .
+
+ex:Require_SKOS_Definition a sh:PropertyShape ;
+    sh:path skos:definition ; 
+    sh:minCount 1 ;
+    sh:message "Terms missing definition (skos:definition)"@en .
 
 ex:TermShape
     a sh:NodeShape ;
@@ -16,31 +18,21 @@ ex:TermShape
     sh:property [
         sh:path skos:prefLabel ; 
         sh:minCount 1 ;
-        sh:message "Terms must have a label"@en ;
+        sh:message "Terms missing lavel (skos:prefLabel)"@en ;
     ] ;
-    sh:property [
-        sh:path skos:definition ; 
-        sh:minCount 1 ;
-        sh:message "Terms must have a description"@en ;
-    ] ;
+    sh:property ex:Require_SKOS_Definition ;
 
     sh:property [
         sh:path dct:created ; 
         sh:minCount 1 ;
         sh:datatype xsd:date ;
-        sh:message "Terms must have a creation date and in xsd:date format"@en ;
+        sh:message "Terms missing creation date (xsd:date)"@en ;
     ] ;
 
     sh:property [
         sh:path dct:modified ; 
         sh:datatype xsd:date ;
-        sh:message "Terms modification date should be in xsd:Date format"@en ;
-    ] ;
-
-    sh:property [
-        sh:path dct:date-accepted ; 
-        sh:datatype xsd:date ;
-        sh:message "Terms acceptance date should be in xsd:Date format"@en ;
+        sh:message "Terms missing modification date (xsd:date)"@en ;
     ] ;
 
     sh:property [
@@ -48,7 +40,7 @@ ex:TermShape
         sh:minCount 1;
         sh:maxCount 1;
         sh:in ( "accepted"@en "proposed"@en "changed"@en "modified"@en "deprecated"@en "removed"@en "sunset"@en ) ;
-        sh:message "Terms must have exactly 1 status indicating acceptance, proposed, etc."@en ;
+        sh:message "Terms missing status (sw:term_status)"@en ;
     ] ;
 
     rdfs:label "constraints for dpv terms"@en .
@@ -59,7 +51,7 @@ ex:ValidTermsShape-skos-broader
     sh:property [
         sh:path skos:prefLabel ;
         sh:minCount 1;
-        sh:message "Invalid term declared as parent using skos:broader"@en ;
+        sh:message "Term has invalid parent (skos:broader)"@en ;
     ] ;
     rdfs:label "Identify typos/mistakes by checking linked broader concept is declared"@en .
 
@@ -69,6 +61,6 @@ ex:ValidTermsShape-skos-narrower
     sh:property [
         sh:path skos:prefLabel ;
         sh:minCount 1;
-        sh:message "Invalid term declared as parent using skos:narrower"@en ;
+        sh:message "Term has invalid child (skos:narrower)"@en ;
     ] ;
     rdfs:label "Identify typos/mistakes by checking linked narrower concept is declared"@en .
