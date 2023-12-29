@@ -8,7 +8,6 @@
       not belonging to DPVCG vocabs or not part of the current vocab  #}
       {% set inscope = (not concept['_dpvterm']) or (concept['prefix'] != vocab_name)  %}
       {% set inscope = inscope and concept['prefix'] != '_' and not concept['_ignored'] %}
-        {% if inscope %}<p>{{ concept }}</p>{% endif %}
     {% else %}
       {# internal/DPVCG defined concepts #}
       {% set inscope = (concept['_dpvterm']) and (concept['prefix'] == vocab_name)  %}

@@ -4,8 +4,10 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix risk: <https://w3id.org/dpv/risk#> .
+@prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 risk:3LikelihoodLevels a rdfs:Class,
@@ -448,6 +450,28 @@ risk:VeryLowSeverity a rdfs:Class,
     skos:definition "Level where Severity is Very Low"@en ;
     skos:prefLabel "Very Low Severity"@en ;
     skos:scopeNote "The suggested quantitative value for this concept is 0.1 on a scale of 0 to 1"@en .
+
+<https://w3id.org/dpv/risk> a owl:Ontology ;
+    dct:conformsTo <http://www.w3.org/2002/07/owl>,
+        "http://www.w3.org/2000/01/rdf-schema",
+        "http://www.w3.org/2004/02/skos/core" ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-08-14"@en ;
+    dct:creator "Beatriz Esteves"@en,
+        "Georg P Krog"@en,
+        "Harshvardhan J. Pandit"@en,
+        "Julian Flake"@en,
+        "Paul Ryan"@en ;
+    dct:description "Extension to the Data Privacy Vocabulary (DPV) providing concepts for representing information about risk assessment and risk management"@en ;
+    dct:hasVersion <https://w3id.org/dpv/risk> ;
+    dct:identifier "https://w3id.org/dpv/risk" ;
+    dct:language "de" ;
+    dct:license <https://www.w3.org/copyright/document-license-2023/> ;
+    dct:modified "2024-01-01"@en ;
+    dct:title "Risk Concepts"@en ;
+    vann:preferredNamespacePrefix "risk" ;
+    vann:preferredNamespaceUri "https://w3id.org/dpv/risk#" ;
+    schema:version "0.8.2" .
 
 dpv:Likelihood rdfs:superClassOf risk:3LikelihoodLevels,
         risk:5LikelihoodLevels,

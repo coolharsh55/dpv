@@ -8,10 +8,13 @@
 @prefix legal-ie: <https://w3id.org/dpv/legal/ie#> .
 @prefix legal-us: <https://w3id.org/dpv/legal/us#> .
 @prefix loc: <https://w3id.org/dpv/loc#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 legal-de:DPA-DE a rdfs:Class,
@@ -1040,6 +1043,100 @@ legal-us:law-VA-VCDPA a rdfs:Class,
     skos:prefLabel "Virginia Consumer Data Protection Act (VCDPA)"@en ;
     foaf:homepage "https://lis.virginia.gov/cgi-bin/legp604.exe?212+sum+HB2307"^^xsd:anyURI ;
     dpv:hasJurisdiction loc:US-VA .
+
+<https://w3id.org/dpv/legal> a owl:Ontology ;
+    dct:conformsTo "http://www.w3.org/2000/01/rdf-schema",
+        "http://www.w3.org/2004/02/skos/core" ;
+    dct:contributor "Harshvardhan J. Pandit",
+        "Jonathan Bowker",
+        "Julian Flake" ;
+    dct:created "2022-04-02"@en ;
+    dct:creator "Harshvardhan J. Pandit"@en ;
+    dct:description "Extension to the Data Privacy Vocabulary (DPV) providing concepts for representing legal information associated with specific jurisdictions"@en ;
+    dct:identifier "https://w3id.org/dpv/legal" ;
+    dct:language "de" ;
+    dct:license <https://www.w3.org/copyright/document-license-2023/> ;
+    dct:modified "2024-01-01"@en ;
+    dct:title "Legal Concepts"@en ;
+    vann:preferredNamespacePrefix "legal" ;
+    vann:preferredNamespaceUri "https://w3id.org/dpv/legal#" ;
+    schema:version "2" .
+
+<https://w3id.org/dpv/legal/de> a owl:Ontology ;
+    dct:conformsTo "http://www.w3.org/2000/01/rdf-schema",
+        "http://www.w3.org/2004/02/skos/core" ;
+    dct:contributor "Harshvardhan J. Pandit",
+        "Julian Flake" ;
+    dct:created "2024-01-01"@en ;
+    dct:creator "Harshvardhan J. Pandit"@en ;
+    dct:description "Extension to the Data Privacy Vocabulary (DPV) providing concepts for representing legal information for Germany as jurisdiction"@en ;
+    dct:identifier "https://w3id.org/dpv/legal/de" ;
+    dct:language "de" ;
+    dct:license <https://www.w3.org/copyright/document-license-2023/> ;
+    dct:title "Legal Concepts for Germany"@en ;
+    vann:preferredNamespacePrefix "legal-de" ;
+    vann:preferredNamespaceUri "https://w3id.org/dpv/legal/de#" ;
+    schema:version "2" .
+
+<https://w3id.org/dpv/legal/eu> a owl:Ontology ;
+    dct:conformsTo "http://www.w3.org/2000/01/rdf-schema",
+        "http://www.w3.org/2004/02/skos/core" ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2024-01-01"@en ;
+    dct:creator "Harshvardhan J. Pandit"@en ;
+    dct:description "Extension to the Data Privacy Vocabulary (DPV) providing concepts for representing legal information for EU as jurisdiction"@en ;
+    dct:identifier "https://w3id.org/dpv/legal/eu" ;
+    dct:language "de" ;
+    dct:license <https://www.w3.org/copyright/document-license-2023/> ;
+    dct:title "Legal Concepts for European Union (EU)"@en ;
+    vann:preferredNamespacePrefix "legal-eu" ;
+    vann:preferredNamespaceUri "https://w3id.org/dpv/legal/eu#" ;
+    schema:version "2" .
+
+<https://w3id.org/dpv/legal/gb> a owl:Ontology ;
+    dct:conformsTo "http://www.w3.org/2000/01/rdf-schema",
+        "http://www.w3.org/2004/02/skos/core" ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2024-01-01"@en ;
+    dct:creator "Harshvardhan J. Pandit"@en ;
+    dct:description "Extension to the Data Privacy Vocabulary (DPV) providing concepts for representing legal information for United Kingdom of Great Britain and Northern Ireland as jurisdiction"@en ;
+    dct:identifier "https://w3id.org/dpv/legal/gb" ;
+    dct:language "de" ;
+    dct:license <https://www.w3.org/copyright/document-license-2023/> ;
+    dct:title "Legal Concepts for United Kingdom of Great Britain and Northern Ireland"@en ;
+    vann:preferredNamespacePrefix "legal-gb" ;
+    vann:preferredNamespaceUri "https://w3id.org/dpv/legal/gb#" ;
+    schema:version "2" .
+
+<https://w3id.org/dpv/legal/ie> a owl:Ontology ;
+    dct:conformsTo "http://www.w3.org/2000/01/rdf-schema",
+        "http://www.w3.org/2004/02/skos/core" ;
+    dct:created "2024-01-01"@en ;
+    dct:creator "Harshvardhan J. Pandit"@en ;
+    dct:description "Extension to the Data Privacy Vocabulary (DPV) providing concepts for representing legal information for Ireland as jurisdiction"@en ;
+    dct:identifier "https://w3id.org/dpv/legal/ie" ;
+    dct:language "de" ;
+    dct:license <https://www.w3.org/copyright/document-license-2023/> ;
+    dct:title "Legal Concepts for Ireland"@en ;
+    vann:preferredNamespacePrefix "legal-ie" ;
+    vann:preferredNamespaceUri "https://w3id.org/dpv/legal/ie#" ;
+    schema:version "2" .
+
+<https://w3id.org/dpv/legal/us> a owl:Ontology ;
+    dct:conformsTo "http://www.w3.org/2000/01/rdf-schema",
+        "http://www.w3.org/2004/02/skos/core" ;
+    dct:contributor "Harshvardhan J. Pandit",
+        "Jonathan Bowker" ;
+    dct:created "2024-01-01"@en ;
+    dct:creator "Harshvardhan J. Pandit"@en ;
+    dct:description "Extension to the Data Privacy Vocabulary (DPV) providing concepts for representing legal information for United States of America (USA) as jurisdiction"@en ;
+    dct:identifier "https://w3id.org/dpv/legal/us" ;
+    dct:language "de" ;
+    dct:license <https://www.w3.org/copyright/document-license-2023/> ;
+    dct:title "Legal Concepts for United States of America (USA)"@en ;
+    vann:preferredNamespacePrefix "legal-us" ;
+    vann:preferredNamespaceUri "https://w3id.org/dpv/legal/us#" ;
+    schema:version "2" .
 
 legal-ie:ie-classes a skos:ConceptScheme .
 

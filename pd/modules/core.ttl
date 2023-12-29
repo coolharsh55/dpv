@@ -1,9 +1,12 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix dpv: <https://w3id.org/dpv#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix pd: <https://w3id.org/dpv/pd#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 pd:External a rdfs:Class,
@@ -108,6 +111,25 @@ pd:Tracking a rdfs:Class,
     skos:definition "Information used to track an individual or group e.g. location or email"@en ;
     skos:inScheme pd:core-classes ;
     skos:prefLabel "Tracking"@en .
+
+<https://w3id.org/dpv/pd> a owl:Ontology ;
+    dct:conformsTo "http://www.w3.org/2000/01/rdf-schema",
+        "http://www.w3.org/2004/02/skos/core" ;
+    dct:contributor "Elmar Kiesling",
+        "Fajar Ekaputra",
+        "Harshvardhan J. Pandit" ;
+    dct:created "2022-04-02"@en ;
+    dct:creator "Axel Polleres"@en,
+        "Harshvardhan J. Pandit"@en ;
+    dct:description "Extension to the Data Privacy Vocabulary (DPV) providing additional categories of personal data"@en ;
+    dct:identifier "https://w3id.org/dpv/pd" ;
+    dct:language "de" ;
+    dct:license <https://www.w3.org/copyright/document-license-2023/> ;
+    dct:modified "2024-01-01"@en ;
+    dct:title "Personal Data Categories"@en ;
+    vann:preferredNamespacePrefix "pd" ;
+    vann:preferredNamespaceUri "https://w3id.org/dpv/pd#" ;
+    schema:version "2" .
 
 pd:core-classes a skos:ConceptScheme .
 

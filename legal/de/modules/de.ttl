@@ -4,10 +4,13 @@
 @prefix legal-de: <https://w3id.org/dpv/legal/de#> .
 @prefix legal-eu: <https://w3id.org/dpv/legal/eu#> .
 @prefix loc: <https://w3id.org/dpv/loc#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 legal-de:DPA-DE a rdfs:Class,
@@ -486,6 +489,22 @@ legal-de:law-TH-ThürDSG a rdfs:Class,
     skos:prefLabel "Thuringian Data Protection Act (ThürDSG)"@en ;
     foaf:homepage "https://landesrecht.thueringen.de/bsth/document/jlr-DSGTH2018rahmen"^^xsd:anyURI ;
     dpv:hasJurisdiction loc:DE-TH .
+
+<https://w3id.org/dpv/legal/de> a owl:Ontology ;
+    dct:conformsTo "http://www.w3.org/2000/01/rdf-schema",
+        "http://www.w3.org/2004/02/skos/core" ;
+    dct:contributor "Harshvardhan J. Pandit",
+        "Julian Flake" ;
+    dct:created "2024-01-01"@en ;
+    dct:creator "Harshvardhan J. Pandit"@en ;
+    dct:description "Extension to the Data Privacy Vocabulary (DPV) providing concepts for representing legal information for Germany as jurisdiction"@en ;
+    dct:identifier "https://w3id.org/dpv/legal/de" ;
+    dct:language "de" ;
+    dct:license <https://www.w3.org/copyright/document-license-2023/> ;
+    dct:title "Legal Concepts for Germany"@en ;
+    vann:preferredNamespacePrefix "legal-de" ;
+    vann:preferredNamespaceUri "https://w3id.org/dpv/legal/de#" ;
+    schema:version "2" .
 
 legal-de:de-classes a skos:ConceptScheme .
 

@@ -1,10 +1,13 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix loc: <https://w3id.org/dpv/loc#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 loc:EEA a rdfs:Class,
@@ -263,6 +266,22 @@ loc:EU28 a rdfs:Class,
         loc:SK ;
     skos:prefLabel "EU 28 Member States"@en ;
     skos:scopeNote "European Union (EU-27-1) with 27 Member States pre Brexit"@en .
+
+<https://w3id.org/dpv/loc> a owl:Ontology ;
+    dct:conformsTo "http://www.w3.org/2000/01/rdf-schema",
+        "http://www.w3.org/2004/02/skos/core" ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-04-02"@en ;
+    dct:creator "Harshvardhan J. Pandit"@en ;
+    dct:description "Extension to the Data Privacy Vocabulary (DPV) providing concepts for representing (geo-political) locations and memberships"@en ;
+    dct:identifier "https://w3id.org/dpv/loc" ;
+    dct:language "de" ;
+    dct:license <https://www.w3.org/copyright/document-license-2023/> ;
+    dct:modified "2024-01-01"@en ;
+    dct:title "Location Concepts"@en ;
+    vann:preferredNamespacePrefix "loc" ;
+    vann:preferredNamespaceUri "https://w3id.org/dpv/loc#" ;
+    schema:version "2" .
 
 loc:GB skos:broader loc:EEA30,
         loc:EU28 .

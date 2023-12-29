@@ -14,7 +14,6 @@ import json
 from rdflib import Graph, Namespace, BNode, Literal
 from rdflib import RDF, RDFS, OWL, SKOS
 from rdflib import URIRef
-from rdform import DataGraph, RDFS_Resource
 import logging
 logging.basicConfig(
     level=logging.DEBUG, format='%(levelname)s - %(funcName)s :: %(lineno)d - %(message)s')
@@ -69,6 +68,8 @@ class DATA(object):
         for s, p, o in graph:
             # ==== parse-subject ====
 
+            # check if this is the vocab IRI
+            # if len(s) < len(NAMESPACES[vocab]): continue
             # n3 gets prefix:term using the n3 notation
             # which makes it easier to directly look up terms
             # rather than using the full IRIs
@@ -107,6 +108,13 @@ class DATA(object):
             term = DATA.concepts[term]
             term['_termsource'].add(vocab)
             vocab_data[term['prefixed']] = term
+
+            if len(s) < len(NAMESPACES[vocab]):
+                term['_type'] = 'metadata'
+                term['vocab'] = vocab
+                term['namespace'] = NAMESPACES[vocab]
+                term['prefix'] = vocab
+                DATA.data[f'{vocab}-metadata'] = term
 
             # ==== parse-predicate ====
 
@@ -237,6 +245,7 @@ class DATA(object):
         DATA.modules[vocab][module] = module_data
         # Populate the classes/properties in module
         for s, _, _ in graph:
+            if len(s) < len(NAMESPACES[vocab]): continue # vocab IRI
             term = s.n3(graph.namespace_manager)
             if term.startswith('_'): # BNode
                 continue
@@ -712,3 +721,6 @@ if ':' in list(data.keys())[0]: # hack to detect repeated script call
     with open(TRANSLATIONS_MISSING_FILE, 'w') as fd:
         json.dump(missing, fd, indent=2)
         INFO(F"missing translations collected in {TRANSLATIONS_MISSING_FILE}")
+
+INFO('*'*40)
+# DEBUG(DATA.data['dpv'].keys())

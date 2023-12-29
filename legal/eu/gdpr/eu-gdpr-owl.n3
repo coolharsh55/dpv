@@ -5,8 +5,10 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dcat:Resource a rdfs:Class,
@@ -1455,6 +1457,33 @@ dpv:LegitimateInterestOfController rdfs:superClassOf eu-gdpr:A6-1-f-controller .
 dpv:LegitimateInterestOfThirdParty rdfs:superClassOf eu-gdpr:A6-1-f-third-party .
 
 dpv:VitalInterestOfDataSubject rdfs:superClassOf eu-gdpr:A6-1-d-data-subject .
+
+<https://w3id.org/dpv/legal/eu/gdpr> a owl:Ontology ;
+    dct:conformsTo <http://www.w3.org/2002/07/owl>,
+        "http://www.w3.org/2000/01/rdf-schema",
+        "http://www.w3.org/2004/02/skos/core" ;
+    dct:contributor "Beatriz Esteves",
+        "Bud Bruegger",
+        "David Hickey",
+        "Eva Schlehahn",
+        "Georg Krog",
+        "Georg P Krog",
+        "Harshvardhan J. Pandit",
+        "Paul Ryan",
+        "Rigo Wenning" ;
+    dct:created "2019-06-18"@en ;
+    dct:creator "Axel Polleres"@en,
+        "Harshvardhan J. Pandit"@en ;
+    dct:description "Extension to the Data Privacy Vocabulary (DPV) providing concepts for representing information associated with EU GDPR"@en ;
+    dct:hasVersion <https://w3id.org/dpv/legal/eu/gdpr> ;
+    dct:identifier "https://w3id.org/dpv/legal/eu/gdpr" ;
+    dct:language "de" ;
+    dct:license <https://www.w3.org/copyright/document-license-2023/> ;
+    dct:modified "2024-01-01"@en ;
+    dct:title "EU General Data Protection Regulation (GDPR)"@en ;
+    vann:preferredNamespacePrefix "eu-gdpr" ;
+    vann:preferredNamespaceUri "https://w3id.org/dpv/legal/eu/gdpr#" ;
+    schema:version "2" .
 
 dpv:ExpressedConsent rdfs:superClassOf eu-gdpr:A6-1-a,
         eu-gdpr:A6-1-a-non-explicit-consent .

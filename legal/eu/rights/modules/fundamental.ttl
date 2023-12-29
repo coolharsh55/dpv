@@ -1,9 +1,12 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix eu-rights: <https://w3id.org/dpv/rights/eu#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 eu-rights:A1-HumanDignity a rdfs:Class,
@@ -918,6 +921,22 @@ eu-rights:T7-InterpretationAndApplication a rdfs:Class,
         eu-rights:A53-LevelOfProtection,
         eu-rights:A54-ProhibitionOfAbuseOfRights ;
     skos:prefLabel "T7 Interpretation And Application"@en .
+
+<https://w3id.org/dpv/rights/eu> a owl:Ontology ;
+    dct:conformsTo "http://www.w3.org/2000/01/rdf-schema",
+        "http://www.w3.org/2004/02/skos/core" ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2022-08-15"@en ;
+    dct:creator "Harshvardhan J. Pandit"@en ;
+    dct:description "Extension to the Data Privacy Vocabulary (DPV) providing concepts for representing information associated with EU's Fundamental Rights and Freedoms"@en ;
+    dct:identifier "https://w3id.org/dpv/rights/eu" ;
+    dct:language "de" ;
+    dct:license <https://www.w3.org/copyright/document-license-2023/> ;
+    dct:modified "2024-01-01"@en ;
+    dct:title "EU Fundamental Rights and Freedoms"@en ;
+    vann:preferredNamespacePrefix "eu-rights" ;
+    vann:preferredNamespaceUri "https://w3id.org/dpv/rights/eu#" ;
+    schema:version "2" .
 
 dpv:DataSubjectRight skos:narrower eu-rights:EUFundamentalRights .
 

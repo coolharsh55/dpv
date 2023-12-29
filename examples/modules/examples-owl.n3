@@ -2,7 +2,10 @@
 @prefix dex: <https://w3id.org/dpv/examples#> .
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix eu-gdpr: <https://w3id.org/dpv/legal/eu/gdpr#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix schema: <https://schema.org/> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dex:E0001 a dex:Example ;
@@ -341,4 +344,22 @@ dex:E0029 a dex:Example ;
         dpv:RiskMitigationMeasure ;
     dct:title "Risk and Consequence" ;
     sw:term_status "accepted"@en .
+
+<https://w3id.org/dpv/examples> a owl:Ontology ;
+    dct:conformsTo <http://www.w3.org/2002/07/owl>,
+        "http://www.w3.org/2000/01/rdf-schema",
+        "http://www.w3.org/2004/02/skos/core" ;
+    dct:contributor "Harsh" ;
+    dct:created "2022-08-18"@en ;
+    dct:creator "Harshvardhan J. Pandit"@en ;
+    dct:description "Examples for/using DPVCG vocabularies"@en ;
+    dct:hasVersion <https://w3id.org/dpv/examples> ;
+    dct:identifier "https://w3id.org/dpv/examples" ;
+    dct:language "de" ;
+    dct:license <https://www.w3.org/copyright/document-license-2023/> ;
+    dct:modified "2024-01-01"@en ;
+    dct:title "DPV Examples"@en ;
+    vann:preferredNamespacePrefix "dex" ;
+    vann:preferredNamespaceUri "https://w3id.org/dpv/examples#" ;
+    schema:version "2" .
 

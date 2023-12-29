@@ -7,6 +7,7 @@
 @prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 dpv:hasConsentStatus a rdf:Property,
@@ -48,4 +49,25 @@ dpv:isIndicatedBy a rdf:Property,
     skos:definition "Specifies entity who indicates the specific context"@en ;
     skos:prefLabel "is indicated by"@en ;
     schema:rangeIncludes dpv:Entity .
+
+<https://w3id.org/dpv> a owl:Ontology ;
+    dct:conformsTo <http://www.w3.org/2002/07/owl>,
+        "http://www.w3.org/2000/01/rdf-schema",
+        "http://www.w3.org/2004/02/skos/core" ;
+    dct:contributor "Georg P Krog",
+        "Harshvardhan J. Pandit",
+        "Julian Flake",
+        "Paul Ryan" ;
+    dct:created "2022-08-18"@en ;
+    dct:creator "Harshvardhan J. Pandit"@en ;
+    dct:description "The Data Privacy Vocabulary (DPV) provides terms (classes and properties) to represent information about processing of personal data, for example - purposes, processing operations, personal data, technical and organisational measures."@en ;
+    dct:hasVersion <https://w3id.org/dpv> ;
+    dct:identifier "https://w3id.org/dpv" ;
+    dct:language "de" ;
+    dct:license <https://www.w3.org/copyright/document-license-2023/> ;
+    dct:modified "2024-01-01"@en ;
+    dct:title "Data Privacy Vocabulary (DPV)"@en ;
+    vann:preferredNamespacePrefix "dpv" ;
+    vann:preferredNamespaceUri "https://w3id.org/dpv#" ;
+    schema:version "2" .
 

@@ -8,6 +8,7 @@ from collections import namedtuple
 import json
 # [RDFLib](https://rdflib.readthedocs.io/en/stable/) library required
 from rdflib import Graph, Namespace
+from rdflib import RDF, RDFS, OWL, SKOS, DCTERMS, SDO, VANN
 from rdflib.compare import graph_diff
 from rdflib.term import Literal, URIRef, BNode
 
@@ -137,7 +138,7 @@ for lang, lang_data in IMPORT_TRANSLATIONS.items():
 # == export ==
 
 # === serialise-RDF ===
-def serialize_graph(triples:list, filepath:str, hook:str=None) -> None:
+def serialize_graph(triples:list, filepath:str, vocab:str, hook:str=None) -> None:
     '''`serialize_graph` serializes triples at filepath with defined 
     formats from `vocab_management.RDF_SERIALIZATIONS`. `hook` defines
     a string key which is used to retrieve SPARQL queries for the
@@ -148,12 +149,51 @@ def serialize_graph(triples:list, filepath:str, hook:str=None) -> None:
     for triple in triples:
         graph.add(triple)
 
+    # **Hooks** are SPARQL queries associated with specific vocabs or modules.
+    # If any are present, they are called here to update the graph.
+    # Hooks can insert, update, or delete triples in the graph.
     if hook in RDF_EXPORT_HOOK:
         for query in RDF_EXPORT_HOOK[hook]:
-            DEBUG(query)
             graph.update(query)
         DEBUG(f"Updated graph with {len(RDF_EXPORT_HOOK[hook])} queries")
 
+    # Add **ontology metadata**, retrieve manual metadata from `RDF_VOCABS`
+    # in [[vocab_management.py]] and programmatically add other metadata.
+    metadata = RDF_VOCABS[vocab]['metadata']
+    vocab_iri = URIRef(str(NAMESPACES[vocab])[:-1]) # strip last character
+    graph.add((vocab_iri, RDF.type, OWL.Ontology))
+    graph.add((vocab_iri, DCTERMS.title, Literal(metadata['dct:title'], lang='en')))
+    graph.add((vocab_iri, DCTERMS.description, Literal(metadata['dct:description'], lang='en')))
+    graph.add((vocab_iri, DCTERMS.created, Literal(metadata['dct:created'], lang='en')))
+    if 'dct:modified' in metadata:
+        graph.add((vocab_iri, DCTERMS.modified, Literal(metadata['dct:modified'], lang='en')))
+    for creator in metadata['dct:creator'].split(','):
+        graph.add((vocab_iri, DCTERMS.creator, Literal(creator.strip(), lang='en')))
+    graph.add((vocab_iri, SDO.version, Literal(metadata['schema:version'])))
+    graph.add((vocab_iri, DCTERMS.identifier, Literal(vocab_iri)))
+    graph.add((vocab_iri, DCTERMS.conformsTo, Literal(str(RDFS)[:-1])))
+    graph.add((vocab_iri, DCTERMS.conformsTo, Literal(str(SKOS)[:-1])))
+    for lang in IMPORT_TRANSLATIONS:
+        graph.add((vocab_iri, DCTERMS.language, Literal(lang)))
+    # Contributor are collected from all concept contributors
+    contributors = set()
+    results = list(graph.triples((None, NAMESPACES['dct'].contributor, None)))
+    for _, _, persons in results:
+        persons = persons.replace(';', ',')
+        for person in persons.split(','):
+            contributors.add(person.strip())
+    for person in contributors:
+        graph.add((vocab_iri, DCTERMS.contributor, Literal(person)))
+    # TODO: dct:hasFormat/dct:isFormatOf - defined for each serialisation
+    # TODO: dct:hasVersion/dct:isVersionOf - between RDFS/SKOS and OWL variants
+    graph.add((
+        vocab_iri, DCTERMS.license, 
+        URIRef('https://www.w3.org/copyright/document-license-2023/')))
+    graph.add((vocab_iri, VANN.preferredNamespacePrefix, Literal(vocab)))
+    graph.add((vocab_iri, VANN.preferredNamespaceUri, Literal(NAMESPACES[vocab])))
+
+    # Serialise the graph in specific formats defined in `RDF_SERIALIZATIONS`
+    # from [[vocab_management.py]]
     for ext, format in RDF_SERIALIZATIONS.items():
         graph.serialize(f'{filepath}.{ext}', format=format)
     INFO(f'wrote {filepath}.[{",".join(RDF_SERIALIZATIONS)}]')
@@ -180,6 +220,15 @@ def serialize_graph(triples:list, filepath:str, hook:str=None) -> None:
     ##### OWL semantics
     # For reference, see [Using OWL and SKOS (May 2008)
     # ](https://www.w3.org/2006/07/SWD/SKOS/skos-and-owl/master.html)
+
+    # remove conformance with SKOS, replace with conformance to OWL2
+    graph.update(f"""
+        DELETE {{ ?s dct:conformsTo <{str(SKOS)[:-1]}> }}
+        INSERT {{ 
+            ?s dct:conformsTo <{str(OWL)[:-1]}> . 
+            ?s dct:hasVersion <{str(vocab_iri)}> }}
+        WHERE {{ ?s dct:conformsTo ?o }}
+        """)
 
     # for classes, `skos:Concept` is converted to `owl:Class`
     graph.update("""
@@ -372,13 +421,13 @@ for vocab, vocab_data in CSVFILES.items():
         # export module triples
         exportpath = RDF_STRUCTURE[vocab]['modules']
         filepath = f'{exportpath}/{module}'
-        serialize_graph(module_triples, filepath, hook=f'{vocab}-{module}')
+        serialize_graph(module_triples, filepath, vocab, hook=f'{vocab}-{module}')
         vocab_triples += module_triples
 
     # export vocab triples
     exportpath = RDF_STRUCTURE[vocab]['main']
     filepath = f'{exportpath}/{vocab}'
-    serialize_graph(vocab_triples, filepath, hook=vocab)
+    serialize_graph(vocab_triples, filepath, vocab, hook=vocab)
     INFO(f'VOCAB triples: {len(vocab_triples)} accepted, {sum((len(m) for m in PROPOSED[vocab].values()))} proposed')
     global_triples += vocab_triples
 
@@ -398,7 +447,7 @@ for collation in RDF_COLLATIONS:
     triples = Graph()
     for filepath in collation['input']:
         triples.parse(filepath)
-    serialize_graph(triples, collation['output'], hook=f'collation-{collation}')
+    serialize_graph(triples, collation['output'], vocab=collation['name'], hook=f'collation-{collation}')
     INFO(f"Collected {len(triples)} triples into {collation['output']}")
 
 # === serialise-missing-translations ===

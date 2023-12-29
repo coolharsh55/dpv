@@ -9,9 +9,9 @@
    var respecConfig = {
     shortName: "dpv",
     title: "Data Privacy Vocabulary (DPV)",
-    subtitle: "version 1",
-    publishDate: "2022-12-05",
-    specStatus: "CG-FINAL",
+    subtitle: "version 2",
+    publishDate: "2024-01-01",
+    specStatus: "CG-DRAFT",
     group: "dpvcg",
     latestVersion: "https://w3id.org/dpv",
     canonicalUri: "https://w3id.org/dpv",
@@ -35,84 +35,11 @@
       retiredDate: "2019-12-31"
     }
     ],
-    authors: [
-      {
-        "name": "Axel Polleres",
-        "company": "Vienna University of Economics and Business"
-      },
-      {
-        "name": "Beatriz Esteves",
-        "company": "Universidad Politécnica de Madrid"
-      },
-      {
-        "name": "Bert Bos",
-        "company": "W3C/ERCIM"
-      },
-      {
-        "name": "Bud Bruegger",
-        "company": "Unabhängige Landeszentrum für Datenschutz Schleswig-Holstein"
-      },
-      {
-        "name": "Elmar Kiesling",
-        "company": "Vienna University of Technology"
-      },
-      {
-        "name": "Eva Schlehahn",
-        "company": "Unabhängige Landeszentrum für Datenschutz Schleswig-Holstein"
-      },
-      {
-        "name": "David Hickey",
-        "company": "Dublin City University"
-      },
-      {
-        "name": "Fajar J. Ekaputra",
-        "company": "Vienna University of Technology"
-      },
-      {
-        "name": "Georg P. Krog",
-        "company": "Signatu AS"
-      },
-      {
+    authors: [      {
         "name": "Harshvardhan J. Pandit",
-        "company": "ADAPT Centre, Dublin City University",
-      },
-      {
-        "name": "Javier D. Fernández",
-        "company": "Vienna University of Economics and Business"
-      },
-      {
-        "name": "Julian Flake",
-        "company": "University of Koblenz-Landau"
-      },
-      {
-        "name": "Mark Lizar",
-        "company": "OpenConsent/Kantara Initiative"
-      },
-      {
-        "name": "Paul Ryan",
-        "company": "Uniphar PLC"
-      },
-      {
-        "name": "Piero Bonatti",
-        "company": "Università di Napoli Federico II"
-      },
-      {
-        "name": "Ramisa Gachpaz Hamed",
-        "company": "Trinity College Dublin"
-      },
-      {
-        "name": "Rigo Wenning",
-        "company": "W3C/ERCIM"
-      },
-      {
-        "name": "Rob Brennan",
-        "company": "University College Dublin"
-      },
-      {
-        "name": "Simon Steyskal",
-        "company": "Siemens"
+        "company": "ADAPT Centre, Dublin City University"
       }
-    ],
+],
     localBiblio: {
   "DPVCG": {
     "href": "https://www.w3.org/community/dpvcg/",
@@ -16542,12 +16469,12 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#PersonalData">dpv:PersonalData</a> → 
+          <td>             <a href="#DerivedData">dpv:DerivedData</a> → 
              <a href="#Data">dpv:Data</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#DerivedData">dpv:DerivedData</a> → 
+          <td>             <a href="#PersonalData">dpv:PersonalData</a> → 
              <a href="#Data">dpv:Data</a>
 </td>
 </tr>      
@@ -24236,6 +24163,18 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
+          <td>             <a href="#DerivedPersonalData">dpv:DerivedPersonalData</a> → 
+             <a href="#DerivedData">dpv:DerivedData</a> → 
+             <a href="#Data">dpv:Data</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>             <a href="#DerivedPersonalData">dpv:DerivedPersonalData</a> → 
+             <a href="#PersonalData">dpv:PersonalData</a> → 
+             <a href="#Data">dpv:Data</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
           <td>             <a href="#GeneratedPersonalData">dpv:GeneratedPersonalData</a> → 
              <a href="#InferredData">dpv:InferredData</a> → 
              <a href="#Data">dpv:Data</a>
@@ -24244,18 +24183,6 @@
           <th>Broader/Parent types</th>
           <td>             <a href="#GeneratedPersonalData">dpv:GeneratedPersonalData</a> → 
              <a href="#PersonalData">dpv:PersonalData</a> → 
-             <a href="#Data">dpv:Data</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
-          <td>             <a href="#DerivedPersonalData">dpv:DerivedPersonalData</a> → 
-             <a href="#PersonalData">dpv:PersonalData</a> → 
-             <a href="#Data">dpv:Data</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
-          <td>             <a href="#DerivedPersonalData">dpv:DerivedPersonalData</a> → 
-             <a href="#DerivedData">dpv:DerivedData</a> → 
              <a href="#Data">dpv:Data</a>
 </td>
 </tr>      
@@ -30931,12 +30858,12 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#ObservedData">dpv:ObservedData</a> → 
+          <td>             <a href="#PersonalData">dpv:PersonalData</a> → 
              <a href="#Data">dpv:Data</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#PersonalData">dpv:PersonalData</a> → 
+          <td>             <a href="#ObservedData">dpv:ObservedData</a> → 
              <a href="#Data">dpv:Data</a>
 </td>
 </tr>      
@@ -33329,13 +33256,13 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#ServicePersonalisation">dpv:ServicePersonalisation</a> → 
-             <a href="#ServiceProvision">dpv:ServiceProvision</a> → 
+             <a href="#Personalisation">dpv:Personalisation</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#ServicePersonalisation">dpv:ServicePersonalisation</a> → 
-             <a href="#Personalisation">dpv:Personalisation</a> → 
+             <a href="#ServiceProvision">dpv:ServiceProvision</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 </tr>      
@@ -35320,14 +35247,14 @@
           <th>Broader/Parent types</th>
           <td>             <a href="#ProvidePersonalisedRecommendations">dpv:ProvidePersonalisedRecommendations</a> → 
              <a href="#ServicePersonalisation">dpv:ServicePersonalisation</a> → 
-             <a href="#ServiceProvision">dpv:ServiceProvision</a> → 
+             <a href="#Personalisation">dpv:Personalisation</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#ProvidePersonalisedRecommendations">dpv:ProvidePersonalisedRecommendations</a> → 
              <a href="#ServicePersonalisation">dpv:ServicePersonalisation</a> → 
-             <a href="#Personalisation">dpv:Personalisation</a> → 
+             <a href="#ServiceProvision">dpv:ServiceProvision</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 </tr>      
@@ -35408,13 +35335,13 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#ServicePersonalisation">dpv:ServicePersonalisation</a> → 
-             <a href="#ServiceProvision">dpv:ServiceProvision</a> → 
+             <a href="#Personalisation">dpv:Personalisation</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#ServicePersonalisation">dpv:ServicePersonalisation</a> → 
-             <a href="#Personalisation">dpv:Personalisation</a> → 
+             <a href="#ServiceProvision">dpv:ServiceProvision</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 </tr>      
@@ -35499,14 +35426,14 @@
           <th>Broader/Parent types</th>
           <td>             <a href="#ProvidePersonalisedRecommendations">dpv:ProvidePersonalisedRecommendations</a> → 
              <a href="#ServicePersonalisation">dpv:ServicePersonalisation</a> → 
-             <a href="#ServiceProvision">dpv:ServiceProvision</a> → 
+             <a href="#Personalisation">dpv:Personalisation</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#ProvidePersonalisedRecommendations">dpv:ProvidePersonalisedRecommendations</a> → 
              <a href="#ServicePersonalisation">dpv:ServicePersonalisation</a> → 
-             <a href="#Personalisation">dpv:Personalisation</a> → 
+             <a href="#ServiceProvision">dpv:ServiceProvision</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 </tr>      
@@ -35707,11 +35634,11 @@
           <th>Date Created</th>
           <td><i>2019-05-07</i></td>
         </tr>        
-       
 <tr>
-          <th>Contributors</th>
+          <th>Date Modified</th>
           <td><i>2022-10-14</i></td>
         </tr>       
+       
         <tr>
           <th>Documented in</th>
           <td><a href="https://w3id.org/dpv#vocab-processing">Dpv Processing</a></td>
@@ -38679,14 +38606,14 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#ImpactAssessment">dpv:ImpactAssessment</a> → 
-             <a href="#Assessment">dpv:Assessment</a> → 
+          <td>             <a href="#ReviewProcedure">dpv:ReviewProcedure</a> → 
              <a href="#OrganisationalMeasure">dpv:OrganisationalMeasure</a> → 
              <a href="#TechnicalOrganisationalMeasure">dpv:TechnicalOrganisationalMeasure</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#ReviewProcedure">dpv:ReviewProcedure</a> → 
+          <td>             <a href="#ImpactAssessment">dpv:ImpactAssessment</a> → 
+             <a href="#Assessment">dpv:Assessment</a> → 
              <a href="#OrganisationalMeasure">dpv:OrganisationalMeasure</a> → 
              <a href="#TechnicalOrganisationalMeasure">dpv:TechnicalOrganisationalMeasure</a>
 </td>
@@ -41789,12 +41716,12 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#ServiceProvision">dpv:ServiceProvision</a> → 
+          <td>             <a href="#Personalisation">dpv:Personalisation</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#Personalisation">dpv:Personalisation</a> → 
+          <td>             <a href="#ServiceProvision">dpv:ServiceProvision</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 </tr>      
@@ -43562,14 +43489,14 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#Duration">dpv:Duration</a> → 
+          <td>             <a href="#StorageCondition">dpv:StorageCondition</a> → 
+             <a href="#ProcessingCondition">dpv:ProcessingCondition</a> → 
+             <a href="#ProcessingContext">dpv:ProcessingContext</a> → 
              <a href="#Context">dpv:Context</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#StorageCondition">dpv:StorageCondition</a> → 
-             <a href="#ProcessingCondition">dpv:ProcessingCondition</a> → 
-             <a href="#ProcessingContext">dpv:ProcessingContext</a> → 
+          <td>             <a href="#Duration">dpv:Duration</a> → 
              <a href="#Context">dpv:Context</a>
 </td>
 </tr>      
@@ -43643,14 +43570,14 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
+          <td>             <a href="#Location">dpv:Location</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
           <td>             <a href="#StorageCondition">dpv:StorageCondition</a> → 
              <a href="#ProcessingCondition">dpv:ProcessingCondition</a> → 
              <a href="#ProcessingContext">dpv:ProcessingContext</a> → 
              <a href="#Context">dpv:Context</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
-          <td>             <a href="#Location">dpv:Location</a>
 </td>
 </tr>      
       
@@ -46700,13 +46627,13 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#ServicePersonalisation">dpv:ServicePersonalisation</a> → 
-             <a href="#ServiceProvision">dpv:ServiceProvision</a> → 
+             <a href="#Personalisation">dpv:Personalisation</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#ServicePersonalisation">dpv:ServicePersonalisation</a> → 
-             <a href="#Personalisation">dpv:Personalisation</a> → 
+             <a href="#ServiceProvision">dpv:ServiceProvision</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 </tr>      
@@ -54083,7 +54010,7 @@
 
 <tr>
           <th>Date Created</th>
-          <td><i>[rdflib.term.Literal(&#39;2022-03-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;))]</i></td>
+          <td><i>[rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), rdflib.term.Literal(&#39;2022-03-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;))]</i></td>
         </tr>        
        
 <tr>
@@ -54225,7 +54152,7 @@
 
 <tr>
           <th>Date Created</th>
-          <td><i>[rdflib.term.Literal(&#39;2022-03-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;))]</i></td>
+          <td><i>[rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), rdflib.term.Literal(&#39;2022-03-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;))]</i></td>
         </tr>        
        
 <tr>
@@ -54370,7 +54297,7 @@
 
 <tr>
           <th>Date Created</th>
-          <td><i>[rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), rdflib.term.Literal(&#39;2019-05-07&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;))]</i></td>
+          <td><i>[rdflib.term.Literal(&#39;2019-05-07&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;))]</i></td>
         </tr>        
 <tr>
           <th>Date Modified</th>
@@ -54971,7 +54898,7 @@
       <li><code>rdf:Property</code> to denote a concept is a property or a relation</li>
       </ul>
     <p>The following external concepts are re-used within DPV:</p>
-    <h3>External</h3> <p>{&#39;iri&#39;: rdflib.term.URIRef(&#39;http://www.w3.org/ns/dcat#Resource&#39;), &#39;prefixed&#39;: &#39;dcat:Resource&#39;, &#39;prefix&#39;: &#39;dcat&#39;, &#39;term&#39;: &#39;Resource&#39;, &#39;vocab&#39;: &#39;dpv&#39;, &#39;namespace&#39;: &#39;http://www.w3.org/ns/dcat#&#39;, &#39;_dpvterm&#39;: False, &#39;_termsource&#39;: {&#39;dpv&#39;}, &#39;_ignored&#39;: False, rdflib.term.URIRef(&#39;http://www.w3.org/2004/02/skos/core#prefLabel&#39;): rdflib.term.Literal(&#39;dcat:Resource&#39;, lang=&#39;en&#39;), &#39;skos:prefLabel&#39;: rdflib.term.Literal(&#39;dcat:Resource&#39;, lang=&#39;en&#39;), rdflib.term.URIRef(&#39;http://purl.org/dc/terms/created&#39;): rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), &#39;dct:created&#39;: rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), rdflib.term.URIRef(&#39;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&#39;): [rdflib.term.URIRef(&#39;http://www.w3.org/2004/02/skos/core#Concept&#39;), rdflib.term.URIRef(&#39;http://www.w3.org/2000/01/rdf-schema#Class&#39;)], &#39;rdf:type&#39;: [rdflib.term.URIRef(&#39;http://www.w3.org/2004/02/skos/core#Concept&#39;), rdflib.term.URIRef(&#39;http://www.w3.org/2000/01/rdf-schema#Class&#39;)], rdflib.term.URIRef(&#39;http://www.w3.org/2000/01/rdf-schema#isDefinedBy&#39;): rdflib.term.URIRef(&#39;https://w3id.org/dpv#&#39;), &#39;rdfs:isDefinedBy&#39;: rdflib.term.URIRef(&#39;https://w3id.org/dpv#&#39;), rdflib.term.URIRef(&#39;http://www.w3.org/2004/02/skos/core#inScheme&#39;): rdflib.term.URIRef(&#39;https://w3id.org/dpv#rights-classes&#39;), &#39;skos:inScheme&#39;: rdflib.term.URIRef(&#39;https://w3id.org/dpv#rights-classes&#39;), &#39;_type&#39;: &#39;class&#39;, rdflib.term.URIRef(&#39;http://www.w3.org/2004/02/skos/core#scopeNote&#39;): rdflib.term.Literal(&#39;A dataset, data service, or any other resource associated with Right Exercise - such as for providing a copy of data&#39;, lang=&#39;en&#39;), &#39;skos:scopeNote&#39;: rdflib.term.Literal(&#39;A dataset, data service, or any other resource associated with Right Exercise - such as for providing a copy of data&#39;, lang=&#39;en&#39;), &#39;skos:prefLabel-en&#39;: rdflib.term.Literal(&#39;dcat:Resource&#39;, lang=&#39;en&#39;), &#39;skos:scopeNote-en&#39;: rdflib.term.Literal(&#39;A dataset, data service, or any other resource associated with Right Exercise - such as for providing a copy of data&#39;, lang=&#39;en&#39;), &#39;module&#39;: [&#39;rights&#39;]}</p>     <section class="term-def" id="dcat:Resource">
+    <h3>External</h3>       <section class="term-def" id="dcat:Resource">
       <h4>dcat:Resource</h4>
       <table class="term-contents">
       <tbody>
@@ -55034,7 +54961,7 @@
         </tbody>
       </table>
     </section>
- <p>{&#39;iri&#39;: rdflib.term.URIRef(&#39;http://purl.org/dc/terms/accessRights&#39;), &#39;prefixed&#39;: &#39;dct:accessRights&#39;, &#39;prefix&#39;: &#39;dct&#39;, &#39;term&#39;: &#39;accessRights&#39;, &#39;vocab&#39;: &#39;dpv&#39;, &#39;namespace&#39;: &#39;http://purl.org/dc/terms/&#39;, &#39;_dpvterm&#39;: False, &#39;_termsource&#39;: {&#39;dpv&#39;}, &#39;_ignored&#39;: False, rdflib.term.URIRef(&#39;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&#39;): [rdflib.term.URIRef(&#39;http://www.w3.org/2004/02/skos/core#Concept&#39;), rdflib.term.URIRef(&#39;http://www.w3.org/1999/02/22-rdf-syntax-ns#Property&#39;)], &#39;rdf:type&#39;: [rdflib.term.URIRef(&#39;http://www.w3.org/2004/02/skos/core#Concept&#39;), rdflib.term.URIRef(&#39;http://www.w3.org/1999/02/22-rdf-syntax-ns#Property&#39;)], rdflib.term.URIRef(&#39;http://www.w3.org/2004/02/skos/core#inScheme&#39;): rdflib.term.URIRef(&#39;https://w3id.org/dpv#rights-properties&#39;), &#39;skos:inScheme&#39;: rdflib.term.URIRef(&#39;https://w3id.org/dpv#rights-properties&#39;), rdflib.term.URIRef(&#39;http://purl.org/dc/terms/contributor&#39;): rdflib.term.Literal(&#39;Harshvardhan J. Pandit&#39;), &#39;dct:contributor&#39;: rdflib.term.Literal(&#39;Harshvardhan J. Pandit&#39;), rdflib.term.URIRef(&#39;http://www.w3.org/2004/02/skos/core#prefLabel&#39;): rdflib.term.Literal(&#39;dct:accessRights&#39;, lang=&#39;en&#39;), &#39;skos:prefLabel&#39;: rdflib.term.Literal(&#39;dct:accessRights&#39;, lang=&#39;en&#39;), rdflib.term.URIRef(&#39;http://purl.org/dc/terms/created&#39;): rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), &#39;dct:created&#39;: rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), &#39;_type&#39;: &#39;property&#39;, rdflib.term.URIRef(&#39;http://www.w3.org/2004/02/skos/core#scopeNote&#39;): rdflib.term.Literal(&#39;Specfiying constraints on access associated with Rights Exercising (e.g. User must log in) or access to provided data (e.g. access via link)&#39;, lang=&#39;en&#39;), &#39;skos:scopeNote&#39;: rdflib.term.Literal(&#39;Specfiying constraints on access associated with Rights Exercising (e.g. User must log in) or access to provided data (e.g. access via link)&#39;, lang=&#39;en&#39;), rdflib.term.URIRef(&#39;http://www.w3.org/2000/01/rdf-schema#isDefinedBy&#39;): rdflib.term.URIRef(&#39;https://w3id.org/dpv#&#39;), &#39;rdfs:isDefinedBy&#39;: rdflib.term.URIRef(&#39;https://w3id.org/dpv#&#39;), &#39;skos:prefLabel-en&#39;: rdflib.term.Literal(&#39;dct:accessRights&#39;, lang=&#39;en&#39;), &#39;skos:scopeNote-en&#39;: rdflib.term.Literal(&#39;Specfiying constraints on access associated with Rights Exercising (e.g. User must log in) or access to provided data (e.g. access via link)&#39;, lang=&#39;en&#39;), &#39;module&#39;: [&#39;rights&#39;]}</p>     <section class="term-def" id="dct:accessRights">
+      <section class="term-def" id="dct:accessRights">
       <h4>dct:accessRights</h4>
       <table class="term-contents">
       <tbody>
@@ -55099,7 +55026,7 @@
         </tbody>
       </table>
     </section>
- <p>{&#39;iri&#39;: rdflib.term.URIRef(&#39;http://purl.org/dc/terms/format&#39;), &#39;prefixed&#39;: &#39;dct:format&#39;, &#39;prefix&#39;: &#39;dct&#39;, &#39;term&#39;: &#39;format&#39;, &#39;vocab&#39;: &#39;dpv&#39;, &#39;namespace&#39;: &#39;http://purl.org/dc/terms/&#39;, &#39;_dpvterm&#39;: False, &#39;_termsource&#39;: {&#39;dpv&#39;}, &#39;_ignored&#39;: False, rdflib.term.URIRef(&#39;http://www.w3.org/2004/02/skos/core#scopeNote&#39;): rdflib.term.Literal(&#39;Specifying the format of provided information, for example a CSV dataset&#39;, lang=&#39;en&#39;), &#39;skos:scopeNote&#39;: rdflib.term.Literal(&#39;Specifying the format of provided information, for example a CSV dataset&#39;, lang=&#39;en&#39;), rdflib.term.URIRef(&#39;http://www.w3.org/2000/01/rdf-schema#isDefinedBy&#39;): rdflib.term.URIRef(&#39;https://w3id.org/dpv#&#39;), &#39;rdfs:isDefinedBy&#39;: rdflib.term.URIRef(&#39;https://w3id.org/dpv#&#39;), rdflib.term.URIRef(&#39;http://purl.org/dc/terms/created&#39;): rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), &#39;dct:created&#39;: rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), rdflib.term.URIRef(&#39;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&#39;): [rdflib.term.URIRef(&#39;http://www.w3.org/2004/02/skos/core#Concept&#39;), rdflib.term.URIRef(&#39;http://www.w3.org/1999/02/22-rdf-syntax-ns#Property&#39;)], &#39;rdf:type&#39;: [rdflib.term.URIRef(&#39;http://www.w3.org/2004/02/skos/core#Concept&#39;), rdflib.term.URIRef(&#39;http://www.w3.org/1999/02/22-rdf-syntax-ns#Property&#39;)], rdflib.term.URIRef(&#39;http://www.w3.org/2004/02/skos/core#prefLabel&#39;): rdflib.term.Literal(&#39;dct:format&#39;, lang=&#39;en&#39;), &#39;skos:prefLabel&#39;: rdflib.term.Literal(&#39;dct:format&#39;, lang=&#39;en&#39;), rdflib.term.URIRef(&#39;http://www.w3.org/2004/02/skos/core#inScheme&#39;): rdflib.term.URIRef(&#39;https://w3id.org/dpv#rights-properties&#39;), &#39;skos:inScheme&#39;: rdflib.term.URIRef(&#39;https://w3id.org/dpv#rights-properties&#39;), &#39;_type&#39;: &#39;property&#39;, rdflib.term.URIRef(&#39;http://purl.org/dc/terms/contributor&#39;): rdflib.term.Literal(&#39;Harshvardhan J. Pandit&#39;), &#39;dct:contributor&#39;: rdflib.term.Literal(&#39;Harshvardhan J. Pandit&#39;), &#39;skos:prefLabel-en&#39;: rdflib.term.Literal(&#39;dct:format&#39;, lang=&#39;en&#39;), &#39;skos:scopeNote-en&#39;: rdflib.term.Literal(&#39;Specifying the format of provided information, for example a CSV dataset&#39;, lang=&#39;en&#39;), &#39;module&#39;: [&#39;rights&#39;]}</p>     <section class="term-def" id="dct:format">
+      <section class="term-def" id="dct:format">
       <h4>dct:format</h4>
       <table class="term-contents">
       <tbody>
@@ -55164,7 +55091,7 @@
         </tbody>
       </table>
     </section>
- <p>{&#39;iri&#39;: rdflib.term.URIRef(&#39;http://purl.org/dc/terms/hasPart&#39;), &#39;prefixed&#39;: &#39;dct:hasPart&#39;, &#39;prefix&#39;: &#39;dct&#39;, &#39;term&#39;: &#39;hasPart&#39;, &#39;vocab&#39;: &#39;dpv&#39;, &#39;namespace&#39;: &#39;http://purl.org/dc/terms/&#39;, &#39;_dpvterm&#39;: False, &#39;_termsource&#39;: {&#39;dpv&#39;}, &#39;_ignored&#39;: False, rdflib.term.URIRef(&#39;http://www.w3.org/2000/01/rdf-schema#isDefinedBy&#39;): rdflib.term.URIRef(&#39;https://w3id.org/dpv#&#39;), &#39;rdfs:isDefinedBy&#39;: rdflib.term.URIRef(&#39;https://w3id.org/dpv#&#39;), rdflib.term.URIRef(&#39;http://purl.org/dc/terms/created&#39;): rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), &#39;dct:created&#39;: rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), rdflib.term.URIRef(&#39;http://www.w3.org/2004/02/skos/core#scopeNote&#39;): rdflib.term.Literal(&#39;Specifying a RightExerciseRecord has RightExerciseActivity as part of its records&#39;, lang=&#39;en&#39;), &#39;skos:scopeNote&#39;: rdflib.term.Literal(&#39;Specifying a RightExerciseRecord has RightExerciseActivity as part of its records&#39;, lang=&#39;en&#39;), rdflib.term.URIRef(&#39;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&#39;): [rdflib.term.URIRef(&#39;http://www.w3.org/1999/02/22-rdf-syntax-ns#Property&#39;), rdflib.term.URIRef(&#39;http://www.w3.org/2004/02/skos/core#Concept&#39;)], &#39;rdf:type&#39;: [rdflib.term.URIRef(&#39;http://www.w3.org/1999/02/22-rdf-syntax-ns#Property&#39;), rdflib.term.URIRef(&#39;http://www.w3.org/2004/02/skos/core#Concept&#39;)], &#39;_type&#39;: &#39;property&#39;, rdflib.term.URIRef(&#39;http://purl.org/dc/dcam/domainIncludes&#39;): rdflib.term.URIRef(&#39;https://w3id.org/dpv#RightExerciseRecord&#39;), &#39;dcam:domainIncludes&#39;: rdflib.term.URIRef(&#39;https://w3id.org/dpv#RightExerciseRecord&#39;), rdflib.term.URIRef(&#39;http://www.w3.org/2004/02/skos/core#prefLabel&#39;): rdflib.term.Literal(&#39;dct:hasPart&#39;, lang=&#39;en&#39;), &#39;skos:prefLabel&#39;: rdflib.term.Literal(&#39;dct:hasPart&#39;, lang=&#39;en&#39;), rdflib.term.URIRef(&#39;https://schema.org/rangeIncludes&#39;): rdflib.term.URIRef(&#39;https://w3id.org/dpv#RightExerciseActivity&#39;), &#39;schema:rangeIncludes&#39;: rdflib.term.URIRef(&#39;https://w3id.org/dpv#RightExerciseActivity&#39;), rdflib.term.URIRef(&#39;https://schema.org/domainIncludes&#39;): rdflib.term.URIRef(&#39;https://w3id.org/dpv#RightExerciseRecord&#39;), &#39;schema:domainIncludes&#39;: rdflib.term.URIRef(&#39;https://w3id.org/dpv#RightExerciseRecord&#39;), rdflib.term.URIRef(&#39;http://purl.org/dc/terms/contributor&#39;): rdflib.term.Literal(&#39;Harshvardhan J. Pandit&#39;), &#39;dct:contributor&#39;: rdflib.term.Literal(&#39;Harshvardhan J. Pandit&#39;), rdflib.term.URIRef(&#39;http://purl.org/dc/dcam/rangeIncludes&#39;): rdflib.term.URIRef(&#39;https://w3id.org/dpv#RightExerciseActivity&#39;), &#39;dcam:rangeIncludes&#39;: rdflib.term.URIRef(&#39;https://w3id.org/dpv#RightExerciseActivity&#39;), rdflib.term.URIRef(&#39;http://www.w3.org/2004/02/skos/core#inScheme&#39;): rdflib.term.URIRef(&#39;https://w3id.org/dpv#rights-properties&#39;), &#39;skos:inScheme&#39;: rdflib.term.URIRef(&#39;https://w3id.org/dpv#rights-properties&#39;), &#39;skos:prefLabel-en&#39;: rdflib.term.Literal(&#39;dct:hasPart&#39;, lang=&#39;en&#39;), &#39;skos:scopeNote-en&#39;: rdflib.term.Literal(&#39;Specifying a RightExerciseRecord has RightExerciseActivity as part of its records&#39;, lang=&#39;en&#39;), &#39;module&#39;: [&#39;rights&#39;]}</p>     <section class="term-def" id="dct:hasPart">
+      <section class="term-def" id="dct:hasPart">
       <h4>dct:hasPart</h4>
       <table class="term-contents">
       <tbody>
@@ -55235,7 +55162,7 @@
         </tbody>
       </table>
     </section>
- <p>{&#39;iri&#39;: rdflib.term.URIRef(&#39;http://purl.org/dc/terms/isPartOf&#39;), &#39;prefixed&#39;: &#39;dct:isPartOf&#39;, &#39;prefix&#39;: &#39;dct&#39;, &#39;term&#39;: &#39;isPartOf&#39;, &#39;vocab&#39;: &#39;dpv&#39;, &#39;namespace&#39;: &#39;http://purl.org/dc/terms/&#39;, &#39;_dpvterm&#39;: False, &#39;_termsource&#39;: {&#39;dpv&#39;}, &#39;_ignored&#39;: False, rdflib.term.URIRef(&#39;http://purl.org/dc/terms/contributor&#39;): rdflib.term.Literal(&#39;Harshvardhan J. Pandit&#39;), &#39;dct:contributor&#39;: rdflib.term.Literal(&#39;Harshvardhan J. Pandit&#39;), rdflib.term.URIRef(&#39;http://www.w3.org/2004/02/skos/core#prefLabel&#39;): rdflib.term.Literal(&#39;dct:isPartOf&#39;, lang=&#39;en&#39;), &#39;skos:prefLabel&#39;: rdflib.term.Literal(&#39;dct:isPartOf&#39;, lang=&#39;en&#39;), rdflib.term.URIRef(&#39;http://www.w3.org/2000/01/rdf-schema#isDefinedBy&#39;): rdflib.term.URIRef(&#39;https://w3id.org/dpv#&#39;), &#39;rdfs:isDefinedBy&#39;: rdflib.term.URIRef(&#39;https://w3id.org/dpv#&#39;), rdflib.term.URIRef(&#39;http://www.w3.org/2004/02/skos/core#scopeNote&#39;): rdflib.term.Literal(&#39;Specifying a RightExerciseActivity is part of a RightExerciseRecord&#39;, lang=&#39;en&#39;), &#39;skos:scopeNote&#39;: rdflib.term.Literal(&#39;Specifying a RightExerciseActivity is part of a RightExerciseRecord&#39;, lang=&#39;en&#39;), rdflib.term.URIRef(&#39;http://purl.org/dc/dcam/rangeIncludes&#39;): rdflib.term.URIRef(&#39;https://w3id.org/dpv#RightExerciseRecord&#39;), &#39;dcam:rangeIncludes&#39;: rdflib.term.URIRef(&#39;https://w3id.org/dpv#RightExerciseRecord&#39;), rdflib.term.URIRef(&#39;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&#39;): [rdflib.term.URIRef(&#39;http://www.w3.org/2004/02/skos/core#Concept&#39;), rdflib.term.URIRef(&#39;http://www.w3.org/1999/02/22-rdf-syntax-ns#Property&#39;)], &#39;rdf:type&#39;: [rdflib.term.URIRef(&#39;http://www.w3.org/2004/02/skos/core#Concept&#39;), rdflib.term.URIRef(&#39;http://www.w3.org/1999/02/22-rdf-syntax-ns#Property&#39;)], rdflib.term.URIRef(&#39;https://schema.org/domainIncludes&#39;): rdflib.term.URIRef(&#39;https://w3id.org/dpv#RightExerciseActivity&#39;), &#39;schema:domainIncludes&#39;: rdflib.term.URIRef(&#39;https://w3id.org/dpv#RightExerciseActivity&#39;), rdflib.term.URIRef(&#39;http://purl.org/dc/terms/created&#39;): rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), &#39;dct:created&#39;: rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), rdflib.term.URIRef(&#39;https://schema.org/rangeIncludes&#39;): rdflib.term.URIRef(&#39;https://w3id.org/dpv#RightExerciseRecord&#39;), &#39;schema:rangeIncludes&#39;: rdflib.term.URIRef(&#39;https://w3id.org/dpv#RightExerciseRecord&#39;), rdflib.term.URIRef(&#39;http://purl.org/dc/dcam/domainIncludes&#39;): rdflib.term.URIRef(&#39;https://w3id.org/dpv#RightExerciseActivity&#39;), &#39;dcam:domainIncludes&#39;: rdflib.term.URIRef(&#39;https://w3id.org/dpv#RightExerciseActivity&#39;), rdflib.term.URIRef(&#39;http://www.w3.org/2004/02/skos/core#inScheme&#39;): rdflib.term.URIRef(&#39;https://w3id.org/dpv#rights-properties&#39;), &#39;skos:inScheme&#39;: rdflib.term.URIRef(&#39;https://w3id.org/dpv#rights-properties&#39;), &#39;_type&#39;: &#39;property&#39;, &#39;skos:prefLabel-en&#39;: rdflib.term.Literal(&#39;dct:isPartOf&#39;, lang=&#39;en&#39;), &#39;skos:scopeNote-en&#39;: rdflib.term.Literal(&#39;Specifying a RightExerciseActivity is part of a RightExerciseRecord&#39;, lang=&#39;en&#39;), &#39;module&#39;: [&#39;rights&#39;]}</p>     <section class="term-def" id="dct:isPartOf">
+      <section class="term-def" id="dct:isPartOf">
       <h4>dct:isPartOf</h4>
       <table class="term-contents">
       <tbody>
@@ -55306,7 +55233,7 @@
         </tbody>
       </table>
     </section>
- <p>{&#39;iri&#39;: rdflib.term.URIRef(&#39;http://purl.org/dc/terms/valid&#39;), &#39;prefixed&#39;: &#39;dct:valid&#39;, &#39;prefix&#39;: &#39;dct&#39;, &#39;term&#39;: &#39;valid&#39;, &#39;vocab&#39;: &#39;dpv&#39;, &#39;namespace&#39;: &#39;http://purl.org/dc/terms/&#39;, &#39;_dpvterm&#39;: False, &#39;_termsource&#39;: {&#39;dpv&#39;}, &#39;_ignored&#39;: False, rdflib.term.URIRef(&#39;http://www.w3.org/2004/02/skos/core#scopeNote&#39;): rdflib.term.Literal(&#39;Specfiying the temporal validity of an activity associated with Right Exercise. For example, limits on duration for providing or accessing provided information&#39;, lang=&#39;en&#39;), &#39;skos:scopeNote&#39;: rdflib.term.Literal(&#39;Specfiying the temporal validity of an activity associated with Right Exercise. For example, limits on duration for providing or accessing provided information&#39;, lang=&#39;en&#39;), rdflib.term.URIRef(&#39;http://www.w3.org/2004/02/skos/core#inScheme&#39;): rdflib.term.URIRef(&#39;https://w3id.org/dpv#rights-properties&#39;), &#39;skos:inScheme&#39;: rdflib.term.URIRef(&#39;https://w3id.org/dpv#rights-properties&#39;), rdflib.term.URIRef(&#39;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&#39;): [rdflib.term.URIRef(&#39;http://www.w3.org/1999/02/22-rdf-syntax-ns#Property&#39;), rdflib.term.URIRef(&#39;http://www.w3.org/2004/02/skos/core#Concept&#39;)], &#39;rdf:type&#39;: [rdflib.term.URIRef(&#39;http://www.w3.org/1999/02/22-rdf-syntax-ns#Property&#39;), rdflib.term.URIRef(&#39;http://www.w3.org/2004/02/skos/core#Concept&#39;)], &#39;_type&#39;: &#39;property&#39;, rdflib.term.URIRef(&#39;http://purl.org/dc/terms/contributor&#39;): rdflib.term.Literal(&#39;Harshvardhan J. Pandit&#39;), &#39;dct:contributor&#39;: rdflib.term.Literal(&#39;Harshvardhan J. Pandit&#39;), rdflib.term.URIRef(&#39;http://www.w3.org/2000/01/rdf-schema#isDefinedBy&#39;): rdflib.term.URIRef(&#39;https://w3id.org/dpv#&#39;), &#39;rdfs:isDefinedBy&#39;: rdflib.term.URIRef(&#39;https://w3id.org/dpv#&#39;), rdflib.term.URIRef(&#39;http://purl.org/dc/terms/created&#39;): rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), &#39;dct:created&#39;: rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), rdflib.term.URIRef(&#39;http://www.w3.org/2004/02/skos/core#prefLabel&#39;): rdflib.term.Literal(&#39;dct:valid&#39;, lang=&#39;en&#39;), &#39;skos:prefLabel&#39;: rdflib.term.Literal(&#39;dct:valid&#39;, lang=&#39;en&#39;), &#39;skos:prefLabel-en&#39;: rdflib.term.Literal(&#39;dct:valid&#39;, lang=&#39;en&#39;), &#39;skos:scopeNote-en&#39;: rdflib.term.Literal(&#39;Specfiying the temporal validity of an activity associated with Right Exercise. For example, limits on duration for providing or accessing provided information&#39;, lang=&#39;en&#39;), &#39;module&#39;: [&#39;rights&#39;]}</p>     <section class="term-def" id="dct:valid">
+      <section class="term-def" id="dct:valid">
       <h4>dct:valid</h4>
       <table class="term-contents">
       <tbody>
@@ -55371,7 +55298,7 @@
         </tbody>
       </table>
     </section>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <p>{&#39;iri&#39;: rdflib.term.URIRef(&#39;http://xmlns.com/foaf/0.1/page&#39;), &#39;prefixed&#39;: &#39;foaf:page&#39;, &#39;prefix&#39;: &#39;foaf&#39;, &#39;term&#39;: &#39;page&#39;, &#39;vocab&#39;: &#39;dpv&#39;, &#39;namespace&#39;: &#39;http://xmlns.com/foaf/0.1/&#39;, &#39;_dpvterm&#39;: False, &#39;_termsource&#39;: {&#39;dpv&#39;}, &#39;_ignored&#39;: False, rdflib.term.URIRef(&#39;http://www.w3.org/1999/02/22-rdf-syntax-ns#type&#39;): [rdflib.term.URIRef(&#39;http://www.w3.org/2004/02/skos/core#Concept&#39;), rdflib.term.URIRef(&#39;http://www.w3.org/1999/02/22-rdf-syntax-ns#Property&#39;)], &#39;rdf:type&#39;: [rdflib.term.URIRef(&#39;http://www.w3.org/2004/02/skos/core#Concept&#39;), rdflib.term.URIRef(&#39;http://www.w3.org/1999/02/22-rdf-syntax-ns#Property&#39;)], rdflib.term.URIRef(&#39;http://www.w3.org/2004/02/skos/core#inScheme&#39;): rdflib.term.URIRef(&#39;https://w3id.org/dpv#rights-properties&#39;), &#39;skos:inScheme&#39;: rdflib.term.URIRef(&#39;https://w3id.org/dpv#rights-properties&#39;), rdflib.term.URIRef(&#39;https://schema.org/domainIncludes&#39;): rdflib.term.URIRef(&#39;https://w3id.org/dpv#RightExerciseActivity&#39;), &#39;schema:domainIncludes&#39;: rdflib.term.URIRef(&#39;https://w3id.org/dpv#RightExerciseActivity&#39;), rdflib.term.URIRef(&#39;http://www.w3.org/2004/02/skos/core#scopeNote&#39;): rdflib.term.Literal(&#39;Indicates a web page or document providing information or functionality associated with a Right Exercise&#39;, lang=&#39;en&#39;), &#39;skos:scopeNote&#39;: rdflib.term.Literal(&#39;Indicates a web page or document providing information or functionality associated with a Right Exercise&#39;, lang=&#39;en&#39;), rdflib.term.URIRef(&#39;http://purl.org/dc/dcam/domainIncludes&#39;): rdflib.term.URIRef(&#39;https://w3id.org/dpv#RightExerciseActivity&#39;), &#39;dcam:domainIncludes&#39;: rdflib.term.URIRef(&#39;https://w3id.org/dpv#RightExerciseActivity&#39;), &#39;_type&#39;: &#39;property&#39;, rdflib.term.URIRef(&#39;http://purl.org/dc/terms/contributor&#39;): rdflib.term.Literal(&#39;Harshvardhan J. Pandit&#39;), &#39;dct:contributor&#39;: rdflib.term.Literal(&#39;Harshvardhan J. Pandit&#39;), rdflib.term.URIRef(&#39;http://www.w3.org/2004/02/skos/core#prefLabel&#39;): rdflib.term.Literal(&#39;foaf:page&#39;, lang=&#39;en&#39;), &#39;skos:prefLabel&#39;: rdflib.term.Literal(&#39;foaf:page&#39;, lang=&#39;en&#39;), rdflib.term.URIRef(&#39;http://www.w3.org/2000/01/rdf-schema#isDefinedBy&#39;): rdflib.term.URIRef(&#39;https://w3id.org/dpv#&#39;), &#39;rdfs:isDefinedBy&#39;: rdflib.term.URIRef(&#39;https://w3id.org/dpv#&#39;), rdflib.term.URIRef(&#39;http://purl.org/dc/terms/created&#39;): rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), &#39;dct:created&#39;: rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), &#39;skos:prefLabel-en&#39;: rdflib.term.Literal(&#39;foaf:page&#39;, lang=&#39;en&#39;), &#39;skos:scopeNote-en&#39;: rdflib.term.Literal(&#39;Indicates a web page or document providing information or functionality associated with a Right Exercise&#39;, lang=&#39;en&#39;), &#39;module&#39;: [&#39;rights&#39;]}</p>     <section class="term-def" id="foaf:page">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       <section class="term-def" id="foaf:page">
       <h4>foaf:page</h4>
       <table class="term-contents">
       <tbody>
@@ -55444,6 +55371,37 @@
 </section>
 
 
+<section id="contributors" class="notoc">
+  <h2>Contributors</h2>
+  <p>The following people have contributed to this vocabulary. The names are ordered alphabetically. The affiliations are informative do not represent formal endorsements. Affiliations may be outdated. The list is generated automatically from the contributors listed for defined concepts.</p>
+  <ul>
+    <li>Axel Polleres (Vienna University of Economics and Business)</li>
+    <li>Beatriz ()</li>
+    <li>Beatriz Esteves (Universidad Politécnica de Madrid)</li>
+    <li>Bud Bruegger (Unabhängige Landeszentrum für Datenschutz Schleswig-Holstein)</li>
+    <li>David Hickey (Dublin City University)</li>
+    <li>Elmar Kiesling (Vienna University of Technology)</li>
+    <li>Fajar Ekaputra ()</li>
+    <li>Georg Krog ()</li>
+    <li>Georg P Krog ()</li>
+    <li>Georg P Krogg ()</li>
+    <li>Georg P. Krog (Signatu AS)</li>
+    <li>Harshvardhan J Pandit ()</li>
+    <li>Harshvardhan J. Pandit (ADAPT Centre, Dublin City University)</li>
+    <li>Harshvardhan J.Pandit ()</li>
+    <li>Harshvardhan Pandit ()</li>
+    <li>Javier Fernandez ()</li>
+    <li>Javier Fernández ()</li>
+    <li>Julian Flake (University of Koblenz-Landau)</li>
+    <li>Mark Lizar (OpenConsent/Kantara Initiative)</li>
+    <li>Paul Ryan (Uniphar PLC)</li>
+    <li>Piero Bonatti (Università di Napoli Federico II)</li>
+    <li>Rana Saniei ()</li>
+    <li>Rob Brennan (University College Dublin)</li>
+    <li>Rudy Jacob ()</li>
+    <li>Simon Steyskal (Siemens)</li>
+  </ul>
+</section>
 <section id="funding-acknowledgements" class="notoc">
   <h2>Funding Acknowledgements</h2>
 

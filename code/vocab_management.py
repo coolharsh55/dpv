@@ -352,6 +352,26 @@ RDF_VOCABS = {
         'export': f'{EXPORT_PATH}/examples',
         'modules': {},
         'module-template': {},
+        # Metadata for RDF Vocabs.
+        'metadata': {
+        # Manually declared:
+            "dct:title": "DPV Examples",
+            "dct:description": "Examples for/using DPVCG vocabularies",
+            "dct:created": "2022-08-18",
+            "dct:modified": "2024-01-01",
+            "dct:creator": "Harshvardhan J. Pandit",
+            "schema:version": "2",
+        # Automatically added when serialising:
+            # dct:identifier - the IRI
+            # dct:conformsTo - for default serialisation: RDFS, SKOS; for OWL: OWL2
+            # dct:language - EN and all languages defined
+            # dct:contributor - collated from contributors defined in concepts
+            # dct:hasFormat/dct:isFormatOf - defined for each serialisation
+            # dct:hasVersion/dct:isVersionOf - between RDFS/SKOS and OWL variants
+            # dct:license - https://www.w3.org/copyright/document-license-2023/
+            # vann:preferredNamespacePrefix - dict key / vocab name
+            # vann:preferredNamespaceUri - declared namespace for vocab
+        },
     },
     'dpv': {
         'vocab': f'{IMPORT_PATH}/dpv/dpv.ttl',
@@ -395,6 +415,14 @@ RDF_VOCABS = {
             'rights': 'contents_dpv_rights.jinja2',
             'rules': 'contents_dpv_rules.jinja2',
         },
+        'metadata': {
+            "dct:title": "Data Privacy Vocabulary (DPV)",
+            "dct:description": "The Data Privacy Vocabulary (DPV) provides terms (classes and properties) to represent information about processing of personal data, for example - purposes, processing operations, personal data, technical and organisational measures.",
+            "dct:created": "2022-08-18",
+            "dct:modified": "2024-01-01",
+            "dct:creator": "Harshvardhan J. Pandit",
+            "schema:version": "2",
+        },
     },
     # EXTENSIONS
     'pd': {
@@ -404,6 +432,14 @@ RDF_VOCABS = {
         'modules': {
             'core': f'{IMPORT_PATH}/pd/modules/core.ttl',
             'extended': f'{IMPORT_PATH}/pd/modules/extended.ttl',
+        },
+        'metadata': {
+            "dct:title": "Personal Data Categories",
+            "dct:description": "Extension to the Data Privacy Vocabulary (DPV) providing additional categories of personal data",
+            "dct:created": "2022-04-02",
+            "dct:modified": "2024-01-01",
+            "dct:creator": "Harshvardhan J. Pandit, Axel Polleres",
+            "schema:version": "2",
         },
     },
     'tech': {
@@ -422,6 +458,14 @@ RDF_VOCABS = {
             'provision': f'{IMPORT_PATH}/tech/modules/provision.ttl',
             'tools': f'{IMPORT_PATH}/tech/modules/tools.ttl',
         },
+        'metadata': {
+            "dct:title": "Technology Concepts",
+            "dct:description": "Extension to the Data Privacy Vocabulary (DPV) providing concepts for representing information about technologies and its provision",
+            "dct:created": "2022-06-15",
+            "dct:modified": "2024-01-01",
+            "dct:creator": "Harshvardhan J. Pandit, Georg P Krog, Paul Ryan, Julian Flake",
+            "schema:version": "0.8.2",
+        },
     },
     'risk': {
         'vocab': f'{IMPORT_PATH}/risk/risk.ttl',
@@ -434,7 +478,15 @@ RDF_VOCABS = {
             'risk_controls': f'{IMPORT_PATH}/risk/modules/risk_controls.ttl',
             'risk_assessment': f'{IMPORT_PATH}/risk/modules/risk_assessment.ttl',
             'risk_methodology': f'{IMPORT_PATH}/risk/modules/risk_methodology.ttl',
-        }
+        },
+        'metadata': {
+            "dct:title": "Risk Concepts",
+            "dct:description": "Extension to the Data Privacy Vocabulary (DPV) providing concepts for representing information about risk assessment and risk management",
+            "dct:created": "2022-08-14",
+            "dct:modified": "2024-01-01",
+            "dct:creator": "Harshvardhan J. Pandit, Georg P Krog, Paul Ryan, Beatriz Esteves, Julian Flake",
+            "schema:version": "0.8.2",
+        },
     },
     'loc': {
         'vocab': f'{IMPORT_PATH}/loc/loc.ttl',
@@ -442,6 +494,14 @@ RDF_VOCABS = {
         'export': f'{EXPORT_PATH}/loc',
         'modules': {
             'locations': f'{IMPORT_PATH}/loc/modules/locations.ttl',
+        },
+        'metadata': {
+            "dct:title": "Location Concepts",
+            "dct:description": "Extension to the Data Privacy Vocabulary (DPV) providing concepts for representing (geo-political) locations and memberships",
+            "dct:created": "2022-04-02",
+            "dct:modified": "2024-01-01",
+            "dct:creator": "Harshvardhan J. Pandit",
+            "schema:version": "2",
         },
     },
     # LEGAL VOCABS
@@ -451,7 +511,15 @@ RDF_VOCABS = {
         'export': f'{EXPORT_PATH}/legal/eu',
         'modules': {
             'legal': f'{IMPORT_PATH}/legal/eu/legal-eu.ttl',
-        }
+        },
+        'metadata': {
+            "dct:title": "Legal Concepts for European Union (EU)",
+            "dct:description": "Extension to the Data Privacy Vocabulary (DPV) providing concepts for representing legal information for EU as jurisdiction",
+            "dct:created": "2024-01-01",
+            # "dct:modified": "2024-01-01",
+            "dct:creator": "Harshvardhan J. Pandit",
+            "schema:version": "2",
+        },
     },
     'legal-de': {
         'vocab': f'{IMPORT_PATH}/legal/de/legal-de.ttl',
@@ -459,7 +527,15 @@ RDF_VOCABS = {
         'export': f'{EXPORT_PATH}/legal/de',
         'modules': {
             'legal': f'{IMPORT_PATH}/legal/de/legal-de.ttl',
-        }
+        },
+        'metadata': {
+            "dct:title": "Legal Concepts for Germany",
+            "dct:description": "Extension to the Data Privacy Vocabulary (DPV) providing concepts for representing legal information for Germany as jurisdiction",
+            "dct:created": "2024-01-01",
+            # "dct:modified": "2024-01-01",
+            "dct:creator": "Harshvardhan J. Pandit",
+            "schema:version": "2",
+        },
     },
     'legal-gb': {
         'vocab': f'{IMPORT_PATH}/legal/gb/legal-gb.ttl',
@@ -467,7 +543,15 @@ RDF_VOCABS = {
         'export': f'{EXPORT_PATH}/legal/gb',
         'modules': {
             'legal': f'{IMPORT_PATH}/legal/gb/legal-gb.ttl',
-        }
+        },
+        'metadata': {
+            "dct:title": "Legal Concepts for United Kingdom of Great Britain and Northern Ireland",
+            "dct:description": "Extension to the Data Privacy Vocabulary (DPV) providing concepts for representing legal information for United Kingdom of Great Britain and Northern Ireland as jurisdiction",
+            "dct:created": "2024-01-01",
+            # "dct:modified": "2024-01-01",
+            "dct:creator": "Harshvardhan J. Pandit",
+            "schema:version": "2",
+        },
     },
     'legal-ie': {
         'vocab': f'{IMPORT_PATH}/legal/ie/legal-ie.ttl',
@@ -475,7 +559,15 @@ RDF_VOCABS = {
         'export': f'{EXPORT_PATH}/legal/ie',
         'modules': {
             'legal': f'{IMPORT_PATH}/legal/ie/legal-ie.ttl',
-        }
+        },
+        'metadata': {
+            "dct:title": "Legal Concepts for Ireland",
+            "dct:description": "Extension to the Data Privacy Vocabulary (DPV) providing concepts for representing legal information for Ireland as jurisdiction",
+            "dct:created": "2024-01-01",
+            # "dct:modified": "2024-01-01",
+            "dct:creator": "Harshvardhan J. Pandit",
+            "schema:version": "2",
+        },
     },
     'legal-us': {
         'vocab': f'{IMPORT_PATH}/legal/us/legal-us.ttl',
@@ -483,7 +575,15 @@ RDF_VOCABS = {
         'export': f'{EXPORT_PATH}/legal/us',
         'modules': {
             'legal': f'{IMPORT_PATH}/legal/us/legal-us.ttl',
-        }
+        },
+        'metadata': {
+            "dct:title": "Legal Concepts for United States of America (USA)",
+            "dct:description": "Extension to the Data Privacy Vocabulary (DPV) providing concepts for representing legal information for United States of America (USA) as jurisdiction",
+            "dct:created": "2024-01-01",
+            # "dct:modified": "2024-01-01",
+            "dct:creator": "Harshvardhan J. Pandit",
+            "schema:version": "2",
+        },
     },
     'legal': {
         'vocab': f'{IMPORT_PATH}/legal/legal.ttl',
@@ -491,7 +591,15 @@ RDF_VOCABS = {
         'export': f'{EXPORT_PATH}/legal',
         'modules': {
             'legal': f'{IMPORT_PATH}/legal/legal.ttl',
-        }
+        },
+        'metadata': {
+            "dct:title": "Legal Concepts",
+            "dct:description": "Extension to the Data Privacy Vocabulary (DPV) providing concepts for representing legal information associated with specific jurisdictions",
+            "dct:created": "2022-04-02",
+            "dct:modified": "2024-01-01",
+            "dct:creator": "Harshvardhan J. Pandit",
+            "schema:version": "2",
+        },
     },
     # EU Laws
     'eu-gdpr': {
@@ -508,6 +616,14 @@ RDF_VOCABS = {
             'compliance': f'{IMPORT_PATH}/legal/eu/gdpr/modules/compliance.ttl',
             'legal_basis-rights_mapping': f'{IMPORT_PATH}/legal/eu/gdpr/modules/legal_basis_rights_mapping.ttl',
         },
+        'metadata': {
+            "dct:title": "EU General Data Protection Regulation (GDPR)",
+            "dct:description": "Extension to the Data Privacy Vocabulary (DPV) providing concepts for representing information associated with EU GDPR",
+            "dct:created": "2019-06-18",
+            "dct:modified": "2024-01-01",
+            "dct:creator": "Harshvardhan J. Pandit, Axel Polleres",
+            "schema:version": "2",
+        },
     },
     'eu-dga': {
         'vocab': f'{IMPORT_PATH}/legal/eu/dga/eu-dga.ttl',
@@ -521,12 +637,28 @@ RDF_VOCABS = {
             'services': f'{IMPORT_PATH}/legal/eu/dga/modules/services.ttl',
             'toms': f'{IMPORT_PATH}/legal/eu/dga/modules/toms.ttl',
         },
+        'metadata': {
+            "dct:title": "EU Data Governance Act (DGA)",
+            "dct:description": "Extension to the Data Privacy Vocabulary (DPV) providing concepts for representing  information associated with EU DGA",
+            "dct:created": "2023-09-20",
+            "dct:modified": "2024-01-01",
+            "dct:creator": "Beatriz Esteves, Harshvardhan J. Pandit, Georg P Krog",
+            "schema:version": "2",
+        },
     },
     'eu-rights': {
         'vocab': f'{IMPORT_PATH}/legal/eu/rights/eu-rights.ttl',
         'template': 'template_legal_eu_rights.jinja2',
         'export': f'{EXPORT_PATH}/legal/eu/rights',
         'modules': {},
+        'metadata': {
+            "dct:title": "EU Fundamental Rights and Freedoms",
+            "dct:description": "Extension to the Data Privacy Vocabulary (DPV) providing concepts for representing information associated with EU's Fundamental Rights and Freedoms",
+            "dct:created": "2022-08-15",
+            "dct:modified": "2024-01-01",
+            "dct:creator": "Harshvardhan J. Pandit",
+            "schema:version": "2",
+        },
     },
 }
 
@@ -642,10 +774,10 @@ with open('../contributors.json', 'r') as fd:
 
 def generate_author_affiliation(author):
     '''takes author name, returns affiliation'''
+    author = str(author)
     if author in contributors:
         return contributors[author]
-    else:
-        return ''
+    return ''
 
 
 def generate_authors_affiliations(authors):

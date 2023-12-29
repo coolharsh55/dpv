@@ -1,6 +1,6 @@
 [
   {
-    "@id": "https://w3id.org/dpv/tech#DataRemovalTechnology",
+    "@id": "https://w3id.org/dpv/tech#DataDisclosureTechnology",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class",
       "https://w3id.org/dpv#Technology",
@@ -36,13 +36,13 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Technology related to removing data"
+        "@value": "Technology related to disclosing data"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Data Removal Technology"
+        "@value": "Data Disclosure Technology"
       }
     ]
   },
@@ -94,7 +94,7 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#DataTransformationTechnology",
+    "@id": "https://w3id.org/dpv/tech#DataObtainingTechnology",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class",
       "https://w3id.org/dpv#Technology",
@@ -130,13 +130,60 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Technology related to transforming data"
+        "@value": "Technology related to obtain data"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Data Transformation Technology"
+        "@value": "Data Obtaining Technology"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#DataCopyingTechnology",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Technology",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-06-15"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/dpv/tech#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/tech#DataTechnology"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Technology related to copying data"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Data Copying Technology"
       }
     ]
   },
@@ -191,40 +238,142 @@
     ]
   },
   {
+    "@id": "https://w3id.org/dpv/tech#DataUsageTechnology",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Technology",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-06-15"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/dpv/tech#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/tech#DataTechnology"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Technology related to using data"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Data Usage Technology"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#DataRemovalTechnology",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Technology",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-06-15"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/dpv/tech#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/tech#DataTechnology"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Technology related to removing data"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Data Removal Technology"
+      }
+    ]
+  },
+  {
     "@id": "https://w3id.org/dpv/tech#DataTechnology",
     "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
       {
-        "@id": "https://w3id.org/dpv/tech#DataStorageTechnology"
-      },
-      {
-        "@id": "https://w3id.org/dpv/tech#DataTransformationTechnology"
-      },
-      {
-        "@id": "https://w3id.org/dpv/tech#DataManagementTechnology"
-      },
-      {
-        "@id": "https://w3id.org/dpv/tech#DataSecurityTechnology"
+        "@id": "https://w3id.org/dpv/tech#DataTransferTechnology"
       },
       {
         "@id": "https://w3id.org/dpv/tech#DataRemovalTechnology"
       },
       {
-        "@id": "https://w3id.org/dpv/tech#DataOrganisingTechnology"
+        "@id": "https://w3id.org/dpv/tech#DataManagementTechnology"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#DataTransformationTechnology"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#DataStorageTechnology"
+      },
+      {
+        "@id": "https://w3id.org/dpv/tech#DataCopyingTechnology"
       },
       {
         "@id": "https://w3id.org/dpv/tech#DataUsageTechnology"
       },
       {
-        "@id": "https://w3id.org/dpv/tech#DataTransferTechnology"
+        "@id": "https://w3id.org/dpv/tech#DataOrganisingTechnology"
       },
       {
         "@id": "https://w3id.org/dpv/tech#DataObtainingTechnology"
       },
       {
-        "@id": "https://w3id.org/dpv/tech#DataDisclosureTechnology"
+        "@id": "https://w3id.org/dpv/tech#DataSecurityTechnology"
       },
       {
-        "@id": "https://w3id.org/dpv/tech#DataCopyingTechnology"
+        "@id": "https://w3id.org/dpv/tech#DataDisclosureTechnology"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/tech#ManagementTechnology",
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv/tech#DataManagementTechnology"
       }
     ]
   },
@@ -279,53 +428,6 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#DataUsageTechnology",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Technology",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/dpv/tech#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/tech#DataTechnology"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Technology related to using data"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Data Usage Technology"
-      }
-    ]
-  },
-  {
     "@id": "https://w3id.org/dpv/tech#DataStorageTechnology",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class",
@@ -373,7 +475,7 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#DataCopyingTechnology",
+    "@id": "https://w3id.org/dpv/tech#DataTransformationTechnology",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class",
       "https://w3id.org/dpv#Technology",
@@ -409,60 +511,13 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Technology related to copying data"
+        "@value": "Technology related to transforming data"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Data Copying Technology"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#DataObtainingTechnology",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Technology",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/dpv/tech#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/tech#DataTechnology"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Technology related to obtain data"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Data Obtaining Technology"
+        "@value": "Data Transformation Technology"
       }
     ]
   },
@@ -475,11 +530,20 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/tech#DataDisclosureTechnology",
+    "@id": "https://w3id.org/dpv/tech",
     "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Technology",
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#Ontology"
+    ],
+    "http://purl.org/dc/terms/conformsTo": [
+      {
+        "@value": "http://www.w3.org/2000/01/rdf-schema"
+      },
+      {
+        "@value": "http://www.w3.org/2004/02/skos/core"
+      },
+      {
+        "@id": "http://www.w3.org/2002/07/owl"
+      }
     ],
     "http://purl.org/dc/terms/contributor": [
       {
@@ -488,36 +552,79 @@
     ],
     "http://purl.org/dc/terms/created": [
       {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@language": "en",
         "@value": "2022-06-15"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/dpv/tech#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/tech#DataTechnology"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+    "http://purl.org/dc/terms/creator": [
       {
         "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
+        "@value": "Harshvardhan J. Pandit"
+      },
       {
         "@language": "en",
-        "@value": "Technology related to disclosing data"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+        "@value": "Georg P Krog"
+      },
       {
         "@language": "en",
-        "@value": "Data Disclosure Technology"
+        "@value": "Paul Ryan"
+      },
+      {
+        "@language": "en",
+        "@value": "Julian Flake"
+      }
+    ],
+    "http://purl.org/dc/terms/description": [
+      {
+        "@language": "en",
+        "@value": "Extension to the Data Privacy Vocabulary (DPV) providing concepts for representing information about technologies and its provision"
+      }
+    ],
+    "http://purl.org/dc/terms/hasVersion": [
+      {
+        "@id": "https://w3id.org/dpv/tech"
+      }
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "https://w3id.org/dpv/tech"
+      }
+    ],
+    "http://purl.org/dc/terms/language": [
+      {
+        "@value": "de"
+      }
+    ],
+    "http://purl.org/dc/terms/license": [
+      {
+        "@id": "https://www.w3.org/copyright/document-license-2023/"
+      }
+    ],
+    "http://purl.org/dc/terms/modified": [
+      {
+        "@language": "en",
+        "@value": "2024-01-01"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@language": "en",
+        "@value": "Technology Concepts"
+      }
+    ],
+    "http://purl.org/vocab/vann/preferredNamespacePrefix": [
+      {
+        "@value": "tech"
+      }
+    ],
+    "http://purl.org/vocab/vann/preferredNamespaceUri": [
+      {
+        "@value": "https://w3id.org/dpv/tech#"
+      }
+    ],
+    "https://schema.org/version": [
+      {
+        "@value": "0.8.2"
       }
     ]
   },
@@ -565,14 +672,6 @@
       {
         "@language": "en",
         "@value": "Data Transfer Technology"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/tech#ManagementTechnology",
-    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
-      {
-        "@id": "https://w3id.org/dpv/tech#DataManagementTechnology"
       }
     ]
   }

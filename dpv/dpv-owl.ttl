@@ -5131,8 +5131,8 @@ dpv:Pseudonymisation a rdfs:Class,
 dpv:Pseudonymise a rdfs:Class,
         owl:Class,
         dpv:Processing ;
-    dct:contributor "2022-10-14" ;
     dct:created "2019-05-07"^^xsd:date ;
+    dct:modified "2022-10-14"^^xsd:date ;
     dct:source "(GDPR Art.4-2,https://eur-lex.europa.eu/eli/reg/2016/679/art_4/par_2/oj)"@en ;
     rdfs:isDefinedBy dpv: ;
     rdfs:subClassOf dpv:Transform ;
@@ -7740,6 +7740,48 @@ dpv:mitigatesRisk a rdf:Property,
     skos:prefLabel "mitigates risk"@en ;
     schema:domainIncludes dpv:RiskMitigationMeasure ;
     schema:rangeIncludes dpv:Risk .
+
+<https://w3id.org/dpv> a owl:Ontology ;
+    dct:conformsTo <http://www.w3.org/2002/07/owl>,
+        "http://www.w3.org/2000/01/rdf-schema",
+        "http://www.w3.org/2004/02/skos/core" ;
+    dct:contributor "Axel Polleres",
+        "Beatriz",
+        "Beatriz Esteves",
+        "Bud Bruegger",
+        "David Hickey",
+        "Elmar Kiesling",
+        "Fajar Ekaputra",
+        "Georg Krog",
+        "Georg P Krog",
+        "Georg P Krogg",
+        "Georg P. Krog",
+        "Harshvardhan J Pandit",
+        "Harshvardhan J. Pandit",
+        "Harshvardhan J.Pandit",
+        "Harshvardhan Pandit",
+        "Javier Fernandez",
+        "Javier Fernández",
+        "Julian Flake",
+        "Mark Lizar",
+        "Paul Ryan",
+        "Piero Bonatti",
+        "Rana Saniei",
+        "Rob Brennan",
+        "Rudy Jacob",
+        "Simon Steyskal" ;
+    dct:created "2022-08-18"@en ;
+    dct:creator "Harshvardhan J. Pandit"@en ;
+    dct:description "The Data Privacy Vocabulary (DPV) provides terms (classes and properties) to represent information about processing of personal data, for example - purposes, processing operations, personal data, technical and organisational measures."@en ;
+    dct:hasVersion <https://w3id.org/dpv> ;
+    dct:identifier "https://w3id.org/dpv" ;
+    dct:language "de" ;
+    dct:license <https://www.w3.org/copyright/document-license-2023/> ;
+    dct:modified "2024-01-01"@en ;
+    dct:title "Data Privacy Vocabulary (DPV)"@en ;
+    vann:preferredNamespacePrefix "dpv" ;
+    vann:preferredNamespaceUri "https://w3id.org/dpv#" ;
+    schema:version "2" .
 
 dpv:hasActivityStatus a rdf:Property,
         owl:ObjectProperty ;

@@ -4,10 +4,13 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix legal-eu: <https://w3id.org/dpv/legal/eu#> .
 @prefix loc: <https://w3id.org/dpv/loc#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 legal-eu:Adequacy-EU-AD a rdfs:Class,
@@ -313,6 +316,21 @@ legal-eu:law-GDPR a rdfs:Class,
         loc:IS,
         loc:LI,
         loc:NO .
+
+<https://w3id.org/dpv/legal/eu> a owl:Ontology ;
+    dct:conformsTo "http://www.w3.org/2000/01/rdf-schema",
+        "http://www.w3.org/2004/02/skos/core" ;
+    dct:contributor "Harshvardhan J. Pandit" ;
+    dct:created "2024-01-01"@en ;
+    dct:creator "Harshvardhan J. Pandit"@en ;
+    dct:description "Extension to the Data Privacy Vocabulary (DPV) providing concepts for representing legal information for EU as jurisdiction"@en ;
+    dct:identifier "https://w3id.org/dpv/legal/eu" ;
+    dct:language "de" ;
+    dct:license <https://www.w3.org/copyright/document-license-2023/> ;
+    dct:title "Legal Concepts for European Union (EU)"@en ;
+    vann:preferredNamespacePrefix "legal-eu" ;
+    vann:preferredNamespaceUri "https://w3id.org/dpv/legal/eu#" ;
+    schema:version "2" .
 
 legal-eu:eu-classes a skos:ConceptScheme .
 

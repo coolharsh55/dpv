@@ -3,6 +3,7 @@
 @prefix dpv: <https://w3id.org/dpv#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix sw: <http://www.w3.org/2003/06/sw-vocab-status/ns#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
@@ -839,6 +840,32 @@ dpv:TrustedThirdPartyUtilisation a rdfs:Class,
     sw:term_status "accepted"@en ;
     skos:definition "Utilisation of a trusted third party to provide or carry out a measure"@en ;
     skos:prefLabel "Trusted Third Party Utilisation"@en .
+
+<https://w3id.org/dpv> a owl:Ontology ;
+    dct:conformsTo <http://www.w3.org/2002/07/owl>,
+        "http://www.w3.org/2000/01/rdf-schema",
+        "http://www.w3.org/2004/02/skos/core" ;
+    dct:contributor "Axel Polleres",
+        "Beatriz Esteves",
+        "David Hickey",
+        "Georg P Krog",
+        "Harshvardhan J. Pandit",
+        "Julian Flake",
+        "Mark Lizar",
+        "Paul Ryan",
+        "Rob Brennan" ;
+    dct:created "2022-08-18"@en ;
+    dct:creator "Harshvardhan J. Pandit"@en ;
+    dct:description "The Data Privacy Vocabulary (DPV) provides terms (classes and properties) to represent information about processing of personal data, for example - purposes, processing operations, personal data, technical and organisational measures."@en ;
+    dct:hasVersion <https://w3id.org/dpv> ;
+    dct:identifier "https://w3id.org/dpv" ;
+    dct:language "de" ;
+    dct:license <https://www.w3.org/copyright/document-license-2023/> ;
+    dct:modified "2024-01-01"@en ;
+    dct:title "Data Privacy Vocabulary (DPV)"@en ;
+    vann:preferredNamespacePrefix "dpv" ;
+    vann:preferredNamespaceUri "https://w3id.org/dpv#" ;
+    schema:version "2" .
 
 dpv:OrganisationalMeasure rdfs:superClassOf dpv:Assessment,
         dpv:AuthorisationProcedure,

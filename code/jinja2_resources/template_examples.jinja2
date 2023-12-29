@@ -77,7 +77,7 @@
     <section id="examples">
       <h2>Examples</h2>
       
-      {% for DEX in vocab.values()|sort(attribute='term') %}
+      {% for DEX in vocab.values()|filter_type('dex:Example')|sort(attribute='term') %}
         <section id="{{DEX['term']}}">
           <h4><strong><i>{{DEX['term']}}</i>:</strong> {{ DEX['dct:title'] }}</h4>
           {{ example_aside(DEX['prefixed']) }}

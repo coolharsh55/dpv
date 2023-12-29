@@ -58,6 +58,159 @@
     ]
   },
   {
+    "@id": "https://w3id.org/dpv/pd",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Ontology"
+    ],
+    "http://purl.org/dc/terms/conformsTo": [
+      {
+        "@value": "http://www.w3.org/2000/01/rdf-schema"
+      },
+      {
+        "@value": "http://www.w3.org/2004/02/skos/core"
+      }
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Elmar Kiesling"
+      },
+      {
+        "@value": "Harshvardhan J. Pandit"
+      },
+      {
+        "@value": "Fajar Ekaputra"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@language": "en",
+        "@value": "2022-04-02"
+      }
+    ],
+    "http://purl.org/dc/terms/creator": [
+      {
+        "@language": "en",
+        "@value": "Harshvardhan J. Pandit"
+      },
+      {
+        "@language": "en",
+        "@value": "Axel Polleres"
+      }
+    ],
+    "http://purl.org/dc/terms/description": [
+      {
+        "@language": "en",
+        "@value": "Extension to the Data Privacy Vocabulary (DPV) providing additional categories of personal data"
+      }
+    ],
+    "http://purl.org/dc/terms/identifier": [
+      {
+        "@value": "https://w3id.org/dpv/pd"
+      }
+    ],
+    "http://purl.org/dc/terms/language": [
+      {
+        "@value": "de"
+      }
+    ],
+    "http://purl.org/dc/terms/license": [
+      {
+        "@id": "https://www.w3.org/copyright/document-license-2023/"
+      }
+    ],
+    "http://purl.org/dc/terms/modified": [
+      {
+        "@language": "en",
+        "@value": "2024-01-01"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@language": "en",
+        "@value": "Personal Data Categories"
+      }
+    ],
+    "http://purl.org/vocab/vann/preferredNamespacePrefix": [
+      {
+        "@value": "pd"
+      }
+    ],
+    "http://purl.org/vocab/vann/preferredNamespaceUri": [
+      {
+        "@value": "https://w3id.org/dpv/pd#"
+      }
+    ],
+    "https://schema.org/version": [
+      {
+        "@value": "2"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/pd#core-classes",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/pd#Tracking",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#PersonalData"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Elmar Kiesling; Harshvardhan J. Pandit, Fajar Ekaputra"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2019-06-04"
+      }
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@language": "en",
+        "@value": "(EnterPrivacy Categories of Personal Information, https://enterprivacy.com/wp-content/uploads/2018/09/Categories-of-Personal-Information.pdf)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/dpv/pd#"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#PersonalData"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Information used to track an individual or group e.g. location or email"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv/pd#core-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Tracking"
+      }
+    ]
+  },
+  {
     "@id": "https://w3id.org/dpv/pd#Social",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
@@ -168,31 +321,60 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#PersonalData",
-    "http://www.w3.org/2004/02/skos/core#narrower": [
+    "@id": "https://w3id.org/dpv/pd#Historical",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#PersonalData"
+    ],
+    "http://purl.org/dc/terms/contributor": [
       {
-        "@id": "https://w3id.org/dpv/pd#External"
-      },
+        "@value": "Elmar Kiesling; Harshvardhan J. Pandit, Fajar Ekaputra"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
       {
-        "@id": "https://w3id.org/dpv/pd#Financial"
-      },
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2019-06-04"
+      }
+    ],
+    "http://purl.org/dc/terms/source": [
       {
-        "@id": "https://w3id.org/dpv/pd#Historical"
-      },
+        "@language": "en",
+        "@value": "(EnterPrivacy Categories of Personal Information, https://enterprivacy.com/wp-content/uploads/2018/09/Categories-of-Personal-Information.pdf)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "https://w3id.org/dpv/pd#Household"
-      },
+        "@id": "https://w3id.org/dpv/pd#"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
-        "@id": "https://w3id.org/dpv/pd#Internal"
-      },
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@id": "https://w3id.org/dpv/pd#Profile"
-      },
+        "@id": "https://w3id.org/dpv#PersonalData"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
       {
-        "@id": "https://w3id.org/dpv/pd#Social"
-      },
+        "@language": "en",
+        "@value": "Information about historical data related to or relevant regarding history or past events"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
       {
-        "@id": "https://w3id.org/dpv/pd#Tracking"
+        "@id": "https://w3id.org/dpv/pd#core-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Historical"
       }
     ]
   },
@@ -249,182 +431,31 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv/pd#Tracking",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#PersonalData"
-    ],
-    "http://purl.org/dc/terms/contributor": [
+    "@id": "https://w3id.org/dpv#PersonalData",
+    "http://www.w3.org/2004/02/skos/core#narrower": [
       {
-        "@value": "Elmar Kiesling; Harshvardhan J. Pandit, Fajar Ekaputra"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
+        "@id": "https://w3id.org/dpv/pd#External"
+      },
       {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2019-06-04"
-      }
-    ],
-    "http://purl.org/dc/terms/source": [
+        "@id": "https://w3id.org/dpv/pd#Financial"
+      },
       {
-        "@language": "en",
-        "@value": "(EnterPrivacy Categories of Personal Information, https://enterprivacy.com/wp-content/uploads/2018/09/Categories-of-Personal-Information.pdf)"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+        "@id": "https://w3id.org/dpv/pd#Historical"
+      },
       {
-        "@id": "https://w3id.org/dpv/pd#"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+        "@id": "https://w3id.org/dpv/pd#Household"
+      },
       {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
+        "@id": "https://w3id.org/dpv/pd#Internal"
+      },
       {
-        "@id": "https://w3id.org/dpv#PersonalData"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
+        "@id": "https://w3id.org/dpv/pd#Profile"
+      },
       {
-        "@language": "en",
-        "@value": "Information used to track an individual or group e.g. location or email"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
+        "@id": "https://w3id.org/dpv/pd#Social"
+      },
       {
-        "@id": "https://w3id.org/dpv/pd#core-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Tracking"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/pd#External",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#PersonalData"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Elmar Kiesling; Harshvardhan J. Pandit, Fajar Ekaputra"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2019-06-04"
-      }
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@language": "en",
-        "@value": "(EnterPrivacy Categories of Personal Information, https://enterprivacy.com/wp-content/uploads/2018/09/Categories-of-Personal-Information.pdf)"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/dpv/pd#"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#PersonalData"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Information about external characteristics that can be observed"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv/pd#core-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "External"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/pd#core-classes",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv/pd#Historical",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#PersonalData"
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Elmar Kiesling; Harshvardhan J. Pandit, Fajar Ekaputra"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2019-06-04"
-      }
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@language": "en",
-        "@value": "(EnterPrivacy Categories of Personal Information, https://enterprivacy.com/wp-content/uploads/2018/09/Categories-of-Personal-Information.pdf)"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/dpv/pd#"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#broader": [
-      {
-        "@id": "https://w3id.org/dpv#PersonalData"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Information about historical data related to or relevant regarding history or past events"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/dpv/pd#core-classes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Historical"
+        "@id": "https://w3id.org/dpv/pd#Tracking"
       }
     ]
   },
@@ -489,6 +520,64 @@
       {
         "@language": "en",
         "@value": "svd:Financial"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv/pd#External",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#PersonalData"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Elmar Kiesling; Harshvardhan J. Pandit, Fajar Ekaputra"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2019-06-04"
+      }
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@language": "en",
+        "@value": "(EnterPrivacy Categories of Personal Information, https://enterprivacy.com/wp-content/uploads/2018/09/Categories-of-Personal-Information.pdf)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/dpv/pd#"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#PersonalData"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Information about external characteristics that can be observed"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv/pd#core-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "External"
       }
     ]
   }

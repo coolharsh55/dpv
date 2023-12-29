@@ -2,17 +2,17 @@
 <html lang="{{lang}}">
 <head>
   <meta charset="utf-8">
-  <title>{% block title %}Data Privacy Vocabulary (DPV){% endblock title %}</title>
+  <title>{% block title %}{{data[vocab_name+'-metadata']['dct:title']}}{% endblock title %}</title>
   <script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove" defer></script>
   {% block RESPEC %}
   <script class="remove">
    // All config options at https://respec.org/docs/ 
    var respecConfig = {
-    shortName: "dpv",
-    title: "Data Privacy Vocabulary (DPV)",
-    subtitle: "version 1",
-    publishDate: "2022-12-05",
-    specStatus: "CG-FINAL",
+    shortName: "{{vocab_name}}",
+    title: "{{data[vocab_name+'-metadata']['dct:title']}}",
+    subtitle: "version {{data[vocab_name+'-metadata']['schema:version']}}",
+    publishDate: "{{data[vocab_name+'-metadata']['dct:modified']}}",
+    specStatus: "CG-DRAFT",
     group: "dpvcg",
     latestVersion: "https://w3id.org/dpv",
     canonicalUri: "https://w3id.org/dpv",
@@ -36,84 +36,12 @@
       retiredDate: "2019-12-31"
     }
     ],
-    authors: [
+    authors: [{% for person in data[vocab_name+'-metadata']['dct:creator']|ensure_list %}
       {
-        "name": "Axel Polleres",
-        "company": "{{ "Axel Polleres" | generate_author_affiliation }}"
-      },
-      {
-        "name": "Beatriz Esteves",
-        "company": "{{ "Beatriz Esteves" | generate_author_affiliation }}"
-      },
-      {
-        "name": "Bert Bos",
-        "company": "{{ "Bert Bos" | generate_author_affiliation }}"
-      },
-      {
-        "name": "Bud Bruegger",
-        "company": "{{ "Bud Bruegger" | generate_author_affiliation }}"
-      },
-      {
-        "name": "Elmar Kiesling",
-        "company": "{{ "Elmar Kiesling" | generate_author_affiliation }}"
-      },
-      {
-        "name": "Eva Schlehahn",
-        "company": "{{ "Eva Schlehahn" | generate_author_affiliation }}"
-      },
-      {
-        "name": "David Hickey",
-        "company": "{{ "David Hickey" | generate_author_affiliation }}"
-      },
-      {
-        "name": "Fajar J. Ekaputra",
-        "company": "{{ "Fajar J. Ekaputra" | generate_author_affiliation }}"
-      },
-      {
-        "name": "Georg P. Krog",
-        "company": "{{ "Georg P. Krog" | generate_author_affiliation }}"
-      },
-      {
-        "name": "Harshvardhan J. Pandit",
-        "company": "{{ "Harshvardhan J. Pandit" | generate_author_affiliation }}",
-      },
-      {
-        "name": "Javier D. Fernández",
-        "company": "{{ "Javier D. Fernández" | generate_author_affiliation }}"
-      },
-      {
-        "name": "Julian Flake",
-        "company": "{{ "Julian Flake" | generate_author_affiliation }}"
-      },
-      {
-        "name": "Mark Lizar",
-        "company": "{{ "Mark Lizar" | generate_author_affiliation }}"
-      },
-      {
-        "name": "Paul Ryan",
-        "company": "{{ "Paul Ryan" | generate_author_affiliation }}"
-      },
-      {
-        "name": "Piero Bonatti",
-        "company": "{{ "Piero Bonatti" | generate_author_affiliation }}"
-      },
-      {
-        "name": "Ramisa Gachpaz Hamed",
-        "company": "{{ "Ramisa Gachpaz Hamed" | generate_author_affiliation }}"
-      },
-      {
-        "name": "Rigo Wenning",
-        "company": "{{ "Rigo Wenning" | generate_author_affiliation }}"
-      },
-      {
-        "name": "Rob Brennan",
-        "company": "{{ "Rob Brennan" | generate_author_affiliation }}"
-      },
-      {
-        "name": "Simon Steyskal",
-        "company": "{{ "Simon Steyskal" | generate_author_affiliation }}"
-      }
-    ],
+        "name": "{{person}}",
+        "company": "{{ person | generate_author_affiliation }}"
+      }{{"," if not loop.last}}
+      {% endfor %}],
     localBiblio: {%  include 'references.json' %}
   };
 </script>
@@ -581,6 +509,15 @@
 {% endblock VOCAB %}
 
 {% block ACKNOWLEDGEMENTS %}
+<section id="contributors" class="notoc">
+  <h2>Contributors</h2>
+  <p>The following people have contributed to this vocabulary. The names are ordered alphabetically. The affiliations are informative do not represent formal endorsements. Affiliations may be outdated. The list is generated automatically from the contributors listed for defined concepts.</p>
+  <ul>
+  {% for person in data[vocab_name+'-metadata']['dct:contributor']|ensure_list|sort %}
+    <li>{{ person }} ({{person|generate_author_affiliation}})</li>
+  {% endfor %}
+  </ul>
+</section>
 <section id="funding-acknowledgements" class="notoc">
   <h2>Funding Acknowledgements</h2>
 
