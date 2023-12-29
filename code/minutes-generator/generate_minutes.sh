@@ -5,5 +5,5 @@ for file in data/*; do
     # extension="${filename##*.}"
     filename="${filename%.*}"
 
-    perl scribe.perl -implicitContinuations -final -emphasis $file > ../${filename}.html
+    perl scribe.perl -implicitContinuations -final -emphasis $file > ../../meetings/${filename}.html
 done

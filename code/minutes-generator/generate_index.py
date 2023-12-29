@@ -4,9 +4,9 @@
 import datetime
 import glob
 # assuming this is run from meetings/generator folder
-files = sorted(glob.glob('../meeting*.html'), reverse=True)
+files = sorted(glob.glob('../../meetings/meeting*.html'), reverse=True)
 
-with open('../index.html', 'w') as fd:
+with open('../../meetings/index.html', 'w') as fd:
     fd.write("""<!DOCTYPE html>
 <html lang="en">
   <head>
