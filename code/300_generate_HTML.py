@@ -423,6 +423,19 @@ def ensure_list(item) -> list:
     return item
 
 
+def ensure_list_unique(item) -> list:
+    """
+    Simple function that ensures item is a list or puts it in one
+    """
+    item = ensure_list(item)
+    if type(item[0]) != dict:
+        return set(item)
+    items = {}
+    for x in item:
+        items[x['iri']] = x
+    return list(items.values())
+
+
 def filter_type(itemlist:list, itemtype:str, vocab:str=None) -> list:
     """
     Filters itemlist for items that match itemtype and optionally
@@ -511,7 +524,7 @@ def expand_time_interval(term:dict, prop:str) -> str:
         else:
             returnval += 'ongoing'
         returnset.add(returnval)
-    return returnset
+    return ','.join(returnset)
 
 
 def sort_iris(items:list) -> list:
@@ -593,6 +606,7 @@ JINJA2_FILTERS = {
     'organise_hierarchy': organise_hierarchy,
     'get_sources': get_sources,
     'ensure_list': ensure_list,
+    'ensure_list_unique': ensure_list_unique,
     'filter_type': filter_type,
     'get_prop_with_term_domain': get_prop_with_term_domain,
     'get_prop_with_term_range': get_prop_with_term_range,

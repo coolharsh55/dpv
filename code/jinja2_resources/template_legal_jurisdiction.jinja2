@@ -67,16 +67,16 @@
             <th>Start/End</th>
         </thead>
         <tbody>
-        {% for law in modules['legal']['classes']|filter_type('dpv:Law')|sort(attribute='iri') %}
+        {% for law in modules['legal']['classes']|filter_type('dpv:Law')|ensure_list_unique|sort(attribute='iri') %}
             <tr>
-                <td><a href="#{{law['term']}}"><code>{{ law['term'] }}</code></a></td>
+                <td><a href="#{{law['prefixed']}}"><code>{{ law['prefixed'] }}</code></a></td>
                 <td>{{ law['skos:prefLabel'] }}</td>
-                <td>{% for loc in law['dpv:hasJurisdiction']|ensure_list|sort(attribute='iri') %}
+                <td>{% for loc in law['dpv:hasJurisdiction']|ensure_list_unique|sort(attribute='iri') %}
                 {% set loc=data[(loc|prefix_this).split(':')[0]][loc|prefix_this] %}
                 <a href="{{loc['iri']}}">{{ loc['skos:prefLabel'] }}</a>{% if 'skos:broader' in loc %}{% for loc_broader in loc['skos:broader']|ensure_list|filter_type("dpv:Country", vocab="loc") %}, <a href="{{loc_broader['iri']}}">{{ loc_broader['skos:prefLabel'] }}</a>
                     {% endfor %}{% endif %}
                 {{ "; " if not loop.last }}{% endfor %}</td>
-                <td>{% for page in law['foaf:homepage']|ensure_list %}<a href="{{page}}">link</a>{{ ", " if not loop.first }}{% endfor %}</td>
+                <td>{% for page in law['foaf:homepage']|ensure_list_unique %}<a href="{{page}}">link</a>{{ ", " if not loop.first }}{% endfor %}</td>
                 <td>{{ law|expand_time_interval('dct:temporal') }}</td>
             </tr>
         {% endfor %}
@@ -97,19 +97,19 @@
             <th>Webpage</th>
         </thead>
         <tbody>
-        {% for law in modules['legal']['classes']|filter_type('dpv:Authority')|sort(attribute='iri') %}
+        {% for law in modules['legal']['classes']|filter_type('dpv:Authority')|ensure_list_unique|sort(attribute='iri') %}
             <tr>
-                <td><a href="#{{law['term']}}"><code>{{ law['term'] }}</code></a></td>
+                <td><a href="#{{law['prefixed']}}"><code>{{ law['prefixed'] }}</code></a></td>
                 <td>{{ law['skos:prefLabel'] }}</td>
-                <td>{% for loc in law['dpv:hasJurisdiction']|ensure_list|sort(attribute='iri') %}
+                <td>{% for loc in law['dpv:hasJurisdiction']|ensure_list_unique|sort(attribute='iri') %}
                 {% set loc=data[(loc|prefix_this).split(':')[0]][loc|prefix_this] %}
                 <a href="{{loc['iri']}}">{{ loc['skos:prefLabel'] }}</a>{% if 'skos:broader' in loc %}{% for loc_broader in loc['skos:broader']|ensure_list|filter_type("dpv:Country", vocab="loc") %}, <a href="{{loc_broader['iri']}}">{{ loc_broader['skos:prefLabel'] }}</a>
                     {% endfor %}{% endif %}
                 {{ "; " if not loop.last }}{% endfor %}</td>
-                <td>{% for law in law['dpv:hasLaw']|ensure_list|sort(attribute='iri') %}
+                <td>{% for law in law['dpv:hasLaw']|ensure_list_unique|sort(attribute='iri') %}
                 {% set law=data[(law|prefix_this).split(':')[0]][law|prefix_this] %}
                 <a href="{{law['iri']}}">{{ law['prefixed'] }}</a>{{ ", " if not loop.last }}{% endfor %}</td>
-                <td>{% for page in law['foaf:homepage']|ensure_list %}<a href="{{page}}">link</a>{{ ", " if not loop.first }}{% endfor %}</td>
+                <td>{% for page in law['foaf:homepage']|ensure_list_unique %}<a href="{{page}}">link</a>{{ ", " if not loop.first }}{% endfor %}</td>
             </tr>
         {% endfor %}
         </tbody>
@@ -129,14 +129,14 @@
             <th>Start/End</th>
         </thead>
         <tbody>
-        {% for law in modules['legal']['classes']|filter_type('eu-gdpr:AdequacyDecision')|sort(attribute='iri') %}
+        {% for law in modules['legal']['classes']|filter_type('eu-gdpr:AdequacyDecision')|ensure_list_unique|sort(attribute='iri') %}
             <tr>
-                <td><a href="#{{law['term']}}"><code>{{ law['term'] }}</code></a></td>
+                <td><a href="#{{law['prefixed']}}"><code>{{ law['prefixed'] }}</code></a></td>
                 <td>{{ law['skos:prefLabel'] }}</td>
-                <td>{% for loc in law['dpv:hasJurisdiction']|ensure_list|sort(attribute='iri') %}
+                <td>{% for loc in law['dpv:hasJurisdiction']|ensure_list_unique|sort(attribute='iri') %}
                 {% set loc=data[(loc|prefix_this).split(':')[0]][loc|prefix_this] %}
                 <a href="{{loc['iri']}}">{{ loc['skos:prefLabel'] }}</a>{{ ", " if not loop.last }}{% endfor %}</td>
-                <td>{% for page in law['foaf:homepage']|ensure_list %}<a href="{{page}}">link</a>{{ ", " if not loop.first }}{% endfor %}</td>
+                <td>{% for page in law['foaf:homepage']|ensure_list_unique|sort %}<a href="{{page}}">link</a>{{ ", " if not loop.first }}{% endfor %}</td>
                 <td>{{ law|expand_time_interval('dct:temporal') }}</td>
             </tr>
         {% endfor %}

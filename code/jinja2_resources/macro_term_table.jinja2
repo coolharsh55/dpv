@@ -24,10 +24,9 @@
       <table class="term-contents">
       <tbody>
         {# term metadata #}
-        <tr><th>test</th><td>prefix: {{ concept['prefix'] }}; vocab: {{ vocab_name }}</td></tr>
         <tr>
           <th>Term</th>
-          <td><dfn>{% if concept['prefix'] != vocab_name and filter != "external" %}{{ concept['prefix']}}:{% endif %}{{ concept['term'] }}</dfn></td>
+          <td><dfn>{% if concept['prefix'] != vocab_name %}{{ concept['prefix']}}:{% endif %}{{ concept['term'] }}</dfn></td>
           <th>Prefix</th>
           <td>{{ concept['prefix'] }}</td>
         </tr>
