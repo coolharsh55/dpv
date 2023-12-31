@@ -14,6 +14,7 @@ import json
 from rdflib import Graph, Namespace, BNode, Literal
 from rdflib import RDF, RDFS, OWL, SKOS
 from rdflib import URIRef
+import shutil
 import logging
 logging.basicConfig(
     level=logging.DEBUG, format='%(levelname)s - %(funcName)s :: %(lineno)d - %(message)s')
@@ -645,17 +646,20 @@ def _write_template(
         fd.write(template.render(**params))
         INFO(f'wrote {filename} spec at {filepath}/{filename}-{lang}.html')
     if lang == "en":
-        with open(f'{filepath}/{filename}.html', 'w+') as fd:
-            fd.write(template.render(**params))
-            INFO(f'wrote {filename} spec at {filepath}/{filename}.html')
+        shutil.copy(
+            f'{filepath}/{filename}-{lang}.html', # src
+            f'{filepath}/{filename}.html') # dest
+        INFO(f'wrote {filename} spec at {filepath}/{filename}.html')
     if index:
-        with open(f'{filepath}/index-{lang}.html', 'w+') as fd:
-            fd.write(template.render(**params))
-            INFO(f'wrote {filename} spec at {filepath}/index-{lang}.html')
+        shutil.copy(
+            f'{filepath}/{filename}-{lang}.html', # src
+            f'{filepath}/index-{lang}.html') # dest
+        INFO(f'wrote {filename} spec at {filepath}/index-{lang}.html')
         if lang == "en":
-            with open(f'{filepath}/index.html', 'w+') as fd:
-                fd.write(template.render(**params))
-                INFO(f'wrote {filename} spec at {filepath}/index.html')
+            shutil.copy(
+                f'{filepath}/{filename}-{lang}.html', # src
+                f'{filepath}/index.html') # dest
+            INFO(f'wrote {filename} spec at {filepath}/index.html')
 
 
 # === Load RDF data ===
