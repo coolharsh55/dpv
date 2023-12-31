@@ -70,26 +70,30 @@
   },
   "LEGAL-EU": {
     "href": "https://w3id.org/dpv/legal/eu",
-    "title": "EU Legal concepts for DPV"
+    "title": "Legal concepts for European Union (EU)"
   },
   "LEGAL-US": {
     "href": "https://w3id.org/dpv/legal/us",
-    "title": "US Legal concepts for DPV"
+    "title": "Legal concepts for United States of America (USA)"
   },
   "LEGAL-GB": {
     "href": "https://w3id.org/dpv/legal/gb",
-    "title": "GB Legal concepts for DPV"
+    "title": "Legal concepts for United Kingdom of Great Britain and Northern Ireland (UK)"
   },
   "LEGAL-IE": {
     "href": "https://w3id.org/dpv/legal/ie",
-    "title": "IE Legal concepts for DPV"
+    "title": "Legal concepts for Ireland"
+  },
+  "LEGAL-DE": {
+    "href": "https://w3id.org/dpv/legal/de",
+    "title": "Legal concepts for Germany"
   },
   "EU-RIGHTS": {
     "href": "https://w3id.org/dpv/legal/eu/rights",
     "title": "EU Rights concepts for DPV"
   },
   "DPV-OWL": {
-    "href": "https://w3id.org/dpv/owl",
+    "href": "https://w3id.org/dpv/dpv-owl",
     "title": "DPV serialised in OWL2"
   },
   "PRIMER": {
@@ -219,6 +223,10 @@
   "RuleML": {
     "title": "RuleML: Rule Markup Language",
     "href": "www.ruleml.org/"
+  },
+  "SKOS-OWL": {
+    "title": "Using OWL and SKOS",
+    "href": "https://www.w3.org/2006/07/SWD/SKOS/skos-and-owl/master.html",
   }
 }  };
 </script>
@@ -243,6 +251,7 @@
         <li>[[[LEGAL]]] , with extensions for specific jurisdictions:<ul>
           <li>[[[LEGAL-EU]]] - with extensions for laws [[EU-GDPR]], [[EU-DGA]], and [[EU-RIGHTS]]</li>
           <li>[[[LEGAL-US]]]</li>
+          <li>[[[LEGAL-DE]]]</li>
           <li>[[[LEGAL-GB]]]</li>
           <li>[[[LEGAL-IE]]]</li>
         </ul></li>
@@ -268,10 +277,7 @@
 </section>
 
     <section id="sotd">
-  <!-- sotd: Status of this document -->
-  <p>This document is published by the <a href="https://www.w3.org/community/dpvcg/">Data Privacy Vocabularies and Controls Community Group (DPVCG)</a> as a deliverable and report of its work in creating and maintaining the Data Privacy Vocabulary (DPV).</p>
-  <div class="note">
-    <p><strong>Contributing to the DPV and its extensions</strong> The DPVCG welcomes participation regarding the DPV, including expansion or refinement of its terms, addressing open issues, and welcomes suggestions on their resolution or mitigation. For further information, please see the <a href="https://github.com/w3c/dpv#contribution--participation">contribution section</a>.</p>
+    <p><strong>Contributing:</strong> The DPVCG welcomes participation to improve the DPV and associated resources, including expansion or refinement of concepts, requesting information and applications, and addressing open issues. <a href="https://w3id.org/dpv/contributing">See contributing page</a> for further information.</p>
   </div>
 </section>
 
@@ -4477,20 +4483,6 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#EU28">loc:EU28</a> → 
-             <a href="#EU">loc:EU</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
-             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
-          <td>             <a href="#EEA31">loc:EEA31</a> → 
-             <a href="#EEA">loc:EEA</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
-             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
           <td>             <a href="#EU27-1">loc:EU27-1</a> → 
              <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
@@ -4505,7 +4497,21 @@
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
+          <td>             <a href="#EEA31">loc:EEA31</a> → 
+             <a href="#EEA">loc:EEA</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
+             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
           <td>             <a href="https://w3id.org/dpv#Country">dpv:Country</a> → 
+             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>             <a href="#EU28">loc:EU28</a> → 
+             <a href="#EU">loc:EU</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 </tr>      
@@ -5079,6 +5085,13 @@
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
+          <td>             <a href="#EEA31">loc:EEA31</a> → 
+             <a href="#EEA">loc:EEA</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
+             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
           <td>             <a href="https://w3id.org/dpv#Country">dpv:Country</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
@@ -5086,13 +5099,6 @@
           <th>Broader/Parent types</th>
           <td>             <a href="#EU28">loc:EU28</a> → 
              <a href="#EU">loc:EU</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
-             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
-          <td>             <a href="#EEA31">loc:EEA31</a> → 
-             <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
@@ -5233,13 +5239,6 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#EEA31">loc:EEA31</a> → 
-             <a href="#EEA">loc:EEA</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
-             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
           <td>             <a href="#EU27-1">loc:EU27-1</a> → 
              <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
@@ -5248,6 +5247,13 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#EEA30">loc:EEA30</a> → 
+             <a href="#EEA">loc:EEA</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
+             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>             <a href="#EEA31">loc:EEA31</a> → 
              <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
@@ -7585,6 +7591,13 @@
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
+          <td>             <a href="#EEA31">loc:EEA31</a> → 
+             <a href="#EEA">loc:EEA</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
+             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
           <td>             <a href="https://w3id.org/dpv#Country">dpv:Country</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
@@ -7592,13 +7605,6 @@
           <th>Broader/Parent types</th>
           <td>             <a href="#EU28">loc:EU28</a> → 
              <a href="#EU">loc:EU</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
-             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
-          <td>             <a href="#EEA31">loc:EEA31</a> → 
-             <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
@@ -7669,6 +7675,18 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
+          <td>             <a href="https://w3id.org/dpv#Country">dpv:Country</a> → 
+             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>             <a href="#EU28">loc:EU28</a> → 
+             <a href="#EU">loc:EU</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
+             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
           <td>             <a href="#EU27-1">loc:EU27-1</a> → 
              <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
@@ -7678,18 +7696,6 @@
           <th>Broader/Parent types</th>
           <td>             <a href="#EEA30">loc:EEA30</a> → 
              <a href="#EEA">loc:EEA</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
-             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
-          <td>             <a href="https://w3id.org/dpv#Country">dpv:Country</a> → 
-             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
-          <td>             <a href="#EU28">loc:EU28</a> → 
-             <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
@@ -7767,13 +7773,6 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#EEA31">loc:EEA31</a> → 
-             <a href="#EEA">loc:EEA</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
-             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
           <td>             <a href="#EU28">loc:EU28</a> → 
              <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
@@ -7789,6 +7788,13 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#EEA30">loc:EEA30</a> → 
+             <a href="#EEA">loc:EEA</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
+             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>             <a href="#EEA31">loc:EEA31</a> → 
              <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
@@ -7869,14 +7875,6 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EEA31">loc:EEA31</a> → 
-             <a href="#EEA">loc:EEA</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
-             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
-          <td>             <a href="#DE">loc:DE</a> → 
              <a href="#EU28">loc:EU28</a> → 
              <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
@@ -7885,14 +7883,14 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EU">loc:EU</a> → 
+             <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EEA">loc:EEA</a> → 
+             <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
@@ -7908,6 +7906,14 @@
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
              <a href="#EEA30">loc:EEA30</a> → 
+             <a href="#EEA">loc:EEA</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
+             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>             <a href="#DE">loc:DE</a> → 
+             <a href="#EEA31">loc:EEA31</a> → 
              <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
@@ -7986,14 +7992,6 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EEA31">loc:EEA31</a> → 
-             <a href="#EEA">loc:EEA</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
-             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
-          <td>             <a href="#DE">loc:DE</a> → 
              <a href="#EU28">loc:EU28</a> → 
              <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
@@ -8002,14 +8000,14 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EU">loc:EU</a> → 
+             <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EEA">loc:EEA</a> → 
+             <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
@@ -8025,6 +8023,14 @@
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
              <a href="#EEA30">loc:EEA30</a> → 
+             <a href="#EEA">loc:EEA</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
+             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>             <a href="#DE">loc:DE</a> → 
+             <a href="#EEA31">loc:EEA31</a> → 
              <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
@@ -8103,14 +8109,6 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EEA31">loc:EEA31</a> → 
-             <a href="#EEA">loc:EEA</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
-             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
-          <td>             <a href="#DE">loc:DE</a> → 
              <a href="#EU28">loc:EU28</a> → 
              <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
@@ -8119,14 +8117,14 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EU">loc:EU</a> → 
+             <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EEA">loc:EEA</a> → 
+             <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
@@ -8142,6 +8140,14 @@
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
              <a href="#EEA30">loc:EEA30</a> → 
+             <a href="#EEA">loc:EEA</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
+             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>             <a href="#DE">loc:DE</a> → 
+             <a href="#EEA31">loc:EEA31</a> → 
              <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
@@ -8220,14 +8226,6 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EEA31">loc:EEA31</a> → 
-             <a href="#EEA">loc:EEA</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
-             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
-          <td>             <a href="#DE">loc:DE</a> → 
              <a href="#EU28">loc:EU28</a> → 
              <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
@@ -8236,14 +8234,14 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EU">loc:EU</a> → 
+             <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EEA">loc:EEA</a> → 
+             <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
@@ -8259,6 +8257,14 @@
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
              <a href="#EEA30">loc:EEA30</a> → 
+             <a href="#EEA">loc:EEA</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
+             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>             <a href="#DE">loc:DE</a> → 
+             <a href="#EEA31">loc:EEA31</a> → 
              <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
@@ -8337,14 +8343,6 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EEA31">loc:EEA31</a> → 
-             <a href="#EEA">loc:EEA</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
-             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
-          <td>             <a href="#DE">loc:DE</a> → 
              <a href="#EU28">loc:EU28</a> → 
              <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
@@ -8353,14 +8351,14 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EU">loc:EU</a> → 
+             <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EEA">loc:EEA</a> → 
+             <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
@@ -8376,6 +8374,14 @@
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
              <a href="#EEA30">loc:EEA30</a> → 
+             <a href="#EEA">loc:EEA</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
+             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>             <a href="#DE">loc:DE</a> → 
+             <a href="#EEA31">loc:EEA31</a> → 
              <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
@@ -8454,14 +8460,6 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EEA31">loc:EEA31</a> → 
-             <a href="#EEA">loc:EEA</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
-             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
-          <td>             <a href="#DE">loc:DE</a> → 
              <a href="#EU28">loc:EU28</a> → 
              <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
@@ -8470,14 +8468,14 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EU">loc:EU</a> → 
+             <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EEA">loc:EEA</a> → 
+             <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
@@ -8493,6 +8491,14 @@
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
              <a href="#EEA30">loc:EEA30</a> → 
+             <a href="#EEA">loc:EEA</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
+             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>             <a href="#DE">loc:DE</a> → 
+             <a href="#EEA31">loc:EEA31</a> → 
              <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
@@ -8571,14 +8577,6 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EEA31">loc:EEA31</a> → 
-             <a href="#EEA">loc:EEA</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
-             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
-          <td>             <a href="#DE">loc:DE</a> → 
              <a href="#EU28">loc:EU28</a> → 
              <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
@@ -8587,14 +8585,14 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EU">loc:EU</a> → 
+             <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EEA">loc:EEA</a> → 
+             <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
@@ -8610,6 +8608,14 @@
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
              <a href="#EEA30">loc:EEA30</a> → 
+             <a href="#EEA">loc:EEA</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
+             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>             <a href="#DE">loc:DE</a> → 
+             <a href="#EEA31">loc:EEA31</a> → 
              <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
@@ -8688,14 +8694,6 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EEA31">loc:EEA31</a> → 
-             <a href="#EEA">loc:EEA</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
-             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
-          <td>             <a href="#DE">loc:DE</a> → 
              <a href="#EU28">loc:EU28</a> → 
              <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
@@ -8704,14 +8702,14 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EU">loc:EU</a> → 
+             <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EEA">loc:EEA</a> → 
+             <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
@@ -8727,6 +8725,14 @@
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
              <a href="#EEA30">loc:EEA30</a> → 
+             <a href="#EEA">loc:EEA</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
+             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>             <a href="#DE">loc:DE</a> → 
+             <a href="#EEA31">loc:EEA31</a> → 
              <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
@@ -8805,14 +8811,6 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EEA31">loc:EEA31</a> → 
-             <a href="#EEA">loc:EEA</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
-             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
-          <td>             <a href="#DE">loc:DE</a> → 
              <a href="#EU28">loc:EU28</a> → 
              <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
@@ -8821,14 +8819,14 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EU">loc:EU</a> → 
+             <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EEA">loc:EEA</a> → 
+             <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
@@ -8844,6 +8842,14 @@
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
              <a href="#EEA30">loc:EEA30</a> → 
+             <a href="#EEA">loc:EEA</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
+             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>             <a href="#DE">loc:DE</a> → 
+             <a href="#EEA31">loc:EEA31</a> → 
              <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
@@ -8922,14 +8928,6 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EEA31">loc:EEA31</a> → 
-             <a href="#EEA">loc:EEA</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
-             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
-          <td>             <a href="#DE">loc:DE</a> → 
              <a href="#EU28">loc:EU28</a> → 
              <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
@@ -8938,14 +8936,14 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EU">loc:EU</a> → 
+             <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EEA">loc:EEA</a> → 
+             <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
@@ -8961,6 +8959,14 @@
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
              <a href="#EEA30">loc:EEA30</a> → 
+             <a href="#EEA">loc:EEA</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
+             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>             <a href="#DE">loc:DE</a> → 
+             <a href="#EEA31">loc:EEA31</a> → 
              <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
@@ -9039,14 +9045,6 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EEA31">loc:EEA31</a> → 
-             <a href="#EEA">loc:EEA</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
-             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
-          <td>             <a href="#DE">loc:DE</a> → 
              <a href="#EU28">loc:EU28</a> → 
              <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
@@ -9055,14 +9053,14 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EU">loc:EU</a> → 
+             <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EEA">loc:EEA</a> → 
+             <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
@@ -9078,6 +9076,14 @@
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
              <a href="#EEA30">loc:EEA30</a> → 
+             <a href="#EEA">loc:EEA</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
+             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>             <a href="#DE">loc:DE</a> → 
+             <a href="#EEA31">loc:EEA31</a> → 
              <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
@@ -9156,14 +9162,6 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EEA31">loc:EEA31</a> → 
-             <a href="#EEA">loc:EEA</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
-             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
-          <td>             <a href="#DE">loc:DE</a> → 
              <a href="#EU28">loc:EU28</a> → 
              <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
@@ -9172,14 +9170,14 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EU">loc:EU</a> → 
+             <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EEA">loc:EEA</a> → 
+             <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
@@ -9195,6 +9193,14 @@
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
              <a href="#EEA30">loc:EEA30</a> → 
+             <a href="#EEA">loc:EEA</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
+             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>             <a href="#DE">loc:DE</a> → 
+             <a href="#EEA31">loc:EEA31</a> → 
              <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
@@ -9273,14 +9279,6 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EEA31">loc:EEA31</a> → 
-             <a href="#EEA">loc:EEA</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
-             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
-          <td>             <a href="#DE">loc:DE</a> → 
              <a href="#EU28">loc:EU28</a> → 
              <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
@@ -9289,14 +9287,14 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EU">loc:EU</a> → 
+             <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EEA">loc:EEA</a> → 
+             <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
@@ -9312,6 +9310,14 @@
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
              <a href="#EEA30">loc:EEA30</a> → 
+             <a href="#EEA">loc:EEA</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
+             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>             <a href="#DE">loc:DE</a> → 
+             <a href="#EEA31">loc:EEA31</a> → 
              <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
@@ -9390,14 +9396,6 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EEA31">loc:EEA31</a> → 
-             <a href="#EEA">loc:EEA</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
-             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
-          <td>             <a href="#DE">loc:DE</a> → 
              <a href="#EU28">loc:EU28</a> → 
              <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
@@ -9406,14 +9404,14 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EU">loc:EU</a> → 
+             <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EEA">loc:EEA</a> → 
+             <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
@@ -9429,6 +9427,14 @@
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
              <a href="#EEA30">loc:EEA30</a> → 
+             <a href="#EEA">loc:EEA</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
+             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>             <a href="#DE">loc:DE</a> → 
+             <a href="#EEA31">loc:EEA31</a> → 
              <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
@@ -9507,14 +9513,6 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EEA31">loc:EEA31</a> → 
-             <a href="#EEA">loc:EEA</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
-             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
-          <td>             <a href="#DE">loc:DE</a> → 
              <a href="#EU28">loc:EU28</a> → 
              <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
@@ -9523,14 +9521,14 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EU">loc:EU</a> → 
+             <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EEA">loc:EEA</a> → 
+             <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
@@ -9546,6 +9544,14 @@
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
              <a href="#EEA30">loc:EEA30</a> → 
+             <a href="#EEA">loc:EEA</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
+             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>             <a href="#DE">loc:DE</a> → 
+             <a href="#EEA31">loc:EEA31</a> → 
              <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
@@ -9624,14 +9630,6 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EEA31">loc:EEA31</a> → 
-             <a href="#EEA">loc:EEA</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
-             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
-          <td>             <a href="#DE">loc:DE</a> → 
              <a href="#EU28">loc:EU28</a> → 
              <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
@@ -9640,14 +9638,14 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EU">loc:EU</a> → 
+             <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
-             <a href="#EEA">loc:EEA</a> → 
+             <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
@@ -9663,6 +9661,14 @@
           <th>Broader/Parent types</th>
           <td>             <a href="#DE">loc:DE</a> → 
              <a href="#EEA30">loc:EEA30</a> → 
+             <a href="#EEA">loc:EEA</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
+             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>             <a href="#DE">loc:DE</a> → 
+             <a href="#EEA31">loc:EEA31</a> → 
              <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
@@ -9810,20 +9816,6 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#EU28">loc:EU28</a> → 
-             <a href="#EU">loc:EU</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
-             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
-          <td>             <a href="#EEA31">loc:EEA31</a> → 
-             <a href="#EEA">loc:EEA</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
-             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
           <td>             <a href="#EU27-1">loc:EU27-1</a> → 
              <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
@@ -9838,7 +9830,21 @@
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
+          <td>             <a href="#EEA31">loc:EEA31</a> → 
+             <a href="#EEA">loc:EEA</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
+             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
           <td>             <a href="https://w3id.org/dpv#Country">dpv:Country</a> → 
+             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>             <a href="#EU28">loc:EU28</a> → 
+             <a href="#EU">loc:EU</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 </tr>      
@@ -10188,20 +10194,6 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#EU28">loc:EU28</a> → 
-             <a href="#EU">loc:EU</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
-             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
-          <td>             <a href="#EEA31">loc:EEA31</a> → 
-             <a href="#EEA">loc:EEA</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
-             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
           <td>             <a href="#EU27-1">loc:EU27-1</a> → 
              <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
@@ -10216,7 +10208,21 @@
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
+          <td>             <a href="#EEA31">loc:EEA31</a> → 
+             <a href="#EEA">loc:EEA</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
+             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
           <td>             <a href="https://w3id.org/dpv#Country">dpv:Country</a> → 
+             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>             <a href="#EU28">loc:EU28</a> → 
+             <a href="#EU">loc:EU</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 </tr>      
@@ -10723,14 +10729,14 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#EU27-1">loc:EU27-1</a> → 
-             <a href="#EU">loc:EU</a> → 
+          <td>             <a href="#EEA30">loc:EEA30</a> → 
+             <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#EEA30">loc:EEA30</a> → 
+          <td>             <a href="#EEA31">loc:EEA31</a> → 
              <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
@@ -10749,8 +10755,8 @@
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#EEA31">loc:EEA31</a> → 
-             <a href="#EEA">loc:EEA</a> → 
+          <td>             <a href="#EU27-1">loc:EU27-1</a> → 
+             <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
@@ -11118,20 +11124,8 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="https://w3id.org/dpv#Country">dpv:Country</a> → 
-             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
           <td>             <a href="#EU28">loc:EU28</a> → 
              <a href="#EU">loc:EU</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
-             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
-          <td>             <a href="#EEA31">loc:EEA31</a> → 
-             <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
@@ -11147,6 +11141,18 @@
           <td>             <a href="#EEA30">loc:EEA30</a> → 
              <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
+             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>             <a href="#EEA31">loc:EEA31</a> → 
+             <a href="#EEA">loc:EEA</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
+             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>             <a href="https://w3id.org/dpv#Country">dpv:Country</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 </tr>      
@@ -11496,14 +11502,16 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#EEA30">loc:EEA30</a> → 
-             <a href="#EEA">loc:EEA</a> → 
+          <td>             <a href="#EU27-1">loc:EU27-1</a> → 
+             <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="https://w3id.org/dpv#Country">dpv:Country</a> → 
+          <td>             <a href="#EEA30">loc:EEA30</a> → 
+             <a href="#EEA">loc:EEA</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 <tr class="technical-detail">
@@ -11515,14 +11523,12 @@
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#EU28">loc:EU28</a> → 
-             <a href="#EU">loc:EU</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
+          <td>             <a href="https://w3id.org/dpv#Country">dpv:Country</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#EU27-1">loc:EU27-1</a> → 
+          <td>             <a href="#EU28">loc:EU28</a> → 
              <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
@@ -12518,15 +12524,13 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#EU28">loc:EU28</a> → 
-             <a href="#EU">loc:EU</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
+          <td>             <a href="https://w3id.org/dpv#Country">dpv:Country</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#EEA31">loc:EEA31</a> → 
-             <a href="#EEA">loc:EEA</a> → 
+          <td>             <a href="#EU28">loc:EU28</a> → 
+             <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
@@ -12546,7 +12550,9 @@
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="https://w3id.org/dpv#Country">dpv:Country</a> → 
+          <td>             <a href="#EEA31">loc:EEA31</a> → 
+             <a href="#EEA">loc:EEA</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 </tr>      
@@ -13176,15 +13182,20 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#EU28">loc:EU28</a> → 
-             <a href="#EU">loc:EU</a> → 
+          <td>             <a href="#EEA31">loc:EEA31</a> → 
+             <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#EEA31">loc:EEA31</a> → 
-             <a href="#EEA">loc:EEA</a> → 
+          <td>             <a href="https://w3id.org/dpv#Country">dpv:Country</a> → 
+             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>             <a href="#EU28">loc:EU28</a> → 
+             <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
@@ -13200,11 +13211,6 @@
           <td>             <a href="#EEA30">loc:EEA30</a> → 
              <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
-             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
-          <td>             <a href="https://w3id.org/dpv#Country">dpv:Country</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 </tr>      
@@ -13344,6 +13350,13 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
+          <td>             <a href="#EEA31">loc:EEA31</a> → 
+             <a href="#EEA">loc:EEA</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
+             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
           <td>             <a href="https://w3id.org/dpv#Country">dpv:Country</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
@@ -13351,13 +13364,6 @@
           <th>Broader/Parent types</th>
           <td>             <a href="#EU28">loc:EU28</a> → 
              <a href="#EU">loc:EU</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
-             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
-          <td>             <a href="#EEA31">loc:EEA31</a> → 
-             <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
@@ -13524,13 +13530,6 @@
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#EEA31">loc:EEA31</a> → 
-             <a href="#EEA">loc:EEA</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
-             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
           <td>             <a href="#EU27-1">loc:EU27-1</a> → 
              <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
@@ -13539,6 +13538,13 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#EEA30">loc:EEA30</a> → 
+             <a href="#EEA">loc:EEA</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
+             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>             <a href="#EEA31">loc:EEA31</a> → 
              <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
@@ -14030,14 +14036,14 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#EEA30">loc:EEA30</a> → 
-             <a href="#EEA">loc:EEA</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
+          <td>             <a href="https://w3id.org/dpv#Country">dpv:Country</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="https://w3id.org/dpv#Country">dpv:Country</a> → 
+          <td>             <a href="#EEA30">loc:EEA30</a> → 
+             <a href="#EEA">loc:EEA</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 <tr class="technical-detail">
@@ -14114,15 +14120,13 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#EU28">loc:EU28</a> → 
-             <a href="#EU">loc:EU</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
+          <td>             <a href="https://w3id.org/dpv#Country">dpv:Country</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#EEA31">loc:EEA31</a> → 
-             <a href="#EEA">loc:EEA</a> → 
+          <td>             <a href="#EU28">loc:EU28</a> → 
+             <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
@@ -14142,7 +14146,9 @@
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="https://w3id.org/dpv#Country">dpv:Country</a> → 
+          <td>             <a href="#EEA31">loc:EEA31</a> → 
+             <a href="#EEA">loc:EEA</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 </tr>      
@@ -15472,7 +15478,9 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="https://w3id.org/dpv#Country">dpv:Country</a> → 
+          <td>             <a href="#EEA30">loc:EEA30</a> → 
+             <a href="#EEA">loc:EEA</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 <tr class="technical-detail">
@@ -15484,9 +15492,7 @@
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#EEA30">loc:EEA30</a> → 
-             <a href="#EEA">loc:EEA</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
+          <td>             <a href="https://w3id.org/dpv#Country">dpv:Country</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 </tr>      
@@ -15766,15 +15772,13 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#EU28">loc:EU28</a> → 
-             <a href="#EU">loc:EU</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
+          <td>             <a href="https://w3id.org/dpv#Country">dpv:Country</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#EEA31">loc:EEA31</a> → 
-             <a href="#EEA">loc:EEA</a> → 
+          <td>             <a href="#EU28">loc:EU28</a> → 
+             <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
@@ -15794,7 +15798,9 @@
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="https://w3id.org/dpv#Country">dpv:Country</a> → 
+          <td>             <a href="#EEA31">loc:EEA31</a> → 
+             <a href="#EEA">loc:EEA</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 </tr>      
@@ -15864,20 +15870,6 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#EU28">loc:EU28</a> → 
-             <a href="#EU">loc:EU</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
-             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
-          <td>             <a href="#EEA31">loc:EEA31</a> → 
-             <a href="#EEA">loc:EEA</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
-             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
           <td>             <a href="#EU27-1">loc:EU27-1</a> → 
              <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
@@ -15892,7 +15884,21 @@
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
+          <td>             <a href="#EEA31">loc:EEA31</a> → 
+             <a href="#EEA">loc:EEA</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
+             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
           <td>             <a href="https://w3id.org/dpv#Country">dpv:Country</a> → 
+             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>             <a href="#EU28">loc:EU28</a> → 
+             <a href="#EU">loc:EU</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 </tr>      
@@ -15962,13 +15968,15 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="https://w3id.org/dpv#Country">dpv:Country</a> → 
+          <td>             <a href="#EU27-1">loc:EU27-1</a> → 
+             <a href="#EU">loc:EU</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#EU28">loc:EU28</a> → 
-             <a href="#EU">loc:EU</a> → 
+          <td>             <a href="#EEA30">loc:EEA30</a> → 
+             <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
@@ -15981,15 +15989,13 @@
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#EU27-1">loc:EU27-1</a> → 
-             <a href="#EU">loc:EU</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
+          <td>             <a href="https://w3id.org/dpv#Country">dpv:Country</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#EEA30">loc:EEA30</a> → 
-             <a href="#EEA">loc:EEA</a> → 
+          <td>             <a href="#EU28">loc:EU28</a> → 
+             <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
@@ -17250,15 +17256,13 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#EU28">loc:EU28</a> → 
-             <a href="#EU">loc:EU</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
+          <td>             <a href="https://w3id.org/dpv#Country">dpv:Country</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#EEA31">loc:EEA31</a> → 
-             <a href="#EEA">loc:EEA</a> → 
+          <td>             <a href="#EU28">loc:EU28</a> → 
+             <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
@@ -17278,7 +17282,9 @@
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="https://w3id.org/dpv#Country">dpv:Country</a> → 
+          <td>             <a href="#EEA31">loc:EEA31</a> → 
+             <a href="#EEA">loc:EEA</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 </tr>      
@@ -18188,20 +18194,6 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#EEA31">loc:EEA31</a> → 
-             <a href="#EEA">loc:EEA</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
-             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
-          <td>             <a href="#EU28">loc:EU28</a> → 
-             <a href="#EU">loc:EU</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
-             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
           <td>             <a href="#EU27-1">loc:EU27-1</a> → 
              <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
@@ -18216,7 +18208,21 @@
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
+          <td>             <a href="#EEA31">loc:EEA31</a> → 
+             <a href="#EEA">loc:EEA</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
+             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
           <td>             <a href="https://w3id.org/dpv#Country">dpv:Country</a> → 
+             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>             <a href="#EU28">loc:EU28</a> → 
+             <a href="#EU">loc:EU</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 </tr>      
@@ -18286,14 +18292,14 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#EEA31">loc:EEA31</a> → 
+          <td>             <a href="#EEA30">loc:EEA30</a> → 
              <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#EEA30">loc:EEA30</a> → 
+          <td>             <a href="#EEA31">loc:EEA31</a> → 
              <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
@@ -19140,14 +19146,7 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#EU27-1">loc:EU27-1</a> → 
-             <a href="#EU">loc:EU</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
-             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
-          <td>             <a href="#EEA30">loc:EEA30</a> → 
+          <td>             <a href="#EEA31">loc:EEA31</a> → 
              <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
@@ -19166,7 +19165,14 @@
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#EEA31">loc:EEA31</a> → 
+          <td>             <a href="#EU27-1">loc:EU27-1</a> → 
+             <a href="#EU">loc:EU</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
+             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>             <a href="#EEA30">loc:EEA30</a> → 
              <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
@@ -19518,7 +19524,16 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="https://w3id.org/dpv#Country">dpv:Country</a> → 
+          <td>             <a href="#EU27-1">loc:EU27-1</a> → 
+             <a href="#EU">loc:EU</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
+             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>             <a href="#EEA30">loc:EEA30</a> → 
+             <a href="#EEA">loc:EEA</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 <tr class="technical-detail">
@@ -19530,22 +19545,13 @@
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
+          <td>             <a href="https://w3id.org/dpv#Country">dpv:Country</a> → 
+             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
           <td>             <a href="#EU28">loc:EU28</a> → 
              <a href="#EU">loc:EU</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
-             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
-          <td>             <a href="#EU27-1">loc:EU27-1</a> → 
-             <a href="#EU">loc:EU</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
-             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
-          <td>             <a href="#EEA30">loc:EEA30</a> → 
-             <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
@@ -19896,15 +19902,13 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#EU28">loc:EU28</a> → 
-             <a href="#EU">loc:EU</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
+          <td>             <a href="https://w3id.org/dpv#Country">dpv:Country</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#EEA31">loc:EEA31</a> → 
-             <a href="#EEA">loc:EEA</a> → 
+          <td>             <a href="#EU28">loc:EU28</a> → 
+             <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
@@ -19924,7 +19928,9 @@
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="https://w3id.org/dpv#Country">dpv:Country</a> → 
+          <td>             <a href="#EEA31">loc:EEA31</a> → 
+             <a href="#EEA">loc:EEA</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 </tr>      
@@ -20484,9 +20490,7 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#EEA31">loc:EEA31</a> → 
-             <a href="#EEA">loc:EEA</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
+          <td>             <a href="https://w3id.org/dpv#Country">dpv:Country</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 <tr class="technical-detail">
@@ -20512,7 +20516,9 @@
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="https://w3id.org/dpv#Country">dpv:Country</a> → 
+          <td>             <a href="#EEA31">loc:EEA31</a> → 
+             <a href="#EEA">loc:EEA</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 </tr>      
@@ -20722,8 +20728,13 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#EEA31">loc:EEA31</a> → 
-             <a href="#EEA">loc:EEA</a> → 
+          <td>             <a href="https://w3id.org/dpv#Country">dpv:Country</a> → 
+             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>             <a href="#EU28">loc:EU28</a> → 
+             <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
@@ -20743,13 +20754,8 @@
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="https://w3id.org/dpv#Country">dpv:Country</a> → 
-             <a href="https://w3id.org/dpv#Location">dpv:Location</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
-          <td>             <a href="#EU28">loc:EU28</a> → 
-             <a href="#EU">loc:EU</a> → 
+          <td>             <a href="#EEA31">loc:EEA31</a> → 
+             <a href="#EEA">loc:EEA</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
@@ -20890,15 +20896,13 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#EU28">loc:EU28</a> → 
-             <a href="#EU">loc:EU</a> → 
-             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
+          <td>             <a href="https://w3id.org/dpv#Country">dpv:Country</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#EEA31">loc:EEA31</a> → 
-             <a href="#EEA">loc:EEA</a> → 
+          <td>             <a href="#EU28">loc:EU28</a> → 
+             <a href="#EU">loc:EU</a> → 
              <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
@@ -20918,7 +20922,9 @@
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="https://w3id.org/dpv#Country">dpv:Country</a> → 
+          <td>             <a href="#EEA31">loc:EEA31</a> → 
+             <a href="#EEA">loc:EEA</a> → 
+             <a href="https://w3id.org/dpv#SupraNationalUnion">dpv:SupraNationalUnion</a> → 
              <a href="https://w3id.org/dpv#Location">dpv:Location</a>
 </td>
 </tr>      

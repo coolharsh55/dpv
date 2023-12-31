@@ -213,6 +213,17 @@ concept. If top is None, then use all concepts. `lang` is used to retrieve the l
 {# this is the note shown for additional documentation provided
 at the specified link e.g. for specific module #}
 <div class="note">
-  <p>This document only provides a summary of the {{title}} concepts. <strong>Please refer to <a href="{{link}}">{{title}} page</a> for additional documentation, examples, references, and best practices</strong>.</p>
+  <p><strong>Please refer to <a href="{{link}}">{{title}} page</a> for additional documentation, examples, references, and best practices</strong>. This document provides only a brief summary of the {{title}} concepts.</p>
 </div>
+{% endmacro %}
+
+{% macro language_selector(lang) %}
+<form id="language-selector">
+  <label>Language</label>
+  <select style="top: 5px;" onchange="location=this.value">
+    <option value="index-en.html" {% if lang=="en" %}selected="selected"{% endif %}>English</option>
+    <option value="index-de.html" {% if lang=="de" %}selected="selected"{% endif %}>Deutsch</option>
+  </select>
+</form>
+{% if lang != "en" %}<div id="lang-notice" style="background-color: #FEE; border: 1px solid #EDD; color: #A66;"><p><strong>Language suppport for this page is incomplete. Information not translated is provided in English.</strong></p></div>{% endif %}
 {% endmacro %}

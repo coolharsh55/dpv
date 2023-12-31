@@ -15,6 +15,7 @@
         <li>[[[LEGAL]]] {{ "(this document)" if document == 'dpv-legal-spec' }}, with extensions for specific jurisdictions:<ul>
           <li>[[[LEGAL-EU]]] - with extensions for laws [[EU-GDPR]], [[EU-DGA]], and [[EU-RIGHTS]]</li>
           <li>[[[LEGAL-US]]]</li>
+          <li>[[[LEGAL-DE]]]</li>
           <li>[[[LEGAL-GB]]]</li>
           <li>[[[LEGAL-IE]]]</li>
         </ul></li>
@@ -42,10 +43,13 @@
 
 {% macro sotd() %}
 <section id="sotd">
-  <!-- sotd: Status of this document -->
-  <p>This document is published by the <a href="https://www.w3.org/community/dpvcg/">Data Privacy Vocabularies and Controls Community Group (DPVCG)</a> as a deliverable and report of its work in creating and maintaining the Data Privacy Vocabulary (DPV).</p>
-  <div class="note">
-    <p><strong>Contributing to the DPV and its extensions</strong> The DPVCG welcomes participation regarding the DPV, including expansion or refinement of its terms, addressing open issues, and welcomes suggestions on their resolution or mitigation. For further information, please see the <a href="https://github.com/w3c/dpv#contribution--participation">contribution section</a>.</p>
+    <p><strong>Contributing:</strong> The DPVCG welcomes participation to improve the DPV and associated resources, including expansion or refinement of concepts, requesting information and applications, and addressing open issues. <a href="https://w3id.org/dpv/contributing">See contributing page</a> for further information.</p>
   </div>
 </section>
+{% endmacro %}
+
+{% macro funding_acknowledgements() %}
+<p>The DPVCG was established as part of the <a href="https://specialprivacy.ercim.eu/">SPECIAL H2020 Project</a>, which received funding from the European Union’s Horizon 2020 research and innovation programme under grant agreement No. 731601 from 2017 to 2019.</p>
+<p>Harshvardhan J. Pandit was funded to work on DPV from 2020 to 2022 by the <a href="https://research.ie/">Irish Research Council's</a> Government of Ireland Postdoctoral Fellowship Grant#GOIPD/2020/790.</p>
+<p>The <a href="https://www.adaptcentre.ie/">ADAPT SFI Centre</a> for Digital Media Technology is funded by Science Foundation Ireland through the SFI Research Centres Programme and is co-funded under the European Regional Development Fund (ERDF) through Grant#13/RC/2106 (2018 to 2020) and Grant#13/RC/2106_P2 (2021 onwards).</p>
 {% endmacro %}
