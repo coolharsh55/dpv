@@ -121,13 +121,21 @@
     <h3>Protecting Vital Interests</h3>
   </section>
 
-  <section>
+<section>
   <h2>Vocabulary Index</h2>
+  {% set module_combined = modules['legal_basis']['classes'].copy() %}
+  {% set _ = module_combined.update(modules['legal_basis']['properties']) %}
+  {% set _ = module_combined.update(modules['legal_basis-consent']['classes']) %}
+  {% set _ = module_combined.update(modules['legal_basis-consent']['properties']) %}
+  {% set _ = module_combined.update(modules['legal_basis-consent-types']['classes']) %}
+  {% set _ = module_combined.update(modules['legal_basis-consent-types']['properties']) %}
+  {% set _ = module_combined.update(modules['legal_basis-consent-status']['classes']) %}
+  {% set _ = module_combined.update(modules['legal_basis-consent-status']['properties']) %}
   <section id="classes">
-    {{ index_concepts(modules['legal_basis'], filter="classes") }}
+    {{ index_concepts(module_combined, vocab_name, filter="classes") }}
   </section>
   <section id="properties">
-    {{ index_concepts(modules['legal_basis'], filter="properties") }}
+    {{ index_concepts(module_combined, vocab_name, filter="properties") }}
   </section>
   <section id="external-concepts">
     <p>DPV uses the following terms from [[RDF]] and  [[RDFS]] with their defined meanings:</p>
@@ -138,9 +146,10 @@
       <li id="rdf:Property"><dfn>rdf:Property</dfn> to denote a concept is a property or a relation</li>
       </ul>
     <p>The following external concepts are re-used within DPV:</p>
-    {{ index_concepts(modules['legal_basis'], filter="external") }}
+    {{ index_concepts(module_combined, vocab_name, filter="external") }}
   </section>
 </section>
+
 <script type="text/javascript" src="../../media/common.js" defer></script>
 </body>
 </html>

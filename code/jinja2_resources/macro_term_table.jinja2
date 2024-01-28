@@ -18,6 +18,15 @@
       {% endif %}
       {% set inscope = inscope and concept['prefix'] != '_' and not concept['_ignored'] %}
     {% endif %}
+    {# Filter terms like ontology adn concept scheme #}
+    {% set is_ontology_term = [] %}
+    {% for parent in concept['rdf:type']|get_concept_list %}
+      {% if (parent['prefixed'] == "owl:Ontology")
+          or (parent['prefixed'] == 'skos:ConceptScheme') %}
+        {% if is_ontology_term.append(True) %}{% endif %} {# HACK: jinja2 scope to access variable outside loop #}
+      {% endif %}      
+    {% endfor %}
+    {% set inscope = inscope and is_ontology_term|length == 0 %}
     {% if inscope %} {# if term is in scope (internal or external) #}
     <section class="term-def" id="{% if filter=="external" %}{{concept['prefixed']}}{% else %}{{concept['term']}}{% endif %}">
       <h4>{{ concept|translation_message('skos:prefLabel',lang) }}</h4>

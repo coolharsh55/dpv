@@ -69,7 +69,10 @@
         <tbody>
         {% for law in modules['legal']['classes']|filter_type('dpv:Law')|ensure_list_unique|sort(attribute='iri') %}
             <tr>
-                <td><a href="#{{law['prefixed']}}"><code>{{ law['prefixed'] }}</code></a></td>
+                <td>
+                    {% if law['prefix'] != vocab_name %}<a href="#{{law['prefixed']}}"><code>{{ law['prefixed'] }}</code></a>
+                    {% else %}<a href="#{{law['term']}}"><code>{{ law['term'] }}</code></a>
+                {% endif %}</td>
                 <td>{{ law['skos:prefLabel'] }}</td>
                 <td>{% for loc in law['dpv:hasJurisdiction']|ensure_list_unique|sort(attribute='iri') %}
                 {% set loc=data[(loc|prefix_this).split(':')[0]][loc|prefix_this] %}
@@ -99,7 +102,10 @@
         <tbody>
         {% for law in modules['legal']['classes']|filter_type('dpv:Authority')|ensure_list_unique|sort(attribute='iri') %}
             <tr>
-                <td><a href="#{{law['prefixed']}}"><code>{{ law['prefixed'] }}</code></a></td>
+                <td>
+                    {% if law['prefix'] != vocab_name %}<a href="#{{law['prefixed']}}"><code>{{ law['prefixed'] }}</code></a>
+                    {% else %}<a href="#{{law['term']}}"><code>{{ law['term'] }}</code></a>
+                {% endif %}</td>
                 <td>{{ law['skos:prefLabel'] }}</td>
                 <td>{% for loc in law['dpv:hasJurisdiction']|ensure_list_unique|sort(attribute='iri') %}
                 {% set loc=data[(loc|prefix_this).split(':')[0]][loc|prefix_this] %}

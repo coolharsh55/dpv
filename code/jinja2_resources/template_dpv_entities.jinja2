@@ -148,11 +148,21 @@
 
   <section>
   <h2>Vocabulary Index</h2>
+  {% set module_combined = modules['entities']['classes'].copy() %}
+  {% set _ = module_combined.update(modules['entities-datasubject']['classes']) %}
+  {% set _ = module_combined.update(modules['entities-organisation']['classes']) %}
+  {% set _ = module_combined.update(modules['entities-authority']['classes']) %}
+  {% set _ = module_combined.update(modules['entities-legalrole']['classes']) %}
+  {% set _ = module_combined.update(modules['entities']['properties']) %}
+  {% set _ = module_combined.update(modules['entities-datasubject']['properties']) %}
+  {% set _ = module_combined.update(modules['entities-organisation']['properties']) %}
+  {% set _ = module_combined.update(modules['entities-authority']['properties']) %}
+  {% set _ = module_combined.update(modules['entities-legalrole']['properties']) %}
   <section id="classes">
-    {{ index_concepts(modules['entities'], filter="classes") }}
+    {{ index_concepts(module_combined, vocab_name, filter="classes") }}
   </section>
   <section id="properties">
-    {{ index_concepts(modules['entities'], filter="properties") }}
+    {{ index_concepts(module_combined, vocab_name, filter="properties") }}
   </section>
   <section id="external-concepts">
     <p>DPV uses the following terms from [[RDF]] and  [[RDFS]] with their defined meanings:</p>
@@ -163,7 +173,7 @@
       <li id="rdf:Property"><dfn>rdf:Property</dfn> to denote a concept is a property or a relation</li>
       </ul>
     <p>The following external concepts are re-used within DPV:</p>
-    {{ index_concepts(modules['entities'], filter="external") }}
+    {{ index_concepts(module_combined, vocab_name, filter="external") }}
   </section>
 </section>
 <script type="text/javascript" src="../../media/common.js" defer></script>

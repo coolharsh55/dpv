@@ -163,13 +163,19 @@
     <h2>Physical Measures</h2>
   </section>
 
-  <section>
+<section>
   <h2>Vocabulary Index</h2>
+  {% set module_combined = modules['TOM']['classes'].copy() %}
+  {% set _ = module_combined.update(modules['TOM']['properties']) %}
+  {% set _ = module_combined.update(modules['TOM-technical']['classes']) %}
+  {% set _ = module_combined.update(modules['TOM-technical']['properties']) %}
+  {% set _ = module_combined.update(modules['TOM-organisational']['classes']) %}
+  {% set _ = module_combined.update(modules['TOM-organisational']['properties']) %}
   <section id="classes">
-    {{ index_concepts(modules['TOM'], filter="classes") }}
+    {{ index_concepts(module_combined, vocab_name, filter="classes") }}
   </section>
   <section id="properties">
-    {{ index_concepts(modules['TOM'], filter="properties") }}
+    {{ index_concepts(module_combined, vocab_name, filter="properties") }}
   </section>
   <section id="external-concepts">
     <p>DPV uses the following terms from [[RDF]] and  [[RDFS]] with their defined meanings:</p>
@@ -180,9 +186,10 @@
       <li id="rdf:Property"><dfn>rdf:Property</dfn> to denote a concept is a property or a relation</li>
       </ul>
     <p>The following external concepts are re-used within DPV:</p>
-    {{ index_concepts(modules['TOM'], filter="external") }}
+    {{ index_concepts(module_combined, vocab_name, filter="external") }}
   </section>
 </section>
+
 <script type="text/javascript" src="../../media/common.js" defer></script>
 </body>
 </html>
