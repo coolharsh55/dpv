@@ -69,6 +69,60 @@
     <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-03-02</dct:created>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#LegalEntity"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#NaturalPerson"/>
+    <vann:example rdf:resource="https://w3id.org/dpv/examples#E0027"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#NaturalPerson">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Natural Person</skos:prefLabel>
+    <skos:definition xml:lang="en">A human</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Entity"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-02-09</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#Representative">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Representative</skos:prefLabel>
+    <skos:definition xml:lang="en">A representative of a legal entity</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#LegalEntity"/>
+    <dct:source xml:lang="en">(GDPR Art.27,https://eur-lex.europa.eu/eli/reg/2016/679/art_27/oj)</dct:source>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-11-04</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Georg Krog, Paul Ryan, Harshvardhan J. Pandit, Beatriz Esteves</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasRepresentative">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <skos:prefLabel xml:lang="en">has representative</skos:prefLabel>
+    <skos:definition xml:lang="en">Specifies representative of the legal entity</skos:definition>
+    <dcam:domainIncludes rdf:resource="https://w3id.org/dpv#Entity"/>
+    <schema:domainIncludes rdf:resource="https://w3id.org/dpv#Entity"/>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#Representative"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#Representative"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/dpv#hasEntity"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-11-04</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J.Pandit, Georg P Krog, Paul Ryan, Beatriz Esteves</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#hasResponsibleEntity">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <skos:prefLabel xml:lang="en">has responsible entity</skos:prefLabel>
+    <skos:definition xml:lang="en">Specifies the indicated entity is responsible within some context</skos:definition>
+    <dcam:rangeIncludes rdf:resource="https://w3id.org/dpv#Entity"/>
+    <schema:rangeIncludes rdf:resource="https://w3id.org/dpv#Entity"/>
+    <rdfs:subPropertyOf rdf:resource="https://w3id.org/dpv#hasEntity"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-03-02</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#NaturalPerson">

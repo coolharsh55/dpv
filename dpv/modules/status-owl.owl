@@ -294,15 +294,117 @@
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#RequestInitiated">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv#RequestStatus"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#AuditStatus"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Request Initiated</skos:prefLabel>
-    <skos:definition xml:lang="en">State of a request being initiated</skos:definition>
+    <skos:prefLabel xml:lang="en">Audit Approved</skos:prefLabel>
+    <skos:definition xml:lang="en">State of being approved through the audit</skos:definition>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-05-18</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#AuditStatus"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#ComplianceUnknown">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#ComplianceStatus"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Compliance Unknown</skos:prefLabel>
+    <skos:definition xml:lang="en">State where the status of compliance is unknown</skos:definition>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-09-07</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#ComplianceStatus"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#NonCompliant">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#ComplianceStatus"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Non Compliant</skos:prefLabel>
+    <skos:definition xml:lang="en">State of non-compliance where objectives have not been met, but have not been violated</skos:definition>
+    <skos:scopeNote xml:lang="en">Changed from not compliant for consistency in commonly used terms</skos:scopeNote>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-05-18</dct:created>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-09-07</dct:modified>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#ComplianceStatus"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#ConformanceStatus">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Conformance Status</skos:prefLabel>
+    <skos:definition xml:lang="en">Status associated with conformance to a standard, guideline, code, or recommendation</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Status"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-10-22</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#Conformant"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#NonConformant"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#LawfulnessUnkown">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#Lawfulness"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Lawfulness Unknown</skos:prefLabel>
+    <skos:definition xml:lang="en">State of the lawfulness not being known</skos:definition>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-10-19</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Lawfulness"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#NonConformant">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#ConformanceStatus"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">NonConformant</skos:prefLabel>
+    <skos:definition xml:lang="en">State of being non-conformant</skos:definition>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-10-22</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#ConformanceStatus"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#ComplianceStatus">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Compliance Status</skos:prefLabel>
+    <skos:definition xml:lang="en">Status associated with Compliance with some norms, objectives, or requirements</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Status"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-05-18</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#Lawfulness"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#ComplianceIndeterminate"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#PartiallyCompliant"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#ComplianceUnknown"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#ComplianceViolation"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#NonCompliant"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#Compliant"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#RequestStatus">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Request Status</skos:prefLabel>
+    <skos:definition xml:lang="en">Status associated with requests</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Status"/>
     <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-30</dct:created>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#RequestStatus"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#RequestRequiredActionPerformed"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#RequestAcknowledged"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#RequestRejected"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#RequestInitiated"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#RequestRequiresAction"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#RequestStatusQuery"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#RequestUnfulfilled"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#RequestFulfilled"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#RequestAccepted"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv#RequestActionDelayed"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv#AuditRequested">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>

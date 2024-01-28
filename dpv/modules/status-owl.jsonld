@@ -1162,13 +1162,242 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "State where an audit is determined as being required but has not been conducted"
+        "@value": "State where an audit is determined as not being required"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Audit Required"
+        "@value": "Audit Not Required"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#ComplianceStatus",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-05-18"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/dpv#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#Status"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#Lawfulness"
+      },
+      {
+        "@id": "https://w3id.org/dpv#ComplianceIndeterminate"
+      },
+      {
+        "@id": "https://w3id.org/dpv#PartiallyCompliant"
+      },
+      {
+        "@id": "https://w3id.org/dpv#ComplianceUnknown"
+      },
+      {
+        "@id": "https://w3id.org/dpv#ComplianceViolation"
+      },
+      {
+        "@id": "https://w3id.org/dpv#NonCompliant"
+      },
+      {
+        "@id": "https://w3id.org/dpv#Compliant"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Status associated with Compliance with some norms, objectives, or requirements"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Compliance Status"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#ActivityOngoing",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#ActivityStatus",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-05-18"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/dpv#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#ActivityStatus"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "State of an activity occuring in continuation i.e. currently ongoing"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Activity Ongoing"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#AuditStatus",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-05-18"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/dpv#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#Status"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#AuditNotRequired"
+      },
+      {
+        "@id": "https://w3id.org/dpv#AuditConditionallyApproved"
+      },
+      {
+        "@id": "https://w3id.org/dpv#AuditRejected"
+      },
+      {
+        "@id": "https://w3id.org/dpv#AuditApproved"
+      },
+      {
+        "@id": "https://w3id.org/dpv#AuditRequired"
+      },
+      {
+        "@id": "https://w3id.org/dpv#AuditRequested"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Status associated with Auditing or Investigation"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Audit Status"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#ComplianceIndeterminate",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#ComplianceStatus",
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-09-07"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/dpv#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#ComplianceStatus"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "State where the status of compliance has not been fully assessed, evaluated, or determined"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Compliance Indeterminate"
       }
     ]
   },
@@ -1927,7 +2156,6 @@
     "@id": "https://w3id.org/dpv#Compliant",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#ComplianceStatus",
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://purl.org/dc/terms/contributor": [
@@ -2001,7 +2229,39 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/dpv#ComplianceStatus"
+        "@id": "https://w3id.org/dpv#Status"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#RequestRequiredActionPerformed"
+      },
+      {
+        "@id": "https://w3id.org/dpv#RequestAcknowledged"
+      },
+      {
+        "@id": "https://w3id.org/dpv#RequestRejected"
+      },
+      {
+        "@id": "https://w3id.org/dpv#RequestInitiated"
+      },
+      {
+        "@id": "https://w3id.org/dpv#RequestRequiresAction"
+      },
+      {
+        "@id": "https://w3id.org/dpv#RequestStatusQuery"
+      },
+      {
+        "@id": "https://w3id.org/dpv#RequestUnfulfilled"
+      },
+      {
+        "@id": "https://w3id.org/dpv#RequestFulfilled"
+      },
+      {
+        "@id": "https://w3id.org/dpv#RequestAccepted"
+      },
+      {
+        "@id": "https://w3id.org/dpv#RequestActionDelayed"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [

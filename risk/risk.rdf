@@ -2298,8 +2298,8 @@
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv/risk#RiskManagement"/>
-    <skos:prefLabel xml:lang="en">CCRACII</skos:prefLabel>
-    <skos:definition xml:lang="en">The Guide to Conducting Cybersecurity Risk Assessment for Critical Information Infrastructure (CCRACII) defines commonly used terms such as threat event, vulnerability, likelihood, impact and risk, roles, and responsibilities, in addition to a range for risk levels, ranging from low to very high with different level of risk toleranc</skos:definition>
+    <skos:prefLabel xml:lang="en">IMO MSC-FAL.1/CIRC.3</skos:prefLabel>
+    <skos:definition xml:lang="en">The official International Maritime Organization guidelines IMO MSC-FAL.1/CIRC.3 provide a high-level approach to the management pf maritime cyber risk which refers to the extent a technology asset is exposed to risks during an event that could result in shipping-related operational failure</skos:definition>
     <skos:broader rdf:resource="https://w3id.org/dpv/risk#RiskManagement"/>
     <dct:source xml:lang="en">(ENISA Compendium of Risk Management Frameworks with Potential Interoperability,https://www.enisa.europa.eu/publications/compendium-of-risk-management-frameworks)</dct:source>
     <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-08-18</dct:created>
@@ -2328,7 +2328,7 @@
     <skos:prefLabel xml:lang="en">MEHARI</skos:prefLabel>
     <skos:definition xml:lang="en">MEHARI is a free of charge qualitative risk analysis and management method developed by CLUSIF (Club for the Security of Information in France/Club de la Sécurité de l'Information Français)</skos:definition>
     <skos:broader rdf:resource="https://w3id.org/dpv/risk#RiskManagement"/>
-    <dct:source xml:lang="en">(ENISA Risk Management Standards,https://www.enisa.europa.eu/publications/risk-management-standards)</dct:source>
+    <dct:source xml:lang="en">(ENISA Compendium of Risk Management Frameworks with Potential Interoperability,https://www.enisa.europa.eu/publications/compendium-of-risk-management-frameworks)</dct:source>
     <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-08-18</dct:created>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
@@ -5330,7 +5330,48 @@
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv/risk#"/>
     <skos:inScheme rdf:resource="https://w3id.org/dpv/risk#risk-matrix-classes"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/risk#risk-assessment-classes">
+  <rdf:Description rdf:about="https://w3id.org/dpv/risk#CompromiseAccount">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#Impact"/>
+    <skos:prefLabel xml:lang="en">Compromise Account</skos:prefLabel>
+    <skos:broader rdf:resource="https://w3id.org/dpv#Harm"/>
+    <dct:source xml:lang="en">(ENISA Reference Incident Classification Taxonomy 2018,https://www.enisa.europa.eu/publications/reference-incident-classification-taxonomy/)</dct:source>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-08-17</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv/risk#"/>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv/risk#risk-consequences-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/risk#DecisionTreeAnalysis">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv/risk#RiskAnalysis"/>
+    <skos:prefLabel xml:lang="en">Decision Tree Analysis</skos:prefLabel>
+    <skos:definition xml:lang="en">Uses a tree-like representation or model of decisions and their possible consequences. Outcomes are usually expressed in monetary terms or in terms of utility.</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv/risk#QuantitativeRiskAnalysis"/>
+    <dct:source xml:lang="en">(IEC 31010:2019,https://www.iso.org/standard/72140.html)</dct:source>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-08-18</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv/risk#"/>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv/risk#risk-assessment-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/risk#RM5x5S3L3">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv/risk#RiskAnalysis"/>
+    <skos:prefLabel xml:lang="en">Moderate Risk (RM5x5 S:3 L:3)</skos:prefLabel>
+    <skos:definition xml:lang="en">Node in a 5x5 Risk Matrix with Risk Severity: Moderate; Likelihood: Moderate; and Risk Level: Moderate</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv/risk#RiskMatrix5x5"/>
+    <rdf:value>0.36,xsd:decimal</rdf:value>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-08-17</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv/risk#"/>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv/risk#risk-matrix-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/risk#risk-levels-classes">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/risk#RM7x7S4L3">

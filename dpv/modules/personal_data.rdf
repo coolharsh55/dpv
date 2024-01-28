@@ -385,14 +385,28 @@
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
     <skos:inScheme rdf:resource="https://w3id.org/dpv#personal-data-classes"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv#VerifiedData">
+  <rdf:Description rdf:about="https://w3id.org/dpv#IdentifyingPersonalData">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <skos:prefLabel xml:lang="en">Verified Data</skos:prefLabel>
-    <skos:definition xml:lang="en">Data that has been verified in terms of accuracy, consistency, or quality</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#Data"/>
-    <skos:broader rdf:resource="https://w3id.org/dpv#Data"/>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-11-02</dct:created>
+    <skos:prefLabel xml:lang="en">Identifying Personal Data</skos:prefLabel>
+    <skos:definition xml:lang="en">Personal Data that explicitly and by itself is sufficient to identify a person</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:broader rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:scopeNote xml:lang="en">DPV does not use PII ('Personally Identifiable Information') as it has varying and conflicting definitions across sources. Instead the concept 'identifying personal data' is intended to provide a clear categorisation of its interpretation. Where multiple data categories can be combined to create an 'identifying' category e.g. fingerprinting, this concept represents the combined category.</skos:scopeNote>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv#personal-data-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv#SyntheticData">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <skos:prefLabel xml:lang="en">Synthetic Data</skos:prefLabel>
+    <skos:definition xml:lang="en">Synthetic data reffers to artificially created data such that it is intended to resemble real data (personal or non-personal), but does not refer to any specific identified or identifiable individual, or to the real measure of an observable parameter in the case of non-personal data</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv#GeneratedData"/>
+    <skos:broader rdf:resource="https://w3id.org/dpv#GeneratedData"/>
+    <dct:source xml:lang="en">(ENISA Data Protection Engineering,https://www.enisa.europa.eu/publications/data-protection-engineering)</dct:source>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-08-18</dct:created>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-12-10</dct:modified>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv#"/>

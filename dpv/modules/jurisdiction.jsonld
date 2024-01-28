@@ -567,7 +567,7 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#LocationLocality",
+    "@id": "https://w3id.org/dpv#RemoteLocation",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
@@ -587,7 +587,7 @@
     "http://purl.org/dc/terms/modified": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-10-04"
+        "@value": "2020-10-05"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -603,13 +603,13 @@
     ],
     "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@id": "https://w3id.org/dpv#Location"
+        "@id": "https://w3id.org/dpv#LocationLocality"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Locality refers to whether the specified location is local within some context, e.g. for the user"
+        "@value": "Location is remote i.e. not local"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -619,16 +619,13 @@
     ],
     "http://www.w3.org/2004/02/skos/core#narrower": [
       {
-        "@id": "https://w3id.org/dpv#LocalLocation"
-      },
-      {
-        "@id": "https://w3id.org/dpv#RemoteLocation"
+        "@id": "https://w3id.org/dpv#CloudLocation"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Location Locality"
+        "@value": "Remote Location"
       }
     ]
   },
@@ -809,10 +806,9 @@
         "@id": "https://w3id.org/dpv#"
       }
     ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@language": "en",
-        "@value": "accepted"
+        "@id": "https://w3id.org/dpv#Country"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#broader": [
@@ -1063,19 +1059,7 @@
     ],
     "http://www.w3.org/2004/02/skos/core#narrower": [
       {
-        "@id": "https://w3id.org/dpv#FixedLocation"
-      },
-      {
-        "@id": "https://w3id.org/dpv#VariableLocation"
-      },
-      {
-        "@id": "https://w3id.org/dpv#FederatedLocations"
-      },
-      {
-        "@id": "https://w3id.org/dpv#DecentralisedLocations"
-      },
-      {
-        "@id": "https://w3id.org/dpv#RandomLocation"
+        "@id": "https://w3id.org/dpv#City"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
@@ -1217,8 +1201,7 @@
     "@id": "https://w3id.org/dpv#RandomLocation",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#LocationFixture"
+      "http://www.w3.org/2000/01/rdf-schema#Class"
     ],
     "http://purl.org/dc/terms/contributor": [
       {
@@ -1228,18 +1211,17 @@
     "http://purl.org/dc/terms/created": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-06-15"
-      }
-    ],
-    "http://purl.org/dc/terms/modified": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2020-10-05"
+        "@value": "2022-10-22"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://w3id.org/dpv#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#Region"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -1250,7 +1232,7 @@
     ],
     "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@id": "https://w3id.org/dpv#LocationFixture"
+        "@id": "https://w3id.org/dpv#Region"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -1834,6 +1816,122 @@
       {
         "@language": "en",
         "@value": "Decentralised Locations"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#WithinVirtualEnvironment",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#Location"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2020-10-06"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/dpv#"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#LocalLocation"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Location is local and entirely within a virtual environment, such as a shared network directory"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#jurisdiction-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Within Virtual Environment"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#jurisdiction-classes",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#FederatedLocations",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept",
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "https://w3id.org/dpv#LocationFixture"
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-06-15"
+      }
+    ],
+    "http://purl.org/dc/terms/modified": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2020-10-05"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/dpv#"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#broader": [
+      {
+        "@id": "https://w3id.org/dpv#LocationFixture"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Location that is federated across multiple separate areas with designation of a primary or central location"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/dpv#jurisdiction-classes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Federated Locations"
       }
     ]
   },

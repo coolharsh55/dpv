@@ -100,7 +100,7 @@
     ],
     "http://purl.org/dc/dcam/domainIncludes": [
       {
-        "@id": "https://w3id.org/dpv#Technology"
+        "@id": "http://www.w3.org/2000/01/rdf-schema#Class"
       }
     ],
     "http://purl.org/dc/dcam/rangeIncludes": [
@@ -715,8 +715,18 @@
   {
     "@id": "https://w3id.org/dpv/tech#TechnologyActor",
     "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#Ontology"
+    ],
+    "http://purl.org/dc/terms/conformsTo": [
+      {
+        "@value": "http://www.w3.org/2000/01/rdf-schema"
+      },
+      {
+        "@value": "http://www.w3.org/2004/02/skos/core"
+      },
+      {
+        "@id": "http://www.w3.org/2002/07/owl"
+      }
     ],
     "http://purl.org/dc/terms/contributor": [
       {
@@ -725,7 +735,7 @@
     ],
     "http://purl.org/dc/terms/created": [
       {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@language": "en",
         "@value": "2022-06-15"
       }
     ],
@@ -742,10 +752,8 @@
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
       {
         "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
+        "@value": "Harshvardhan J. Pandit"
+      },
       {
         "@language": "en",
         "@value": "Actors and Entities involved in provision, use, and management of Technology"

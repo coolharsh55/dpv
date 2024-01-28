@@ -2605,6 +2605,225 @@
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv/pd#"/>
     <skos:inScheme rdf:resource="https://w3id.org/dpv/pd#extended-classes"/>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/pd#TravelHistory">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Travel History</skos:prefLabel>
+    <skos:definition xml:lang="en">Information about travel history</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv/pd#Location"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-04-20</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv/pd#"/>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv/pd#extended-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/pd#Vehicle">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Vehicle</skos:prefLabel>
+    <skos:definition xml:lang="en">Information about vehicles</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv/pd#External"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-15</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <skos:narrower rdf:resource="https://w3id.org/dpv/pd#VehicleLicense"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv/pd#VehicleUsage"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv/pd#"/>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv/pd#extended-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/pd#Offspring">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Offspring</skos:prefLabel>
+    <skos:definition xml:lang="en">Information about offspring(s).</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv/pd#FamilyStructure"/>
+    <dct:source xml:lang="en">(EnterPrivacy Categories of Personal Information, https://enterprivacy.com/wp-content/uploads/2018/09/Categories-of-Personal-Information.pdf)</dct:source>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-06-04</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Elmar Kiesling; Harshvardhan J. Pandit, Fajar Ekaputra</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv/pd#"/>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv/pd#extended-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/pd#PaymentCard">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Payment Card</skos:prefLabel>
+    <skos:definition xml:lang="en">Information about payment card such as Credit Card, Debit Card.</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv/pd#FinancialAccount"/>
+    <dct:source xml:lang="en">(DPVCG, https://www.w3.org/community/dpvcg/)</dct:source>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-11-04</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <skos:narrower rdf:resource="https://w3id.org/dpv/pd#PaymentCardExpiry"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv/pd#PaymentCardNumber"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv/pd#"/>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv/pd#extended-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/pd#Location">
+    <skos:narrower rdf:resource="https://w3id.org/dpv/pd#BirthPlace"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv/pd#Country"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv/pd#GPSCoordinate"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv/pd#RoomNumber"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv/pd#TravelHistory"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Location</skos:prefLabel>
+    <skos:definition xml:lang="en">Information about location</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv/pd#Tracking"/>
+    <skos:related xml:lang="en">svd:Location</skos:related>
+    <dct:source xml:lang="en">(EnterPrivacy Categories of Personal Information, https://enterprivacy.com/wp-content/uploads/2018/09/Categories-of-Personal-Information.pdf)</dct:source>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-06-04</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Elmar Kiesling; Harshvardhan J. Pandit, Fajar Ekaputra</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv/pd#"/>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv/pd#extended-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/pd#ProfessionalCertification">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Professional Certification</skos:prefLabel>
+    <skos:definition xml:lang="en">Information about professional certifications</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv/pd#Professional"/>
+    <dct:source xml:lang="en">(EnterPrivacy Categories of Personal Information, https://enterprivacy.com/wp-content/uploads/2018/09/Categories-of-Personal-Information.pdf)</dct:source>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-06-04</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Elmar Kiesling; Harshvardhan J. Pandit, Fajar Ekaputra</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv/pd#"/>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv/pd#extended-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/pd#MACAddress">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">MAC Address</skos:prefLabel>
+    <skos:definition xml:lang="en">Information about the Media Access Control (MAC) address of a device</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv/pd#DeviceBased"/>
+    <dct:source xml:lang="en">(EnterPrivacy Categories of Personal Information, https://enterprivacy.com/wp-content/uploads/2018/09/Categories-of-Personal-Information.pdf)</dct:source>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-06-04</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Elmar Kiesling; Harshvardhan J. Pandit, Fajar Ekaputra</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv/pd#"/>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv/pd#extended-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/pd#PhysicalAddress">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Physical Address</skos:prefLabel>
+    <skos:definition xml:lang="en">Information about physical address.</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv/pd#Contact"/>
+    <dct:source xml:lang="en">(EnterPrivacy Categories of Personal Information, https://enterprivacy.com/wp-content/uploads/2018/09/Categories-of-Personal-Information.pdf)</dct:source>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-06-04</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Elmar Kiesling; Harshvardhan J. Pandit, Fajar Ekaputra</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv/pd#"/>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv/pd#extended-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/pd#Job">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Job</skos:prefLabel>
+    <skos:definition xml:lang="en">Information about professional jobs</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv/pd#Professional"/>
+    <dct:source xml:lang="en">(EnterPrivacy Categories of Personal Information, https://enterprivacy.com/wp-content/uploads/2018/09/Categories-of-Personal-Information.pdf)</dct:source>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-06-04</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Elmar Kiesling; Harshvardhan J. Pandit, Fajar Ekaputra</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv/pd#"/>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv/pd#extended-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/pd#DisciplinaryAction">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Disciplinary Action</skos:prefLabel>
+    <skos:definition xml:lang="en">Information about disciplinary actions and its history</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv/pd#Professional"/>
+    <dct:source xml:lang="en">(EnterPrivacy Categories of Personal Information, https://enterprivacy.com/wp-content/uploads/2018/09/Categories-of-Personal-Information.pdf)</dct:source>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-06-04</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Elmar Kiesling; Harshvardhan J. Pandit, Fajar Ekaputra</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv/pd#"/>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv/pd#extended-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/pd#Nationality">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Nationality</skos:prefLabel>
+    <skos:definition xml:lang="en">Information about nationality</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv/pd#External"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-04-20</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>https://www.w3.org/2022/04/20-dpvcg-minutes.html</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv/pd#"/>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv/pd#extended-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/pd#FinancialAccountNumber">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Financial Account Number</skos:prefLabel>
+    <skos:definition xml:lang="en">Information about financial account number</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv/pd#AccountIdentifier"/>
+    <dct:source xml:lang="en">(EnterPrivacy Categories of Personal Information, https://enterprivacy.com/wp-content/uploads/2018/09/Categories-of-Personal-Information.pdf)</dct:source>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-06-04</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Elmar Kiesling; Harshvardhan J. Pandit, Fajar Ekaputra</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv/pd#"/>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv/pd#extended-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/pd#CriminalConviction">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Criminal Conviction</skos:prefLabel>
+    <skos:definition xml:lang="en">Information about criminal convictions.</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv/pd#Criminal"/>
+    <dct:source xml:lang="en">(EnterPrivacy Categories of Personal Information, https://enterprivacy.com/wp-content/uploads/2018/09/Categories-of-Personal-Information.pdf)</dct:source>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-06-04</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Elmar Kiesling; Harshvardhan J. Pandit, Fajar Ekaputra</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv/pd#"/>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv/pd#extended-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/pd#Gender">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Gender</skos:prefLabel>
+    <skos:definition xml:lang="en">Information about gender</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv/pd#PhysicalCharacteristic"/>
+    <dct:source xml:lang="en">(EnterPrivacy Categories of Personal Information, https://enterprivacy.com/wp-content/uploads/2018/09/Categories-of-Personal-Information.pdf)</dct:source>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-06-04</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Elmar Kiesling; Harshvardhan J. Pandit, Fajar Ekaputra</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv/pd#"/>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv/pd#extended-classes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/pd#Interest">
+    <skos:narrower rdf:resource="https://w3id.org/dpv/pd#Dislike"/>
+    <skos:narrower rdf:resource="https://w3id.org/dpv/pd#Like"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv#PersonalData"/>
+    <skos:prefLabel xml:lang="en">Interest</skos:prefLabel>
+    <skos:definition xml:lang="en">Information about interests</skos:definition>
+    <skos:broader rdf:resource="https://w3id.org/dpv/pd#Preference"/>
+    <dct:source xml:lang="en">(EnterPrivacy Categories of Personal Information, https://enterprivacy.com/wp-content/uploads/2018/09/Categories-of-Personal-Information.pdf)</dct:source>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-06-04</dct:created>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Elmar Kiesling; Harshvardhan J. Pandit, Fajar Ekaputra</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv/pd#"/>
+    <skos:inScheme rdf:resource="https://w3id.org/dpv/pd#extended-classes"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/pd#Criminal">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>

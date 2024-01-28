@@ -30,7 +30,7 @@
     ],
     "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@id": "https://w3id.org/dpv#Likelihood"
+        "@id": "https://w3id.org/dpv#RiskLevel"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -49,13 +49,13 @@
         "@id": "https://w3id.org/dpv/risk#VeryLowLikelihood"
       },
       {
-        "@id": "https://w3id.org/dpv/risk#LowLikelihood"
+        "@id": "https://w3id.org/dpv/risk#LowRisk"
       },
       {
-        "@id": "https://w3id.org/dpv/risk#ModerateLikelihood"
+        "@id": "https://w3id.org/dpv/risk#ModerateRisk"
       },
       {
-        "@id": "https://w3id.org/dpv/risk#HighLikelihood"
+        "@id": "https://w3id.org/dpv/risk#HighRisk"
       },
       {
         "@id": "https://w3id.org/dpv/risk#VeryHighLikelihood"
@@ -73,7 +73,7 @@
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#RiskLevel"
+      "https://w3id.org/dpv#Severity"
     ],
     "http://purl.org/dc/terms/contributor": [
       {
@@ -84,6 +84,11 @@
       {
         "@type": "http://www.w3.org/2001/XMLSchema#date",
         "@value": "2022-08-18"
+      }
+    ],
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#value": [
+      {
+        "@value": "0.1,xsd:decimal"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -99,7 +104,10 @@
     ],
     "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@id": "https://w3id.org/dpv#RiskLevel"
+        "@id": "https://w3id.org/dpv/risk#7SeverityLevels"
+      },
+      {
+        "@id": "https://w3id.org/dpv/risk#5SeverityLevels"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
@@ -1177,7 +1185,7 @@
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept",
       "http://www.w3.org/2000/01/rdf-schema#Class",
-      "https://w3id.org/dpv#Severity"
+      "https://w3id.org/dpv#Likelihood"
     ],
     "http://purl.org/dc/terms/contributor": [
       {
@@ -1274,13 +1282,7 @@
     ],
     "http://www.w3.org/2004/02/skos/core#broader": [
       {
-        "@id": "https://w3id.org/dpv/risk#7SeverityLevels"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#5SeverityLevels"
-      },
-      {
-        "@id": "https://w3id.org/dpv/risk#3SeverityLevels"
+        "@id": "https://w3id.org/dpv/risk#7LikelihoodLevels"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
