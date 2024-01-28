@@ -246,14 +246,6 @@
   <link rel="stylesheet" type="text/css" href="../media/common.css">
 </head>
 <body>
-    <form id="language-selector">
-  <label>Language</label>
-  <select style="top: 5px;" onchange="location=this.value">
-    <option value="index-en.html" selected="selected">English</option>
-    <option value="index-de.html" >Deutsch</option>
-  </select>
-</form>
-
     <section id="abstract">
       <p>The Data Privacy Vocabulary [[DPV]] enables expressing machine-readable metadata about the use and processing of personal data based on legislative requirements such as the General Data Protection Regulation [[GDPR]]. This document describes the DPV specification along with its data model.</p>
       <p class="note">The canonical URL for DPV is <a href="https://w3id.org/dpv">https://w3id.org/dpv</a> which contains (this) specification. The namespace for DPV terms is <a href="https://w3id.org/dpv#"><code>https://w3id.org/dpv#</code></a>, the suggested prefix is <code>dpv</code>, and this document along with source and releases are available at <a href="https://github.com/w3c/dpv">https://github.com/w3c/dpv</a>.</p>
@@ -6848,14 +6840,14 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#CryptographicAuthentication">dpv:CryptographicAuthentication</a> → 
-             <a href="#CryptographicMethods">dpv:CryptographicMethods</a> → 
+             <a href="#AuthenticationProtocols">dpv:AuthenticationProtocols</a> → 
              <a href="#TechnicalMeasure">dpv:TechnicalMeasure</a> → 
              <a href="#TechnicalOrganisationalMeasure">dpv:TechnicalOrganisationalMeasure</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#CryptographicAuthentication">dpv:CryptographicAuthentication</a> → 
-             <a href="#AuthenticationProtocols">dpv:AuthenticationProtocols</a> → 
+             <a href="#CryptographicMethods">dpv:CryptographicMethods</a> → 
              <a href="#TechnicalMeasure">dpv:TechnicalMeasure</a> → 
              <a href="#TechnicalOrganisationalMeasure">dpv:TechnicalOrganisationalMeasure</a>
 </td>
@@ -6933,14 +6925,14 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#CryptographicAuthentication">dpv:CryptographicAuthentication</a> → 
-             <a href="#CryptographicMethods">dpv:CryptographicMethods</a> → 
+             <a href="#AuthenticationProtocols">dpv:AuthenticationProtocols</a> → 
              <a href="#TechnicalMeasure">dpv:TechnicalMeasure</a> → 
              <a href="#TechnicalOrganisationalMeasure">dpv:TechnicalOrganisationalMeasure</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#CryptographicAuthentication">dpv:CryptographicAuthentication</a> → 
-             <a href="#AuthenticationProtocols">dpv:AuthenticationProtocols</a> → 
+             <a href="#CryptographicMethods">dpv:CryptographicMethods</a> → 
              <a href="#TechnicalMeasure">dpv:TechnicalMeasure</a> → 
              <a href="#TechnicalOrganisationalMeasure">dpv:TechnicalOrganisationalMeasure</a>
 </td>
@@ -8552,12 +8544,12 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#CollectedData">dpv:CollectedData</a> → 
+          <td>             <a href="#PersonalData">dpv:PersonalData</a> → 
              <a href="#Data">dpv:Data</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#PersonalData">dpv:PersonalData</a> → 
+          <td>             <a href="#CollectedData">dpv:CollectedData</a> → 
              <a href="#Data">dpv:Data</a>
 </td>
 </tr>      
@@ -12651,13 +12643,13 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#CryptographicMethods">dpv:CryptographicMethods</a> → 
+          <td>             <a href="#AuthenticationProtocols">dpv:AuthenticationProtocols</a> → 
              <a href="#TechnicalMeasure">dpv:TechnicalMeasure</a> → 
              <a href="#TechnicalOrganisationalMeasure">dpv:TechnicalOrganisationalMeasure</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#AuthenticationProtocols">dpv:AuthenticationProtocols</a> → 
+          <td>             <a href="#CryptographicMethods">dpv:CryptographicMethods</a> → 
              <a href="#TechnicalMeasure">dpv:TechnicalMeasure</a> → 
              <a href="#TechnicalOrganisationalMeasure">dpv:TechnicalOrganisationalMeasure</a>
 </td>
@@ -13435,14 +13427,14 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#SecurityAssessment">dpv:SecurityAssessment</a> → 
-             <a href="#SecurityProcedure">dpv:SecurityProcedure</a> → 
+             <a href="#Assessment">dpv:Assessment</a> → 
              <a href="#OrganisationalMeasure">dpv:OrganisationalMeasure</a> → 
              <a href="#TechnicalOrganisationalMeasure">dpv:TechnicalOrganisationalMeasure</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#SecurityAssessment">dpv:SecurityAssessment</a> → 
-             <a href="#Assessment">dpv:Assessment</a> → 
+             <a href="#SecurityProcedure">dpv:SecurityProcedure</a> → 
              <a href="#OrganisationalMeasure">dpv:OrganisationalMeasure</a> → 
              <a href="#TechnicalOrganisationalMeasure">dpv:TechnicalOrganisationalMeasure</a>
 </td>
@@ -16226,12 +16218,12 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#DerivedData">dpv:DerivedData</a> → 
+          <td>             <a href="#PersonalData">dpv:PersonalData</a> → 
              <a href="#Data">dpv:Data</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#PersonalData">dpv:PersonalData</a> → 
+          <td>             <a href="#DerivedData">dpv:DerivedData</a> → 
              <a href="#Data">dpv:Data</a>
 </td>
 </tr>      
@@ -20487,12 +20479,12 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#PersonalData">dpv:PersonalData</a> → 
+          <td>             <a href="#InferredData">dpv:InferredData</a> → 
              <a href="#Data">dpv:Data</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#InferredData">dpv:InferredData</a> → 
+          <td>             <a href="#PersonalData">dpv:PersonalData</a> → 
              <a href="#Data">dpv:Data</a>
 </td>
 </tr>      
@@ -21271,14 +21263,14 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#CryptographicAuthentication">dpv:CryptographicAuthentication</a> → 
-             <a href="#CryptographicMethods">dpv:CryptographicMethods</a> → 
+             <a href="#AuthenticationProtocols">dpv:AuthenticationProtocols</a> → 
              <a href="#TechnicalMeasure">dpv:TechnicalMeasure</a> → 
              <a href="#TechnicalOrganisationalMeasure">dpv:TechnicalOrganisationalMeasure</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#CryptographicAuthentication">dpv:CryptographicAuthentication</a> → 
-             <a href="#AuthenticationProtocols">dpv:AuthenticationProtocols</a> → 
+             <a href="#CryptographicMethods">dpv:CryptographicMethods</a> → 
              <a href="#TechnicalMeasure">dpv:TechnicalMeasure</a> → 
              <a href="#TechnicalOrganisationalMeasure">dpv:TechnicalOrganisationalMeasure</a>
 </td>
@@ -23127,15 +23119,15 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#OptimisationForController">dpv:OptimisationForController</a> → 
-             <a href="#ServiceOptimisation">dpv:ServiceOptimisation</a> → 
-             <a href="#ServiceProvision">dpv:ServiceProvision</a> → 
+          <td>             <a href="#CustomerRelationshipManagement">dpv:CustomerRelationshipManagement</a> → 
+             <a href="#CustomerManagement">dpv:CustomerManagement</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#CustomerRelationshipManagement">dpv:CustomerRelationshipManagement</a> → 
-             <a href="#CustomerManagement">dpv:CustomerManagement</a> → 
+          <td>             <a href="#OptimisationForController">dpv:OptimisationForController</a> → 
+             <a href="#ServiceOptimisation">dpv:ServiceOptimisation</a> → 
+             <a href="#ServiceProvision">dpv:ServiceProvision</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 </tr>      
@@ -23821,26 +23813,26 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#DerivedPersonalData">dpv:DerivedPersonalData</a> → 
-             <a href="#DerivedData">dpv:DerivedData</a> → 
-             <a href="#Data">dpv:Data</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
-          <td>             <a href="#DerivedPersonalData">dpv:DerivedPersonalData</a> → 
-             <a href="#PersonalData">dpv:PersonalData</a> → 
-             <a href="#Data">dpv:Data</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
-          <td>             <a href="#GeneratedPersonalData">dpv:GeneratedPersonalData</a> → 
-             <a href="#PersonalData">dpv:PersonalData</a> → 
-             <a href="#Data">dpv:Data</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
           <td>             <a href="#GeneratedPersonalData">dpv:GeneratedPersonalData</a> → 
              <a href="#InferredData">dpv:InferredData</a> → 
+             <a href="#Data">dpv:Data</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>             <a href="#GeneratedPersonalData">dpv:GeneratedPersonalData</a> → 
+             <a href="#PersonalData">dpv:PersonalData</a> → 
+             <a href="#Data">dpv:Data</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>             <a href="#DerivedPersonalData">dpv:DerivedPersonalData</a> → 
+             <a href="#PersonalData">dpv:PersonalData</a> → 
+             <a href="#Data">dpv:Data</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>             <a href="#DerivedPersonalData">dpv:DerivedPersonalData</a> → 
+             <a href="#DerivedData">dpv:DerivedData</a> → 
              <a href="#Data">dpv:Data</a>
 </td>
 </tr>      
@@ -27916,14 +27908,14 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#CryptographicAuthentication">dpv:CryptographicAuthentication</a> → 
-             <a href="#CryptographicMethods">dpv:CryptographicMethods</a> → 
+             <a href="#AuthenticationProtocols">dpv:AuthenticationProtocols</a> → 
              <a href="#TechnicalMeasure">dpv:TechnicalMeasure</a> → 
              <a href="#TechnicalOrganisationalMeasure">dpv:TechnicalOrganisationalMeasure</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#CryptographicAuthentication">dpv:CryptographicAuthentication</a> → 
-             <a href="#AuthenticationProtocols">dpv:AuthenticationProtocols</a> → 
+             <a href="#CryptographicMethods">dpv:CryptographicMethods</a> → 
              <a href="#TechnicalMeasure">dpv:TechnicalMeasure</a> → 
              <a href="#TechnicalOrganisationalMeasure">dpv:TechnicalOrganisationalMeasure</a>
 </td>
@@ -32713,13 +32705,13 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#Advertising">dpv:Advertising</a> → 
-             <a href="#Marketing">dpv:Marketing</a> → 
+          <td>             <a href="#Personalisation">dpv:Personalisation</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#Personalisation">dpv:Personalisation</a> → 
+          <td>             <a href="#Advertising">dpv:Advertising</a> → 
+             <a href="#Marketing">dpv:Marketing</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 </tr>      
@@ -40144,13 +40136,13 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#SecurityProcedure">dpv:SecurityProcedure</a> → 
+          <td>             <a href="#Assessment">dpv:Assessment</a> → 
              <a href="#OrganisationalMeasure">dpv:OrganisationalMeasure</a> → 
              <a href="#TechnicalOrganisationalMeasure">dpv:TechnicalOrganisationalMeasure</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#Assessment">dpv:Assessment</a> → 
+          <td>             <a href="#SecurityProcedure">dpv:SecurityProcedure</a> → 
              <a href="#OrganisationalMeasure">dpv:OrganisationalMeasure</a> → 
              <a href="#TechnicalOrganisationalMeasure">dpv:TechnicalOrganisationalMeasure</a>
 </td>
@@ -42897,14 +42889,14 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#StorageCondition">dpv:StorageCondition</a> → 
-             <a href="#ProcessingCondition">dpv:ProcessingCondition</a> → 
-             <a href="#ProcessingContext">dpv:ProcessingContext</a> → 
+          <td>             <a href="#Duration">dpv:Duration</a> → 
              <a href="#Context">dpv:Context</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#Duration">dpv:Duration</a> → 
+          <td>             <a href="#StorageCondition">dpv:StorageCondition</a> → 
+             <a href="#ProcessingCondition">dpv:ProcessingCondition</a> → 
+             <a href="#ProcessingContext">dpv:ProcessingContext</a> → 
              <a href="#Context">dpv:Context</a>
 </td>
 </tr>      
@@ -43963,14 +43955,14 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#PersonalisedAdvertising">dpv:PersonalisedAdvertising</a> → 
-             <a href="#Advertising">dpv:Advertising</a> → 
-             <a href="#Marketing">dpv:Marketing</a> → 
+             <a href="#Personalisation">dpv:Personalisation</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#PersonalisedAdvertising">dpv:PersonalisedAdvertising</a> → 
-             <a href="#Personalisation">dpv:Personalisation</a> → 
+             <a href="#Advertising">dpv:Advertising</a> → 
+             <a href="#Marketing">dpv:Marketing</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 </tr>      
@@ -47592,13 +47584,13 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#CryptographicMethods">dpv:CryptographicMethods</a> → 
+          <td>             <a href="#AuthenticationProtocols">dpv:AuthenticationProtocols</a> → 
              <a href="#TechnicalMeasure">dpv:TechnicalMeasure</a> → 
              <a href="#TechnicalOrganisationalMeasure">dpv:TechnicalOrganisationalMeasure</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#AuthenticationProtocols">dpv:AuthenticationProtocols</a> → 
+          <td>             <a href="#CryptographicMethods">dpv:CryptographicMethods</a> → 
              <a href="#TechnicalMeasure">dpv:TechnicalMeasure</a> → 
              <a href="#TechnicalOrganisationalMeasure">dpv:TechnicalOrganisationalMeasure</a>
 </td>
@@ -51826,7 +51818,7 @@
 
 <tr>
           <th>Date Created</th>
-          <td><i>[rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), rdflib.term.Literal(&#39;2019-04-04&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;))]</i></td>
+          <td><i>[rdflib.term.Literal(&#39;2019-04-04&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;))]</i></td>
         </tr>        
 <tr>
           <th>Date Modified</th>
@@ -51834,7 +51826,7 @@
         </tr>       
 <tr>
           <th>Contributors</th>
-          <td><i>[rdflib.term.Literal(&#39;Harshvardhan J. Pandit&#39;), rdflib.term.Literal(&#39;Axel Polleres, Javier Fernández, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger&#39;)]</i></td>
+          <td><i>[rdflib.term.Literal(&#39;Axel Polleres, Javier Fernández, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger&#39;), rdflib.term.Literal(&#39;Harshvardhan J. Pandit&#39;)]</i></td>
         </tr>       
         <tr>
           <th>Documented in</th>
@@ -53549,7 +53541,7 @@
         </tr>        
 <tr>
           <th>Usage Note</th>
-          <td><i>Indicates the Entity that implements or performs a Right Exercise Activity</i></td>
+          <td><i>The use of &#39;entity&#39; is inclusive of entities (e.g. Data Processor) as well as &#39;agent&#39; (e.g. DPO). For indicating technological implementation, the property isImplementedByTechnology should be used.</i></td>
         </tr>       
        
 
@@ -53561,7 +53553,7 @@
 
 <tr>
           <th>Date Created</th>
-          <td><i>[rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), rdflib.term.Literal(&#39;2019-05-07&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;))]</i></td>
+          <td><i>[rdflib.term.Literal(&#39;2019-05-07&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;))]</i></td>
         </tr>        
 <tr>
           <th>Date Modified</th>
@@ -53569,7 +53561,7 @@
         </tr>       
 <tr>
           <th>Contributors</th>
-          <td><i>[rdflib.term.Literal(&#39;Axel Polleres, Harshvardhan J. Pandit, Beatriz Esteves, Paul Ryan, Julian Flake&#39;), rdflib.term.Literal(&#39;Harshvardhan J. Pandit&#39;)]</i></td>
+          <td><i>[rdflib.term.Literal(&#39;Harshvardhan J. Pandit&#39;), rdflib.term.Literal(&#39;Axel Polleres, Harshvardhan J. Pandit, Beatriz Esteves, Paul Ryan, Julian Flake&#39;)]</i></td>
         </tr>       
         <tr>
           <th>Documented in</th>

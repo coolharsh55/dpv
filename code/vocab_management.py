@@ -331,11 +331,26 @@ CSVFILES = {
 
 # === translations ===
 IMPORT_TRANSLATIONS = {
-    'de': {
-        'lang': 'German',
-        'prod': f'{IMPORT_CSV_PATH}/DE_prod.csv',
-        'verify': f'{IMPORT_CSV_PATH}/DE_verify.csv',
-    },
+    # 'de': {
+    #     'lang': 'German',
+    #     'prod': f'{IMPORT_CSV_PATH}/DE_prod.csv',
+    #     'verify': f'{IMPORT_CSV_PATH}/DE_verify.csv',
+    # },
+    # 'fr': {
+    #     'lang': 'French',
+    #     'prod': f'{IMPORT_CSV_PATH}/FR_prod.csv',
+    #     'verify': f'{IMPORT_CSV_PATH}/FR_verify.csv',
+    # },
+    # 'it': {
+    #     'lang': 'Italian',
+    #     'prod': f'{IMPORT_CSV_PATH}/IT_prod.csv',
+    #     'verify': f'{IMPORT_CSV_PATH}/IT_verify.csv',
+    # },
+    # 'es': {
+    #     'lang': 'Spanish',
+    #     'prod': f'{IMPORT_CSV_PATH}/ES_prod.csv',
+    #     'verify': f'{IMPORT_CSV_PATH}/ES_verify.csv',
+    # },
 }
 # This file will save the missing translations.
 # The initial list is populated in [[200.py]] and then the data is 

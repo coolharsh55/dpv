@@ -8,26 +8,6 @@
    xmlns:sw="http://www.w3.org/2003/06/sw-vocab-status/ns#"
    xmlns:vann="http://purl.org/vocab/vann/"
 >
-  <rdf:Description rdf:about="https://w3id.org/dpv/tech#Networking">
-    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/tech#InternetCommunication"/>
-    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/tech#BluetoothCommunication"/>
-    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/tech#LocalNetworkCommunication"/>
-    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/tech#WiFiCommunication"/>
-    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/tech#CellularNetworkCommunication"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/tech#NetworkingCommunication">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv/tech#CommunicationMechanism"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Networking Communication</skos:prefLabel>
-    <skos:definition xml:lang="en">Technology utilising networking communication</skos:definition>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-15</dct:created>
-    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-10-30</dct:modified>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv/tech#"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv/tech#CommunicationMechanism"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/tech#GPSCommunication">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv/tech#CommunicationMechanism"/>
@@ -49,6 +29,19 @@
     <skos:definition xml:lang="en">Technology utilising wifi wireless networking communication</skos:definition>
     <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-15</dct:created>
     <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-11-02</dct:modified>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv/tech#"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv/tech#Networking"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/tech#BluetoothCommunication">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv/tech#CommunicationMechanism"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Bluetooth Communication</skos:prefLabel>
+    <skos:definition xml:lang="en">Technology utilising bluetooth communication</skos:definition>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-15</dct:created>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-11-03</dct:modified>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv/tech#"/>
@@ -82,38 +75,24 @@
     <dct:conformsTo>http://www.w3.org/2000/01/rdf-schema</dct:conformsTo>
     <dct:conformsTo>http://www.w3.org/2004/02/skos/core</dct:conformsTo>
     <dct:conformsTo rdf:resource="http://www.w3.org/2002/07/owl"/>
-    <dct:language>de</dct:language>
     <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
     <dct:license rdf:resource="https://www.w3.org/copyright/document-license-2023/"/>
     <vann:preferredNamespacePrefix>tech</vann:preferredNamespacePrefix>
     <vann:preferredNamespaceUri>https://w3id.org/dpv/tech#</vann:preferredNamespaceUri>
     <dct:hasVersion rdf:resource="https://w3id.org/dpv/tech"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/tech#LocalNetworkCommunication">
+  <rdf:Description rdf:about="https://w3id.org/dpv/tech#NetworkingCommunication">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
     <rdf:type rdf:resource="https://w3id.org/dpv/tech#CommunicationMechanism"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Local Network Communication</skos:prefLabel>
-    <skos:definition xml:lang="en">Technology utilising local networking communication</skos:definition>
+    <skos:prefLabel xml:lang="en">Networking Communication</skos:prefLabel>
+    <skos:definition xml:lang="en">Technology utilising networking communication</skos:definition>
     <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-15</dct:created>
-    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-10-31</dct:modified>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-10-30</dct:modified>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv/tech#"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv/tech#Networking"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/dpv/tech#BluetoothCommunication">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="https://w3id.org/dpv/tech#CommunicationMechanism"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <skos:prefLabel xml:lang="en">Bluetooth Communication</skos:prefLabel>
-    <skos:definition xml:lang="en">Technology utilising bluetooth communication</skos:definition>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-15</dct:created>
-    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-11-03</dct:modified>
-    <sw:term_status xml:lang="en">accepted</sw:term_status>
-    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv/tech#"/>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv/tech#Networking"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv/tech#CommunicationMechanism"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/dpv/tech#InternetCommunication">
     <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
@@ -123,6 +102,26 @@
     <skos:definition xml:lang="en">Technology utilising internet communication</skos:definition>
     <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-15</dct:created>
     <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-11-01</dct:modified>
+    <sw:term_status xml:lang="en">accepted</sw:term_status>
+    <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv/tech#"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/dpv/tech#Networking"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/tech#Networking">
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/tech#BluetoothCommunication"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/tech#InternetCommunication"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/tech#CellularNetworkCommunication"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/tech#WiFiCommunication"/>
+    <rdfs:superClassOf rdf:resource="https://w3id.org/dpv/tech#LocalNetworkCommunication"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/dpv/tech#LocalNetworkCommunication">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdf:type rdf:resource="https://w3id.org/dpv/tech#CommunicationMechanism"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <skos:prefLabel xml:lang="en">Local Network Communication</skos:prefLabel>
+    <skos:definition xml:lang="en">Technology utilising local networking communication</skos:definition>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-15</dct:created>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-10-31</dct:modified>
     <sw:term_status xml:lang="en">accepted</sw:term_status>
     <dct:contributor>Harshvardhan J. Pandit</dct:contributor>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/dpv/tech#"/>

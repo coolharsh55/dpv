@@ -23,12 +23,9 @@ dpv:DataController a rdfs:Class,
     rdfs:subClassOf dpv:LegalEntity ;
     rdfs:superClassOf dpv:JointDataControllers ;
     sw:term_status "accepted"@en ;
-    skos:definition "Die Person oder Organisation, die über den/die Zweck(e) der Verarbeitung personenbezogener Daten entscheidet (oder diese kontrolliert)."@de,
-        "The individual or organisation that decides (or controls) the purpose(s) of processing personal data."@en ;
-    skos:prefLabel "Datenverantwortlicher"@de,
-        "Data Controller"@en ;
-    skos:scopeNote "Die Begriffe \"für die Verarbeitung Verantwortlicher\", \"für die Datenverarbeitung Verantwortlicher\" und \"für die Verarbeitung personenbezogener Daten Verantwortlicher\" beziehen sich auf das gleiche Konzept"@de,
-        "The terms 'Controller', 'Data Controller', and 'PII Controller' refer to the same concept"@en .
+    skos:definition "The individual or organisation that decides (or controls) the purpose(s) of processing personal data."@en ;
+    skos:prefLabel "Data Controller"@en ;
+    skos:scopeNote "The terms 'Controller', 'Data Controller', and 'PII Controller' refer to the same concept"@en .
 
 dpv:DataExporter a rdfs:Class,
         owl:Class ;
@@ -64,10 +61,8 @@ dpv:DataProcessor a rdfs:Class,
     rdfs:subClassOf dpv:Recipient ;
     rdfs:superClassOf dpv:DataSubProcessor ;
     sw:term_status "accepted"@en ;
-    skos:definition "Ein \"Auftragsverarbeiter\" ist eine natürliche oder juristische Person, Behörde, Einrichtung oder andere Stelle, die Daten im Auftrag des für die Verarbeitung Verantwortlichen verarbeitet. (machine-translated)"@de,
-        "A ‘processor’ means a natural or legal person, public authority, agency or other body which processes data on behalf of the controller."@en ;
-    skos:prefLabel "Datenverarbeiter (machine-translated)"@de,
-        "Data Processor"@en .
+    skos:definition "A ‘processor’ means a natural or legal person, public authority, agency or other body which processes data on behalf of the controller."@en ;
+    skos:prefLabel "Data Processor"@en .
 
 dpv:DataProtectionOfficer a rdfs:Class,
         owl:Class ;
@@ -152,7 +147,6 @@ dpv:ThirdParty a rdfs:Class,
     dct:description "The Data Privacy Vocabulary (DPV) provides terms (classes and properties) to represent information about processing of personal data, for example - purposes, processing operations, personal data, technical and organisational measures."@en ;
     dct:hasVersion <https://w3id.org/dpv> ;
     dct:identifier "https://w3id.org/dpv" ;
-    dct:language "de" ;
     dct:license <https://www.w3.org/copyright/document-license-2023/> ;
     dct:modified "2024-01-01"@en ;
     dct:title "Data Privacy Vocabulary (DPV)"@en ;

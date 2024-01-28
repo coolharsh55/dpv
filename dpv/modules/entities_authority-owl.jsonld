@@ -17,13 +17,13 @@
     ],
     "http://purl.org/dc/terms/contributor": [
       {
-        "@value": "Harshvardhan J. Pandit"
+        "@value": "Harshvardhan Pandit"
       },
       {
         "@value": "Georg P Krog"
       },
       {
-        "@value": "Harshvardhan Pandit"
+        "@value": "Harshvardhan J. Pandit"
       },
       {
         "@value": "Paul Ryan"
@@ -60,11 +60,6 @@
         "@value": "https://w3id.org/dpv"
       }
     ],
-    "http://purl.org/dc/terms/language": [
-      {
-        "@value": "de"
-      }
-    ],
     "http://purl.org/dc/terms/license": [
       {
         "@id": "https://www.w3.org/copyright/document-license-2023/"
@@ -99,77 +94,20 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#hasAuthority",
-    "@type": [
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://purl.org/dc/dcam/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Authority"
-      }
-    ],
-    "http://purl.org/dc/terms/contributor": [
-      {
-        "@value": "Harshvardhan J. Pandit, Georg P Krog"
-      }
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-01-19"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/dpv#"
-      }
-    ],
-    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
-      {
-        "@language": "en",
-        "@value": "accepted"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Indicates applicability of authority for a jurisdiction"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "has authority"
-      }
-    ],
-    "https://schema.org/rangeIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Authority"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#RegionalAuthority",
+    "@id": "https://w3id.org/dpv#Authority",
     "@type": [
       "http://www.w3.org/2000/01/rdf-schema#Class",
       "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://purl.org/dc/terms/contributor": [
       {
-        "@value": "Harshvardhan J. Pandit"
+        "@value": "Georg Krog, Paul Ryan, Harshvardhan Pandit"
       }
     ],
     "http://purl.org/dc/terms/created": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-02-02"
-      }
-    ],
-    "http://purl.org/dc/terms/source": [
-      {
-        "@language": "en",
-        "@value": "(ADMS controlled vocabulary,http://purl.org/adms)"
+        "@value": "2020-11-04"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -179,7 +117,21 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/dpv#Authority"
+        "@id": "https://w3id.org/dpv#GovernmentalOrganisation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#DataProtectionAuthority"
+      },
+      {
+        "@id": "https://w3id.org/dpv#NationalAuthority"
+      },
+      {
+        "@id": "https://w3id.org/dpv#RegionalAuthority"
+      },
+      {
+        "@id": "https://w3id.org/dpv#SupraNationalAuthority"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -191,13 +143,13 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "An authority tasked with overseeing legal compliance for a region"
+        "@value": "An authority with the power to create or enforce laws, or determine their compliance."
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Regional Authority"
+        "@value": "Authority"
       }
     ]
   },
@@ -300,30 +252,44 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#isAuthorityFor",
-    "@type": [
-      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://purl.org/dc/dcam/domainIncludes": [
+    "@id": "https://w3id.org/dpv#GovernmentalOrganisation",
+    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
       {
         "@id": "https://w3id.org/dpv#Authority"
       }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#RegionalAuthority",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://purl.org/dc/terms/contributor": [
       {
-        "@value": "Harshvardhan J. Pandit, Georg P Krog"
+        "@value": "Harshvardhan J. Pandit"
       }
     ],
     "http://purl.org/dc/terms/created": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2022-01-19"
+        "@value": "2022-02-02"
+      }
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@language": "en",
+        "@value": "(ADMS controlled vocabulary,http://purl.org/adms)"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://w3id.org/dpv#"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/dpv#Authority"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -335,18 +301,13 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Indicates area, scope, or applicability of an Authority"
+        "@value": "An authority tasked with overseeing legal compliance for a region"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "is authority for"
-      }
-    ],
-    "https://schema.org/domainIncludes": [
-      {
-        "@id": "https://w3id.org/dpv#Authority"
+        "@value": "Regional Authority"
       }
     ]
   },
@@ -403,52 +364,30 @@
     ]
   },
   {
-    "@id": "https://w3id.org/dpv#GovernmentalOrganisation",
-    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
+    "@id": "https://w3id.org/dpv#hasAuthority",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/dcam/rangeIncludes": [
       {
         "@id": "https://w3id.org/dpv#Authority"
       }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/dpv#Authority",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://purl.org/dc/terms/contributor": [
       {
-        "@value": "Georg Krog, Paul Ryan, Harshvardhan Pandit"
+        "@value": "Harshvardhan J. Pandit, Georg P Krog"
       }
     ],
     "http://purl.org/dc/terms/created": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2020-11-04"
+        "@value": "2022-01-19"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://w3id.org/dpv#"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#GovernmentalOrganisation"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#superClassOf": [
-      {
-        "@id": "https://w3id.org/dpv#DataProtectionAuthority"
-      },
-      {
-        "@id": "https://w3id.org/dpv#NationalAuthority"
-      },
-      {
-        "@id": "https://w3id.org/dpv#RegionalAuthority"
-      },
-      {
-        "@id": "https://w3id.org/dpv#SupraNationalAuthority"
       }
     ],
     "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
@@ -460,13 +399,69 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "An authority with the power to create or enforce laws, or determine their compliance."
+        "@value": "Indicates applicability of authority for a jurisdiction"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Authority"
+        "@value": "has authority"
+      }
+    ],
+    "https://schema.org/rangeIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Authority"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/dpv#isAuthorityFor",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://purl.org/dc/dcam/domainIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Authority"
+      }
+    ],
+    "http://purl.org/dc/terms/contributor": [
+      {
+        "@value": "Harshvardhan J. Pandit, Georg P Krog"
+      }
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2022-01-19"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/dpv#"
+      }
+    ],
+    "http://www.w3.org/2003/06/sw-vocab-status/ns#term_status": [
+      {
+        "@language": "en",
+        "@value": "accepted"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Indicates area, scope, or applicability of an Authority"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "is authority for"
+      }
+    ],
+    "https://schema.org/domainIncludes": [
+      {
+        "@id": "https://w3id.org/dpv#Authority"
       }
     ]
   }
