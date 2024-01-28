@@ -15,12 +15,12 @@
     shortName: "loc",
     title: "Locations",
     subtitle: "Data Privacy Vocabulary (DPV)",
-    publishDate: "2023-11-13",
+    publishDate: "2024-01-28",
     specStatus: "CG-DRAFT",
     group: "dpvcg",
     latestVersion: "https://w3id.org/dpv/loc",
     canonicalUri: "https://w3id.org/dpv/loc",
-    edDraftURI: "https://w3id.org/dpv/ed/loc",
+    edDraftURI: "https://w3id.org/dpv/loc",
     github: "w3c/dpv",
     subjectPrefix: "[loc]",
     doJsonLd: true,
@@ -53,6 +53,7 @@
 {% block VOCAB %}
   <section id="vocab">
     <h2>Overview</h2>
+    <div class="issue" title="Content missing - Overview"></div>
     <table style="font-size: 0.75rem;">
         <thead>
             <th>ID</th>
@@ -85,6 +86,7 @@
 
   <section id="subdivisions">
     <h2>Subdivisions/Regions</h2>
+    <div class="issue" title="Content missing - Subdivisions"></div>
       {% for country in vocab.values()|filter_type('dpv:Country',vocab='loc')|sort(attribute='iri') if 'skos:narrower' in country %}
       <section id="subdivisions-{{country['term']}}">
         <h3>{{ country['skos:prefLabel'] }}</h3>
@@ -131,6 +133,7 @@
 </section>
   
 {% endblock VOCAB %}
-
+<section class="appendix" id="issue-summary"></section>
+<script type="text/javascript" src="../media/common.js" defer></script>
 </body>
 </html>

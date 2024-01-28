@@ -13,9 +13,9 @@
     publishDate: "2024-01-01",
     specStatus: "CG-DRAFT",
     group: "dpvcg",
-    latestVersion: "https://w3id.org/dpv/",
+    latestVersion: "https://www.w3.org/community/dpvcg/2022/12/05/dpv-v1-release/",
     canonicalUri: "https://w3id.org/dpv/",
-    edDraftURI: "https://w3id.org/dpv/ed/pd",
+    edDraftURI: "https://w3id.org/dpv/",
     github: "w3c/dpv",
     subjectPrefix: "[dpv]",
     doJsonLd: true,
@@ -25,14 +25,6 @@
       name: "Harshvardhan J. Pandit",
       url: "https://harshp.com/",
       "company": "ADAPT Centre, Dublin City University",
-    }
-    ],
-    formerEditors: [
-    {
-      name: "Axel Polleres",
-      url: "https://www.polleres.net/",
-      "company": "Vienna University of Economics and Business",
-      retiredDate: "2019-12-31"
     }
     ],
     authors: [      {
@@ -225,6 +217,14 @@
     "href": "https://www.w3.org/TR/shacl-ucr/",
     "title": "SHACL Use Cases and Requirements"
   },
+  "SHACL": {
+    "href": "https://www.w3.org/TR/shacl",
+    "title": "Shape and Contraint Language (SHACL)"
+  },
+  "ODRL": {
+    "href": "https://www.w3.org/TR/odrl-model/",
+    "title": "Open Digital Rights Language (ODRL) Model"
+  },
   "DCT": {
     "title": "DCMI Metadata Terms (DCT)",
     "href": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/"
@@ -248,7 +248,7 @@
 <body>
     <section id="abstract">
       <p>The Data Privacy Vocabulary [[DPV]] enables expressing machine-readable metadata about the use and processing of personal data based on legislative requirements such as the General Data Protection Regulation [[GDPR]]. This document describes the DPV specification along with its data model.</p>
-      <p class="note">The canonical URL for DPV is <a href="https://w3id.org/dpv">https://w3id.org/dpv</a> which contains (this) specification. The namespace for DPV terms is <a href="https://w3id.org/dpv#"><code>https://w3id.org/dpv#</code></a>, the suggested prefix is <code>dpv</code>, and this document along with source and releases are available at <a href="https://github.com/w3c/dpv">https://github.com/w3c/dpv</a>.</p>
+      <p>The canonical URL for DPV is <a href="https://w3id.org/dpv">https://w3id.org/dpv</a> which contains (this) specification. The namespace for DPV terms is <a href="https://w3id.org/dpv#"><code>https://w3id.org/dpv#</code></a>, the suggested prefix is <code>dpv</code>, and this document along with source and releases are available at <a href="https://github.com/w3c/dpv">https://github.com/w3c/dpv</a>.</p>
       <section id="sotd">
     <p><strong>Contributing:</strong> The DPVCG welcomes participation to improve the DPV and associated resources, including expansion or refinement of concepts, requesting information and applications, and addressing open issues. <a href="https://w3id.org/dpv/contributing">See contributing page</a> for further information.</p>
   </div>
@@ -365,6 +365,7 @@
           <td>[=hasContext=]</td>
       </tr>
   </table>
+  <div class="issue" title="Review and update section descriptions"></div>
       <p>To 'group' these concepts together within a specific use-case, the concept [=Process=] and relation [=hasProcess=] are useful (the concept [=PersonalDataHandling=] was used in earlier versions for the same). For example, a 'process' about a specific application can represent the associated purposes, personal data, legal basis, etc. using the relations and provided taxonomies. For a detailed representation, the following specialisations of processes are provided to indicate e.g. the process is or is not expected to involve personal data:</p>
       <div class="list-hierarchy"><ul class="concept-list">
   <li>
@@ -1436,6 +1437,7 @@
   <p><strong>Please refer to <a href="/dpv/modules/data">data page</a> for additional documentation, examples, references, and best practices</strong>. This document provides only a brief summary of the data concepts.</p>
 </div>
 
+  <div class="issue" title="Data module page is missing"></div>
   <p>DPV provides the concept [=PersonalData=] and the relation [=hasPersonalData=] to indicate what categories or instances of personal data are being processed. The DPV specification only provides a structure for describing personal data, e.g. as being sensitive. For specific categories of personal data for use-cases, [[[PD]]] provides additional concepts that extend the DPV's personal data taxonomy. This separation is to enable adopters to decide whether the extension's concepts are useful to them, or to use other external vocabularies, or define their own.</p>
   <p>In addition to <i>Personal Data</i>, there may be a need to represent <i>Non-Personal Data</i> within the same contextual use-cases. For this, DPV provides the concepts [=Data=], [=NonPersonalData=] and [=SyntheticData=].</p>
   <p>To indicate data categorised based on [=DataSource=], e.g. as "collected personal data", DPV provides: [=CollectedPersonalData=], [=DerivedPersonalData=], [=InferredPersonalData=], [=GeneratedPersonalData=], and [=ObservedPersonalData=].</p>
@@ -1640,6 +1642,7 @@
   <p><strong>Please refer to <a href="/dpv/modules/TOM">Tech &amp; Org measures page</a> for additional documentation, examples, references, and best practices</strong>. This document provides only a brief summary of the Tech &amp; Org measures concepts.</p>
 </div>
 
+  <div class="issue" title="Add Legal/Physical measure to TOM"></div>
   <p>DPV's taxonomy of tech/org measures are structured into two groups representing and [=TechnicalMeasure=] and [=OrganisationalMeasure=] along with specific properties for each. Each term has a dedicated taxonomy that expands upon the core idea to provide a rich list of technial and organisational measures that are intended to protect personal data (and its associated entities and consequences).</p>
   <p>This taxonomy also includes relations that are associated with measures, such as [=hasNotice=] or [=hasPolicy=], which are generic and can be applied to other contexts (e.g. notice for consent, policy for data storage).</p>
   <div class="list-hierarchy"><ul class="concept-list">
@@ -2664,7 +2667,7 @@
     <figcaption></figcaption>
   </figure>
   <div class="note">
-  <p><strong>Please refer to <a href="/dpv/modules/processing_context">processing context page</a> for additional documentation, examples, references, and best practices</strong>. This document provides only a brief summary of the processing context concepts.</p>
+  <p><strong>Please refer to <a href="/dpv/modules/processing#vocab-processing-context">processing context page</a> for additional documentation, examples, references, and best practices</strong>. This document provides only a brief summary of the processing context concepts.</p>
 </div>
 
   <section id="vocab-processing-context-storage-automation">
@@ -2673,6 +2676,7 @@
     <p>The processing taxonomy uses the concept [=Store=] to indicate data is being stored. To specify additionally information such as its location, erasure or deletion, the generic concepts and relations associated with processing (i.e. <i>location</i> and <i>duration</i>) can be used. However, to emphasise that information about storage - such as policies, conditions, rules, or documentation - are critical on considerations of data protection and privacy as well as legal compliance, DPV provide specific concepts related to these.</p>
     <p>The concept [=StorageCondition=] and the relation [=hasStorageCondition=] represent the general or abstract conditions associated with storage of data. This is specialised to indicate [=StorageDuration=], [=StorageDeletion=], [=StorageRestoration=], and [=StorageLocation=]. This enables a document to directly specify information such as: "storage duration is 6 months" or "storage restoration uses 3 geo-distinct backup servers".</p>
     <p>For declaring the source of data, the [=DataSource=] concept along with [=hasDataSource=] relationship is provided to indicate where the data is collected or acquired from. For example, data can be obtained from the data subject directly (e.g. given via forms) or indirectly (e.g observed from activity, or inferred from existing data), or from another entity such as a third party.</p>
+    <div class="issue" title="Update Automation and Human Involvement concepts"></div>
     <p>DPV provides <s>AutomationOfProcessing</s> to represent the degree of automation, and the relation <s>hasProcessingAutomation</s> to associate it with contextual concepts. The degrees of automation are represented by <s>FullyAutomatedProcessing</s>, <s>PartiallyAutomatedProcessing</s>, and <s>CompletelyManualProcessing</s>.</p>
     <p>To represent how humans are involved, the concept [=HumanInvolvement=] and relation [=hasHumanInvolvement=] are provided. Specific types of  [=HumanInvolvement=] include [=HumanInvolvementForOversight=], and [=HumanInvolvementForVerification=].
     <p>To indicate more specific applications: [=DecisionMaking=] and [=AutomatedDecisionMaking=] refer to use of processing to make decisions, [=AlgorithmicLogic=] for explaining the use of algorithms and specifics of processing logic, [=EvaluationScoring=] to indicate the processing evaluates or assigns scores (or metrics), [=InnovativeUseOfNewTechnologies=] to indicate there are innovative uses of novel technologies, and [=SystematicMonitoring=] to indicate the processing performs a systematic (or systemic) monitoring. These additional concepts are intended to model areas or topics that are considered sensitive or high-risk or require caution.</p>
@@ -3412,7 +3416,7 @@
     <figcaption></figcaption>
   </figure>
   <div class="note">
-  <p><strong>Please refer to <a href="/dpv/modules/context-jurisdiction">location &amp; jurisdiction page</a> for additional documentation, examples, references, and best practices</strong>. This document provides only a brief summary of the location &amp; jurisdiction concepts.</p>
+  <p><strong>Please refer to <a href="/dpv/modules/context#vocab-jurisdiction">location &amp; jurisdiction page</a> for additional documentation, examples, references, and best practices</strong>. This document provides only a brief summary of the location &amp; jurisdiction concepts.</p>
 </div>
 
   <p>To represent location, the concept [=Location=] along with relations [=hasLocation=] is provided. For geo-political locations, the concepts such as [=Country=] and [=SupraNationalUnion=] are subtyped, with [=hasCountry=] and [=ThirdCountry=] with [=hasThirdCountry=] provided for convenience in common uses (e.g. data storage, transfers).</p>
@@ -3791,6 +3795,8 @@
 
 <section id="vocabulary">
 <h2>Vocabulary Index</h2>
+  <div class="issue" title="Resolve multiple creation dates in term definition e.g. isImplementedByEntity"></div>
+  <div class="issue" title="Resolve multiple contributors in term definition e.g. isImplementedByEntity"></div>
   <section id="dpv-classes">
     <h3>Classes</h3>       
       
@@ -8735,12 +8741,12 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#PersonalData">dpv:PersonalData</a> → 
+          <td>             <a href="#CollectedData">dpv:CollectedData</a> → 
              <a href="#Data">dpv:Data</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#CollectedData">dpv:CollectedData</a> → 
+          <td>             <a href="#PersonalData">dpv:PersonalData</a> → 
              <a href="#Data">dpv:Data</a>
 </td>
 </tr>      
@@ -9051,13 +9057,13 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#CommunicationManagement">dpv:CommunicationManagement</a> → 
+          <td>             <a href="#CustomerCare">dpv:CustomerCare</a> → 
+             <a href="#CustomerManagement">dpv:CustomerManagement</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#CustomerCare">dpv:CustomerCare</a> → 
-             <a href="#CustomerManagement">dpv:CustomerManagement</a> → 
+          <td>             <a href="#CommunicationManagement">dpv:CommunicationManagement</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 </tr>      
@@ -21114,12 +21120,12 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#PersonalData">dpv:PersonalData</a> → 
+          <td>             <a href="#InferredData">dpv:InferredData</a> → 
              <a href="#Data">dpv:Data</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#InferredData">dpv:InferredData</a> → 
+          <td>             <a href="#PersonalData">dpv:PersonalData</a> → 
              <a href="#Data">dpv:Data</a>
 </td>
 </tr>      
@@ -24721,6 +24727,18 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
+          <td>             <a href="#GeneratedPersonalData">dpv:GeneratedPersonalData</a> → 
+             <a href="#InferredData">dpv:InferredData</a> → 
+             <a href="#Data">dpv:Data</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>             <a href="#GeneratedPersonalData">dpv:GeneratedPersonalData</a> → 
+             <a href="#PersonalData">dpv:PersonalData</a> → 
+             <a href="#Data">dpv:Data</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
           <td>             <a href="#DerivedPersonalData">dpv:DerivedPersonalData</a> → 
              <a href="#DerivedData">dpv:DerivedData</a> → 
              <a href="#Data">dpv:Data</a>
@@ -24729,18 +24747,6 @@
           <th>Broader/Parent types</th>
           <td>             <a href="#DerivedPersonalData">dpv:DerivedPersonalData</a> → 
              <a href="#PersonalData">dpv:PersonalData</a> → 
-             <a href="#Data">dpv:Data</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
-          <td>             <a href="#GeneratedPersonalData">dpv:GeneratedPersonalData</a> → 
-             <a href="#PersonalData">dpv:PersonalData</a> → 
-             <a href="#Data">dpv:Data</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
-          <td>             <a href="#GeneratedPersonalData">dpv:GeneratedPersonalData</a> → 
-             <a href="#InferredData">dpv:InferredData</a> → 
              <a href="#Data">dpv:Data</a>
 </td>
 </tr>      
@@ -33969,13 +33975,13 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#Personalisation">dpv:Personalisation</a> → 
+          <td>             <a href="#Advertising">dpv:Advertising</a> → 
+             <a href="#Marketing">dpv:Marketing</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#Advertising">dpv:Advertising</a> → 
-             <a href="#Marketing">dpv:Marketing</a> → 
+          <td>             <a href="#Personalisation">dpv:Personalisation</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 </tr>      
@@ -34055,13 +34061,13 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#ServicePersonalisation">dpv:ServicePersonalisation</a> → 
-             <a href="#Personalisation">dpv:Personalisation</a> → 
+             <a href="#ServiceProvision">dpv:ServiceProvision</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#ServicePersonalisation">dpv:ServicePersonalisation</a> → 
-             <a href="#ServiceProvision">dpv:ServiceProvision</a> → 
+             <a href="#Personalisation">dpv:Personalisation</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 </tr>      
@@ -36098,14 +36104,14 @@
           <th>Broader/Parent types</th>
           <td>             <a href="#ProvidePersonalisedRecommendations">dpv:ProvidePersonalisedRecommendations</a> → 
              <a href="#ServicePersonalisation">dpv:ServicePersonalisation</a> → 
-             <a href="#Personalisation">dpv:Personalisation</a> → 
+             <a href="#ServiceProvision">dpv:ServiceProvision</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#ProvidePersonalisedRecommendations">dpv:ProvidePersonalisedRecommendations</a> → 
              <a href="#ServicePersonalisation">dpv:ServicePersonalisation</a> → 
-             <a href="#ServiceProvision">dpv:ServiceProvision</a> → 
+             <a href="#Personalisation">dpv:Personalisation</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 </tr>      
@@ -36188,13 +36194,13 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#ServicePersonalisation">dpv:ServicePersonalisation</a> → 
-             <a href="#Personalisation">dpv:Personalisation</a> → 
+             <a href="#ServiceProvision">dpv:ServiceProvision</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#ServicePersonalisation">dpv:ServicePersonalisation</a> → 
-             <a href="#ServiceProvision">dpv:ServiceProvision</a> → 
+             <a href="#Personalisation">dpv:Personalisation</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 </tr>      
@@ -36281,14 +36287,14 @@
           <th>Broader/Parent types</th>
           <td>             <a href="#ProvidePersonalisedRecommendations">dpv:ProvidePersonalisedRecommendations</a> → 
              <a href="#ServicePersonalisation">dpv:ServicePersonalisation</a> → 
-             <a href="#Personalisation">dpv:Personalisation</a> → 
+             <a href="#ServiceProvision">dpv:ServiceProvision</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#ProvidePersonalisedRecommendations">dpv:ProvidePersonalisedRecommendations</a> → 
              <a href="#ServicePersonalisation">dpv:ServicePersonalisation</a> → 
-             <a href="#ServiceProvision">dpv:ServiceProvision</a> → 
+             <a href="#Personalisation">dpv:Personalisation</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 </tr>      
@@ -40418,13 +40424,13 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#SecurityProcedure">dpv:SecurityProcedure</a> → 
+          <td>             <a href="#Policy">dpv:Policy</a> → 
              <a href="#OrganisationalMeasure">dpv:OrganisationalMeasure</a> → 
              <a href="#TechnicalOrganisationalMeasure">dpv:TechnicalOrganisationalMeasure</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#Policy">dpv:Policy</a> → 
+          <td>             <a href="#SecurityProcedure">dpv:SecurityProcedure</a> → 
              <a href="#OrganisationalMeasure">dpv:OrganisationalMeasure</a> → 
              <a href="#TechnicalOrganisationalMeasure">dpv:TechnicalOrganisationalMeasure</a>
 </td>
@@ -42723,12 +42729,12 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#Personalisation">dpv:Personalisation</a> → 
+          <td>             <a href="#ServiceProvision">dpv:ServiceProvision</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#ServiceProvision">dpv:ServiceProvision</a> → 
+          <td>             <a href="#Personalisation">dpv:Personalisation</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 </tr>      
@@ -44619,14 +44625,14 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#Location">dpv:Location</a>
-</td>
-<tr class="technical-detail">
-          <th>Broader/Parent types</th>
           <td>             <a href="#StorageCondition">dpv:StorageCondition</a> → 
              <a href="#ProcessingCondition">dpv:ProcessingCondition</a> → 
              <a href="#ProcessingContext">dpv:ProcessingContext</a> → 
              <a href="#Context">dpv:Context</a>
+</td>
+<tr class="technical-detail">
+          <th>Broader/Parent types</th>
+          <td>             <a href="#Location">dpv:Location</a>
 </td>
 </tr>      
       
@@ -45640,14 +45646,14 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#PersonalisedAdvertising">dpv:PersonalisedAdvertising</a> → 
-             <a href="#Personalisation">dpv:Personalisation</a> → 
+             <a href="#Advertising">dpv:Advertising</a> → 
+             <a href="#Marketing">dpv:Marketing</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#PersonalisedAdvertising">dpv:PersonalisedAdvertising</a> → 
-             <a href="#Advertising">dpv:Advertising</a> → 
-             <a href="#Marketing">dpv:Marketing</a> → 
+             <a href="#Personalisation">dpv:Personalisation</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 </tr>      
@@ -47746,13 +47752,13 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#ServicePersonalisation">dpv:ServicePersonalisation</a> → 
-             <a href="#Personalisation">dpv:Personalisation</a> → 
+             <a href="#ServiceProvision">dpv:ServiceProvision</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#ServicePersonalisation">dpv:ServicePersonalisation</a> → 
-             <a href="#ServiceProvision">dpv:ServiceProvision</a> → 
+             <a href="#Personalisation">dpv:Personalisation</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 </tr>      
@@ -52709,7 +52715,7 @@
 
 <tr>
           <th>Date Created</th>
-          <td><i>[rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), rdflib.term.Literal(&#39;2022-06-15&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;))]</i></td>
+          <td><i>[rdflib.term.Literal(&#39;2022-06-15&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;))]</i></td>
         </tr>        
        
 <tr>
@@ -54421,7 +54427,7 @@
 
 <tr>
           <th>Date Created</th>
-          <td><i>[rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), rdflib.term.Literal(&#39;2019-04-04&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;))]</i></td>
+          <td><i>[rdflib.term.Literal(&#39;2019-04-04&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;))]</i></td>
         </tr>        
 <tr>
           <th>Date Modified</th>
@@ -54429,7 +54435,7 @@
         </tr>       
 <tr>
           <th>Contributors</th>
-          <td><i>[rdflib.term.Literal(&#39;Axel Polleres, Javier Fernández, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger&#39;), rdflib.term.Literal(&#39;Harshvardhan J. Pandit&#39;)]</i></td>
+          <td><i>[rdflib.term.Literal(&#39;Harshvardhan J. Pandit&#39;), rdflib.term.Literal(&#39;Axel Polleres, Javier Fernández, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger&#39;)]</i></td>
         </tr>       
         <tr>
           <th>Documented in</th>
@@ -56031,7 +56037,7 @@
 
 <tr>
           <th>Date Created</th>
-          <td><i>[rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), rdflib.term.Literal(&#39;2022-03-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;))]</i></td>
+          <td><i>[rdflib.term.Literal(&#39;2022-03-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;))]</i></td>
         </tr>        
        
 <tr>
@@ -56175,7 +56181,7 @@
 
 <tr>
           <th>Date Created</th>
-          <td><i>[rdflib.term.Literal(&#39;2022-03-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;))]</i></td>
+          <td><i>[rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), rdflib.term.Literal(&#39;2022-03-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;))]</i></td>
         </tr>        
        
 <tr>
@@ -56310,7 +56316,7 @@
         </tr>        
 <tr>
           <th>Usage Note</th>
-          <td><i>Indicates the Entity that implements or performs a Right Exercise Activity</i></td>
+          <td><i>The use of &#39;entity&#39; is inclusive of entities (e.g. Data Processor) as well as &#39;agent&#39; (e.g. DPO). For indicating technological implementation, the property isImplementedByTechnology should be used.</i></td>
         </tr>       
        
 
@@ -56322,7 +56328,7 @@
 
 <tr>
           <th>Date Created</th>
-          <td><i>[rdflib.term.Literal(&#39;2019-05-07&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;))]</i></td>
+          <td><i>[rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), rdflib.term.Literal(&#39;2019-05-07&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;))]</i></td>
         </tr>        
 <tr>
           <th>Date Modified</th>
@@ -60079,6 +60085,8 @@
 
 <section id="contributors">
   <h2>Contributors</h2>
+  <div class="issue" title="Resolve duplicate contributors"></div>
+  <p>Former Editor(s): Axel Polleres (Vienna University of Economics and Business - until 2019-12-31)</p>
   <p>The following people have contributed to this vocabulary. The names are ordered alphabetically. The affiliations are informative do not represent formal endorsements. Affiliations may be outdated. The list is generated automatically from the contributors listed for defined concepts.</p>
   <ul>
     <li>Axel Polleres (Vienna University of Economics and Business)</li>
@@ -60125,46 +60133,56 @@
 
 <section id="serialisation-overview" class="appendix">
   <h2>DPV concepts across serialisations</h2>
-  <p>The table provides an overview of the expression of concepts across the three DPV serialisations. These may be expanded in the future, including to non-semantic-web serialisations.</p>
+  <p>The table provides an overview of the expression of concepts across the three DPV serialisations. These may be expanded in the future, including to non-semantic-web serialisations. </p>
   <table>
     <thead>
       <th>Concept</th>
-      <th>[[DPV]]</th>
-      <th>[[OWL]]</th>
+      <th>Default</th>
+      <th>OWL</th>
     </thead>
     <tbody>
       <tr>
-        <td>Concept</td>
+        <td>Semantics</td>
+        <td>[[RDF]], [[RDFS]], [[SKOS]]</td>
+        <td>[[RDF]], [[RDFS]], [[OWL]]</td>
+      </tr>
+      <tr>
+        <td>Concept/Term</td>
         </td><td><code>skos:Concept</code></td>
         <td><code>owl:Class</code></td>
       </tr>
       <tr>
-        <td>is subtype of</td>
+        <td>subtype relation</td>
         </td><td><code>skos:broader</code></td>
         <td><code>owl:subClassOf</code></td>
       </tr>
       <tr>
-        <td>is instance of</td>
+        <td>instance/type relation</td>
         </td><td><code>rdf:type</code></td>
         <td><code>rdf:type</code></td>
       </tr>
       <tr>
-        <td>has concept</td>
+        <td>relations/association</td>
         </td><td><code>rdf:Property</code></td>
         <td><code>owl:ObjectProperty</code></td>
       </tr>
       <tr>
-        <td>relationship domain</td>
+        <td>relation domain</td>
         </td><td><code>rdfs:domain</code></td>
         <td><code>rdfs:domain</code></td>
       </tr>
       <tr>
-        <td>relationship range</td>
+        <td>relation range</td>
         </td><td><code>rdfs:range</code></td>
         <td><code>rdfs:range</code></td>
       </tr>
     </tbody>
   </table>
+</section>
+
+<section id="changelog">
+  <h2>Changes from v1 to v2</h2>
+  <div class="issue" title="Statement on changes in v2"></div>
 </section>
 
 <section class="appendix" id="issue-summary"></section>

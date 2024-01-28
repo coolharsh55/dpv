@@ -14,13 +14,13 @@
    var respecConfig = {
     shortName: "dpv",
     title: "Rules",
-    subtitle: "Data Privacy Vocabulary (DPV)",
-    publishDate: "2023-11-12",
+    subtitle: "concepts in Data Privacy Vocabulary (DPV)",
+    publishDate: "2024-01-28",
     specStatus: "CG-DRAFT",
     group: "dpvcg",
     latestVersion: "https://w3id.org/dpv/modules/rules",
     canonicalUri: "https://w3id.org/dpv/modules/rules",
-    edDraftURI: "https://w3id.org/dpv/ed/dpv/modules/rules",
+    edDraftURI: "https://w3id.org/dpv/modules/rules",
     github: "w3c/dpv",
     subjectPrefix: "[dpv]",
     doJsonLd: true,
@@ -49,8 +49,8 @@
 {% endblock ABSTRACT %}
   <section id="introduction">
     <h2>Introduction</h2>
-    <blockquote>This document assumes the reader is familiar with DPV through the [[[DPV-Primer]]], and thus focuses on providing a topically structured documentation of concepts defined by DPV.</blockquote>
-
+    <blockquote>This document assumes the reader is familiar with DPV through the [[[PRIMER]]], and thus focuses on providing a topically structured documentation of concepts defined by DPV.</blockquote>
+    <div class="issue" title="Review section descriptions"></div>
     <p>DPV provides the concept [=Rule=] to specify requirements, constraints, and other forms of 'rules' that are associated with specific contexts (e.g., processing activities) using the relation [=hasRule=]. DPV provides three forms of Rules to represent [=Permission=], [=Prohibition=] and [=Obligation=], and their corresponding relations [=hasPermission=], [=hasProhibition=] and [=hasObligation=], to indicate a Rule that specifies whether something is permitted, prohibited or an obligation, respectively. DPV does not define additional semantics for rules and limits its scope and focus to provide a simple way to specify permissions, prohibitions, and obligations as common rules associated with personal data and its processing activities. For a more extensive and richer set of semantics and concepts to represent rules, DPVCG suggests looking towards other languages, such as [[ODRL]], [[SHACL]], and [[RuleML]] that have been developed with the specific goal of representing and applying rules. We welcome contributions for aligning DPV with these, and for providing guidance on how to complement DPV's rule-based concepts with external languages.</p>
   <p>In representing Rules, DPV only provides the concept and does not express any inherent semantics on what those rules mean in relation to each other. For example, DPV does not express Permission to be non-compatible or disjoint from Prohibition. This is to separate the interpretation and application of rules based on the necessities of a use-case. For example, in a legal investigation it may be prudent to specify permission and prohibition can never occur together, but this may not be true if there are different legal requirements that allow a prohibition to be resolved or deferred, such as through another permission that overrides the prohibition.</p>
   <p>DPV does not specify 'default' in relation to rules, i.e. it does not provide an interpretation of whether some rules apply automatically unless otherwise declared. For example, in declaring an instance of Personal Data Handling, the assumption is that the activities are modelled for what is happening or what is intended/planned to happen. The explicit annotation using a Permission rule adds information about whether some activity is permitted (and its associated information). Instead, if the use-case is using DPV to only document activities that are permitted, there is no need to explicitly specify the permissions. Similarly, just because something is happening or planned to happen, it cannot be assumed to be permitted (e.g., from evaluation of legal requirements). </p>
@@ -61,18 +61,22 @@
 
   <section>
     <h2>Permission</h2>
+    <div class="issue" title="Content missing - Permission"></div>
   </section>
 
   <section>
     <h2>Prohibition</h2>
+    <div class="issue" title="Content missing - Prohibition"></div>
   </section>
 
   <section>
     <h2>Obligation</h2>
+    <div class="issue" title="Content missing - Obligation"></div>
   </section>
 
   <section>
     <h2>Further Rules Modeling</h2>
+    <div class="issue" title="Content missing - Further Rules Modeling"></div>
   </section>
 
 <section>
@@ -97,6 +101,7 @@
     {{ index_concepts(module_combined, vocab_name, filter="external") }}
   </section>
 </section>
+<section class="appendix" id="issue-summary"></section>
 <script type="text/javascript" src="../../media/common.js" defer></script>
 </body>
 </html>

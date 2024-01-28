@@ -8,20 +8,19 @@ SHACL validation tests
 # Path to data files to be validated.
 # Only the .ttl files are included for convenience in debugging.
 DATA_PATHS = [
+    '../dpv/dpv.ttl',
     '../pd/pd.ttl',
     '../loc/loc.ttl',
-    '../rights/eu/rights-eu.ttl',
-    '../legal/us/legal-us.ttl',
     '../legal/legal.ttl',
+    '../legal/us/legal-us.ttl',
     '../legal/gb/legal-gb.ttl',
     '../legal/de/legal-de.ttl',
     '../legal/ie/legal-ie.ttl',
-    '../legal/eu/gdpr/eu-gdpr.ttl',
-    '../legal/eu/rights/eu-rights.ttl',
-    '../legal/eu/dga/eu-dga.ttl',
     '../legal/eu/legal-eu.ttl',
+    '../legal/eu/gdpr/eu-gdpr.ttl',
+    '../legal/eu/dga/eu-dga.ttl',
+    '../legal/eu/rights/eu-rights.ttl',
     '../tech/tech.ttl',
-    '../dpv/dpv.ttl',
     '../risk/risk.ttl',
 ]
 
@@ -54,9 +53,11 @@ conforms, results_graph, results_text = validate(
 # Parse results.
 # If graph conforms, exit.
 if conforms:
-    print('Validation tests passed')
+    print('Validation PASSED')
     import sys
     sys.exit(0)
+else:
+    print('Validation FAILED')
 
 # Load namespaces into the graph so that outputs are
 # convenient to handle e.g. dpv:Concept
@@ -126,3 +127,6 @@ with open(OUTPUT_FILE, 'w') as fd:
     template = template_env.get_template('validation.jinja2')
     with open(f'{OUTPUT_FILE}', 'w+') as fd:
         fd.write(template.render(data=vocabs))
+
+import sys
+sys.exit(1)

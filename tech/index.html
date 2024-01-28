@@ -2,20 +2,20 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>TECH Extension</title>
+  <title>Technology Concepts</title>
   <script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove" defer></script>
   <script class="remove">
    // All config options at https://respec.org/docs/ 
    var respecConfig = {
     shortName: "tech",
-    title: "TECH Extension",
-    subtitle: "Data Privacy Vocabulary (DPV)",
-    publishDate: "2023-11-13",
+    title: "Technology Concepts",
+    subtitle: "extending Data Privacy Vocabulary (DPV)",
+    publishDate: "2024-01-28",
     specStatus: "CG-DRAFT",
     group: "dpvcg",
     latestVersion: "https://w3id.org/dpv/tech",
     canonicalUri: "https://w3id.org/dpv/tech",
-    edDraftURI: "https://w3id.org/dpv/ed/tech",
+    edDraftURI: "https://w3id.org/dpv/tech",
     github: "w3c/dpv",
     subjectPrefix: "[tech]",
     doJsonLd: true,
@@ -234,6 +234,14 @@
     "href": "https://www.w3.org/TR/shacl-ucr/",
     "title": "SHACL Use Cases and Requirements"
   },
+  "SHACL": {
+    "href": "https://www.w3.org/TR/shacl",
+    "title": "Shape and Contraint Language (SHACL)"
+  },
+  "ODRL": {
+    "href": "https://www.w3.org/TR/odrl-model/",
+    "title": "Open Digital Rights Language (ODRL) Model"
+  },
   "DCT": {
     "title": "DCMI Metadata Terms (DCT)",
     "href": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/"
@@ -313,8 +321,9 @@
   </section>
   <section id="overview">
     <h2>Overview of Concepts</h2>
+    <div class="issue" title="Review section descriptions"></div>
     <figure>
-      <img src="img/overview.png">
+      <img src="/media/tech-overview.png">
       <figcaption>Overview of concepts in DPV-TECH</figcaption>
     </figure>
     <p>This section provides an introduction and overview of the concepts within the DPV-TECH extension, with the <a href="#vocab">Section on Taxonomy</a> providing a formal listing of all concepts.</p>
@@ -355,6 +364,9 @@
     </section>
     <section id="overview-communication">
       <h3>Communication used by Technologies</h3>
+      <div class="issue" title="Fix missing concepts e.g. GPS -> GPSCommunication"></div>
+      <div class="issue" title="Fix incorrect parents e.g. BluetoothCommunication -> NetworkingCommunication"></div>
+      <div class="issue" title="Fix missing concept e.g. LocalStorage does not exist"></div>
       <p>Communication mediums or mechanism used by technology include:</p>
       <ul>
         <li>[=GPS=] or the location providing Global Positioning System or its equivalent technologies.</li>
@@ -395,6 +407,7 @@
   
   <section id="vocab">
     <h2>Core Concepts</h2>
+    <div class="issue" title="Content missing - Core Concepts"></div>
 
     <div class="list-hierarchy"><ul class="concept-list">
   <li>
@@ -476,6 +489,7 @@
 
   <section id="data">
     <h2>Data Tech</h2>
+    <div class="issue" title="Content missing - Data Tech"></div>
 
     <div class="list-hierarchy"><ul class="concept-list">
   <li>
@@ -567,6 +581,7 @@
 
   <section id="ops">
     <h2>Operational Tech</h2>
+    <div class="issue" title="Content missing - Operational Tech"></div>
 
     <div class="list-hierarchy"><ul class="concept-list">
   <li>
@@ -601,6 +616,7 @@
 
   <section id="security">
     <h2>Security Tech</h2>
+    <div class="issue" title="Content missing - Security Tech"></div>
 
     <div class="list-hierarchy"><ul class="concept-list">
   <li>
@@ -656,6 +672,7 @@
 
   <section id="surveillance">
     <h2>Surveillance Types</h2>
+    <div class="issue" title="Content missing - Surveillance Types"></div>
 
     <div class="list-hierarchy"><ul class="concept-list">
   <li>
@@ -680,6 +697,7 @@
 
   <section id="provision">
     <h2>Provision Method</h2>
+    <div class="issue" title="Content missing - Provision Method"></div>
 
     <div class="list-hierarchy"><ul class="concept-list">
   <li>
@@ -734,6 +752,7 @@
 
   <section id="actors">
     <h2>Actors</h2>
+    <div class="issue" title="Content missing - Actors"></div>
 
     <div class="list-hierarchy"><ul class="concept-list">
   <li>
@@ -768,6 +787,7 @@
 
   <section id="comms">
     <h2>Communication Methods</h2>
+    <div class="issue" title="Content missing - Communication Methods"></div>
 
     <div class="list-hierarchy"><ul class="concept-list">
   <li>
@@ -817,6 +837,7 @@
 
   <section id="tools">
     <h2>Tools</h2>
+    <div class="issue" title="Content missing - Tools"></div>
 
     <div class="list-hierarchy"><ul class="concept-list">
   <li>
@@ -1802,12 +1823,12 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#ManagementTechnology">tech:ManagementTechnology</a> → 
+          <td>             <a href="#DataTechnology">tech:DataTechnology</a> → 
              <a href="https://w3id.org/dpv#Technology">dpv:Technology</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#DataTechnology">tech:DataTechnology</a> → 
+          <td>             <a href="#ManagementTechnology">tech:ManagementTechnology</a> → 
              <a href="https://w3id.org/dpv#Technology">dpv:Technology</a>
 </td>
 </tr>      
@@ -4142,13 +4163,13 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DataManagementTechnology">tech:DataManagementTechnology</a> → 
-             <a href="#ManagementTechnology">tech:ManagementTechnology</a> → 
+             <a href="#DataTechnology">tech:DataTechnology</a> → 
              <a href="https://w3id.org/dpv#Technology">dpv:Technology</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#DataManagementTechnology">tech:DataManagementTechnology</a> → 
-             <a href="#DataTechnology">tech:DataTechnology</a> → 
+             <a href="#ManagementTechnology">tech:ManagementTechnology</a> → 
              <a href="https://w3id.org/dpv#Technology">dpv:Technology</a>
 </td>
 </tr>      

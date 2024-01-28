@@ -14,13 +14,13 @@
    var respecConfig = {
     shortName: "dpv",
     title: "Context",
-    subtitle: "Data Privacy Vocabulary (DPV)",
-    publishDate: "2023-11-12",
+    subtitle: "concepts in Data Privacy Vocabulary (DPV)",
+    publishDate: "2024-01-28",
     specStatus: "CG-DRAFT",
     group: "dpvcg",
     latestVersion: "https://w3id.org/dpv/modules/context",
     canonicalUri: "https://w3id.org/dpv/modules/context",
-    edDraftURI: "https://w3id.org/dpv/ed/dpv/modules/context",
+    edDraftURI: "https://w3id.org/dpv/modules/context",
     github: "w3c/dpv",
     subjectPrefix: "[dpv]",
     doJsonLd: true,
@@ -49,8 +49,8 @@
 {% endblock ABSTRACT %}
   <section id="introduction">
     <h2>Introduction</h2>
-    <blockquote>This document assumes the reader is familiar with DPV through the [[[DPV-Primer]]], and thus focuses on providing a topically structured documentation of concepts defined by DPV.</blockquote>
-
+    <blockquote>This document assumes the reader is familiar with DPV through the [[[PRIMER]]], and thus focuses on providing a topically structured documentation of concepts defined by DPV.</blockquote>
+    <div class="issue" title="Review section descriptions"></div>
     <figure>
     <img src="../../media/Context.png">
     <figcaption></figcaption>
@@ -110,7 +110,7 @@
   <p>To represent location, the concept [=Location=] along with relations [=hasLocation=] is provided. For geo-political locations, the concepts such as [=Country=] and [=SupraNationalUnion=] are subtyped, with [=hasCountry=] and [=ThirdCountry=] with [=hasThirdCountry=] provided for convenience in common uses (e.g. data storage, transfers).</p>
   <p>To define contextual location concepts, such as there being several locations, or that the location is 'local' to an event, DPV provides two concepts. [=LocationFixture=] specifies whether the location is 'fixed' or 'deterministic', with subtypes for <i>fixed single</i>, <i>fixed multiple</i>, and <i>variable</i> locations. [=LocationLocality=] specifies whether the location is 'local' within the context, with subtypes for <i>local</i>, <i>remote</i>, <i>within a device</i>, or <i>in cloud</i>.</p>
   <p>To represent locations as jurisdictions, the relation [=hasJurisdiction=] is provided. The concept [=Law=] represents an official or authoritative law or regulation created by a government or an authority. To indicate applicability of laws within a jurisdiction, the relation [=hasApplicableLaw=] is provided.</p>
-  <p>The [[[DPV-LEGAL]]] provides taxonomies extending these concepts, such as to represent specific countries, their laws, authorities, memberships, adequacy decisions, and other information.</p>
+  <p>[[[LEGAL]]] provides taxonomies extending these concepts, such as to represent specific countries, their laws, authorities, memberships, adequacy decisions, and other information.</p>
 
   {{ list_hierarchy(modules['context-jurisdiction']['classes']) }}
 </section>
@@ -137,6 +137,7 @@
     {{ index_concepts(module_combined, vocab_name, filter="external") }}
   </section>
 </section>
+<section class="appendix" id="issue-summary"></section>
 <script type="text/javascript" src="../../media/common.js" defer></script>
 </body>
 </html>

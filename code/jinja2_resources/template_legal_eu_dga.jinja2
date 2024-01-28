@@ -69,19 +69,21 @@
 {% block INTRODUCTION %}
   <section id="motivation">
     <h2>Introduction</h2>
-    
+    <div class="issue" title="Content missing - Introduction"></div>
   </section>
 {% endblock INTRODUCTION %}
 {% block VOCAB %}
 
     <section id="vocab-entities">
     <h2>Entities</h2>
+    <div class="issue" title="Content missing - Entities"></div>
     
     {{ list_hierarchy(modules['entities']['classes']) }}
   </section>
 
     <section id="vocab-legal-basis-DGA">
-    <h3>Legal Bases</h3>
+    <h2>Legal Bases</h2>
+    <div class="issue" title="Content missing - Legal Bases"></div>
     {{ list_hierarchy(modules['legal_basis']['classes']) }}
     </section>
 
@@ -95,24 +97,28 @@
 
   <section id="vocab-services">
     <h2>Services</h2>
+    <div class="issue" title="Content missing - Services"></div>
     
     {{ list_hierarchy(modules['services']['classes']) }}
   </section>
 
   <section id="vocab-registers">
     <h2>Registers</h2>
+    <div class="issue" title="Content missing - Registers"></div>
     
     {{ list_hierarchy(modules['registers']['classes']) }}
   </section>
 
   <section id="vocab-toms">
     <h2>Tech/Org Measures</h2>
+    <div class="issue" title="Content missing - Tech/Org Measures"></div>
     
     {{ list_hierarchy(modules['toms']['classes']) }}
   </section>
 
   <section id="vocabulary">
 <h2>Vocabulary Index</h2>
+  <div class="issue" title="Content missing - parent missing SIP - should be SingleInformationPoint"></div>
   <section id="dpv-classes">
     {{ index_concepts(vocab, vocab_name, filter="classes") }}
   </section>

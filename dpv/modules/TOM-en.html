@@ -9,13 +9,13 @@
    var respecConfig = {
     shortName: "dpv",
     title: "Technical & Organisational Measures (TOMs)",
-    subtitle: "Data Privacy Vocabulary (DPV)",
-    publishDate: "2023-11-12",
+    subtitle: "concepts in Data Privacy Vocabulary (DPV)",
+    publishDate: "2024-01-28",
     specStatus: "CG-DRAFT",
     group: "dpvcg",
     latestVersion: "https://w3id.org/dpv/modules/context",
     canonicalUri: "https://w3id.org/dpv/modules/context",
-    edDraftURI: "https://w3id.org/dpv/ed/dpv/modules/context",
+    edDraftURI: "https://w3id.org/dpv/modules/context",
     github: "w3c/dpv",
     subjectPrefix: "[dpv]",
     doJsonLd: true,
@@ -212,6 +212,14 @@
     "href": "https://www.w3.org/TR/shacl-ucr/",
     "title": "SHACL Use Cases and Requirements"
   },
+  "SHACL": {
+    "href": "https://www.w3.org/TR/shacl",
+    "title": "Shape and Contraint Language (SHACL)"
+  },
+  "ODRL": {
+    "href": "https://www.w3.org/TR/odrl-model/",
+    "title": "Open Digital Rights Language (ODRL) Model"
+  },
   "DCT": {
     "title": "DCMI Metadata Terms (DCT)",
     "href": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/"
@@ -284,8 +292,8 @@
     </section>
   <section id="introduction">
     <h2>Introduction</h2>
-    <blockquote>This document assumes the reader is familiar with DPV through the [[[DPV-Primer]]], and thus focuses on providing a topically structured documentation of concepts defined by DPV.</blockquote>
-
+    <blockquote>This document assumes the reader is familiar with DPV through the [[[PRIMER]]], and thus focuses on providing a topically structured documentation of concepts defined by DPV.</blockquote>
+    <div class="issue" title="Review section descriptions"></div>
   <figure>
     <a href="../../media/techorgmeasures-2.png" target="_blank">
       <img title="Overview of Technical & Organisational Measures taxonomy in DPV" src="../../media/techorgmeasures-2.png">
@@ -728,6 +736,7 @@
 
     <section>
       <h3>Access Control</h3>
+      <div class="issue" title="Content missing - Access Control"></div>
         <aside class="example" title="Protecting data using encryption and access control">
     <p>To indicate data is encrypted using the <a href="https://en.wikipedia.org/wiki/RSA_(cryptosystem)">Rivest-Shamir-Adleman (RSA) method</a>, one would extend the <a href="https://www.w3id.org/dpv#Encryption"><code>Encryption</code></a> concept within DPV to represent <code>RSA</code>, and then instantiate it with the specific implementation used (e.g. to indicate key size). Access to this data is further restricted by requiring a password or credential.</p>
     <pre><code>ex:RSAEncryption rdf:type dpv:TechnicalMeasure ;
@@ -747,26 +756,32 @@ link: <a href="E0016.ttl">source file</a>;      contributor(s): Harsh (2022-10-1
 
     <section>
       <h3>Authentication</h3>
+      <div class="issue" title="Content missing - Authentication"></div>
     </section>
 
     <section>
       <h3>Cryptographic Methods</h3>
+      <div class="issue" title="Content missing - Cryptographic Methods"></div>
     </section>
 
     <section>
       <h3>Data Backup</h3>
+      <div class="issue" title="Content missing - Data Backup"></div>
     </section>
 
     <section>
       <h3>Sanitisation/Anonymisation</h3>
+      <div class="issue" title="Content missing - Sanitisation/Anonymisation"></div>
     </section>
 
     <section>
       <h3>Encryption</h3>
+      <div class="issue" title="Content missing - Encryption"></div>
     </section>
 
     <section>
       <h3>Security</h3>
+      <div class="issue" title="Content missing - Security"></div>
     </section>
   </section>
   
@@ -1171,51 +1186,63 @@ link: <a href="E0016.ttl">source file</a>;      contributor(s): Harsh (2022-10-1
 
   <section>
       <h3>Assessments</h3>
+      <div class="issue" title="Content missing - Assessments"></div>
     </section>
 
     <section>
       <h3>Consultations</h3>
+      <div class="issue" title="Content missing - Consultations"></div>
     </section>
 
     <section>
       <h3>Governance Procedures</h3>
+      <div class="issue" title="Content missing - Governance Procedures"></div>
     </section>
 
     <section>
       <h3>Guidelines/Codes of Conduct</h3>
+      <div class="issue" title="Content missing - Guidelines/Codes of Conduct"></div>
     </section>
 
     <section>
       <h3>Legal Agreements/Contracts</h3>
+      <div class="issue" title="Content missing - Legal Agreements/Contracts"></div>
     </section>
 
     <section>
       <h3>Notices</h3>
+      <div class="issue" title="Content missing - Notices"></div>
     </section>
 
     <section>
       <h3>Policies</h3>
+      <div class="issue" title="Content missing - Policies"></div>
     </section>
 
     <section>
       <h3>Record Keeping</h3>
+      <div class="issue" title="Content missing - Record Keeping"></div>
     </section>
 
     <section>
       <h3>Security Procedures</h3>
+      <div class="issue" title="Content missing - Security Procedures"></div>
     </section>
 
     <section>
       <h3>Staff Training</h3>
+      <div class="issue" title="Content missing - Staff Training"></div>
     </section>
 </section>
 
   <section>
     <h2>Legal Measures</h2>
+    <div class="issue" title="Content missing - Legal Measures"></div>
   </section>
 
   <section>
     <h2>Physical Measures</h2>
+    <div class="issue" title="Content missing - Physical Measures"></div>
   </section>
 
 <section>
@@ -10015,13 +10042,13 @@ link: <a href="E0016.ttl">source file</a>;      contributor(s): Harsh (2022-10-1
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#SecurityProcedure">dpv:SecurityProcedure</a> → 
+          <td>             <a href="#Policy">dpv:Policy</a> → 
              <a href="#OrganisationalMeasure">dpv:OrganisationalMeasure</a> → 
              <a href="#TechnicalOrganisationalMeasure">dpv:TechnicalOrganisationalMeasure</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#Policy">dpv:Policy</a> → 
+          <td>             <a href="#SecurityProcedure">dpv:SecurityProcedure</a> → 
              <a href="#OrganisationalMeasure">dpv:OrganisationalMeasure</a> → 
              <a href="#TechnicalOrganisationalMeasure">dpv:TechnicalOrganisationalMeasure</a>
 </td>
@@ -14030,7 +14057,7 @@ link: <a href="E0016.ttl">source file</a>;      contributor(s): Harsh (2022-10-1
 
   </section>
 </section>
-
+<section class="appendix" id="issue-summary"></section>
 <script type="text/javascript" src="../../media/common.js" defer></script>
 </body>
 </html>

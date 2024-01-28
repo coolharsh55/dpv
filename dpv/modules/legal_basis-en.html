@@ -9,13 +9,13 @@
    var respecConfig = {
     shortName: "dpv",
     title: "Legal Basis",
-    subtitle: "Data Privacy Vocabulary (DPV)",
-    publishDate: "2023-11-12",
+    subtitle: "concepts in Data Privacy Vocabulary (DPV)",
+    publishDate: "2024-01-28",
     specStatus: "CG-DRAFT",
     group: "dpvcg",
     latestVersion: "https://w3id.org/dpv/modules/legal_basis",
     canonicalUri: "https://w3id.org/dpv/modules/legal_basis",
-    edDraftURI: "https://w3id.org/dpv/ed/dpv/modules/legal_basis",
+    edDraftURI: "https://w3id.org/dpv/modules/legal_basis",
     github: "w3c/dpv",
     subjectPrefix: "[dpv]",
     doJsonLd: true,
@@ -212,6 +212,14 @@
     "href": "https://www.w3.org/TR/shacl-ucr/",
     "title": "SHACL Use Cases and Requirements"
   },
+  "SHACL": {
+    "href": "https://www.w3.org/TR/shacl",
+    "title": "Shape and Contraint Language (SHACL)"
+  },
+  "ODRL": {
+    "href": "https://www.w3.org/TR/odrl-model/",
+    "title": "Open Digital Rights Language (ODRL) Model"
+  },
   "DCT": {
     "title": "DCMI Metadata Terms (DCT)",
     "href": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/"
@@ -284,8 +292,8 @@
     </section>
   <section id="introduction">
     <h2>Introduction</h2>
-    <blockquote>This document assumes the reader is familiar with DPV through the [[[DPV-Primer]]], and thus focuses on providing a topically structured documentation of concepts defined by DPV.</blockquote>
-
+    <blockquote>This document assumes the reader is familiar with DPV through the [[[PRIMER]]], and thus focuses on providing a topically structured documentation of concepts defined by DPV.</blockquote>
+    <div class="issue" title="Review section descriptions"></div>
   <figure>
     <img src="../../media/legal_bases.png">
     <figcaption>Legal Bases in DPV</figcaption>
@@ -294,7 +302,7 @@
 
   <p>When declaring a legal basis, it is important to denote under what law or jurisdiction that legal basis applies. For instance, using [=Consent=] as a legal basis has different obligations and requirements in EU (i.e. [[GDPR]]) as compared to other jurisdictions. Therefore, unless the information is to be implicitly interpreted through some specific legal lens or jurisdictional law, DPV recommends indicating the specific law or legal clause associated with the legal basis so as to scope its interpretation. This can be done using the relation [=hasJurisdiction=] or [=hasApplicableLaw=].</p>
 
-  <p>For GDPR, DPVCG provides the [[[DPV-GDPR]]] which defines the legal bases within [[GDPR]] by extending them from relevant concepts within the DPV. We welcome similar contributions for extending the GDPR extension as well as creating extensions for other laws and domains.</p>
+  <p>For GDPR, DPVCG provides the [[[EU-GDPR]]] which defines the legal bases within [[GDPR]] by extending them from relevant concepts within the DPV. We welcome similar contributions for extending the GDPR extension as well as creating extensions for other laws and domains.</p>
   
   <div class="list-hierarchy"><ul class="concept-list">
   <li>
@@ -414,10 +422,12 @@
 
   <section id="desc-contract">
     <h3>Contract</h3>
+    <div class="issue" title="Content missing - Contract"></div>
   </section>
 
   <section id="desc-legal-obligation">
     <h3>Legal Obligation</h3>
+    <div class="issue" title="Content missing - Legal Obligation"></div>
   </section>
 
   <section id="desc-consent">
@@ -435,13 +445,13 @@
     </ul>
     <p>To indicate the duration or validity of a given consent instance, the existing contextual relation [=hasDuration=] along with specific forms of [=Duration=] can be used. For example, to indicate consent is valid until a specific event such as account closure, the duration subtype [=UntilEventDuration=] can be used with additional instantiation or annotation to indicate more details about the event (in this case the closure of account). Similarly, [=UntilTimeDuration=] indicates validity until a specific time instance or timestamp (e.g. 31 December 2022), and [=TemporalDuration=] indicates a relative time duration (e.g. 6 months). To indicate validity without an end condition, [=EndlessDuration=] can be used.</p>
     <p>To specify consent provided by delegation, such as in the case of a parent or guardian providing consent for/with a child, the [=isIndicatedBy=] relation can be used to associate the parent or guardian responsible for providing consent (or its affirmation). Since by default the consent is presumed to be provided by the individual, when such individuals are associated with their consent, i.e. through [=hasDataSubject=], the additional information provided by [=isIndicatedBy=] can be considered redundant and is often omitted.</p>
-    <div class="note" title="Deprecated concepts">
-        <p>The concepts/relations for consent added in DPV v0.1 and later have been <i>deprecated</i> or removed from the DPV in favour of the newer set of concepts based on advances in legislative requirements as well as standardisation efforts such as [[[ISO-27560]]]. The list of deprecated concepts is provided in <a href="#appendix-deprecated">Appendix</a> and a note on converting existing implementations to use newer concepts is provided in [[DPV-GUIDE-Consent]].</p>
-     </div>
+    <div class="issue" title="Content missing - Consent usage and examples"></div>
+    <div class="issue" title="Content missing - Link to ISO 27560"></div>
     <div class="list-hierarchy"></div>
 
     <section id="vocab-consent-types">
       <h4>Consent Types</h4>
+      <div class="issue" title="Content missing - Consent Types"></div>
       <div class="list-hierarchy"><ul class="concept-list">
   <li>
     <strong>dpv:Consent</strong>: Consent of the Data Subject for specified processing 
@@ -481,6 +491,7 @@
 
     <section id="vocab-consent-status">
       <h4>Consent Status</h4>
+      <div class="issue" title="Content missing - Consent Status"></div>
       <div class="list-hierarchy"><ul class="concept-list">
   <li>
     <strong>dpv:Status</strong>: The status or state of something 
@@ -563,22 +574,27 @@
 
   <section id="desc-legitimate-interest">
     <h3>Legitimate Interest</h3>
+    <div class="issue" title="Content missing - Legitimate Interest"></div>
   </section>
 
   <section id="desc-official-authority">
     <h3>Official Authority</h3>
+    <div class="issue" title="Content missing - Official Authority"></div>
   </section>
 
   <section id="desc-public-interest">
     <h3>Public Interest</h3>
+    <div class="issue" title="Content missing - Public Interest"></div>
   </section>
 
   <section id="desc-vital-interest">
     <h3>Protecting Vital Interests</h3>
+    <div class="issue" title="Content missing - Protecting Vital Interest"></div>
   </section>
 
 <section>
   <h2>Vocabulary Index</h2>
+  <div class="issue" title="Missing concepts for terms defined in main vocabulary e.g. dpv:Context"></div>
   <section id="classes">
     <h3>Classes</h3>      
       
@@ -4398,7 +4414,7 @@
 
   </section>
 </section>
-
+<section class="appendix" id="issue-summary"></section>
 <script type="text/javascript" src="../../media/common.js" defer></script>
 </body>
 </html>

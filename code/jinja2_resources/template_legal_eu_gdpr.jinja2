@@ -136,6 +136,7 @@
 {% block INTRODUCTION %}
   <section id="motivation">
     <h2>Introduction</h2>
+    <div class="issue" title="Review section descriptions"></div>
     <p>The Data Privacy Vocabulary (DPV) provides terms to annotate and categorise instances of legally compliant personal data handling. In particular, the vocabulary provides <code>LegalBasis</code> and <code>DataSubjectRight</code> as top-level concepts representing the various legal bases for justifying processing of personal data and rights provided to the data subject respectively. Since these concepts are specifically defined within the scope of jurisdictional laws, their implementation is provided as a separate vocabulary that extends the DPV, thereby permitting continued usage of DPV as a jurisdiction-agnostic and generic vocabulary.</p>
     <p>The DPV-GDPR vocabulary extends the concepts within DPV regarding <a href="#vocab-legal-basis">legal bases</a>, <a href="#vocab-rights">data subject rights</a>, <a href="#vocab-data-transfers">data transfer tools</a>, <a href="#vocab-DPIA">data protection impact assessment (DPIA)</a>, and <a href="#vocab-compliance">compliance</a>, and provides a compatible extension to be used in combination with the DPV to represent GDPR-specific information.</p>
   </section>
@@ -172,7 +173,7 @@
   <section id="vocab-rights">
     <h2>Rights under GDPR</h2>
     <p>GDPR provides several rights to the data subject, whose applicability depends on the context and nature of processing taking place. DPV lists these rights at an abstract level as concepts along with their origin in specific clauses of the GDPR.</p>
-    <p>In addition to DPV's concepts regarding exercise of rights, DPV-GDPR provides additional concepts specific to the implementation of its rights. For example, [=SARNotice=] refers to the information provided in fulfilment of [=A15=] Right of Access, or using <a href="#rights-dcat:Resource"><code>dcat:Resource</code></a> to represent the dataset provided in fulfilment of [=A20=] Right to Data Portability.</p>
+    <p>In addition to DPV's concepts regarding exercise of rights, DPV-GDPR provides additional concepts specific to the implementation of its rights. For example, [=SARNotice=] refers to the information provided in fulfilment of [=A15=] Right of Access, or using [=dcat:Resource=] to represent the dataset provided in fulfilment of [=A20=] Right to Data Portability.</p>
 
     {{ list_hierarchy(modules['rights']['classes']) }}
   </section>
@@ -222,11 +223,11 @@
       <li>Conducting the DPIA to identify risks and impacts: the activity is [=DPIAProcedure=] and its output is denoted using [=DPIARiskStatus=]</li>
       <li>Determining the outcome based on risk mitigation: the activity is [=DPIAOutcome=] and its output is denoted using [=DPIAOutcomeStatus=]</li>
       <li>Determining whether processing should be permitted to continue or be carried out, with the outcome being denote using [=DPIAProcessingRecommendation=]</li>
-      <li>Assessing whether processing is carried out in conformance with the DPIA, with the outcome being denoted using [=DPIAConformity]</li>
+      <li>Assessing whether processing is carried out in conformance with the DPIA, with the outcome being denoted using [=DPIAConformity=]</li>
     </ol>
-    <p>In addition to DPV's concepts for representing information about processing of personal data, DPV-GDPR also recommends using [[[DCT]]] concepts to represent <a href="#dpia-properties">relevant metadata</a>, such as dates, identifiers, validity, etc.</p>
+    <p>In addition to DPV's concepts for representing information about processing of personal data, DPV-GDPR also recommends using [[[DCT]]] concepts to represent <a href="#external-concepts">relevant metadata</a>, such as dates, identifiers, validity, etc.</p>
     <div class="note" title="Guidance on documenting DPIAs using DPV and DPV-GDPR">
-      <p>The DPVCG is working on updating the [[[DPV-GUIDE-GDPR-DPIA]]] based on recent updates in DPV and DPV-GDPR. In addition to these, we are also working on providing concepts for expressing impacts and risk management within [[[RISK]]].</p>
+      <p>The DPVCG is working on updating the [[[GUIDE-GDPR-DPIA]]] based on recent updates in DPV and DPV-GDPR. In addition to these, we are also working on providing concepts for expressing impacts and risk management within [[[RISK]]].</p>
     </div>
 
     {{ list_hierarchy(modules['dpia']['classes']) }}

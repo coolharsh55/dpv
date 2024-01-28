@@ -9,13 +9,13 @@
    var respecConfig = {
     shortName: "dpv",
     title: "Purposes",
-    subtitle: "Data Privacy Vocabulary (DPV)",
-    publishDate: "2023-11-12",
+    subtitle: "concepts in Data Privacy Vocabulary (DPV)",
+    publishDate: "2024-01-28",
     specStatus: "CG-DRAFT",
     group: "dpvcg",
     latestVersion: "https://w3id.org/dpv/modules/purposes",
     canonicalUri: "https://w3id.org/dpv/modules/purposes",
-    edDraftURI: "https://w3id.org/dpv/ed/dpv/modules/purposes",
+    edDraftURI: "https://w3id.org/dpv/modules/purposes",
     github: "w3c/dpv",
     subjectPrefix: "[dpv]",
     doJsonLd: true,
@@ -212,6 +212,14 @@
     "href": "https://www.w3.org/TR/shacl-ucr/",
     "title": "SHACL Use Cases and Requirements"
   },
+  "SHACL": {
+    "href": "https://www.w3.org/TR/shacl",
+    "title": "Shape and Contraint Language (SHACL)"
+  },
+  "ODRL": {
+    "href": "https://www.w3.org/TR/odrl-model/",
+    "title": "Open Digital Rights Language (ODRL) Model"
+  },
   "DCT": {
     "title": "DCMI Metadata Terms (DCT)",
     "href": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/"
@@ -284,8 +292,8 @@
     </section>
   <section id="introduction">
     <h2>Introduction</h2>
-    <blockquote>This document assumes the reader is familiar with DPV through the [[[DPV-Primer]]], and thus focuses on providing a topically structured documentation of concepts defined by DPV.</blockquote>
-
+    <blockquote>This document assumes the reader is familiar with DPV through the [[[PRIMER]]], and thus focuses on providing a topically structured documentation of concepts defined by DPV.</blockquote>
+    <div class="issue" title="Review section descriptions"></div>
   <figure>
     <a href="../../media/purpose-2.png" target="_blank">
       <img title="Overview of Purpose taxonomy in DPV" src="../../media/purpose-2.png">
@@ -773,38 +781,47 @@
 
   <section id="desc-purpose-guidelines">
     <h2>Guidelines on Purposes</h2>
+    <div class="issue" title="Content missing - Guidelines on Purposes"></div>
   </section>
 
   <section id="desc-service-provision">
     <h2>Service Provision</h2>
+    <div class="issue" title="Content missing - Service Provision"></div>
   </section>
 
   <section id="desc-legal-obligation">
     <h2>Legal Obligation/Compliance</h2>
+    <div class="issue" title="Content missing - Legal Obligation/Compliance"></div>
   </section>
 
   <section id="desc-marketing">
     <h2>Marketing</h2>
+    <div class="issue" title="Content missing - Marketing"></div>
   </section>
 
   <section id="desc-personalisation">
     <h2>Personalisation</h2>
+    <div class="issue" title="Content missing - Personalisation"></div>
   </section>
 
   <section id="desc-maintaining-security">
     <h2>Maintaining Security</h2>
+    <div class="issue" title="Content missing - Maintaining Security"></div>
   </section>
 
   <section id="desc-communication">
     <h2>Communication</h2>
+    <div class="issue" title="Content missing - Communication"></div>
   </section>
 
   <section id="desc-organisation-governance">
     <h2>Organisational Governance</h2>
+    <div class="issue" title="Content missing - Organisational Governance"></div>
   </section>
 
   <section id="desc-sector">
     <h2>Sector of Operation</h2>
+    <div class="issue" title="Content missing - Sector of Operation"></div>
   </section>
 
 <section>
@@ -1232,13 +1249,13 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#CommunicationManagement">dpv:CommunicationManagement</a> → 
+          <td>             <a href="#CustomerCare">dpv:CustomerCare</a> → 
+             <a href="#CustomerManagement">dpv:CustomerManagement</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#CustomerCare">dpv:CustomerCare</a> → 
-             <a href="#CustomerManagement">dpv:CustomerManagement</a> → 
+          <td>             <a href="#CommunicationManagement">dpv:CommunicationManagement</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 </tr>      
@@ -4406,13 +4423,13 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#Personalisation">dpv:Personalisation</a> → 
+          <td>             <a href="#Advertising">dpv:Advertising</a> → 
+             <a href="#Marketing">dpv:Marketing</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#Advertising">dpv:Advertising</a> → 
-             <a href="#Marketing">dpv:Marketing</a> → 
+          <td>             <a href="#Personalisation">dpv:Personalisation</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 </tr>      
@@ -4492,13 +4509,13 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#ServicePersonalisation">dpv:ServicePersonalisation</a> → 
-             <a href="#Personalisation">dpv:Personalisation</a> → 
+             <a href="#ServiceProvision">dpv:ServiceProvision</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#ServicePersonalisation">dpv:ServicePersonalisation</a> → 
-             <a href="#ServiceProvision">dpv:ServiceProvision</a> → 
+             <a href="#Personalisation">dpv:Personalisation</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 </tr>      
@@ -4812,14 +4829,14 @@
           <th>Broader/Parent types</th>
           <td>             <a href="#ProvidePersonalisedRecommendations">dpv:ProvidePersonalisedRecommendations</a> → 
              <a href="#ServicePersonalisation">dpv:ServicePersonalisation</a> → 
-             <a href="#Personalisation">dpv:Personalisation</a> → 
+             <a href="#ServiceProvision">dpv:ServiceProvision</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#ProvidePersonalisedRecommendations">dpv:ProvidePersonalisedRecommendations</a> → 
              <a href="#ServicePersonalisation">dpv:ServicePersonalisation</a> → 
-             <a href="#ServiceProvision">dpv:ServiceProvision</a> → 
+             <a href="#Personalisation">dpv:Personalisation</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 </tr>      
@@ -4902,13 +4919,13 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#ServicePersonalisation">dpv:ServicePersonalisation</a> → 
-             <a href="#Personalisation">dpv:Personalisation</a> → 
+             <a href="#ServiceProvision">dpv:ServiceProvision</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#ServicePersonalisation">dpv:ServicePersonalisation</a> → 
-             <a href="#ServiceProvision">dpv:ServiceProvision</a> → 
+             <a href="#Personalisation">dpv:Personalisation</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 </tr>      
@@ -4995,14 +5012,14 @@
           <th>Broader/Parent types</th>
           <td>             <a href="#ProvidePersonalisedRecommendations">dpv:ProvidePersonalisedRecommendations</a> → 
              <a href="#ServicePersonalisation">dpv:ServicePersonalisation</a> → 
-             <a href="#Personalisation">dpv:Personalisation</a> → 
+             <a href="#ServiceProvision">dpv:ServiceProvision</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#ProvidePersonalisedRecommendations">dpv:ProvidePersonalisedRecommendations</a> → 
              <a href="#ServicePersonalisation">dpv:ServicePersonalisation</a> → 
-             <a href="#ServiceProvision">dpv:ServiceProvision</a> → 
+             <a href="#Personalisation">dpv:Personalisation</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 </tr>      
@@ -6133,12 +6150,12 @@
        
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#Personalisation">dpv:Personalisation</a> → 
+          <td>             <a href="#ServiceProvision">dpv:ServiceProvision</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
-          <td>             <a href="#ServiceProvision">dpv:ServiceProvision</a> → 
+          <td>             <a href="#Personalisation">dpv:Personalisation</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 </tr>      
@@ -6537,14 +6554,14 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#PersonalisedAdvertising">dpv:PersonalisedAdvertising</a> → 
-             <a href="#Personalisation">dpv:Personalisation</a> → 
+             <a href="#Advertising">dpv:Advertising</a> → 
+             <a href="#Marketing">dpv:Marketing</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#PersonalisedAdvertising">dpv:PersonalisedAdvertising</a> → 
-             <a href="#Advertising">dpv:Advertising</a> → 
-             <a href="#Marketing">dpv:Marketing</a> → 
+             <a href="#Personalisation">dpv:Personalisation</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 </tr>      
@@ -6697,13 +6714,13 @@
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#ServicePersonalisation">dpv:ServicePersonalisation</a> → 
-             <a href="#Personalisation">dpv:Personalisation</a> → 
+             <a href="#ServiceProvision">dpv:ServiceProvision</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 <tr class="technical-detail">
           <th>Broader/Parent types</th>
           <td>             <a href="#ServicePersonalisation">dpv:ServicePersonalisation</a> → 
-             <a href="#ServiceProvision">dpv:ServiceProvision</a> → 
+             <a href="#Personalisation">dpv:Personalisation</a> → 
              <a href="#Purpose">dpv:Purpose</a>
 </td>
 </tr>      
@@ -7463,6 +7480,7 @@
 
   </section>
 </section>
+<section class="appendix" id="issue-summary"></section>
 <script type="text/javascript" src="../../media/common.js" defer></script>
 </body>
 </html>

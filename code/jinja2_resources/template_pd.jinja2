@@ -18,7 +18,7 @@
     group: "dpvcg",
     latestVersion: "https://w3id.org/dpv/pd",
     canonicalUri: "https://w3id.org/dpv/pd",
-    edDraftURI: "https://w3id.org/dpv/ed/pd",
+    edDraftURI: "https://w3id.org/dpv/pd",
     github: "w3c/dpv",
     subjectPrefix: "[pd]",
     doJsonLd: true,
@@ -65,7 +65,7 @@
 {% block VOCAB %}
   <section id="vocab">
     <h2>Core Taxonomy</h2>
-
+    <div class="issue" title="Content missing - Core taxonomy"></div>
     {{ list_hierarchy(modules['core']['classes']) }}
 
   </section>
@@ -74,37 +74,44 @@
     <h2>Extended Taxonomy</h2>
     <section>
       <h3>External</h3>
+      <div class="issue" title="Content missing - External"></div>
       {{ list_hierarchy(modules['extended']['classes'], head='pd:External') }}
     </section>
 
     <section>
       <h3>Financial</h3>
+      <div class="issue" title="Content missing - Financial"></div>
       {{ list_hierarchy(modules['extended']['classes'], head='pd:Financial') }}
     </section>
 
     <section>
       <h3>Historical</h3>
+      <div class="issue" title="Content missing - Historical"></div>
       {{ list_hierarchy(modules['extended']['classes'], head='pd:Historical') }}
     </section>
 
     <section>
       <h3>Internal</h3>
+      <div class="issue" title="Content missing - Internal"></div>
       {{ list_hierarchy(modules['extended']['classes'], head='pd:Internal') }}
     </section>
 
     <section>
       <h3>Social</h3>
+      <div class="issue" title="Content missing - Social"></div>
       {{ list_hierarchy(modules['extended']['classes'], head='pd:Social') }}
     </section>
 
     <section>
       <h3>Tracking</h3>
+      <div class="issue" title="Content missing - Tracking"></div>
       {{ list_hierarchy(modules['extended']['classes'], head='pd:Tracking') }}
     </section>
   </section>
 
   <section>
     <h2>Special Categories</h2>
+    <div class="issue" title="Content missing - Special Categories"></div>
     {{ list_hierarchy(vocab, head='dpv:SpecialCategoryPersonalData') }}
   </section>
 

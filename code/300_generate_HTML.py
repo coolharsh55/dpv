@@ -110,7 +110,7 @@ class DATA(object):
             term['_termsource'].add(vocab)
             vocab_data[term['prefixed']] = term
 
-            if len(s) < len(NAMESPACES[vocab]):
+            if f'{s}#' == NAMESPACES[vocab]:
                 term['_type'] = 'metadata'
                 term['vocab'] = vocab
                 term['namespace'] = NAMESPACES[vocab]

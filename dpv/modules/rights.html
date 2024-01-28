@@ -9,13 +9,13 @@
    var respecConfig = {
     shortName: "dpv",
     title: "Rights Management",
-    subtitle: "Data Privacy Vocabulary (DPV)",
-    publishDate: "2023-11-12",
+    subtitle: "concepts in Data Privacy Vocabulary (DPV)",
+    publishDate: "2024-01-28",
     specStatus: "CG-DRAFT",
     group: "dpvcg",
     latestVersion: "https://w3id.org/dpv/modules/rights",
     canonicalUri: "https://w3id.org/dpv/modules/rights",
-    edDraftURI: "https://w3id.org/dpv/ed/dpv/modules/rights",
+    edDraftURI: "https://w3id.org/dpv/modules/rights",
     github: "w3c/dpv",
     subjectPrefix: "[dpv]",
     doJsonLd: true,
@@ -212,6 +212,14 @@
     "href": "https://www.w3.org/TR/shacl-ucr/",
     "title": "SHACL Use Cases and Requirements"
   },
+  "SHACL": {
+    "href": "https://www.w3.org/TR/shacl",
+    "title": "Shape and Contraint Language (SHACL)"
+  },
+  "ODRL": {
+    "href": "https://www.w3.org/TR/odrl-model/",
+    "title": "Open Digital Rights Language (ODRL) Model"
+  },
   "DCT": {
     "title": "DCMI Metadata Terms (DCT)",
     "href": "https://www.dublincore.org/specifications/dublin-core/dcmi-terms/"
@@ -284,8 +292,8 @@
     </section>
   <section id="introduction">
     <h2>Introduction</h2>
-    <blockquote>This document assumes the reader is familiar with DPV through the [[[DPV-Primer]]], and thus focuses on providing a topically structured documentation of concepts defined by DPV.</blockquote>
-
+    <blockquote>This document assumes the reader is familiar with DPV through the [[[PRIMER]]], and thus focuses on providing a topically structured documentation of concepts defined by DPV.</blockquote>
+    <div class="issue" title="Review section descriptions"></div>
   <figure>
     <img src="../../media/rights.png">
     <figcaption></figcaption>
@@ -366,16 +374,19 @@
 
   <section>
   <h2>Rights Notices</h2>
+  <div class="issue" title="Content missing - Rights Notices"></div>
   <p>The information regarding hwo to exercise a right is provided through [=RightExerciseNotice=] and associated using the [=isExercisedAt=] relation. This information can specify contextual information through use of other concepts such as [=PersonalDataHandling=] to denote a <i>necessary</i> [=Purpose=] of [=IdentityVerification=] as part of the rights exercise.</p>
   </section>
 
   <section>
   <h2>Rights Exercise</h2>
+  <div class="issue" title="Content missing - Rights Exercise"></div>
   <p>A [=RightExerciseActivity=] represents a concrete instance of a right being exercised. It can include contextual information such as timestamps, durations, entities, etc. that can be part of record-keeping. An activity can be a single <i>step</i> related to rights exercise -- such as the initial request to exercise that right, or its acknowledgement, or the final step taken to fulfil the right (e.g. provide some information), or it can also be a single activity describing the entire rights exercise process(es). To collate related activities associated with a rights exercise (e.g. associated with a specific data subject or a specific request), the concept [=RightExerciseRecord=] is useful. The information provided to describe or in fulfilment of a right exercise is represented by [=RightFulfilmentNotice=] and that associated when a right exercise cannot be fulfilled is represented by [=RightNonFulfilmentNotice=].</p>
   </section>
 
   <section>
   <h2>Rights Records</h2>
+  <div class="issue" title="Content missing - Rights Records"></div>
   <p>To indicate contextual information about Right Exercise activities, DPV suggests reuse of existing relations, such as those from DPV itself and [[[DCT]]]. For example, <code>dct:accessRights</code> can be used to specify constraints or requirements regarding access (e.g. log in required), or <code>dct:hasPart</code> and <code>dct:isPartOf</code> to express records and its contents, <code>dct:valid</code> to express validity constraints on the exercising being made available, <code>foaf:page</code> to specify the location or provision of notice, and [=hasStatus</code> with [=RequestStatus=] to represent the status of a rights exercise activity.</p>
   <p>When rights require the provision of information which beyond a static common notice, for example a document personalised to the individual's information, or a dataset containing the individual's data, DPV recommends using [[[DCAT]]] to model the contents as a <code>dcat:Resource</code> or other relevant concepts from [[DCAT]] and [[DCT]] such as <code>dct:format</code>, <code>dct:accessRights</code>, and <code>dct:valid</code>.</p>
   </section>
@@ -1419,7 +1430,7 @@
 
 <tr>
           <th>Date Created</th>
-          <td><i>[rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), rdflib.term.Literal(&#39;2022-06-15&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;))]</i></td>
+          <td><i>[rdflib.term.Literal(&#39;2022-06-15&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;))]</i></td>
         </tr>        
        
 <tr>
@@ -1510,7 +1521,7 @@
 
 <tr>
           <th>Date Created</th>
-          <td><i>[rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), rdflib.term.Literal(&#39;2019-04-04&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;))]</i></td>
+          <td><i>[rdflib.term.Literal(&#39;2019-04-04&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;))]</i></td>
         </tr>        
 <tr>
           <th>Date Modified</th>
@@ -1518,7 +1529,7 @@
         </tr>       
 <tr>
           <th>Contributors</th>
-          <td><i>[rdflib.term.Literal(&#39;Axel Polleres, Javier Fernández, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger&#39;), rdflib.term.Literal(&#39;Harshvardhan J. Pandit&#39;)]</i></td>
+          <td><i>[rdflib.term.Literal(&#39;Harshvardhan J. Pandit&#39;), rdflib.term.Literal(&#39;Axel Polleres, Javier Fernández, Harshvardhan J. Pandit, Mark Lizar, Bud Bruegger&#39;)]</i></td>
         </tr>       
         <tr>
           <th>Documented in</th>
@@ -1738,7 +1749,7 @@
 
 <tr>
           <th>Date Created</th>
-          <td><i>[rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), rdflib.term.Literal(&#39;2022-03-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;))]</i></td>
+          <td><i>[rdflib.term.Literal(&#39;2022-03-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;))]</i></td>
         </tr>        
        
 <tr>
@@ -1813,7 +1824,7 @@
 
 <tr>
           <th>Date Created</th>
-          <td><i>[rdflib.term.Literal(&#39;2022-03-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;))]</i></td>
+          <td><i>[rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), rdflib.term.Literal(&#39;2022-03-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;))]</i></td>
         </tr>        
        
 <tr>
@@ -1948,7 +1959,7 @@
         </tr>        
 <tr>
           <th>Usage Note</th>
-          <td><i>Indicates the Entity that implements or performs a Right Exercise Activity</i></td>
+          <td><i>The use of &#39;entity&#39; is inclusive of entities (e.g. Data Processor) as well as &#39;agent&#39; (e.g. DPO). For indicating technological implementation, the property isImplementedByTechnology should be used.</i></td>
         </tr>       
        
 
@@ -1960,7 +1971,7 @@
 
 <tr>
           <th>Date Created</th>
-          <td><i>[rdflib.term.Literal(&#39;2019-05-07&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;))]</i></td>
+          <td><i>[rdflib.term.Literal(&#39;2022-11-02&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;)), rdflib.term.Literal(&#39;2019-05-07&#39;, datatype=rdflib.term.URIRef(&#39;http://www.w3.org/2001/XMLSchema#date&#39;))]</i></td>
         </tr>        
 <tr>
           <th>Date Modified</th>
@@ -2518,6 +2529,7 @@
 
   </section>
 </section>
+<section class="appendix" id="issue-summary"></section>
 <script type="text/javascript" src="../../media/common.js" defer></script>
 </body>
 </html>

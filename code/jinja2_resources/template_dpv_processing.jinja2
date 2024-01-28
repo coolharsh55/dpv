@@ -14,13 +14,13 @@
    var respecConfig = {
     shortName: "dpv",
     title: "Processing Operations",
-    subtitle: "Data Privacy Vocabulary (DPV)",
-    publishDate: "2023-11-12",
+    subtitle: "concepts in Data Privacy Vocabulary (DPV)",
+    publishDate: "2024-01-28",
     specStatus: "CG-DRAFT",
     group: "dpvcg",
     latestVersion: "https://w3id.org/dpv/modules/processing",
     canonicalUri: "https://w3id.org/dpv/modules/processing",
-    edDraftURI: "https://w3id.org/dpv/ed/dpv/modules/processing",
+    edDraftURI: "https://w3id.org/dpv/modules/processing",
     github: "w3c/dpv",
     subjectPrefix: "[dpv]",
     doJsonLd: true,
@@ -49,8 +49,8 @@
 {% endblock ABSTRACT %}
   <section id="introduction">
     <h2>Introduction</h2>
-    <blockquote>This document assumes the reader is familiar with DPV through the [[[DPV-Primer]]], and thus focuses on providing a topically structured documentation of concepts defined by DPV.</blockquote>
-
+    <blockquote>This document assumes the reader is familiar with DPV through the [[[PRIMER]]], and thus focuses on providing a topically structured documentation of concepts defined by DPV.</blockquote>
+    <div class="issue" title="Review section descriptions"></div>
     <figure>
     <img src="../../media/processing.png" />
     <figcaption></figcaption>
@@ -63,9 +63,11 @@
 
 <section id="desc-processing-categories">
     <h2>Processing Operations</h2>
+    <div class="issue" title="Content missing - Processing operations"></div>
 
     <section id="desc-processing-collect">
       <h3>Obtain/Collect</h3>
+
     </section>
 
     <section id="desc-processing-store">
@@ -94,29 +96,35 @@
   {{ list_hierarchy(modules['processing-context']['classes']) }}
   <section>
     <h3>Storage Conditions</h3>
+    <div class="issue" title="Content missing - Storage Conditions"></div>
     <p>This taxonomy provides concepts for representing information about storage conditions, e.g. how long the data will be stored for, its erasure, or its restoration. It also enables representing the source(s) of data, the use of automation, and the extent of human involvement within the automation.</p>
     <p>The processing taxonomy uses the concept [=Store=] to indicate data is being stored. To specify additionally information such as its location, erasure or deletion, the generic concepts and relations associated with processing (i.e. <i>location</i> and <i>duration</i>) can be used. However, to emphasise that information about storage - such as policies, conditions, rules, or documentation - are critical on considerations of data protection and privacy as well as legal compliance, DPV provide specific concepts related to these.</p>
     <p>The concept [=StorageCondition=] and the relation [=hasStorageCondition=] represent the general or abstract conditions associated with storage of data. This is specialised to indicate [=StorageDuration=], [=StorageDeletion=], [=StorageRestoration=], and [=StorageLocation=]. This enables a document to directly specify information such as: "storage duration is 6 months" or "storage restoration uses 3 geo-distinct backup servers".</p>
   </section>
   <section>
     <h3>Data Source</h3>
+    <div class="issue" title="Content missing - Data Source"></div>
     <p>For declaring the source of data, the [=DataSource=] concept along with [=hasDataSource=] relationship is provided to indicate where the data is collected or acquired from. For example, data can be obtained from the data subject directly (e.g. given via forms) or indirectly (e.g observed from activity, or inferred from existing data), or from another entity such as a third party.</p>
   </section>
   <section>
     <h3>Automation and Human Involvement</h3>
+    <div class="issue" title="Content missing - Automation and Human Involvement"></div>
     <p>DPV provides [=AutomationOfProcessing=] to represent the degree of automation, and the relation [=hasProcessingAutomation=] to associate it with contextual concepts. The degrees of automation are represented by [=FullyAutomatedProcessing=], [=PartiallyAutomatedProcessing=], and [=CompletelyManualProcessing=].</p>
     <p>To represent how humans are involved, the concept [=HumanInvolvement=] and relation [=hasHumanInvolvement=] are provided. Specific types of  [=HumanInvolvement=] include [=HumanInvolvementForOversight=], and [=HumanInvolvementForVerification=].</p>
   </section>
   <section>
     <h3>Decision Making and its Logic</h3>
+    <div class="issue" title="Content missing - Decision Making"></div>
     <p>To indicate more specific applications: [=DecisionMaking=] and [=AutomatedDecisionMaking=] refer to use of processing to make decisions, [=AlgorithmicLogic=] for explaining the use of algorithms and specifics of processing logic, [=EvaluationScoring=] to indicate the processing evaluates or assigns scores (or metrics), [=InnovativeUseOfNewTechnologies=] to indicate there are innovative uses of novel technologies, and [=SystematicMonitoring=] to indicate the processing performs a systematic (or systemic) monitoring. These additional concepts are intended to model areas or topics that are considered sensitive or high-risk or require caution.</p>
   </section>
   <section>
     <h3>Innovative use of New Technologies</h3>
+    <div class="issue" title="Content missing - Innovative Use"></div>
   </section>
   </section>
   <section id="vocab-processing-scale">
     <h2>Scale of Processing</h2>
+    <div class="issue" title="Content missing - Processing Scale"></div>
     <p>DPV provides (qualitative) scales for expressing <i>Data Volume</i>, <i>Data subjects</i>, and <i>Geographical Coverage</i> of processing. Along with these, DPV also provides a <i>Processing Scale</i> to express combinations of these. NOTE: The actual meaning or quantified amounts for each concept are not defined due to their interpretation based on contextual factors such as legislations, guidelines, domains, and variations across industries.</p>
 
     {{ list_hierarchy(modules['processing-scale']['classes']) }}
@@ -164,7 +172,7 @@
     {{ index_concepts(module_combined, vocab_name, filter="external") }}
   </section>
 </section>
-
+<section class="appendix" id="issue-summary"></section>
 <script type="text/javascript" src="../../media/common.js" defer></script>
 </body>
 </html>

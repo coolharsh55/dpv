@@ -12,14 +12,14 @@
    // All config options at https://respec.org/docs/ 
    var respecConfig = {
     shortName: "risk",
-    title: "Risk Extension",
-    subtitle: "Data Privacy Vocabulary (DPV)",
-    publishDate: "2023-11-13",
+    title: "{{data[vocab_name+'-metadata']['dct:title']}} ({{vocab_name|upper}})",
+    subtitle: "version {{data[vocab_name+'-metadata']['schema:version']}}",
+    publishDate: "2024-01-28",
     specStatus: "CG-DRAFT",
     group: "dpvcg",
     latestVersion: "https://w3id.org/dpv/risk",
     canonicalUri: "https://w3id.org/dpv/risk",
-    edDraftURI: "https://w3id.org/dpv/ed/risk",
+    edDraftURI: "https://w3id.org/dpv/risk",
     github: "w3c/dpv",
     subjectPrefix: "[risk]",
     doJsonLd: true,
@@ -59,11 +59,17 @@
 <link rel="stylesheet" type="text/css" href="../media/common.css">
 </head>
 <body>
+  <p>{{vocab_name}}</p>
+  <p>{{data['dpv-metadata'].keys()}}</p>
+  <p>{{ data[vocab_name+'-metadata'].keys() }}</p>
   <section id="abstract">
     <p>Risk concepts extend the [[[DPV]]] risk vocabulary to provide additional vocabularies specific to risk management, assessment, controls, and consequences. </p>
     <p>The namespace for terms in risk is <a href="http://www.w3id.org/dpv/risk#"><code>https://www.w3id.org/dpv/risk#</code></a><br/>
       The suggested prefix for the namespace is <code>risk</code><br/>
       The risk vocabulary and its documentation is available on <a href="https://github.com/w3c/dpv">GitHub</a>.</p>
+    <div class="issue" title="WARNING: unstable vocabulary">
+      <p><strong>WARNING</strong> This vocabulary will be undergoing major changes based on the necessity to specify risk assessment and risk management concepts and to ensure provided concepts are useful. There may be extensive removal/additions of concepts that changes the structure and semantics of this extension.</p>
+      </div>
     {{ dpv_document_family(document='risk-spec') }}
       {{ sotd() }}
   </section>
@@ -75,6 +81,7 @@
 
   <section id="vocab-risk-levels">
     <h2>Risk, Likelihood, Severity Levels</h2>
+    <div class="issue" title="Content missing - Risk, Likelihood, Severity Levels"></div>
 
     {{ list_hierarchy(modules['risk_levels']['classes']) }}
 
@@ -82,6 +89,7 @@
 
   <section id="vocab-risk-controls">
     <h2>Risk Controls</h2>
+    <div class="issue" title="Content missing - Risk Controls"></div>
 
     {{ list_hierarchy(modules['risk_controls']['classes']) }}
 
@@ -89,12 +97,14 @@
 
   <section id="vocab-risk-consequences">
     <h2>Consequences and Impacts</h2>
+    <div class="issue" title="Content missing - Consequences and Impacts"></div>
 
     {{ list_hierarchy(modules['risk_consequences']['classes']) }}
   </section>
 
   <section id="vocab-risk-assessment">
     <h2>Risk Assessment Techniques</h2>
+    <div class="issue" title="Content missing - Risk Assessment Techniques"></div>
 
     {{ list_hierarchy(modules['risk_assessment']['classes']) }}
 
@@ -102,6 +112,7 @@
 
   <section id="vocab-risk-methodology">
     <h2>Risk Methodology</h2>
+    <div class="issue" title="Content missing - Risk Methodology"></div>
 
     {{ list_hierarchy(modules['risk_methodology']['classes']) }}
 
@@ -110,6 +121,7 @@
 
   <section id="vocab-risk-matrix">
     <h2>RiskMatrix</h2>
+    <div class="issue" title="Content missing - RiskMatrix"></div>
 
     {{ list_hierarchy(modules['risk_matrix']['classes']) }}
 
@@ -130,6 +142,8 @@
 
 <section id="vocabulary">
 <h2>Vocabulary Index</h2>
+<div class="issue" title="Content missing - parent missing e.g. EBIOS ->    risk:RiskManagement"></div>
+<div class="issue" title="Content missing - parent missing e.g. EnvironmentalSafetyEndangerment -> dpv:Harm has wrong local href"></div>
   <section id="dpv-classes">
     {{ index_concepts(vocab, vocab_name, filter="classes") }}
   </section>
